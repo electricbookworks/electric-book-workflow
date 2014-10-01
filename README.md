@@ -68,7 +68,7 @@ Each document is a section of the book, which traditionally might be separated f
 
 Alongside the content files in that book's folder is an `images` folder, for images that belong to that book only.
 
-A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (E.g. put the publisher logo into each book's `images` folder.)
+A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (E.g. copy the publisher logo into each book's `images` folder separately.)
 
 ## Creating a book in markdown
 
@@ -84,7 +84,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 * To check how small bits of markdown will convert to HTML, use the [online pandoc tryout](http://johnmacfarlane.net/pandoc/try). If you know how to set up a local Jekyll site or quick pandoc conversion to HTML, do that to see what your Markdown does in HTML as you work. Note: GitHub Pages, and possibly your local Jekyll instance, use kramdown, which parses markdown slightly differently to pandoc's default. So you might get different results in each, especially with tables. Jekyll with kramdown matters most.
 * If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll need this](http://jekyll-windows.juthilo.com/).
 
-### A example workflow
+### Tip for converting content to markdown
 
 This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own if you're turning existing books into markdown.
 
