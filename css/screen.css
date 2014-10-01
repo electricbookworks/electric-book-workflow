@@ -1,0 +1,155 @@
+/* Typography for the EBW book framework by Arthur Attwell
+ * Author: Arthur Attwell
+ * Author URI: http://arthurattwell.com
+ * Updated: 28 August 2014 */
+
+ /*
+ * Note: these styles are still  too much like our Bettercare books, so they need more work to be generic to other kinds of book.
+ */
+
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic);
+
+/* 
+ * Structure 
+ */
+
+body {
+	font-family: "Crimson Text", serif;
+	font-size: 1.2em;
+}
+#wrapper{
+	max-width: 960px;
+	margin: auto;
+}
+
+/* 
+ * General typography 
+ */
+ 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	line-height: 120%;
+	page-break-after: avoid;
+}
+h1 {
+	font-weight: 300;
+	font-size: 3.5em;
+	max-width: 80%;
+	line-height: 90%;
+}
+h2 {
+	margin: 1.5em 0 0.5em 0;
+	padding-top: 0.5em;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+}
+p, ul, ol, blockquote, dl {
+	max-width: 40em;
+}
+p {
+	margin: 0 0 0.5em 0;
+}
+li p {
+	margin: 0;
+}
+blockquote {
+	margin: 0.5em 0 1em 0;
+	padding: 0.5em 1em 0.5em 1em;
+	font-size: 1.5em;
+	border-left: 5px solid #ddd;
+}
+blockquote p {
+	margin: 0;
+	padding: 0;
+}
+li blockquote {
+	margin: 1em 0;
+}
+dl {
+	color: #666;
+	border: 1px solid grey;
+	padding: 1em;
+}
+dt {
+	font-size: 2em;
+	margin: 0 0 0.25em 0;
+	font-style	: italic;
+}
+dd {
+}
+table {
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #ccc;
+	padding: 0.5em;
+}
+pre, code {
+	white-space: pre-wrap;
+}
+
+/*
+ * Title page 
+ */
+
+.titlepage-title {
+	font-size: 3em;
+	font-weight: 700;
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 20% 0 0 0;
+	line-height: 100%;
+}
+.titlepage-subtitle {
+	font-size: 3em;
+	font-weight: 400;
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 0 0 1em 0;
+	line-height: 100%;
+}
+.titlepage-author {
+	font-size: 1.5em;
+	margin: 0 0 2em 0;
+}
+.titlepage-logo {
+	width: 200px;
+}
+
+/*
+ * Table of contents
+ */
+
+.toc h2 {
+	font-weight: 400;
+	font-size: 1.25em;
+	margin: 1em 0 0.5em 0;
+}
+.toc ol {
+	margin: 0;
+	padding: 0;
+}
+.toc ul {
+	list-style-type: none;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+.toc li {
+	margin: 0 0 0.5em 0;
+}
+.toc a {
+	text-decoration: none;
+}
+
+/* 
+ * Figures 
+ */
+ 
+figure {
+	margin: 1em 0;
+	padding: 0;
+}
+figcaption {
+	font-style: italic;
+}

@@ -1,0 +1,11 @@
+name: "Your book title here"
+description: "Your subtitle here"
+
+url: http://localhost:4000
+baseurl: /book-framework
+
+paginate: 10
+
+markdown: kramdown
+permalink: none
+highlighter: pygments
