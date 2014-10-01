@@ -68,7 +68,7 @@ Each document is a section of the book, which traditionally might be separated f
 
 Alongside the content files in that book's folder is an `images` folder, for images that belong to that book only.
 
-A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (E.g. put the publisher logo into each book's `images` folder.)
+A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (E.g. copy the publisher logo into each book's `images` folder separately.)
 
 ## Creating a book in markdown
 
@@ -84,7 +84,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 * To check how small bits of markdown will convert to HTML, use the [online pandoc tryout](http://johnmacfarlane.net/pandoc/try). If you know how to set up a local Jekyll site or quick pandoc conversion to HTML, do that to see what your Markdown does in HTML as you work. Note: GitHub Pages, and possibly your local Jekyll instance, use kramdown, which parses markdown slightly differently to pandoc's default. So you might get different results in each, especially with tables. Jekyll with kramdown matters most.
 * If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll need this](http://jekyll-windows.juthilo.com/).
 
-### A example workflow
+### Tip for converting content to markdown
 
 This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own if you're turning existing books into markdown.
 
@@ -157,6 +157,7 @@ We've learned some stuff the hard way:
 *	Add `{:.table-caption}` in the line immediately after a table caption. Kramdown uses this to apply the class `table-caption` to the paragraph. In our print output, this lets `print.css` avoid a page break after the caption, before the table. (According to publishing best-practice, table captions must always appear above tables, not after them.)
 *	Keep file naming perfectly alphabetical This is easiest to do with a numbering system, e.g. `great-gatsby-0-1-titlepage.md`, `great-gatsby-0-2-copyright.md`, `great-gatsby-1-chapter-1.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering files during PrinceXML PDF-making really easy.
 *	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
+*	If you choose *not* to `.gitignore` your `_site` folder (as we have done), it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) We choose to do this so that it's easy for collaborators to grab a book's HTML from our repo without having to run Jekyll themselves. But it means committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown.
 
 ## Print output
 
