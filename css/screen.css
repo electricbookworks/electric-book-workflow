@@ -121,14 +121,12 @@ pre, code {
 .titlepage-title {
 	font-size: 3em;
 	font-weight: 700;
-	font-family: "Source Sans Pro", sans-serif;
 	margin: 20% 0 0 0;
 	line-height: 100%;
 }
 .titlepage-subtitle {
 	font-size: 3em;
 	font-weight: 400;
-	font-family: "Source Sans Pro", sans-serif;
 	margin: 0 0 1em 0;
 	line-height: 100%;
 }
