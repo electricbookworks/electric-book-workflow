@@ -137,7 +137,15 @@ pre, code {
 	margin: 0 0 2em 0;
 }
 .titlepage-logo {
-	width: 200px;
+	width: 100px;
+}
+
+/*
+ * Copyright page
+ */
+ 
+.copyright-logo {
+	width: 100px;
 }
 
 /*

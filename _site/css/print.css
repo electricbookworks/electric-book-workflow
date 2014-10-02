@@ -12,7 +12,6 @@
  */
 
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
 @font-face {
     font-family: "Linux Libertine";
@@ -49,6 +48,10 @@
     font-family: "Linux Libertine Mono";
     src: url(fonts/LinLibertine_M.otf);
 }
+@font-face {
+    font-family: "Linux Libertine Small Caps";
+    src: url(fonts/LinLibertineC_Re-4.0.1.otf);
+}
 
 /* Set up our basic page margins */
 @page { 
@@ -75,10 +78,9 @@
     content: counter(page) "\2003" string(chapter-title, last);
     text-align: left;
     font-size: 9pt;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 300;
+	text-transform: lowercase;
+	font-family: "Linux Libertine Small Caps";
+	letter-spacing: 0.05em;
   }
 }
 @page chapter:right {
@@ -86,10 +88,9 @@
     content: string(section-title, last) "\2003" counter(page);
     text-align: right;
     font-size: 9pt;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 300;
+	text-transform: lowercase;
+	font-family: "Linux Libertine Small Caps";
+	letter-spacing: 0.05em;
   }
 }
 
@@ -119,13 +120,11 @@ div.frontmatter, div.toc, div.chapter {
 
 .titlepage-title {
 	font-size: 3em;
-	font-weight: 700;
 	margin: 20% 0 0 0;
 	line-height: 100%;
 }
 .titlepage-subtitle {
 	font-size: 2.5em;
-	font-weight: 300;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
 }
@@ -135,9 +134,18 @@ div.frontmatter, div.toc, div.chapter {
 	margin: 0 0 2em 0;
 }
 .titlepage-logo {
-	width: 200px;
+	width: 100px;
 	position: absolute;
 	bottom: 0;
+}
+
+/*
+ * Copyright page
+ */
+ 
+.copyright-logo {
+	width: 100px;
+	margin: 0 0 1em 0;
 }
 
 /*
@@ -245,7 +253,6 @@ body {
 	padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 600;
 	line-height: 120%;
 	page-break-after: avoid;
@@ -278,7 +285,6 @@ p {
 	margin: 0 0 0.5em 0;
 }
 p.chapter-number {
-	font-family: "Source Sans Pro", sans-serif;
 	font-weight: bold;
 	font-size: 3.5em;
 	margin: 0 0 0.66em 0;
@@ -296,21 +302,18 @@ li li:first-of-type {
 	page-break-before:avoid;
 }
 blockquote {
-	font-family: "Source Sans Pro", sans-serif;
-	background-color: #666;
-	font-size: 110%;
-	font-weight: 600;
-	color: white;
-	padding: 0.5em 0.8em;
-	border-radius: 0.25em;
-	margin: 1em 0;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em 1em 0.5em 1em;
+	font-size: 1.5em;
+	line-height: 120%;
+	border-left: 5px solid #ddd;
+	max-width: 20em;
 }
 blockquote p {
 	margin: 0;
 	padding: 0;
 }
 dl {
-	font-family: "Source Sans Pro", sans-serif;
 	color: #666;
 	font-size: 90%;
 	font-weight: 300;
