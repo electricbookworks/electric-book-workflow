@@ -1,0 +1,150 @@
+---
+title: Chapter 2
+layout: chapter
+---
+
+# Chapter 2
+
+Your second chapter. Note the `chapter` layout in the markdown version's YAML header.
+
+## Still better than lorem ipsum
+
+Here's some more [Cicero translated by E. S. Shuckburgh](http://www.gutenberg.org/cache/epub/2812/pg2812.txt).
+
+### To his Brother Quintus (in Sardinia)
+
+ROME, 12 FEBRUARY—I have  already told you the earlier proceedings; now let me
+describe what was done afterwards. 
+
+The legations were postponed
+from the 1st of February to the 13th. On the former day our
+business was not brought to a settlement. On the 2nd of February
+Milo appeared for trial. Pompey came to support him. Marcellus
+spoke on being called upon by me. We came off with flying
+colours. The case was adjourned to the 7th. Meanwhile (in the
+senate), the legations having been postponed to the 13th, the
+business of allotting the quaestors and furnishing the outfit of the
+praetors was brought before the house. But nothing was done,
+because many speeches were interposed denouncing the state of
+the Republic. 
+
+Gaius Cato published his bill for the recall of
+Lentulus, whose son thereon put on mourning. On the 7th Milo
+appeared. Pompey spoke, or rather wished to speak. For as soon as
+he got up Clodius's ruffians raised a shout, and throughout his
+whole speech he was interrupted, not only by hostile cries, but by
+personal abuse and insulting remarks. However, when he had
+finished his speech--for he shewed great courage in these
+circumstances, he was not cowed, he said all he had to say, and at
+times had by his commanding presence even secured silence for
+his words--well, when he had finished, up got Clodius. Our party
+received him with such a shout--for they had determined to pay
+him out--that he lost all presence of mind, power of speech, or
+control over his countenance. 
+
+This went on up to two o
+clock--Pompey having finished his speech at noon--and every kind
+of abuse, and finally epigrams of the most outspoken indecency
+were uttered against Clodius and Clodia. Mad and livid with rage
+Clodius, in the very midst of the shouting, kept putting questions
+to his claque: "Who was it who was starving the commons to
+death?" His ruffians answered, "Pompey." "Who wanted to be sent
+to Alexandria ?" They answered, "Pompey." "Who did they wish to
+go ?" They answered, "Crassus." The latter was present at the time
+with no friendly feelings to Milo. 
+
+About three o clock, as though at
+a given signal, the Clodians began spitting at our men. There was
+an outburst of rage. They began a movement for forcing us from
+our ground. Our men charged: his ruffians turned tail. Clodius was
+pushed off the rostra: and then we too made our escape for fear of
+mischief in the riot. The senate was summoned into the Curia:
+Pompey went home. However, I did not myself enter the
+senate-house, lest I should be obliged either to refrain from
+speaking on matters of such gravity, or in defending Pompey (for
+he was being attacked by Bibulus, Curio, Favonius, and Servilius
+the younger) should give offence to the loyalists. 
+
+The business was
+adjourned to the next day. Clodius fixed the Quirinalia (17th of
+February) for his prosecution. On the 8th the senate met in the
+temple of Apollo, that Pompey might attend. Pompey made an
+impressive speech. That day nothing was concluded. On the 9th in
+the temple of Apollo a degree passed the senate "that what had
+taken place on the 7th of February was treasonable." On this day
+Cato warmly inveighed against Pompey, and throughout his speech
+arraigned him as though he were at the bar. He said a great deal
+about me, to my disgust, though it was in very laudatory terms.
+When he attacked Pompey's perfidy to me, he was listened to in
+profound silence on the part of my enemies. Pompey answered
+him boldly with a palpable allusion to Crassus, and said outright
+that "he would take better precautions to protect his life than
+Africanus had done, whom C. Carbo had assassinated."
+
+Accordingly, important events appear to me to be in the wind. For
+Pompey understands what is going on, and imparts to me 
+
+*	that plots are being formed against his life, 
+*	that Gaius Cato is being supported by Crassus, 
+*	that money is being supplied to Clodius, 
+*	that both are backed by Crassus and Curio, as well as by Bibulus and
+his other detractors,
+*	that he must take extraordinary precautions to
+prevent being overpowered by that demagogue--with a people all
+but wholly alienated, a nobility hostile, a senate ill-affected, and
+the younger men corrupt. 
+
+So he is making his preparations and summoning men from the country. 
+
+On his part, Clodius is rallying
+his gangs: a body of men is being got together for the Quirinalia.
+For that occasion we are considerably in a majority, owing to the
+forces brought up by Pompey himself: and a large contingent is
+expected from Picenum and Gallia, to enable us to throw out
+Cato's bills also about Milo and Lentulus.
+
+On the 10th of February an indictment was lodged against Sestius
+for bribery by the informer Cn. Nerius, of the Pupinian tribe, arid
+on the same day by a certain M. Tullius for riot. He was ill. I went
+at once, as I was bound to do. to his house, and put myself wholly
+at his service: and that was more than people expected, who
+thought that I had good cause for being angry with him. The result
+is that my extreme kindness and grateful disposition are made
+manifest both to Sestius himself and to all the world, and I shall be
+as good as my word. But this same informer Nerius also named
+Cn. Lentulus Vatia and C. Cornelius to the commissioners. On the
+same day a decree passed the senate "that political clubs and
+associations should be broken up, and that a law in regard to them
+should be brought in, enacting that those who did not break off
+from them should be liable to the same penalty as those convicted
+of riot."
+
+On the 10th of February I spoke in defence of Bestia on a charge of
+bribery before the praetor Cn. Domitius, in the middle of the
+forum and in a very crowded court; and in the course of my speech
+I came to the incident of Sestius, after receiving many wounds in
+the temple of Castor, having been preserved by the aid of Bestia.
+Here I took occasion to pave the way beforehand for a refutation of
+the charges which are being got up against Sestius, and I passed a
+well-deserved encomium upon him with the cordial approval of
+everybody. He was himself very much delighted with it. I tell you
+this because you have often advised me in your letters to retain the
+friendship of Sestius. I am writing this on the 12th of February
+before daybreak; the day on which I am to dine with Pomponius on
+the occasion of his wedding.
+
+Our position in other respects is such as you used to cheer my
+despondency by telling me it would be--one of great dignity and
+popularity: this is a return to old times for you and me effected, my
+brother, by your patience, high character, loyalty, and, I may also
+add, your conciliatory manners. The house of Licinius, near the
+grove of Piso, has been taken for you. But, as I hope, in a few
+months time, after the 1st of July, you will move into your own.
+Some excellent tenants, the Lamiae, have taken your house in
+Carinie. I have received no letter from you since the one dated
+Olbia. I am anxious to hear how you are and what you find to
+amuse you, but above all to see you yourself as soon as possible.
+Take care of your health, my dear brother, and though it is winter
+time, yet reflect that after all it is Sardinia that you are in.
+
+13 February

@@ -1,10 +1,6 @@
-/* Typography for the EBW book framework by Arthur Attwell
- * Author: Arthur Attwell
- * Author URI: http://arthurattwell.com
- * Updated: 28 August 2014 */
-
- /*
- * Note: these styles are still  too much like our Bettercare books, so they need more work to be generic to other kinds of book.
+/*
+ * Typography for the EBW book framework.
+ * These styles need more work to be generic to other kinds of books.
  */
 
 @charset "utf-8";
@@ -21,6 +17,28 @@ body {
 #wrapper{
 	max-width: 960px;
 	margin: auto;
+}
+
+/* 
+ * 'Close' button for chapter and frontmatter layouts
+ */
+ 
+.close-link {
+	position: fixed;
+	right: 1em;
+	font-size: 3em;
+	background-color: white;
+	border-radius: 1em;
+	height: 1em;
+	width: 1em;
+	opacity: 0.9;
+}
+.close-link a {
+	text-decoration: none;
+	color: #eeeeee;
+	top: 0.52em;
+	right: 1.3em;
+	position: fixed;
 }
 
 /* 
@@ -43,8 +61,8 @@ h2 {
 	padding-top: 0.5em;
 }
 h3 {
-	margin: 0;
-	padding: 0;
+	margin: 1.5em 0 0.5em 0;
+	padding-top: 0.5em;
 }
 p, ul, ol, blockquote, dl {
 	max-width: 40em;
@@ -56,10 +74,12 @@ li p {
 	margin: 0;
 }
 blockquote {
-	margin: 0.5em 0 1em 0;
+	margin: 0.5em 0 0.5em 0;
 	padding: 0.5em 1em 0.5em 1em;
 	font-size: 1.5em;
+	line-height: 120%;
 	border-left: 5px solid #ddd;
+	max-width: 20em;
 }
 blockquote p {
 	margin: 0;
@@ -89,6 +109,9 @@ th, td {
 }
 pre, code {
 	white-space: pre-wrap;
+	background-color: #f9f9f9;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
 }
 
 /*
