@@ -6,15 +6,18 @@ layout: chapter
 # Chapter 2
 
 Your second chapter. Note the `chapter` layout in the markdown version's YAML header.
+{:.start-new-section}
 
 ## Still better than lorem ipsum
 
 Here's some more [Cicero translated by E. S. Shuckburgh](http://www.gutenberg.org/cache/epub/2812/pg2812.txt).
+{:.start-new-section}
 
 ### To his Brother Quintus (in Sardinia)
 
 ROME, 12 FEBRUARY—I have  already told you the earlier proceedings; now let me
 describe what was done afterwards. 
+{:.start-new-section}
 
 The legations were postponed
 from the 1st of February to the 13th. On the former day our
@@ -148,3 +151,4 @@ Take care of your health, my dear brother, and though it is winter
 time, yet reflect that after all it is Sardinia that you are in.
 
 13 February
+{:.start-new-section}

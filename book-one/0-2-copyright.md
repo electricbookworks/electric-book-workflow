@@ -1,11 +1,11 @@
 ---
 title: Copyright
-layout: frontmatter
+layout: copyright
 ---
 
 ![Publisher logo][logo]{:.copyright-logo}
 
-The title of this book: The subtitle of this book
+*The title of this book: The subtitle of this book*
 
 Text © A. N. Author
 

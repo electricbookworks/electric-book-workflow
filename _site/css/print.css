@@ -119,16 +119,19 @@ div.frontmatter, div.toc, div.chapter {
 	font-size: 3em;
 	margin: 20% 0 0 0;
 	line-height: 100%;
+	text-indent: 0;
 }
 .titlepage-subtitle {
 	font-size: 2.5em;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
+	text-indent: 0;
 }
 .titlepage-author {
 	font-size: 2em;
 	line-height: 100%;
 	margin: 0 0 2em 0;
+	text-indent: 0;
 }
 .titlepage-logo {
 	width: 100px;
@@ -143,6 +146,9 @@ div.frontmatter, div.toc, div.chapter {
 .copyright-logo {
 	width: 100px;
 	margin: 0 0 1em 0;
+}
+.copyright p {
+	text-indent: 0;
 }
 
 /*
@@ -250,12 +256,11 @@ body {
 	padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
+	font-weight: normal;
 	line-height: 120%;
 	page-break-after: avoid;
 }
 h1 {
-	font-weight: 300;
 	font-size: 2.5em;
 	max-width: 80%;
 	line-height: 90%;
@@ -271,15 +276,21 @@ h2 {
 	string-set: section-title content();
 }
 h3 {
-	font-size: 1.1em;
+	font-size: 1.3em;
 	margin-bottom: 0.3em;
 }
 h4 {
 	font-size: 1em;
+	font-style: italic;
 	margin-bottom: 0.3em;
 }
 p {
-	margin: 0 0 0.5em 0;
+	margin: 0;
+	text-indent: 1em;
+}
+p.start-new-section { /* Use the .start-new-section for first paragraphs. */
+	margin-top: 1em;
+	text-indent: 0;
 }
 p.chapter-number {
 	font-weight: bold;
@@ -287,7 +298,7 @@ p.chapter-number {
 	margin: 0 0 0.66em 0;
 }
 ul, ol {
-	margin: 0 0 0.5em 0;
+	margin: 0.5em 0 0.5em 0;
 }
 li:first-of-type {
 	page-break-after: avoid;
@@ -309,6 +320,7 @@ blockquote {
 blockquote p {
 	margin: 0;
 	padding: 0;
+	text-indent: 0;
 }
 dl {
 	color: #666;
@@ -326,6 +338,9 @@ pre, code {
 	font-family: "Linux Libertine Mono", monospace;
 	white-space: pre-wrap;
 	line-height: 1em;
+	background-color: #f9f9f9;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
 }
 a {
 	text-decoration: none;

@@ -6,10 +6,12 @@ layout: chapter
 # Chapter 1
 
 And so it begins, your first chapter. Note the `chapter` layout in the markdown version's YAML header.
+{:.start-new-section}
 
 ## Better than lorem ipsum
 
 Who needs lorem ipsum when you can read the real thing? Here's some [Cicero translated by E. S. Shuckburgh](http://www.gutenberg.org/cache/epub/2812/pg2812.txt).
+{:.start-new-section}
 
 ### To Terentia, Tulliola, and Young Cicero (at Rome) 
 
@@ -24,6 +26,7 @@ permanent, I only wish, my dear, to see you as soon as possible
 and to die in your arms, since neither gods, whom you have
 worshipped with such pure devotion, nor men, whom I have ever
 served, have made us any return. 
+{:.start-new-section}
 
 > I only wish, my dear, to see you as soon as possible
 and to die in your arms
@@ -37,6 +40,7 @@ offices of hospitality and friendship. May I sometime have the
 opportunity of repaying him! Feel gratitude I always shall. I set out
 from Brundisium on the 29th of April, and intend going through
 Macedonia to Cyzicus. 
+{:.start-new-section}
 
 What a fall! What a disaster! What can I
 say? Should I ask you to come--a woman of weak health and
@@ -100,3 +104,4 @@ faithful and best of wives, and my darling little daughter, and that
 last hope of my race, Cicero, good-bye!
 
 29 April, from Brundisium.
+{:.start-new-section}

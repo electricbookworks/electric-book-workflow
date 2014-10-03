@@ -54,7 +54,7 @@ The key to simple HTML is that we carefully map our books' features to ordinary 
 
 ## The repo structure
 
-The repo structure follows pretty much standard Jekyll structure. In the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The simple `header.html` and `footer.html` includes, and `default`, `chapter`, `frontmatter` and `toc` layouts should be a good start for most books. But every case will be different, and you'll have to make additions to suit the project. This is especially the case for the CSS.
+The repo structure follows pretty much standard Jekyll structure. In the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The simple `header.html` and `footer.html` includes, and `default`, `chapter`, `frontmatter`, `copyright` and `toc` layouts should be a good start for most books. But every case will be different, and you'll have to make additions to suit the project. This is especially the case for the CSS.
 
 One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout). Each book's content is in a folder in the root. In the framework here, we have `book-one` with a few sample files in it:
 
