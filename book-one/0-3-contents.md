@@ -5,10 +5,8 @@ layout: toc
 
 # Contents
 
-*	[Title page](0-1-titlepage.html)
-	{:.non-printing}
-*	[Copyright](0-2-copyright.html)
-	{:.non-printing}
+*	[Title page](0-1-titlepage.html){:.non-printing}
+*	[Copyright](0-2-copyright.html){:.non-printing}
 *	[Acknowledgements](0-4-acknowledgements.html)
 
 1.	[Chapter 1  
