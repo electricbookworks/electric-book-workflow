@@ -2,7 +2,7 @@
  * Print typography for the EBW book framework: https://github.com/electricbookworks/book-framework
  * Created specifically for use with PrinceXML: http://princexml.com
  * Can also be used with DocRaptor: http://docraptor.com
- * This stylesheet creates an A5 document with crop marks for high-end professional printing.
+ * This stylesheet produces an A4 document for office printing.
  */
  
 /*
@@ -128,10 +128,10 @@
 
 /* Set up our basic page margins */
 @page { 
-	size: A5; 
-	margin: 15mm 15mm 20mm 15mm;
+	size: A4; 
+	margin: 20mm 20mm 25mm 20mm;
 	padding: 0;
-	marks: crop;
+	marks: none;
 }
 
 /* Name our divs for PrinceXML */
@@ -146,20 +146,10 @@
 }
 
 /* Let's set running heads and footers for chapter pages only (add more if add other layouts)*/
-@page chapter:left {
-  @bottom-left {
-    content: counter(page) "\2003" string(chapter-title, last);
-    text-align: left;
-    font-size: 9pt;
-	text-transform: lowercase;
-	font-family: "Linux Libertine Small Caps";
-	letter-spacing: 0.05em;
-  }
-}
-@page chapter:right {
-  @bottom-right {
+@page chapter {
+  @bottom {
     content: string(section-title, last) "\2003" counter(page);
-    text-align: right;
+    text-align: center;
     font-size: 9pt;
 	text-transform: lowercase;
 	font-family: "Linux Libertine Small Caps";
@@ -192,22 +182,26 @@ div.frontmatter, div.toc, div.chapter {
  */
 
 .titlepage-title {
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 3em;
+	font-weight: 900;
 	margin: 20% 0 0 0;
 	line-height: 100%;
-	text-indent: 0;
+	max-width: 14em;
 }
 .titlepage-subtitle {
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 2.5em;
+	font-weight: 300;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
-	text-indent: 0;
+	max-width: 14em;
 }
 .titlepage-author {
 	font-size: 2em;
 	line-height: 100%;
 	margin: 0 0 2em 0;
-	text-indent: 0;
+	max-width: 14em;
 }
 .titlepage-logo {
 	width: 100px;
@@ -222,9 +216,6 @@ div.frontmatter, div.toc, div.chapter {
 .copyright-logo {
 	width: 100px;
 	margin: 0 0 1em 0;
-}
-.copyright p {
-	text-indent: 0;
 }
 
 /*
@@ -332,7 +323,8 @@ body {
 	padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 600;
 	line-height: 120%;
 	page-break-after: avoid;
 }
@@ -352,21 +344,15 @@ h2 {
 	string-set: section-title content();
 }
 h3 {
-	font-size: 1.3em;
+	font-size: 1.1em;
 	margin-bottom: 0.3em;
 }
 h4 {
 	font-size: 1em;
-	font-style: italic;
 	margin-bottom: 0.3em;
 }
 p {
-	margin: 0;
-	text-indent: 1em;
-}
-p.start-new-section { /* Use the .start-new-section for first paragraphs. */
-	margin-top: 1em;
-	text-indent: 0;
+	margin: 0 0 0.5em 0;
 }
 p.chapter-number {
 	font-weight: bold;
@@ -374,7 +360,7 @@ p.chapter-number {
 	margin: 0 0 0.66em 0;
 }
 ul, ol {
-	margin: 0.5em 0 0.5em 0;
+	margin: 0 0 0.5em 0;
 }
 li:first-of-type {
 	page-break-after: avoid;
@@ -396,7 +382,6 @@ blockquote {
 blockquote p {
 	margin: 0;
 	padding: 0;
-	text-indent: 0;
 }
 dl {
 	color: #666;
@@ -411,7 +396,7 @@ dt {
 	page-break-after: avoid;
 }
 pre, code {
-	font-family: "Linux Libertine Mono", monospace;
+	font-family: "Source Code Pro", monospace;
 	white-space: pre-wrap;
 	line-height: 1em;
 	background-color: #f9f9f9;
