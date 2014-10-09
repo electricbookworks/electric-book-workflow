@@ -1,5 +1,6 @@
 /*
  * Screen typography for the EBW book framework: https://github.com/electricbookworks/book-framework
+ * Requires Internet access for fonts. Or add @font-face rules and fonts for offline use.
  */
 
 @charset "utf-8";
