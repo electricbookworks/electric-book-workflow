@@ -1,4 +1,5 @@
 ---
+book: Sample book
 title: Title page
 layout: frontmatter
 ---

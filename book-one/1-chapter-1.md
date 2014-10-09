@@ -1,4 +1,5 @@
 ---
+book: Sample book
 title: Chapter 1
 layout: chapter
 ---
