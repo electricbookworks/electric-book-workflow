@@ -84,7 +84,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 * To check how small bits of markdown will convert to HTML, use the [online pandoc tryout](http://johnmacfarlane.net/pandoc/try). If you know how to set up a local Jekyll site or quick pandoc conversion to HTML, do that to see what your Markdown does in HTML as you work. Note: GitHub Pages, and possibly your local Jekyll instance, use kramdown, which parses markdown slightly differently to pandoc's default. So you might get different results in each, especially with tables. Jekyll with kramdown matters most.
 * If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll need this](http://jekyll-windows.juthilo.com/).
 
-### Tip for converting content to markdown
+### Our guide to converting content to markdown
 
 This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own if you're turning existing books into markdown.
 
@@ -142,12 +142,12 @@ We've provided generic stylesheets in the framework, but each project will need 
 
 Keep in mind, regarding our stylesheets:
 
-*	Our `print.css` is designed specifically for Prince.
-*	We use `normalise.css` to get consistency across browsers. (You could consider [alternatives](http://www.cssreset.com/).)
-*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our `print.css` will hide them from Prince.
-*	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown, for instance with `{:.keep-together}`.
+*	Our CSS files for print (e.g. `print.css` and `office-a4.css` are designed specifically for use with [Prince](http://princexml.com).
+*	We use `normalize.css` to get consistency across browsers. (You could consider [alternatives](http://www.cssreset.com/).)
+*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince (with `display: none;`).
+*	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown. For instance, include `{:.keep-together}` in the line immediately after a paragraph to stop it breaking.
 
-### Trial-and-error tips
+## Trial-and-error tips
 
 We've learned some stuff the hard way:
 
