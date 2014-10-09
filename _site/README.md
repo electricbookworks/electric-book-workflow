@@ -161,7 +161,7 @@ We've learned some stuff the hard way:
 
 ## Print output
 
-We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our framework's `print.css` is designed specifically for Prince.
+We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our framework's CSS files for printing are designed specifically for Prince.
 
 ### Creating PDF with Prince GUI
 
