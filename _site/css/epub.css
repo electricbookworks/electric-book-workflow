@@ -23,9 +23,7 @@ body {
 	margin: auto;
 }
 #footer {
-	border-top: 1px solid #f9f9f9;
-	margin: 2em 0 0 0;
-	padding: 1em 0 2em 0;
+	display: none;
 }
 .footer-content {
 	clear: both;
@@ -40,22 +38,7 @@ body {
  */
  
 #nav-bar {
-	position: fixed;
-	top: 0;
-	background-color: white;
-	height: 2em;
-	width: 100%;
-	opacity: 0.9;
-	border-bottom: 1px solid #f9f9f9;
-}
-a.nav-bar-close {
-	text-decoration: none;
-	color: #dddddd;
-	float: right;
-	margin: 0.3em 0.3em 0 0;
-}
-a.nav-bar-close:hover {
-	color: grey;
+	display: none;
 }
 
 /* 
