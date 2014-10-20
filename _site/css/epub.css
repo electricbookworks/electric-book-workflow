@@ -1,18 +1,36 @@
 /*
  * Screen typography for the EBW book framework: https://github.com/electricbookworks/book-framework
- * Requires Internet access for fonts. Or add @font-face rules and fonts for offline use.
  */
 
 @charset "utf-8";
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+
+@font-face {
+    font-family: "Linux Libertine";
+    src: url(fonts/LinLibertine_R.otf);
+}
+@font-face {
+    font-family: "Linux Libertine";
+    src: url(fonts/LinLibertine_RI.otf);
+	font-style: italic;
+}
+@font-face {
+    font-family: "Linux Libertine";
+    src: url(fonts/LinLibertine_RB.otf);
+	font-weight: bold;
+}
+@font-face {
+    font-family: "Linux Libertine";
+    src: url(fonts/LinLibertine_RBI.otf);
+	font-style: italic;
+	font-weight: bold;
+}
 
 /* 
  * Structure 
  */
 
 body {
-	font-family: "Source Sans Pro", serif;
+	font-family: "Linux Libertine", serif;
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 140%;
@@ -75,9 +93,12 @@ li p {
 blockquote {
 	margin: 0.5em 0 0.5em 0;
 	padding: 0.5em 1em 0.5em 1em;
-	font-size: 1.5em;
 	line-height: 120%;
 	border-left: 5px solid #ddd;
+	max-width: 35em;
+}
+blockquote.shout {
+	font-size: 1.5em;
 	max-width: 20em;
 }
 blockquote p {

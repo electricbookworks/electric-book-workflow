@@ -1,7 +1,7 @@
 publisher: "Electric Book Works"
 publisher-url: "http://electricbookworks.com"
-name: "Book framework"
-description: "Your subtitle here"
+name: "This collection's name"
+description: "A description of this collection"
 
 url: http://localhost:4000
 baseurl: /book-framework
