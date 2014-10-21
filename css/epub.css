@@ -45,7 +45,7 @@
 }
 @font-face {
     font-family: "Linux Libertine Small Caps";
-    src: url(fonts/LinLibertineC_Re-4.0.1.otf);
+    src: url(fonts/LinLibertineC_R.otf);
 }
 @font-face {
     font-family: "Source Sans Pro";
@@ -339,6 +339,7 @@ p.cover {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	max-width: 100%;
 }
 img.cover {
 	max-height: 100%;
