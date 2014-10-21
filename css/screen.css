@@ -12,7 +12,7 @@
  */
 
 body {
-	font-family: "Source Sans Pro", serif;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 140%;
@@ -138,6 +138,19 @@ pre, code {
 a {
 	text-decoration: none;
 	color: #5f738c;
+}
+a.button {
+	display: block;
+	max-width: 10em;
+	text-align: center;
+	padding: 0.5em;
+	border-radius: 0.2em;
+	background-color: #5f738c;
+	color: white;
+	margin: 0.5em 0 0 0;
+}
+a.button:hover {
+	background-color: silver;
 }
 
 /*
