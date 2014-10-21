@@ -37,7 +37,7 @@ body {
 }
 
 /* 
- * Nav bar including 'Close' button for chapter and frontmatter layouts
+ * Nav bar including 'Home' button for chapter and frontmatter layouts
  */
  
 #nav-bar {
@@ -49,13 +49,13 @@ body {
 	opacity: 0.9;
 	border-bottom: 1px solid #f9f9f9;
 }
-a.nav-bar-close {
+a.nav-bar-home {
 	text-decoration: none;
 	color: #dddddd;
 	float: right;
 	margin: 0.3em 0.3em 0 0;
 }
-a.nav-bar-close:hover {
+a.nav-bar-home:hover {
 	color: grey;
 }
 
