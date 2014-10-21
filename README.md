@@ -184,7 +184,7 @@ At EBW, we like to assemble our epubs in [Sigil](https://github.com/user-none/Si
 *	Grab the framework's `epub.css` for your `Styles` folder.
 *	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
 *	Grab any fonts from your framework, if you want them embedded. (If you don't want to embed fonts, you may want to remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
-*	Add a cover, using your own cover-image jpg, and the `cover.xhtml` and cover CSS snippets [from our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/).
+*	Add a cover, using your own cover-image jpg, and the `cover.xhtml` and cover CSS snippets [from our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the cover CSS snippets to `epub.css`.)
 *	Add basic metadata and semantics to your epub using Sigil's tools for this.
 *	Generate an epub table of contents using Sigil's TOC tools.
 

@@ -325,3 +325,21 @@ figure {
 figcaption {
 	font-style: italic;
 }
+
+/*
+ * Cover. For sample HTML, see http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/
+ */
+
+body.cover {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+p.cover {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+img.cover {
+	max-height: 100%;
+}
