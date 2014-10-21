@@ -77,7 +77,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 ### Before you start
 
 * Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-* Have the [Markdown syntax reference](daringfireball.net/projects/markdown/syntax) to hand. It's the easiest intro to basic markdown.
+* Have the [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) to hand. It's the easiest intro to basic markdown.
 * For more advanced syntax (e.g. for tables and for adding classes), see the [kramdown syntax](http://kramdown.gettalong.org/syntax.html) and [kramdown quick reference](http://kramdown.gettalong.org/quickref.html). 
 * Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
 * If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
