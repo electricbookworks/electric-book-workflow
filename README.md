@@ -81,7 +81,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 * For more advanced syntax (e.g. for tables and for adding classes), see the [kramdown syntax](http://kramdown.gettalong.org/syntax.html) and [kramdown quick reference](http://kramdown.gettalong.org/quickref.html). 
 * Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
 * If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
-* To check how small bits of markdown will convert to HTML, use the [online pandoc tryout](http://johnmacfarlane.net/pandoc/try). If you know how to set up a local Jekyll site or quick pandoc conversion to HTML, do that to see what your Markdown does in HTML as you work. Note: GitHub Pages, and possibly your local Jekyll instance, use kramdown, which parses markdown slightly differently to pandoc's default. So you might get different results in each, especially with tables. Jekyll with kramdown matters most.
+* To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 * If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll need this](http://jekyll-windows.juthilo.com/).
 
 ### Our guide to converting content to markdown
