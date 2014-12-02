@@ -11,13 +11,25 @@ With this framework, in essence:
 
 This workflow is powerful enough to produce neat HTML we can use flexibly, and markdown is simple enough that non-technical people can be shown how to create and edit it.
 
+## Background reading
+
+To understand how this all works, you need to be familiar with a few concepts and tools first. 
+
+*	You need to have a basic understanding of HTML and CSS, because that's what we're going to create, using markdown and Jekyll.
+*	Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports classes. 
+*	You need to know roughly how [GitHub](http://github.com) works. GitHub provides file storage and version control.
+*	Jekyll is the machine that minces markdown into HTML files. If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).
+
 ## Alternatives
 
-There are similar systems for this that use variants of Jekyll and/or markdown, such as [Gitbook IO](https://www.gitbook.io/) and [Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader). 
+There are similar systems for this that use variants of Jekyll and/or markdown, such as:
 
-We also like OERPub Editor, a web-based editor for non-technical people to create EPUB3 HTML that includes maths: see [the Textbook Editor here](http://oerpub.org/tools/). As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
+*	[Prose](http://prose.io/)
+*	[Gitbook IO](https://www.gitbook.io/)
+*	[Penflip](https://www.penflip.com/)
+*	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader). 
 
-And remember that writers and editors can use the beautiful, simple and free [Prose](http://prose.io/) service to work on the text of any GitHub-backed system.
+We also like [OERPub Editor](http://oerpub.org/tools/), a web-based editor for non-technical people to create EPUB3 HTML that includes maths. As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
 
 Systems like [PressBooks](http://pressbooks.com/) are also nice ways to get a digital-first workflow going. And if you're spending money then [O'Reilly Atlas](https://atlas.oreilly.com/) looks very promising.
 
@@ -77,12 +89,10 @@ Here are some guidelines we've created for our own use. They are probably applic
 ### Before you start
 
 * Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-* Have the [Markdown syntax reference](daringfireball.net/projects/markdown/syntax) to hand. It's the easiest intro to basic markdown.
-* For more advanced syntax (e.g. for tables and for adding classes), see the [kramdown syntax](http://kramdown.gettalong.org/syntax.html) and [kramdown quick reference](http://kramdown.gettalong.org/quickref.html). 
 * Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
 * If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
-* To check how small bits of markdown will convert to HTML, use the [online pandoc tryout](http://johnmacfarlane.net/pandoc/try). If you know how to set up a local Jekyll site or quick pandoc conversion to HTML, do that to see what your Markdown does in HTML as you work. Note: GitHub Pages, and possibly your local Jekyll instance, use kramdown, which parses markdown slightly differently to pandoc's default. So you might get different results in each, especially with tables. Jekyll with kramdown matters most.
-* If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll need this](http://jekyll-windows.juthilo.com/).
+* To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
+* Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
 
 ### Our guide to converting content to markdown
 
@@ -184,7 +194,8 @@ At EBW, we like to assemble our epubs in [Sigil](https://github.com/user-none/Si
 *	Grab the framework's `epub.css` for your `Styles` folder.
 *	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
 *	Grab any fonts from your framework, if you want them embedded. (If you don't want to embed fonts, you may want to remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
-*	Add a cover, using your own cover-image jpg, and the `cover.xhtml` and cover CSS snippets [from our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/).
+*	Add a cover, using your own cover-image jpg, and the `cover.xhtml` and cover CSS snippets [from our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the cover CSS snippets to `epub.css`.)
+*	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable).
 *	Add basic metadata and semantics to your epub using Sigil's tools for this.
 *	Generate an epub table of contents using Sigil's TOC tools.
 
