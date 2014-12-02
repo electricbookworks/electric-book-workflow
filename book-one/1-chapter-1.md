@@ -6,6 +6,9 @@ layout: chapter
 
 # Chapter 1
 
+1.	A list of headings
+{:toc}
+
 And so it begins, your first chapter. Note the `chapter` layout in the markdown version's YAML header.
 
 ## Better than lorem ipsum

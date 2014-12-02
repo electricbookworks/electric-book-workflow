@@ -6,6 +6,9 @@ layout: chapter
 
 # Chapter 2
 
+*	A list of headings
+{:toc}
+
 Your second chapter. Note the `chapter` layout in the markdown version's YAML header.
 
 ## Still better than lorem ipsum

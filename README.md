@@ -1,5 +1,8 @@
 # The EBW book framework
 
+1.	A list of headings
+{:toc}
+
 This repo is a framework for using Git, Jekyll and markdown to create books. We've developed it for in-house use at [Electric Book Works](http://electricbookworks.com). It's a work in progress.
 
 To make our books, we needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no weeks laying out pages in InDesign), and instantly [spits out HTML](http://electricbookworks.github.io/book-framework/) we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
