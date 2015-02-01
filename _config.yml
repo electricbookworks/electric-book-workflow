@@ -2,6 +2,7 @@ publisher: "Electric Book Works"
 publisher-url: "http://electricbookworks.com"
 name: "This collection's name"
 description: "A description of this collection"
+language: en
 
 url: http://localhost:4000
 baseurl: /book-framework
