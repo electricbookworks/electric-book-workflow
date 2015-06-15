@@ -1,7 +1,7 @@
-publisher: "Electric Book Works"
+publisher: "Publisher name"
 publisher-url: "http://electricbookworks.com"
-name: "This collection's name"
-description: "A description of this collection"
+name: "Series name"
+description: "A description of this series or collection"
 language: en
 
 url: http://localhost:4000
@@ -12,3 +12,12 @@ paginate: 10
 markdown: kramdown
 permalink: none
 highlighter: pygments
+
+prose: # these settings are for editing in prose.io: https://github.com/prose/prose/wiki/Prose-Configuration
+  rooturl: 'book-framework'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+    - /css
