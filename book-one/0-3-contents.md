@@ -1,5 +1,5 @@
 ---
-book: Sample book
+book: Book title
 title: Contents
 layout: toc
 ---
@@ -11,6 +11,6 @@ layout: toc
 *	[Acknowledgements](0-4-acknowledgements.html)
 
 1.	[Chapter 1  
-	The first chapter of my book](1-chapter-1.html)
+	The first chapter of my book](1.html)
 2.	[Chapter 2  
-	The second chapter of my book](2-chapter-2.html)
+	The second chapter of my book](2.html)

@@ -1,0 +1,4 @@
+/* Remove crop marks */
+@page { 
+	marks: none;
+}

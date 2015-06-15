@@ -1,5 +1,5 @@
 ---
-book: Sample book
+book: Book title
 title: Title page
 layout: frontmatter
 ---
@@ -13,6 +13,4 @@ The subtitle here if there is one
 A. N. Author
 {:.titlepage-author}
 
-![Publisher logo][logo]{:.titlepage-logo}
-
-[logo]: images/publisher-logo.svg "Publisher logo"
+![Publisher logo](images/publisher-logo.svg){:.titlepage-logo}

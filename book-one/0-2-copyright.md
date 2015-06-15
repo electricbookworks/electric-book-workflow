@@ -1,20 +1,14 @@
 ---
-book: Sample book
+book: Book title
 title: Copyright
 layout: copyright
 ---
 
-![Publisher logo][logo]{:.copyright-logo}
-
-*The title of this book: The subtitle of this book*
+# Title: Subtitle
 
 Text © A. N. Author
 
-ISBN (print edition):  
-ISBN (reflowable ebook):  
+ISBN (print edition): 9780000000000  
+ISBN (reflowable ebook): 9780000000000  
 
-Excluding content explicitly credited to others, this book framework is published under a Creative Commons Attribution License. For details, see [creativecommons.org/licenses/by/4.0](http://creativecommons.org/licenses/by/4.0/).
-
-This is your copyright, or imprint, page. Replace all the text here with your own coypright and licensing information.
-
-[logo]: images/publisher-logo.svg "Publisher logo"
+This is your copyright, or imprint, page. Include your own copyright and licensing information here.

@@ -1,7 +1,11 @@
 
 	<div id="footer" class="non-printing">
 		<div class="footer-content">
-			<a href="{{ site.publisher-url }}" title="{{ site.publisher }}">{{ site.publisher }}</a> &bull; 
-			{{ site.name }} &bull; <em>{{ page.book }}</em> &bull; {{ page.title }}<br />
+			<p>
+				<a href="{{ site.publisher-url }}" title="{{ site.publisher }}">{{ site.publisher }}</a> &bull; 
+				<a href="{{ site.baseurl }}/">{{ site.name }}</a> &bull; 
+				<a href="0-3-contents.html"><em>{{ page.book }}</em></a> &bull; 
+				<a href="">{{ page.title }}</a>
+			</p>
 		</div><!--.footer-content-->
 	</div><!--#footer-->
