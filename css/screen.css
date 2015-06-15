@@ -469,7 +469,7 @@ blockquote.figure {
 	}
 .figure p:nth-child(2) { /* This controls the appearance of captions added as a paragraph following the image inside the blockquote */
 	padding: 0.5em 0 0 0;
-	text-align: left;
+	text-align: center;
 }
 .figure.x-small p img {}
 .figure.small p img {}

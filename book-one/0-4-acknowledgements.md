@@ -1,7 +1,7 @@
 ---
 book: Book title
 title: Acknowledgements
-layout: frontmatter
+layout: chapter
 ---
 
 # Acknowledgements

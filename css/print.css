@@ -5,7 +5,7 @@
  */
  
 /*
- * Page layouts for PrinceXML/DocRaptor 
+ * Page layouts for PrinceXML
  */
 
 @charset "utf-8";
@@ -126,6 +126,12 @@
 }
 
 /* Name our layouts as divs. PrinceXML needs the pages named for @page rules. */
+.titlepage {
+	page: titlepage;
+}
+.halftitle {
+	page: halftitle;
+}
 .frontmatter {
 	page: frontmatter; /* Use for generic frontmatter */
 }
@@ -153,7 +159,9 @@
   @bottom-left {
     content: counter(page) "\2003" string(chapter-title, last);
     text-align: left;
+	font-family: "Linux Libertine", serif;
     font-size: 9pt;
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
   }
 }
@@ -161,7 +169,9 @@
   @bottom-right {
     content: string(section-title, last) "\2003" counter(page);
     text-align: right;
+	font-family: "Linux Libertine", serif;
     font-size: 9pt;
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
   }
 }
@@ -177,7 +187,7 @@
 }
 
 /* Start these layouts with a big top margin */
-div.dedication, div.toc, div.chapter {
+div.halftitle, div.titlepage, div.dedication, div.toc, div.chapter {
 	margin-top: 30mm;
 }
 
@@ -293,6 +303,9 @@ ul, ol {
 li > ul {
 	margin-bottom: 0.5em; /* manages line space after sublists in lists */
 }
+li {
+	margin-left: 1.33em;
+}
 li:first-of-type {
 	page-break-after: avoid;
 }
@@ -306,14 +319,13 @@ li li:first-of-type {
 /* Blockquotes, shouts and boxes */
 
 blockquote {
-	margin: 0.5em 0 0.5em 0;
+	margin: 1em 0 0 0;
 	padding: 0 1em;
 	max-width: 35em;
 }
 blockquote p {
-	margin: 0 0 1em 0;
+	margin: 0;
 	padding: 0;
-	text-indent: 0;
 }
 blockquote p:first-of-type {
 	text-indent: 0;
@@ -325,6 +337,9 @@ blockquote.shout {
 	font-size: 1.5em;
 	font-style: italic;
 	max-width: 20em;
+}
+blockquote.shout p {
+	line-height: 120%;
 }
 blockquote.box {
 	background-color: inherit;
@@ -346,6 +361,7 @@ dl {
 	color: grey;
 }
 dt {
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp);
 	page-break-after: avoid;
 }
@@ -432,9 +448,7 @@ blockquote.figure {
 	font-size: inherit;
 	font-weight: inherit;
 	color: inherit;
-	border: 0.5pt solid #666;
-	border-radius: 0.25em;
-	margin: 1em 0 1.5em 0;
+	margin: 1em 0 1em 0;
 	padding: 0.5em;
 	width: 100%;
 	box-sizing: border-box;
@@ -458,10 +472,9 @@ ol li blockquote.figure, ul li blockquote.figure {
 	max-width: 100%;
 	margin: 0 auto 0.5em auto;
 }
-.figure p:nth-child(2) {
+.figure p:nth-child(2) { /* This is the caption */
 	padding: 0.5em 0 0 0;
-	border-top: 0.5pt dashed #ccc;
-	text-align: left;
+	text-align: center;
 }
 .figure.x-small p img {
 	width: auto;
@@ -543,6 +556,7 @@ div.copyright {
 .copyright h1 {
 	font-size: 1em;
 	margin-bottom: 0.3em;
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
 	text-align: left;
 }
@@ -563,6 +577,7 @@ div.copyright {
 }
 .dedication p {
 	text-align: center;
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
 }
 
@@ -570,7 +585,7 @@ div.copyright {
  * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
  */
 
- div.toc {
+div.toc {
 	max-width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -617,9 +632,17 @@ ul#markdown-toc, ol#markdown-toc {
 	margin: 0;
 }
 #markdown-toc li {
+	font-variant: prince-opentype(lnum);
+	margin: 0;
+}
+#markdown-toc li li {
+	margin-left: 1em;
 }
 #markdown-toc a {
 	text-decoration: none;
+}
+#markdown-toc a::after {
+	content: leader(" ") target-counter(attr(href), page);
 }
 
 /*
@@ -690,13 +713,15 @@ img.cover {
 }
 
  /* Use small-cap alternate glyphs */
-.smallcaps { 
+.smallcaps {
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(smcp, onum);
 	font-style: inherit;
 }
 
 /* Convert both upper and lowercase to small caps (affects punctuation also) */
 .allsmallcaps { 
+	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
 	font-style: inherit;
 }

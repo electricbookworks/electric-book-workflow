@@ -1,7 +1,7 @@
 ---
 book: Book title
 title: Title page
-layout: frontmatter
+layout: titlepage
 ---
 
 The title of this book here
