@@ -242,8 +242,7 @@ dt {
 	margin: 0 0 0.25em 0;
 	font-weight: 600;
 }
-dd {
-}
+dd {}
 
 /*
  * Code
@@ -414,11 +413,11 @@ td ul, td ol {
 }
 
 /* Tighten tracking */
-.track-tight {
+.xx-tight {
 	letter-spacing: -0.05em;
 	font-style: inherit;
 }
-.track-very-tight {
+.xxx-tight {
 	letter-spacing: -0.1em;
 	font-style: inherit;
 }
