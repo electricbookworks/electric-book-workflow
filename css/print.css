@@ -1,8 +1,7 @@
 /*
  * Print typography for the EBW book framework: https://github.com/electricbookworks/book-framework
  * Created specifically for use with PrinceXML: http://princexml.com
- * Can also be used with DocRaptor: http://docraptor.com
- * This stylesheet produces an A5 document including crop marks for high-end professional printing.
+ * This stylesheet produces a B-format document including crop marks for professional printing.
  */
  
 /*
@@ -43,12 +42,8 @@
 	font-style: italic;
 }
 @font-face {
-    font-family: "Linux Libertine Mono";
-    src: url(fonts/LinLibertine_M.otf);
-}
-@font-face {
-    font-family: "Linux Libertine Small Caps";
-    src: url(fonts/LinLibertineC_R.otf);
+    font-family: "Inconsolata", monospace;
+    src: url(fonts/Inconsolata-Regular.ttf);
 }
 @font-face {
     font-family: "Source Sans Pro";
@@ -116,27 +111,32 @@
 	font-weight: 600;
 	font-style: italic;
 }
-@font-face {
-    font-family: "Source Code Pro";
-    src: url(fonts/SourceCodePro-Regular.ttf);
-}
-@font-face {
-    font-family: "Source Code Pro";
-    src: url(fonts/SourceCodePro-Bold.ttf);
-	font-weight: bold;
-}
 
 /* Set up our basic page margins */
 @page { 
-	size: A5; 
-	margin: 15mm 15mm 20mm 15mm;
+	size: 129mm 198mm; /* B-format matching Lightning Source available sizing */
+	margin-top: 15mm;
+	margin-bottom: 20mm;
+	margin-outside: 13mm;
+	margin-inside: 19mm;
 	padding: 0;
 	marks: crop;
+	prince-bleed: 3mm;
+	prince-trim: 3mm;
 }
 
-/* Name our divs for PrinceXML */
+/* Name our layouts as divs. PrinceXML needs the pages named for @page rules. */
 .frontmatter {
-	page: frontmatter;
+	page: frontmatter; /* Use for generic frontmatter */
+}
+.previous-publications {
+	page: previous-publications;
+}
+.copyright {
+	page: copyright;
+}
+.dedication {
+	page: dedication;
 }
 .chapter {
 	page: chapter;
@@ -144,16 +144,17 @@
 .toc {
 	page: toc;
 }
+.cover {
+	page: cover;
+}
 
-/* Let's set running heads and footers for chapter pages only (add more if add other layouts)*/
+/* Let's set running heads and footers for chapter pages only (add more if you add other layouts that need heads or footers)*/
 @page chapter:left {
   @bottom-left {
     content: counter(page) "\2003" string(chapter-title, last);
     text-align: left;
     font-size: 9pt;
-	text-transform: lowercase;
-	font-family: "Linux Libertine Small Caps";
-	letter-spacing: 0.05em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
   }
 }
 @page chapter:right {
@@ -161,20 +162,38 @@
     content: string(section-title, last) "\2003" counter(page);
     text-align: right;
     font-size: 9pt;
-	text-transform: lowercase;
-	font-family: "Linux Libertine Small Caps";
-	letter-spacing: 0.05em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
   }
 }
 
-/* We want mandatory page breaks before some layouts */
-div.frontmatter, div.toc, div.chapter { 
+/* But don't put footers on blank pages of a chapter (e.g. a blank verso opposite the opening recto). */
+@page chapter:blank {
+	@bottom-right {
+		content: normal;
+	}
+	@bottom-left {
+		content: normal;
+	}
+}
+
+/* Start these layouts with a big top margin */
+div.dedication, div.toc, div.chapter {
+	margin-top: 30mm;
+}
+
+/* We want some layouts to start on right-hand pages only */
+div.frontmatter, div.dedication, div.toc, div.chapter { 
+	page-break-before: right;
+}
+
+/* For a manual page break before an element, apply this class to it */
+.page-break-before {
 	page-break-before: always;
 }
 
-/* For manual page breaks, apply this class to a the first element on the new page */
-.page-break-before {
-	page-break-before: always;
+/* For a manual page break after an element, apply this class to it */
+.page-break-after {
+	page-break-after: always;
 }
 
 /* To keep an element on the same page as the next element, apply this class */
@@ -187,27 +206,328 @@ div.frontmatter, div.toc, div.chapter {
 	page-break-inside: avoid;
 }
 
-/*
- * Title page
+/* 
+ * Default typography 
  */
 
+body {
+	font-family: "Linux Libertine", serif;
+	font-size: 11pt;
+	line-height: 130%;
+	margin: 0;
+	padding: 0;
+	font-variant: prince-opentype(liga);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	page-break-after: avoid;
+	line-height: 110%;
+	font-variant: prince-opentype(dlig);
+}
+h1 {
+	font-size: 2.5em;
+	max-width: 80%;
+	string-set: chapter-title content();
+}
+h1 strong:first-of-type { /* Useful for chapter numbers: make the number first and bold in the h1 */
+	display: block;
+	margin: 0 0 0.5em 0;
+}
+h2 {
+	margin: 1em 0 0.5em 0;
+	padding-top: 0.5em;
+	string-set: section-title content();
+}
+h3 {
+	font-size: 1.1em;
+	margin-bottom: 0.3em;
+}
+h4 {
+	font-size: 1em;
+	margin-bottom: 0.3em;
+}
+p, ul, ol, dl {
+	font-variant: prince-opentype(onum);
+	hyphens: auto; /* Prince will add hyphens automatically */
+	hyphenate-after: 3; /* Minimum letters on new line after hyphen */
+	hyphenate-before: 3; /* Minimum letters at end of line before hyphen */
+	hyphenate-lines: 2; /* Maximum number of consecutive lines ending with hyphens */
+}
+p {
+	margin: 0;
+	text-indent: 1em;
+}
+blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow blockquotes, lists, and definition lists */
+	text-indent: 0;
+}
+
+/* 
+ * Special classes for paragraphs
+ */
+
+p.first {
+	text-indent: 0;
+	margin-top: 1em;
+}
+p.chapter-number {
+	font-weight: bold;
+	font-size: 3.5em;
+	margin: 0 0 0.66em 0;
+}
+p.source {
+	text-align: right;
+	max-width: 22.5em;
+	margin: 0 0 0 25%;
+}
+p.valediction {
+	text-indent: 0;
+	margin: 1em 0;
+	font-style: italic;
+}
+
+/* Lists */
+
+ul, ol {
+	margin: 0 0 0.5em 0;
+}
+li > ul {
+	margin-bottom: 0.5em; /* manages line space after sublists in lists */
+}
+li:first-of-type {
+	page-break-after: avoid;
+}
+li:last-of-type {
+	page-break-before: avoid;
+}
+li li:first-of-type {
+	page-break-before:avoid;
+}
+
+/* Blockquotes, shouts and boxes */
+
+blockquote {
+	margin: 0.5em 0 0.5em 0;
+	padding: 0 1em;
+	max-width: 35em;
+}
+blockquote p {
+	margin: 0 0 1em 0;
+	padding: 0;
+	text-indent: 0;
+}
+blockquote p:first-of-type {
+	text-indent: 0;
+}
+blockquote p:last-of-type, blockquote ol, blockquote ul {
+	margin: 0 0 1em 0;
+}
+blockquote.shout {
+	font-size: 1.5em;
+	font-style: italic;
+	max-width: 20em;
+}
+blockquote.box {
+	background-color: inherit;
+	color: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	border: 0.5pt solid #ccc;
+	margin: 1em 0;
+	padding: 1em 1em 0 1em;
+	max-width: 38em;
+}
+
+/* 
+ * Definition lists. Useful for sidebar-like notes, too. 
+ */
+
+dl {
+	margin: 2em 0;
+	color: grey;
+}
+dt {
+	font-variant: prince-opentype(c2sc, smcp);
+	page-break-after: avoid;
+}
+dd {}
+
+/*
+ * Code
+ */
+
+pre, code {
+	font-family: "Inconsolata", monospace;
+	white-space: pre-wrap;
+	background-color: #f9f9f9;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*
+ * Tables
+ */
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+	font-size: 80%;
+	font-variant: prince-opentype(tnum);
+}
+th, td {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px dotted #f2f2f2;
+	border-right: 1px dotted #f2f2f2;
+	padding: 0.15em 0.3em;
+}
+thead, th {
+	font-weight: bold;
+}
+.table-caption {
+	page-break-after:avoid;
+	font-style: italic;
+}
+.table-caption em {
+	font-style: normal;
+}
+td {
+	vertical-align: top;
+	page-break-inside: avoid;
+}
+td p {
+	font-variant: prince-opentype(tnum);
+}
+thead, th, .table-subhead {
+	page-break-after: avoid;
+	background-color: #F2F2F2;
+	line-height: 120%;
+}
+.table-row-stub {
+	font-weight: bold;
+}
+td p {
+	margin: 0;
+	padding: 0;
+}
+
+/* 
+ * Figures. Note: we use the blockquote element to wrap figures and their captions in valid XHTML. 
+ * Use the .figure class for the blockquote wrapping an image and a caption. 
+ * Add .fixed, .small and/or .large for layout and size options. 
+ */
+
+img {
+	prince-image-resolution: 200dpi;
+}
+
+blockquote.figure {
+	clear: both;
+	float: top unless-fit;
+	page-break-inside: avoid;
+	background-color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	border: 0.5pt solid #666;
+	border-radius: 0.25em;
+	margin: 1em 0 1.5em 0;
+	padding: 0.5em;
+	width: 100%;
+	box-sizing: border-box;
+}
+ol li blockquote.figure, ul li blockquote.figure {
+	display: inline-block; /* Experimental. Effectively overrides 'unless-fit' to reduce ugly instances of indented images in lists beside floated, non-indented images. */
+}
+.fixed, .figure.fixed {
+	clear: both;
+	float: none; /* For figures that must keep their position in the text flow, not float to the top of the page. */
+}
+.figure p {
+	clear: both;
+	page-break-inside: avoid;
+	page-break-before: avoid;
+	text-align: center;
+}
+.figure p img {
+	width: auto;
+	max-height: 150mm;
+	max-width: 100%;
+	margin: 0 auto 0.5em auto;
+}
+.figure p:nth-child(2) {
+	padding: 0.5em 0 0 0;
+	border-top: 0.5pt dashed #ccc;
+	text-align: left;
+}
+.figure.x-small p img {
+	width: auto;
+	max-height: 30mm;
+}
+.figure.small p img {
+	width: auto;
+	max-height: 45mm;
+}
+.figure.medium p img {
+	width: auto;
+	max-height: 65mm;
+}
+.figure.large {
+	float: none;
+	page-break-before: always;
+}
+.figure.large img {
+	max-height: 150mm;
+	max-width: 100%;
+	width: auto;
+}
+.logo {
+	max-width: 10em;
+}
+
+/*
+ * Video. Use the .videowrapper class around videos to hide them in print.
+ */
+
+.videowrapper {
+    display: none;
+}
+
+/*
+ * Half-title and title page
+ */
+
+.halftitle {} /* Not used by default */
+
+.titlepage p {
+	text-indent: 0;
+	line-height: 110%;
+	hyphens: none;
+}
 .titlepage-title {
 	font-size: 3em;
 	margin: 20% 0 0 0;
 	line-height: 100%;
+	font-variant: prince-opentype(dlig);
+	counter-reset: page 1; /* If you have a half-title page, move this line to .halftitle */
 }
 .titlepage-subtitle {
 	font-size: 2.5em;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
+	font-variant: prince-opentype(dlig);
 }
 .titlepage-author {
 	font-size: 2em;
-	line-height: 100%;
+	font-style: italic;
 	margin: 0 0 2em 0;
+	font-variant: prince-opentype(dlig);
 }
 .titlepage-logo {
-	width: 100px;
+	width: 3em;
 	position: absolute;
 	bottom: 0;
 }
@@ -216,17 +536,48 @@ div.frontmatter, div.toc, div.chapter {
  * Copyright page
  */
  
-.copyright-logo {
-	width: 100px;
-	margin: 0 0 1em 0;
+div.copyright {
+	position: absolute;
+	bottom: 0;	
+}
+.copyright h1 {
+	font-size: 1em;
+	margin-bottom: 0.3em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+	text-align: left;
+}
+.copyright p, .copyright li {
+	margin: 0 0 0.5em 0;
+	text-indent: 0;
+	font-size: 0.8em;
+	line-height: 120%;
+	hyphens: none; /* Prince will not hyphenate here */
 }
 
 /*
- * Contents page
+ * Dedication page
  */
 
-.toc a::after { 
-	content: leader(" ") target-counter(attr(href), page) 
+.dedication {
+	margin-top: 30mm;
+}
+.dedication p {
+	text-align: center;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+}
+
+/*
+ * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
+ */
+
+ div.toc {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.toc a::after, .page-ref-list a::after { 
+	content: leader(" ") target-counter(attr(href), page);
+	font-variant: prince-opentype(lnum);
 }
 .toc ul, .toc ol {
 	list-style-type: none;
@@ -245,7 +596,6 @@ div.frontmatter, div.toc, div.chapter {
 	content: none;
 }
 .toc h2 {
-	font-weight: 300;
 	font-size: 1.2em;
 	margin: 1em 0 0.5em 0;
 }
@@ -273,160 +623,106 @@ ul#markdown-toc, ol#markdown-toc {
 }
 
 /*
- * Tables
+ * Cover-page styling. Creates a single-page low-res cover for web PDFs.
  */
 
-table {
-	border-collapse: collapse;
-	margin: 1em 0;
-	font-size: 80%;
+@page cover {
+	margin: 0;
 }
-th, td {
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px dotted #f2f2f2;
-	border-right: 1px dotted #f2f2f2;
-	padding: 0.15em 0.3em;
+
+@prince-pdf {
+    prince-pdf-page-layout: single-page;
 }
-thead, th {
-	font-weight: 600;
-}
-.table-caption {
-	page-break-after:avoid;
-	font-style: italic;
-}
-td {
-	vertical-align: top;
-	page-break-inside: avoid;
-}
-thead, th, .table-subhead {
-	page-break-after: avoid;
-	background-color: #F2F2F2;
-}
-.table-row-stub {
-	font-weight: 600;
-}
-td p {
+
+body.cover, div.cover {
 	margin: 0;
 	padding: 0;
 }
+p.cover {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+img.cover {
+	height: 100%;
+	width: 100%;
+}
 
-/*
- * Figures
+/* 
+ * Extra typographic control 
  */
 
-figure {
-	margin: 1em 0;
-	padding: 0;
-	page-break-inside: avoid;
+ /* Use these classes to control tracking, usually to save widows and orphans. */
+.tight {
+	letter-spacing: -0.0075em;
+	word-spacing: -0.0075em;
+	font-style: inherit;
 }
-figcaption {
-	font-style: italic;
-	margin: 1em 0;
+.x-tight {
+	letter-spacing: -0.01em;
+	word-spacing: -0.01em;
+	font-style: inherit;
 }
-figure img {
-	max-width: 100%;
+.xx-tight {
+	letter-spacing: -0.05em;
+	word-spacing: -0.05em;
+	font-style: inherit;
+}
+.xxx-tight {
+	letter-spacing: -0.1em;
+	word-spacing: -0.1em;
+	font-style: inherit;
+}
+.loose {
+	letter-spacing: 0.0075em;
+	word-spacing: 0.0075em;
+	font-style: inherit;
+}
+.x-loose {
+	letter-spacing: 0.01em;
+	word-spacing: 0.01em;
+	font-style: inherit;
+}
+
+/* Shrink the font size */
+.shrink {
+	font-size: 0.7em; /* Useful for wide tables */
+}
+
+ /* Use small-cap alternate glyphs */
+.smallcaps { 
+	font-variant: prince-opentype(smcp, onum);
+	font-style: inherit;
+}
+
+/* Convert both upper and lowercase to small caps (affects punctuation also) */
+.allsmallcaps { 
+	font-variant: prince-opentype(c2sc, smcp, onum);
+	font-style: inherit;
+}
+
+/* Automatic fractions */
+.fractions { 
+	font-variant: prince-opentype(frac);
+	font-style: inherit;
+}
+
+/* To allow a break where default styles would normally avoid one. Apply the class to the parent element. */
+.allow-break {
+	page-break-before: auto;
+	page-break-after: auto;
+	page-break-inside: auto;
+}
+.allow-break * {
+	page-break-before: inherit;
+	page-break-after: inherit;
+	page-break-inside: inherit;
 }
 
 /*
- * Hide screen-only and non-printing elements
+ * Hide screen-only and non-printing elements. The framework by default adds the .non-printing class to screen-only elements like #nav-bar and #footer.
  */
 
 .non-printing {
 	display: none;
-}
-
-/* 
- * Generic output 
- */
-
-body {
-	font-family: "Linux Libertine", serif;
-	font-size: 10.5pt;
-	line-height: 125%;
-	margin: 0;
-	padding: 0;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
-	page-break-after: avoid;
-}
-h1 {
-	font-weight: 300;
-	font-size: 2.5em;
-	max-width: 80%;
-	string-set: chapter-title content();
-}
-h1 strong:first-of-type {
-	display: block;
-	margin: 0 0 0.5em 0;
-}
-h2 {
-	margin: 1em 0 0.5em 0;
-	padding-top: 0.5em;
-	string-set: section-title content();
-}
-h3 {
-	font-size: 1.1em;
-	margin-bottom: 0.3em;
-}
-h4 {
-	font-size: 1em;
-	margin-bottom: 0.3em;
-}
-p {
-	margin: 0 0 0.5em 0;
-}
-p.chapter-number {
-	font-weight: bold;
-	font-size: 3.5em;
-	margin: 0 0 0.66em 0;
-}
-ul, ol {
-	margin: 0 0 0.5em 0;
-}
-li:first-of-type {
-	page-break-after: avoid;
-}
-li:last-of-type {
-	page-break-before: avoid;
-}
-li li:first-of-type {
-	page-break-before:avoid;
-}
-blockquote {
-	margin: 0.5em 0 0.5em 0;
-	padding: 0.5em 1em 0.5em 1em;
-	border-left: 5px solid #ddd;
-	max-width: 35em;
-}
-blockquote.shout {
-	font-size: 1.5em;
-	max-width: 20em;
-}
-blockquote p {
-	margin: 0;
-	padding: 0;
-}
-dl {
-	color: #666;
-	font-size: 90%;
-	font-weight: 300;
-}
-dt {
-	text-transform: uppercase;
-	font-weight: 300;
-	letter-spacing: 0.05em;
-	page-break-after: avoid;
-}
-pre, code {
-	font-family: "Source Code Pro", monospace;
-	white-space: pre-wrap;
-	background-color: #f9f9f9;
-	padding: 0.1em 0.3em;
-	border-radius: 0.2em;
-}
-a {
-	text-decoration: none;
-	color: inherit;
 }
