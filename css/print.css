@@ -475,6 +475,7 @@ ol li blockquote.figure, ul li blockquote.figure {
 .figure p:nth-child(2) { /* This is the caption */
 	padding: 0.5em 0 0 0;
 	text-align: center;
+	text-indent: 0;
 }
 .figure.x-small p img {
 	width: auto;
