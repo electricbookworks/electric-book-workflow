@@ -1,5 +1,5 @@
 ---
-title: About this book
+title: About
 layout: index
 ---
 
