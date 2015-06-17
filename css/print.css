@@ -520,23 +520,24 @@ ol li blockquote.figure, ul li blockquote.figure {
 	text-indent: 0;
 	line-height: 110%;
 	hyphens: none;
+	max-width: 80%;
 }
 .titlepage-title {
-	font-size: 3em;
+	font-size: 2em;
 	margin: 20% 0 0 0;
 	line-height: 100%;
-	font-variant: prince-opentype(dlig);
+	font-variant: prince-opentype(dlig, c2sc, smcp);
 	counter-reset: page 1; /* If you have a half-title page, move this line to .halftitle */
 }
 .titlepage-subtitle {
-	font-size: 2.5em;
+	font-size: 1.5em;
+	font-style: italic;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
 	font-variant: prince-opentype(dlig);
 }
 .titlepage-author {
-	font-size: 2em;
-	font-style: italic;
+	font-size: 1.5em;
 	margin: 0 0 2em 0;
 	font-variant: prince-opentype(dlig);
 }
