@@ -66,27 +66,43 @@ The key to simple HTML is that we carefully map our books' features to ordinary 
 
 ## The repo structure
 
-The repo structure follows pretty much standard Jekyll structure. In the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The simple `header.html` and `footer.html` includes, and `default`, `chapter`, `frontmatter`, `copyright` and `toc` layouts should be a good start for most books. But every case will be different, and you'll have to make additions to suit the project. This is especially the case for the CSS.
+The framework repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
 
-One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout). Each book's content is in a folder in the root. In the framework here, we have `book-one` with a few sample files in it:
+One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout). Each book's content is in its own folder in the root. In the framework repo, we have `book-one` as an example with a few sample files in it:
 
 * title page
 * copyright page
 * table of contents
 * acknowledgements
 * a first chapter
+* a second chapter
 
-Each document is a section of the book, which traditionally might be separated from others by a page break, and begin with a first-level heading (e.g. an `<h1>`).
+Each document is a section of the book, which traditionally might be separated from other sections by a page break.
 
 Alongside the content files in that book's folder is an `images` folder, for images that belong to that book only.
 
-A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (E.g. copy the publisher logo into each book's `images` folder separately.)
+A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (So, for example, copy the publisher logo into each book's `images` folder separately.)
+
+## Setting up
+
+To create a new book in a new collection:
+
+1. The `book-framework` is a template for a collection. Make a copy and rename it for your collection. E.g. `my-sci-fi`.
+2. Inside `my-sci-fi`, open and edit these three files:
+	*	`_config.yml`: Edit the values there for your collection. The comments will guide you.
+	*	`index.md`: Read and replace the book-framework template text with your own.
+	*	`README.md`: Replace all the book-framework description text with any notes your collaborators might need to know about your collection.
+3.	Rename the `book-one` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder. Each book gets its own folder.
+4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our examples suggests. 
+5.	Inside the book's folder, store images in the `images` folder. 
+	*	Replace the `publisher-logo.svg` file with your imprint or brand's logo. 
+	*	Replace the `cover.jpg` image with your book's front cover image. For best results, use an image almost but less than 1000px on its longest side. (More on images below.)
 
 ## Creating a book in markdown
 
 Here are some guidelines we've created for our own use. They are probably applicable to other books, too.
 
-### Before you start
+Before you start:
 
 * Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
 * Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
@@ -94,9 +110,9 @@ Here are some guidelines we've created for our own use. They are probably applic
 * To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 * Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
 
-### Our guide to converting content to markdown
+### Converting from InDesign
 
-This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own if you're turning existing books into markdown.
+This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own process for turning existing books into markdown.
 
 1. Open the InDesign file and copy all the text.
 1. Paste the text with formatting into your text editor.
@@ -112,7 +128,10 @@ This is what we do when we convert one of our textbooks from a traditional InDes
 1. Add Markdown image references. For images without captions, use regular image syntax: `![Alt text][id]`, then at the end of the document, we list all that chapter's images, each one as `[id]: url/to/image  "Optional title attribute"`. This makes it easy to check all image paths and attributes at once. Note: the path to images is `{{ site.baseurl }}/images/filename.svg` (this path ensures our Jekyll server can find the images on local machines or on GitHub Pages). If you need captions, it's better to use `<figure>` HTML elements, in actual HTML. This way `print.css` can prevent your images and their captions getting separated over pages. More on this later.
 1. Look out for italic and bold, and manually mark these in markdown with asterisks: in markdown, `*italic*` is *italic* and `**bold**` is **bold**. It's best to search the InDesign document for these instances so you don't miss any.
 1. Look out for special characters, especially degree symbols (°), superscripts and subscripts. It's best to search the InDesign document (search by style and basic character formats, e.g. 'Position' for superscript and subscript) for these instances so you don't miss any. Most superscripts and subscripts in InDesign and similar are created by formatting normal text. In text-only, there is no formatting, so you should use the [unicode character for each superscript or subscript character](http://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts). E.g. when typing the symbol for oxygen, O₂, the subscript 2 is ₂, unicode character U+2082. To type these characters, you may need special software (e.g. for Windows, Google unicodeinput.exe), or copy-paste from [an online reference](http://scriptsource.org/cms/scripts/page.php?item_id=character_list&key=2070). In Windows, you can also find symbols in Character Map, e.g. search in Character Map for 'Subscript Two'.
-1. Kramdown (and most markdown variants) can only handle simple tables. For these you can create the Markdown layout manually or use something like [Senseful's online tool](http://www.sensefulsolutions.com/2010/10/format-text-as-table.html). To do this:
+
+## Tables
+
+Kramdown (and most markdown variants) can only handle very simple tables. For these you can create the Markdown layout manually or use something like [Senseful's online tool](http://www.sensefulsolutions.com/2010/10/format-text-as-table.html). To do this:
 	* Click and drag over some cells in the InDesign table (not the header row). Then Ctrl+A to select the whole table.
 	* Ctrl+C to copy, then paste into a blank spreadsheet.
 	* Select all the relevant cells in your spreadsheet, and copy. The table text is now on your clipboard, with the cells separated by tabs.
@@ -120,9 +139,12 @@ This is what we do when we convert one of our textbooks from a traditional InDes
 	* Click 'Create Table'. (The default settings are usually fine. Play with them only if you need to.)
 	* Copy the Output and paste it into your markdown file.
 	* The Senseful tool starts some table borders with + where kramdown needs a |. Manually change the starting + in any row with a |.
-1. For complex tables, you must create HTML. We use easy WYSIWYG tools like Dreamweaver, which lets us paste a table from a formatted source like Word or LibreOffice, and then clean up the HTML easily before pasting the whole `<table>` element into our markdown document.
 
-### Images
+For complex tables, you must create HTML and paste that HTML (from `<table>` to `</table>`) into your markdown files. We use a WYSIWYG tool like Dreamweaver, which lets us paste a table from a formatted source like Word or LibreOffice, and then clean up the HTML easily before pasting the whole `<table>` element into our markdown document.
+
+Add `{:.table-caption}` in the line immediately after a table caption. Kramdown uses this to apply the class `table-caption` to the paragraph. In our print output, this lets `print.css` avoid a page break after the caption, before the table. (According to publishing best-practice, table captions must always appear above tables, not after them.)
+
+## Images
 
 *	Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use. 
 *	Ensure that raster images, or raster/bitmap elements in SVG, are high-res enough for printing (e.g. 300dpi at full size). 
@@ -152,23 +174,29 @@ We've provided generic stylesheets in the framework, but each project will need 
 
 Keep in mind, regarding our stylesheets:
 
-*	Our CSS files for print (e.g. `print.css` and `office-a4.css` are designed specifically for use with [Prince](http://princexml.com).
-*	We use `normalize.css` to get consistency across browsers. (You could consider [alternatives](http://www.cssreset.com/).)
-*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince (with `display: none;`).
+*	Our CSS files for print (e.g. `print.css`) are designed specifically for use with [Prince](http://princexml.com).
+*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
 *	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown. For instance, include `{:.keep-together}` in the line immediately after a paragraph to stop it breaking.
 
 ## Trial-and-error tips
 
 We've learned some stuff the hard way:
 
+Using Jekyll and GitHub:
+
+*	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
 *	You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.
 *	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You'll have to do something like `title: Beans—The musical fruit`.
-*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list test. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (My local Jekyll instance correctly parses nested lists even if I use a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/nc/nc-12.html#how-can-you-prevent-infection-in-newborn-infants).
-*	Add `{:.table-caption}` in the line immediately after a table caption. Kramdown uses this to apply the class `table-caption` to the paragraph. In our print output, this lets `print.css` avoid a page break after the caption, before the table. (According to publishing best-practice, table captions must always appear above tables, not after them.)
-*	Keep file naming perfectly alphabetical This is easiest to do with a numbering system, e.g. `great-gatsby-0-1-titlepage.md`, `great-gatsby-0-2-copyright.md`, `great-gatsby-1-chapter-1.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering files during PrinceXML PDF-making really easy.
-*	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
-*	By default we `.gitignore` the `_site` folder. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, this makes it's easy for collaborators without Jekyll to grab a book's HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the _site folder. 
+*	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt.
+
+Markdown tricks and quirks:
+
+*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list test. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (My local Jekyll instance correctly parses nested lists even if I use a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/nc/nc-12.html#how-can-you-prevent-infection-in-newborn-infants).
 *	Keep spans within block elements. For instance, if you have two paragraphs in italic, don't start the italics with `*` in the first paragraph and end the span with a second `*` in the next paragraph. The HTML needs one span (e.g. `<em>` span) in the first para, and another in the second para. The converter isn't smart enough to split your intended italics into two spans. Rather end the first span in the first para, and start another one in the second.
+
+File naming:
+
+*	Name each book's markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. `0-1-titlepage.md`, `0-2-copyright.md`, and chapter files are numbered for their chapter number, e.g. `1.md`, `2.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into PrinceXML for PDF output.
 
 ## Print output
 
@@ -179,24 +207,25 @@ We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, 
 1.	Find your book's HTML files in your `_site` folder. (Remember to run Jekyll locally to generate the latest version; if you're getting your HTML from a GitHub repo's `_site` folder, trust that the last contributor synced up-to-date, reliable HTML generated by their local Jekyll instance.)
 2.	Drag the HTML files into Prince. Make sure they're in the right order.
 3.	Tick ‘Merge all…’ and **specify an output file** location and name. Do not let Prince output to your `_site` folder. (If you skip this, Prince will output to your `_site` folder, which will cause permissions issues when you want to modify or delete the file, because Jekyll owns the `_site` folder. Plus, Git will try to commit and sync the output PDF, which you don't want.)
-4.	Drag the CSS file for printing into Prince. The framework provides options:
-	*	`print.css` which produces an A5 document with crop marks for high-end printing and binding;
-	*	`office-a4.css` which produces an A4 document for regular office printing.
+4.	Drag the CSS file for your print output into Prince. By default in our book-framework, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add these CSS files, after `print.css`, for additional options:
+	*	`print-a4.css` overrides the page size and sets it to A4;
+	*	`print-no-crop-marks.css` removes the crop marks, but leaves the bleed as is;
+	*	`print-no-bleed.css` removes the bleed, and any crop marks with it.
 5.	Click Convert.
 
-Note: the links to CSS in our output HTML `<head>` *deliberately* break the link to `screen.css` and `normalize.css` when using Prince, so that you don't get screen styles in your print output. You can ignore error messages from Prince saying it can't find these files.
+Note: the links to CSS in our output HTML `<head>` *deliberately* break the link to `screen.css` when using Prince, so that you don't get screen styles in your print output. You can ignore error messages from Prince saying it can't find `screen.css`.
 
 ## Epub output
 
 At EBW, we like to assemble our epubs in [Sigil](https://github.com/user-none/Sigil/). If we're not tweaking, it takes five minutes.
 
-*	Grab the HTML files from `_site` for your `Text` folder.
-*	Grab the framework's `epub.css` for your `Styles` folder.
+*	Put the HTML files from `_site` into your `Text` folder.
+*	Put the framework's `epub.css` in your `Styles` folder.
 *	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
-*	Grab any fonts from your framework, if you want them embedded. (If you don't want to embed fonts, you may want to remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
-*	Add a cover, using your own cover-image jpg, and the `cover.xhtml` and cover CSS snippets [from our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the cover CSS snippets to `epub.css`.)
+*	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
 *	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: `(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->`.
 *	Add basic metadata and semantics to your epub using Sigil's tools for this.
 *	Generate an epub table of contents using Sigil's TOC tools.
+*	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
 
-For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/).
+For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
