@@ -187,12 +187,12 @@
 }
 
 /* Start these layouts with a big top margin */
-div.halftitle, div.titlepage, div.dedication, div.toc, div.chapter {
+div.halftitle, div.titlepage, div.dedication, div.epigraph, div.toc, div.chapter {
 	margin-top: 30mm;
 }
 
 /* We want some layouts to start on right-hand pages only */
-div.frontmatter, div.dedication, div.toc, div.chapter { 
+div.frontmatter, div.dedication, div.epigraph, div.toc, div.chapter { 
 	page-break-before: right;
 }
 
@@ -293,6 +293,26 @@ p.valediction {
 	text-indent: 0;
 	margin: 1em 0;
 	font-style: italic;
+}
+
+/* Epigraphs */
+
+p.epigraph {
+	font-style: italic;
+	text-indent: 0;
+	padding: 0 4em;
+	max-width: 20em;
+}
+p.epigraph-source {
+	text-indent: 0;
+	padding: 0 4em;
+	max-width: 20em;
+	letter-spacing: 0.025em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+	font-style: inherit;
+}
+p.epigraph-source:before {
+	content: "—";
 }
 
 /* Lists */

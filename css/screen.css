@@ -552,6 +552,45 @@ img.thumbnail {
 	margin-top: 3em;
 }
 
+/* 
+ * Dedication and epigraph pages
+ */
+
+div.epigraph, div.dedication {
+	margin-top: 6em;
+}
+p.dedication {
+	text-indent: 0;
+	text-align: center;
+	max-width: 20em;
+	-moz-font-feature-settings: "c2sc", "smcp", "onum";
+	-ms-font-feature-settings: "c2sc", "smcp", "onum";
+	-o-font-feature-settings: "c2sc", "smcp", "onum";
+	-webkit-font-feature-settings: "c2sc", "smcp", "onum";
+	font-feature-settings: "c2sc", "smcp", "onum";
+	font-style: inherit;
+}
+p.epigraph {
+	font-style: italic;
+	text-indent: 0;
+	padding: 0 4em;
+	max-width: 20em;
+}
+p.epigraph-source {
+	text-indent: 0;
+	padding: 0 4em;
+	max-width: 20em;
+	-moz-font-feature-settings: "c2sc", "smcp", "onum";
+	-ms-font-feature-settings: "c2sc", "smcp", "onum";
+	-o-font-feature-settings: "c2sc", "smcp", "onum";
+	-webkit-font-feature-settings: "c2sc", "smcp", "onum";
+	font-feature-settings: "c2sc", "smcp", "onum";
+	font-style: inherit;
+}
+p.epigraph-source:before {
+	content: "—";
+}
+
 /*
  * Tables of contents
  */
