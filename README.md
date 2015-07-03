@@ -1,3 +1,6 @@
+---
+---
+
 # The EBW book framework
 
 This repo is a framework for using Git, Jekyll and markdown to create books. We've developed it for in-house use at [Electric Book Works](http://electricbookworks.com). It's a work in progress.
@@ -68,18 +71,40 @@ The key to simple HTML is that we carefully map our books' features to ordinary 
 
 The framework repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
 
-One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout). Each book's content is in its own folder in the root. In the framework repo, we have `book-one` as an example with a few sample files in it:
+One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout). Each book's content is in its own folder in the root. In the framework repo, we have `book-one` as an example with a few sample files in it. In each file's YAML header, we specify the style to use – that is, how will this section of the book look? 
 
-* title page
-* copyright page
-* table of contents
-* acknowledgements
-* a first chapter
-* a second chapter
+Technical note
+:	That `style` YAML sets the class of the output HTML's `<body>` element. We use these to control CSS and page structure.
 
-Each document is a section of the book, which traditionally might be separated from other sections by a page break.
+| Book section      | Sample file               | Style in YAML   |
+|-------------------|---------------------------|------------------|
+| Front cover       | `0-0-cover.md`            | `cover`          |
+| Title page        | `0-1-titlepage.md`        | `title-page`     |
+| Copyright page    | `0-2-copyright.md`        | `copyright-page` |
+| Table of contents | `0-3-contents.md`         | `contents-page`  |
+| Acknowledgements  | `0-4-acknowledgements.md` | `chapter`        |
+| A first chapter   | `1.md`                    | `chapter`        |
+| A second chapter  | `2.md`                    | `chapter`        |
 
-Alongside the content files in that book's folder is an `images` folder, for images that belong to that book only.
+Page layouts we've designed for already in the template CSS are:
+
+*	`index` for the home page of a collection
+*	`cover` for a front cover, which will appear in ebook editions
+*	`halftitle-page` for a book's halftitle page
+*	`previous-publications-page` for a book's list of the author's previous publications
+*	`title-page` for a book's title page
+*	`copyright-page` for the copyright or imprint page
+*	`contents-page` for the book's table of contents
+*	`dedication-page` for a dedication page
+*	`epigraph-page` for an epigraph page
+*	`frontmatter` for other prelim pages not accounted for otherwise
+*	`chapter` for a book's default chapter page
+
+If you don't want the navigation (nav bar and footer) on a page, such as the collection's index page, add `layout: min` to the document's YAML header. The `min` layout does not include a nav-bar and footer.
+
+### The `images` folder
+
+Alongside the content files in a book's folder is an `images` folder, for images that belong to that book only.
 
 A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (So, for example, copy the publisher logo into each book's `images` folder separately.)
 
