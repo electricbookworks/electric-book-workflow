@@ -1,7 +1,7 @@
 ---
 book: Book title
 title: Copyright
-layout: copyright
+style: copyright-page
 ---
 
 # Title: Subtitle

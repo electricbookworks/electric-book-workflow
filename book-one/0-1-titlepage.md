@@ -1,16 +1,16 @@
 ---
 book: Book title
 title: Title page
-layout: titlepage
+style: title-page
 ---
 
 The title of this book here
-{:.titlepage-title}
+{:.title-page-title}
 
 The subtitle here if there is one
-{:.titlepage-subtitle}
+{:.title-page-subtitle}
 
 A. N. Author
-{:.titlepage-author}
+{:.title-page-author}
 
-![Publisher logo](images/publisher-logo.svg){:.titlepage-logo}
+![Publisher logo](images/publisher-logo.svg){:.title-page-logo}

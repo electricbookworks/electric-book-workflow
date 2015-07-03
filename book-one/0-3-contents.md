@@ -1,7 +1,7 @@
 ---
 book: Book title
 title: Contents
-layout: toc
+style: contents-page
 ---
 
 # Contents
