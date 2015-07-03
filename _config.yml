@@ -35,15 +35,20 @@ prose:
     - /_includes
     - /css
 
-# These are default YAML values that apply to multiple documents. Here we set the path to each book's outputted contents page for use in navigation. For technical info, see http://jekyllrb.com/docs/configuration/#front-matter-defaults
+# These are default YAML values that apply to multiple documents. 
 defaults: 
     -
-        scope:
+        scope: # Set the filename of each book's outputted contents page for use in navigation. For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults
             path: "book-one" # the folder for a book
         values:
             contents: "0-3-contents.html" # the filename of its contents page
     -
-        scope:
+        scope: # Set the contents-page filename for each book in the collection separately.
             path: "book-two" # the folder for a book
         values:
             contents: "0-4-contents.html" # the filename of its contents page
+    -
+        scope: # Let's set the default page layout, for when a layout specified in a page's YAML header doesn't exist.
+            path: "" # an empty string here means all files in the project
+        values:
+            layout: "default"
