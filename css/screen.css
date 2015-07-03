@@ -379,6 +379,9 @@ td ul, td ol {
 .footnotes p {
 	text-indent: 0;
 }
+sup:target {
+	padding-top: 3.5em; /* Prevents footnote references from disappearing below the fixed nav bar when linked to. */
+}
 .sidenote {
 	position: absolute;
 	right: 1em;
