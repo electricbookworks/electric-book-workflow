@@ -164,11 +164,14 @@ body {
 	width: 100%;
 	opacity: 0.9;
 	border-bottom: 1px solid #f2f2f2;
+	z-index: 1;
 }
 	@media only screen 
 	and (max-width: 480px), (max-height: 600px) { /* Let nav-bar scroll out of view on small screens */
 		#nav-bar {
 			position: relative;
+			width: auto;
+			max-width: 40%;
 		}
 	}
 #nav-bar a {
@@ -208,7 +211,7 @@ h3 {
 	padding-top: 0.5em;
 }
 p, ul, ol {
-	max-width: 40em;
+	max-width: 35em;
 	line-height: 150%;
 	-moz-font-feature-settings: "onum";
 	-ms-font-feature-settings: "onum";
@@ -362,6 +365,40 @@ td ul, td ol {
 .table-caption em {
 	font-style: normal;
 }
+
+/*
+ * Footnotes, endnotes and sidenotes
+ * Note: What kramdown creates as .footnotes are actually, in a paged book context, endnotes.
+ */
+
+.footnotes {
+  margin: 2em 0 0 0;
+  border-top: 1px solid #e9e9e9;
+  color: #555555;
+}
+.footnotes p {
+	text-indent: 0;
+}
+.sidenote {
+	position: absolute;
+	right: 1em;
+	max-width: 10em;
+	margin: 0.5em 0 0.5em 2em;
+	padding: 0.5em;
+	border: 1px solid #eeeeee;
+	border-radius: 0.15em;
+	text-indent: 0;
+	font-size: 0.8em;
+	font-style: inherit;
+	line-height: 120%;
+}
+	@media only screen 
+	and (max-width: 55em) { /* Let nav-bar scroll out of view on small screens */
+		.sidenote {
+			float: right;
+			position: relative;
+		}
+	}
 
 /* 
  * Useful features as classes, best used on paragraphs

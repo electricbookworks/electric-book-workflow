@@ -193,6 +193,19 @@ We do not use markdown to embed images with captions, because kramdown doesn't s
 
 That's all, no markdown notation for the image, and no list of images at the end of the doc. We just put this code (with the file name, alt and caption changed of course) for each figure exactly where it's relevant in the text.
 
+## Footnotes, endnotes and sidenotes
+
+Our framework provides three options for notes.
+
+**Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes): 
+
+*	put a `[^1]` where the footnote reference should appear (the `1` there can be any numbers or letters, and should be different for each footnote in a document);
+*	anywhere in the document (we recommend after the paragraph containing the footnote reference), put `[^1]: Your footnote text here.`.
+
+**Sidenotes** appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a `*` at the start of the sidenote text and `*{:.sidenote} at the end (with no spaces). (Technically, you're creating an `<em>` span with a kramdown IAL.)
+
+**Sidenotes at the bottom of a page** only work in print. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these act as regular sidenotes.
+
 ## Stylesheets
 
 We've provided generic stylesheets in the framework, but each project will need its own styling for one reason or another.
