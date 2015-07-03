@@ -190,12 +190,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	line-height: 120%;
 	page-break-after: avoid;
+	margin: 2em 0 1em 0;
 }
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
-	padding-top: 2.5em; /* Prevents #-linked headings from disappearing below the fixed nav bar. */
+	padding-top: 3.5em; /* Prevents #-linked headings from disappearing below the fixed nav bar. */
 }
 h1 {
-	font-size: 3.5em;
 	max-width: 80%;
 	line-height: 100%;
 }
@@ -487,16 +487,16 @@ blockquote.figure {
  * Cover image. This is useful for landing pages for individual books.
  */
 
-body.cover, div.cover {
+body.cover {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
 p.cover {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	text-align: center;
-	height: 100%;
+	height: 100vh;
 }
 img.cover {
 	max-height: 100%;
@@ -511,29 +511,29 @@ img.thumbnail {
 }
 
 /*
- * Title page 
+ * Title-page 
  */
 
-.titlepage-title {
+.title-page-title {
 	font-size: 3em;
 	font-weight: 700;
 	margin: 20% 0 0 0;
 	line-height: 100%;
 	text-indent: 0;
 }
-.titlepage-subtitle {
+.title-page-subtitle {
 	font-size: 3em;
 	font-weight: 400;
 	margin: 0 0 1em 0;
 	line-height: 100%;
 	text-indent: 0;
 }
-.titlepage-author {
+.title-page-author {
 	font-size: 1.5em;
 	margin: 0 0 2em 0;
 	text-indent: 0;
 }
-.titlepage-logo {
+.title-page-logo {
 	width: 100px;
 }
 
@@ -541,11 +541,11 @@ img.thumbnail {
  * Copyright page
  */
 
-.copyright p {
+.copyright-page p {
 	text-indent: 0;
 	margin: 0 0 0.5em 0;
 }
-.copyright h1, .copyright h2 {
+.copyright-page h1, .copyright-page h2 {
 	font-size: 1em;
 	font-weight: normal;
 	font-style: italic;
@@ -553,10 +553,10 @@ img.thumbnail {
 }
 
 /* 
- * Dedication and epigraph pages
+ * Dedications and epigraphs
  */
 
-div.epigraph, div.dedication {
+.epigraph-page, .dedication-page {
 	margin-top: 6em;
 }
 p.dedication {
@@ -595,24 +595,24 @@ p.epigraph-source:before {
  * Tables of contents
  */
 
-.toc h2 {
+.contents-page h2 {
 	font-weight: 400;
 	font-size: 1.25em;
 	margin: 1em 0 0.5em 0;
 }
-.toc ol {
+.contents-page ol {
 	margin: 0;
 	padding: 0;
 }
-.toc ul {
+.contents-page ul {
 	list-style-type: none;
 	margin: 0 0 1em 0;
 	padding: 0;
 }
-.toc li {
+.contents-page li {
 	margin: 0 0 0.5em 0;
 }
-.toc a {
+.contents-page a {
 	text-decoration: none;
 }
 

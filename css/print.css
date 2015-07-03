@@ -126,32 +126,32 @@
 }
 
 /* Name our layouts as divs. PrinceXML needs the pages named for @page rules. */
-.titlepage {
-	page: titlepage;
+.title-page {
+	page: title-page;
 }
-.halftitle {
-	page: halftitle;
+.halftitle-page {
+	page: halftitle-page;
 }
-.frontmatter {
-	page: frontmatter; /* Use for generic frontmatter */
+.previous-publications-page {
+	page: previous-publications-page;
 }
-.previous-publications {
-	page: previous-publications;
+.copyright-page {
+	page: copyright-page;
 }
-.copyright {
-	page: copyright;
-}
-.dedication {
-	page: dedication;
+.dedication-page {
+	page: dedication-page;
 }
 .chapter {
 	page: chapter;
 }
-.toc {
-	page: toc;
+.contents-page {
+	page: contents-page;
 }
 .cover {
 	page: cover;
+}
+.frontmatter {
+	page: frontmatter; /* Use for any other frontmatter */
 }
 
 /* Let's set running heads and footers for chapter pages only (add more if you add other layouts that need heads or footers)*/
@@ -187,12 +187,12 @@
 }
 
 /* Start these layouts with a big top margin */
-div.halftitle, div.titlepage, div.dedication, div.epigraph, div.toc, div.chapter {
+.halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
 	margin-top: 30mm;
 }
 
 /* We want some layouts to start on right-hand pages only */
-div.frontmatter, div.dedication, div.epigraph, div.toc, div.chapter { 
+.frontmatter, .dedication-page, .epigraph-page, .contents-page, .chapter { 
 	page-break-before: right;
 }
 
@@ -531,37 +531,37 @@ ol li blockquote.figure, ul li blockquote.figure {
 }
 
 /*
- * Half-title and title page
+ * Halftitle-page and title-page
  */
 
-.halftitle {} /* Not used by default */
+.halftitle-page {} /* Not used by default */
 
-.titlepage p {
+.title-page p {
 	text-indent: 0;
 	line-height: 110%;
 	hyphens: none;
 	max-width: 80%;
 }
-.titlepage-title {
+.title-page-title {
 	font-size: 2em;
 	margin: 20% 0 0 0;
 	line-height: 100%;
 	font-variant: prince-opentype(dlig, c2sc, smcp);
 	counter-reset: page 1; /* If you have a half-title page, move this line to .halftitle */
 }
-.titlepage-subtitle {
+.title-page-subtitle {
 	font-size: 1.5em;
 	font-style: italic;
 	margin: 1em 0 1em 0;
 	line-height: 100%;
 	font-variant: prince-opentype(dlig);
 }
-.titlepage-author {
+.title-page-author {
 	font-size: 1.5em;
 	margin: 0 0 2em 0;
 	font-variant: prince-opentype(dlig);
 }
-.titlepage-logo {
+.title-page-logo {
 	width: 3em;
 	position: absolute;
 	bottom: 0;
@@ -571,18 +571,18 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Copyright page
  */
  
-div.copyright {
+.copyright-page {
 	position: absolute;
 	bottom: 0;	
 }
-.copyright h1 {
+.copyright-page h1 {
 	font-size: 1em;
 	margin-bottom: 0.3em;
 	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
 	text-align: left;
 }
-.copyright p, .copyright li {
+.copyright-page p, .copyright-page li {
 	margin: 0 0 0.5em 0;
 	text-indent: 0;
 	font-size: 0.8em;
@@ -594,10 +594,10 @@ div.copyright {
  * Dedication page
  */
 
-.dedication {
+.dedication-page {
 	margin-top: 30mm;
 }
-.dedication p {
+.dedication-page p {
 	text-align: center;
 	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
@@ -607,32 +607,32 @@ div.copyright {
  * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
  */
 
-div.toc {
+.contents-page {
 	max-width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 }
-.toc a::after, .page-ref-list a::after { 
+.contents-page a::after, .page-ref-list a::after { 
 	content: leader(" ") target-counter(attr(href), page);
 	font-variant: prince-opentype(lnum);
 }
-.toc ul, .toc ol {
+.contents-page ul, .contents-page ol {
 	list-style-type: none;
 	page-break-inside: avoid;
 } 
-.toc li {
+.contents-page li {
 	margin: 0 0 0.5em 0;
 }
-.toc li li {
+.contents-page li li {
 	margin: 0;
 }
-.toc ol li::marker {
+.contents-page ol li::marker {
 	content: counter(list-item);
 }
-.toc ol li li::marker {
+.contents-page ol li li::marker {
 	content: none;
 }
-.toc h2 {
+.contents-page h2 {
 	font-size: 1.2em;
 	margin: 1em 0 0.5em 0;
 }
