@@ -170,8 +170,6 @@ body {
 	and (max-width: 480px), (max-height: 600px) { /* Let nav-bar scroll out of view on small screens */
 		#nav-bar {
 			position: relative;
-			width: auto;
-			max-width: 40%;
 		}
 	}
 #nav-bar a {
@@ -400,8 +398,11 @@ sup:target {
 		.sidenote {
 			float: right;
 			position: relative;
+			max-width: 40%;
 		}
 	}
+
+.bottom {} /* Only used for print output, ignored for screen. */
 
 /* 
  * Useful features as classes, best used on paragraphs
