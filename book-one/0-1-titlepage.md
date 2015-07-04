@@ -4,10 +4,10 @@ title: Title page
 style: title-page
 ---
 
-The title of this book here
+The title
 {:.title-page-title}
 
-The subtitle here if there is one
+The subtitle
 {:.title-page-subtitle}
 
 A. N. Author

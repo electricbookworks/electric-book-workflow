@@ -221,12 +221,56 @@ p {
 	margin: 0;
 	text-indent: 1em;
 }
-p.first {
+
+/* 
+ * Special classes for paragraphs
+ */
+
+p.first { /* A paragraph that starts a new set of paragraphs, with a gap above it. */
 	margin: 1em 0 0 0;
 	text-indent: 0;
 }
-blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow blockquotes, lists, and definition lists */
+.source {
+	text-align: right;
+	max-width: 22.5em;
+	margin: 0 0 0 25%;
+}
+.valediction {
 	text-indent: 0;
+	margin: 1em 0;
+	font-style: italic;
+	text-align: right;
+}
+.valediction + p {
+	text-indent: 0; /* Paragraphs after a valediction should be flush left */
+}
+
+/*
+ * Verse, poetry, lyrics
+ */
+
+.verse {
+	text-indent: 0;
+	margin: 1em 0;
+}
+.verse + p {
+	text-indent: 0; /* Paragraphs after verse should be flush left */
+}
+ul.verse {
+	list-style-type: none;
+	padding: 0;
+	margin: 1em 0;
+}
+ul.verse li {
+	text-indent: -2em;
+	margin-left: 2em;
+}
+
+/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { 
+	text-indent: 0;
+	margin-top: 0; 
 }
 
 /* 
@@ -235,15 +279,15 @@ blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow blockquotes, 
 
 dl {
 	color: #666;
-	border: 1px solid grey;
-	padding: 1em;
-	max-width: 38em;
+	max-width: 35em;
 }
 dt {
 	margin: 0 0 0.25em 0;
 	font-weight: 600;
 }
-dd {}
+dd {
+	margin: 0 0 1em 1em;
+}
 
 /*
  * Code
@@ -285,7 +329,7 @@ a.button:hover {
 	background-color: #4faad2;
 }
 
-/* Blockquotes, shouts and boxes */
+/* Blockquotes */
 
 blockquote {
 	margin: 1em 0 0.5em 0;
@@ -303,12 +347,20 @@ blockquote p:first-of-type {
 blockquote p:last-of-type, blockquote ol, blockquote ul {
 	margin: 0 0 1em 0;
 }
-blockquote.shout {
+
+/*
+ * Bold elements, useful for blockquotes and definition lists 
+ */
+
+.shout {
 	font-size: 1.5em;
 	font-style: italic;
 	max-width: 20em;
 }
-blockquote.box {
+.shout * {
+	line-height: 115%;
+}
+.box {
 	background-color: inherit;
 	color: inherit;
 	font-weight: inherit;
@@ -316,7 +368,7 @@ blockquote.box {
 	border: 1px solid #ccc;
 	margin: 1em 0;
 	padding: 1em 1em 0 1em;
-	max-width: 38em;
+	max-width: 35em;
 	box-shadow: 2px 2px 2px 0 #f2f2f2;
 }
 
@@ -386,17 +438,17 @@ sup:target {
 	clear: both;
 	float: right;
 	max-width: 10em;
+	min-width: 5em;
 	margin: 0.5em -15em 0.5em 2em;
 	padding: 0.5em;
-	border: 1px solid #eeeeee;
-	border-radius: 0.15em;
+	border-top: 1px solid #eeeeee;
 	text-indent: 0;
 	font-size: 0.8em;
 	font-style: inherit;
 	line-height: 120%;
 }
 	@media only screen 
-	and (max-width: 55em) { /* Let nav-bar scroll out of view on small screens */
+	and (max-width: 55em) { /* On narrow screens, text wraps around sidenotes */
 		.sidenote {
 			float: right;
 			position: relative;
@@ -407,21 +459,6 @@ sup:target {
 
 .bottom {} /* Only used for print output, ignored for screen. */
 
-/* 
- * Useful features as classes, best used on paragraphs
- */
-
-.source {
-	text-align: right;
-	max-width: 22.5em;
-	margin: 0 0 0 25%;
-}
-.valediction {
-	text-indent: 0;
-	margin: 1em 0;
-	font-style: italic;
-}
- 
 /* 
  * Extra typographic control 
  */

@@ -267,17 +267,14 @@ p {
 	margin: 0;
 	text-indent: 1em;
 }
-blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow blockquotes, lists, and definition lists */
-	text-indent: 0;
-}
 
 /* 
  * Special classes for paragraphs
  */
 
-p.first {
+p.first { /* A paragraph that starts a new set of paragraphs, with a gap above it. */
 	text-indent: 0;
-	margin-top: 1em;
+	margin-top: 1em; /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */
 }
 p.chapter-number {
 	font-weight: bold;
@@ -293,6 +290,38 @@ p.valediction {
 	text-indent: 0;
 	margin: 1em 0;
 	font-style: italic;
+	text-align: right;
+}
+.valediction + p {
+	text-indent: 0; /* Paragraphs after a valediction should be flush left */
+}
+
+/*
+ * Verse, poetry, lyrics
+ */
+
+.verse {
+	text-indent: 0;
+	margin: 1em 0;
+}
+.verse + p {
+	text-indent: 0; /* Paragraphs after verse should be flush left */
+}
+ul.verse {
+	list-style-type: none;
+	padding: 0;
+	margin: 1em 0;
+}
+ul.verse li {
+	text-indent: -2em;
+	margin-left: 2em;
+}
+
+/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow headings, blockquotes, lists, and definition lists */
+	text-indent: 0;
+	margin: 0; /* Overrides margin inadvertently added by using .first or .verse on a paragraph after a heading, blockquote, list or definition list */
 }
 
 /* Epigraphs */
@@ -321,7 +350,7 @@ ul, ol {
 	margin: 0 0 0.5em 0;
 }
 li > ul {
-	margin-bottom: 0.5em; /* manages line space after sublists in lists */
+	margin-bottom: 0; /* manages line space after sublists in lists */
 }
 li {
 	margin-left: 1.33em;
@@ -336,7 +365,7 @@ li li:first-of-type {
 	page-break-before:avoid;
 }
 
-/* Blockquotes, shouts and boxes */
+/* Blockquotes */
 
 blockquote {
 	margin: 1em 0 0 0;
@@ -353,24 +382,6 @@ blockquote p:first-of-type {
 blockquote p:last-of-type, blockquote ol, blockquote ul {
 	margin: 0 0 1em 0;
 }
-blockquote.shout {
-	font-size: 1.5em;
-	font-style: italic;
-	max-width: 20em;
-}
-blockquote.shout p {
-	line-height: 120%;
-}
-blockquote.box {
-	background-color: inherit;
-	color: inherit;
-	font-weight: inherit;
-	font-size: inherit;
-	border: 0.5pt solid #ccc;
-	margin: 1em 0;
-	padding: 1em 1em 0 1em;
-	max-width: 38em;
-}
 
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
@@ -385,7 +396,32 @@ dt {
 	font-variant: prince-opentype(c2sc, smcp);
 	page-break-after: avoid;
 }
-dd {}
+dd {
+	margin: 0 0 1em 1em;
+}
+
+/*
+ * Bold elements, useful for blockquotes and definition lists 
+ */
+ 
+.shout {
+	font-size: 1.5em;
+	font-style: italic;
+	max-width: 20em;
+}
+.shout * {
+	line-height: 115%;
+}
+.box {
+	background-color: inherit;
+	color: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	border: 0.5pt solid #ccc;
+	margin: 1em 0;
+	padding: 1em 1em 0 1em;
+	max-width: 38em;
+}
 
 /*
  * Code
@@ -393,6 +429,7 @@ dd {}
 
 pre, code {
 	font-family: "Inconsolata", monospace;
+	font-size: 0.9em;
 	white-space: pre-wrap;
 	background-color: #f9f9f9;
 	padding: 0.1em 0.3em;
@@ -414,10 +451,10 @@ table {
 	font-variant: prince-opentype(tnum);
 }
 th, td {
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	border-left: 1px dotted #f2f2f2;
-	border-right: 1px dotted #f2f2f2;
+	border-top: 0.5pt solid #ccc;
+	border-bottom: 0.5pt solid #ccc;
+	border-left: 0.5pt dotted #f2f2f2;
+	border-right: 0.5pt dotted #f2f2f2;
 	padding: 0.15em 0.3em;
 }
 thead, th {
@@ -546,12 +583,13 @@ ol li blockquote.figure, ul li blockquote.figure {
 .sidenote {
 	font-family: "Source Sans Pro";
 	font-weight: 300;
+	clear: both;
 	float: right;
 	max-width: 10em;
+	min-width: 5em;
 	margin: 0.5em 0 0.5em 2em;
 	padding: 0.5em;
-	border: 0.5pt solid #eeeeee;
-	border-radius: 0.15em;
+	border-top: 0.5pt solid #eeeeee;
 	text-indent: 0;
 	font-size: 0.8em;
 	font-style: inherit;
@@ -561,9 +599,6 @@ ol li blockquote.figure, ul li blockquote.figure {
 	float: bottom;
 	max-width: 100%;
 	margin: 1em 0 0 0;
-	border-right: none;
-	border-bottom: none;
-	border-left: none;
 }
 
 /*
@@ -578,7 +613,11 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Halftitle-page and title-page
  */
 
-.halftitle-page {} /* Not used by default */
+.title-page, .halftitle-page {
+	max-width: 20em;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 .title-page p {
 	text-indent: 0;
@@ -685,8 +724,8 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 ul#markdown-toc, ol#markdown-toc {
 	list-style-type: none;
-	border-top: 1px solid #f9f9f9;
-	border-bottom: 1px solid #f9f9f9;
+	border-top: 0.5pt solid #f9f9f9;
+	border-bottom: 0.5pt solid #f9f9f9;
 	padding: 1em 0;
 	margin: 2em 0;
 }
