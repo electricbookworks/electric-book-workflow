@@ -381,10 +381,12 @@ sup:target {
 	padding-top: 3.5em; /* Prevents footnote references from disappearing below the fixed nav bar when linked to. */
 }
 .sidenote {
-	position: absolute;
-	right: 1em;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 300;
+	clear: both;
+	float: right;
 	max-width: 10em;
-	margin: 0.5em 0 0.5em 2em;
+	margin: 0.5em -15em 0.5em 2em;
 	padding: 0.5em;
 	border: 1px solid #eeeeee;
 	border-radius: 0.15em;
@@ -399,6 +401,7 @@ sup:target {
 			float: right;
 			position: relative;
 			max-width: 40%;
+			margin: 0.5em 0 0.5em 0.5em;
 		}
 	}
 
