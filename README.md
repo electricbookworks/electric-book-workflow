@@ -318,33 +318,10 @@ If you SVGs seem big, [read up on optimising SVGs](http://stackoverflow.com/a/70
 Add the front-cover image to the book's `images` folder. Ensure colour settings are RGB and the DPI is set to 72. We recommend creating the image in three sizes:
 
 *	`cover.jpg`: 960px high (in keeping with epub best practice these are just under 1000px on their longest side)
-*	`cover-thumb.jpg`: 300px wide (usually 425px high)
-*	`cover-large.jpg`: 2000px high (usually 1410px wide).
+*	`cover-thumb.jpg`: 300px wide
+*	`cover-large.jpg`: 2000px high
 
 The first is mandatory. The thumbnail and large images are for your convenience. For instance, when uploading a book to Amazon Kindle, you must provide a cover image this large.
-
-## Footnotes, endnotes and sidenotes
-
-Our framework provides three options for notes.
-
-**Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes): 
-
-*	put a `[^1]` where the footnote reference should appear (the `1` there can be any numbers or letters, and should be different for each footnote in a document);
-*	anywhere in the document (we recommend after the paragraph containing the footnote reference), put `[^1]: Your footnote text here.`.
-
-**Sidenotes** appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a `*` at the start of the sidenote text and `*{:.sidenote} at the end (with no spaces). (Technically, you're creating an `<em>` span with a kramdown IAL.)
-
-**Sidenotes at the bottom of a page** only work in print. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these act as regular sidenotes.
-
-## Stylesheets
-
-We've provided generic stylesheets in the framework, but each project will need its own styling for one reason or another.
-
-Keep in mind, regarding our stylesheets:
-
-*	Our CSS files for print (e.g. `print.css`) are designed specifically for use with [Prince](http://princexml.com).
-*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
-*	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown. For instance, include `{:.keep-together}` in the line immediately after a paragraph to stop it breaking.
 
 ## Embedding video
 
@@ -369,6 +346,29 @@ Note that this only works with YouTube. If you're embedding from any other servi
 *	use their standard embed iframe
 *	try to select a width of around 850 px
 *	add `style="max-width: 100%;"` and `class="non-printing"` to the iframe tag.
+
+## Footnotes, endnotes and sidenotes
+
+Our framework provides three options for notes.
+
+**Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes): 
+
+*	put a `[^1]` where the footnote reference should appear (the `1` there can be any numbers or letters, and should be different for each footnote in a document);
+*	anywhere in the document (we recommend after the paragraph containing the footnote reference), put `[^1]: Your footnote text here.`.
+
+**Sidenotes** appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a `*` at the start of the sidenote text and `*{:.sidenote}` at the end (with no spaces). (Technically, you're creating an `<em>` span with a kramdown IAL.)
+
+**Sidenotes at the bottom of a page** only work in print. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these act as regular sidenotes.
+
+## Stylesheets
+
+We've provided generic stylesheets in the framework, but any given project will probably need its own styling for one reason or another.
+
+Keep in mind, regarding our stylesheets:
+
+*	Our CSS files for print (e.g. `print.css`) are designed specifically for use with [Prince](http://princexml.com).
+*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
+*	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown. For instance, include `{:.keep-together}` in the line immediately after a paragraph to stop it breaking.
 
 ## Trial-and-error tips
 
