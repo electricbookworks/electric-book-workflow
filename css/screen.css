@@ -577,6 +577,7 @@ p.cover {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
+	text-indent: 0;
 	height: 100vh;
 }
 img.cover {
