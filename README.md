@@ -1,6 +1,3 @@
----
----
-
 # The EBW book framework
 
 This repo is a framework for using Git, Jekyll and markdown to create books. We've developed it for in-house use at [Electric Book Works](http://electricbookworks.com). It's a work in progress.
