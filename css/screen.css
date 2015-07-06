@@ -221,13 +221,16 @@ p {
 	margin: 0;
 	text-indent: 1em;
 }
+sup, sub {
+	line-height: 100%;
+}
 
 /* 
  * Special classes for paragraphs
  */
 
 p.first { /* A paragraph that starts a new set of paragraphs, with a gap above it. */
-	margin: 1em 0 0 0;
+	margin: 2em 0 0 0;
 	text-indent: 0;
 }
 .source {
@@ -370,6 +373,13 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 	padding: 1em 1em 0 1em;
 	max-width: 35em;
 	box-shadow: 2px 2px 2px 0 #f2f2f2;
+}
+p.box {
+	padding-bottom: 1em;
+	text-indent: 0;
+}
+.box + p {
+	text-indent: 0;
 }
 
 /*

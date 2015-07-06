@@ -193,7 +193,7 @@
 
 /* We want some layouts to start on right-hand pages only */
 .frontmatter, .dedication-page, .epigraph-page, .contents-page, .chapter { 
-	page-break-before: right;
+	page-break-before: left;
 }
 
 /* For a manual page break before an element, apply this class to it */
@@ -227,6 +227,8 @@ body {
 	margin: 0;
 	padding: 0;
 	font-variant: prince-opentype(liga);
+	orphans: 2; /* minimum number of lines that must be left at the bottom of the first page */
+	widows: 2; /* minimum number of lines that must be left at the top of the second page */
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
@@ -250,11 +252,11 @@ h2 {
 }
 h3 {
 	font-size: 1.1em;
-	margin-bottom: 0.3em;
+	margin-bottom: 0.5em;
 }
 h4 {
 	font-size: 1em;
-	margin-bottom: 0.3em;
+	margin-bottom: 0.5em;
 }
 p, ul, ol, dl {
 	font-variant: prince-opentype(onum);
@@ -267,6 +269,9 @@ p {
 	margin: 0;
 	text-indent: 1em;
 }
+sup, sub {
+	line-height: 100%;
+}
 
 /* 
  * Special classes for paragraphs
@@ -274,7 +279,7 @@ p {
 
 p.first { /* A paragraph that starts a new set of paragraphs, with a gap above it. */
 	text-indent: 0;
-	margin-top: 1em; /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */
+	margin-top: 2em; /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */
 }
 p.chapter-number {
 	font-weight: bold;
@@ -285,12 +290,14 @@ p.source {
 	text-align: right;
 	max-width: 22.5em;
 	margin: 0 0 0 25%;
+	page-break-before: avoid;
 }
 p.valediction {
 	text-indent: 0;
 	margin: 1em 0;
 	font-style: italic;
 	text-align: right;
+	page-break-before: avoid;
 }
 .valediction + p {
 	text-indent: 0; /* Paragraphs after a valediction should be flush left */
@@ -339,6 +346,7 @@ p.epigraph-source {
 	letter-spacing: 0.025em;
 	font-variant: prince-opentype(c2sc, smcp, onum);
 	font-style: inherit;
+	page-break-before: avoid;
 }
 p.epigraph-source:before {
 	content: "—";
@@ -421,6 +429,13 @@ dd {
 	margin: 1em 0;
 	padding: 1em 1em 0 1em;
 	max-width: 38em;
+}
+p.box {
+	padding-bottom: 1em;
+	text-indent: 0;
+}
+.box + p {
+	text-indent: 0;
 }
 
 /*
