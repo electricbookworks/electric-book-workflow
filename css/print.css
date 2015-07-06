@@ -401,7 +401,6 @@ dl {
 }
 dt {
 	letter-spacing: 0.025em;
-	font-variant: prince-opentype(c2sc, smcp);
 	page-break-after: avoid;
 }
 dd {
