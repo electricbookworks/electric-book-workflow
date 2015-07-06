@@ -123,15 +123,16 @@ To create a new book in a new collection:
 
 ## Creating a book in markdown
 
-Here are some guidelines we've created for our own use. They are probably applicable to other books, too.
+Here are some guidelines we've created for our own use. They are probably applicable to other books, too. For examples, read this in conjunction with the [template's examples here](http://electricbookworks.github.io/book-framework/).
 
 Before you start:
 
-* Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-* Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
-* If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
-* To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
-* Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
+*	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
+*	Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
+*	If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
+*	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
+*	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
+*	Look through our [example template here](http://electricbookworks.github.io/book-framework/) to get an idea of available default typography.
 
 ### Converting from InDesign
 
