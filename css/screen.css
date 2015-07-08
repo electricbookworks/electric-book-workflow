@@ -175,11 +175,11 @@ body {
 #nav-bar a {
 	font-family: initial;
 	text-decoration: none;
-	color: #dddddd;
+	color: silver;
 	float: right;
 	margin: 0.3em 1em 0 0;
 }
-#nav-bar a {
+#nav-bar a:hover {
 	color: grey;
 }
 
@@ -449,7 +449,7 @@ sup:target {
 	float: right;
 	max-width: 10em;
 	min-width: 5em;
-	margin: 0.5em -15em 0.5em 2em;
+	margin: 0 -15em 0.5em 2em;
 	padding: 0.5em;
 	border-top: 1px solid #eeeeee;
 	text-indent: 0;

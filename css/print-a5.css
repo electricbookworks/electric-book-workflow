@@ -1,0 +1,6 @@
+/* Set page size to A5 */
+@page { 
+	size: A5; 
+	margin: 15mm 15mm 18mm 15mm;
+	padding: 0;
+}
