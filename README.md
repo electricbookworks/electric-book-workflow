@@ -41,24 +41,24 @@ To manage this framework yourself, you need to be familiar with a few concepts a
 
 These are the key components in our workflow:
 
-*	Content in plain-text, formatting as kramdown-based markdown
+*	Content in plain-text, formatted as kramdown-based markdown
 *	GitHub for version control
 *	Jekyll for converting the markdown into HTML
 *	CSS stylesheets for each output format
-*	Prince for creating PDFs from HTML
+*	Prince for creating PDFs from HTML (the only proprietary part of this stack)
 *	Sigil for assembling the HTML in epubs.
 
 So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, our Bettercare books are here:
 
 [https://github.com/electricbookworks/bettercare](https://github.com/electricbookworks/bettercare)
 
-We use the [kramdown syntax](http://kramdown.gettalong.org/) for our markdown, because it's what GitHub uses. (Among other things, kramdown supports classes, so we can get almost everything we need for neat HTML. For complex tables and for figures, we use HTML inside the markdown docs.)
+We use the [kramdown syntax](http://kramdown.gettalong.org/) for our markdown, because it's what GitHub uses and it has important features, such as classes.
 
-For open-source books, we let GitHub Pages publish the static HTML output, which it does automatically using Jekyll. For instance, our staging area for Bettercare content is here:
+For open-source books, we let GitHub Pages publish the static HTML output, which it does automatically, also with Jekyll. For instance, our staging site for Bettercare content is here:
 
 [http://electricbookworks.github.io/bettercare/](http://electricbookworks.github.io/bettercare/)
 
-(For Bettercare, we have a separate live site where we host the static HTML.)
+(For Bettercare, we have a [separate live site](http://ls.bettercare.co.za) where we host the static HTML.)
 
 When we use this workflow for closed content, we don't use GitHub Pages, and store the content in private GitHub repos.
 
@@ -66,7 +66,7 @@ If you click through to a book chapter on our GitHub Pages view, you'll see the 
 
 [http://electricbookworks.github.io/bettercare/nc/nc-1.html](http://electricbookworks.github.io/bettercare/nc/nc-1.html)
 
-The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, our app, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers that don't support publisher CSS. For instance, see the [Book Dash](http://bookdash.org) books:
+The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. For instance, see the [Book Dash](http://bookdash.org) books:
 
 [http://bookdash.github.io/bookdash-books/](http://bookdash.github.io/bookdash-books/)
 
