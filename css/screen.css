@@ -178,12 +178,13 @@ body {
 #nav-bar a {
 	font-family: initial;
 	text-decoration: none;
-	color: silver;
+	color: #333333;
 	float: right;
 	margin: 0.3em 1em 0 0;
 }
 #nav-bar a:hover {
-	color: grey;
+	color: #666666;
+	font-weight: bold;
 }
 .home #nav-bar a {
 	display: none;
