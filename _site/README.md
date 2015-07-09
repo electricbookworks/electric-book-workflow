@@ -1,46 +1,52 @@
 # The EBW book framework
 
-This repo is a framework for using Git, Jekyll and markdown to create books. We've developed it for in-house use at [Electric Book Works](http://electricbookworks.com). It's a work in progress.
+This framework provides a digital-first workflow for creating books in print, as ebooks, and for the web. We developed it for ourselves at [Electric Book Works](http://electricbookworks.com), for producing books that are largely text with some images, such as novels, non-fiction books, essays, papers, poetry, textbooks, manuals and reports.
 
-To make our books, we needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no weeks laying out pages in InDesign), and instantly [spits out HTML](http://electricbookworks.github.io/book-framework/) we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
+We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
 
-With this framework, in essence:
+With this framework:
 
-* we store our master files as markdown;
-* we create HTML from that, as needed, using Jekyll.
+1.	We store a book's master files in plain text (formatted as [markdown](http://daringfireball.net/projects/markdown/syntax#philosophy)).
+2.	We turn that plain text into clean HTML instantly (using [Jekyll](http://jekyllrb.com/)).
+3.	We apply different stylesheets to that HTML to get beautiful print PDFs, web versions, and ebooks in minutes.
 
-This workflow is powerful enough to produce neat HTML we can use flexibly, and markdown is simple enough that non-technical people can be shown how to create and edit it.
-
-## Background reading
-
-To understand how this all works, you need to be familiar with a few concepts and tools first. 
-
-*	You need to have a basic understanding of HTML and CSS, because that's what we're going to create, using markdown and Jekyll.
-*	Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports classes. 
-*	Jekyll is the machine that minces markdown into HTML files. If you need to learn about or install Jekyll, [start here](http://jekyllrb.com/). If you're on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).
-*	For version control, it helps immensely to know how [GitHub](http://github.com) works. We use GitHub for all our book file storage and version control.
+Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. (They can even work directly on the master files remotely using [Prose](http://prose.io/).)
 
 ## Alternatives
 
-There are similar systems for this that use variants of Jekyll and/or markdown, such as:
+There are several digital-first book-publishing systems around. 
 
-*	[Prose](http://prose.io/)
+Some are also based on markdown, like ours:
+
 *	[Gitbook IO](https://www.gitbook.io/)
 *	[Penflip](https://www.penflip.com/)
 *	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader). 
 
-We also like [OERPub Editor](http://oerpub.org/tools/), a web-based editor for non-technical people to create EPUB3 HTML that includes maths. As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
+[PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service. 
 
-Systems like [PressBooks](http://pressbooks.com/) are also nice ways to get a digital-first workflow going. And if you're spending money then [O'Reilly Atlas](https://atlas.oreilly.com/) looks very promising.
+And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https://atlas.oreilly.com/).
+
+[OERPub Editor](http://oerpub.org/tools/) is a web-based editor for non-technical people to create EPUB3 HTML that includes maths. As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
+
+## Background reading
+
+To manage this framework yourself, you need to be familiar with a few concepts and tools first. 
+
+*	You need to have a solid understanding of HTML and CSS.
+*	You need to know about markdown. Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports some extra features, especially classes. 
+*	Jekyll is the machine that minces markdown into HTML files. To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).
+*	For version control, we use Git. Specifically, we use [GitHub](http://github.com), the leading hosted Git service, for online file storage and version control.
 
 ## The workflow
 
-Three are four key components to our workflow:
+These are the key components in our workflow:
 
-* content in markdown files
-* GitHub for version control
-* Jekyll for converting the markdown into HTML
-* CSS stylesheets for each output format (we use one for screen output and one for print-PDF output, but you can add others).
+*	Content in plain-text, formatting as kramdown-based markdown
+*	GitHub for version control
+*	Jekyll for converting the markdown into HTML
+*	CSS stylesheets for each output format
+*	Prince for creating PDFs from HTML
+*	Sigil for assembling the HTML in epubs.
 
 So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, our Bettercare books are here:
 
@@ -52,15 +58,15 @@ For open-source books, we let GitHub Pages publish the static HTML output, which
 
 [http://electricbookworks.github.io/bettercare/](http://electricbookworks.github.io/bettercare/)
 
-(We have a separate live site where we host static HTML from a local own Jekyll instance.)
+(For Bettercare, we have a separate live site where we host the static HTML.)
 
-When we use this workflow for closed content, we don't use GitHub Pages. We do use private GitHub repos for version control.
+When we use this workflow for closed content, we don't use GitHub Pages, and store the content in private GitHub repos.
 
-If you click through to a book chapter on our GitHub Pages view, you'll see the HTML we get from kramdown is very simple. For example, go view source here:
+If you click through to a book chapter on our GitHub Pages view, you'll see the HTML we get from kramdown is very simple. For example, view source here:
 
 [http://electricbookworks.github.io/bettercare/nc/nc-1.html](http://electricbookworks.github.io/bettercare/nc/nc-1.html)
 
-The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, our app, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers that don't support publisher CSS. For instance, see our Book Dash books:
+The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, our app, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers that don't support publisher CSS. For instance, see the [Book Dash](http://bookdash.org) books:
 
 [http://bookdash.github.io/bookdash-books/](http://bookdash.github.io/bookdash-books/)
 
@@ -153,7 +159,7 @@ This is what we do when we convert one of our textbooks from a traditional InDes
 1. Search for every instance of italic, bold and bold-italic, and manually mark these in markdown with asterisks: in markdown, `*one asterisk*` is *italic*, `**two**` is **bold**, and `***three***` is ***bold-italic***. Remember that in some fonts, italic and bold may have different names in InDesign, like 'oblique' and 'black'.
 1. Look out for special characters, especially degree symbols (°), superscripts and subscripts. It's best to search the InDesign document (search by style and basic character formats, e.g. 'Position' for superscript and subscript) for these instances so you don't miss any. Most superscripts and subscripts in InDesign and similar are created by formatting normal text. In text-only, there is no formatting, so you should use the [unicode character for each superscript or subscript character](http://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts). E.g. when typing the symbol for oxygen, O₂, the subscript 2 is ₂, unicode character U+2082. To type these characters, you may need special software (e.g. for Windows, Google unicodeinput.exe), or copy-paste from [an online reference](http://scriptsource.org/cms/scripts/page.php?item_id=character_list&key=2070). In Windows, you can also find symbols in Character Map, e.g. search in Character Map for 'Subscript Two'.
 
-## Tables
+### Tables
 
 Kramdown (and most markdown variants) can only handle very simple tables. For these you can create the Markdown layout manually.
 
@@ -161,7 +167,7 @@ For complex tables – anything with merged cells, for instance – you must cre
 
 Add `{:.table-caption}` in the line immediately after a table caption. Kramdown uses this to apply the class `table-caption` to the paragraph. In our print output, this lets `print.css` avoid a page break after the caption, before the table. (According to publishing best-practice, table captions must always appear above tables, not after them.)
 
-### Markdown tables tip
+#### Markdown tables tip
 
 Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/10/format-text-as-table.html) to create markdown tables quickly:
 
@@ -173,9 +179,9 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 * Copy the Output and paste it into your markdown file.
 * The Senseful tool starts some table borders with + where kramdown needs a |. Manually change the starting + in any row with a |.
 
-## Images
+### Images
 
-### Preparing images
+#### Preparing images
 
 *	Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use. 
 *	Ensure that raster images, or raster/bitmap elements in SVG, are high-res enough for printing (e.g. 300dpi at full size). 
@@ -188,7 +194,7 @@ Here's our most common workflow for converting images to SVG:
 *	If the image was created in Photoshop or other raster format: open the original, copy into Illustrator. Live trace the image. (We mostly use the 'Detailed Illustration' preset.) Save as SVG. You can also use the trace function in Inkscape instead of Illustrator.
 *	If you save SVG from Adobe Illustrator (and possibly other creators, too), choose to convert type to outlines. (For us, the main reason for this is that PrinceXML gives unpredictable results with type in SVG. But it's probably safest generally to convert type to outlines for consistent output.)
 
-### Adding images in markdown
+#### Adding images in markdown
 
 We use standard markdown to embed images:
 
@@ -235,7 +241,7 @@ If it's important to you that the image isn't in a blockquote, and there is no c
 
 Always check print output (putting the HTML Jekyll creates through Prince with `print.css`) to be sure you're getting what you intend.
 
-### Image placement
+#### Image placement
 
 You may need to control how an image is sized and placed on the page – especially in print – depending on its detail or aspect ratio and nearby images or other elements. You do this by adding the class tag to the line after the `>` lines. (This applies a class to the blockquote in HTML.) You have these options:
 
@@ -255,7 +261,7 @@ and so on. You can combine size and placement classes like this, too:
 
 `{:.figure .fixed .small}`
 
-### Recommended image sizes
+#### Recommended image sizes
 
 We like to use these settings where possible:
 
@@ -321,7 +327,7 @@ Add the front-cover image to the book's `images` folder. Ensure colour settings 
 
 The first is mandatory. The thumbnail and large images are for your convenience. For instance, when uploading a book to Amazon Kindle, you must provide a cover image this large.
 
-## Embedding video
+### Embedding video
 
 You can include any iframe in markdown to embed a video. We've created a simple way to embed YouTube videos and have them look consistent across your web version.
 
@@ -345,7 +351,7 @@ Note that this only works with YouTube. If you're embedding from any other servi
 *	try to select a width of around 850 px
 *	add `style="max-width: 100%;"` and `class="non-printing"` to the iframe tag.
 
-## Footnotes, endnotes and sidenotes
+### Footnotes, endnotes and sidenotes
 
 Our framework provides three options for notes.
 
@@ -356,9 +362,9 @@ Our framework provides three options for notes.
 
 **Sidenotes** appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a `*` at the start of the sidenote text and `*{:.sidenote}` at the end (with no spaces). (Technically, you're creating an `<em>` span with a kramdown IAL.)
 
-**Sidenotes at the bottom of a page** only work in print. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these act as regular sidenotes.
+In print, you can put **sidenotes at the bottom of the page**. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these are just regular sidenotes.
 
-## Stylesheets
+### Stylesheets
 
 We've provided generic stylesheets in the framework, but any given project will probably need its own styling for one reason or another.
 
@@ -372,19 +378,19 @@ Keep in mind, regarding our stylesheets:
 
 We've learned some stuff the hard way:
 
-Using Jekyll and GitHub:
+### Using Jekyll and GitHub:
 
 *	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
 *	You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.
 *	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You'll have to do something like `title: Beans—The musical fruit`.
 *	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt. (We let _site sync to GitHub so that the template includes our example output.)
 
-Markdown tricks and quirks:
+### Markdown tricks and quirks:
 
 *	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list test. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (My local Jekyll instance correctly parses nested lists even if I use a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/nc/nc-12.html#how-can-you-prevent-infection-in-newborn-infants).
 *	Keep spans within block elements. For instance, if you have two paragraphs in italic, don't start the italics with `*` in the first paragraph and end the span with a second `*` in the next paragraph. The HTML needs one span (e.g. `<em>` span) in the first para, and another in the second para. The converter isn't smart enough to split your intended italics into two spans. Rather end the first span in the first para, and start another one in the second.
 
-File naming:
+### File naming:
 
 *	Name each book's markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. `0-1-titlepage.md`, `0-2-copyright.md`, and chapter files are numbered for their chapter number, e.g. `1.md`, `2.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into PrinceXML for PDF output.
 
