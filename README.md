@@ -372,7 +372,7 @@ Keep in mind, regarding our stylesheets:
 
 *	Our CSS files for print (e.g. `print.css`) are designed specifically for use with [Prince](http://princexml.com).
 *	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
-*	Glance through our stylesheets to see what's useful, especially in `print.css`. E.g. the `.keep-together`, `.keep-with-next` and `page-break-before` classes, which you can add to almost any element in kramdown. For instance, include `{:.keep-together}` in the line immediately after a paragraph to stop it breaking.
+*	Glance through our stylesheets to see what's useful, especially in `print.css`. For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. For instance, you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns.
 
 ## Trial-and-error tips
 
@@ -383,18 +383,18 @@ We've learned some stuff the hard way:
 *	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
 *	You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.
 *	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You'll have to do something like `title: Beans—The musical fruit`.
-*	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt. (We let _site sync to GitHub so that the template includes our example output.)
+*	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt. (We let `_site` sync to GitHub for this template repo so that it includes our example output for reference.)
 
 ### Markdown tricks and quirks:
 
-*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list test. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (My local Jekyll instance correctly parses nested lists even if I use a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/nc/nc-12.html#how-can-you-prevent-infection-in-newborn-infants).
+*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list text. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (A local Jekyll instance may correctly parse nested lists even with a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/newborn-care/12.html#how-can-you-prevent-infection-in-newborn-infants).
 *	Keep spans within block elements. For instance, if you have two paragraphs in italic, don't start the italics with `*` in the first paragraph and end the span with a second `*` in the next paragraph. The HTML needs one span (e.g. `<em>` span) in the first para, and another in the second para. The converter isn't smart enough to split your intended italics into two spans. Rather end the first span in the first para, and start another one in the second.
 
-### File naming:
+### File naming
 
-*	Name each book's markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. `0-1-titlepage.md`, `0-2-copyright.md`, and chapter files are numbered for their chapter number, e.g. `1.md`, `2.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into PrinceXML for PDF output.
+Name each book's markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. `0-1-titlepage.md`, `0-2-copyright.md`, and chapter files are numbered for their chapter number, e.g. `1.md`, `2.md`, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into Prince for PDF output.
 
-## Print output
+## PDF output for print
 
 We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our framework's CSS files for printing are designed specifically for Prince.
 
@@ -402,9 +402,10 @@ We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, 
 
 1.	Find your book's HTML files in your `_site` folder. (Remember to run Jekyll locally to generate the latest version; if you're getting your HTML from a GitHub repo's `_site` folder, trust that the last contributor synced up-to-date, reliable HTML generated by their local Jekyll instance.)
 2.	Drag the HTML files into Prince. Make sure they're in the right order. Only include the files you need in print. For instance, you'll usually leave out `index.html`. You'll usually only include `cover.html` when creating a PDF ebook.
-3.	Tick ‘Merge all…’ and **specify an output file** location and name. Do not let Prince output to your `_site` folder. (If you skip this, Prince will output to your `_site` folder, which will cause permissions issues when you want to modify or delete the file, because Jekyll owns the `_site` folder. Plus, Git will try to commit and sync the output PDF, which you don't want.)
-4.	Drag the CSS file for your print output into Prince. By default in our book-framework, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add these CSS files, after `print.css`, for additional options:
-	*	`print-a4.css` overrides the page size and sets it to A4;
+3.	Tick ‘Merge all…’ and **specify an output file** location and name. Do not let Prince output to your `_site` folder. (If you skip this, Prince will output to your `_site` folder, which will cause permissions issues when you want to modify or delete the file, because Jekyll owns the `_site` folder and can overwrite it, and because Git will try to commit and sync the output PDF, which you probably don't want.)
+4.	Drag the CSS file for your print output into Prince. By default in our book-framework, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add any of these CSS files, after `print.css`, for additional options:
+	*	`print-a4.css` overrides the page size and sets it to A4 (portrait);
+	*	`print-a5.css` overrides the page size and sets it to A5 (portrait);
 	*	`print-no-crop-marks.css` removes the crop marks, but leaves the bleed as is;
 	*	`print-no-bleed.css` removes the bleed, and any crop marks with it.
 5.	Click Convert.
@@ -413,15 +414,15 @@ Note: the links to CSS in our output HTML `<head>` *deliberately* break the link
 
 ## Epub output
 
-At EBW, we like to assemble our epubs in [Sigil](https://github.com/user-none/Sigil/). If we're not tweaking, it takes five minutes.
+We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes.
 
-*	Put the HTML files from `_site` into your `Text` folder.
-*	Put the framework's `epub.css` in your `Styles` folder.
-*	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
-*	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
-*	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: `(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->`.
-*	Add basic metadata and semantics to your epub using Sigil's tools for this.
-*	Generate an epub table of contents using Sigil's TOC tools.
-*	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
+1.	Put the HTML files from `_site` into your `Text` folder.
+1.	Put the framework's `epub.css` in your `Styles` folder.
+1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
+1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
+1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: `(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->`.
+1.	Add basic metadata and semantics to your epub using Sigil's tools for this.
+1.	Generate an epub table of contents using Sigil's TOC tools.
+1.	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
 
 For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
