@@ -151,6 +151,9 @@ body {
 	text-indent: 0;
 	margin: 0 0 0.5em 0;
 }
+.home #footer p {
+	display: none;
+}
 
 /* 
  * Nav bar
@@ -181,6 +184,9 @@ body {
 }
 #nav-bar a:hover {
 	color: grey;
+}
+.home #nav-bar a {
+	display: none;
 }
 
 /* 
@@ -463,7 +469,7 @@ sup:target {
 			float: right;
 			position: relative;
 			max-width: 40%;
-			margin: 0.5em 0 0.5em 0.5em;
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 
