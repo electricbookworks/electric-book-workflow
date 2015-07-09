@@ -18,8 +18,8 @@ There are several digital-first book-publishing systems around.
 
 Some are also based on markdown, like ours:
 
-*	[Gitbook IO](https://www.gitbook.io/)
-*	[Penflip](https://www.penflip.com/)
+*	[Gitbook IO](http://www.gitbook.io/)
+*	[Penflip](http://www.penflip.com/)
 *	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader). 
 
 [PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service. 
