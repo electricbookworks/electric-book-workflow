@@ -35,20 +35,26 @@ prose:
     - /_includes
     - /css
 
-# These are default YAML values that apply to multiple documents. 
+# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults)
 defaults: 
     -
-        scope: # Set the filename of each book's outputted contents page for use in navigation. For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults
-            path: "book-one" # the folder for a book
-        values:
-            contents: "0-3-contents.html" # the filename of its contents page
-    -
-        scope: # Set the contents-page filename for each book in the collection separately.
-            path: "book-two" # the folder for a book
-        values:
-            contents: "0-4-contents.html" # the filename of its contents page
-    -
-        scope: # Let's set the default page layout, for when a layout specified in a page's YAML header doesn't exist.
-            path: "" # an empty string here means all files in the project
+        scope: # First we set defaults for all pages (an empty string "" for path means all files).
+            path: ""
         values:
             layout: "default"
+            stylesheet: "screen.css"
+            contents: "0-3-contents.html"
+    -
+        scope: # Now, for each book's folder, override/add its HTML contents page and any new and/or child stylesheets.
+            path: "book-one"
+        values:
+            contents: "0-3-contents.html"
+            stylesheet: "screen.css"
+            stylesheet-child: ""
+    -
+        scope: # Repeat for each book, once for book's folder, which is the path variable here.
+            path: "book-two"
+        values:
+            contents: "0-3-contents.html"
+            stylesheet: "screen.css"
+            stylesheet-child: "screen-child-book-two.css"

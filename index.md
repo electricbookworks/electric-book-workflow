@@ -14,4 +14,7 @@ With some technical expertise, you can use it, too. You can also [hire us](http:
 > A little book showing default structure and typography.
 {:.figure}
 
+All the books in a collection (and therefore gathered on one site) can share the same web design (CSS), but they can also have their own styles instead or in addition. For instance, [here's the same book](book-two) with a different nav bar.
+
 If you're creating one or more books in a series or collection, this index page is a good place to keep information about the books, like basic metadata, licensing info, and marketing copy like blurbs. It won't be included in the output versions of your books (e.g. the print PDF or epub), but it can be a landing page for the series if you publish a collection as a website.
+
