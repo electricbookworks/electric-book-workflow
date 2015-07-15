@@ -421,7 +421,7 @@ Note: the links to CSS in our output HTML `<head>` *deliberately* break the link
 
 ### Managing hyphenation in Prince
 
-Our default stylesheets ask Prince to hyphenate paragraphs and lists (`p, ul, ol, dl`), with a few exceptions (such as text on the title and contents pages). Prince includes a range of hyphenation dictionaries by default, which do a good job. However, you might need to add dictionaries or lists of specific words that Prince doesn't support. You can find `.dic` files online for various languages and specialities, or you can compile your own.
+Our default stylesheets ask Prince to hyphenate paragraphs and lists (`p, ul, ol, dl`), with a few exceptions (such as text on the title and contents pages). Prince includes a range of hyphenation dictionaries by default, which do a good job. However, you might need to add dictionaries or lists of specific words that Prince doesn't support. You can find `.dic` files online for [various languages](http://www.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt) and specialities, or you can compile your own.
 
 We provide a blank `.dic` file for you to add your own list of hyphenation rules to. It is at `css/dictionaries/hyph.dic`. Our `print.css` asks Prince to look here when hyphenating.
 
