@@ -76,7 +76,7 @@ Finally, to turn our HTML into print PDFs, we use [PrinceXML](http://princexml.c
 
 The framework repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
 
-One framework repo can hold one or many books (for instance all the books in a series with consistent structure and layout, since all books in a collection use the same CSS). Each book's content is in its own folder in the root. 
+One framework repo can hold one or many books (for instance all the books in a series, since all books in a collection may use the same CSS). Each book's content is in its own folder in the root. 
 
 In the framework repo, we have `book-one` as an example with a few sample files in it. In each file's YAML header, we specify the style to use – that is, how will this section of the book look? (That `style` YAML sets the class of the output HTML's `<body>` element. We use these to control CSS and page structure.)
 
@@ -366,7 +366,16 @@ In print, you can put **sidenotes at the bottom of the page**. By adding `.botto
 
 ### Stylesheets
 
-We've provided generic stylesheets in the framework, but any given project will probably need its own styling for one reason or another.
+We've provided generic stylesheets in the framework, but any given project will probably need its own styling for one reason or another. The main stylesheets are:
+
+*	`screen.css` for the web version
+*	`print.css` for PDF output with Prince.
+
+For wholesale changes, you can edit the file itself. To override only a few values or elements, rather create a child stylesheet. 
+
+For child CSS to `screen.css`, create the file, save it in the repo's `css` folder, and add the CSS filename to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
+
+For child CSS to `print.css`, create the file and save it to the repo's `css` folder. Then when you output PDF in Prince, apply both `print.css` and your child stylesheet, in that order.
 
 Keep in mind, regarding our stylesheets:
 
