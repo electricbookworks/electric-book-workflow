@@ -1,7 +1,5 @@
 ---
-book: Book title
 title: Acknowledgements
-style: chapter
 ---
 
 # Acknowledgements

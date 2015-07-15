@@ -1,0 +1,2 @@
+/* Add this CSS file to Prince output to show all the hyphenation points Prince is using. */
+body { hyphens: prince-expand-all }

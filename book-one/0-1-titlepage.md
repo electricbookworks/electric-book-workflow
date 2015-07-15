@@ -1,5 +1,4 @@
 ---
-book: Book title
 title: Title page
 style: title-page
 ---

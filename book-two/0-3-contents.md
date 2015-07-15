@@ -1,5 +1,4 @@
 ---
-book: Book Two Title
 title: Contents
 style: contents-page
 ---

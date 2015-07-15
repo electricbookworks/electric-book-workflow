@@ -1,5 +1,4 @@
 ---
-book: Book title
 title: Cover
 style: cover
 ---

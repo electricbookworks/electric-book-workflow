@@ -90,7 +90,9 @@ In the framework repo, we have `book-one` as an example with a few sample files 
 | A first chapter   | `1.md`                    | `chapter`        |
 | A second chapter  | `2.md`                    | `chapter`        |
 
-Page layouts we've designed for already in the template CSS are:
+If you don't set the `style`, the page will default to `style: chapter`. (So you don't need to ever set `style: chapter` in a YAML header.)
+
+Page layouts we've designed for in our template CSS are:
 
 *	`index` for the home page of a collection
 *	`cover` for a front cover, which will appear in ebook editions
@@ -102,7 +104,7 @@ Page layouts we've designed for already in the template CSS are:
 *	`dedication-page` for a dedication page
 *	`epigraph-page` for an epigraph page
 *	`frontmatter` for other prelim pages not accounted for otherwise
-*	`chapter` for a book's default chapter page
+*	`chapter` for a book's default chapter page (and the global default)
 
 If you don't want the navigation (nav bar and footer) on a page, such as the collection's index page, add `layout: min` to the document's YAML header. The `min` layout does not include a nav-bar and footer.
 
@@ -371,17 +373,13 @@ We've provided generic stylesheets in the framework, but any given project will 
 *	`screen.css` for the web version
 *	`print.css` for PDF output with Prince.
 
-For wholesale changes, you can edit the file itself. To override only a few values or elements, rather create a child stylesheet. 
+Unless you are radically changing the design of your book, we recommend not editing these two files. To override only a few values or elements, rather create a child stylesheet containing only your new styling rules. 
 
-For child CSS to `screen.css`, create the file, save it in the repo's `css` folder, and add the CSS filename to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
+To create a child stylesheet of `screen.css`, create the file, save it in the repo's `css` folder, and add its filename to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
 
-For child CSS to `print.css`, create the file and save it to the repo's `css` folder. Then when you output PDF in Prince, apply both `print.css` and your child stylesheet, in that order.
+To create a child stylesheet to `print.css`, create the file and save it to the repo's `css` folder. Then when you create a PDF in Prince, apply both `print.css` and your child stylesheet, in that order.
 
-Keep in mind, regarding our stylesheets:
-
-*	Our CSS files for print (e.g. `print.css`) are designed specifically for use with [Prince](http://princexml.com).
-*	Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
-*	Glance through our stylesheets to see what's useful, especially in `print.css`. For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. For instance, you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns.
+Glance through our stylesheets to see what's useful, especially in `print.css`. For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. And you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns. Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
 
 ## Trial-and-error tips
 
@@ -420,6 +418,26 @@ We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, 
 5.	Click Convert.
 
 Note: the links to CSS in our output HTML `<head>` *deliberately* break the link to `screen.css` when using Prince, so that you don't get screen styles in your print output. You can ignore error messages from Prince saying it can't find `screen.css`.
+
+### Managing hyphenation in Prince
+
+Our default stylesheets ask Prince to hyphenate paragraphs and lists (`p, ul, ol, dl`), with a few exceptions (such as text on the title and contents pages). Prince includes a range of hyphenation dictionaries by default, which do a good job. However, you might need to add dictionaries or lists of specific words that Prince doesn't support. You can find `.dic` files online for various languages and specialities, or you can compile your own.
+
+We provide a blank `.dic` file for you to add your own list of hyphenation rules to. It is at `css/dictionaries/hyph.dic`. Our `print.css` asks Prince to look here when hyphenating.
+
+A `.dic` file is a plain-text file with one word or word-fragment on each line. Each one is called a pattern.
+
+*	If the pattern starts with a `.`, it will apply to, or match, any word that starts with that pattern. E.g. `.foo` will match the words 'food' and 'foobar' but not 'fastfood'.
+*	If the pattern ends with a `.`, it will apply to any word that ends with that pattern. E.g. `port.` will match 'port' and 'sport' but not 'portico'.
+*	Thus, if the pattern starts *and* ends with a `.`, it will apply to only that pattern exactly. E.g. `.port.` will only ever match 'port'.
+
+To show where a word or word-fragment can hyphenate, you add digits (1 to 9) to the pattern. The digits have special meanings:
+
+*	Insert odd digits (1, 3, 5, 7, 9) where the word may hyphenate.
+*	Insert even digits (2, 4, 6, 8) where the word should not hyphenate.
+*	The higher the number, the more important the rule. That is, a `1` says 'hyphenate here if you must', but a `9` says 'this is the best place to hyphenate'. A 2 says 'don't hyphenate here if you can help it', but an `8` says 'Do not, not, not hyphenate here.'
+
+For user discussion, see [the Prince forums here](http://www.princexml.com/forum/topic/542/prince-hyphenate-patterns-none-url-patterns-url): If you need to hack Prince's built-in hyphenation dictionaries more deeply, see [this forum post](http://www.princexml.com/forum/topic/1474/prince-and-hyphenation).
 
 ## Epub output
 

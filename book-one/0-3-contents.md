@@ -1,5 +1,4 @@
 ---
-book: Book title
 title: Contents
 style: contents-page
 ---

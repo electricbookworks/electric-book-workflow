@@ -1,5 +1,4 @@
 ---
-book: Book Two Title
 title: Title page
 style: title-page
 ---

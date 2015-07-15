@@ -1,5 +1,4 @@
 ---
-book: Book title
 title: Copyright
 style: copyright-page
 ---

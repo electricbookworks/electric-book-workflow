@@ -10,7 +10,7 @@ name: "Series name"
 # A one-liner about this collection. Useful for Open Graph metadata.
 description: "A description of this series or collection"
 
-# The primary language of the books in this collection.
+# The primary language used in this collection. Set the language for each book below. Use ISO 639-1 two-letter codes: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 language: en
 
 # Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
@@ -42,19 +42,30 @@ defaults:
             path: ""
         values:
             layout: "default"
-            stylesheet: "screen.css"
-            contents: "0-3-contents.html"
-    -
-        scope: # Now, for each book's folder, override/add its HTML contents page and any new and/or child stylesheets.
-            path: "book-one"
-        values:
-            contents: "0-3-contents.html"
+            style: "chapter"
             stylesheet: "screen.css"
             stylesheet-child: ""
+            contents: "0-3-contents.html"
+            language: "en"
     -
-        scope: # Repeat for each book, once for book's folder, which is the path variable here.
+        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder.
+            path: "book-one"
+        values:
+            book-title: "Book title"
+            language: "en"
+            layout: "default"
+            style: "chapter"
+            stylesheet: "screen.css"
+            stylesheet-child: ""
+            contents: "0-3-contents.html"
+    -
+        scope: # Repeat for each book.
             path: "book-two"
         values:
-            contents: "0-3-contents.html"
+            book-title: "Book two title"
+            language: "en"
+            layout: "default"
+            style: "chapter"
             stylesheet: "screen.css"
             stylesheet-child: "screen-child-book-two.css"
+            contents: "0-3-contents.html"

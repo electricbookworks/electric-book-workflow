@@ -192,8 +192,8 @@
 }
 
 /* We want some layouts to start on right-hand pages only */
-.frontmatter, .dedication-page, .epigraph-page, .contents-page, .chapter { 
-	page-break-before: left;
+.frontmatter, .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter { 
+	page-break-before: right;
 }
 
 /* For a manual page break before an element, apply this class to it */
@@ -229,6 +229,7 @@ body {
 	font-variant: prince-opentype(liga);
 	orphans: 2; /* minimum number of lines that must be left at the bottom of the first page */
 	widows: 2; /* minimum number of lines that must be left at the top of the second page */
+	prince-hyphenate-patterns: url("dictionaries/hyph.dic"); /* Specifies a local .dic file containing hyphenation patterns, relative to this CSS file. */
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
