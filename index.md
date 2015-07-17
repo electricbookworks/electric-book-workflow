@@ -5,7 +5,7 @@ style: home
 
 # The EBW book framework
 
-You're looking at a template home page for a collection of books. It's created with our open-source [EBW book framework](https://github.com/electricbookworks/book-framework). We developed the framework at [Electric Book Works](http://electricbookworks.com) for our own publishing. It lets you store books in plain text with great version control, and output various formats quickly, such as website versions, ebooks and print editions.
+You're looking at a template home page for a collection of books. It's created with our open-source [EBW book framework](https://github.com/electricbookworks/book-framework#the-ebw-book-framework). We developed the framework at [Electric Book Works](http://electricbookworks.com) for our own publishing. It lets you store books in plain text with great version control, and output various formats quickly, such as website versions, ebooks and print editions.
 
 With some technical expertise, you can use it, too. You can also [hire us](http://electricbookworks.com) to make your books, ebooks and web-books for you. See [the template in action as a website](book-one), or [download a PDF version](download/ebw-book-framework-template.pdf).
 

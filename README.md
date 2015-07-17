@@ -2,7 +2,7 @@
 
 This framework provides a digital-first workflow for creating books in print, as ebooks, and for the web. We developed it for ourselves at [Electric Book Works](http://electricbookworks.com), for producing books that are largely text with some images, such as novels, non-fiction books, essays, papers, poetry, textbooks, manuals and reports.
 
-You can [see a demo of this template here](http://electricbookworks.github.io/book-framework/).
+You can [see a demo of the working framework here](http://electricbookworks.github.io/book-framework/).
 
 We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
 
