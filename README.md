@@ -43,7 +43,7 @@ To manage this framework yourself, you need to be familiar with a few concepts a
 
 These are the key components in our workflow:
 
-*	Content in plain-text, formatted as kramdown-based markdown
+*	Content in plain-text, formatted as kramdown-flavoured markdown
 *	GitHub for version control
 *	Jekyll for converting the markdown into HTML
 *	CSS stylesheets for each output format
@@ -126,10 +126,10 @@ To create a new book in a new collection:
 	*	`index.md`: Read and replace the book-framework template text with your own.
 	*	`README.md`: Replace all the book-framework description text with any notes your collaborators might need to know about your collection.
 3.	Rename the `book-one` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder for each one. Each book gets its own folder.
-4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our examples suggests. 
+4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our example suggests. 
 5.	Inside the book's folder, store images in the `images` folder. 
 	*	Replace the `publisher-logo.svg` file with your imprint or brand's logo. 
-	*	Replace the `cover.jpg` image with your book's front cover image. For best results, use an image almost but less than 1000px on its longest side. (More on images below.)
+	*	Replace the `cover.jpg` image with your book's front cover image. (Your life will be simpler if you also name it `cover.jpg`.) For best results, use an image almost but less than 1000px on its longest side. (More on images below.)
 
 ## Creating a book in markdown
 
@@ -139,7 +139,7 @@ Before you start:
 
 *	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
 *	Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
-*	If you're working on Windows, set your default character encoding for your documents to 'UTF without BOM'. (Jekyll will break if you don't.)
+*	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM'. (Jekyll will break if you don't.)
 *	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 *	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
 *	Look through our [example template here](http://electricbookworks.github.io/book-framework/) to get an idea of available default typography.
@@ -190,6 +190,7 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 *	Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use. 
 *	Ensure that raster images, or raster/bitmap elements in SVG, are high-res enough for printing (e.g. 300dpi at full size). 
 *	Embed images placed in your SVG image, don't just link them.
+*	Create a JPG version of every SVG image with the same file name (e.g. `bear.svg` and `bear.jpg`). You'll need the JPG fallback for EPUB. (We recommend JPG over GIF or PNG as a general default. One reason is that transparency seems like a good idea until your end-user switches their e-reader to 'night mode', and your black line-art disappears into the background.)
 *	Save images in the book's `images` folder.
 
 Here's our most common workflow for converting images to SVG:
@@ -446,12 +447,33 @@ For user discussion, see [the Prince forums here](http://www.princexml.com/forum
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes.
 
 1.	Put the HTML files from `_site` into your `Text` folder.
-1.	Put the framework's `epub.css` in your `Styles` folder.
-1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
-1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove `@font-face` rules from your stylesheet to avoid file-not-found validation errors.)
+1.	Put the framework's `epub.css` in your `Styles` folder. The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.
+1.	Replace any SVG images in the `Images` folder with JPG equivalents. And search-and-replace any links to .svg in your HTML files with .jpg.
+1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`. (The `epub.css` stylesheet is the same as `screen.css` but with @font-face rules removed and @media queries removed for compatibility with ADE, which has poor CSS support.)
+1.	If your book has a child stylesheet, update that `<link>` path, too. Otherwise, remove the blank `<link>`: i.e. `<link href="/css/" rel="stylesheet" type="text/css"/>`.
+1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove any `@font-face` rules from your stylesheet to avoid file-not-found validation errors. We don't recommend embedding fonts unless they are required for meaning or unusual character sets.)
 1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: `(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->`.
-1.	Add basic metadata and semantics to your epub using Sigil's tools for this.
-1.	Generate an epub table of contents using Sigil's TOC tools.
+1.	Search-and-replace to remove the `footer` div (it's unnecessary in an ebook, and its links may break anyway). To remove the footer div in Sigil, use this DotAll Regex search and replace with nothing: `(?s).<div class="non-printing" id="footer">(.*)<!--#footer-->`.
+1.	Remove videos in iframes (iframes are invalid in EPUB2 XHTML 1.1). We recommend replacing videos with a link to an online version, e.g. to a YouTube page. This is best done manually. Search for `videowrapper` to find instances of embedded videos. The DotAll regex for finding the video wrapper is: `(?s).<div class="videowrapper non-printing">(.*)</div><!--.videowrapper"-->`. To replace the standard video wrapper with a link to the video:
+	*	Search for `(?s).<div class="videowrapper non-printing">(.*)src="(.*)" width(.*)</div><!--.videowrapper"-->`. This will find the videowrapper and store the URL of the embedded video in memory.
+	*	Replace with `<a href="\2" class="button">Watch</a>`. This will replace the entire wrapper with a link to the same iframe URL it memorised (at `\2`). Replace `Watch` with whatever phrase you want to be the clickable text.
+1.	Add basic metadata to your epub using Sigil's Metadata Editor. Include at least:
+	*	title: subtitle
+	*	author
+	*	date of creation
+	*	publisher (Bettercare)
+	*	ISBN
+	*	Relation ISBN (we use the print ISBN as a parent ISBN)
+1.	Add semantics (right click the file name in Sigil for the semantics context menu) to:
+	*	key HTML files
+	*	the cover JPG.
+1.	Generate the epub's table of contents (Tools > Table Of Contents…).
 1.	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
+1.	Validate the epub in Sigil and fix any validation errors. Sigil let's some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
+	*	the [IDPF's online version of EpubCheck](http://validator.idpf.org/)
+	*	[epubcheck](https://github.com/IDPF/epubcheck/wiki/Running) installed locally, and run from the command line; or
+	*	[pagina EPUB-Checker](http://www.pagina-online.de/produkte/epub-checker/).
+
+Note: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly. For instance, replace `fnref:` with `fnref-` and `fn:` with `fn-`.
 
 For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
