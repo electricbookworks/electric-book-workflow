@@ -1,8 +1,8 @@
+@charset "utf-8";
+
 /*
  * Screen typography for the EBW book framework: https://github.com/electricbookworks/book-framework
  */
-
-@charset "utf-8";
 
 /* We prefer to reference fonts locally, especially for offline use and to store OTF for OpenTyne font-feature-settings (see http://www.microsoft.com/typography/otspec/featurelist.htm and http://clagnut.com/sandbox/css3/) for what's possible. */
 @font-face {
@@ -206,6 +206,10 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
 h1 {
 	max-width: 80%;
 	line-height: 100%;
+}
+h1 strong:first-of-type { /* Useful for chapter numbers: make the number first and bold in the h1 */
+	display: block;
+	margin: 0 0 0.5em 0;
 }
 h2 {
 	margin: 1.5em 0 0.5em 0;

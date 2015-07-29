@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /*
  * Print typography for the EBW book framework: https://github.com/electricbookworks/book-framework
  * Created specifically for use with PrinceXML: http://princexml.com
@@ -7,8 +9,6 @@
 /*
  * Page layouts for PrinceXML
  */
-
-@charset "utf-8";
 
 @font-face {
     font-family: "Linux Libertine";
@@ -733,12 +733,6 @@ ol li blockquote.figure, ul li blockquote.figure {
 }
 .contents-page li li {
 	margin: 0;
-}
-.contents-page ol li::marker {
-	content: counter(list-item);
-}
-.contents-page ol li li::marker {
-	content: none;
 }
 .contents-page h2 {
 	font-size: 1.2em;
