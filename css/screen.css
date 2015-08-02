@@ -363,7 +363,7 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 }
 
 /*
- * Bold elements, useful for blockquotes and definition lists 
+ * Shouts like pull quotes, useful for blockquotes and definition lists 
  */
 
 .shout {
@@ -374,6 +374,23 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 .shout * {
 	line-height: 115%;
 }
+.pullquote {
+	text-indent: 0;
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: center;
+	line-height: 115%;
+	margin: 1em 0;
+    max-width: 23em;
+}
+.pullquote + p {
+	text-indent: 0;
+}
+
+/*
+ * Boxes
+ */
+
 .box {
 	background-color: inherit;
 	color: inherit;
@@ -391,6 +408,9 @@ p.box {
 }
 .box + p {
 	text-indent: 0;
+}
+.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
+	margin-top: 0;
 }
 
 /*
@@ -717,6 +737,10 @@ p.epigraph-source {
 }
 p.epigraph-source:before {
 	content: "—";
+}
+.epigraph-source + p, .dedication +p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
+	text-indent: 0;
+	margin-top: 1em; 
 }
 
 /*

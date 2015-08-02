@@ -249,7 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: 2.5em;
-	max-width: 80%;
 	string-set: chapter-title content();
 }
 h1 strong:first-of-type { /* Useful for chapter numbers: make the number first and bold in the h1 */
@@ -342,8 +341,16 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, 
 	margin: 0; /* Overrides margin inadvertently added by using .first or .verse on a paragraph after a heading, blockquote, list or definition list */
 }
 
-/* Epigraphs */
+/* Dedications and epigraphs */
 
+p.dedication {
+	text-indent: 0;
+	text-align: center;
+	max-width: 20em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+	font-style: inherit;
+	letter-spacing: 0.025em;
+}
 p.epigraph {
 	font-style: italic;
 	text-indent: 0;
@@ -361,6 +368,10 @@ p.epigraph-source {
 }
 p.epigraph-source:before {
 	content: "—";
+}
+.epigraph-source + p, .dedication +p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
+	text-indent: 0;
+	margin-top: 1em; 
 }
 
 /* Lists */
@@ -419,7 +430,7 @@ dd {
 }
 
 /*
- * Bold elements, useful for blockquotes and definition lists 
+ * Shouts and pull quotes, useful for blockquotes and definition lists 
  */
  
 .shout {
@@ -427,9 +438,25 @@ dd {
 	font-style: italic;
 	max-width: 20em;
 }
-.shout * {
+*.shout, .shout * {
 	line-height: 115%;
 }
+.pullquote {
+	text-indent: 0;
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: center;
+	margin: 0.5em 0;
+	line-height: 115%;
+}
+.pullquote + p {
+	text-indent: 0;
+}
+
+/*
+ * Boxes
+ */
+
 .box {
 	background-color: inherit;
 	color: inherit;
@@ -446,6 +473,9 @@ p.box {
 }
 .box + p {
 	text-indent: 0;
+}
+.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
+	margin-top: 0;
 }
 
 /*
@@ -643,7 +673,12 @@ ol li blockquote.figure, ul li blockquote.figure {
 	margin-right: auto;
 	margin-left: auto;
 }
-
+.title-page {
+	counter-reset: page 1; /* If you have a half-title page, this line will be overriden by the next */
+}
+.halftitle-page {
+	counter-reset: page 1; /* If the half-title page exists, this overrides the previous line */
+}
 .title-page p {
 	text-indent: 0;
 	line-height: 110%;
@@ -653,15 +688,12 @@ ol li blockquote.figure, ul li blockquote.figure {
 .title-page-title {
 	font-size: 2em;
 	margin: 20% 0 0 0;
-	line-height: 100%;
 	font-variant: prince-opentype(dlig, c2sc, smcp);
-	counter-reset: page 1; /* If you have a half-title page, move this line to .halftitle */
 }
 .title-page-subtitle {
 	font-size: 1.5em;
 	font-style: italic;
 	margin: 1em 0 1em 0;
-	line-height: 100%;
 	font-variant: prince-opentype(dlig);
 }
 .title-page-author {
@@ -699,19 +731,6 @@ ol li blockquote.figure, ul li blockquote.figure {
 }
 
 /*
- * Dedication page
- */
-
-.dedication-page {
-	margin-top: 30mm;
-}
-.dedication-page p {
-	text-align: center;
-	letter-spacing: 0.025em;
-	font-variant: prince-opentype(c2sc, smcp, onum);
-}
-
-/*
  * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
  */
 
@@ -726,7 +745,6 @@ ol li blockquote.figure, ul li blockquote.figure {
 }
 .contents-page ul, .contents-page ol {
 	list-style-type: none;
-	page-break-inside: avoid;
 } 
 .contents-page li {
 	margin: 0 0 0.5em 0;
