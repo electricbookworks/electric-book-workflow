@@ -178,6 +178,27 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, 
 	margin-top: 0; 
 }
 
+/*
+ * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers */
+ */
+
+.bibliography {
+	text-indent: 0;
+	margin: 1em 0;
+}
+.bibliography + p {
+	text-indent: 0; /* Paragraphs after bibliographies should be flush left */
+}
+ul.bibliography {
+	list-style-type: none;
+	padding: 0;
+	margin: 1em 0;
+}
+ul.bibliography li {
+	text-indent: -2em;
+	margin-left: 2em;
+}
+
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
  */
@@ -192,6 +213,19 @@ dt {
 }
 dd {
 	margin: 0 0 1em 1em;
+}
+
+/* Definition lists used in a simple glossary */
+
+.glossary dl, dl.glossary {
+	color: inherit;
+}
+.glossary dt {
+	float: left;
+	color: inherit;
+}
+.glossary dt:after {
+    content: ":\00a0";
 }
 
 /*
@@ -254,7 +288,7 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 }
 
 /*
- * Bold elements, useful for blockquotes and definition lists 
+ * Shouts and pull quotes, useful for blockquotes and definition lists 
  */
 
 .shout {
@@ -265,6 +299,23 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 .shout * {
 	line-height: 115%;
 }
+.pullquote {
+	text-indent: 0;
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: center;
+	line-height: 115%;
+	margin: 1em 0;
+    max-width: 23em;
+}
+.pullquote + p {
+	text-indent: 0;
+}
+
+/*
+ * Boxes
+ */
+ 
 .box {
 	background-color: inherit;
 	color: inherit;
@@ -282,6 +333,9 @@ p.box {
 }
 .box + p {
 	text-indent: 0;
+}
+.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
+	margin-top: 0;
 }
 
 /*
@@ -585,6 +639,10 @@ p.epigraph-source {
 }
 p.epigraph-source:before {
 	content: "—";
+}
+.epigraph-source + p, .dedication + p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
+	text-indent: 0;
+	margin-top: 1em; 
 }
 
 /*

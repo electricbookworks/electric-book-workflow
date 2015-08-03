@@ -397,7 +397,7 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 }
 
 /*
- * Shouts like pull quotes, useful for blockquotes and definition lists 
+ * Shouts and pull quotes, useful for blockquotes and definition lists 
  */
 
 .shout {
@@ -772,7 +772,7 @@ p.epigraph-source {
 p.epigraph-source:before {
 	content: "—";
 }
-.epigraph-source + p, .dedication +p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
+.epigraph-source + p, .dedication + p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
 	text-indent: 0;
 	margin-top: 1em; 
 }
