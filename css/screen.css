@@ -287,6 +287,27 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, 
 	margin-top: 0; 
 }
 
+/*
+ * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers */
+ */
+
+.bibliography {
+	text-indent: 0;
+	margin: 1em 0;
+}
+.bibliography + p {
+	text-indent: 0; /* Paragraphs after bibliographies should be flush left */
+}
+ul.bibliography {
+	list-style-type: none;
+	padding: 0;
+	margin: 1em 0;
+}
+ul.bibliography li {
+	text-indent: -2em;
+	margin-left: 2em;
+}
+
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
  */
@@ -301,6 +322,19 @@ dt {
 }
 dd {
 	margin: 0 0 1em 1em;
+}
+
+/* Definition lists used in a simple glossary */
+
+.glossary dl, dl.glossary {
+	color: inherit;
+}
+.glossary dt {
+	float: left;
+	color: inherit;
+}
+.glossary dt:after {
+    content: ":\00a0";
 }
 
 /*
