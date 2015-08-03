@@ -2,7 +2,6 @@
 
 /*
  * Screen typography for the EBW book framework: https://github.com/electricbookworks/book-framework
- * This file is based on screen.css, with @font-face rules removed and @media queries removed for compatibility with ADE.
  */
 
 /* 
@@ -350,15 +349,16 @@ sup:target {
 	font-weight: 300;
 	clear: both;
 	float: right;
-	max-width: 10em;
 	min-width: 5em;
-	margin: 0 -15em 0.5em 2em;
 	padding: 0.5em;
 	border-top: 1px solid #eeeeee;
 	text-indent: 0;
 	font-size: 0.8em;
 	font-style: inherit;
 	line-height: 120%;
+	position: relative;
+	max-width: 40%;
+	margin: 0 0 0.5em 0.5em;
 }
 
 .bottom {} /* Only used for print output, ignored for screen. */
