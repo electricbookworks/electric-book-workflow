@@ -4,6 +4,40 @@ This framework provides a digital-first workflow for creating books in print, as
 
 You can [see a demo of the working framework here](http://electricbookworks.github.io/book-framework/).
 
+*   [Why we need this](#why-we-need-this)
+*   [Alternatives](#alternatives)
+*   [Background reading](#background-reading)
+*   [The workflow](#the-workflow)
+*   [The repo structure](#the-repo-structure)
+    *   [The `images` folder](#the-images-folder)
+*   [Setting up](#setting-up)
+*   [Creating a book in markdown](#creating-a-book-in-markdown)
+    *   [Converting from InDesign](#converting-from-indesign)
+    *   [Tables](#tables)
+        *   [Markdown tables tip](#markdown-tables-tip)
+    *   [Images](#images)
+        *   [Preparing images](#preparing-images)
+        *   [Adding images in markdown](#adding-images-in-markdown)
+        *   [Image placement](#image-placement)
+        *   [Recommended image sizes](#recommended-image-sizes)
+        *   [Resolution](#resolution)
+        *   [Image styles](#image-styles)
+        *   [Image file sizes](#image-file-sizes)
+    *   [Cover images](#cover-images)
+    *   [Embedding video](#embedding-video)
+    *   [Footnotes, endnotes and sidenotes](#footnotes-endnotes-and-sidenotes)
+    *   [Stylesheets](#stylesheets)
+*   [Trial-and-error tips](#trial-and-error-tips)
+    *   [Using Jekyll and GitHub:](#using-jekyll-and-github)
+    *   [Markdown tricks and quirks:](#markdown-tricks-and-quirks)
+    *   [File naming](#file-naming)
+*   [PDF output for print](#pdf-output-for-print)
+    *   [Creating PDF files with the Prince GUI](#creating-pdf-files-with-the-prince-gui)
+    *   [Managing hyphenation in Prince](#managing-hyphenation-in-prince)
+*   [Epub output](#epub-output)
+
+## Why we need this
+
 We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
 
 With this framework:
