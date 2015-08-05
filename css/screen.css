@@ -696,6 +696,9 @@ img.thumbnail {
  * Title-page 
  */
 
+.title-page p {
+	text-indent: 0;
+}
 .title-page-title {
 	font-size: 3em;
 	font-weight: 700;
