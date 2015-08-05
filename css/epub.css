@@ -179,7 +179,7 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, 
 }
 
 /*
- * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers */
+ * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers
  */
 
 .bibliography {
@@ -220,6 +220,8 @@ dd {
 .glossary dl, dl.glossary {
 	color: inherit;
 }
+
+/* By default this is commented out of epub.css because ADE doesn't support pseaudo classes 
 .glossary dt {
 	float: left;
 	color: inherit;
@@ -227,6 +229,7 @@ dd {
 .glossary dt:after {
     content: ":\00a0";
 }
+*/
 
 /*
  * Code
