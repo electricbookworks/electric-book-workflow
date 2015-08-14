@@ -35,6 +35,7 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
     *   [Creating PDF files with the Prince GUI](#creating-pdf-files-with-the-prince-gui)
     *   [Managing hyphenation in Prince](#managing-hyphenation-in-prince)
 *   [Epub output](#epub-output)
+*   [Mobi output](#mobi-output)
 
 ## Why we need this
 
@@ -511,3 +512,11 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 Note: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly. For instance, replace `fnref:` with `fnref-` and `fn:` with `fn-`.
 
 For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
+
+## Mobi output
+
+If you need a MOBI file for Kindle, we recommend putting your EPUB into [Kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211). If you don't want to use the command-line, just open the EPUB with the [Kindle Previewer](http://www.amazon.com/gp/feature.html?docId=1000765261), which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.
+
+If Kindlegen cannot convert the EPUB, we've found that adding it to [Calibre](http://calibre-ebook.com/) first, then (without converting) give Calibre's version to Kindlegen.
+
+Calibre gives you greater control over specific ebook conversions, but we've found Kindlegen converts some CSS better (e.g. floats and borders).
