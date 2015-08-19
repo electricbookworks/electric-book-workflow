@@ -28,12 +28,47 @@ permalink: none
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 prose: 
   rooturl: 'book-framework'
+  siteurl: "http://electricbookworks.github.io/book-framework/"
   ignore:
-    - index.md
+    - .gitattributes
+    - .gitignore
     - _config.yml
     - /_layouts
     - /_includes
+    - /_site
     - /css
+  media: downloads
+  metadata:
+    "":
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+      - name: "style"
+        field:
+          element: "select"
+          value: "chapter"
+          options:
+            - name: "Chapter"
+              value: "chapter"
+            - name: "Collection home page"
+              value: "index"
+            - name: "Cover"
+              value: "cover"
+            - name: "Half-title page"
+              value: "halftitle-page"
+            - name: "Title page"
+              value: "title-page"
+            - name: "Copyright page"
+              value: "copyright-page"
+            - name: "Contents page"
+              value: "contents-page"
+            - name: "Dedication page"
+              value: "dedication-page"
+            - name: "Epigraph page"
+              value: "epigraph-page"
+            - name: "Other frontmatter"
+              value: "frontmatter"
 
 # These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults)
 defaults: 
