@@ -27,7 +27,6 @@ permalink: none
 
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 prose: 
-  rooturl: 'book-framework'
   siteurl: "http://electricbookworks.github.io/book-framework/"
   ignore:
     - .gitattributes
@@ -37,7 +36,7 @@ prose:
     - /_includes
     - /_site
     - /css
-  media: downloads
+  media: "downloads"
   metadata:
     "":
       - name: "title"
