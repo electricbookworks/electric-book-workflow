@@ -46,7 +46,6 @@ prose:
       - name: "style"
         field:
           element: "select"
-          value: "chapter"
           options:
             - name: "Chapter"
               value: "chapter"
