@@ -77,7 +77,7 @@ prose:
     "":
       - name: "layout"
         field:
-          element: "hidden"
+          element: "text"
           value: "default"
       - name: "stylesheet"
         field:
