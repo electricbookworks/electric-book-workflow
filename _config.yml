@@ -78,6 +78,10 @@ prose:
         field:
           element: "hidden"
           value: "default"
+      - name: "stylesheet"
+        field:
+          element: "hidden"
+          value: "style.css"
       - name: "title"
         field:
           element: "text"
