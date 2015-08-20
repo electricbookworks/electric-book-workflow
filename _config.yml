@@ -81,7 +81,7 @@ prose:
       - name: "stylesheet"
         field:
           element: "hidden"
-          value: "style.css"
+          value: "screen.css"
       - name: "title"
         field:
           element: "text"
