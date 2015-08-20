@@ -46,6 +46,7 @@ prose:
       - name: "style"
         field:
           element: "select"
+          label: "Page style"
           placeholder: "Select page style…"
           options:
             - name: "Chapter"
