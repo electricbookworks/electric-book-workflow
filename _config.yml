@@ -81,6 +81,8 @@ prose:
           label: "Page type"
           value: "default"
           options:
+            - name: "Default"
+              value: "default"
             - name: "Minimal"
               value: "min"
       - name: "stylesheet"
