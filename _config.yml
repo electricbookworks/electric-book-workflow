@@ -113,12 +113,12 @@ prose:
             - name: "Other frontmatter"
               value: "frontmatter"
 # Set child stylesheets per book folder for prose.io
-    "book-one":
+    book-one:
       - name: "stylesheet-child"
         field:
           element: "hidden"
           value: ""
-    "book-two":
+    book-two:
       - name: "stylesheet-child"
         field:
           element: "hidden"
