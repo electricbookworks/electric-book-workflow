@@ -78,10 +78,10 @@ prose:
         field:
           element: "hidden"
           value: "default"
-#      - name: "stylesheet"
-#        field:
-#          element: "hidden"
-#          value: "screen.css"
+      - name: "stylesheet"
+        field:
+          element: "hidden"
+          value: "screen.css"
       - name: "title"
         field:
           element: "text"
