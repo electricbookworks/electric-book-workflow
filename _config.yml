@@ -62,7 +62,7 @@ defaults:
 
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 prose: 
-  siteurl: "http://electricbookworks.github.io/book-framework"
+  siteurl: "http://electricbookworks.github.io"
   ignore:
     - .gitattributes
     - .gitignore
