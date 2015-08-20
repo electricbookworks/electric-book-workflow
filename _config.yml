@@ -77,8 +77,12 @@ prose:
     "":
       - name: "layout"
         field:
-          element: "text"
+          element: "select"
+          label: "Page type"
           value: "default"
+          options:
+            - name: "Minimal"
+              value: "min"
       - name: "stylesheet"
         field:
           element: "hidden"
