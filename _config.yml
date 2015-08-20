@@ -4,11 +4,11 @@ publisher: "Publisher name"
 # Your publisher name will link to this URL in navigation.
 publisher-url: "http://electricbookworks.com"
 
-# The name of the collection or series in this repo.
-name: "Series name"
+# The name of the collection of books in this repo.
+name: "Collection name"
 
 # A one-liner about this collection. Useful for Open Graph metadata.
-description: "A description of this series or collection"
+description: "A description of this collection"
 
 # The primary language used in this collection. Set the language for each book below. Use ISO 639-1 two-letter codes: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 language: en
@@ -31,6 +31,7 @@ defaults:
         scope: # First we set defaults for all pages (an empty string "" for path means all files).
             path: ""
         values:
+            book-title: "Collection name"
             layout: "default"
             style: "chapter"
             stylesheet: "screen.css"
