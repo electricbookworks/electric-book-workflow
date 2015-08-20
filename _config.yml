@@ -90,7 +90,6 @@ prose:
         field:
           element: "select"
           label: "Page style"
-          placeholder: "Select page style"
           options:
             - name: "Chapter"
               value: "chapter"
@@ -112,14 +111,14 @@ prose:
               value: "epigraph-page"
             - name: "Other frontmatter"
               value: "frontmatter"
-# Set child stylesheets per book folder for prose.io
-#    book-one:
-#      - name: "stylesheet-child"
-#        field:
-#          element: "hidden"
-#          value: ""
-#    book-two:
-#      - name: "stylesheet-child"
-#        field:
-#          element: "hidden"
-#          value: "screen-child-book-two"
+ Set child stylesheets per book folder for prose.io
+    book-one:
+      - name: "stylesheet-child"
+        field:
+          element: "hidden"
+          value: ""
+    book-two:
+      - name: "stylesheet-child"
+        field:
+          element: "hidden"
+          value: "screen-child-book-two"
