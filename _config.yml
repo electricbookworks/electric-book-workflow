@@ -25,7 +25,7 @@ markdown: kramdown
 # Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder, really useful for grabbing them all at once, e.g. for sending to PrinceXML for PDF.
 permalink: none
 
-# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults)
+# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults). Note: for stylesheet files, omit the .css file extension (we're avoiding periods in YAML.)
 defaults: 
     -
         scope: # First we set defaults for all pages (an empty string "" for path means all files).
@@ -33,7 +33,7 @@ defaults:
         values:
             layout: "default"
             style: "chapter"
-            stylesheet: "screen.css"
+            stylesheet: "screen"
             stylesheet-child: ""
             contents: "0-3-contents.html"
             language: "en"
@@ -45,7 +45,7 @@ defaults:
             language: "en"
             layout: "default"
             style: "chapter"
-            stylesheet: "screen.css"
+            stylesheet: "screen"
             stylesheet-child: ""
             contents: "0-3-contents.html"
     -
@@ -56,8 +56,8 @@ defaults:
             language: "en"
             layout: "default"
             style: "chapter"
-            stylesheet: "screen.css"
-            stylesheet-child: "screen-child-book-two.css"
+            stylesheet: "screen"
+            stylesheet-child: "screen-child-book-two"
             contents: "0-3-contents.html"
 
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
@@ -81,7 +81,7 @@ prose:
       - name: "stylesheet"
         field:
           element: "hidden"
-          value: "screen.css"
+          value: "screen"
       - name: "title"
         field:
           element: "text"
@@ -112,3 +112,14 @@ prose:
               value: "epigraph-page"
             - name: "Other frontmatter"
               value: "frontmatter"
+# Set child stylesheets per book folder for prose.io
+    "book-one":
+      - name: "stylesheet-child"
+        field:
+          element: "hidden"
+          value: ""
+    "book-two":
+      - name: "stylesheet-child"
+        field:
+          element: "hidden"
+          value: "screen-child-book-two"
