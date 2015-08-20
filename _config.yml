@@ -111,7 +111,6 @@ prose:
               value: "epigraph-page"
             - name: "Other frontmatter"
               value: "frontmatter"
- Set child stylesheets per book folder for prose.io
     book-one:
       - name: "stylesheet-child"
         field:
