@@ -61,7 +61,7 @@ defaults:
             contents: "0-3-contents.html"
 
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
-prose: 
+prose:
   siteurl: "http://electricbookworks.github.io/book-framework"
   ignore:
     - .gitattributes
