@@ -25,6 +25,41 @@ markdown: kramdown
 # Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder, really useful for grabbing them all at once, e.g. for sending to PrinceXML for PDF.
 permalink: none
 
+# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults)
+defaults: 
+    -
+        scope: # First we set defaults for all pages (an empty string "" for path means all files).
+            path: ""
+        values:
+            layout: "default"
+            style: "chapter"
+            stylesheet: "screen.css"
+            stylesheet-child: ""
+            contents: "0-3-contents.html"
+            language: "en"
+    -
+        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder.
+            path: "book-one"
+        values:
+            book-title: "Book title"
+            language: "en"
+            layout: "default"
+            style: "chapter"
+            stylesheet: "screen.css"
+            stylesheet-child: ""
+            contents: "0-3-contents.html"
+    -
+        scope: # Repeat for each book.
+            path: "book-two"
+        values:
+            book-title: "Book two title"
+            language: "en"
+            layout: "default"
+            style: "chapter"
+            stylesheet: "screen.css"
+            stylesheet-child: "screen-child-book-two.css"
+            contents: "0-3-contents.html"
+
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 prose: 
   siteurl: "http://electricbookworks.github.io/book-framework/"
@@ -69,38 +104,3 @@ prose:
               value: "epigraph-page"
             - name: "Other frontmatter"
               value: "frontmatter"
-
-# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults)
-defaults: 
-    -
-        scope: # First we set defaults for all pages (an empty string "" for path means all files).
-            path: ""
-        values:
-            layout: "default"
-            style: "chapter"
-            stylesheet: "screen.css"
-            stylesheet-child: ""
-            contents: "0-3-contents.html"
-            language: "en"
-    -
-        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder.
-            path: "book-one"
-        values:
-            book-title: "Book title"
-            language: "en"
-            layout: "default"
-            style: "chapter"
-            stylesheet: "screen.css"
-            stylesheet-child: ""
-            contents: "0-3-contents.html"
-    -
-        scope: # Repeat for each book.
-            path: "book-two"
-        values:
-            book-title: "Book two title"
-            language: "en"
-            layout: "default"
-            style: "chapter"
-            stylesheet: "screen.css"
-            stylesheet-child: "screen-child-book-two.css"
-            contents: "0-3-contents.html"
