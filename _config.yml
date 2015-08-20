@@ -73,16 +73,6 @@ prose:
     - /css
   media: "downloads"
   metadata:
-    book-one:
-      - name: "stylesheet-child"
-        field:
-          element: "hidden"
-          value: ""
-    book-two:
-      - name: "stylesheet-child"
-        field:
-          element: "hidden"
-          value: "screen-child-book-two"
     "":
       - name: "layout"
         field:
