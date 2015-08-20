@@ -74,6 +74,10 @@ prose:
   media: "downloads"
   metadata:
     "":
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "default"
       - name: "title"
         field:
           element: "text"
