@@ -82,7 +82,7 @@ prose:
         field:
           element: "select"
           label: "Page style"
-          placeholder: "Select page style…"
+          placeholder: "Select page style"
           options:
             - name: "Chapter"
               value: "chapter"
