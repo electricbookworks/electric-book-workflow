@@ -174,7 +174,7 @@ Before you start:
 
 *	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
 *	Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
-*	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM'. (Jekyll will break if you don't.)
+*	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM', aka UTF-8, and *not* a 'UTF-with-BOM' option. (Jekyll will break if you don't.)
 *	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 *	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
 *	Look through our [example template here](http://electricbookworks.github.io/book-framework/) to get an idea of available default typography.
@@ -442,6 +442,8 @@ Name each book's markdown files in perfectly alphabetical order. We recommend us
 ## PDF output for print
 
 We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our framework's CSS files for printing are designed specifically for Prince.
+
+If you still need to learn about using CSS to control print output using Prince, [this is a great tutorial](http://www.smashingmagazine.com/2015/01/designing-for-print-with-css/).
 
 ### Creating PDF files with the Prince GUI
 

@@ -4,6 +4,41 @@ This framework provides a digital-first workflow for creating books in print, as
 
 You can [see a demo of the working framework here](http://electricbookworks.github.io/book-framework/).
 
+*   [Why we need this](#why-we-need-this)
+*   [Alternatives](#alternatives)
+*   [Background reading](#background-reading)
+*   [The workflow](#the-workflow)
+*   [The repo structure](#the-repo-structure)
+    *   [The `images` folder](#the-images-folder)
+*   [Setting up](#setting-up)
+*   [Creating a book in markdown](#creating-a-book-in-markdown)
+    *   [Converting from InDesign](#converting-from-indesign)
+    *   [Tables](#tables)
+        *   [Markdown tables tip](#markdown-tables-tip)
+    *   [Images](#images)
+        *   [Preparing images](#preparing-images)
+        *   [Adding images in markdown](#adding-images-in-markdown)
+        *   [Image placement](#image-placement)
+        *   [Recommended image sizes](#recommended-image-sizes)
+        *   [Resolution](#resolution)
+        *   [Image styles](#image-styles)
+        *   [Image file sizes](#image-file-sizes)
+    *   [Cover images](#cover-images)
+    *   [Embedding video](#embedding-video)
+    *   [Footnotes, endnotes and sidenotes](#footnotes-endnotes-and-sidenotes)
+    *   [Stylesheets](#stylesheets)
+*   [Trial-and-error tips](#trial-and-error-tips)
+    *   [Using Jekyll and GitHub:](#using-jekyll-and-github)
+    *   [Markdown tricks and quirks:](#markdown-tricks-and-quirks)
+    *   [File naming](#file-naming)
+*   [PDF output for print](#pdf-output-for-print)
+    *   [Creating PDF files with the Prince GUI](#creating-pdf-files-with-the-prince-gui)
+    *   [Managing hyphenation in Prince](#managing-hyphenation-in-prince)
+*   [Epub output](#epub-output)
+*   [Mobi output](#mobi-output)
+
+## Why we need this
+
 We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
 
 With this framework:
@@ -477,3 +512,11 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 Note: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly. For instance, replace `fnref:` with `fnref-` and `fn:` with `fn-`.
 
 For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
+
+## Mobi output
+
+If you need a MOBI file for Kindle, we recommend putting your EPUB into [Kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211). If you don't want to use the command-line, just open the EPUB with the [Kindle Previewer](http://www.amazon.com/gp/feature.html?docId=1000765261), which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.
+
+If Kindlegen cannot convert the EPUB, we've found that adding it to [Calibre](http://calibre-ebook.com/) first, then (without converting) give Calibre's version to Kindlegen.
+
+Calibre gives you greater control over specific ebook conversions, but we've found Kindlegen converts some CSS better (e.g. floats and borders).
