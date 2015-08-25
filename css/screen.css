@@ -232,6 +232,9 @@ p {
 	margin: 0;
 	text-indent: 1em;
 }
+p:first-of-type {
+	text-indent: 0;
+}
 sup, sub {
 	line-height: 100%;
 }

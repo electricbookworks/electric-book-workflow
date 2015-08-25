@@ -31,17 +31,6 @@
 	font-weight: bold;
 }
 @font-face {
-    font-family: "Linux Libertine";
-    src: url(fonts/LinLibertine_RZ.otf);
-	font-weight: 600;
-}
-@font-face {
-    font-family: "Linux Libertine";
-    src: url(fonts/LinLibertine_RZI.otf);
-	font-weight: 600;
-	font-style: italic;
-}
-@font-face {
     font-family: "Inconsolata", monospace;
     src: url(fonts/Inconsolata-Regular.ttf);
 }
@@ -278,6 +267,9 @@ p, ul, ol, dl {
 p {
 	margin: 0;
 	text-indent: 1em;
+}
+p:first-of-type {
+	text-indent: 0;
 }
 sup, sub {
 	line-height: 100%;
