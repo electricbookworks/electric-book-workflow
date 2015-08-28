@@ -95,7 +95,6 @@ h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
 	padding-top: 3.5em; /* Prevents #-linked headings from disappearing below the fixed nav bar. */
 }
 h1 {
-	max-width: 80%;
 	line-height: 100%;
 }
 h1 strong:first-of-type { /* Useful for chapter numbers: make the number first and bold in the h1 */
@@ -111,7 +110,6 @@ h3 {
 	padding-top: 0.5em;
 }
 p, ul, ol {
-	max-width: 35em;
 	line-height: 150%;
 	-moz-font-feature-settings: "onum";
 	-ms-font-feature-settings: "onum";
@@ -205,7 +203,6 @@ ul.bibliography li {
 
 dl {
 	color: #666;
-	max-width: 35em;
 }
 dt {
 	margin: 0 0 0.25em 0;
@@ -277,7 +274,6 @@ blockquote {
 	margin: 1em 0 0.5em 0;
 	padding: 0 1em;
 	line-height: 120%;
-	max-width: 35em;
 	color: #444444;
 }
 blockquote p {
@@ -297,7 +293,6 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 .shout {
 	font-size: 1.5em;
 	font-style: italic;
-	max-width: 20em;
 }
 .shout * {
 	line-height: 115%;
@@ -327,7 +322,6 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 	border: 1px solid #ccc;
 	margin: 1em 0;
 	padding: 1em 1em 0 1em;
-	max-width: 35em;
 	box-shadow: 2px 2px 2px 0 #f2f2f2;
 }
 p.box {
