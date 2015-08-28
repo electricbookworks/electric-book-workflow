@@ -484,9 +484,9 @@ For user discussion, see [the Prince forums here](http://www.princexml.com/forum
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes.
 
 1.	Put the HTML files from `_site` into your `Text` folder.
-1.	Put the framework's `epub.css` in your `Styles` folder. The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.
+1.	Put the framework's `epub.css` in your `Styles` folder. The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.
 1.	Replace any SVG images in the `Images` folder with JPG equivalents. And search-and-replace any links to .svg in your HTML files with .jpg.
-1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`. (The `epub.css` stylesheet is the same as `screen.css` but with @font-face rules removed and @media queries removed for compatibility with ADE, which has poor CSS support.)
+1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
 1.	If your book has a child stylesheet, update that `<link>` path, too. Otherwise, remove the blank `<link>`: i.e. `<link href="/css/" rel="stylesheet" type="text/css"/>`.
 1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove any `@font-face` rules from your stylesheet to avoid file-not-found validation errors. We don't recommend embedding fonts unless they are required for meaning or unusual character sets.)
 1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: `(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->`.
@@ -498,7 +498,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	title: subtitle
 	*	author
 	*	date of creation
-	*	publisher (Bettercare)
+	*	publisher
 	*	ISBN
 	*	Relation ISBN (we use the print ISBN as a parent ISBN)
 1.	Add semantics (right click the file name in Sigil for the semantics context menu) to:
