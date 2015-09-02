@@ -26,17 +26,6 @@
 	font-weight: bold;
 }
 @font-face {
-    font-family: "Linux Libertine";
-    src: url(fonts/LinLibertine_RZ_G.ttf);
-	font-weight: 600;
-}
-@font-face {
-    font-family: "Linux Libertine";
-    src: url(fonts/LinLibertine_RZI_G.ttf);
-	font-style: italic;
-	font-weight: 600;
-}
-@font-face {
     font-family: "Inconsolata", monospace;
     src: url(fonts/Inconsolata-Regular.ttf);
 }
@@ -195,7 +184,7 @@ body {
  */
  
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
+	font-weight: 600; 
 	line-height: 120%;
 	page-break-after: avoid;
 	margin: 2em 0 1em 0;
