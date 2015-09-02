@@ -271,7 +271,9 @@ ul.verse li {
 
 /* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
 
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { 
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, 
+blockquote + p, ol + p, ul + p, dl + p, 
+h1 + p.sidenote + p, h2 + p.sidenote + p, h3 + p.sidenote + p, h4 + p.sidenote + p, h5 + p.sidenote + p, h6 + p.sidenote + p { 
 	text-indent: 0;
 	margin-top: 0; 
 }
@@ -499,7 +501,7 @@ sup:target {
 	float: right;
 	max-width: 10em;
 	min-width: 5em;
-	margin: 0 -15em 0.5em 2em;
+	margin: 0 -12em 0.5em 2em;
 	padding: 0.5em;
 	border-top: 1px solid #eeeeee;
 	text-indent: 0;
