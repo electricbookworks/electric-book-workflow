@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+/*
+ * Book-specific child stylesheet for print typography 
+ * Based on the EBW book framework: 
+ * https://github.com/electricbookworks/book-framework
+ */
+
+body {
+/*	prince-hyphenate-patterns: url("dictionaries/hyph-book-one.dic"); /* If necessary, e.g. for minor languages, specify a hyphenation dictionary for this book. */
+)
