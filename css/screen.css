@@ -225,6 +225,12 @@ p:first-of-type {
 sup, sub {
 	line-height: 100%;
 }
+ul ul, ol ol, blockquote ul ul, blockquote ol ol {
+	margin-bottom: 0;
+}
+ol ol {
+	list-style-type: lower-alpha;
+}
 
 /* 
  * Special classes for paragraphs
@@ -433,6 +439,9 @@ p.box {
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
 	margin-top: 0;
 }
+.box li p:last-of-type { /* Paragraphs within list items in a box */
+	margin-bottom: 0;
+}
 
 /*
  * Tables 
@@ -518,6 +527,21 @@ sup:target {
 			margin: 0 0 0.5em 0.5em;
 		}
 	}
+
+/* If sidenotes are blockquotes, the text will be in a p, so inherit appearance from .sidenote, not p */
+.sidenote p {
+	line-height: inherit;
+	color: inherit;
+}
+/* Some sidenotes are inside boxes and need different margins */
+.box .sidenote {
+	margin-right: -13.25em;
+}
+@media only screen and (max-width: 55em) {
+	.box .sidenote {
+		margin-right: inherit;
+	}
+}
 
 .bottom {} /* Only used for print output, ignored for screen. */
 
