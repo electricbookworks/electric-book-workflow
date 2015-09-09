@@ -6,6 +6,7 @@
  * https://github.com/electricbookworks/book-framework
  */
 
-body {
+body, p, ul, ol, dl {
 /*	prince-hyphenate-patterns: url("dictionaries/hyph-book-one.dic"); /* If necessary, e.g. for minor languages, specify a hyphenation dictionary for this book. */
-)
+/*	hyphens: prince-expand-all; /* Debugs */
+}
