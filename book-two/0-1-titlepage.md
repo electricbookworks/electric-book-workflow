@@ -3,7 +3,7 @@ title: Title page
 style: title-page
 ---
 
-The title of book two
+The title
 {:.title-page-title}
 
 The subtitle
