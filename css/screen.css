@@ -679,6 +679,10 @@ blockquote.figure {
  * Cover image. This is useful for landing pages for individual books.
  */
 
+/* No nav bar obscuring cover image */
+.cover #nav-bar {
+    display: none;
+}
 body.cover {
 	margin: 0;
 	padding: 0;
