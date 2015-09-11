@@ -274,6 +274,12 @@ p:first-of-type {
 sup, sub {
 	line-height: 100%;
 }
+ul ul, ol ol, blockquote ul ul, blockquote ol ol {
+	margin-bottom: 0;
+}
+ol ol {
+	list-style-type: lower-alpha;
+}
 
 /* 
  * Special classes for paragraphs
@@ -312,6 +318,7 @@ p.valediction {
 .verse {
 	text-indent: 0;
 	margin: 1em 0;
+	hyphens: none;
 }
 .verse + p {
 	text-indent: 0; /* Paragraphs after verse should be flush left */
@@ -486,6 +493,7 @@ dd {
  */
 
 .box {
+	clear: both; /* Don't let hanging sidenotes overlap over boxes */
 	background-color: inherit;
 	color: inherit;
 	font-weight: inherit;
@@ -504,6 +512,9 @@ p.box {
 }
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
 	margin-top: 0;
+}
+.box li p:last-of-type { /* Paragraphs within list items in a box */
+	margin-bottom: 0;
 }
 
 /*
