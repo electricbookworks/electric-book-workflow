@@ -200,6 +200,30 @@ ul.verse li.indent-28 { margin-left: 30em; }
 ul.verse li.indent-29 { margin-left: 31em; }
 ul.verse li.indent-30 { margin-left: 32em; }
 
+/* Verse in a blockquote centres on its longest line, which is best-practice poetry layout */
+blockquote.verse {
+	text-align: center;
+	color: inherit;
+	margin-top: 0;
+	width: 100%;
+    padding: 0;
+}
+blockquote.verse h1, 
+blockquote.verse h2,
+blockquote.verse h3, 
+blockquote.verse h4,
+blockquote.verse h5, 
+blockquote.verse h6 {
+	margin-bottom: 1em;
+}
+blockquote.verse ul {
+	margin-bottom: 0; /* Already gets its space after from ul.verse */
+}
+blockquote.verse ul.verse {
+    text-align: left;
+    display: inline-block;
+}
+
 /* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
 
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { 
