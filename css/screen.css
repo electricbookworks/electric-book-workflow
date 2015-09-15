@@ -159,7 +159,7 @@ body {
 	z-index: 1;
 }
 	@media only screen 
-	and (max-width: 480px), (max-height: 600px) { /* Let nav-bar scroll out of view on small screens */
+	and (max-height: 320px) { /* Let nav-bar scroll out of view on small screens */
 		#nav-bar {
 			position: relative;
 		}
