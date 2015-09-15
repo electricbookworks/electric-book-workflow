@@ -218,6 +218,67 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 * Copy the Output and paste it into your markdown file.
 * The Senseful tool starts some table borders with + where kramdown needs a |. Manually change the starting + in any row with a |.
 
+### Poetry
+
+Encoding poetry can be tricky. Usually, poetry in HTML is structured by tagging each stanza as a paragraph, with line breaks after each line. You can do this in the framework by adding markdown line breaks (with double spaces or `\\` at the end of each line) and tagging the paragraph with `{:.verse}`. However, this structure meaks it impossible to have browsers, ereaders and PDF engines correctly indent runover lines (because there is no [`nth-line` selector](https://css-tricks.com/a-call-for-nth-everything/) in CSS, unless you resort to [a Javascript method](https://github.com/davatron5000/Lettering.js#letters-words-lines-and-more) that will bloat your code and won't run on many ereaders).
+
+We prefer another approach: each stanza is an unordered list (`ul`) and each line is a list item (`li`). We just hide any list markers (bullets) with `list-style-type: none'. This way, we can control indents on runover lines. among other things. This is a non-semantic use of HTML, since a poem is technically not a list. But it's a healthy hack with universal browser and ereader support.
+
+Our convention is to mark each line of a stanza with a hyphen `-`, and tag the stanza with `{:.verse}`:
+
+```
+-	I wandered lonely as a cloud
+-	That floats on high o'er vales and hills,
+-	When all at once I saw a crowd,
+-	A host, of golden daffodils;
+-	Beside the lake, beneath the trees,
+-	Fluttering and dancing in the breeze.
+{:.verse}
+```
+
+This means we don't have to create a line break with double-spaces or `\\` at the end of each line, since a list item (i.e. line of poetry here) has its own line break already.
+
+We can also indent individual lines, where the poet wanted indents, by tagging individual list items. 
+
+```
+-	Alas for man! day after day may rise,
+-	{:.indent-3}Night may shade his thankless head,
+-	He sees no God in the bright, morning skies
+-	{:.indent-3}He sings no praises from his guarded bed.
+{:.verse}
+```
+
+The `2` in `{:.indent-2}` refers to the number of em spaces to indent by. Our CSS allows for indents from 1 (`{:.indent-1}`) to 30 (`{:.indent-30}`).
+
+(Big gaps between words in a line must be created with `&emsp;` in the poem text.)
+
+#### Advanced poetry typography
+
+But wait, there's more! Best practice for poetry layout is that a poem should be centered on its longest line. That is *not* centering the lines of poetry, but placing the left-justified poem in the horizontal middle of the page. Put another way, the poem should be indented till its longest line is centered on the page (or screen).
+
+To achieve this in the framework, put the entire poem, including its title, in a blockquote, by adding `> ` to the start of each line. Tag the whole blockquote as {:.verse}, too:
+
+```
+> -	### To One Who Has Been Long in City Pent
+> 
+> -	To one who has been long in city pent,
+> -	{:.indent-2}'Tis very sweet to look into the fair
+> -	{:.indent-2}And open face of heaven,—to breathe a prayer
+> -	Full in the smile of the blue firmament.
+> -	Who is more happy, when, with heart's content,
+> -	{:.indent-2}Fatigued he sinks into some pleasant lair
+> -	{:.indent-2}Of wavy grass, and reads a debonair
+> -	And gentle tale of love and languishment?
+> -	Returning home at evening, with an ear
+> -	{:.indent-2}Catching the notes of Philomel,—an eye
+> -	Watching the sailing cloudlet's bright career,
+> -	{:.indent-2}He mourns that day so soon has glided by:
+> -	E'en like the passage of an angel's tear
+> -	{:.indent-2}That falls through the clear ether silently.
+> {:.verse}
+{:.verse}
+```
+
 ### Images
 
 #### Preparing images
