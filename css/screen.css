@@ -575,7 +575,7 @@ sup:target {
 	line-height: 120%;
 }
 	@media only screen 
-	and (max-width: 55em) { /* On narrow screens, text wraps around sidenotes */
+	and (max-width: 85em) { /* On narrow screens, text wraps around sidenotes */
 		.sidenote {
 			float: right;
 			position: relative;
