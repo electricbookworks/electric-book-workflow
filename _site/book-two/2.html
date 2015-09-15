@@ -26,7 +26,13 @@
       <li><a href="#to-his-brother-quintus-in-sardinia" id="markdown-toc-to-his-brother-quintus-in-sardinia">To his Brother Quintus (in Sardinia)</a></li>
     </ul>
   </li>
-  <li><a href="#some-poetry" id="markdown-toc-some-poetry">Some poetry</a></li>
+  <li><a href="#poetry" id="markdown-toc-poetry">Poetry</a>    <ul>
+      <li><a href="#good" id="markdown-toc-good">Good</a></li>
+      <li><a href="#better" id="markdown-toc-better">Better</a></li>
+      <li><a href="#best" id="markdown-toc-best">Best</a></li>
+      <li><a href="#to-one-who-has-been-long-in-city-pent" id="markdown-toc-to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</a></li>
+    </ul>
+  </li>
 </ul>
 
 <p>This is another chapter to show more book-framework default typography. To understand how to format markdown for this framework, you’ll need these examples and the framework’s <a href="https://github.com/electricbookworks/book-framework">README</a>.</p>
@@ -142,16 +148,19 @@ the younger men corrupt.</li>
 
 <p class="valediction">13 February</p>
 
-<h2 id="some-poetry">Some poetry</h2>
+<h2 id="poetry">Poetry</h2>
 
-<p>Have a look at the underlying markdown here to see how we store poetry. You have two options, demonstrated on the first and second stanzas below. To see the difference in appearance on screen, make your screen narrow enough to force the lines to wrap.</p>
+<blockquote class="sidenote">
+  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/book-framework">our README</a> for CSS-based indent control.</p>
+</blockquote>
 
-<ol>
-  <li>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be. This is a limitation of CSS.</li>
-  <li>In the markdown, put <code>* </code> before each line, to make each stanza an HTML list. Then, again, add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it gives you greater control over each line, and makes it possible to correctly indent runover lines.</li>
-</ol>
+<p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/book-framework">the framework README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
 
-<p class="verse">No worst, there is none. Pitched past pitch of grief,<em class="sidenote">This is by <a href="http://www.poetryfoundation.org/poem/173661">Gerard Manley Hopkins</a>.</em><br />
+<h3 id="good">Good</h3>
+
+<p>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
+
+<p class="verse">No worst, there is none. Pitched past pitch of grief,<br />
 More pangs will, schooled at forepangs, wilder wring.<br />
 Comforter, where, where is your comforting?<br />
 Mary, mother of us, where is your relief?<br />
@@ -160,14 +169,46 @@ Woe, wórld-sorrow; on an áge-old anvil wince and sing —<br />
 Then lull, then leave off. Fury had shrieked ‘No ling-<br />
 ering! Let me be fell: force I must be brief.”’</p>
 
+<h3 id="better">Better</h3>
+
+<p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
+
 <ul class="verse">
-  <li> O the mind, mind has mountains; cliffs of fall<em class="sidenote">Indents and word spacing in poems should be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>.</em></li>
+  <li> O the mind, mind has mountains; cliffs of fall</li>
   <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
   <li>May who ne’er hung there. Nor does long our small</li>
   <li>Durance deal with that steep or deep. Here! creep,</li>
   <li>Wretch, under a comfort serves in a whirlwind: all</li>
   <li>Life death does end and each day dies with sleep.</li>
 </ul>
+
+<h3 id="best">Best</h3>
+
+<p>Best-practice poetry layout indents a poem till it’s longest line is centred on the page. To achieve this, we put the poem in a blockquote before styling it.</p>
+
+<blockquote class="verse">
+  <ul class="verse">
+    <li>
+      <h3 id="to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</h3>
+    </li>
+    <li>To one who has been long in city pent,</li>
+    <li class="indent-2">‘Tis very sweet to look into the fair</li>
+    <li class="indent-2">And open face of heaven,—to breathe a prayer</li>
+    <li>Full in the smile of the blue firmament.</li>
+    <li>Who is more happy, when, with heart’s content,</li>
+    <li class="indent-2">Fatigued he sinks into some pleasant lair</li>
+    <li class="indent-2">Of wavy grass, and reads a debonair</li>
+    <li>And gentle tale of love and languishment?</li>
+    <li>Returning home at evening, with an ear</li>
+    <li class="indent-2">Catching the notes of Philomel,—an eye</li>
+    <li>Watching the sailing cloudlet’s bright career,</li>
+    <li class="indent-2">He mourns that day so soon has glided by:</li>
+    <li>E’en like the passage of an angel’s tear</li>
+    <li class="indent-2">That falls through the clear ether silently.</li>
+  </ul>
+</blockquote>
+
+<p>Our <a href="http://github.com/electricbookworks/book-framework">detailed framework instructions</a> explain more, including how to get the line indents here.</p>
 
 <p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 1](1.html){:.button}</code>.</p>
 
