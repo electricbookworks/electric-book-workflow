@@ -15,6 +15,8 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
     *   [Converting from InDesign](#converting-from-indesign)
     *   [Tables](#tables)
         *   [Markdown tables tip](#markdown-tables-tip)
+	*	[Poetry](#poetry)
+		*	[Advanced poetry typography](#advanced-poetry-typography)
     *   [Images](#images)
         *   [Preparing images](#preparing-images)
         *   [Adding images in markdown](#adding-images-in-markdown)
