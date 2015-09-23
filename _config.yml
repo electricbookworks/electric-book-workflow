@@ -10,7 +10,10 @@ name: "Collection name"
 # A one-liner about this collection. Useful for Open Graph metadata.
 description: "A description of this collection"
 
-# The primary language used in this collection. Set the language for each book below. Use ISO 639-1 two-letter codes: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+# The primary language used in this collection. You can set the language for each book below at 'defaults'. 
+# To understand what tags to use, read: http://www.w3.org/International/articles/language-tags/ 
+# For the registry of tags: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry 
+# Useful lookup tool: http://r12a.github.io/apps/subtags/
 language: en
 
 # Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
