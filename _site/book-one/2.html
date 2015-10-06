@@ -30,7 +30,6 @@
       <li><a href="#good" id="markdown-toc-good">Good</a></li>
       <li><a href="#better" id="markdown-toc-better">Better</a></li>
       <li><a href="#best" id="markdown-toc-best">Best</a></li>
-      <li><a href="#to-one-who-has-been-long-in-city-pent" id="markdown-toc-to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</a></li>
     </ul>
   </li>
 </ul>
@@ -160,38 +159,69 @@ the younger men corrupt.</li>
 
 <p>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
 
-<p class="verse">No worst, there is none. Pitched past pitch of grief,<br />
-More pangs will, schooled at forepangs, wilder wring.<br />
-Comforter, where, where is your comforting?<br />
-Mary, mother of us, where is your relief?<br />
-My cries heave, herds-long; huddle in a main, a chief<br />
-Woe, wórld-sorrow; on an áge-old anvil wince and sing —<br />
-Then lull, then leave off. Fury had shrieked ‘No ling-<br />
-ering! Let me be fell: force I must be brief.”’</p>
+<h4 class="no_toc" id="when-you-are-oldhttpwwwpoetryfoundationorgpoem172055"><a href="http://www.poetryfoundation.org/poem/172055">When You Are Old</a></h4>
+
+<p class="verse">When you are old and grey and full of sleep,<br />
+And nodding by the fire, take down this book,<br />
+And slowly read, and dream of the soft look<br />
+Your eyes had once, and of their shadows deep;</p>
+
+<p class="verse">How many loved your moments of glad grace,<br />
+And loved your beauty with love false or true,<br />
+But one man loved the pilgrim soul in you,<br />
+And loved the sorrows of your changing face;</p>
+
+<p class="verse">And bending down beside the glowing bars,<br />
+Murmur, a little sadly, how Love fled<br />
+And paced upon the mountains overhead<br />
+And hid his face amid a crowd of stars.</p>
 
 <h3 id="better">Better</h3>
 
 <p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
 
-<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the stanza below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
+<h4 class="no_toc" id="no-worst-there-is-none-pitched-past-pitch-of-griefhttpwwwpoetryfoundationorgpoem173663"><a href="http://www.poetryfoundation.org/poem/173663">‘No worst, there is none. Pitched past pitch of grief.’</a></h4>
+
+<ul class="verse">
+  <li>No worst, there is none. Pitched past pitch of grief,</li>
+  <li>More pangs will, schooled at forepangs, wilder wring.</li>
+  <li>Comforter, where, where is your comforting?</li>
+  <li>Mary, mother of us, where is your relief?</li>
+  <li>My cries heave, herds-long; huddle in a main, a chief</li>
+  <li>Woe, wórld-sorrow; on an áge-old anvil wince and sing —</li>
+  <li>Then lull, then leave off. Fury had shrieked ‘No ling-</li>
+  <li>ering! Let me be fell: force I must be brief.”’</li>
+</ul>
 
 <ul class="verse">
   <li> O the mind, mind has mountains; cliffs of fall</li>
-  <li>Frightful, sheer, no-man-fathomed.  Hold them cheap</li>
-  <li>May who ne’er hung there.  Nor does long our small</li>
-  <li>Durance deal with that steep or deep.  Here! creep,</li>
+  <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
+  <li>May who ne’er hung there. Nor does long our small</li>
+  <li>Durance deal with that steep or deep. Here! creep,</li>
   <li>Wretch, under a comfort serves in a whirlwind: all</li>
   <li>Life death does end and each day dies with sleep.</li>
 </ul>
 
+<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
+
+<h4 class="no_toc" id="mishter-cummingsh">Mishter Cummingsh</h4>
+
+<ul class="verse">
+  <li>as a teenage poet, bested by life</li>
+  <li>mr cummings was my           friend</li>
+  <li class="indent-3">mostly (who broke rules   so   effortlessly</li>
+  <li>except I worry sometimes he was drunk</li>
+  <li>and couldn’t properly parenthesise.</li>
+</ul>
+
 <h3 id="best">Best</h3>
 
-<p>Best-practice poetry layout indents a poem till it’s longest line is centred on the page. To achieve this, we put the poem in a blockquote before styling it.</p>
+<p>Best-practice poetry layout indents a poem till its longest line is centred on the page. To achieve this, we put the entire poem, including the title, in a ‘verse’ blockquote.</p>
 
 <blockquote class="verse">
   <ul class="verse">
     <li>
-      <h3 id="to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</h3>
+      <h4 class="no_toc" id="to-one-who-has-been-long-in-city-penthttpwwwpoetryfoundationorgpoem173751"><a href="http://www.poetryfoundation.org/poem/173751">To One Who Has Been Long in City Pent</a></h4>
     </li>
     <li>To one who has been long in city pent,</li>
     <li class="indent-2">‘Tis very sweet to look into the fair</li>

@@ -283,6 +283,8 @@ To achieve this in the framework, put the entire poem, including its title, in a
 
 In verse structured as a list lke this, our CSS preserves white space. That is, if you type, say, three spaces you get three spaces. Normally, HTML collapses multiple spaces into one – which is great *except* when you want to deliberately use extra spaces, as some poets do. However, this doesn't work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like `&emsp;`) or our indent tags explained above.
 
+**However**, the `whitespace: pre-wrap` CSS we use for this is not currently supported on Kindle. If that's important, it's best to stick to using HTML space entities like `&emsp;`.
+
 ### Images
 
 #### Preparing images
@@ -572,7 +574,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	```
 	(?s).<div class="videowrapper non-printing">(.*)</div><!--.videowrapper"-->
 	```
-	To replace the standard video wrapper with a link to the video:
+	To **replace** the standard video wrapper with a link to the video:
 
 	*	Search (with DotAll regex) for:
 	
