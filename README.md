@@ -281,6 +281,8 @@ To achieve this in the framework, put the entire poem, including its title, in a
 {:.verse}
 ```
 
+In verse structured as a list lke this, our CSS preserves white space. That is, if you type, say, three spaces you get three spaces. Normally, HTML collapses multiple spaces into one – which is great *except* when you want to deliberately use extra spaces, as some poets do. However, this doesn't work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like `&emsp;`) or our indent tags explained above.
+
 ### Images
 
 #### Preparing images
