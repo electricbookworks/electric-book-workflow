@@ -173,11 +173,13 @@ ering! Let me be fell: force I must be brief.”’</p>
 
 <p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
 
+<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the stanza below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
+
 <ul class="verse">
   <li> O the mind, mind has mountains; cliffs of fall</li>
-  <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
-  <li>May who ne’er hung there. Nor does long our small</li>
-  <li>Durance deal with that steep or deep. Here! creep,</li>
+  <li>Frightful, sheer, no-man-fathomed.  Hold them cheap</li>
+  <li>May who ne’er hung there.  Nor does long our small</li>
+  <li>Durance deal with that steep or deep.  Here! creep,</li>
   <li>Wretch, under a comfort serves in a whirlwind: all</li>
   <li>Life death does end and each day dies with sleep.</li>
 </ul>

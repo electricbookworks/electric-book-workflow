@@ -575,7 +575,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	Search (with DotAll regex) for:
 	
 		```
-		(?s).<div class="videowrapper non-printing">(.*)src="(.*)" width(.*)</div><!--.videowrapper"-->
+		(?s).<div class="videowrapper non-printing">(.*)src="(.*?)"(.*)</div><!--.videowrapper"-->
 		```
 	
 		This will find the videowrapper and store the URL of the embedded video in memory.
@@ -593,7 +593,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	author
 	*	date of creation
 	*	publisher
-	*	ISBN
+	*	ISBN (or other identifier like a [UUID](https://www.uuidgenerator.net/))
 	*	Relation ISBN (we use the print ISBN as a parent ISBN)
 1.	Add semantics (right click the file name in Sigil for the semantics context menu) to:
 	*	key HTML files

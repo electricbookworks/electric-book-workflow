@@ -274,6 +274,7 @@ ul.verse li {
 	text-indent: -2em;
 	margin-left: 2em;
 }
+
 /* Indents for lines of verse. In markdown, add {:.indent-x} to the start of the list item text, e.g. -	{:.indent-3}My line of poetry indented 3em */
 ul.verse li.indent-1 { margin-left: 3em; }
 ul.verse li.indent-2 { margin-left: 4em; }
@@ -330,6 +331,24 @@ blockquote.verse ul.verse {
     display: inline-block;
 }
 
+/* If verse is in a list, we can preserve line breaks and white space */
+ul.verse li {
+	white-space: pre-wrap;
+}
+ul.verse li h1,
+ul.verse li h2,
+ul.verse li h3,
+ul.verse li h4,
+ul.verse li h5,
+ul.verse li h6 {
+	display: inline; /* To avoid pre-wrap line breaks inside the li */
+}
+ul.verse li h1 { margin-left: -1.75em; } /* Overrides indent applies to .verse li */
+ul.verse li h2 { margin-left: -2.25em; } /* Overrides indent applies to .verse li */
+ul.verse li h3 { margin-left: -3em; } /* Overrides indent applies to .verse li */
+ul.verse li h4 { margin-left: -3.5em; } /* Overrides indent applies to .verse li */
+ul.verse li h5 { margin-left: -4.25em; } /* Overrides indent applies to .verse li */
+ul.verse li h6 { margin-left: -5em; } /* Overrides indent applies to .verse li */
 
 /* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
 

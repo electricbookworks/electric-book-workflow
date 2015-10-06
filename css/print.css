@@ -388,6 +388,17 @@ blockquote.verse ul.verse {
     display: inline-block;
 }
 
+/* If verse is in a list, we can preserve line breaks and white space */
+ul.verse li {
+	white-space: pre-wrap;
+}
+ul.verse li h1 { margin: -0.5em 0 -0.25em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h2 { margin: -0.5em 0 -0.25em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h3 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h4 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h5 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h6 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+
 /* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
 
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow headings, blockquotes, lists, and definition lists */
