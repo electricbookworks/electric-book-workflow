@@ -115,7 +115,7 @@ body {
 }
 #wrapper{
 	clear: both;
-	max-width: 960px;
+	max-width: 40em;
 	margin: auto;
 	padding: 0 0.3em 0 0.3em;
 }
@@ -131,12 +131,14 @@ body {
 }
 .footer-content {
 	clear: both;
-	max-width: 960px;
+	max-width: 40em;
 	margin: auto;
-	font-size: 0.8em;
 	color: grey;
 }
-#footer p {
+#footer p,
+#footer ol,
+#footer ul {
+	font-size: 0.8em;
 	text-indent: 0;
 	margin: 0 0 0.5em 0;
 }
