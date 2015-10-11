@@ -552,6 +552,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 
 1.	Put the HTML files from `_site` into your `Text` folder.
 1.	Put the framework's `epub.css` in your `Styles` folder. (The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
+1.	If your book has a child stylesheet, add that, too.
 1.	Replace any SVG images in the `Images` folder with JPG equivalents. And:
 1.	Search-and-replace any links to .svg in your HTML files with .jpg.
 1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
