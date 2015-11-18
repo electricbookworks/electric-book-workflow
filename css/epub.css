@@ -85,6 +85,9 @@ h3 {
 	margin: 1.5em 0 0.5em 0;
 	padding-top: 0.5em;
 }
+h4 {
+	font-style: italic;
+}
 p, ul, ol {
 	line-height: 150%;
 	-moz-font-feature-settings: "onum";
@@ -219,9 +222,12 @@ ul.verse li h4 { margin-left: -3.5em; } /* Overrides indent applies to .verse li
 ul.verse li h5 { margin-left: -4.25em; } /* Overrides indent applies to .verse li */
 ul.verse li h6 { margin-left: -5em; } /* Overrides indent applies to .verse li */
 
-/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
+/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list, code, or definition list, or after sidenotes after headings, tables or boxes */
 
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { 
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, 
+blockquote + p, ol + p, ul + p, dl + p, pre + p, 
+h1 + p.sidenote + p, h2 + p.sidenote + p, h3 + p.sidenote + p, h4 + p.sidenote + p, h5 + p.sidenote + p, h6 + p.sidenote + p,
+.box + p.sidenote + p, table + p.sidenote + p { 
 	text-indent: 0;
 	margin-top: 0; 
 }
@@ -290,6 +296,12 @@ pre, code {
 	border-radius: 0.2em;
 	font-weight: 200;
 	font-size: 0.9em;
+}
+pre code {
+	padding: 0;
+}
+pre + p {
+	text-indent: 0;
 }
 
 /*
@@ -384,6 +396,9 @@ p.box {
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
 	margin-top: 0;
 }
+.box dl:first-of-type { /* Definition lists inside a box */
+	margin-top: 0;
+}
 
 /*
  * Tables 
@@ -424,6 +439,8 @@ td ul, td ol {
 .table-caption {
 	page-break-after:avoid;
 	font-style: italic;
+	text-indent: 0;
+	margin: 1.5em 0 1em 0;
 }
 .table-caption em {
 	font-style: normal;
@@ -460,6 +477,7 @@ sup:target {
 	position: relative;
 	max-width: 40%;
 	margin: 0 0 0.5em 0.5em;
+	background-color: white;
 }
 
 .bottom {} /* Only used for print output, ignored for screen. */

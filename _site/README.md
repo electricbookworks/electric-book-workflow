@@ -30,8 +30,8 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
     *   [Footnotes, endnotes and sidenotes](#footnotes-endnotes-and-sidenotes)
     *   [Stylesheets](#stylesheets)
 *   [Trial-and-error tips](#trial-and-error-tips)
-    *   [Using Jekyll and GitHub:](#using-jekyll-and-github)
-    *   [Markdown tricks and quirks:](#markdown-tricks-and-quirks)
+    *   [Using Jekyll and GitHub](#using-jekyll-and-github)
+    *   [Markdown tricks and quirks](#markdown-tricks-and-quirks)
     *   [File naming](#file-naming)
 *   [PDF output for print](#pdf-output-for-print)
     *   [Creating PDF files with the Prince GUI](#creating-pdf-files-with-the-prince-gui)
@@ -87,15 +87,15 @@ These are the key components in our workflow:
 *	Prince for creating PDFs from HTML (the only proprietary part of this stack)
 *	Sigil for assembling the HTML in epubs.
 
-So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, our Bettercare books are here:
+So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, our Bettercare books are stored here:
 
-[https://github.com/electricbookworks/bettercare](https://github.com/electricbookworks/bettercare)
+[https://github.com/bettercarehealth/bettercare](https://github.com/bettercarehealth/bettercare)
 
 We use the [kramdown syntax](http://kramdown.gettalong.org/) for our markdown, because it's what GitHub uses and it has important features, such as classes.
 
 For open-source books, we let GitHub Pages publish the static HTML output, which it does automatically, also with Jekyll. For instance, our staging site for Bettercare content is here:
 
-[http://electricbookworks.github.io/bettercare/](http://electricbookworks.github.io/bettercare/)
+[http://bettercarehealth.github.io/bettercare/](http://bettercarehealth.github.io/bettercare/)
 
 (For Bettercare, we have a [separate live site](http://ls.bettercare.co.za) where we host the static HTML.)
 
@@ -103,7 +103,7 @@ When we use this workflow for closed content, we don't use GitHub Pages, and sto
 
 If you click through to a book chapter on our GitHub Pages view, you'll see the HTML we get from kramdown is very simple. For example, view source here:
 
-[http://electricbookworks.github.io/bettercare/nc/nc-1.html](http://electricbookworks.github.io/bettercare/nc/nc-1.html)
+[http://bettercarehealth.github.io/bettercare/nc/nc-1.html](http://bettercarehealth.github.io/bettercare/nc/nc-1.html)
 
 The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. For instance, see the [Book Dash](http://bookdash.org) books:
 
@@ -490,16 +490,16 @@ Glance through our stylesheets to see what's useful, especially in `print.css`. 
 
 We've learned some stuff the hard way:
 
-### Using Jekyll and GitHub:
+### Using Jekyll and GitHub
 
 *	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
 *	You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.
 *	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You'll have to do something like `title: Beans—The musical fruit`.
 *	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt. (We let `_site` sync to GitHub for this template repo so that it includes our example output for reference.)
 
-### Markdown tricks and quirks:
+### Markdown tricks and quirks
 
-*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list text. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (A local Jekyll instance may correctly parse nested lists even with a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://electricbookworks.github.io/bettercare/newborn-care/12.html#how-can-you-prevent-infection-in-newborn-infants).
+*	In lists, kramdown lets you use a space *or* a tab between the list marker (e.g. `*` or `1.` etc.) and the list text. If only to solve an issue with nesting blockquotes in lists, *use a tab* between the list marker and the start of the list text, and the same tab at the start of the blockquote line. That is, the indentation (the tab) must be exactly the same for the blockquote to nest correctly in the list. (A local Jekyll instance may correctly parse nested lists even with a space after the list marker and a tab before the blockquote `>`. But GitHub Pages is much stricter and requires exactly the same indentation.) E.g. see our book [Newborn Care 12-5](http://bettercarehealth.github.io/bettercare/newborn-care/12.html#how-can-you-prevent-infection-in-newborn-infants).
 *	Keep spans within block elements. For instance, if you have two paragraphs in italic, don't start the italics with `*` in the first paragraph and end the span with a second `*` in the next paragraph. The HTML needs one span (e.g. `<em>` span) in the first para, and another in the second para. The converter isn't smart enough to split your intended italics into two spans. Rather end the first span in the first para, and start another one in the second.
 
 ### File naming
@@ -552,6 +552,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 
 1.	Put the HTML files from `_site` into your `Text` folder.
 1.	Put the framework's `epub.css` in your `Styles` folder. (The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
+1.	If your book has a child stylesheet, add that, too.
 1.	Replace any SVG images in the `Images` folder with JPG equivalents. And:
 1.	Search-and-replace any links to .svg in your HTML files with .jpg.
 1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.

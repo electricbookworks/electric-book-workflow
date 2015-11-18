@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Book two title: Chapter 1</title>
+	<title>Book two title: Example typography</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,14 +19,26 @@
 	<div id="wrapper">
 
 
-<h1 class="no_toc" id="chapter-1">Chapter 1</h1>
+<h1 class="no_toc" id="typography-examples"><strong>1</strong> Typography examples</h1>
 
 <ul id="markdown-toc">
   <li><a href="#better-than-lorem-ipsum" id="markdown-toc-better-than-lorem-ipsum">Better than lorem ipsum</a>    <ul>
       <li><a href="#to-terentia-tulliola-and-young-cicero-at-rome" id="markdown-toc-to-terentia-tulliola-and-young-cicero-at-rome">To Terentia, Tulliola, and Young Cicero (at Rome)</a></li>
     </ul>
   </li>
+  <li><a href="#still-better-than-lorem-ipsum" id="markdown-toc-still-better-than-lorem-ipsum">Still better than lorem ipsum</a>    <ul>
+      <li><a href="#to-his-brother-quintus-in-sardinia" id="markdown-toc-to-his-brother-quintus-in-sardinia">To his Brother Quintus (in Sardinia)</a></li>
+    </ul>
+  </li>
+  <li><a href="#poetry" id="markdown-toc-poetry">Poetry</a>    <ul>
+      <li><a href="#good" id="markdown-toc-good">Good</a></li>
+      <li><a href="#better" id="markdown-toc-better">Better</a></li>
+      <li><a href="#best" id="markdown-toc-best">Best</a></li>
+    </ul>
+  </li>
 </ul>
+
+<p>This chapter simply includes lots of examples of our framework’s default typography. In the <a href="2.html">next chapter</a>, we explain how to edit text in markdown for the framework.</p>
 
 <p>This is a regular paragraph. If it follows a heading, list, definition list, blockquote or iframe, it’ll be flush left (not indented). If you’re looking at the HTML, ebook or print version, you should also check out the underlying markdown version, to see how to control styles with simple, plain-text formatting. There is more detail in the book framework’s <a href="https://github.com/electricbookworks/book-framework">README</a>.</p>
 
@@ -81,14 +93,222 @@
 
 <p class="valediction">A valediction, 29 April, from Brundisium</p>
 
-<p>For more typography, <a href="2.html">see chapter 2</a>.</p>
+<h2 id="still-better-than-lorem-ipsum">Still better than lorem ipsum</h2>
+
+<p>Here’s some more <a href="http://www.gutenberg.org/cache/epub/2812/pg2812.txt">Cicero translated by E. S. Shuckburgh</a>.</p>
+
+<h3 id="to-his-brother-quintus-in-sardinia">To his Brother Quintus (in Sardinia)</h3>
+
+<p><em class="allsmallcaps">ROME, 12 FEBRUARY</em>—I have  already told you the earlier proceedings; now let me describe what was done afterwards:</p>
+
+<ul>
+  <li>This is a list with a nested sublist.</li>
+  <li>The legations were postponed from the 1st of February to the 13th.</li>
+  <li>On the former day our business was not brought to a settlement.</li>
+  <li>On the 2nd of February Milo appeared for trial.
+    <ul>
+      <li>Pompey came to support him.</li>
+      <li>Marcellus spoke on being called upon by me.</li>
+      <li>We came off with flying colours.</li>
+    </ul>
+  </li>
+  <li>The case was adjourned to the 7th.</li>
+</ul>
+
+<p>Meanwhile (in the senate), the legations having been postponed to the 13th, the business of allotting the quaestors and furnishing the outfit of the praetors was brought before the house. But nothing was done, because many speeches were interposed denouncing the state of the Republic.</p>
+
+<p><em class="sidenote">This is a sidenote in its own paragraph. It floats to the right of the paragraph it precedes.</em></p>
+
+<p>Gaius Cato published his bill for the recall of Lentulus, whose son thereon put on mourning. On the 7th Milo appeared. Pompey spoke, or rather wished to speak. For as soon as he got up Clodius’s ruffians raised a shout, and throughout his whole speech he was interrupted, not only by hostile cries, but by personal abuse and insulting remarks. However, when he had finished his speech—for he shewed great courage in these circumstances, he was not cowed, he said all he had to say, and at times had by his commanding presence even secured silence for his words–well, when he had finished, up got Clodius. Our party received him with such a shout—for they had determined to pay him out–that he lost all presence of mind, power of speech, or control over his countenance.</p>
+
+<blockquote class="sidenote">
+  <p>Here’s another sidenote, but applied to a blockquote. Blockquotes as sidenotes are best if your content might be read with default browser CSS, because it keeps them distinct from the paragraph flow.</p>
+</blockquote>
+
+<p>This went on up to two o’clock – Pompey having finished his speech at noon – and every kind of abuse, and finally epigrams of the most outspoken indecency were uttered against Clodius and Clodia. Mad and livid with rage Clodius, in the very midst of the shouting, kept putting questions to his claque: “Who was it who was starving the commons to death?” His ruffians answered, “Pompey.”
+<em class="sidenote">This is a sidenote using an inline span. It’s exactly aligned with its position in the flow. In the markdown, note the <code>{:.sidenote}</code> tag after the closing <code>*</code>. For this sidenote to work on screen, a browser or ereader must support CSS to float the footnote correctly, or it’ll appear in the text flow.</em>
+“Who wanted to be sent to Alexandria ?” They answered, “Pompey.” “Who did they wish to go ?” They answered, “Crassus.” The latter was present at the time with no friendly feelings to Milo.</p>
+
+<p>About three o clock, as though at a given signal, the Clodians began spitting at our men.</p>
+
+<ol>
+  <li>A numbered list. Kramdown will create a correctly numbered list in HTML even if the list numbers in the markdown aren’t in sequence.</li>
+  <li>There was an outburst of rage.</li>
+  <li>They began a movement for forcing us from our ground.</li>
+  <li>Our men charged: his ruffians turned tail.</li>
+  <li>Clodius was pushed off the rostra: and then we too made our escape for fear of mischief in the riot.</li>
+  <li>The senate was summoned into the Curia: Pompey went home.</li>
+</ol>
+
+<p>However, I did not myself enter the senate-house, lest I should be obliged either to refrain from speaking on matters of such gravity, or in defending Pompey (for he was being attacked by Bibulus, Curio, Favonius, and Servilius the younger) should give offence to the loyalists.</p>
+
+<blockquote class="figure">
+  <p><img src="images/publisher-logo.svg" alt="This is a figure caption" /></p>
+
+  <p>This is a figure caption. Formatting works <em>if</em> the image and caption are two consecutive paragraphs in a blockquote.</p>
+</blockquote>
+
+<p>The business was adjourned to the next day. Clodius fixed the Quirinalia (17th of February) for his prosecution. On the 8th the senate met in the temple of Apollo, that Pompey might attend. Pompey made an impressive speech.</p>
+
+<blockquote>
+  <p>That day nothing was concluded. On the 9th in the temple of Apollo a degree passed the senate “that what had taken place on the 7th of February was treasonable.”</p>
+
+  <p>On this day Cato warmly inveighed against Pompey, and throughout his speech arraigned him as though he were at the bar. He said a great deal about me, to my disgust, though it was in very laudatory terms.</p>
+</blockquote>
+
+<p>When he attacked Pompey’s perfidy to me, he was listened to in profound silence on the part of my enemies. Pompey answered him boldly with a palpable allusion to Crassus, and said outright that “he would take better precautions to protect his life than Africanus had done, whom C. Carbo had assassinated.”</p>
+
+<p>Accordingly, important events appear to me to be in the wind. For Pompey understands what is going on, and imparts to me</p>
+
+<ul>
+  <li>that plots are being formed against his life,</li>
+  <li>that Gaius Cato is being supported by Crassus,</li>
+  <li>that money is being supplied to Clodius,</li>
+  <li>that both are backed by Crassus and Curio, as well as by Bibulus and
+his other detractors,</li>
+  <li>that he must take extraordinary precautions to
+prevent being overpowered by that demagogue–with a people all
+but wholly alienated, a nobility hostile, a senate ill-affected, and
+the younger men corrupt.</li>
+</ul>
+
+<p>So he is making his preparations and summoning men from the country.</p>
+
+<p>On his part, Clodius is rallying his gangs: a body of men is being got together for the Quirinalia. For that occasion we are considerably in a majority, owing to the forces brought up by Pompey himself: and a large contingent is expected from Picenum and Gallia, to enable us to throw out Cato’s bills also about Milo and Lentulus.<em class="sidenote bottom">This is a note that on screen will appear as a sidenote, and in print will appear at the bottom of the page. To do this, add <code>.bottom</code> to the <code>.sidenote</code> tag: <code>{:.sidenote .bottom}</code>.</em></p>
+
+<p>On the 10th of February an indictment was lodged against Sestius for bribery by the informer Cn. Nerius, of the Pupinian tribe, arid on the same day by a certain M. Tullius for riot. He was ill. I went at once, as I was bound to do. to his house, and put myself wholly at his service: and that was more than people expected, who thought that I had good cause for being angry with him.</p>
+
+<p class="box">A paragraph tagged as a <code>{:.box}</code>. The result is that my extreme kindness and grateful disposition are made manifest both to Sestius himself and to all the world, and I shall be as good as my word. But this same informer Nerius also named Cn. Lentulus Vatia and C. Cornelius to the commissioners.</p>
+
+<p>On the same day a decree passed the senate “that political clubs and associations should be broken up, and that a law in regard to them should be brought in, enacting that those who did not break off from them should be liable to the same penalty as those convicted of riot.”</p>
+
+<p>On the 10th of February I spoke in defence of Bestia on a charge of bribery before the praetor Cn. Domitius, in the middle of the forum and in a very crowded court; and in the course of my speech I came to the incident of Sestius, after receiving many wounds in the temple of Castor, having been preserved by the aid of Bestia. Here I took occasion to pave the way beforehand for a refutation of the charges which are being got up against Sestius, and I passed a well-deserved encomium upon him with the cordial approval of everybody. He was himself very much delighted with it. I tell you this because you have often advised me in your letters to retain the friendship of Sestius.</p>
+
+<dl>
+  <dt>Sestius</dt>
+  <dd>This is an example of definition-list typography. Publius Sestius was a Roman senator in the 1st century BC. He was a praetor in 53 BC, as well as a friend and ally of Cicero, by whom he was defended in 56 BC. Upon the outbreak of Caesar’s Civil War he joined the party of Pompey, having become the governor of Cilicia. According to Plutarch’s Life of Brutus he was accompanied by Marcus Brutus to his province, but Sestius subsequently went over to Caesar, who sent him into Cappadocia in 48 BC.</dd>
+</dl>
+
+<p>This is I am writing this on the 12th of February before daybreak; the day on which I am to dine with Pomponius on the occasion of his wedding.</p>
+
+<p>Our position in other respects is such as you used to cheer my despondency by telling me it would be–one of great dignity and popularity: this is a return to old times for you and me effected, my brother, by your patience, high character, loyalty, and, I may also add, your conciliatory manners. The house of Licinius, near the grove of Piso, has been taken for you. But, as I hope, in a few months time, after the 1st of July, you will move into your own.</p>
+
+<dl class="box">
+  <dt>Note</dt>
+  <dd>You can tag almost any element with <code>{:.box}</code>, including definition lists like this.</dd>
+</dl>
+
+<p>Some excellent tenants, the Lamiae, have taken your house in Carinie. I have received no letter from you since the one dated Olbia. I am anxious to hear how you are and what you find to amuse you, but above all to see you yourself as soon as possible.</p>
+
+<p>Take care of your health, my dear brother, and though it is winter time, yet reflect that after all it is Sardinia that you are in.</p>
+
+<p class="valediction">13 February</p>
+
+<h2 id="poetry">Poetry</h2>
+
+<blockquote class="sidenote">
+  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/book-framework">our README</a> for CSS-based indent control.</p>
+</blockquote>
+
+<p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/book-framework">the framework README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
+
+<h3 id="good">Good</h3>
+
+<p>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
+
+<h4 class="no_toc" id="when-you-are-oldhttpwwwpoetryfoundationorgpoem172055"><a href="http://www.poetryfoundation.org/poem/172055">When You Are Old</a></h4>
+
+<p class="verse">When you are old and grey and full of sleep,<br />
+And nodding by the fire, take down this book,<br />
+And slowly read, and dream of the soft look<br />
+Your eyes had once, and of their shadows deep;</p>
+
+<p class="verse">How many loved your moments of glad grace,<br />
+And loved your beauty with love false or true,<br />
+But one man loved the pilgrim soul in you,<br />
+And loved the sorrows of your changing face;</p>
+
+<p class="verse">And bending down beside the glowing bars,<br />
+Murmur, a little sadly, how Love fled<br />
+And paced upon the mountains overhead<br />
+And hid his face amid a crowd of stars.</p>
+
+<h3 id="better">Better</h3>
+
+<p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
+
+<h4 class="no_toc" id="no-worst-there-is-none-pitched-past-pitch-of-griefhttpwwwpoetryfoundationorgpoem173663"><a href="http://www.poetryfoundation.org/poem/173663">‘No worst, there is none. Pitched past pitch of grief.’</a></h4>
+
+<ul class="verse">
+  <li>No worst, there is none. Pitched past pitch of grief,</li>
+  <li>More pangs will, schooled at forepangs, wilder wring.</li>
+  <li>Comforter, where, where is your comforting?</li>
+  <li>Mary, mother of us, where is your relief?</li>
+  <li>My cries heave, herds-long; huddle in a main, a chief</li>
+  <li>Woe, wórld-sorrow; on an áge-old anvil wince and sing —</li>
+  <li>Then lull, then leave off. Fury had shrieked ‘No ling-</li>
+  <li>ering! Let me be fell: force I must be brief.”’</li>
+</ul>
+
+<ul class="verse">
+  <li> O the mind, mind has mountains; cliffs of fall</li>
+  <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
+  <li>May who ne’er hung there. Nor does long our small</li>
+  <li>Durance deal with that steep or deep. Here! creep,</li>
+  <li>Wretch, under a comfort serves in a whirlwind: all</li>
+  <li>Life death does end and each day dies with sleep.</li>
+</ul>
+
+<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
+
+<h4 class="no_toc" id="mishter-cummingsh">Mishter Cummingsh</h4>
+
+<ul class="verse">
+  <li>as a teenage poet, bested by life</li>
+  <li>mr cummings was my           friend</li>
+  <li class="indent-3">mostly (who broke rules   so   effortlessly</li>
+  <li>except I worry sometimes he was drunk</li>
+  <li>and couldn’t properly parenthesise.</li>
+</ul>
+
+<h3 id="best">Best</h3>
+
+<p>Best-practice poetry layout indents a poem till its longest line is centred on the page. To achieve this, we put the entire poem, including the title, in a ‘verse’ blockquote.</p>
+
+<blockquote class="verse">
+  <ul class="verse">
+    <li>
+      <h4 class="no_toc" id="to-one-who-has-been-long-in-city-penthttpwwwpoetryfoundationorgpoem173751"><a href="http://www.poetryfoundation.org/poem/173751">To One Who Has Been Long in City Pent</a></h4>
+    </li>
+    <li>To one who has been long in city pent,</li>
+    <li class="indent-2">‘Tis very sweet to look into the fair</li>
+    <li class="indent-2">And open face of heaven,—to breathe a prayer</li>
+    <li>Full in the smile of the blue firmament.</li>
+    <li>Who is more happy, when, with heart’s content,</li>
+    <li class="indent-2">Fatigued he sinks into some pleasant lair</li>
+    <li class="indent-2">Of wavy grass, and reads a debonair</li>
+    <li>And gentle tale of love and languishment?</li>
+    <li>Returning home at evening, with an ear</li>
+    <li class="indent-2">Catching the notes of Philomel,—an eye</li>
+    <li>Watching the sailing cloudlet’s bright career,</li>
+    <li class="indent-2">He mourns that day so soon has glided by:</li>
+    <li>E’en like the passage of an angel’s tear</li>
+    <li class="indent-2">That falls through the clear ether silently.</li>
+  </ul>
+</blockquote>
+
+<p>Our <a href="http://github.com/electricbookworks/book-framework">detailed framework instructions</a> explain more, including how to get the line indents here.</p>
+
+<p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 2](2.html){:.button}</code>.</p>
+
+<p class="first non-printing"><a href="2.html" class="button">Go to chapter 2</a></p>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>This is a footnote. Footnotes created like this, following <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown’s footnote syntax</a>, actually behave as endnotes to the document they’re in. For sidenotes see <a href="2.html">chapter 2</a>. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>This is an endnote. Notes created like this follow <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown’s footnote syntax</a> (kramdown uses the term footnote to refer to endnotes, unfortunately). <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>This is another footnote. Note how kramdown automatically numbers the footnotes correctly, even if the markdown doesn’t. The reference is superscript. We can also do subscript, like H<sub>2</sub>0, using HTML <code>&lt;sub&gt;</code> tags. Our framework doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>This is another endnote. Note how kramdown automatically numbers the these correctly, even when the markdown doesn’t. The reference is designed to appear superscript. We can also do subscript in markdown, like H<sub>2</sub>0, but we have to use HTML <code>&lt;sub&gt;</code> tags. Our framework doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -103,7 +323,7 @@
 				<a href="http://electricbookworks.com" title="Publisher name">Publisher name</a> &bull; 
 				<a href="/">Collection name</a> &bull; 
 				<a href="0-3-contents.html"><em>Book two title</em></a> &bull; 
-				<a href="">Chapter 1</a>
+				<a href="">Example typography</a>
 			</p>
 		</div><!--.footer-content-->
 	</div><!--#footer-->

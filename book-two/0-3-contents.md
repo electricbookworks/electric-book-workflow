@@ -10,6 +10,6 @@ style: contents-page
 *	[Acknowledgements](0-4-acknowledgements.html#acknowledgements)
 
 *	[Chapter 1  
-	The first chapter of my book](1.html#chapter-1)
+	Typography examples](1.html#typography-examples)
 *	[Chapter 2  
-	The second chapter of my book](2.html#chapter-2)
+	Editing for this framework](2.html#editing-for-this-framework)

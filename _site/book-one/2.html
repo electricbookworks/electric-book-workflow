@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Book title: Chapter 2</title>
+	<title>Book title: Editing for the EBW Book Framework</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,232 +19,604 @@
 	<div id="wrapper">
 
 
-<h1 class="no_toc" id="chapter-2">Chapter 2</h1>
+<h1 class="no_toc" id="editing-for-this-framework"><strong>2</strong> Editing for this framework</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#still-better-than-lorem-ipsum" id="markdown-toc-still-better-than-lorem-ipsum">Still better than lorem ipsum</a>    <ul>
-      <li><a href="#to-his-brother-quintus-in-sardinia" id="markdown-toc-to-his-brother-quintus-in-sardinia">To his Brother Quintus (in Sardinia)</a></li>
+  <li><a href="#how-html-works" id="markdown-toc-how-html-works">How HTML works</a></li>
+  <li><a href="#how-markdown-works" id="markdown-toc-how-markdown-works">How markdown works</a>    <ul>
+      <li><a href="#paragraphs" id="markdown-toc-paragraphs">Paragraphs</a></li>
+      <li><a href="#headings" id="markdown-toc-headings">Headings</a></li>
+      <li><a href="#italics" id="markdown-toc-italics">Italics</a></li>
+      <li><a href="#bold" id="markdown-toc-bold">Bold</a></li>
+      <li><a href="#lists" id="markdown-toc-lists">Lists</a></li>
+      <li><a href="#simple-tables" id="markdown-toc-simple-tables">Simple tables</a></li>
+      <li><a href="#blockquotes" id="markdown-toc-blockquotes">Blockquotes</a></li>
+      <li><a href="#hyperlinks" id="markdown-toc-hyperlinks">Hyperlinks</a></li>
+      <li><a href="#images" id="markdown-toc-images">Images</a></li>
+      <li><a href="#endnotes" id="markdown-toc-endnotes">Endnotes</a></li>
+      <li><a href="#definition-lists" id="markdown-toc-definition-lists">Definition lists</a></li>
     </ul>
   </li>
-  <li><a href="#poetry" id="markdown-toc-poetry">Poetry</a>    <ul>
-      <li><a href="#good" id="markdown-toc-good">Good</a></li>
-      <li><a href="#better" id="markdown-toc-better">Better</a></li>
-      <li><a href="#best" id="markdown-toc-best">Best</a></li>
+  <li><a href="#using-class-tags" id="markdown-toc-using-class-tags">Using class tags</a>    <ul>
+      <li><a href="#inventing-classes" id="markdown-toc-inventing-classes">Inventing classes</a></li>
+      <li><a href="#block-and-inline-elements" id="markdown-toc-block-and-inline-elements">Block and inline elements</a></li>
     </ul>
   </li>
 </ul>
 
-<p>This is another chapter to show more book-framework default typography. To understand how to format markdown for this framework, you’ll need these examples and the framework’s <a href="https://github.com/electricbookworks/book-framework">README</a>.</p>
+<p>For many books, we use a super-efficient workflow for editing and laying out books. It’s called the EBW Book Framework. This guide explains how to edit a manuscript for the framework. If you get it right, we can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting!</p>
 
-<h2 id="still-better-than-lorem-ipsum">Still better than lorem ipsum</h2>
+<p>To edit for the framework, you need to have a rough idea how HTML works, and you need to learn markdown. This is much, much easier than you think.</p>
 
-<p>Here’s some more <a href="http://www.gutenberg.org/cache/epub/2812/pg2812.txt">Cicero translated by E. S. Shuckburgh</a>.</p>
+<h2 id="how-html-works">How HTML works</h2>
 
-<h3 id="to-his-brother-quintus-in-sardinia">To his Brother Quintus (in Sardinia)</h3>
+<p>HTML is a computer language that humans can read. In HTML, each piece of content (e.g. a paragraph) starts and ends with a tag a computer can recognise. Tags are always in elbow brackets, like this paragraph tag: <code>&lt;p&gt;</code>.</p>
 
-<p><em class="allsmallcaps">ROME, 12 FEBRUARY</em>—I have  already told you the earlier proceedings; now let me describe what was done afterwards:</p>
+<pre><code>&lt;p&gt;
+This text is tagged in HTML as a paragraph.
+&lt;/p&gt;
+</code></pre>
 
-<ul>
-  <li>This is a list with a nested sublist.</li>
-  <li>The legations were postponed from the 1st of February to the 13th.</li>
-  <li>On the former day our business was not brought to a settlement.</li>
-  <li>On the 2nd of February Milo appeared for trial.
-    <ul>
-      <li>Pompey came to support him.</li>
-      <li>Marcellus spoke on being called upon by me.</li>
-      <li>We came off with flying colours.</li>
-    </ul>
-  </li>
-  <li>The case was adjourned to the 7th.</li>
-</ul>
+<p>The slash ‘closes’ the tag.</p>
 
-<p>Meanwhile (in the senate), the legations having been postponed to the 13th, the business of allotting the quaestors and furnishing the outfit of the praetors was brought before the house. But nothing was done, because many speeches were interposed denouncing the state of the Republic.</p>
+<p>And if I want to tell the computer what <em>kind</em> of paragraph it is, say it’s a blurb, I can put it in a class like this: <code>&lt;p class="blurb"&gt;</code>. The <code>&lt;p&gt;</code> tag is one of about a hundred tags in HTML, maybe ten of which you’ll only ever see in a book. Class names are infinite, because we can make them up as we need them.</p>
 
-<p><em class="sidenote">This is a sidenote in its own paragraph. It floats to the right of the paragraph it precedes.</em></p>
+<p>HTML is very simple and very powerful. We can mark up everything in a book using these tags and classes. In our framework, we aim to store each book in HTML, with each book part (title page, contents page, chapter, etc.) in its own file.</p>
 
-<p>Gaius Cato published his bill for the recall of Lentulus, whose son thereon put on mourning. On the 7th Milo appeared. Pompey spoke, or rather wished to speak. For as soon as he got up Clodius’s ruffians raised a shout, and throughout his whole speech he was interrupted, not only by hostile cries, but by personal abuse and insulting remarks. However, when he had finished his speech—for he shewed great courage in these circumstances, he was not cowed, he said all he had to say, and at times had by his commanding presence even secured silence for his words–well, when he had finished, up got Clodius. Our party received him with such a shout—for they had determined to pay him out–that he lost all presence of mind, power of speech, or control over his countenance.</p>
+<p>To create PDFs and ebooks, we combine that HTML with a CSS stylesheet. CSS is another computer language that defines design: font sizes, indentation, colour, etc. So if we combine a book’s HTML with a print stylesheet, we can get a print-ready PDF. If we combine the same HTML with a web stylesheet, we get the book as a website. (We’ve pre-designed a few default stylesheets already.)</p>
 
-<blockquote class="sidenote">
-  <p>Here’s another sidenote, but applied to a blockquote. Blockquotes as sidenotes are best if your content might be read with default browser CSS, because it keeps them distinct from the paragraph flow.</p>
+<p>Now HTML is very, very time consuming to write by hand. So we have a shortcut! it’s called markdown, and it’s amazing.</p>
+
+<h2 id="how-markdown-works">How markdown works</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is just plain text, neatly structured. Plain text as in <code>.txt</code> files. It’s so neatly structured that software can work out, just from its structure, what HTML you intended, and convert it instantly to finished HTML, tags and all. No way! Yes way.</p>
+
+<p>Markdown was invented by two very smart, very lucky people: <a href="http://daringfireball.net/projects/markdown/">John Gruber</a> and Aaron Swartz. Since their work, others have added some features to it. So there are many variations of markdown today. We use one called kramdown.</p>
+
+<p>As you work with markdown, you’ll get to know it really well. That can take as little as a few hours. And hopefully you’ll come to love it as much as we do. To do that, you’ll need to keep the <a href="http://kramdown.gettalong.org/syntax.html">kramdown syntax reference</a> handy. For now, though, we’ll explain the most common, important things you’ll to edit most simple books.</p>
+
+<p>To quickly test any basic markdown yourself, go to <a href="http://kramdown.herokuapp.com/">http://kramdown.herokuapp.com</a>. Put markdown in the left, and see the resulting HTML on the right.</p>
+
+<h3 id="paragraphs">Paragraphs</h3>
+
+<p>This is easy: a paragraph is lines of text separated from any other text by an empty line.</p>
+
+<p class="sidenote">You can even have line breaks in a paragraph, and markdown will just ignore them (or, rather, replace them with spaces). Markdown’s looking for an empty line before it ends a paragraph.</p>
+
+<p>Markdown:</p>
+
+<pre><code>This is a paragraph.
+
+This is another
+paragraph.
+</code></pre>
+
+<p>Result:</p>
+
+<blockquote class="box">
+  <p>This is a paragraph.</p>
+
+  <p>This is another
+paragraph.</p>
 </blockquote>
 
-<p>This went on up to two o’clock – Pompey having finished his speech at noon – and every kind of abuse, and finally epigrams of the most outspoken indecency were uttered against Clodius and Clodia. Mad and livid with rage Clodius, in the very midst of the shouting, kept putting questions to his claque: “Who was it who was starving the commons to death?” His ruffians answered, “Pompey.”
-<em class="sidenote">This is a sidenote using an inline span. It’s exactly aligned with its position in the flow. In the markdown, note the <code>{:.sidenote}</code> tag after the closing <code>*</code>. For this sidenote to work on screen, a browser or ereader must support CSS to float the footnote correctly, or it’ll appear in the text flow. For endnote-style notes, see <a href="1.html">chapter 1</a>.</em>
-“Who wanted to be sent to Alexandria ?” They answered, “Pompey.” “Who did they wish to go ?” They answered, “Crassus.” The latter was present at the time with no friendly feelings to Milo.</p>
+<h3 id="headings">Headings</h3>
 
-<p>About three o clock, as though at a given signal, the Clodians began spitting at our men.</p>
+<p>You can use up to six levels of heading, from level one to level six. To make a heading, just put one or more hash signs, <code>#</code>, and a space, before the heading. Like with paragraphs, separate the heading from everything else with an empty line space.</p>
 
-<ol>
-  <li>A numbered list. Kramdown will create a correctly numbered list in HTML even if the list numbers in the markdown aren’t in sequence.</li>
-  <li>There was an outburst of rage.</li>
-  <li>They began a movement for forcing us from our ground.</li>
-  <li>Our men charged: his ruffians turned tail.</li>
-  <li>Clodius was pushed off the rostra: and then we too made our escape for fear of mischief in the riot.</li>
-  <li>The senate was summoned into the Curia: Pompey went home.</li>
-</ol>
+<pre><code>## This is a second-level heading
 
-<p>However, I did not myself enter the senate-house, lest I should be obliged either to refrain from speaking on matters of such gravity, or in defending Pompey (for he was being attacked by Bibulus, Curio, Favonius, and Servilius the younger) should give offence to the loyalists.</p>
+This is a paragraph.
+</code></pre>
 
-<blockquote class="figure">
-  <p><img src="images/publisher-logo.svg" alt="This is a figure caption" /></p>
+<h3 id="italics">Italics</h3>
 
-  <p>This is a figure caption. Formatting works <em>if</em> the image and caption are two consecutive paragraphs in a blockquote.</p>
-</blockquote>
+<p>Just put <code>*</code> before and after the italicised words: <code>it really is *this* easy</code>.</p>
 
-<p>The business was adjourned to the next day. Clodius fixed the Quirinalia (17th of February) for his prosecution. On the 8th the senate met in the temple of Apollo, that Pompey might attend. Pompey made an impressive speech.</p>
+<h3 id="bold">Bold</h3>
 
-<blockquote>
-  <p>That day nothing was concluded. On the 9th in the temple of Apollo a degree passed the senate “that what had taken place on the 7th of February was treasonable.”</p>
+<p>Just put two <code>*</code>s before and after the bold text: <code>good for **shouting**</code>.</p>
 
-  <p>On this day Cato warmly inveighed against Pompey, and throughout his speech arraigned him as though he were at the bar. He said a great deal about me, to my disgust, though it was in very laudatory terms.</p>
-</blockquote>
+<p class="sidenote">Tip: If you use bold in a first-level heading (e.g. <code># **Chapter 1** Lost at Sea</code>), our default typography will put that bold text onto its own line, set off from the heading. This is useful for chapter numbers that should look separate from the chapter title, but in the underlying HTML need to be part of the heading, for instance when software generates tables of contents.</p>
 
-<p>When he attacked Pompey’s perfidy to me, he was listened to in profound silence on the part of my enemies. Pompey answered him boldly with a palpable allusion to Crassus, and said outright that “he would take better precautions to protect his life than Africanus had done, whom C. Carbo had assassinated.”</p>
+<h3 id="lists">Lists</h3>
 
-<p>Accordingly, important events appear to me to be in the wind. For Pompey understands what is going on, and imparts to me</p>
+<p>There are two kinds of lists: bulleted and numbered. For a bulleted list, start each line with a <code>*</code> and a tab. For a numbered list, start each line with a number, a full stop and a tab (you can use any number, because the software will always create an HTML list that starts with 1; but it’s best to use 1 or the actual numbers you intend, just to make things neat).</p>
 
-<ul>
-  <li>that plots are being formed against his life,</li>
-  <li>that Gaius Cato is being supported by Crassus,</li>
-  <li>that money is being supplied to Clodius,</li>
-  <li>that both are backed by Crassus and Curio, as well as by Bibulus and
-his other detractors,</li>
-  <li>that he must take extraordinary precautions to
-prevent being overpowered by that demagogue–with a people all
-but wholly alienated, a nobility hostile, a senate ill-affected, and
-the younger men corrupt.</li>
-</ul>
+<p>Markdown:</p>
 
-<p>So he is making his preparations and summoning men from the country.</p>
+<pre><code>1.	Apples
+2.	Oranges
+3.	Pears
 
-<p>On his part, Clodius is rallying his gangs: a body of men is being got together for the Quirinalia. For that occasion we are considerably in a majority, owing to the forces brought up by Pompey himself: and a large contingent is expected from Picenum and Gallia, to enable us to throw out Cato’s bills also about Milo and Lentulus.<em class="sidenote bottom">This is a note that on screen will appear as a sidenote, and in print will appear at the bottom of the page. To do this, add <code>.bottom</code> to the <code>.sidenote</code> tag: <code>{:.sidenote .bottom}</code>.</em></p>
+*	Apples
+*	Oranges
+*	Pears
+</code></pre>
 
-<p>On the 10th of February an indictment was lodged against Sestius for bribery by the informer Cn. Nerius, of the Pupinian tribe, arid on the same day by a certain M. Tullius for riot. He was ill. I went at once, as I was bound to do. to his house, and put myself wholly at his service: and that was more than people expected, who thought that I had good cause for being angry with him.</p>
+<p>Result:</p>
 
-<p class="box">A paragraph tagged as a <code>{:.box}</code>. The result is that my extreme kindness and grateful disposition are made manifest both to Sestius himself and to all the world, and I shall be as good as my word. But this same informer Nerius also named Cn. Lentulus Vatia and C. Cornelius to the commissioners.</p>
+<blockquote class="box">
+  <ol>
+    <li>Apples</li>
+    <li>Oranges</li>
+    <li>Pears</li>
+  </ol>
 
-<p>On the same day a decree passed the senate “that political clubs and associations should be broken up, and that a law in regard to them should be brought in, enacting that those who did not break off from them should be liable to the same penalty as those convicted of riot.”</p>
-
-<p>On the 10th of February I spoke in defence of Bestia on a charge of bribery before the praetor Cn. Domitius, in the middle of the forum and in a very crowded court; and in the course of my speech I came to the incident of Sestius, after receiving many wounds in the temple of Castor, having been preserved by the aid of Bestia. Here I took occasion to pave the way beforehand for a refutation of the charges which are being got up against Sestius, and I passed a well-deserved encomium upon him with the cordial approval of everybody. He was himself very much delighted with it. I tell you this because you have often advised me in your letters to retain the friendship of Sestius.</p>
-
-<dl>
-  <dt>Sestius</dt>
-  <dd>This is an example of definition-list typography. Publius Sestius was a Roman senator in the 1st century BC. He was a praetor in 53 BC, as well as a friend and ally of Cicero, by whom he was defended in 56 BC. Upon the outbreak of Caesar’s Civil War he joined the party of Pompey, having become the governor of Cilicia. According to Plutarch’s Life of Brutus he was accompanied by Marcus Brutus to his province, but Sestius subsequently went over to Caesar, who sent him into Cappadocia in 48 BC.</dd>
-</dl>
-
-<p>This is I am writing this on the 12th of February before daybreak; the day on which I am to dine with Pomponius on the occasion of his wedding.</p>
-
-<p>Our position in other respects is such as you used to cheer my despondency by telling me it would be–one of great dignity and popularity: this is a return to old times for you and me effected, my brother, by your patience, high character, loyalty, and, I may also add, your conciliatory manners. The house of Licinius, near the grove of Piso, has been taken for you. But, as I hope, in a few months time, after the 1st of July, you will move into your own.</p>
-
-<dl class="box">
-  <dt>Note</dt>
-  <dd>You can tag almost any element with <code>{:.box}</code>, including definition lists like this.</dd>
-</dl>
-
-<p>Some excellent tenants, the Lamiae, have taken your house in Carinie. I have received no letter from you since the one dated Olbia. I am anxious to hear how you are and what you find to amuse you, but above all to see you yourself as soon as possible.</p>
-
-<p>Take care of your health, my dear brother, and though it is winter time, yet reflect that after all it is Sardinia that you are in.</p>
-
-<p class="valediction">13 February</p>
-
-<h2 id="poetry">Poetry</h2>
-
-<blockquote class="sidenote">
-  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/book-framework">our README</a> for CSS-based indent control.</p>
-</blockquote>
-
-<p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/book-framework">the framework README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
-
-<h3 id="good">Good</h3>
-
-<p>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
-
-<h4 class="no_toc" id="when-you-are-oldhttpwwwpoetryfoundationorgpoem172055"><a href="http://www.poetryfoundation.org/poem/172055">When You Are Old</a></h4>
-
-<p class="verse">When you are old and grey and full of sleep,<br />
-And nodding by the fire, take down this book,<br />
-And slowly read, and dream of the soft look<br />
-Your eyes had once, and of their shadows deep;</p>
-
-<p class="verse">How many loved your moments of glad grace,<br />
-And loved your beauty with love false or true,<br />
-But one man loved the pilgrim soul in you,<br />
-And loved the sorrows of your changing face;</p>
-
-<p class="verse">And bending down beside the glowing bars,<br />
-Murmur, a little sadly, how Love fled<br />
-And paced upon the mountains overhead<br />
-And hid his face amid a crowd of stars.</p>
-
-<h3 id="better">Better</h3>
-
-<p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
-
-<h4 class="no_toc" id="no-worst-there-is-none-pitched-past-pitch-of-griefhttpwwwpoetryfoundationorgpoem173663"><a href="http://www.poetryfoundation.org/poem/173663">‘No worst, there is none. Pitched past pitch of grief.’</a></h4>
-
-<ul class="verse">
-  <li>No worst, there is none. Pitched past pitch of grief,</li>
-  <li>More pangs will, schooled at forepangs, wilder wring.</li>
-  <li>Comforter, where, where is your comforting?</li>
-  <li>Mary, mother of us, where is your relief?</li>
-  <li>My cries heave, herds-long; huddle in a main, a chief</li>
-  <li>Woe, wórld-sorrow; on an áge-old anvil wince and sing —</li>
-  <li>Then lull, then leave off. Fury had shrieked ‘No ling-</li>
-  <li>ering! Let me be fell: force I must be brief.”’</li>
-</ul>
-
-<ul class="verse">
-  <li> O the mind, mind has mountains; cliffs of fall</li>
-  <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
-  <li>May who ne’er hung there. Nor does long our small</li>
-  <li>Durance deal with that steep or deep. Here! creep,</li>
-  <li>Wretch, under a comfort serves in a whirlwind: all</li>
-  <li>Life death does end and each day dies with sleep.</li>
-</ul>
-
-<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
-
-<h4 class="no_toc" id="mishter-cummingsh">Mishter Cummingsh</h4>
-
-<ul class="verse">
-  <li>as a teenage poet, bested by life</li>
-  <li>mr cummings was my           friend</li>
-  <li class="indent-3">mostly (who broke rules   so   effortlessly</li>
-  <li>except I worry sometimes he was drunk</li>
-  <li>and couldn’t properly parenthesise.</li>
-</ul>
-
-<h3 id="best">Best</h3>
-
-<p>Best-practice poetry layout indents a poem till its longest line is centred on the page. To achieve this, we put the entire poem, including the title, in a ‘verse’ blockquote.</p>
-
-<blockquote class="verse">
-  <ul class="verse">
-    <li>
-      <h4 class="no_toc" id="to-one-who-has-been-long-in-city-penthttpwwwpoetryfoundationorgpoem173751"><a href="http://www.poetryfoundation.org/poem/173751">To One Who Has Been Long in City Pent</a></h4>
-    </li>
-    <li>To one who has been long in city pent,</li>
-    <li class="indent-2">‘Tis very sweet to look into the fair</li>
-    <li class="indent-2">And open face of heaven,—to breathe a prayer</li>
-    <li>Full in the smile of the blue firmament.</li>
-    <li>Who is more happy, when, with heart’s content,</li>
-    <li class="indent-2">Fatigued he sinks into some pleasant lair</li>
-    <li class="indent-2">Of wavy grass, and reads a debonair</li>
-    <li>And gentle tale of love and languishment?</li>
-    <li>Returning home at evening, with an ear</li>
-    <li class="indent-2">Catching the notes of Philomel,—an eye</li>
-    <li>Watching the sailing cloudlet’s bright career,</li>
-    <li class="indent-2">He mourns that day so soon has glided by:</li>
-    <li>E’en like the passage of an angel’s tear</li>
-    <li class="indent-2">That falls through the clear ether silently.</li>
+  <ul>
+    <li>Apples</li>
+    <li>Oranges</li>
+    <li>Pears</li>
   </ul>
 </blockquote>
 
-<p>Our <a href="http://github.com/electricbookworks/book-framework">detailed framework instructions</a> explain more, including how to get the line indents here.</p>
+<h3 id="simple-tables">Simple tables</h3>
 
-<p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 1](1.html){:.button}</code>.</p>
+<p>You can create simple tables in markdown. You can make them really neat, or you can make them really efficient. Markdown:</p>
 
-<p class="first non-printing"><a href="1.html" class="button">Go to chapter 1</a></p>
+<pre><code>| Fruit   | Quantity |
+|---------|----------|
+| Apples  | 2        |
+| Oranges | 5        |
+| Pears   | 0        |
+
+| Fruit | Quantity
+|---|---
+| Apples | 2
+| Oranges | 5
+| Pears | 0
+</code></pre>
+
+<p>Result:</p>
+
+<blockquote class="box">
+  <table>
+    <thead>
+      <tr>
+        <th>Fruit</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Apples</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Oranges</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Pears</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Fruit</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Apples</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Oranges</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Pears</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p class="sidenote">Note the minimum three hyphens in the lines that creates the border between the table head and table body. (Kramdown doesn’t require three, but GitHub previews do, so it’s best practice.)</p>
+
+<p>To make more complex tables with merged or individually styled cells, you have to use actual HTML table markup. Ergh. That’s for another time.</p>
+
+<h3 id="blockquotes">Blockquotes</h3>
+
+<p>Remember old email programs, that put a <code>&gt;</code> at the start of each line when you hit ‘Reply’? Ah, <code>&gt;</code> means blockquote. Start each line with <code>&gt;</code> and a space to make text a blockquote.</p>
+
+<p>In our framework we use blockquote HTML for more than just quotations, though. We also use them for figures and poetry. We’ll come back to this later.</p>
+
+<h3 id="hyperlinks">Hyperlinks</h3>
+
+<p>If you want your final HTML to include a clickable link:</p>
+
+<ul>
+  <li>surround the text you want clickable with <code>[</code> and <code>]</code></li>
+  <li>put the URL it should point to between <code>(</code> and <code>)</code> immediately afterwards.</li>
+</ul>
+
+<pre><code>To learn more, [click here](http://google.com).
+</code></pre>
+
+<h3 id="images">Images</h3>
+
+<p>To place an image, you include a line telling the computer where to find the image file. This looks like a hyperlink, but with a <code>!</code> at the start of the line. Inside the square brackets, you include a brief description of the image (this is useful to screen readers for the visually impaired).</p>
+
+<pre><code>![A dog chasing a bus.](images/dogbus.jpg)
+</code></pre>
+
+<p>In the parentheses above, the <code>images/</code> part says that the <code>dogbus.jpg</code> image is in the <code>images</code> folder, which is alongside the markdown file. In our framework, we always put images in the <code>images</code> folder like this.</p>
+
+<h3 id="endnotes">Endnotes</h3>
+
+<p>Endnotes<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> in our framework appear at the end of a document (that is, a web page or a book chapter).</p>
+
+<ul>
+  <li>put a <code>[^1]</code> where the footnote reference should appear (the <code>1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
+  <li>anywhere in the document (we recommend after the paragraph containing the footnote reference), put <code>[^1]: Your footnote text here.</code>.</li>
+</ul>
+
+<p>We’ll explain how to create notes on the side or bottom of a page (footnotes) later when we talk about classes.</p>
+
+<h3 id="definition-lists">Definition lists</h3>
+
+<p>A definition list is a list of definitions, not surprisingly. Think of a dictionary. A definition list comprises one or more entries, and each entry has a headword and a definition. Even if you’re not editing a dictionary, you might need to create a short glossary or define a word or two at some point. To create a definition entry in markdown, put the headword on its own line, and the definition on the next, after a colon and a tab. Markdown:</p>
+
+<pre><code>Editor
+:	Someone who spends more time learning new tricks than making money.
+</code></pre>
+
+<p>Result:</p>
+
+<blockquote class="box">
+  <dl>
+    <dt>Editor</dt>
+    <dd>Someone who spends more time learning new tricks than making money.</dd>
+  </dl>
+</blockquote>
+
+<p>To create a whole list of definition entries, just put one of these after the other, with a line space between them.</p>
+
+<h2 id="using-class-tags">Using class tags</h2>
+
+<p>We’re going to get a bit more advanced now. Get a cup of tea.</p>
+
+<p>As we mentioned earlier, sometimes we have to tell our software what <em>kind</em> of paragraph or list or blockquote we want. These <em>kinds</em> of text are called <em>classes</em>. To give something a class, we add a kramdown tag in curly braces, with a colon, and a dot before the class name.</p>
+
+<p>Markdown:</p>
+
+<pre><code>This paragraph should be in a box.
+{:.box}
+</code></pre>
+
+<p>Result:</p>
+
+<blockquote class="box">
+  <p class="box">This paragraph should be in a box.</p>
+</blockquote>
+
+<p>For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we’ll have to combine it with a CSS stylesheet that includes formatting instructions for the <code>box</code> class. If you’re just editing in markdown, you don’t have to think about the stylesheets. Our EBW book framework’s default stylesheets include instructions for <code>box</code> as well as several other classes. (Which we’ll list in a moment.)</p>
+
+<p>But if your book needs classes that aren’t already in our framework’s stylesheets, you’ll need to ask a CSS-savvy designer to write you some CSS instructions for your new class, and to <a href="https://github.com/electricbookworks/book-framework#stylesheets">put these in a child stylesheet</a>.</p>
+
+<blockquote class="box float-top">
+  <h4 id="inventing-classes">Inventing classes</h4>
+
+  <p>If you invent new classes, make sure you name them for their semantic <em>purpose</em>, not their appearance. For instance, <code>important-tip</code> is a better class name than <code>shaded-bold</code>. Also, class names should always be lowercase and have no spaces.</p>
+</blockquote>
+
+<p>In addition to boxes, our default stylesheets include lots of other classes for common book features.</p>
+
+<blockquote class="box">
+  <h4 id="block-and-inline-elements">Block and inline elements</h4>
+
+  <p>Classes can be applied to two kinds of element: <em>block</em> elements and <em>inline</em> elements.</p>
+
+  <p>A block element is anything that should (in print or on screen) start and end with a line break, like a paragraph or a list. An inline element is anything that appears inside a line of running text, like bold and italic. Most of our pre-designed classes are for either block or inline elements, and sometimes both.</p>
+
+  <p>When you apply a tag to a block-level element in kramdown, you put the tag on the line immediately following the element.</p>
+
+  <p>When you apply a tag to an inline element, mark off the text you’re tagging with asterisks (<code>*</code>), as you would italics, and put your tag immediately after the closing <code>*</code>, on the same line. E.g. <code>*Make this small-caps.*{:.smallcaps}</code>.</p>
+</blockquote>
+
+<p class="table-caption">EBW-book-framework supported classes</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Framework class</th>
+      <th>Block or inline</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bibliography list</td>
+      <td><code>.bibliography</code></td>
+      <td>Block</td>
+      <td>Styles a list as a bibliography, for instance at the end of an academic book.</td>
+    </tr>
+    <tr>
+      <td>Box</td>
+      <td><code>.box</code></td>
+      <td>Block</td>
+      <td>Puts the element in a box, to set it off from the rest of the text.</td>
+    </tr>
+    <tr>
+      <td>Chapter number</td>
+      <td><code>.chapter-number</code></td>
+      <td>Block</td>
+      <td>Used for a chapter number before a chapter heading. (See the tip at <a href="#bold">Bold</a> above for another way to handle chapter numbers.</td>
+    </tr>
+    <tr>
+      <td>Dedication</td>
+      <td><code>.dedication</code></td>
+      <td>Block</td>
+      <td>A dedication, for instance at the start of a book or chapter</td>
+    </tr>
+    <tr>
+      <td>Epigraph source</td>
+      <td><code>.epigraph-source</code></td>
+      <td>Block</td>
+      <td>The person to whom the epigraph is attributed.</td>
+    </tr>
+    <tr>
+      <td>Epigraph</td>
+      <td><code>.epigraph</code></td>
+      <td>Block</td>
+      <td>An epigraph at the start of a book or chapter.</td>
+    </tr>
+    <tr>
+      <td>Figure</td>
+      <td><code>.figure</code></td>
+      <td>Block</td>
+      <td>A figure is an image with a caption. Read about how to manage them properly <a href="https://github.com/electricbookworks/book-framework#adding-images-in-markdown">in our framework guide</a>.</td>
+    </tr>
+    <tr>
+      <td>Figure: extra small</td>
+      <td><code>.x-small</code></td>
+      <td>Block</td>
+      <td>Add to the <code>.figure</code> tag, e.g. <code>{:.figure .x-small}</code>.</td>
+    </tr>
+    <tr>
+      <td>Figure: fixed position</td>
+      <td><code>.fixed</code></td>
+      <td>Block</td>
+      <td>Add to the <code>.figure</code> tag, e.g. <code>{:.figure .fixed}</code>. For figures that must keep their position in the text flow, and must not float to the top of the page.</td>
+    </tr>
+    <tr>
+      <td>Figure: large</td>
+      <td><code>.large</code></td>
+      <td>Block</td>
+      <td>Add to the <code>.figure</code> tag, e.g. <code>{:.figure .large}</code>.</td>
+    </tr>
+    <tr>
+      <td>Figure: medium</td>
+      <td><code>.medium</code></td>
+      <td>Block</td>
+      <td>Add to the <code>.figure</code> tag, e.g. <code>{:.figure .medium}</code>.</td>
+    </tr>
+    <tr>
+      <td>Figure: small</td>
+      <td><code>.small</code></td>
+      <td>Block</td>
+      <td>Add to the <code>.figure</code> tag, e.g. <code>{:.figure .small}</code>.</td>
+    </tr>
+    <tr>
+      <td>First paragraph</td>
+      <td><code>.first</code></td>
+      <td>Block</td>
+      <td>For any paragraph that starts a new set of paragraphs, flush left and with a gap above it.</td>
+    </tr>
+    <tr>
+      <td>Float to top</td>
+      <td><code>.float-top</code></td>
+      <td>Block</td>
+      <td>Floats the element to the top of its page. Useful for boxes. Applies to print output only.</td>
+    </tr>
+    <tr>
+      <td>Float to bottom</td>
+      <td><code>.float-bottom</code></td>
+      <td>Block</td>
+      <td>Floats the element to the bottom of its page. Useful for boxes. Applies to print output only.</td>
+    </tr>
+    <tr>
+      <td>Footnote</td>
+      <td><code>.sidenote .bottom</code></td>
+      <td>Block or inline</td>
+      <td>When you add <code>.bottom</code> to <code>.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see <a href="#Endnotes">Endnotes</a> above.)</td>
+    </tr>
+    <tr>
+      <td>Fraction</td>
+      <td><code>.fractions</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports it, converts characters like <code>1/2</code> into fraction characters.</td>
+    </tr>
+    <tr>
+      <td>Glossary</td>
+      <td><code>.glossary</code></td>
+      <td>Block</td>
+      <td>Use this after the last entry in a series of definition lists to define the entire list of definitions as a glossary.</td>
+    </tr>
+    <tr>
+      <td>Hide from print</td>
+      <td><code>.non-printing</code></td>
+      <td>Block or inline</td>
+      <td>Hides the element from print output. Useful for things like clickable buttons, which are only intended for screens, not paper.</td>
+    </tr>
+    <tr>
+      <td>Keep together</td>
+      <td><code>.keep-together</code></td>
+      <td>Block</td>
+      <td>Prevents an element from breaking across pages. (E.g. you want to keep a short list on the same page.)</td>
+    </tr>
+    <tr>
+      <td>Keep with next</td>
+      <td><code>.keep-with-next</code></td>
+      <td>Block</td>
+      <td>Prevents a page break between this element and the next one.</td>
+    </tr>
+    <tr>
+      <td>Logo image</td>
+      <td><code>.logo</code></td>
+      <td>Block</td>
+      <td>Used for making images small, especially for small logos in text like on acknowledgements pages.</td>
+    </tr>
+    <tr>
+      <td>Page break after</td>
+      <td><code>.page-break-after</code></td>
+      <td>Block</td>
+      <td>Creates a page break after the element.</td>
+    </tr>
+    <tr>
+      <td>Page break before</td>
+      <td><code>.page-break-before</code></td>
+      <td>Block</td>
+      <td>Starts its element on a new page.</td>
+    </tr>
+    <tr>
+      <td>Page break: allow</td>
+      <td><code>.allow-break</code></td>
+      <td>Block</td>
+      <td>Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element.</td>
+    </tr>
+    <tr>
+      <td>Poetry</td>
+      <td><code>.verse</code></td>
+      <td>Block</td>
+      <td>Designing poetry is tricky and important. Read about how to manage this <a href="https://github.com/electricbookworks/book-framework#poetry">in our framework guide</a>.</td>
+    </tr>
+    <tr>
+      <td>Pull quote</td>
+      <td><code>.pullquote</code></td>
+      <td>Block</td>
+      <td>Displays a paragraph as a pull quote.</td>
+    </tr>
+    <tr>
+      <td>Shout</td>
+      <td><code>.shout</code></td>
+      <td>Block</td>
+      <td>Makes a short passage of text really jump out.</td>
+    </tr>
+    <tr>
+      <td>Shrink font</td>
+      <td><code>.shrink</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the font size to 70%. Can be useful for wide tables.</td>
+    </tr>
+    <tr>
+      <td>Sidenote</td>
+      <td><code>.sidenote</code></td>
+      <td>Block or inline</td>
+      <td>A sidenote appears in a sidebar to the right of the text.</td>
+    </tr>
+    <tr>
+      <td>Small caps (lowercase only)</td>
+      <td><code>.smallcaps</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports proper small-caps glyphs. Only affects the lowercase letters.</td>
+    </tr>
+    <tr>
+      <td>Small caps throughout</td>
+      <td><code>.allsmallcaps</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports proper small-caps glyphs, all characters are small caps.</td>
+    </tr>
+    <tr>
+      <td>Source after a quotation</td>
+      <td><code>.source</code></td>
+      <td>Block</td>
+      <td>The name and/or title of the source for a preceding quotation.</td>
+    </tr>
+    <tr>
+      <td>Table caption</td>
+      <td><code>.table-caption</code></td>
+      <td>Block</td>
+      <td>Add <code>{:.table-caption}</code> in the line immediately after a table caption. Table captions must always appear above tables, not after them.</td>
+    </tr>
+    <tr>
+      <td>Table caption</td>
+      <td><code>.table-caption</code></td>
+      <td>Block</td>
+      <td>Use for the caption above a table. (Table captions should not appear after tables, only before.)</td>
+    </tr>
+    <tr>
+      <td>Title page: author</td>
+      <td><code>.title-page-author</code></td>
+      <td>Block</td>
+      <td>The book’s author(s) on the title page.</td>
+    </tr>
+    <tr>
+      <td>Title page: logo</td>
+      <td><code>.title-page-logo</code></td>
+      <td>Block</td>
+      <td>A logo, as an image, on the title page.</td>
+    </tr>
+    <tr>
+      <td>Title page: subtitle</td>
+      <td><code>.title-page-subtitle</code></td>
+      <td>Block</td>
+      <td>The book’s subtitle on the title page.</td>
+    </tr>
+    <tr>
+      <td>Title page: title</td>
+      <td><code>.title-page-title</code></td>
+      <td>Block</td>
+      <td>The book’s title on the title page.</td>
+    </tr>
+    <tr>
+      <td>Tracking: crazy tight</td>
+      <td><code>xxx-tight</code></td>
+      <td>Block or inline</td>
+      <td>Really tightens letters up close. Use as a last resort. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Tracking: even looser</td>
+      <td><code>.x-loose</code></td>
+      <td>Block or inline</td>
+      <td>Widens the gaps between letters. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Tracking: even tighter</td>
+      <td><code>.x-tight</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the gaps between letters a tiny bit. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Tracking: loose</td>
+      <td><code>.loose</code></td>
+      <td>Block or inline</td>
+      <td>Imperceptibly widens the gaps between letters. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Tracking: tight</td>
+      <td><code>.tight</code></td>
+      <td>Block or inline</td>
+      <td>Imperceptibly shrinks the gaps between letters. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Tracking: very, very tight</td>
+      <td><code>.xx-tight</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the gaps between letters visibly. <em>Affects print output only.</em></td>
+    </tr>
+    <tr>
+      <td>Valediction</td>
+      <td><code>.valediction</code></td>
+      <td>Block</td>
+      <td>Used for the sign-off at the end of a letter, preface or foreword.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>In kramdown syntax, unfortunately, endnotes are called footnotes; so it’s easy to confuse them. In book parlance, there is a big difference between footnotes and endnotes. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 
 	</div><!--#wrapper-->
@@ -256,7 +628,7 @@ And hid his face amid a crowd of stars.</p>
 				<a href="http://electricbookworks.com" title="Publisher name">Publisher name</a> &bull; 
 				<a href="/">Collection name</a> &bull; 
 				<a href="0-3-contents.html"><em>Book title</em></a> &bull; 
-				<a href="">Chapter 2</a>
+				<a href="">Editing for the EBW Book Framework</a>
 			</p>
 		</div><!--.footer-content-->
 	</div><!--#footer-->

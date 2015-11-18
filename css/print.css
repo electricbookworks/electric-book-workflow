@@ -256,6 +256,7 @@ h3 {
 h4 {
 	font-size: 1em;
 	margin-bottom: 0.5em;
+	font-style: italic;
 }
 p, ul, ol, dl {
 	font-variant: prince-opentype(onum);
@@ -399,11 +400,14 @@ ul.verse li h4 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks cause
 ul.verse li h5 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
 ul.verse li h6 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
 
-/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list or definition list */
+/* Finally, set flush left and override any top-margin inadvertently added with .first or similar on a paragraph after a heading, blockquote, list, code, or definition list, or after sidenotes after headings, tables or boxes */
 
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, blockquote + p, ol + p, ul + p, dl + p { /* Paragraphs that follow headings, blockquotes, lists, and definition lists */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p, 
+blockquote + p, ol + p, ul + p, dl + p, pre + p, 
+h1 + p.sidenote + p, h2 + p.sidenote + p, h3 + p.sidenote + p, h4 + p.sidenote + p, h5 + p.sidenote + p, h6 + p.sidenote + p,
+.box + p.sidenote + p, table + p.sidenote + p { 
 	text-indent: 0;
-	margin: 0; /* Overrides margin inadvertently added by using .first or .verse on a paragraph after a heading, blockquote, list or definition list */
+	margin-top: 0; 
 }
 
 /*
@@ -582,6 +586,12 @@ p.box {
 .box li p:last-of-type { /* Paragraphs within list items in a box */
 	margin-bottom: 0;
 }
+.box dl:first-of-type { /* Definition lists inside a box */
+	margin-top: 0;
+}
+.box dl:last-of-type { /* Definition lists inside a box */
+	margin-bottom: 0;
+}
 
 /*
  * Code
@@ -595,6 +605,17 @@ pre, code {
 	padding: 0.1em 0.3em;
 	border-radius: 0.2em;
 }
+pre code {
+	padding: 0;
+}
+pre + p {
+	text-indent: 0;
+}
+
+/*
+ * Links
+ */
+ 
 a {
 	text-decoration: none;
 	color: inherit;
@@ -623,6 +644,8 @@ thead, th {
 .table-caption {
 	page-break-after:avoid;
 	font-style: italic;
+	text-indent: 0;
+	margin: 1.5em 0 1em 0;
 }
 .table-caption em {
 	font-style: normal;
@@ -922,7 +945,19 @@ img.cover {
  * Extra typographic control 
  */
 
- /* Use these classes to control tracking, usually to save widows and orphans. */
+/* Float an element, like a box, to the top of bottom of a page (print only) */
+ 
+.float-top {
+	float: top;
+}
+.float-bottom {
+	float: bottom;
+}
+.float-top + p, .float-bottom + p {
+	text-indent: 1em; /* If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back. */
+}
+ 
+/* Use these classes to control tracking, usually to save widows and orphans. */
 .tight {
 	letter-spacing: -0.0075em;
 	word-spacing: -0.0075em;

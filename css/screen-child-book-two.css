@@ -25,7 +25,7 @@ body {
 	background-color: #704214;
 }
 	@media only screen 
-	and (max-width: 280px), (max-height: 600px) { /* Let nav-bar scroll out of view on small screens */
+	and (max-height: 320px) { /* Let nav-bar scroll out of view on small screens */
 		#nav-bar {
 			position: relative;
 		}
