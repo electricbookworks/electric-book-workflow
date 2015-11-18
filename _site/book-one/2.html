@@ -79,11 +79,9 @@ This text is tagged in HTML as a paragraph.
 
 <h3 id="paragraphs">Paragraphs</h3>
 
-<p>This is easy: a paragraph is lines of text separated from any other text by an empty line.</p>
+<p>This is easy: a paragraph is lines of text separated from any other text by an empty line. Markdown:</p>
 
 <p class="sidenote">You can even have line breaks in a paragraph, and markdown will just ignore them (or, rather, replace them with spaces). Markdown’s looking for an empty line before it ends a paragraph.</p>
-
-<p>Markdown:</p>
 
 <pre><code>This is a paragraph.
 
@@ -93,12 +91,10 @@ paragraph.
 
 <p>Result:</p>
 
-<blockquote class="box">
-  <p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
 
-  <p>This is another
+<p>This is another
 paragraph.</p>
-</blockquote>
 
 <h3 id="headings">Headings</h3>
 
@@ -111,19 +107,17 @@ This is a paragraph.
 
 <h3 id="italics">Italics</h3>
 
-<p>Just put <code>*</code> before and after the italicised words: <code>it really is *this* easy</code>.</p>
+<p>Just put <code>*</code> before and after the italicised words: <code>is it really *this* easy?</code>. It’s really <em>this</em> easy.</p>
 
 <h3 id="bold">Bold</h3>
 
-<p>Just put two <code>*</code>s before and after the bold text: <code>good for **shouting**</code>.</p>
+<p>Just put two <code>*</code>s before and after the bold text: <code>good for **shouting**</code>. <strong>Shouting.</strong></p>
 
 <p class="sidenote">Tip: If you use bold in a first-level heading (e.g. <code># **Chapter 1** Lost at Sea</code>), our default typography will put that bold text onto its own line, set off from the heading. This is useful for chapter numbers that should look separate from the chapter title, but in the underlying HTML need to be part of the heading, for instance when software generates tables of contents.</p>
 
 <h3 id="lists">Lists</h3>
 
-<p>There are two kinds of lists: bulleted and numbered. For a bulleted list, start each line with a <code>*</code> and a tab. For a numbered list, start each line with a number, a full stop and a tab (you can use any number, because the software will always create an HTML list that starts with 1; but it’s best to use 1 or the actual numbers you intend, just to make things neat).</p>
-
-<p>Markdown:</p>
+<p>There are two kinds of lists: bulleted and numbered. For a bulleted list, start each line with a <code>*</code> and a tab. For a numbered list, start each line with a number, a full stop and a tab (you can use any number, because the software will always create an HTML list that starts with 1; but it’s best to use 1 or the actual numbers you intend, just to make things neat). Markdown:</p>
 
 <pre><code>1.	Apples
 2.	Oranges
@@ -136,19 +130,17 @@ This is a paragraph.
 
 <p>Result:</p>
 
-<blockquote class="box">
-  <ol>
-    <li>Apples</li>
-    <li>Oranges</li>
-    <li>Pears</li>
-  </ol>
+<ol>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+</ol>
 
-  <ul>
-    <li>Apples</li>
-    <li>Oranges</li>
-    <li>Pears</li>
-  </ul>
-</blockquote>
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+</ul>
 
 <h3 id="simple-tables">Simple tables</h3>
 
@@ -169,53 +161,51 @@ This is a paragraph.
 
 <p>Result:</p>
 
-<blockquote class="box">
-  <table>
-    <thead>
-      <tr>
-        <th>Fruit</th>
-        <th>Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Apples</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>Oranges</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Pears</td>
-        <td>0</td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Fruit</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Pears</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Fruit</th>
-        <th>Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Apples</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>Oranges</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Pears</td>
-        <td>0</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
+<table>
+  <thead>
+    <tr>
+      <th>Fruit</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Pears</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 
 <p class="sidenote">Note the minimum three hyphens in the lines that creates the border between the table head and table body. (Kramdown doesn’t require three, but GitHub previews do, so it’s best practice.)</p>
 
@@ -223,7 +213,16 @@ This is a paragraph.
 
 <h3 id="blockquotes">Blockquotes</h3>
 
-<p>Remember old email programs, that put a <code>&gt;</code> at the start of each line when you hit ‘Reply’? Ah, <code>&gt;</code> means blockquote. Start each line with <code>&gt;</code> and a space to make text a blockquote.</p>
+<p>Remember how old email programs put a <code>&gt;</code> at the start of each line when you hit ‘Reply’? Ah, <code>&gt;</code> means blockquote. Start each line with <code>&gt;</code> and a space to make text a blockquote. Markdown:</p>
+
+<pre><code>&gt; This is text in a blockquote.
+</code></pre>
+
+<p>Result:</p>
+
+<blockquote>
+  <p>This is text in a blockquote.</p>
+</blockquote>
 
 <p>In our framework we use blockquote HTML for more than just quotations, though. We also use them for figures and poetry. We’ll come back to this later.</p>
 
@@ -236,8 +235,14 @@ This is a paragraph.
   <li>put the URL it should point to between <code>(</code> and <code>)</code> immediately afterwards.</li>
 </ul>
 
+<p>Markdown:</p>
+
 <pre><code>To learn more, [click here](http://google.com).
 </code></pre>
+
+<p>Result:</p>
+
+<p>To learn more, <a href="http://google.com">click here</a>.</p>
 
 <h3 id="images">Images</h3>
 
@@ -250,7 +255,7 @@ This is a paragraph.
 
 <h3 id="endnotes">Endnotes</h3>
 
-<p>Endnotes<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> in our framework appear at the end of a document (that is, a web page or a book chapter).</p>
+<p>Endnotes in our framework appear at the end of a document (that is, a web page or a book chapter).<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <ul>
   <li>put a <code>[^1]</code> where the footnote reference should appear (the <code>1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
@@ -269,12 +274,10 @@ This is a paragraph.
 
 <p>Result:</p>
 
-<blockquote class="box">
-  <dl>
-    <dt>Editor</dt>
-    <dd>Someone who spends more time learning new tricks than making money.</dd>
-  </dl>
-</blockquote>
+<dl>
+  <dt>Editor</dt>
+  <dd>Someone who spends more time learning new tricks than making money.</dd>
+</dl>
 
 <p>To create a whole list of definition entries, just put one of these after the other, with a line space between them.</p>
 
@@ -282,9 +285,7 @@ This is a paragraph.
 
 <p>We’re going to get a bit more advanced now. Get a cup of tea.</p>
 
-<p>As we mentioned earlier, sometimes we have to tell our software what <em>kind</em> of paragraph or list or blockquote we want. These <em>kinds</em> of text are called <em>classes</em>. To give something a class, we add a kramdown tag in curly braces, with a colon, and a dot before the class name.</p>
-
-<p>Markdown:</p>
+<p>As we mentioned earlier, sometimes we have to tell our software what <em>kind</em> of paragraph or list or blockquote we want. These <em>kinds</em> of text are called <em>classes</em>. To give something a class, we add a kramdown tag in curly braces, with a colon, and a dot before the class name. Markdown:</p>
 
 <pre><code>This paragraph should be in a box.
 {:.box}
@@ -292,13 +293,11 @@ This is a paragraph.
 
 <p>Result:</p>
 
-<blockquote class="box">
-  <p class="box">This paragraph should be in a box.</p>
-</blockquote>
+<p class="box">This paragraph should be in a box.</p>
 
 <p>For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we’ll have to combine it with a CSS stylesheet that includes formatting instructions for the <code>box</code> class. If you’re just editing in markdown, you don’t have to think about the stylesheets. Our EBW book framework’s default stylesheets include instructions for <code>box</code> as well as several other classes. (Which we’ll list in a moment.)</p>
 
-<p>But if your book needs classes that aren’t already in our framework’s stylesheets, you’ll need to ask a CSS-savvy designer to write you some CSS instructions for your new class, and to <a href="https://github.com/electricbookworks/book-framework#stylesheets">put these in a child stylesheet</a>.</p>
+<p>But if your book needs classes that aren’t already in our framework’s stylesheets, you’ll need to ask a CSS-savvy designer to write you some CSS rules for your new class, and to <a href="https://github.com/electricbookworks/book-framework#stylesheets">put these in a child stylesheet</a>.</p>
 
 <blockquote class="box float-top">
   <h4 id="inventing-classes">Inventing classes</h4>
