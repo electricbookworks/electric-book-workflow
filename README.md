@@ -564,6 +564,8 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->
 	```
 
+	(You may need to reverse the order of the class and id attributes.)
+	
 1.	Search-and-replace to remove the `footer` div (it's unnecessary in an ebook, and its links may break anyway). To remove the footer div in Sigil, use this DotAll Regex search and replace with nothing: 
 
 	```
@@ -573,14 +575,14 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 1.	Remove videos in iframes (iframes are invalid in EPUB2 XHTML 1.1). We recommend replacing videos with a link to an online version, e.g. to a YouTube page. This is best done manually. Search for `videowrapper` to find instances of embedded videos. The DotAll regex for finding the video wrapper is: 
 
 	```
-	(?s).<div class="videowrapper non-printing">(.*)</div><!--.videowrapper"-->
+	(?s).<div class="videowrapper non-printing">(.*)</div><!--.videowrapper-->
 	```
 	To **replace** the standard video wrapper with a link to the video:
 
 	*	Search (with DotAll regex) for:
 	
 		```
-		(?s).<div class="videowrapper non-printing">(.*)src="(.*?)"(.*)</div><!--.videowrapper"-->
+		(?s).<div class="videowrapper non-printing">(.*)src="(.*?)"(.*)</div>(.*?)<!--.videowrapper-->
 		```
 	
 		This will find the videowrapper and store the URL of the embedded video in memory.
@@ -599,7 +601,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	date of creation
 	*	publisher
 	*	ISBN (or other identifier like a [UUID](https://www.uuidgenerator.net/))
-	*	Relation ISBN (we use the print ISBN as a parent ISBN)
+	*	Relation ISBN (if any; we use the print ISBN as a parent ISBN)
 1.	Add semantics (right click the file name in Sigil for the semantics context menu) to:
 	*	key HTML files
 	*	the cover JPG.
