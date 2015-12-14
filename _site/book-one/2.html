@@ -1,19 +1,22 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<title>Book title: Editing for the EBW Book Framework</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/css/screen.css" />
-	<link rel="stylesheet" type="text/css" href="/css/" />
+	<link rel="stylesheet" type="text/css" href="../Styles/epub.css" />
+	<link rel="stylesheet" type="text/css" href="../Styles/" />
+	
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+		<meta name="DC.Title" content="Book title" />
+		<meta name="DC.Language" content="en" />
+		<meta name="DC.Creator" content="A. N. Author" />
+		<meta name="DC.Publisher" content="Publisher name" />
+		<meta name="DC.Date" content="2015-12-01" />
+		<meta name="DC.Identifier" content="" />
+		<meta name="DC.Relation" content="" />
+
 </head>
 <body class="chapter">
-
-
-		<div id="nav-bar" class="non-printing">
-			<a href="/" title="Home">×</a>
-			<a href="0-3-contents.html" title="Contents">≡</a>
-		</div><!--#nav-bar-->
 
 	<div id="wrapper">
 
@@ -49,7 +52,9 @@
 
 <h2 id="how-html-works">How HTML works</h2>
 
-<p>HTML is a computer language that humans can read. In HTML, each piece of content (e.g. a paragraph) starts and ends with a tag a computer can recognise. Tags are always in elbow brackets, like this paragraph tag: <code>&lt;p&gt;</code>.</p>
+<p>HTML is a computer language. It’s a way for us to mark up or tag text, so that a computer knows how to display it beautifully to humans. That is, software (most commonly a web browser) reads the HTML code and <em>renders</em> it as nice-looking, readable text and images.</p>
+
+<p>In HTML, each piece of content (e.g. a paragraph) starts and ends with a tag that a computer can recognise. Tags are always in elbow brackets, like this paragraph tag: <code>&lt;p&gt;</code>.</p>
 
 <pre><code>&lt;p&gt;
 This text is tagged in HTML as a paragraph.
@@ -58,23 +63,27 @@ This text is tagged in HTML as a paragraph.
 
 <p>The slash ‘closes’ the tag.</p>
 
-<p>And if I want to tell the computer what <em>kind</em> of paragraph it is, say it’s a blurb, I can put it in a class like this: <code>&lt;p class="blurb"&gt;</code>. The <code>&lt;p&gt;</code> tag is one of about a hundred tags in HTML, maybe ten of which you’ll only ever see in a book. Class names are infinite, because we can make them up as we need them.</p>
+<p>The <code>&lt;p&gt;</code> tag is one of about a hundred possible tags, maybe ten of which you’ll see in a book, such as tags for headings (e.g. <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>), bold and italic, lists, images, tables, and blockquotes.</p>
 
-<p>HTML is very simple and very powerful. We can mark up everything in a book using these tags and classes. In our framework, we aim to store each book in HTML, with each book part (title page, contents page, chapter, etc.) in its own file.</p>
+<p>But not all paragraphs are the same: there are opening paragraphs, pull-quote paragraphs, blurb paragraphs and more. If I want to tell the computer what <em>kind</em> of paragraph it is, I can put it in a special class. Say, the ‘blurb’ class of paragraph. To write this in HTML, I would make the tag <code>&lt;p class="blurb"&gt;</code>. Unlike its limited set of specific tags, HTML classes are infinite, because we can make up class names as we need them.</p>
 
-<p>To create PDFs and ebooks, we combine that HTML with a CSS stylesheet. CSS is another computer language that defines design: font sizes, indentation, colour, etc. So if we combine a book’s HTML with a print stylesheet, we can get a print-ready PDF. If we combine the same HTML with a web stylesheet, we get the book as a website. (We’ve pre-designed a few default stylesheets already.)</p>
+<p>HTML is very simple and very powerful (which is why it’s the language behind almost every web page). We can mark up everything in a book using HTML tags and classes. In our framework, we store books in HTML, with each book part (title page, contents page, chapter, etc.) in its own HTML file.</p>
 
-<p>Now HTML is very, very time consuming to write by hand. So we have a shortcut! it’s called markdown, and it’s amazing.</p>
+<p>Then, to create print-ready PDFs, websites and ebooks from that HTML, we combine the files with CSS stylesheets. CSS is another computer language that defines design: font sizes, indentation, colour, etc. A CSS file will say ‘make all headings bold’, for instance, or ‘indent blockquotes by 1em’.</p>
+
+<p>If we combine a book’s HTML with a stylesheet designed for print, we can get a print-ready PDF. If we combine the same HTML with a stylesheet for the web, we get the book as a website. This way, we only ever store the book’s content once, and use different stylesheets to generate alternative editions from that single source.</p>
+
+<p>Unfortunately HTML tags are very, very time consuming to type by hand. But we have a shortcut! It’s called markdown, and it’s amazing.</p>
 
 <h2 id="how-markdown-works">How markdown works</h2>
 
-<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is just plain text, neatly structured. Plain text as in <code>.txt</code> files. It’s so neatly structured that software can work out, just from its structure, what HTML you intended, and convert it instantly to finished HTML, tags and all. No way! Yes way.</p>
+<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is just plain text, neatly structured. Plain text as in <code>.txt</code> files. It’s so neatly structured that software can work out, just from the structure of your text, what HTML you intended, and convert it instantly to finished HTML, tags and all. No way! Yes way.</p>
 
-<p>Markdown was invented by two very smart, very lucky people: <a href="http://daringfireball.net/projects/markdown/">John Gruber</a> and Aaron Swartz. Since their work, others have added some features to it. So there are many variations of markdown today. We use one called kramdown.</p>
+<p>Markdown was invented by two very smart people in 2004: <a href="http://daringfireball.net/projects/markdown/">John Gruber</a> and Aaron Swartz. Since their work, others have added new features to markdown. So today there are many variations of markdown. We use a variation called kramdown.</p>
 
-<p>As you work with markdown, you’ll get to know it really well. That can take as little as a few hours. And hopefully you’ll come to love it as much as we do. To do that, you’ll need to keep the <a href="http://kramdown.gettalong.org/syntax.html">kramdown syntax reference</a> handy. For now, though, we’ll explain the most common, important things you’ll to edit most simple books.</p>
+<p>As you work with markdown, you’ll get to know it really well. That can take as little as a few hours. And hopefully you’ll come to love it as much as we do. To do that, you’ll need to keep the <a href="http://kramdown.gettalong.org/syntax.html">kramdown syntax reference</a> handy. For now, though, we’ll explain the most common, important things you’ll need to edit simple books.</p>
 
-<p>To quickly test any basic markdown yourself, go to <a href="http://kramdown.herokuapp.com/">http://kramdown.herokuapp.com</a>. Put markdown in the left, and see the resulting HTML on the right.</p>
+<p>To quickly test any basic markdown yourself, go to <a href="http://kramdown.herokuapp.com/">http://kramdown.herokuapp.com</a>. Type markdown in the left, and see the rendered HTML on the right.</p>
 
 <h3 id="paragraphs">Paragraphs</h3>
 
@@ -97,7 +106,7 @@ paragraph.</p>
 
 <h3 id="headings">Headings</h3>
 
-<p>You can use up to six levels of heading, from level one to level six. To make a heading, just put one or more hash signs, <code>#</code>, and a space, before the heading. Like with paragraphs, separate the heading from everything else with an empty line space.</p>
+<p>You can use up to six levels of heading, from level one to level six. To make a heading, just put one or more hash signs, <code>#</code>, and a space, before the heading. For a first-level heading, use one hash sign; for a second-level heading, use two; and so on. Like with paragraphs, separate the heading from everything else with an empty line space.</p>
 
 <pre><code>## This is a second-level heading
 
@@ -223,7 +232,7 @@ This is a paragraph.
   <p>This is text in a blockquote.</p>
 </blockquote>
 
-<p>In our framework we use blockquote HTML for more than just quotations, though. We also use them for figures and poetry. We’ll come back to this later.</p>
+<p>In our framework we use blockquote HTML for more than just quotations, though. We also use it for figures and poetry. We’ll come back to this later.</p>
 
 <h3 id="hyperlinks">Hyperlinks</h3>
 
@@ -424,7 +433,7 @@ This is a paragraph.
       <td>Footnote</td>
       <td><code>.sidenote .bottom</code></td>
       <td>Block or inline</td>
-      <td>When you add <code>.bottom</code> to <code>.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see <a href="#Endnotes">Endnotes</a> above.)</td>
+      <td>When you add <code>.bottom</code> to <code>.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see <a href="#endnotes">Endnotes</a> above.)</td>
     </tr>
     <tr>
       <td>Fraction</td>
@@ -619,18 +628,6 @@ This is a paragraph.
 
 	</div><!--#wrapper-->
 	
-
-	<div id="footer" class="non-printing">
-		<div class="footer-content">
-			<p>
-				<a href="http://electricbookworks.com" title="Publisher name">Publisher name</a> &bull; 
-				<a href="/">Collection name</a> &bull; 
-				<a href="0-3-contents.html"><em>Book title</em></a> &bull; 
-				<a href="">Editing for the EBW Book Framework</a>
-			</p>
-		</div><!--.footer-content-->
-	</div><!--#footer-->
-
 	
 </body>
 </html>
