@@ -35,34 +35,29 @@ defaults:
             path: ""
         values:
             book-title: "Collection name"
-            layout: "default"
+            author: "A. N. Author"
+            language: "en"
+            publication-date: "2015-12-01"
+            layout: "epub"
             style: "chapter"
             stylesheet: "screen.css"
             stylesheet-child: ""
             contents: "0-3-contents.html"
             language: "en"
+            isbn-print: ""
+            isbn-epub: ""
+            uuid: ""
     -
-        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder.
+        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
             path: "book-one"
         values:
             book-title: "Book title"
-            language: "en"
-            layout: "default"
-            style: "chapter"
-            stylesheet: "screen.css"
-            stylesheet-child: ""
-            contents: "0-3-contents.html"
     -
         scope: # Repeat for each book.
             path: "book-two"
         values:
             book-title: "Book two title"
-            language: "en"
-            layout: "default"
-            style: "chapter"
-            stylesheet: "screen.css"
             stylesheet-child: "screen-child-book-two.css"
-            contents: "0-3-contents.html"
 
 # Users with GitHub contributor access can edit your book with http://prose.io. These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 prose:

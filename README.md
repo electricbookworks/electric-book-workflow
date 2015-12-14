@@ -548,7 +548,7 @@ For user discussion, see [the Prince forums here](http://www.princexml.com/forum
 
 ## Epub output
 
-We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes.
+We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
 
 1.	Put the HTML files from `_site` into your `Text` folder.
 1.	Put the framework's `epub.css` in your `Styles` folder. (The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
@@ -615,6 +615,24 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 Note: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly. For instance, replace `fnref:` with `fnref-` and `fn:` with `fn-`.
 
 For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
+
+### Pro tip: quicker epub output
+
+The framework includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`:
+
+```
+layout: "epub"
+```
+
+Remember to restart Jekyll after changing `_config.yml` for changes to take effect.
+
+The `epub` layout lets you skip a few of the steps listed above, because it:
+
+* includes links to `epub.css` and your child css file (using Sigil's standard `../Styles/` path), rather than `screen.css`
+* omits the nav bar and footer (no need to search and replace these)
+* includes required epub metadata (if you've included it in your `_config.yml` file).
+
+To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 
 ## Mobi output
 
