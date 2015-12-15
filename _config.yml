@@ -38,7 +38,7 @@ defaults:
             author: "A. N. Author"
             language: "en"
             publication-date: "2015-12-01"
-            layout: "epub"
+            layout: "default"
             style: "chapter"
             stylesheet: "screen.css"
             stylesheet-child: ""
