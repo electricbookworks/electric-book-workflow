@@ -13,6 +13,7 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
 *   [Setting up](#setting-up)
 *   [Creating a book in markdown](#creating-a-book-in-markdown)
     *   [Converting from InDesign](#converting-from-indesign)
+        *   [Search-and-replace in InDesign](#search-and-replace-in-indesign)
     *   [Tables](#tables)
         *   [Markdown tables tip](#markdown-tables-tip)
 	*	[Poetry](#poetry)
@@ -53,15 +54,15 @@ Markdown is so simple that non-technical people can learn how to create and edit
 
 ## Alternatives
 
-There are several digital-first book-publishing systems around. 
+There are several digital-first book-publishing systems around.
 
 Some are also based on markdown, like ours:
 
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
-*	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader). 
+*	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader).
 
-[PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service. 
+[PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service.
 
 And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https://atlas.oreilly.com/).
 
@@ -69,10 +70,10 @@ And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https
 
 ## Background reading
 
-To manage this framework yourself, you need to be familiar with a few concepts and tools first. 
+To manage this framework yourself, you need to be familiar with a few concepts and tools first.
 
 *	You need to have a solid understanding of HTML and CSS.
-*	You need to know about markdown. Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports some extra features, especially classes. 
+*	You need to know about markdown. Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports some extra features, especially classes.
 *	Jekyll is the machine that minces markdown into HTML files. To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).
 *	For version control, we use Git. Specifically, we use [GitHub](http://github.com), the leading hosted Git service, for online file storage and version control.
 
@@ -115,7 +116,7 @@ Finally, to turn our HTML into print PDFs, we use [PrinceXML](http://princexml.c
 
 The framework repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
 
-One framework repo can hold one or many books (for instance all the books in a series, since all books in a collection may use the same CSS). Each book's content is in its own folder in the root. 
+One framework repo can hold one or many books (for instance all the books in a series, since all books in a collection may use the same CSS). Each book's content is in its own folder in the root.
 
 In the framework repo, we have `book-one` as an example with a few sample files in it. In each file's YAML header, we specify the style to use – that is, how will this section of the book look? (That `style` YAML sets the class of the output HTML's `<body>` element. We use these to control CSS and page structure.)
 
@@ -163,9 +164,9 @@ To create a new book in a new collection:
 	*	`index.md`: Read and replace the book-framework template text with your own.
 	*	`README.md`: Replace all the book-framework description text with any notes your collaborators might need to know about your collection.
 3.	Rename the `book-one` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder for each one. Each book gets its own folder.
-4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our example suggests. 
-5.	Inside the book's folder, store images in the `images` folder. 
-	*	Replace the `publisher-logo.svg` file with your imprint or brand's logo. 
+4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our example suggests.
+5.	Inside the book's folder, store images in the `images` folder.
+	*	Replace the `publisher-logo.svg` file with your imprint or brand's logo.
 	*	Replace the `cover.jpg` image with your book's front cover image. (Your life will be simpler if you also name it `cover.jpg`.) For best results, use an image almost but less than 1000px on its longest side. (More on images below.)
 
 ## Creating a book in markdown
@@ -175,10 +176,10 @@ Here are some guidelines we've created for our own use. They are probably applic
 Before you start:
 
 *	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-*	Use a good text editor (there are dozens of options, e.g. Notepad++ on Windows, or TextWrangler on Mac).
+*	Use a good text editor that colour-codes markdown as you work. We like [Notepad++](https://notepad-plus-plus.org/) (with a [markdown highlighter](https://github.com/Edditoria/markdown_npp_zenburn)), [Sublime Text](http://www.sublimetext.com/) (with [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)), [Brackets](http://brackets.io/) and [Atom](http://atom.io) (though beware Atom's stripping trailing whitespaces used for linebreaks in markdown).
 *	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM', aka UTF-8, and *not* a 'UTF-with-BOM' option. (Jekyll will break if you don't.)
 *	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
-*	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy. 
+*	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy.
 *	Look through our [example template here](http://electricbookworks.github.io/book-framework/) to get an idea of available default typography.
 
 ### Converting from InDesign
@@ -199,6 +200,32 @@ This is what we do when we convert one of our textbooks from a traditional InDes
 1. Add Markdown image references. See the images section below for detail on how best to do this.
 1. Search for every instance of italic, bold and bold-italic, and manually mark these in markdown with asterisks: in markdown, `*one asterisk*` is *italic*, `**two**` is **bold**, and `***three***` is ***bold-italic***. Remember that in some fonts, italic and bold may have different names in InDesign, like 'oblique' and 'black'.
 1. Look out for special characters, especially degree symbols (°), superscripts and subscripts. It's best to search the InDesign document (search by style and basic character formats, e.g. 'Position' for superscript and subscript) for these instances so you don't miss any. Most superscripts and subscripts in InDesign and similar are created by formatting normal text. In text-only, there is no formatting, so you should use the [unicode character for each superscript or subscript character](http://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts). E.g. when typing the symbol for oxygen, O₂, the subscript 2 is ₂, unicode character U+2082. To type these characters, you may need special software (e.g. for Windows, Google unicodeinput.exe), or copy-paste from [an online reference](http://scriptsource.org/cms/scripts/page.php?item_id=character_list&key=2070). In Windows, you can also find symbols in Character Map, e.g. search in Character Map for 'Subscript Two'.
+
+#### Search-and-replace in InDesign
+
+InDesign is great for prepping text you've received in InDesign or Word, because it has very powerful search-and-replace. In particular, it's worth getting to know GREP search-and-replace. For instance, if you want to convert all italics to markdown:
+
+1. In the Find dialog, choose GREP.
+2. Click in the Format box and set the font style to Italic.
+3. In the Find box, search for `(.+)`.
+4. In the Replace box, replace with `*$1*`.
+
+Remember that search-and-replace is rarely flawless, so proceed with caution. For instance, regarding italics: in markdown, it's very important that the starting `*` and ending `*` that mark the italics are right up against the words they wrap. I.e.:
+
+* Correct: `I want to *emphasise* this.`
+* Incorrect: `I want to *emphasise *this.`
+
+However, many (human) editors often mark the spaces on either side of a word as italic, probably because clicking and dragging with a mouse can be inaccurate, and because double-clicking a word often highlights the word as well as the space after it. This means that when we automate 'search for italics and wrap with `*`', we end up wrapping the space into the markdown as well. Also, sometimes spaces in the manuscript are italic, even though the words on either side of the space are not (this is probably caused by editing or pasting phrases that were once italic). In Word and InDesign, you'd never spot those italic spaces by eye. But in the markdown, you end up with this:
+
+`I went to* *the shops.`
+
+Markdown reads that is meaning that there is an actual asterisk after 'to', and italics start from 'the' and continue (at least) to the end of the paragraph:
+
+I went to* *the shops.*
+
+These problems have to be fixed with a combo of clever searches and manual spotting.
+
+The same thing happens with bold, but luckily bold is usually used more sparingly than italic, and is therefore easier to fix manually.
 
 ### Tables
 
@@ -240,7 +267,7 @@ Our convention is to mark each line of a stanza with a hyphen `-`, and tag the s
 
 This means we don't have to create a line break with double-spaces or `\\` at the end of each line, since a list item (i.e. line of poetry here) has its own line break already.
 
-We can also indent individual lines, where the poet wanted indents, by tagging individual list items. 
+We can also indent individual lines, where the poet wanted indents, by tagging individual list items.
 
 ```
 -	Alas for man! day after day may rise,
@@ -262,7 +289,7 @@ To achieve this in the framework, put the entire poem, including its title, in a
 
 ```
 > -	### To One Who Has Been Long in City Pent
-> 
+>
 > -	To one who has been long in city pent,
 > -	{:.indent-2}'Tis very sweet to look into the fair
 > -	{:.indent-2}And open face of heaven,—to breathe a prayer
@@ -289,8 +316,8 @@ In verse structured as a list lke this, our CSS preserves white space. That is, 
 
 #### Preparing images
 
-*	Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use. 
-*	Ensure that raster images, or raster/bitmap elements in SVG, are high-res enough for printing (e.g. 300dpi at full size). 
+*	Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use.
+*	Ensure that raster images, or raster/bitmap elements in SVG, are high-res enough for printing (e.g. 300dpi at full size).
 *	Embed images placed in your SVG image, don't just link them.
 *	Create a JPG version of every SVG image with the same file name (e.g. `bear.svg` and `bear.jpg`). You'll need the JPG fallback for EPUB. (We recommend JPG over GIF or PNG as a general default. One reason is that transparency seems like a good idea until your end-user switches their e-reader to 'night mode', and your black line-art disappears into the background.)
 *	Save images in the book's `images` folder.
@@ -311,18 +338,18 @@ We use standard markdown to embed images:
 
 Most of our images are figures. That is, they include an image followed by a caption. We put these together in a `<blockquote>` element with a `.figure` class. We can then control placement by styling the `<blockquote>`.
 
-The reason we use a blockquote is that it lets us keep images and their captions together. A `<figure>` element would be better HTML, but it won't validate in EPUB2, and can't be created with kramdown. 
+The reason we use a blockquote is that it lets us keep images and their captions together. A `<figure>` element would be better HTML, but it won't validate in EPUB2, and can't be created with kramdown.
 
 Here's an example of markdown for a figure:
 
 ```
 > ![Figure 2-A: The Ballard scoring method](images/fig-2-A.svg)
-> 
+>
 > Figure 2-A: The Ballard scoring method
 {:.figure}
 ```
 
-Every line (except the `{:.figure}` class tag at the end) starts with a `>` and a space. These wrap the figure (image and caption) in a `blockquote` element. 
+Every line (except the `{:.figure}` class tag at the end) starts with a `>` and a space. These wrap the figure (image and caption) in a `blockquote` element.
 
 The first line is the image reference. It consists of:
 
@@ -462,7 +489,7 @@ Note that this only works with YouTube. If you're embedding from any other servi
 
 Our framework provides three options for notes.
 
-**Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes): 
+**Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes):
 
 *	put a `[^1]` where the footnote reference should appear (the `1` there can be any numbers or letters, and should be different for each footnote in a document);
 *	anywhere in the document (we recommend after the paragraph containing the footnote reference), put `[^1]: Your footnote text here.`.
@@ -478,7 +505,7 @@ We've provided generic stylesheets in the framework, but any given project will 
 *	`screen.css` for the web version
 *	`print.css` for PDF output with Prince.
 
-Unless you are radically changing the design of your book, we recommend not editing these two files. To override only a few values or elements, rather create a child stylesheet containing only your new styling rules. 
+Unless you are radically changing the design of your book, we recommend not editing these two files. To override only a few values or elements, rather create a child stylesheet containing only your new styling rules.
 
 To create a child stylesheet of `screen.css`, create the file, save it in the repo's `css` folder, and add its filename to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
 
@@ -494,7 +521,7 @@ We've learned some stuff the hard way:
 
 *	When running Jekyll locally, and *if* your repo is a project using GitHub Pages (not an organisation or user site), you'll need to add `--baseurl ''` when running Jekyll at the command line. [Here's how and why](http://jekyllrb.com/docs/github-pages/#project-page-url-structure).
 *	You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.
-*	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You'll have to do something like `title: Beans—The musical fruit`.
+*	Do not use a colon `:` in the title you include in your YAML header (inside the `---`s at the tops of files). For instance, you can't have `title: Beans: The musical fruit`. Jekyll will break, unsure if you're trying to map a second value to the YAML key. You can either use another character (e.g. `title: Beans—The musical fruit`) or use the entity `&#58;` for the colon (`title: Beans&#58; The musical fruit`).
 *	We recommend setting `.gitignore` to ignore the `_site` folder, where Jekyll will store HTML output locally. If you choose *not* to `.gitignore` your `_site` folder, it'll contain (and sync to GitHub) your local machine's most recent Jekyll HTML output. (The `_site` folder has nothing to do with what GitHub Pages publishes.) In theory, committing the `_site` folder makes it easy for collaborators without Jekyll to grab a book's output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their `_site` output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you'll get lots of merge conflicts in the `_site` folder, and this will make your head hurt. (We let `_site` sync to GitHub for this template repo so that it includes our example output for reference.)
 
 ### Markdown tricks and quirks
@@ -558,21 +585,21 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
 1.	If your book has a child stylesheet, update that `<link>` path, too. Otherwise, remove the blank `<link>`: i.e. `<link href="/css/" rel="stylesheet" type="text/css"/>`.
 1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove any `@font-face` rules from your stylesheet to avoid file-not-found validation errors. We don't recommend embedding fonts unless they are required for meaning or unusual character sets.)
-1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search: 
+1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search:
 
 	```
 	(?s).<div class="non-printing" id="nav-bar">(.*)<!--#nav-bar-->
 	```
 
 	(You may need to reverse the order of the class and id attributes.)
-	
-1.	Search-and-replace to remove the `footer` div (it's unnecessary in an ebook, and its links may break anyway). To remove the footer div in Sigil, use this DotAll Regex search and replace with nothing: 
+
+1.	Search-and-replace to remove the `footer` div (it's unnecessary in an ebook, and its links may break anyway). To remove the footer div in Sigil, use this DotAll Regex search and replace with nothing:
 
 	```
 	(?s).<div class="non-printing" id="footer">(.*)<!--#footer-->
 	```
-	
-1.	Remove videos in iframes (iframes are invalid in EPUB2 XHTML 1.1). We recommend replacing videos with a link to an online version, e.g. to a YouTube page. This is best done manually. Search for `videowrapper` to find instances of embedded videos. The DotAll regex for finding the video wrapper is: 
+
+1.	Remove videos in iframes (iframes are invalid in EPUB2 XHTML 1.1). We recommend replacing videos with a link to an online version, e.g. to a YouTube page. This is best done manually. Search for `videowrapper` to find instances of embedded videos. The DotAll regex for finding the video wrapper is:
 
 	```
 	(?s).<div class="videowrapper non-printing">(.*)</div><!--.videowrapper-->
@@ -580,19 +607,19 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	To **replace** the standard video wrapper with a link to the video:
 
 	*	Search (with DotAll regex) for:
-	
+
 		```
 		(?s).<div class="videowrapper non-printing">(.*)src="(.*?)"(.*)</div>(.*?)<!--.videowrapper-->
 		```
-	
+
 		This will find the videowrapper and store the URL of the embedded video in memory.
-		
-	*	Replace with 
-	
+
+	*	Replace with
+
 		```
 		<a href="\2" class="button">Watch</a>
 		```
-		
+
 		This will replace the entire wrapper with a link to the same iframe URL it memorised (at `\2`). Replace `Watch` with whatever phrase you want to be the clickable text.
 
 1.	Add basic metadata to your epub using Sigil's Metadata Editor. Include at least:
