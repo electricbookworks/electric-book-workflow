@@ -226,7 +226,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-variant: prince-opentype(liga);
-	orphans: 2; /* minimum number of lines that must be left at the bottom of the first page */
+	orphans: 1; /* minimum number of lines that must be left at the bottom of the first page */
 	widows: 2; /* minimum number of lines that must be left at the top of the second page */
 /*	prince-hyphenate-patterns: url("dictionaries/hyph.dic"); /* Avoid specifying here if you can specify a dictionary for each book in its child stylesheet. */
 }
