@@ -1,5 +1,6 @@
 ---
-title: About the Electric Book Workflow
+book-title: The Electric Book Workflow
+title: About
 style: home
 ---
 
