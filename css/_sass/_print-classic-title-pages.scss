@@ -1,0 +1,45 @@
+/*
+ * Halftitle-page and title-page
+ */
+
+.title-page, .halftitle-page {
+	max-width: 20em;
+	margin-right: auto;
+	margin-left: auto;
+}
+.title-page {
+	counter-reset: page 1; /* If you have a half-title page, this line will be overriden by the next */
+}
+.halftitle-page {
+	counter-reset: page 1; /* If the half-title page exists, this overrides the previous line */
+}
+.title-page p {
+	text-indent: 0;
+	line-height: 110%;
+	hyphens: none;
+	max-width: 80%;
+}
+.title-page-title {
+	font-size: 2em;
+	margin: 20% 0 0 0;
+	font-variant: prince-opentype(dlig, c2sc, smcp);
+	string-set: book-title content ();
+}
+.title-page-subtitle {
+	font-size: 1.5em;
+	font-style: italic;
+	margin: 1em 0 1em 0;
+	font-variant: prince-opentype(dlig);
+	string-set: book-subtitle content ();
+}
+.title-page-author {
+	font-size: 1.5em;
+	margin: 0 0 2em 0;
+	font-variant: prince-opentype(dlig);
+	string-set: book-author content ();
+}
+.title-page-logo {
+	width: 3em;
+	position: absolute;
+	bottom: 0;
+}

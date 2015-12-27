@@ -1,13 +1,13 @@
-# The EBW book framework
+# The Electric Book Workflow
 
-This framework provides a digital-first workflow for creating books in print, as ebooks, and for the web. We developed it for ourselves at [Electric Book Works](http://electricbookworks.com), for producing books that are largely text with some images, such as novels, non-fiction books, essays, papers, poetry, textbooks, manuals and reports.
+This workflow creates digital-first books in print, as ebooks, and for the web. We developed it for ourselves at [Electric Book Works](http://electricbookworks.com), for producing books that are largely text with some images, such as novels, non-fiction books, essays, papers, poetry, textbooks, manuals and reports.
 
-You can [see a demo of the working framework here](http://electricbookworks.github.io/book-framework/).
+You can [see a live demo of the workflow template here](http://electricbookworks.github.io/electric-book-workflow/).
 
 *   [Why we need this](#why-we-need-this)
 *   [Alternatives](#alternatives)
 *   [Background reading](#background-reading)
-*   [The workflow](#the-workflow)
+*   [Workflow overview](#workflow-overview)
 *   [The repo structure](#the-repo-structure)
     *   [The `images` folder](#the-images-folder)
 *   [Setting up](#setting-up)
@@ -29,7 +29,7 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
     *   [Cover images](#cover-images)
     *   [Embedding video](#embedding-video)
     *   [Footnotes, endnotes and sidenotes](#footnotes-endnotes-and-sidenotes)
-    *   [Stylesheets](#stylesheets)
+    *   [Themes and stylesheets](#themes-and-stylesheets)
 *   [Trial-and-error tips](#trial-and-error-tips)
     *   [Using Jekyll and GitHub](#using-jekyll-and-github)
     *   [Markdown tricks and quirks](#markdown-tricks-and-quirks)
@@ -42,21 +42,21 @@ You can [see a demo of the working framework here](http://electricbookworks.gith
 
 ## Why we need this
 
-We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
+We needed a system that is easy for non-technical people to edit, includes great version control, produces books fast (no InDesign layout except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'.
 
-With this framework:
+With this workflow:
 
 1.	We store a book's master files in plain text (formatted as [markdown](http://daringfireball.net/projects/markdown/syntax#philosophy)).
 2.	We turn that plain text into clean HTML instantly (using [Jekyll](http://jekyllrb.com/)).
-3.	We apply different stylesheets to that HTML to get beautiful print PDFs, web versions, and ebooks in minutes.
+3.	We apply different stylesheets to that HTML to get beautiful web versions, ebooks and print PDFs in minutes (using [Sigil](http://sigil-ebook.com/) and [PrinceXML](http://www.princexml.com/).
 
-Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. (They can even work directly on the master files remotely using [Prose](http://prose.io/).)
+Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. (They can even work directly on the master files online using [Prose](http://prose.io/).)
 
 ## Alternatives
 
 There are several digital-first book-publishing systems around.
 
-Some are also based on markdown, like ours:
+Some are also based on markdown, like ours. For example:
 
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
@@ -70,25 +70,25 @@ And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https
 
 ## Background reading
 
-To manage this framework yourself, you need to be familiar with a few concepts and tools first.
+To use this workflow on your own, you need to be familiar with a few concepts and tools:
 
-*	You need to have a solid understanding of HTML and CSS.
-*	You need to know about markdown. Read the original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax). It's the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports some extra features, especially classes.
-*	Jekyll is the machine that minces markdown into HTML files. To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).
-*	For version control, we use Git. Specifically, we use [GitHub](http://github.com), the leading hosted Git service, for online file storage and version control.
+*	HTML and CSS.
+*	Markdown. (The original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) is the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports attributes like classes.)
+*	Jekyll, which converts and assembles markdown into HTML. (To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).)
+*	[GitHub](http://github.com), for version control, collaborative editing and storage.
 
-## The workflow
+## Workflow overview
 
 These are the key components in our workflow:
 
-*	Content in plain-text, formatted as kramdown-flavoured markdown
+*	Markdown (specifically, kramdown) for storing content in plain-text
 *	GitHub for version control
 *	Jekyll for converting the markdown into HTML
 *	CSS stylesheets for each output format
-*	Prince for creating PDFs from HTML (the only proprietary part of this stack)
-*	Sigil for assembling the HTML in epubs.
+*	Sigil for assembling the HTML in epubs
+*   Prince for creating PDFs from HTML (the only proprietary part of this stack).
 
-So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, our Bettercare books are stored here:
+So we keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, Bettercare's books are stored here:
 
 [https://github.com/bettercarehealth/bettercare](https://github.com/bettercarehealth/bettercare)
 
@@ -106,7 +106,7 @@ If you click through to a book chapter on our GitHub Pages view, you'll see the 
 
 [http://bettercarehealth.github.io/bettercare/nc/nc-1.html](http://bettercarehealth.github.io/bettercare/nc/nc-1.html)
 
-The key to simple HTML is that we carefully map our books' features to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. For instance, see the [Book Dash](http://bookdash.org) books:
+The key to simple HTML is that we carefully [map a book's features](http://electricbookworks.com/kb/creating-epub-from-indesign/mapping-book-features-to-html-elements-and-classes/) to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. For instance, see the [Book Dash](http://bookdash.org) books:
 
 [http://bookdash.github.io/bookdash-books/](http://bookdash.github.io/bookdash-books/)
 
@@ -114,11 +114,15 @@ Finally, to turn our HTML into print PDFs, we use [PrinceXML](http://princexml.c
 
 ## The repo structure
 
-The framework repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
+A repo contains a series of related books. A repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
 
-One framework repo can hold one or many books (for instance all the books in a series, since all books in a collection may use the same CSS). Each book's content is in its own folder in the root.
+One repo can hold one or many books (for instance all the books in a series, which use the same CSS). Each book's content is usually in its own folder in the root.
 
-In the framework repo, we have `book-one` as an example with a few sample files in it. In each file's YAML header, we specify the style to use – that is, how will this section of the book look? (That `style` YAML sets the class of the output HTML's `<body>` element. We use these to control CSS and page structure.)
+> Pro tip: You could also store several series in one repo, each series with its own set of Jekyll files, and a single `_prose.yml` configuration in the root folder for all series subfolders. This is only useful if you don't need a live staging site or previews with GitHub Pages, since each Jekyll setup must be in its own repo for GitHub Pages to work out of the box.)
+
+In this template repo, we have `book-one` as an example book with a few sample files in it. In each file's YAML header we specify the book-part `style` to use – that is, what kind of book-part is this? (That `style` YAML sets the class of the output HTML's `<body>` element. We use that class to control CSS and page structure.)
+
+Our template book's parts and their `style` settings:
 
 | Book section      | Sample file               | Style in YAML   |
 |-------------------|---------------------------|------------------|
@@ -132,7 +136,7 @@ In the framework repo, we have `book-one` as an example with a few sample files 
 
 If you don't set the `style`, the page will default to `style: chapter`. (So you don't need to ever set `style: chapter` in a YAML header.)
 
-Page layouts we've designed for in our template CSS are:
+Page layouts we've designed for in our template's CSS are:
 
 *	`index` for the home page of a collection
 *	`cover` for a front cover, which will appear in ebook editions
@@ -156,35 +160,35 @@ A book's folder should only ever need to contain markdown files and images. If y
 
 ## Setting up
 
-To create a new book in a new collection:
+To create a new book in a new series:
 
-1. The `book-framework` is a template for a collection. Make a copy and rename it for your collection. E.g. `my-sci-fi`.
+1. The `electric-book-workflow` repo is a template for a series. Make a copy and rename it for your collection. E.g. `my-sci-fi`. (Remember to remove or revise the .git files in the repo, if you're using Git/GitHub.)
 2. Inside `my-sci-fi`, open and edit these three files:
-	*	`_config.yml`: Edit the values there for your collection. The comments will guide you.
-	*	`index.md`: Read and replace the book-framework template text with your own.
-	*	`README.md`: Replace all the book-framework description text with any notes your collaborators might need to know about your collection.
+	*	`_config.yml`: Edit the values there for your series. The comments will guide you.
+	*	`index.md`: Replace our template text with your own. Usually, at least a link to each book is useful.
+	*	`README.md`: Replace our template text with any notes your collaborators might need to know about your series.
 3.	Rename the `book-one` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder for each one. Each book gets its own folder.
 4.	Inside the book's folder, edit and add a markdown file for each piece of your book, e.g. one file per chapter, as our example suggests.
-5.	Inside the book's folder, store images in the `images` folder.
-	*	Replace the `publisher-logo.svg` file with your imprint or brand's logo.
-	*	Replace the `cover.jpg` image with your book's front cover image. (Your life will be simpler if you also name it `cover.jpg`.) For best results, use an image almost but less than 1000px on its longest side. (More on images below.)
+5.	Inside each book's folder, store images in the `images` folder.
+	*	Replace the `publisher-logo.svg` and `publisher-logo.jpg` files with your imprint or brand's logos in SVG and JPG.
+	*	Replace the `cover.jpg` image with your book's front cover image. Name it `cover.jpg`. (More on images below.)
 
 ## Creating a book in markdown
 
-Here are some guidelines we've created for our own use. They are probably applicable to other books, too. For examples, read this in conjunction with the [template's examples here](http://electricbookworks.github.io/book-framework/).
+Here are some guidelines we've created for our own use. They are probably applicable to other books, too. For examples, read this in conjunction with the [template's examples here](http://electricbookworks.github.io/electric-book-workflow/).
 
 Before you start:
 
 *	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-*	Use a good text editor that colour-codes markdown as you work. We like [Notepad++](https://notepad-plus-plus.org/) (with a [markdown highlighter](https://github.com/Edditoria/markdown_npp_zenburn)), [Sublime Text](http://www.sublimetext.com/) (with [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)), [Brackets](http://brackets.io/) and [Atom](http://atom.io) (though beware Atom's stripping trailing whitespaces used for linebreaks in markdown).
+*	Use a good text editor that colour-codes markdown as you work. We like [Sublime Text](http://www.sublimetext.com/) (with [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)) and [Notepad++](https://notepad-plus-plus.org/) (with [this markdown highlighter](https://github.com/Edditoria/markdown_npp_zenburn)).
 *	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM', aka UTF-8, and *not* a 'UTF-with-BOM' option. (Jekyll will break if you don't.)
 *	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 *	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy.
-*	Look through our [example template here](http://electricbookworks.github.io/book-framework/) to get an idea of available default typography.
+*	Look through our [example template here](http://electricbookworks.github.io/electric-book-workflow/) to get an idea of available default typography.
 
 ### Converting from InDesign
 
-This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this book framework. You'll probably develop your own process for turning existing books into markdown.
+This is what we do when we convert one of our textbooks from a traditional InDesign workflow to markdown for this workflow. You'll probably develop your own process for turning existing books into markdown. Maybe this will help.
 
 1. Open the InDesign file and copy all the text.
 1. Paste the text with formatting into your text editor.
@@ -203,7 +207,9 @@ This is what we do when we convert one of our textbooks from a traditional InDes
 
 #### Search-and-replace in InDesign
 
-InDesign is great for prepping text you've received in InDesign or Word, because it has very powerful search-and-replace. In particular, it's worth getting to know GREP search-and-replace. For instance, if you want to convert all italics to markdown:
+InDesign is great for prepping text you've received in InDesign or Word, because it has very powerful search-and-replace. In particular, it's worth getting to know GREP search-and-replace. The learning curve is steep, but your conversions will be much faster once you've mastered GREP. [Here are some GREP learning resources](http://indesignsecrets.com/resources/grep).
+
+For instance, if you want to convert all italics to markdown:
 
 1. In the Find dialog, choose GREP.
 2. Click in the Format box and set the font style to Italic.
@@ -249,7 +255,7 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 
 ### Poetry
 
-Encoding poetry can be tricky. Usually, poetry in HTML is structured by tagging each stanza as a paragraph, with line breaks after each line. You can do this in the framework by adding markdown line breaks (with double spaces or `\\` at the end of each line) and tagging the paragraph with `{:.verse}`. However, this structure meaks it impossible to have browsers, ereaders and PDF engines correctly indent runover lines (because there is no [`nth-line` selector](https://css-tricks.com/a-call-for-nth-everything/) in CSS, unless you resort to [a Javascript method](https://github.com/davatron5000/Lettering.js#letters-words-lines-and-more) that will bloat your code and won't run on many ereaders).
+Encoding poetry can be tricky. Usually, poetry in HTML is structured by tagging each stanza as a paragraph, with line breaks after each line. You can do this by adding markdown line breaks (with double spaces or `\\` at the end of each line) and tagging the paragraph with `{:.verse}`. However, this structure meaks it impossible to have browsers, ereaders and PDF engines correctly indent runover lines (because there is no [`nth-line` selector](https://css-tricks.com/a-call-for-nth-everything/) in CSS, unless you resort to [a Javascript method](https://github.com/davatron5000/Lettering.js#letters-words-lines-and-more) that will bloat your code and won't run on many ereaders).
 
 We prefer another approach: each stanza is an unordered list (`ul`) and each line is a list item (`li`). We just hide any list markers (bullets) with `list-style-type: none'. This way, we can control indents on runover lines. among other things. This is a non-semantic use of HTML, since a poem is technically not a list. But it's a healthy hack with universal browser and ereader support.
 
@@ -285,7 +291,7 @@ The `2` in `{:.indent-2}` refers to the number of em spaces to indent by. Our CS
 
 But wait, there's more! Best practice for poetry layout is that a poem should be centered on its longest line. That is *not* centering the lines of poetry, but placing the left-justified poem in the horizontal middle of the page. Put another way, the poem should be indented till its longest line is centered on the page (or screen).
 
-To achieve this in the framework, put the entire poem, including its title, in a blockquote, by adding `> ` to the start of each line. Tag the whole blockquote as {:.verse}, too:
+To achieve this, put the entire poem, including its title, in a blockquote, by adding `> ` to the start of each line. Tag the whole blockquote as {:.verse}, too:
 
 ```
 > -	### To One Who Has Been Long in City Pent
@@ -487,7 +493,7 @@ Note that this only works with YouTube. If you're embedding from any other servi
 
 ### Footnotes, endnotes and sidenotes
 
-Our framework provides three options for notes.
+Our default theme provides three options for notes.
 
 **Footnotes** appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that's what kramdown calls them. To create them in markdown, follow the [kramdown syntax for footnotes](http://kramdown.gettalong.org/syntax.html#footnotes):
 
@@ -498,20 +504,27 @@ Our framework provides three options for notes.
 
 In print, you can put **sidenotes at the bottom of the page**. By adding `.bottom` to the `{:.sidenote}` tag, your sidenote sits at the bottom of the page rather than on the right with text wrap. So the markdown looks like this: `*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}`. On screen, these are just regular sidenotes.
 
-### Stylesheets
+### Themes and stylesheets
 
-We've provided generic stylesheets in the framework, but any given project will probably need its own styling for one reason or another. The main stylesheets are:
+Our template includes one design, or theme. This theme is a set of stylesheets for the three main output formats: the web (`screen`), ebooks (`epub`) and print (`print`).
 
-*	`screen.css` for the web version
-*	`print.css` for PDF output with Prince.
+A theme is made of component parts:
 
-Unless you are radically changing the design of your book, we recommend not editing these two files. To override only a few values or elements, rather create a child stylesheet containing only your new styling rules.
+* variables like default fonts and page size
+* book elements like running heads and boxes.
 
-To create a child stylesheet of `screen.css`, create the file, save it in the repo's `css` folder, and add its filename to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
+You set your series variables and choose which components to include in the Sass files in `/css`: `screen.scss`, `print.scss` and `epub.scss`.
 
-To create a child stylesheet to `print.css`, create the file and save it to the repo's `css` folder. Then when you create a PDF in Prince, apply both `print.css` and your child stylesheet, in that order.
+When Jekyll converts your markdown to HTML, it will read your Sass files and automatically assemble finished CSS.
 
-Glance through our stylesheets to see what's useful, especially in `print.css`. For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. And you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns. Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
+To change stying for a specific book in a series, create a child stylesheet containing only your new styling rules. 
+
+To create a child stylesheet (e.g. of `screen.scss`), copy the file and save it in the same `css` folder (e.g. `screen-child-mynovel.scss`), and make changes that override the parent styling.
+
+*   For `screen` child styles, also add the filename with a `.css` file extension (e.g. `screen-child-mynovel.css` to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
+*   For `print` child styles, apply both `print.css` and your finished `.css` child stylesheet, in that order, in PrinceXML. (See [PDF output](#pdf-output-for-print) below.)
+
+To see what we've designed for, read [our template's web version](http://electricbookworks.github.io/electric-book-workflow/), especially [chapter 2](http://electricbookworks.github.io/electric-book-workflow/book-one/2.html#editing-for-this-workflow). (You can also glance through the stylesheet files in the template repo.) For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. And you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns. Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
 
 ## Trial-and-error tips
 
@@ -535,7 +548,7 @@ Name each book's markdown files in perfectly alphabetical order. We recommend us
 
 ## PDF output for print
 
-We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our framework's CSS files for printing are designed specifically for Prince.
+We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our CSS files for print are designed specifically for Prince.
 
 If you still need to learn about using CSS to control print output using Prince, [this is a great tutorial](http://www.smashingmagazine.com/2015/01/designing-for-print-with-css/).
 
@@ -544,7 +557,7 @@ If you still need to learn about using CSS to control print output using Prince,
 1.	Find your book's HTML files in your `_site` folder. (Remember to run Jekyll locally to generate the latest version; if you're getting your HTML from a GitHub repo's `_site` folder, trust that the last contributor synced up-to-date, reliable HTML generated by their local Jekyll instance.)
 2.	Drag the HTML files into Prince. Make sure they're in the right order. Only include the files you need in print. For instance, you'll usually leave out `index.html`. You'll usually only include `cover.html` when creating a PDF ebook.
 3.	Tick ‘Merge all…’ and **specify an output file** location and name. Do not let Prince output to your `_site` folder. (If you skip this, Prince will output to your `_site` folder, which will cause permissions issues when you want to modify or delete the file, because Jekyll owns the `_site` folder and can overwrite it, and because Git will try to commit and sync the output PDF, which you probably don't want.)
-4.	Drag the CSS file for your print output into Prince. By default in our book-framework, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add any of these CSS files, after `print.css`, for additional options:
+4.	Drag the CSS file for your print output into Prince. (You'll find these in `_site/css`, where Jekyll assembles your finished CSS files.) By default in our workflow, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add any of these CSS files, after `print.css`, for additional options:
 	*	`print-a4.css` overrides the page size and sets it to A4 (portrait);
 	*	`print-a5.css` overrides the page size and sets it to A5 (portrait);
 	*	`print-no-crop-marks.css` removes the crop marks, but leaves the bleed as is;
@@ -578,7 +591,7 @@ For user discussion, see [the Prince forums here](http://www.princexml.com/forum
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
 
 1.	Put the HTML files from `_site` into your `Text` folder.
-1.	Put the framework's `epub.css` in your `Styles` folder. (The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
+1.	Put the finished `epub.css` (from `_site/css`) into your Sigil `Styles` folder. (The `epub.css` file is a trimmed version of `screen.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
 1.	If your book has a child stylesheet, add that, too.
 1.	Replace any SVG images in the `Images` folder with JPG equivalents. And:
 1.	Search-and-replace any links to .svg in your HTML files with .jpg.
@@ -645,13 +658,13 @@ For general guidance on creating epubs with Sigil, check out [our training mater
 
 ### Pro tip: quicker epub output
 
-The framework includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`:
+Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`:
 
 ```
 layout: "epub"
 ```
 
-Remember to restart Jekyll after changing `_config.yml` for changes to take effect.
+Remember to restart Jekyll after changing `_config.yml` for changes to take effect, and change it back to `default` afterwards to get your web-version's navigation back.
 
 The `epub` layout lets you skip a few of the steps listed above, because it:
 

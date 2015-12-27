@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>Book title: Example typography</title>
+	<title>Book title: Typography examples</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/screen.css" />
@@ -11,14 +11,17 @@
 
 
 		<div id="nav-bar" class="non-printing">
-			<a href="/" title="Home">×</a>
-			<a href="0-3-contents.html" title="Contents">≡</a>
+			<p>
+				<a href="/" title="Home: Collection name" class="nav-series">Collection name</a>
+				<a href="0-3-contents.html" title="Contents: Book title" class="nav-book">Book title</a>
+				<a href="" title="Top: Typography examples"  class="nav-page">Typography examples</a>
+			</p>
 		</div><!--#nav-bar-->
 
 	<div id="wrapper">
 
 
-<h1 class="no_toc" id="typography-examples"><strong>1</strong> Typography examples</h1>
+<h1 class="no_toc" title="Typography examples" id="chapter-1-typography-examples"><strong>Chapter 1</strong> Typography examples</h1>
 
 <ul id="markdown-toc">
   <li><a href="#better-than-lorem-ipsum" id="markdown-toc-better-than-lorem-ipsum">Better than lorem ipsum</a>    <ul>
@@ -37,9 +40,9 @@
   </li>
 </ul>
 
-<p>This chapter simply includes lots of examples of our framework’s default typography. In the <a href="2.html">next chapter</a>, we explain how to edit text in markdown for the framework.</p>
+<p>This chapter simply includes lots of examples of our workflow’s default typography. In the <a href="2.html">next chapter</a>, we explain how to edit text in markdown for the workflow.</p>
 
-<p>This is a regular paragraph. If it follows a heading, list, definition list, blockquote or iframe, it’ll be flush left (not indented). If you’re looking at the HTML, ebook or print version, you should also check out the underlying markdown version, to see how to control styles with simple, plain-text formatting. There is more detail in the book framework’s <a href="https://github.com/electricbookworks/book-framework">README</a>.</p>
+<p>This is a regular paragraph. If it follows a heading, list, definition list, blockquote or iframe, it’ll be flush left (not indented). If you’re looking at the HTML, ebook or print version, you should also check out the underlying markdown version, to see how to control styles with simple, plain-text formatting. There is more detail in the workflow’s <a href="https://github.com/electricbookworks/electric-book-workflow">README</a>.</p>
 
 <p>In the markdown source of this chapter, note the <code>chapter</code> style in the markdown version’s YAML header – at the top of the document. That’s important: it tells the stylesheet what part of the book this is.</p>
 
@@ -75,7 +78,7 @@
 
 <p>As to the manumission of the slaves you need not be uneasy. To begin with, the promise made to yours was that you would treat them according as each severally deserved. So far Orpheus has behaved well, besides him no one very markedly so. With the rest of the slaves the arrangement is that, if my property is forfeited, they should become my freedmen, supposing them to be able to maintain at law that status. But if my property remained in my ownership, they were to continue slaves, with the exception of a very few. But these are trifles.</p>
 
-<p class="non-printing">See the framework <a href="https://github.com/electricbookworks/book-framework#the-ebw-book-framework">README</a> on how to embed video like this. This paragraph and the video won’t appear in the print edition.</p>
+<p class="non-printing">See the workflow <a href="https://github.com/electricbookworks/electric-book-workflow#the-ebw-book-workflow">README</a> on how to embed video like this. This paragraph and the video won’t appear in the print edition.</p>
 
 <div class="videowrapper non-printing">
 <iframe width="853" height="480" max-width="100%" src="https://www.youtube.com/embed/KuuLhizAqo8" frameborder="0" allowfullscreen=""></iframe>
@@ -206,10 +209,10 @@ the younger men corrupt.</li>
 <h2 id="poetry">Poetry</h2>
 
 <blockquote class="sidenote">
-  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/book-framework">our README</a> for CSS-based indent control.</p>
+  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/electric-book-workflow">our README</a> for CSS-based indent control.</p>
 </blockquote>
 
-<p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/book-framework">the framework README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
+<p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/electric-book-workflow#poetry">the workflow README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
 
 <h3 id="good">Good</h3>
 
@@ -258,7 +261,7 @@ And hid his face amid a crowd of stars.</p>
   <li>Life death does end and each day dies with sleep.</li>
 </ul>
 
-<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/book-framework#poetry">framework README</a>.</p>
+<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/eletric-book-workflow#poetry">workflow README</a>.</p>
 
 <h4 class="no_toc" id="mishter-cummingsh">Mishter Cummingsh</h4>
 
@@ -296,7 +299,7 @@ And hid his face amid a crowd of stars.</p>
   </ul>
 </blockquote>
 
-<p>Our <a href="http://github.com/electricbookworks/book-framework">detailed framework instructions</a> explain more, including how to get the line indents here.</p>
+<p>Our <a href="http://github.com/electricbookworks/electric-book-workflow#poetry">detailed workflow instructions</a> explain more, including how to get the line indents here.</p>
 
 <p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 2](2.html){:.button}</code>.</p>
 
@@ -307,7 +310,7 @@ And hid his face amid a crowd of stars.</p>
       <p>This is an endnote. Notes created like this follow <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown’s footnote syntax</a> (kramdown uses the term footnote to refer to endnotes, unfortunately). <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>This is another endnote. Note how kramdown automatically numbers the these correctly, even when the markdown doesn’t. The reference is designed to appear superscript. We can also do subscript in markdown, like H<sub>2</sub>0, but we have to use HTML <code>&lt;sub&gt;</code> tags. Our framework doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>This is another endnote. Note how kramdown automatically numbers the these correctly, even when the markdown doesn’t. The reference is designed to appear superscript. We can also do subscript in markdown, like H<sub>2</sub>0, but we have to use HTML <code>&lt;sub&gt;</code> tags. Our workflow doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -319,10 +322,10 @@ And hid his face amid a crowd of stars.</p>
 	<div id="footer" class="non-printing">
 		<div class="footer-content">
 			<p>
-				<a href="http://electricbookworks.com" title="Publisher name">Publisher name</a> &bull; 
-				<a href="/">Collection name</a> &bull; 
-				<a href="0-3-contents.html"><em>Book title</em></a> &bull; 
-				<a href="">Example typography</a>
+				<a href="http://electricbookworks.com" title="Publisher name" class="footer-publisher">Publisher name</a>
+				<a href="/" title="Home: Collection name" class="footer-series">Collection name</a>
+				<a href="0-3-contents.html" title="Contents: Book title" class="footer-book"><em>Book title</em></a>
+				<a href="" title="Top: Typography examples" class="footer-page">Typography examples</a>
 			</p>
 		</div><!--.footer-content-->
 	</div><!--#footer-->

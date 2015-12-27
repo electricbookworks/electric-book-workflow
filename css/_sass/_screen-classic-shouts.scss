@@ -1,0 +1,8 @@
+// Shouts, useful for blockquotes and definition lists especially
+.shout {
+	font-size: 1.5em;
+	font-style: italic;
+}
+.shout * {
+	line-height: 115%;
+}

@@ -1,0 +1,32 @@
+/* For a manual page break before an element, apply this class to it */
+.page-break-before {
+	page-break-before: always;
+}
+
+/* For a manual page break after an element, apply this class to it */
+.page-break-after {
+	page-break-after: always;
+}
+
+/* To keep an element on the same page as the next element, apply this class */
+.keep-with-next {
+	page-break-after: avoid;
+}
+
+/* To prevent an element breaking across pages, apply this class */
+.keep-together {
+	page-break-inside: avoid;
+}
+/* To allow a break where default styles would normally avoid one. Apply the class to the parent element.
+ * These are !important because they must override rules that might appear later in generated CSS.
+ */
+.allow-break {
+	page-break-before: auto !important;
+	page-break-after: auto !important;
+	page-break-inside: auto !important;
+}
+.allow-break * {
+	page-break-before: inherit !important;
+	page-break-after: inherit !important;
+	page-break-inside: inherit !important;
+}

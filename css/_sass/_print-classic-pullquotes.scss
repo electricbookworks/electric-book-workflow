@@ -1,0 +1,14 @@
+/*
+ * Pull quotes, useful for blockquotes and definition lists 
+ */
+ .pullquote {
+	text-indent: 0;
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: center;
+	margin: 0.5em 0;
+	line-height: 115%;
+}
+.pullquote + p {
+	text-indent: 0;
+}

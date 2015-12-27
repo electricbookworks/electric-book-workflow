@@ -1,3 +1,4 @@
+# Prose.io configuration for the EBW Electric Book Workflow.
 # Users with GitHub contributor access can edit your book with http://prose.io. 
 # These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 # (We don't use prose.io live previews with siteurl. they are slower than the default preview and unreliable in multi-site repos.)

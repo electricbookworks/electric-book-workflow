@@ -4,14 +4,14 @@ publisher: "Publisher name"
 # Your publisher name will link to this URL in navigation.
 publisher-url: "http://electricbookworks.com"
 
-# The name of the collection of books in this repo.
+# The name of the series of books in this folder.
 name: "Collection name"
 
-# A one-liner about this collection. Useful for Open Graph metadata.
-description: "A description of this collection"
+# A one-liner about this series. Useful for Open Graph metadata.
+description: "A description of this series"
 
-# The primary language used in this collection. You can set the language for each book below at 'defaults'. 
-# To understand what tags to use, read: http://www.w3.org/International/articles/language-tags/ 
+# The primary language used in this series. You can set the language for each book individually below at 'defaults'. 
+# To understand what language tags to use, read: http://www.w3.org/International/articles/language-tags/ 
 # For the registry of tags: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry 
 # Useful lookup tool: http://r12a.github.io/apps/subtags/
 language: en
@@ -19,22 +19,26 @@ language: en
 # Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
 url: http://localhost:4000
 
-# Change this to the name of your collection repo, e.g. /my-cool-books
-baseurl: /book-framework
+# Change this to the name of your series folder, e.g. /my-cool-books
+baseurl: /electric-book-workflow
 
 # Leave this unchanged as kramdown unless you really know how and why to change your markdown processor
 markdown: kramdown
 
-# Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder, really useful for grabbing them all at once, e.g. for sending to PrinceXML for PDF.
+# Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder.
+# This is really useful for grabbing allyour HTML files at once for including in epubs or sending to PrinceXML.
 permalink: none
+
+# Leave this unchanged. It tells Jekyll where to find Sass partials. (See http://jekyllrb.com/docs/assets/#sassscss)
+sass:
+    sass_dir: css/_sass
 
 # These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
 defaults: 
     -
-        scope: # First we set defaults for all pages (an empty string "" for path means all files).
+        scope: # First we set defaults for all files in this series folder (an empty string "" for path means all files).
             path: ""
         values:
-            book-title: "Collection name"
             author: "A. N. Author"
             language: "en"
             publication-date: "2015-12-01"

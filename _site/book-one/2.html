@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>Book title: Editing for the EBW Book Framework</title>
+	<title>Book title: Editing for this workflow</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/screen.css" />
@@ -11,14 +11,17 @@
 
 
 		<div id="nav-bar" class="non-printing">
-			<a href="/" title="Home">×</a>
-			<a href="0-3-contents.html" title="Contents">≡</a>
+			<p>
+				<a href="/" title="Home: Collection name" class="nav-series">Collection name</a>
+				<a href="0-3-contents.html" title="Contents: Book title" class="nav-book">Book title</a>
+				<a href="" title="Top: Editing for this workflow"  class="nav-page">Editing for this workflow</a>
+			</p>
 		</div><!--#nav-bar-->
 
 	<div id="wrapper">
 
 
-<h1 class="no_toc" id="editing-for-this-framework"><strong>2</strong> Editing for this framework</h1>
+<h1 class="no_toc" title="Editing for this workflow" id="chapter-2-editing-for-this-workflow"><strong>Chapter 2</strong> Editing for this workflow</h1>
 
 <ul id="markdown-toc">
   <li><a href="#how-html-works" id="markdown-toc-how-html-works">How HTML works</a></li>
@@ -43,9 +46,9 @@
   </li>
 </ul>
 
-<p>For many books, we use a super-efficient workflow for editing and laying out books. It’s called the EBW Book Framework. This guide explains how to edit a manuscript for the framework. If you get it right, we can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting!</p>
+<p>For many books, we use a super-efficient workflow for editing and laying out books. It’s called the Electric Book Workflow. This guide explains how to edit a manuscript for the workflow. If you get it right, we can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting!</p>
 
-<p>To edit for the framework, you need to have a rough idea how HTML works, and you need to learn markdown. This is much, much easier than you think.</p>
+<p>To edit for the workflow, you need to have a rough idea how HTML works, and you need to learn markdown. This is much, much easier than you think.</p>
 
 <h2 id="how-html-works">How HTML works</h2>
 
@@ -64,7 +67,7 @@ This text is tagged in HTML as a paragraph.
 
 <p>But not all paragraphs are the same: there are opening paragraphs, pull-quote paragraphs, blurb paragraphs and more. If I want to tell the computer what <em>kind</em> of paragraph it is, I can put it in a special class. Say, the ‘blurb’ class of paragraph. To write this in HTML, I would make the tag <code>&lt;p class="blurb"&gt;</code>. Unlike its limited set of specific tags, HTML classes are infinite, because we can make up class names as we need them.</p>
 
-<p>HTML is very simple and very powerful (which is why it’s the language behind almost every web page). We can mark up everything in a book using HTML tags and classes. In our framework, we store books in HTML, with each book part (title page, contents page, chapter, etc.) in its own HTML file.</p>
+<p>HTML is very simple and very powerful (which is why it’s the language behind almost every web page). We can mark up everything in a book using HTML tags and classes. In our workflow, we store books in HTML, with each book part (title page, contents page, chapter, etc.) in its own HTML file.</p>
 
 <p>Then, to create print-ready PDFs, websites and ebooks from that HTML, we combine the files with CSS stylesheets. CSS is another computer language that defines design: font sizes, indentation, colour, etc. A CSS file will say ‘make all headings bold’, for instance, or ‘indent blockquotes by 1em’.</p>
 
@@ -229,7 +232,7 @@ This is a paragraph.
   <p>This is text in a blockquote.</p>
 </blockquote>
 
-<p>In our framework we use blockquote HTML for more than just quotations, though. We also use it for figures and poetry. We’ll come back to this later.</p>
+<p>In our workflow we use blockquote HTML for more than just quotations, though. We also use it for figures and poetry. We’ll come back to this later.</p>
 
 <h3 id="hyperlinks">Hyperlinks</h3>
 
@@ -256,11 +259,11 @@ This is a paragraph.
 <pre><code>![A dog chasing a bus.](images/dogbus.jpg)
 </code></pre>
 
-<p>In the parentheses above, the <code>images/</code> part says that the <code>dogbus.jpg</code> image is in the <code>images</code> folder, which is alongside the markdown file. In our framework, we always put images in the <code>images</code> folder like this.</p>
+<p>In the parentheses above, the <code>images/</code> part says that the <code>dogbus.jpg</code> image is in the <code>images</code> folder, which is alongside the markdown file. In our workflow, we always put images in the <code>images</code> folder like this.</p>
 
 <h3 id="endnotes">Endnotes</h3>
 
-<p>Endnotes in our framework appear at the end of a document (that is, a web page or a book chapter).<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>Endnotes in our workflow appear at the end of a document (that is, a web page or a book chapter).<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <ul>
   <li>put a <code>[^1]</code> where the footnote reference should appear (the <code>1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
@@ -300,9 +303,9 @@ This is a paragraph.
 
 <p class="box">This paragraph should be in a box.</p>
 
-<p>For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we’ll have to combine it with a CSS stylesheet that includes formatting instructions for the <code>box</code> class. If you’re just editing in markdown, you don’t have to think about the stylesheets. Our EBW book framework’s default stylesheets include instructions for <code>box</code> as well as several other classes. (Which we’ll list in a moment.)</p>
+<p>For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we’ll have to combine it with a CSS stylesheet that includes formatting instructions for the <code>box</code> class. If you’re just editing in markdown, you don’t have to think about the stylesheets. Our default stylesheets include designs for <code>box</code> as well as several other classes. (Which we’ll list in a moment.)</p>
 
-<p>But if your book needs classes that aren’t already in our framework’s stylesheets, you’ll need to ask a CSS-savvy designer to write you some CSS rules for your new class, and to <a href="https://github.com/electricbookworks/book-framework#stylesheets">put these in a child stylesheet</a>.</p>
+<p>But if your book needs classes that aren’t already in our workflow’s default stylesheets, you’ll need to ask a CSS-savvy designer to write you some CSS rules for your new class, and to <a href="https://github.com/electricbookworks/electric-book-workflow#stylesheets">put these in a child stylesheet</a>.</p>
 
 <blockquote class="box">
   <h4 id="inventing-classes">Inventing classes</h4>
@@ -324,13 +327,13 @@ This is a paragraph.
   <p>When you apply a tag to an inline element, mark off the text you’re tagging with asterisks (<code>*</code>), as you would italics, and put your tag immediately after the closing <code>*</code>, on the same line. E.g. <code>*Make this small-caps.*{:.smallcaps}</code>.</p>
 </blockquote>
 
-<p class="table-caption">EBW-book-framework supported classes</p>
+<p class="table-caption">Supported classes</p>
 
 <table>
   <thead>
     <tr>
       <th>Feature</th>
-      <th>Framework class</th>
+      <th>Workflow class</th>
       <th>Block or inline</th>
       <th>Explanation</th>
     </tr>
@@ -376,7 +379,7 @@ This is a paragraph.
       <td>Figure</td>
       <td><code>.figure</code></td>
       <td>Block</td>
-      <td>A figure is an image with a caption. Read about how to manage them properly <a href="https://github.com/electricbookworks/book-framework#adding-images-in-markdown">in our framework guide</a>.</td>
+      <td>A figure is an image with a caption. Read about how to manage them properly <a href="https://github.com/electricbookworks/electric-book-workflow#adding-images-in-markdown">in our workflow guide</a>.</td>
     </tr>
     <tr>
       <td>Figure: extra small</td>
@@ -490,7 +493,7 @@ This is a paragraph.
       <td>Poetry</td>
       <td><code>.verse</code></td>
       <td>Block</td>
-      <td>Designing poetry is tricky and important. Read about how to manage this <a href="https://github.com/electricbookworks/book-framework#poetry">in our framework guide</a>.</td>
+      <td>Designing poetry is tricky and important. Read about how to manage this <a href="https://github.com/electricbookworks/electric-book-workflow#poetry">in our workflow guide</a>.</td>
     </tr>
     <tr>
       <td>Pull quote</td>
@@ -629,10 +632,10 @@ This is a paragraph.
 	<div id="footer" class="non-printing">
 		<div class="footer-content">
 			<p>
-				<a href="http://electricbookworks.com" title="Publisher name">Publisher name</a> &bull; 
-				<a href="/">Collection name</a> &bull; 
-				<a href="0-3-contents.html"><em>Book title</em></a> &bull; 
-				<a href="">Editing for the EBW Book Framework</a>
+				<a href="http://electricbookworks.com" title="Publisher name" class="footer-publisher">Publisher name</a>
+				<a href="/" title="Home: Collection name" class="footer-series">Collection name</a>
+				<a href="0-3-contents.html" title="Contents: Book title" class="footer-book"><em>Book title</em></a>
+				<a href="" title="Top: Editing for this workflow" class="footer-page">Editing for this workflow</a>
 			</p>
 		</div><!--.footer-content-->
 	</div><!--#footer-->

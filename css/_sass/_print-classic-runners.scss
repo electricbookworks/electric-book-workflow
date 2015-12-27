@@ -1,0 +1,65 @@
+/* 
+ * Sets runners (footers, headers) for chapter pages
+ */
+
+// First, let's set strings to use in our runners.
+// This assumes you're happy to use the exact text of headings in your document as the content strings.
+// Notice h1 sets the string for h2 as well, just as a fallback in case there isn't an h2 on the page yet.
+h1 { string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
+h2 { string-set: h2 content(), h2-title attr(title); }
+h3 { string-set: h3 content(); }
+h4 { string-set: h4 content(); }
+h5 { string-set: h5 content(); }
+h6 { string-set: h6 content(); }
+
+@page chapter:left {
+  @bottom-left {
+    content: counter(page) "\2003" string(h1, last);
+    text-align: left;
+	font-family: $font-text-main;
+    font-size: $font-size-default / 100 * 80;
+	letter-spacing: 0.025em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+  }
+}
+@page chapter:right {
+  @bottom-right {
+    content: string(h2, last) "\2003" counter(page);
+    text-align: right;
+	font-family: $font-text-main;
+    font-size: $font-size-default / 100 * 80;
+	letter-spacing: 0.025em;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+  }
+}
+
+// Don't put footers on blank pages of a chapter (e.g. a blank verso opposite the opening recto).
+@page chapter:blank {
+	@bottom-right {
+		content: normal;
+	}
+	@bottom-left {
+		content: normal;
+	}
+}
+
+
+// ALTERNATIVE
+// If you don't want to use the exact heading text in runners, you can use an element's `title` attribute.
+// E.g. your `h1` reads '1 Dark and Stormy' but your `title` just 'Dark and Stormy'. You want the latter.
+// You must give titles to all h1's and h2's to ensure a runner on every page.
+// In kramdown, set an elements's title with an attribute tag, e.g. {: title="Dark and Stormy"}
+// Then uncomment the following lines to override the above string-setting.
+
+/*
+	@page chapter:left {
+	  @bottom-left {
+	    content: counter(page) "\2003" string(h1-title, last);
+	  }
+	}
+	@page chapter:right {
+	  @bottom-right {
+	    content: string(h2-title, last) "\2003" counter(page);
+	  }
+	}
+*/

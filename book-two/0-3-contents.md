@@ -10,4 +10,4 @@ style: contents-page
 *	[Acknowledgements](0-4-acknowledgements.html#acknowledgements)
 
 *	[Chapter 1 – Typography examples](1.html#typography-examples)
-*	[Chapter 2 – Editing for this framework](2.html#editing-for-this-framework)
+*	[Chapter 2 – Editing for this framework](2.html#editing-for-this-workflow)

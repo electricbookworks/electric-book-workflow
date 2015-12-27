@@ -1,0 +1,9 @@
+/* Set the initial default view when this PDF is opened. See http://www.princexml.com/forum/topic/2650/prince-pdf */
+@prince-pdf {
+	prince-pdf-open-action: none; /* none | print | command(ident) */
+	prince-pdf-page-layout: two-column-right; /* single-page | one-column | two-column | two-column-left | two-column-right */
+	prince-pdf-page-mode: show-bookmarks; /* auto | show-attachments | show-bookmarks | fullscreen */
+	prince-pdf-paper-tray: auto; /* auto | pick-tray-by-pdf-size */
+	prince-pdf-print-scaling: auto; /* auto | none */
+	prince-pdf-script: "" /* Insert Javascript between the quotes if needed: http://www.princexml.com/doc/properties/prince-pdf-script/ */
+}

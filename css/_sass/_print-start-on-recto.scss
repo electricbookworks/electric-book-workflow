@@ -1,0 +1,11 @@
+/* We want some layouts to start on right-hand pages only */
+.frontmatter, 
+.halftitle-page, 
+.title-page, 
+.dedication-page, 
+.epigraph-page, 
+.contents-page, 
+.chapter 
+{ 
+	page-break-before: right;
+}
