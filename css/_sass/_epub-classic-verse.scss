@@ -72,6 +72,7 @@ blockquote.verse ul {
 blockquote.verse ul.verse {
     text-align: left;
     display: inline-block;
+    min-width: 51%; // Ensures verses with short lines don't end up floating side by side
 }
 
 /* If verse is in a list, we can preserve line breaks and white space */
