@@ -23,7 +23,7 @@ p.epigraph-source {
 	font-style: inherit;
 }
 p.epigraph-source:before {
-	content: "—";
+	content: "";
 }
 .epigraph-source + p, .dedication + p { /* Paragraphs after epigraphs and dedications should be flush left after space. */
 	text-indent: 0;
