@@ -2,25 +2,23 @@
  * Tables of contents
  */
 
-.contents-page h2 {
-	font-weight: 400;
-	font-size: 1.25em;
-	margin: 1em 0 0.5em 0;
-}
-.contents-page ol {
-	margin: 0;
-	padding: 0;
-}
-.contents-page ul {
-	list-style-type: none;
-	margin: 0 0 1em 0;
-	padding: 0;
-}
-.contents-page li {
-	margin: 0 0 0.5em 0;
-}
-.contents-page a {
-	text-decoration: none;
+.contents-page {
+	h2 {
+		font-weight: 400;
+		font-size: 1.25em;
+		margin: 1em 0 0.5em 0;
+	}
+	ol, ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin: 0 0 0.5em 0;
+	}
+	a {
+		text-decoration: none;
+	}
 }
 
 /* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
@@ -32,15 +30,12 @@ ul#markdown-toc, ol#markdown-toc {
 	padding: 1em 0;
 	margin: 2em 0;
 }
-#markdown-toc ul {
-	list-style-type: none;
-	margin: 0;
-}
-#markdown-toc ol {
-	margin: 0;
-}
-#markdown-toc li {
-}
-#markdown-toc a {
-	text-decoration: none;
+#markdown-toc {
+	ol, ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+	}
 }

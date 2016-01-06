@@ -6,23 +6,23 @@
 	max-width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-}
-.contents-page a::after, .page-ref-list a::after { 
-	content: leader(" ") target-counter(attr(href), page);
-	font-variant: prince-opentype(lnum);
-}
-.contents-page ul, .contents-page ol {
-	list-style-type: none;
-} 
-.contents-page li {
-	margin: 0 0 0.5em 0;
-}
-.contents-page li li {
-	margin: 0;
-}
-.contents-page h2 {
-	font-size: 1.2em;
-	margin: 1em 0 0.5em 0;
+	a::after, .page-ref-list a::after { 
+		content: leader(" ") target-counter(attr(href), page);
+		font-variant: prince-opentype(lnum);
+	}
+	ul, ol {
+		list-style-type: none;
+	}
+	li {
+		margin: 0 0 0.5em 0;
+	}
+	li li {
+		margin: 0;
+	}
+	h2 {
+		font-size: 1.2em;
+		margin: 1em 0 0.5em 0;
+	}
 }
 
 /* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
@@ -34,23 +34,22 @@ ul#markdown-toc, ol#markdown-toc {
 	padding: 1em 0;
 	margin: 2em 0;
 }
-#markdown-toc ul {
-	list-style-type: none;
-	margin: 0;
-}
-#markdown-toc ol {
-	margin: 0;
-}
-#markdown-toc li {
-	font-variant: prince-opentype(lnum);
-	margin: 0;
-}
-#markdown-toc li li {
-	margin-left: 1em;
-}
-#markdown-toc a {
-	text-decoration: none;
-}
-#markdown-toc a::after {
-	content: leader(" ") target-counter(attr(href), page);
+#markdown-toc {
+	ul, ol {
+		list-style-type: none;
+		margin: 0;
+	}
+	li {
+		font-variant: prince-opentype(lnum);
+		margin: 0;
+	}
+	li li {
+		margin-left: 1em;
+	}
+	a {
+		text-decoration: none;
+	}
+	a::after {
+		content: leader(" ") target-counter(attr(href), page);
+	}
 }
