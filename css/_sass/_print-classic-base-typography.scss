@@ -16,6 +16,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	page-break-after: avoid;
+	page-break-inside: avoid;
 	line-height: 110%;
 	font-variant: prince-opentype(dlig);
 }
