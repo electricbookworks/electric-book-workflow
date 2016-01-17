@@ -56,9 +56,17 @@ defaults:
             path: "book-one"
         values:
             book-title: "Book title"
+            language: "en"
+            isbn-print: ""
+            isbn-epub: ""
+            uuid: ""
     -
         scope: # Repeat for each book.
             path: "book-two"
         values:
             book-title: "Book two title"
+            language: "en"
             stylesheet-child: "screen-child-book-two.css"
+            isbn-print: ""
+            isbn-epub: ""
+            uuid: ""
