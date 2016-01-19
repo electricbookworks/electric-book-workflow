@@ -29,6 +29,7 @@ You can [see a live demo of the workflow template here](http://electricbookworks
     *   [Cover images](#cover-images)
     *   [Embedding video](#embedding-video)
     *   [Footnotes, endnotes and sidenotes](#footnotes-endnotes-and-sidenotes)
+    *   [Indexes](#indexes)
     *   [Themes and stylesheets](#themes-and-stylesheets)
 *   [Trial-and-error tips](#trial-and-error-tips)
     *   [Using Jekyll and GitHub](#using-jekyll-and-github)
@@ -571,10 +572,9 @@ Here is what your markdown for the index might look like. Here we've included ex
 
 In this example, we've used numbers as the link text. On screen, these will stay numbers, e.g.:
 
-Alice [1](1.html#alice-1){:#alice-1}, [2](1.html#alice-2){:#alice-2}
-{:.first}
+<p>Alice <a href="1.html#alice-1" id="alice-1">1</a>, <a href="3.html#alice-2" id="alice-2">2</a></p>
 
-In print output (using PrinceXML), the stylesheet will replace those numbers with page references.
+The stylesheet will add the commas between entries (so you could globally replace with semicolons or otherwise). In print output (using PrinceXML), the stylesheet will replace those numbers with page references.
 
 ### Themes and stylesheets
 
