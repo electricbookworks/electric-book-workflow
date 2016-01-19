@@ -514,7 +514,6 @@ In this workflow, the challenge is in managing page numbers: our workflow allows
 So here we'll describe how to create an index where the page numbers are dynamic. That is, the index is a list of concepts that point to a particular point in the book. The page numbers in the index (and clickable hyperlinks in an ebook version) are then generated on the fly whenever you output to PDF. This also means you can index early in the production process, such as during editing, rather than waiting for pages to be finalised.
 
 > Note: Be careful not to confuse an index in a book with the `index` page of a website. When talking about websites, the `index` page is the home page of a directory. So never give your reference index the file name `index` (e.g. `index.md` or `index.html`). To avoid confusion, in our code we refer to the `reference-index` when we mean a book's index. 
-{:.box}
 
 To create an index you have to do two things:
 
@@ -550,7 +549,6 @@ Note that the ID must be unique for every instance of Bob.
 Then in the index itself, you create a list of entries. After each entry, you add links to each instance of that entry you've tagged in the text. And you give each link the ID that you've pointed to in your tagged word's link target.
 
 > Tech tip: To make it easy for us to manage, we use the same ID for the tagged word and the index entry. You don't have to us the same ID. For instance, your tagged-word's ID might be `#text-bob-1` and your index entry's link `#index-bob-1`. If like us you use the same ID in both cases, remember that your index must be in a separate file from your text, since IDs must be unique within each file.
-{:.box}
 
 Here is what your markdown for the index might look like. Here we've included examples of sub-entries, and the tag to use for the entire list to style it as an index: `{:.reference-index}`.
 
