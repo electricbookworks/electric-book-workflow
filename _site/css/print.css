@@ -1074,6 +1074,35 @@ p.chapter-number {
   font-size: 3.5em;
   margin: 0 0 0.66em 0; }
 
+.reference-index {
+  columns: 2;
+  font-size: 0.8em; }
+
+.reference-index li {
+  list-style-type: none;
+  margin: 0 0 0 2em;
+  text-indent: -2em;
+  column-break-inside: avoid; }
+
+.reference-index li li {
+  margin: 0 0 0 1em; }
+
+.reference-index a {
+  content: target-counter(attr(href), page); }
+
+.reference-index a:after {
+  content: ", "; }
+
+.reference-index a:last-of-type:after {
+  content: ""; }
+
+.reference-index .duplicate {
+  display: none; }
+
+a.indexed {
+  color: inherit;
+  text-decoration: none; }
+
 h1 + p,
 h2 + p,
 h3 + p,
