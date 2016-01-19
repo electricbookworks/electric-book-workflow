@@ -1,4 +1,4 @@
-# We recommend uncommenting _site/ so that Git ignores your local site output. See the README for details.
-# _site/
+# We recommend uncommenting _site so that Git ignores your local site output. See the README for details.
+# _site
 
-.sass-cache/
+.sass-cache
