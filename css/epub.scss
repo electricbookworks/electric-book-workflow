@@ -1,5 +1,5 @@
 ---
-# EPUB STYLES
+# EPUB styles
 ---
 
 // WHAT IS THIS?
@@ -44,7 +44,7 @@ $line-height-default: 150%;
 // @import "font-inconsolata";
 
 // ---------------------
-// Design set 1: Classic
+// Classic-theme modules
 // ---------------------
 
 // Structural HTML components
@@ -83,8 +83,3 @@ $line-height-default: 150%;
 
 // Logic (if this then that)
 @import "_epub-classic-reset-sequences.scss"; // 
-
-// -----------------------------
-// Design set 2 (in development)
-// -----------------------------
-

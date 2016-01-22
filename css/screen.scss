@@ -1,5 +1,5 @@
 ---
-# SCREEN STYLES
+# Screen styles
 ---
 
 // WHAT IS THIS?
@@ -52,7 +52,7 @@ $line-height-default: 150%;
 @import "font-inconsolata";
 
 // ---------------------
-// Design set 1: Classic
+// Classic-theme modules
 // ---------------------
 
 // Structural HTML components
@@ -97,8 +97,3 @@ $line-height-default: 150%;
 
 // Logic (if this then that)
 @import "screen-classic-reset-sequences"; // This should stay last in the @import list
-
-// -----------------------------
-// Design set 2 (in development)
-// -----------------------------
-
