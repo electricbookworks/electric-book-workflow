@@ -651,13 +651,6 @@ p.first {
   text-align: right;
   margin: 0 0 0 25%; }
 
-.shout {
-  font-size: 1.5em;
-  font-style: italic; }
-
-.shout * {
-  line-height: 115%; }
-
 /*
  * Tables 
  */

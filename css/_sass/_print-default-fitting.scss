@@ -11,7 +11,7 @@
 	float: bottom;
 }
 .float-top + p, .float-bottom + p {
-	text-indent: 1em; /* If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back. */
+	text-indent: $line-height-default; // If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back.
 }
  
 /* Use these classes to control tracking, usually to save widows and orphans. */

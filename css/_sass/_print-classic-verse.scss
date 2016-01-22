@@ -4,7 +4,7 @@
 
 .verse {
 	text-indent: 0;
-	margin: 1em 0;
+	margin: $line-height-default 0;
 	hyphens: none;
 }
 .verse + p {
@@ -13,45 +13,48 @@
 ul.verse {
 	list-style-type: none;
 	padding: 0;
-	margin: 1em 0;
+	margin: $line-height-default 0;
 }
 ul.verse li {
-	text-indent: -2em;
-	margin-left: 2em;
+	text-indent: $line-height-default * (-2);
+	margin-left: $line-height-default * 2;
 }
-/* Indents for lines of verse. In markdown, add {:.indent-x} to the start of the list item text, e.g. -	{:.indent-3}My line of poetry indented 3em */
-ul.verse li.indent-1 { margin-left: 3em; }
-ul.verse li.indent-2 { margin-left: 4em; }
-ul.verse li.indent-3 { margin-left: 5em; }
-ul.verse li.indent-4 { margin-left: 6em; }
-ul.verse li.indent-5 { margin-left: 7em; }
-ul.verse li.indent-6 { margin-left: 8em; }
-ul.verse li.indent-7 { margin-left: 9em; }
-ul.verse li.indent-8 { margin-left: 10em; }
-ul.verse li.indent-9 { margin-left: 11em; }
-ul.verse li.indent-10 { margin-left: 12em; }
-ul.verse li.indent-11 { margin-left: 13em; }
-ul.verse li.indent-12 { margin-left: 14em; }
-ul.verse li.indent-13 { margin-left: 15em; }
-ul.verse li.indent-14 { margin-left: 16em; }
-ul.verse li.indent-15 { margin-left: 17em; }
-ul.verse li.indent-16 { margin-left: 18em; }
-ul.verse li.indent-17 { margin-left: 19em; }
-ul.verse li.indent-18 { margin-left: 20em; }
-ul.verse li.indent-19 { margin-left: 21em; }
-ul.verse li.indent-20 { margin-left: 22em; }
-ul.verse li.indent-21 { margin-left: 23em; }
-ul.verse li.indent-22 { margin-left: 24em; }
-ul.verse li.indent-23 { margin-left: 25em; }
-ul.verse li.indent-24 { margin-left: 26em; }
-ul.verse li.indent-25 { margin-left: 27em; }
-ul.verse li.indent-26 { margin-left: 28em; }
-ul.verse li.indent-27 { margin-left: 29em; }
-ul.verse li.indent-28 { margin-left: 30em; }
-ul.verse li.indent-29 { margin-left: 31em; }
-ul.verse li.indent-30 { margin-left: 32em; }
 
-/* Verse in a blockquote centres on its longest line, which is best-practice poetry layout */
+// Indents for lines of verse. 
+// In markdown, add {:.indent-x} to the start of the list item text, e.g. -	{:.indent-3}My line of poetry indented 3em
+// Note that indentation here includes the ul.verse li margin-left above.
+ul.verse li.indent-1 { margin-left: ($line-height-default * 2) + 1; }
+ul.verse li.indent-2 { margin-left: ($line-height-default * 2) + 2; }
+ul.verse li.indent-3 { margin-left: ($line-height-default * 2) + 3; }
+ul.verse li.indent-4 { margin-left: ($line-height-default * 2) + 4; }
+ul.verse li.indent-5 { margin-left: ($line-height-default * 2) + 5; }
+ul.verse li.indent-6 { margin-left: ($line-height-default * 2) + 6; }
+ul.verse li.indent-7 { margin-left: ($line-height-default * 2) + 7; }
+ul.verse li.indent-8 { margin-left: ($line-height-default * 2) + 8; }
+ul.verse li.indent-9 { margin-left: ($line-height-default * 2) + 9; }
+ul.verse li.indent-10 { margin-left: ($line-height-default * 2) + 10; }
+ul.verse li.indent-11 { margin-left: ($line-height-default * 2) + 11; }
+ul.verse li.indent-12 { margin-left: ($line-height-default * 2) + 12; }
+ul.verse li.indent-13 { margin-left: ($line-height-default * 2) + 13; }
+ul.verse li.indent-14 { margin-left: ($line-height-default * 2) + 14; }
+ul.verse li.indent-15 { margin-left: ($line-height-default * 2) + 15; }
+ul.verse li.indent-16 { margin-left: ($line-height-default * 2) + 16; }
+ul.verse li.indent-17 { margin-left: ($line-height-default * 2) + 17; }
+ul.verse li.indent-18 { margin-left: ($line-height-default * 2) + 18; }
+ul.verse li.indent-19 { margin-left: ($line-height-default * 2) + 19; }
+ul.verse li.indent-20 { margin-left: ($line-height-default * 2) + 20; }
+ul.verse li.indent-21 { margin-left: ($line-height-default * 2) + 21; }
+ul.verse li.indent-22 { margin-left: ($line-height-default * 2) + 22; }
+ul.verse li.indent-23 { margin-left: ($line-height-default * 2) + 23; }
+ul.verse li.indent-24 { margin-left: ($line-height-default * 2) + 24; }
+ul.verse li.indent-25 { margin-left: ($line-height-default * 2) + 25; }
+ul.verse li.indent-26 { margin-left: ($line-height-default * 2) + 26; }
+ul.verse li.indent-27 { margin-left: ($line-height-default * 2) + 27; }
+ul.verse li.indent-28 { margin-left: ($line-height-default * 2) + 28; }
+ul.verse li.indent-29 { margin-left: ($line-height-default * 2) + 29; }
+ul.verse li.indent-30 { margin-left: ($line-height-default * 2) + 30; }
+
+// Verse in a blockquote centres on its longest line, which is best-practice poetry layout
 blockquote.verse {
 	text-align: center;
 	color: inherit;
@@ -65,10 +68,10 @@ blockquote.verse h3,
 blockquote.verse h4,
 blockquote.verse h5, 
 blockquote.verse h6 {
-	margin-bottom: 1em;
+	margin-bottom: $line-height-default;
 }
 blockquote.verse ul {
-	margin-bottom: 0; /* Already gets its space after from ul.verse */
+	margin-bottom: 0; // Already gets its space after from ul.verse
 }
 blockquote.verse ul.verse {
     text-align: left;
@@ -76,13 +79,15 @@ blockquote.verse ul.verse {
     min-width: 51%; // Ensures verses with short lines don't end up floating side by side
 }
 
-/* If verse is in a list, we can preserve line breaks and white space */
+// If verse is in a list, we can preserve line breaks and white space
 ul.verse li {
 	white-space: pre-wrap;
 }
-ul.verse li h1 { margin: -0.5em 0 -0.25em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h2 { margin: -0.5em 0 -0.25em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h3 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h4 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h5 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h6 { margin: -1em 0 -0.5em 0; } /* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h1,
+ul.verse li h2,
+ul.verse li h3,
+ul.verse li h4,
+ul.verse li h5,
+ul.verse li h6 {
+	margin: 0; // Overrides extra line-breaks caused by li pre-wrap
+} 

@@ -189,8 +189,7 @@
   float: bottom; }
 
 .float-top + p, .float-bottom + p {
-  text-indent: 1em;
-  /* If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back. */ }
+  text-indent: 14pt; }
 
 /* Use these classes to control tracking, usually to save widows and orphans. */
 .tight {
@@ -312,7 +311,7 @@ h6 {
 */
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
-  margin-top: 30mm; }
+  margin-top: 84pt; }
 
 /* 
  * Base typography 
@@ -320,7 +319,7 @@ h6 {
 body {
   font-family: "Linux Libertine", serif;
   font-size: 11pt;
-  line-height: 130%;
+  line-height: 14pt;
   margin: 0;
   padding: 0;
   font-variant: prince-opentype(liga);
@@ -332,28 +331,45 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   page-break-after: avoid;
   page-break-inside: avoid;
-  line-height: 110%;
-  font-variant: prince-opentype(dlig); }
+  font-variant: prince-opentype(dlig);
+  padding: 0; }
 
 h1 {
-  font-size: 2.5em; }
+  font-size: 33pt;
+  line-height: 42pt;
+  margin: 0 0 42pt 0; }
 
 h1 strong:first-of-type {
   /* Useful for chapter numbers: make the number first and bold in the h1 */
   display: block;
-  margin: 0 0 0.5em 0; }
+  margin: 0 0 14pt 0; }
 
 h2 {
-  margin: 1em 0 0.5em 0;
-  padding-top: 0.5em; }
+  font-size: 22pt;
+  line-height: 28pt;
+  margin: 56pt 0 14pt 0; }
 
 h3 {
-  font-size: 1.1em;
-  margin-bottom: 0.5em; }
+  font-size: 13pt;
+  line-height: 14pt;
+  margin: 28pt 0 14pt 0; }
 
 h4 {
-  font-size: 1em;
-  margin-bottom: 0.5em;
+  font-size: 11pt;
+  line-height: 14pt;
+  margin: 28pt 0 0 0;
+  font-style: italic; }
+
+h5 {
+  font-size: 11pt;
+  line-height: 14pt;
+  margin: 14pt 0 0 0; }
+
+h6 {
+  font-size: 11pt;
+  line-height: 14pt;
+  margin: 0 14pt 0 0;
+  display: inline;
   font-style: italic; }
 
 p, ul, ol, dl {
@@ -361,7 +377,7 @@ p, ul, ol, dl {
 
 p {
   margin: 0;
-  text-indent: 1em; }
+  text-indent: 14pt; }
 
 p:first-of-type {
   text-indent: 0; }
@@ -375,7 +391,7 @@ a {
 
 /* Lists */
 ul, ol {
-  margin: 0 0 0.5em 0; }
+  margin: 0 0 14pt 0; }
 
 ol ol {
   list-style-type: lower-alpha; }
@@ -388,7 +404,7 @@ li > ul {
   /* manages line space after sublists in lists */ }
 
 li {
-  margin-left: 1.33em; }
+  margin-left: 14pt; }
 
 li:first-of-type {
   page-break-after: avoid; }
@@ -401,9 +417,8 @@ li li:first-of-type {
 
 /* Blockquotes */
 blockquote {
-  margin: 1em 0 0 0;
-  padding: 0 1em;
-  max-width: 35em; }
+  margin: 14pt 0 0 0;
+  padding: 0 14pt; }
 
 blockquote p {
   margin: 0;
@@ -413,27 +428,29 @@ blockquote p:first-of-type {
   text-indent: 0; }
 
 blockquote p:last-of-type, blockquote ol, blockquote ul {
-  margin: 0 0 1em 0; }
+  margin: 0 0 14pt 0; }
 
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
  */
 dl {
-  margin: 2em 0; }
+  margin: 28pt 0; }
 
 dt {
-  letter-spacing: 0.025em;
   page-break-after: avoid; }
 
 dd {
-  margin: 0 0 1em 1em; }
+  margin: 0 0 14pt 14pt; }
+
+sup, sub {
+  line-height: 0; }
 
 /*
  * Verse, poetry, lyrics
  */
 .verse {
   text-indent: 0;
-  margin: 1em 0;
+  margin: 14pt 0;
   hyphens: none; }
 
 .verse + p {
@@ -443,104 +460,102 @@ dd {
 ul.verse {
   list-style-type: none;
   padding: 0;
-  margin: 1em 0; }
+  margin: 14pt 0; }
 
 ul.verse li {
-  text-indent: -2em;
-  margin-left: 2em; }
+  text-indent: -28pt;
+  margin-left: 28pt; }
 
-/* Indents for lines of verse. In markdown, add {:.indent-x} to the start of the list item text, e.g. -	{:.indent-3}My line of poetry indented 3em */
 ul.verse li.indent-1 {
-  margin-left: 3em; }
+  margin-left: 29pt; }
 
 ul.verse li.indent-2 {
-  margin-left: 4em; }
+  margin-left: 30pt; }
 
 ul.verse li.indent-3 {
-  margin-left: 5em; }
+  margin-left: 31pt; }
 
 ul.verse li.indent-4 {
-  margin-left: 6em; }
+  margin-left: 32pt; }
 
 ul.verse li.indent-5 {
-  margin-left: 7em; }
+  margin-left: 33pt; }
 
 ul.verse li.indent-6 {
-  margin-left: 8em; }
+  margin-left: 34pt; }
 
 ul.verse li.indent-7 {
-  margin-left: 9em; }
+  margin-left: 35pt; }
 
 ul.verse li.indent-8 {
-  margin-left: 10em; }
+  margin-left: 36pt; }
 
 ul.verse li.indent-9 {
-  margin-left: 11em; }
+  margin-left: 37pt; }
 
 ul.verse li.indent-10 {
-  margin-left: 12em; }
+  margin-left: 38pt; }
 
 ul.verse li.indent-11 {
-  margin-left: 13em; }
+  margin-left: 39pt; }
 
 ul.verse li.indent-12 {
-  margin-left: 14em; }
+  margin-left: 40pt; }
 
 ul.verse li.indent-13 {
-  margin-left: 15em; }
+  margin-left: 41pt; }
 
 ul.verse li.indent-14 {
-  margin-left: 16em; }
+  margin-left: 42pt; }
 
 ul.verse li.indent-15 {
-  margin-left: 17em; }
+  margin-left: 43pt; }
 
 ul.verse li.indent-16 {
-  margin-left: 18em; }
+  margin-left: 44pt; }
 
 ul.verse li.indent-17 {
-  margin-left: 19em; }
+  margin-left: 45pt; }
 
 ul.verse li.indent-18 {
-  margin-left: 20em; }
+  margin-left: 46pt; }
 
 ul.verse li.indent-19 {
-  margin-left: 21em; }
+  margin-left: 47pt; }
 
 ul.verse li.indent-20 {
-  margin-left: 22em; }
+  margin-left: 48pt; }
 
 ul.verse li.indent-21 {
-  margin-left: 23em; }
+  margin-left: 49pt; }
 
 ul.verse li.indent-22 {
-  margin-left: 24em; }
+  margin-left: 50pt; }
 
 ul.verse li.indent-23 {
-  margin-left: 25em; }
+  margin-left: 51pt; }
 
 ul.verse li.indent-24 {
-  margin-left: 26em; }
+  margin-left: 52pt; }
 
 ul.verse li.indent-25 {
-  margin-left: 27em; }
+  margin-left: 53pt; }
 
 ul.verse li.indent-26 {
-  margin-left: 28em; }
+  margin-left: 54pt; }
 
 ul.verse li.indent-27 {
-  margin-left: 29em; }
+  margin-left: 55pt; }
 
 ul.verse li.indent-28 {
-  margin-left: 30em; }
+  margin-left: 56pt; }
 
 ul.verse li.indent-29 {
-  margin-left: 31em; }
+  margin-left: 57pt; }
 
 ul.verse li.indent-30 {
-  margin-left: 32em; }
+  margin-left: 58pt; }
 
-/* Verse in a blockquote centres on its longest line, which is best-practice poetry layout */
 blockquote.verse {
   text-align: center;
   color: inherit;
@@ -554,51 +569,33 @@ blockquote.verse h3,
 blockquote.verse h4,
 blockquote.verse h5,
 blockquote.verse h6 {
-  margin-bottom: 1em; }
+  margin-bottom: 14pt; }
 
 blockquote.verse ul {
-  margin-bottom: 0;
-  /* Already gets its space after from ul.verse */ }
+  margin-bottom: 0; }
 
 blockquote.verse ul.verse {
   text-align: left;
   display: inline-block;
   min-width: 51%; }
 
-/* If verse is in a list, we can preserve line breaks and white space */
 ul.verse li {
   white-space: pre-wrap; }
 
-ul.verse li h1 {
-  margin: -0.5em 0 -0.25em 0; }
-
-/* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h2 {
-  margin: -0.5em 0 -0.25em 0; }
-
-/* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h3 {
-  margin: -1em 0 -0.5em 0; }
-
-/* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h4 {
-  margin: -1em 0 -0.5em 0; }
-
-/* Overrides extra line-breaks caused by li pre-wrap */
-ul.verse li h5 {
-  margin: -1em 0 -0.5em 0; }
-
-/* Overrides extra line-breaks caused by li pre-wrap */
+ul.verse li h1,
+ul.verse li h2,
+ul.verse li h3,
+ul.verse li h4,
+ul.verse li h5,
 ul.verse li h6 {
-  margin: -1em 0 -0.5em 0; }
+  margin: 0; }
 
-/* Overrides extra line-breaks caused by li pre-wrap */
 /*
  * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers
  */
 .bibliography {
   text-indent: 0;
-  margin: 1em 0; }
+  margin: 14pt 0; }
 
 .bibliography + p {
   text-indent: 0;
@@ -607,11 +604,11 @@ ul.verse li h6 {
 ul.bibliography {
   list-style-type: none;
   padding: 0;
-  margin: 1em 0; }
+  margin: 14pt 0; }
 
 ul.bibliography li {
-  text-indent: -2em;
-  margin-left: 2em; }
+  text-indent: -28pt;
+  margin-left: 28pt; }
 
 /* 
  * Epigraphs 
@@ -619,12 +616,12 @@ ul.bibliography li {
 p.epigraph {
   font-style: italic;
   text-indent: 0;
-  padding: 0 4em;
+  padding: 0 56pt;
   max-width: 20em; }
 
 p.epigraph-source {
   text-indent: 0;
-  padding: 0 4em;
+  padding: 0 56pt;
   max-width: 20em;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
@@ -637,7 +634,7 @@ p.epigraph-source:before {
 .epigraph-source + p, .dedication + p {
   /* Paragraphs after epigraphs and dedications should be flush left after space. */
   text-indent: 0;
-  margin-top: 1em; }
+  margin-top: 14pt; }
 
 /* 
  * Dedications
@@ -650,7 +647,6 @@ p.dedication {
   font-style: inherit;
   letter-spacing: 0.025em; }
 
-/* Definition lists used in a simple glossary */
 .glossary dl, dl.glossary {
   color: inherit; }
 
@@ -661,27 +657,13 @@ p.dedication {
 .glossary dt:after {
   content: ":\00a0"; }
 
-/*
- * Shouts, useful for blockquotes and definition lists 
- */
-.shout {
-  font-size: 1.5em;
-  font-style: italic;
-  max-width: 20em; }
-
-*.shout, .shout * {
-  line-height: 115%; }
-
-/*
- * Pull quotes, useful for blockquotes and definition lists 
- */
 .pullquote {
   text-indent: 0;
-  font-size: 1.5em;
+  font-size: 22pt;
   font-style: italic;
   text-align: center;
-  margin: 0.5em 0;
-  line-height: 115%; }
+  margin: 14pt 0;
+  line-height: 28pt; }
 
 .pullquote + p {
   text-indent: 0; }
@@ -697,16 +679,19 @@ p.dedication {
   font-weight: inherit;
   font-size: inherit;
   border: 0.5pt solid #ccc;
-  margin: 1em 0;
-  padding: 1em 1em 0 1em;
-  max-width: 38em; }
+  margin: 14pt 0;
+  padding: 14pt 14pt 0 14pt; }
 
 p.box {
-  padding-bottom: 1em;
+  padding-bottom: 14pt;
   text-indent: 0; }
 
 .box + p {
   text-indent: 0; }
+
+.box.float-top + p,
+.box.float-bottom + p {
+  text-indent: 14pt; }
 
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
   margin-top: 0; }
@@ -728,7 +713,8 @@ p.box {
  */
 pre, code {
   font-family: "Inconsolata", monospace;
-  font-size: 0.9em;
+  font-size: 90%;
+  line-height: 14pt;
   white-space: pre-wrap;
   background-color: #f9f9f9;
   padding: 0.1em 0.3em;
@@ -745,8 +731,8 @@ pre + p {
  */
 table {
   border-collapse: collapse;
-  margin: 1em 0;
-  font-size: 80%;
+  margin: 14pt 0;
+  font-size: 8.8pt;
   font-variant: prince-opentype(tnum); }
 
 th, td {
@@ -754,7 +740,7 @@ th, td {
   border-bottom: 0.5pt solid #ccc;
   border-left: 0.5pt dotted #f2f2f2;
   border-right: 0.5pt dotted #f2f2f2;
-  padding: 0.15em 0.3em; }
+  padding: 1.4pt 2.8pt; }
 
 thead, th {
   font-weight: bold; }
@@ -763,7 +749,7 @@ thead, th {
   page-break-after: avoid;
   font-style: italic;
   text-indent: 0;
-  margin: 1.5em 0 1em 0; }
+  margin: 28pt 0 14pt 0; }
 
 .table-caption em {
   font-style: normal; }
@@ -792,9 +778,6 @@ td p {
  * Use the .figure class for the blockquote wrapping an image and a caption. 
  * Add .fixed, .small and/or .large for layout and size options. 
  */
-img {
-  prince-image-resolution: 200dpi; }
-
 blockquote.figure {
   clear: both;
   float: top unless-fit;
@@ -803,7 +786,7 @@ blockquote.figure {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  margin: 1em 0 1em 0;
+  margin: 14pt 0 14pt 0;
   padding: 0.5em;
   width: 100%;
   box-sizing: border-box; }
@@ -827,11 +810,11 @@ ol li blockquote.figure, ul li blockquote.figure {
   width: auto;
   max-height: 150mm;
   max-width: 100%;
-  margin: 0 auto 0.5em auto; }
+  margin: 0 auto 7pt auto; }
 
 .figure p:nth-child(2) {
   /* This is the caption */
-  padding: 0.5em 0 0 0;
+  padding: 7pt 0 0 0;
   text-align: center;
   text-indent: 0;
   font-style: italic; }
@@ -861,16 +844,13 @@ ol li blockquote.figure, ul li blockquote.figure {
   max-width: 100%;
   width: auto; }
 
-.logo {
-  max-width: 10em; }
+.footnote {
+  line-height: inherit; }
 
-/*
- * Footnotes
- */
 .footnotes {
-  margin: 2em 0 0 0;
-  font-size: 0.9em;
-  line-height: 130%; }
+  margin: 28pt 0 0 0;
+  font-size: 9.9pt;
+  line-height: 12.6pt; }
 
 .footnotes p {
   text-indent: 0; }
@@ -884,18 +864,18 @@ ol li blockquote.figure, ul li blockquote.figure {
   float: right;
   max-width: 10em;
   min-width: 5em;
-  margin: 0.5em 0 0.5em 2em;
-  padding: 0.5em;
+  margin: 7pt 0 7pt 28pt;
+  padding: 7pt;
   border-top: 0.5pt solid #eeeeee;
   text-indent: 0;
-  font-size: 0.8em;
+  font-size: 8.8pt;
   font-style: inherit;
-  line-height: 130%; }
+  line-height: 11.2pt; }
 
 .bottom {
   float: bottom;
   max-width: 100%;
-  margin: 1em 0 0 0; }
+  margin: 14pt 0 0 0; }
 
 /*
  * Halftitle-page and title-page
@@ -915,26 +895,27 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 .title-page p {
   text-indent: 0;
-  line-height: 110%;
-  hyphens: none;
-  max-width: 80%; }
+  hyphens: none; }
 
 .title-page-title {
-  font-size: 2em;
-  margin: 20% 0 0 0;
-  font-variant: prince-opentype(dlig, c2sc, smcp);
+  font-size: 33pt;
+  line-height: 42pt;
+  font-variant: prince-opentype(dlig);
+  margin: 84pt 0 14pt 0;
   string-set: book-title content; }
 
 .title-page-subtitle {
-  font-size: 1.5em;
+  font-size: 22pt;
+  line-height: 28pt;
   font-style: italic;
-  margin: 1em 0 1em 0;
+  margin: 14pt 0 14pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-subtitle content; }
 
 .title-page-author {
-  font-size: 1.5em;
-  margin: 0 0 2em 0;
+  font-size: 22pt;
+  line-height: 28pt;
+  margin: 14pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-author content; }
 
@@ -951,17 +932,18 @@ ol li blockquote.figure, ul li blockquote.figure {
   bottom: 0; }
 
 .copyright-page h1 {
-  font-size: 1em;
-  margin-bottom: 0.3em;
+  font-size: 8.8pt;
+  line-height: 11.2pt;
+  margin: 14pt 0;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
   text-align: left; }
 
 .copyright-page p, .copyright-page li {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 11.2pt 0;
   text-indent: 0;
-  font-size: 0.8em;
-  line-height: 120%;
+  font-size: 8.8pt;
+  line-height: 11.2pt;
   hyphens: none;
   /* Prince will not hyphenate here */ }
 
@@ -978,20 +960,20 @@ ol li blockquote.figure, ul li blockquote.figure {
   .contents-page ul, .contents-page ol {
     list-style-type: none; }
   .contents-page li {
-    margin: 0 0 0.5em 0; }
+    margin: 0 0 7pt 0; }
   .contents-page li li {
     margin: 0; }
   .contents-page h2 {
-    font-size: 1.2em;
-    margin: 1em 0 0.5em 0; }
+    font-size: 13.2pt;
+    margin: 14pt 0 7pt 0; }
 
 /* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
 ul#markdown-toc, ol#markdown-toc {
   list-style-type: none;
   border-top: 0.5pt solid #f9f9f9;
   border-bottom: 0.5pt solid #f9f9f9;
-  padding: 1em 0;
-  margin: 2em 0; }
+  padding: 14pt 0;
+  margin: 28pt 0; }
 
 #markdown-toc ul, #markdown-toc ol {
   list-style-type: none;
@@ -1000,7 +982,7 @@ ul#markdown-toc, ol#markdown-toc {
   font-variant: prince-opentype(lnum);
   margin: 0; }
 #markdown-toc li li {
-  margin-left: 1em; }
+  margin-left: 14pt; }
 #markdown-toc a {
   text-decoration: none; }
 #markdown-toc a::after {
@@ -1045,7 +1027,7 @@ img.cover {
 
 p.valediction {
   text-indent: 0;
-  margin: 1em 0;
+  margin: 14pt 0;
   font-style: italic;
   text-align: right;
   page-break-before: avoid; }
@@ -1066,26 +1048,27 @@ p.source {
 p.first {
   /* A paragraph that starts a new set of paragraphs, with a gap above it. */
   text-indent: 0;
-  margin-top: 1em;
+  margin-top: 14pt;
   /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */ }
 
 p.chapter-number {
   font-weight: bold;
-  font-size: 3.5em;
-  margin: 0 0 0.66em 0; }
+  font-size: 44pt;
+  line-height: 56pt;
+  margin: 0 0 14pt 0; }
 
 .reference-index {
   columns: 2;
-  font-size: 0.8em; }
+  font-size: 8.8pt; }
 
 .reference-index li {
   list-style-type: none;
-  margin: 0 0 0 2em;
-  text-indent: -2em;
+  margin: 0 0 0 28pt;
+  text-indent: -28pt;
   column-break-inside: avoid; }
 
 .reference-index li li {
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 14pt; }
 
 .reference-index a {
   content: target-counter(attr(href), page); }

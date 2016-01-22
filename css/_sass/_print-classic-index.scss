@@ -1,16 +1,16 @@
 // Index
 .reference-index {
 	columns: 2;
-	font-size: 0.8em;
+	font-size: $font-size-default * 0.8;
 }
 .reference-index li {
 	list-style-type: none;
-	margin: 0 0 0 2em;
-	text-indent: -2em;
+	margin: 0 0 0 ($line-height-default * 2);
+	text-indent: $line-height-default * (-2);
 	column-break-inside: avoid;
 }
 .reference-index li li {
-	margin: 0 0 0 1em;
+	margin: 0 0 0 $line-height-default;
 }
 .reference-index a {
 	content: target-counter(attr(href), page);

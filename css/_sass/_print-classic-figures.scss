@@ -4,10 +4,6 @@
  * Add .fixed, .small and/or .large for layout and size options. 
  */
 
-img {
-	prince-image-resolution: 200dpi;
-}
-
 blockquote.figure {
 	clear: both;
 	float: top unless-fit;
@@ -16,7 +12,7 @@ blockquote.figure {
 	font-size: inherit;
 	font-weight: inherit;
 	color: inherit;
-	margin: 1em 0 1em 0;
+	margin: $line-height-default 0 $line-height-default 0;
 	padding: 0.5em;
 	width: 100%;
 	box-sizing: border-box;
@@ -38,10 +34,10 @@ ol li blockquote.figure, ul li blockquote.figure {
 	width: auto;
 	max-height: 150mm;
 	max-width: 100%;
-	margin: 0 auto 0.5em auto;
+	margin: 0 auto ($line-height-default / 2) auto;
 }
 .figure p:nth-child(2) { /* This is the caption */
-	padding: 0.5em 0 0 0;
+	padding: ($line-height-default / 2) 0 0 0;
 	text-align: center;
 	text-indent: 0;
 	font-style: italic;
@@ -69,7 +65,4 @@ ol li blockquote.figure, ul li blockquote.figure {
 	max-height: 150mm;
 	max-width: 100%;
 	width: auto;
-}
-.logo {
-	max-width: 10em;
 }

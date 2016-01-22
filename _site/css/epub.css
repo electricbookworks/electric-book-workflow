@@ -463,16 +463,6 @@ p.first {
   margin: 0 0 0 25%; }
 
 /*
- * Shouts, useful for blockquotes and definition lists 
- */
-.shout {
-  font-size: 1.5em;
-  font-style: italic; }
-
-.shout * {
-  line-height: 115%; }
-
-/*
  * Tables 
  */
 table {

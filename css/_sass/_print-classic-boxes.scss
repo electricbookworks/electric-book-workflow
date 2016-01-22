@@ -9,16 +9,21 @@
 	font-weight: inherit;
 	font-size: inherit;
 	border: 0.5pt solid #ccc;
-	margin: 1em 0;
-	padding: 1em 1em 0 1em;
-	max-width: 38em;
+	margin: $line-height-default 0;
+	padding: $line-height-default $line-height-default 0 $line-height-default;
 }
 p.box {
-	padding-bottom: 1em;
+	padding-bottom: $line-height-default;
 	text-indent: 0;
 }
 .box + p {
 	text-indent: 0;
+}
+// But paragraphs after a box floated out of the flow must still be indented
+.box.float-top + p,
+.box.float-bottom + p
+{
+	text-indent: $line-height-default;
 }
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
 	margin-top: 0;

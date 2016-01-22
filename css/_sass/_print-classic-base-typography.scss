@@ -17,36 +17,52 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	page-break-after: avoid;
 	page-break-inside: avoid;
-	line-height: 110%;
 	font-variant: prince-opentype(dlig);
+	padding: 0;
 }
 h1 {
-	font-size: 2.5em;
+	font-size: $font-size-default * 3;
+	line-height: $line-height-default * 3;
+	margin: 0 0 ($line-height-default * 3) 0;
 }
 h1 strong:first-of-type { /* Useful for chapter numbers: make the number first and bold in the h1 */
 	display: block;
-	margin: 0 0 0.5em 0;
+	margin: 0 0 $line-height-default 0;
 }
 h2 {
-	margin: 1em 0 0.5em 0;
-	padding-top: 0.5em;
+	font-size: $font-size-default * 2;
+	line-height: $line-height-default * 2;
+	margin: ($line-height-default * 4) 0 $line-height-default 0;
 }
 h3 {
-	font-size: 1.1em;
-	margin-bottom: 0.5em;
+	font-size: $line-height-default - 1;
+	line-height: $line-height-default;
+	margin: ($line-height-default * 2) 0 $line-height-default 0;
 }
 h4 {
-	font-size: 1em;
-	margin-bottom: 0.5em;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	margin: ($line-height-default * 2) 0 0 0;
 	font-style: italic;
 }
-
+h5 {
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	margin: $line-height-default 0 0 0;
+}
+h6 {
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	margin: 0 $line-height-default 0 0;
+	display: inline;
+	font-style: italic;
+}
 p, ul, ol, dl {
 	font-variant: prince-opentype(onum);
 }
 p {
 	margin: 0;
-	text-indent: 1em;
+	text-indent: $line-height-default;
 }
 p:first-of-type {
 	text-indent: 0;
@@ -62,7 +78,7 @@ a {
 /* Lists */
 
 ul, ol {
-	margin: 0 0 0.5em 0;
+	margin: 0 0 $line-height-default 0;
 }
 ol ol {
 	list-style-type: lower-alpha;
@@ -74,7 +90,7 @@ li > ul {
 	margin-bottom: 0; /* manages line space after sublists in lists */
 }
 li {
-	margin-left: 1.33em;
+	margin-left: $line-height-default;
 }
 li:first-of-type {
 	page-break-after: avoid;
@@ -89,9 +105,8 @@ li li:first-of-type {
 /* Blockquotes */
 
 blockquote {
-	margin: 1em 0 0 0;
-	padding: 0 1em;
-	max-width: 35em;
+	margin: $line-height-default 0 0 0;
+	padding: 0 $line-height-default;
 }
 blockquote p {
 	margin: 0;
@@ -101,7 +116,7 @@ blockquote p:first-of-type {
 	text-indent: 0;
 }
 blockquote p:last-of-type, blockquote ol, blockquote ul {
-	margin: 0 0 1em 0;
+	margin: 0 0 $line-height-default 0;
 }
 
 /* 
@@ -109,12 +124,18 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
  */
 
 dl {
-	margin: 2em 0;
+	margin: ($line-height-default * 2) 0;
 }
 dt {
-	letter-spacing: 0.025em;
 	page-break-after: avoid;
 }
 dd {
-	margin: 0 0 1em 1em;
+	margin: 0 0 $line-height-default $line-height-default;
+}
+
+// Super and subscripts
+// This is mainly to prevent them from increasing line height in print output
+
+sup, sub {
+	line-height: 0;
 }

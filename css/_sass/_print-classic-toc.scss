@@ -14,14 +14,14 @@
 		list-style-type: none;
 	}
 	li {
-		margin: 0 0 0.5em 0;
+		margin: 0 0 ($line-height-default / 2) 0;
 	}
 	li li {
 		margin: 0;
 	}
 	h2 {
-		font-size: 1.2em;
-		margin: 1em 0 0.5em 0;
+		font-size: $font-size-default * 1.2;
+		margin: $line-height-default 0 ($line-height-default / 2) 0;
 	}
 }
 
@@ -31,8 +31,8 @@ ul#markdown-toc, ol#markdown-toc {
 	list-style-type: none;
 	border-top: 0.5pt solid #f9f9f9;
 	border-bottom: 0.5pt solid #f9f9f9;
-	padding: 1em 0;
-	margin: 2em 0;
+	padding: $line-height-default 0;
+	margin: ($line-height-default * 2) 0;
 }
 #markdown-toc {
 	ul, ol {
@@ -44,7 +44,7 @@ ul#markdown-toc, ol#markdown-toc {
 		margin: 0;
 	}
 	li li {
-		margin-left: 1em;
+		margin-left: $line-height-default;
 	}
 	a {
 		text-decoration: none;

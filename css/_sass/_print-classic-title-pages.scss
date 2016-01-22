@@ -15,26 +15,27 @@
 }
 .title-page p {
 	text-indent: 0;
-	line-height: 110%;
 	hyphens: none;
-	max-width: 80%;
 }
 .title-page-title {
-	font-size: 2em;
-	margin: 20% 0 0 0;
-	font-variant: prince-opentype(dlig, c2sc, smcp);
+	font-size: $font-size-default * 3;
+	line-height: $line-height-default * 3;
+	font-variant: prince-opentype(dlig);
+	margin: ($line-height-default * 6) 0 $line-height-default 0;
 	string-set: book-title content ();
 }
 .title-page-subtitle {
-	font-size: 1.5em;
+	font-size: $font-size-default * 2;
+	line-height: $line-height-default * 2;
 	font-style: italic;
-	margin: 1em 0 1em 0;
+	margin: $line-height-default 0 $line-height-default 0;
 	font-variant: prince-opentype(dlig);
 	string-set: book-subtitle content ();
 }
 .title-page-author {
-	font-size: 1.5em;
-	margin: 0 0 2em 0;
+	font-size: $font-size-default * 2;
+	line-height: $line-height-default * 2;
+	margin: $line-height-default 0;
 	font-variant: prince-opentype(dlig);
 	string-set: book-author content ();
 }
