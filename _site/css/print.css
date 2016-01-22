@@ -84,6 +84,31 @@
 @font-face {
   font-family: "Inconsolata", monospace;
   src: url(fonts/Inconsolata-Regular.ttf); }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Roman.otf); }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Italic.otf);
+  font-style: italic; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Bold.otf);
+  font-weight: bold; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-BoldItalic.otf);
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Semibold.otf);
+  font-weight: 600; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-SemiboldItalic.otf);
+  font-weight: 600;
+  font-style: italic; }
 /* Set the initial default view when this PDF is opened. See http://www.princexml.com/forum/topic/2650/prince-pdf */
 @prince-pdf {
   prince-pdf-open-action: none;
