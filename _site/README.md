@@ -61,6 +61,7 @@ Some are also based on markdown, like ours. For example:
 
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
+*   [LeanPub](https://leanpub.com/) (which uses [Markua](http://markua.com/))
 *	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader).
 
 [PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service.
@@ -258,9 +259,11 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 
 Encoding poetry can be tricky. Usually, poetry in HTML is structured by tagging each stanza as a paragraph, with line breaks after each line. You can do this by adding markdown line breaks (with double spaces or `\\` at the end of each line) and tagging the paragraph with `{:.verse}`. However, this structure meaks it impossible to have browsers, ereaders and PDF engines correctly indent runover lines (because there is no [`nth-line` selector](https://css-tricks.com/a-call-for-nth-everything/) in CSS, unless you resort to [a Javascript method](https://github.com/davatron5000/Lettering.js#letters-words-lines-and-more) that will bloat your code and won't run on many ereaders).
 
-We prefer another approach: each stanza is an unordered list (`ul`) and each line is a list item (`li`). We just hide any list markers (bullets) with `list-style-type: none'. This way, we can control indents on runover lines. among other things. This is a non-semantic use of HTML, since a poem is technically not a list. But it's a healthy hack with universal browser and ereader support.
+> Tech note: Some text and code editors (e.g. Atom) strip out spaces at the ends of lines automatically. So use \\ for line breaks, not double-spaces.
 
-Our convention is to mark each line of a stanza with a hyphen `-`, and tag the stanza with `{:.verse}`:
+We prefer another approach: the poem is an unordered list (`ul`) and each line (including each blank line between stanzas) is a list item (`li`). We just hide any list markers (bullets) with `list-style-type: none`. This way, we can control indents on runover lines. This is a non-semantic use of HTML, since a poem is technically not a list. But it's a healthy hack with universal browser and ereader support.
+
+Our convention is to mark each line of a stanza with a hyphen `-`, and tag the list with `{:.verse}`:
 
 ```
 -	I wandered lonely as a cloud
@@ -271,8 +274,6 @@ Our convention is to mark each line of a stanza with a hyphen `-`, and tag the s
 -	Fluttering and dancing in the breeze.
 {:.verse}
 ```
-
-This means we don't have to create a line break with double-spaces or `\\` at the end of each line, since a list item (i.e. line of poetry here) has its own line break already.
 
 We can also indent individual lines, where the poet wanted indents, by tagging individual list items.
 
@@ -290,13 +291,12 @@ The `2` in `{:.indent-2}` refers to the number of em spaces to indent by. Our CS
 
 #### Advanced poetry typography
 
-But wait, there's more! Best practice for poetry layout is that a poem should be centered on its longest line. That is *not* centering the lines of poetry, but placing the left-justified poem in the horizontal middle of the page. Put another way, the poem should be indented till its longest line is centered on the page (or screen).
+But wait, there's more! Best practice for poetry layout is that – in print – a poem should be centered on its longest line. That is *not* centering the lines of poetry, but placing the left-justified poem in the horizontal middle of the page. Put another way, the poem should be indented till its longest line is centered on the page.
 
-To achieve this, put the entire poem, including its title, in a blockquote, by adding `> ` to the start of each line. Tag the whole blockquote as {:.verse}, too:
+To achieve this, put the entire poem, including its title, in a blockquote, by adding `> ` to the start of each line. Tag the whole blockquote as {:.verse}, too. Finally, decide how wide you want the poem to be in multiple of 10 per cent. That is, if you reckon this poem's longest line reaches across 90 per cent of the page, use `.width-90`.
 
 ```
 > -	### To One Who Has Been Long in City Pent
->
 > -	To one who has been long in city pent,
 > -	{:.indent-2}'Tis very sweet to look into the fair
 > -	{:.indent-2}And open face of heaven,—to breathe a prayer
@@ -305,6 +305,7 @@ To achieve this, put the entire poem, including its title, in a blockquote, by a
 > -	{:.indent-2}Fatigued he sinks into some pleasant lair
 > -	{:.indent-2}Of wavy grass, and reads a debonair
 > -	And gentle tale of love and languishment?
+> -    
 > -	Returning home at evening, with an ear
 > -	{:.indent-2}Catching the notes of Philomel,—an eye
 > -	Watching the sailing cloudlet's bright career,
@@ -312,10 +313,10 @@ To achieve this, put the entire poem, including its title, in a blockquote, by a
 > -	E'en like the passage of an angel's tear
 > -	{:.indent-2}That falls through the clear ether silently.
 > {:.verse}
-{:.verse}
+{:.verse .width-90}
 ```
 
-In verse structured as a list lke this, our CSS preserves white space. That is, if you type, say, three spaces you get three spaces. Normally, HTML collapses multiple spaces into one – which is great *except* when you want to deliberately use extra spaces, as some poets do. However, this doesn't work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like `&emsp;`) or our indent tags explained above.
+In verse structured as a list like this, our CSS preserves white space. That is, if you type, say, three spaces you get three spaces. Normally, HTML collapses multiple spaces into one – which is great *except* when you want to deliberately use extra spaces, as some poets do. However, this doesn't work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like `&emsp;`) or our indent tags explained above.
 
 **However**, the `whitespace: pre-wrap` CSS we use for this is not currently supported on Kindle. If that's important, it's best to stick to using HTML space entities like `&emsp;`.
 

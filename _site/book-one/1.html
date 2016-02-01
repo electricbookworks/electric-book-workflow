@@ -33,9 +33,20 @@
     </ul>
   </li>
   <li><a href="#poetry" id="markdown-toc-poetry">Poetry</a>    <ul>
-      <li><a href="#good" id="markdown-toc-good">Good</a></li>
-      <li><a href="#better" id="markdown-toc-better">Better</a></li>
-      <li><a href="#best" id="markdown-toc-best">Best</a></li>
+      <li><a href="#good" id="markdown-toc-good">Good</a>        <ul>
+          <li><a href="#when-you-are-old" id="markdown-toc-when-you-are-old">When You Are Old</a></li>
+        </ul>
+      </li>
+      <li><a href="#better" id="markdown-toc-better">Better</a>        <ul>
+          <li><a href="#no-worst-there-is-none-pitched-past-pitch-of-grief" id="markdown-toc-no-worst-there-is-none-pitched-past-pitch-of-grief">‘No worst, there is none. Pitched past pitch of grief.’</a></li>
+          <li><a href="#mishter-cummingsh" id="markdown-toc-mishter-cummingsh">Mishter Cummingsh</a></li>
+        </ul>
+      </li>
+      <li><a href="#best" id="markdown-toc-best">Best</a>        <ul>
+          <li><a href="#to-one-who-has-been-long-in-city-pent" id="markdown-toc-to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</a></li>
+          <li><a href="#gerontion" id="markdown-toc-gerontion">Gerontion</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -220,9 +231,9 @@ the younger men corrupt.</li>
 
 <h3 id="good">Good</h3>
 
-<p>In the markdown, create a line break by adding two spaces at the end of a line. Then add <code>{:.verse}</code> after each stanza. This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
+<p>In the markdown, create a line break by adding two backslashes at the end of a line. Then add <code>{:.verse}</code> after each stanza (including the title, if it’s not a markdown heading). This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
 
-<h4 class="no_toc" id="when-you-are-oldhttpwwwpoetryfoundationorgpoem172055"><a href="http://www.poetryfoundation.org/poem/172055">When You Are Old</a></h4>
+<h4 id="when-you-are-old">When You Are Old</h4>
 
 <p class="verse">When you are old and grey and full of sleep,<br />
 And nodding by the fire, take down this book,<br />
@@ -241,11 +252,14 @@ And hid his face amid a crowd of stars.</p>
 
 <h3 id="better">Better</h3>
 
-<p>In the markdown, put <code>- </code> before each line, to make each stanza a list, where each line is a list item. Add <code>{:.verse}</code> after each stanza. Technically, a poem stanza should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines (among other things).</p>
+<p>In the markdown, put <code>- </code> before each line, to make the poem a list, where each line (including each blank line, with a space or tab after the <code>-</code>) is a list item. Add <code>{:.verse}</code> at the end to tag the entire list as verse. (Technically, a poem should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines among other things.)</p>
 
-<h4 class="no_toc" id="no-worst-there-is-none-pitched-past-pitch-of-griefhttpwwwpoetryfoundationorgpoem173663"><a href="http://www.poetryfoundation.org/poem/173663">‘No worst, there is none. Pitched past pitch of grief.’</a></h4>
+<p>Note that if you tag the poem title as a heading, don’t put in a blank line after it: being a heading gives it its blank line already.</p>
 
 <ul class="verse">
+  <li>
+    <h4 id="no-worst-there-is-none-pitched-past-pitch-of-grief">‘No worst, there is none. Pitched past pitch of grief.’</h4>
+  </li>
   <li>No worst, there is none. Pitched past pitch of grief,</li>
   <li>More pangs will, schooled at forepangs, wilder wring.</li>
   <li>Comforter, where, where is your comforting?</li>
@@ -254,9 +268,7 @@ And hid his face amid a crowd of stars.</p>
   <li>Woe, wórld-sorrow; on an áge-old anvil wince and sing —</li>
   <li>Then lull, then leave off. Fury had shrieked ‘No ling-</li>
   <li>ering! Let me be fell: force I must be brief.”’</li>
-</ul>
-
-<ul class="verse">
+  <li></li>
   <li> O the mind, mind has mountains; cliffs of fall</li>
   <li>Frightful, sheer, no-man-fathomed. Hold them cheap</li>
   <li>May who ne’er hung there. Nor does long our small</li>
@@ -267,9 +279,10 @@ And hid his face amid a crowd of stars.</p>
 
 <p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/eletric-book-workflow#poetry">workflow README</a>.</p>
 
-<h4 class="no_toc" id="mishter-cummingsh">Mishter Cummingsh</h4>
-
 <ul class="verse">
+  <li>
+    <h4 id="mishter-cummingsh">Mishter Cummingsh</h4>
+  </li>
   <li>as a teenage poet, bested by life</li>
   <li>mr cummings was my           friend</li>
   <li class="indent-3">mostly (who broke rules   so   effortlessly</li>
@@ -279,12 +292,12 @@ And hid his face amid a crowd of stars.</p>
 
 <h3 id="best">Best</h3>
 
-<p>Best-practice poetry layout indents a poem till its longest line is centred on the page. To achieve this, we put the entire poem, including the title, in a ‘verse’ blockquote.</p>
+<p>Best-practice poetry layout indents a poem till its longest line is centred on the page. To achieve this, we put the entire poem, including the title, in a ‘verse’ blockquote and specify how wide this poem should be on the page.</p>
 
-<blockquote class="verse">
+<blockquote class="verse width-90">
   <ul class="verse">
     <li>
-      <h4 class="no_toc" id="to-one-who-has-been-long-in-city-penthttpwwwpoetryfoundationorgpoem173751"><a href="http://www.poetryfoundation.org/poem/173751">To One Who Has Been Long in City Pent</a></h4>
+      <h4 id="to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</h4>
     </li>
     <li>To one who has been long in city pent,</li>
     <li class="indent-2">‘Tis very sweet to look into the fair</li>
@@ -294,6 +307,7 @@ And hid his face amid a crowd of stars.</p>
     <li class="indent-2">Fatigued he sinks into some pleasant lair</li>
     <li class="indent-2">Of wavy grass, and reads a debonair</li>
     <li>And gentle tale of love and languishment?</li>
+    <li></li>
     <li>Returning home at evening, with an ear</li>
     <li class="indent-2">Catching the notes of Philomel,—an eye</li>
     <li>Watching the sailing cloudlet’s bright career,</li>
@@ -304,6 +318,102 @@ And hid his face amid a crowd of stars.</p>
 </blockquote>
 
 <p>Our <a href="http://github.com/electricbookworks/electric-book-workflow#poetry">detailed workflow instructions</a> explain more, including how to get the line indents here.</p>
+
+<p>Here’s a long poetry example.</p>
+
+<blockquote class="verse">
+  <ul class="verse">
+    <li>
+      <h4 id="gerontion">Gerontion</h4>
+    </li>
+    <li class="indent-1">Thou hast nor youth nor age</li>
+    <li class="indent-1">But as it were an after dinner sleep</li>
+    <li class="indent-1">Dreaming of both.</li>
+    <li></li>
+    <li>Here I am, an old man in a dry month,</li>
+    <li>Being read to by a boy, waiting for rain.</li>
+    <li>I was neither at the hot gates</li>
+    <li>Nor fought in the warm rain</li>
+    <li>Nor knee deep in the salt marsh, heaving a cutlass,</li>
+    <li>Bitten by flies, fought.</li>
+    <li>My house is a decayed house,</li>
+    <li>And the jew squats on the window sill, the owner,</li>
+    <li>Spawned in some estaminet of Antwerp,</li>
+    <li>Blistered in Brussels, patched and peeled in London.</li>
+    <li>The goat coughs at night in the field overhead;</li>
+    <li>Rocks, moss, stonecrop, iron, merds.</li>
+    <li>The woman keeps the kitchen, makes tea,</li>
+    <li>Sneezes at evening, poking the peevish gutter.</li>
+    <li></li>
+    <li class="indent-8">I an old man,</li>
+    <li>A dull head among windy spaces.</li>
+    <li></li>
+    <li>Signs are taken for wonders. “We would see a sign”:</li>
+    <li>The word within a word, unable to speak a word,</li>
+    <li>Swaddled with darkness. In the juvescence of the year</li>
+    <li>Came Christ the tiger</li>
+    <li></li>
+    <li>In depraved May, dogwood and chestnut, flowering Judas,</li>
+    <li>To be eaten, to be divided, to be drunk</li>
+    <li>Among whispers; by Mr. Silvero</li>
+    <li>With caressing hands, at Limoges</li>
+    <li>Who walked all night in the next room;</li>
+    <li>By Hakagawa, bowing among the Titians;</li>
+    <li>By Madame de Tornquist, in the dark room</li>
+    <li>Shifting the candles; Fraulein von Kulp</li>
+    <li>Who turned in the hall, one hand on the door. Vacant shuttles</li>
+    <li>Weave the wind. I have no ghosts,</li>
+    <li>An old man in a draughty house</li>
+    <li>Under a windy knob.</li>
+    <li></li>
+    <li>After such knowledge, what forgiveness? Think now</li>
+    <li>History has many cunning passages, contrived corridors</li>
+    <li>And issues, deceives with whispering ambitions,</li>
+    <li>Guides us by vanities. Think now</li>
+    <li>She gives when our attention is distracted</li>
+    <li>And what she gives, gives with such supple confusions</li>
+    <li>That the giving famishes the craving. Gives too late</li>
+    <li>What’s not believed in, or if still believed,</li>
+    <li>In memory only, reconsidered passion. Gives too soon</li>
+    <li>Into weak hands, what’s thought can be dispensed with</li>
+    <li>Till the refusal propagates a fear. Think</li>
+    <li>Neither fear nor courage saves us. Unnatural vices</li>
+    <li>Are fathered by our heroism. Virtues</li>
+    <li>Are forced upon us by our impudent crimes.</li>
+    <li>These tears are shaken from the wrath-bearing tree.</li>
+    <li></li>
+    <li>The tiger springs in the new year. Us he devours. Think at last</li>
+    <li>We have not reached conclusion, when I</li>
+    <li>Stiffen in a rented house. Think at last</li>
+    <li>I have not made this show purposelessly</li>
+    <li>And it is not by any concitation</li>
+    <li>Of the backward devils.</li>
+    <li>I would meet you upon this honestly.</li>
+    <li>I that was near your heart was removed therefrom</li>
+    <li>To lose beauty in terror, terror in inquisition.</li>
+    <li>I have lost my passion: why should I need to keep it</li>
+    <li>Since what is kept must be adulterated?</li>
+    <li>I have lost my sight, smell, hearing, taste and touch:</li>
+    <li>How should I use it for your closer contact?</li>
+    <li></li>
+    <li>These with a thousand small deliberations</li>
+    <li>Protract the profit of their chilled delirium,</li>
+    <li>Excite the membrane, when the sense has cooled,</li>
+    <li>With pungent sauces, multiply variety</li>
+    <li>In a wilderness of mirrors. What will the spider do,</li>
+    <li>Suspend its operations, will the weevil</li>
+    <li>Delay? De Bailhache, Fresca, Mrs. Cammel, whirled</li>
+    <li>Beyond the circuit of the shuddering Bear</li>
+    <li>In fractured atoms. Gull against the wind, in the windy straits</li>
+    <li>Of Belle Isle, or running on the Horn,</li>
+    <li>White feathers in the snow, the Gulf claims,</li>
+    <li>And an old man driven by the Trades</li>
+    <li>To a sleepy corner.</li>
+    <li></li>
+    <li class="indent-8">Tenants of the house,</li>
+    <li>Thoughts of a dry brain in a dry season.</li>
+  </ul>
+</blockquote>
 
 <p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 2](2.html){:.button}</code>.</p>
 
