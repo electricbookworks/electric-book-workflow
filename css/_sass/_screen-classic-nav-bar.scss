@@ -6,14 +6,14 @@
 	position: fixed;
 	top: 0;
 	background-color: white;
-	height: 2em;
+	padding: 0 0.5em;
 	width: 100%;
 	opacity: 0.9;
 	border-bottom: 1px solid #f2f2f2;
 	z-index: 1;
 }
 	@media only screen 
-	and (max-height: 320px) { /* Let nav-bar scroll out of view on small screens */
+	and (max-height: 320px) { // Let nav-bar scroll out of view on small screens
 		#nav-bar {
 			position: relative;
 		}
@@ -26,7 +26,7 @@
     text-transform: uppercase;
     letter-spacing: 0.025em;
     float: right;
-    margin: 0.5em 1em 0 0;
+    margin: 0.66em 1em 0.5em 0; // Top margin accounts for smaller font size
 }
 #nav-bar a {
     text-decoration: none;
