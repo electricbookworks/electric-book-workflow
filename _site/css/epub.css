@@ -773,6 +773,9 @@ ul.verse li h6 {
   margin-left: -5em; }
 
 /* Overrides indent applies to .verse li */
+ul.verse li:empty {
+  line-height: 100%; }
+
 ul.verse li:empty:after {
   content: " "; }
 

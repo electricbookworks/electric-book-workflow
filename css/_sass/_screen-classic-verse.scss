@@ -130,6 +130,9 @@ ul.verse li h5 { margin-left: -4.25em; } /* Overrides indent applied to .verse l
 ul.verse li h6 { margin-left: -5em; } /* Overrides indent applied to .verse li */
 
 // If a line is blank it's an empty list item. That will collapse away by default, so we add blank line back in.
+ul.verse li:empty {
+    line-height: 100%; // On screens, this keeps line heights consistent. Don't use this in print where baseline grid is important.
+}
 ul.verse li:empty:after {
 	content: " ";
 }
