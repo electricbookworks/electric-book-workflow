@@ -1,7 +1,3 @@
----
-# Print styles
----
-
 // WHAT IS THIS?
 // This is print typography for the EBW book framework (https://github.com/electricbookworks/book-framework).
 // It is built with Sass. (See http://sass-lang.com, and http://jekyllrb.com/docs/assets for how Jekyll implements Sass.)
@@ -30,59 +26,23 @@
 @import "hide-footer";
 @import "hide-nav-bar";
 
-// -------------
-// Set variables
-// -------------
+// --------------------------------------------
+// Page setup and control, avoid changing these
+// --------------------------------------------
 
-$page-size: 129mm 198mm; // Width, then height. 129×198 is B-format (Lightning Source compatible)
-$margin-top: 15mm;
-$margin-bottom: 20mm;
-$margin-outside: 13mm;
-$margin-inside: 19mm;
-$bleed: 3mm;
-$trim: 3mm;
-$crop-marks: crop; // crop | none
-
-$font-text-main: "Linux Libertine", serif;
-$font-text-secondary: "Source Sans Pro", sans-serif;
-$font-display-main: "Source Sans Pro", sans-serif;
-$font-display-secondary: "Linux Libertine", serif;
-$font-code: "Inconsolata", monospace;
-
-$font-size-default: 11pt;
-$line-height-default: 14pt; // Set this in points and make it the base of all other line heights and vertical margins to preserve a baseline grid
-$text-align: left;
-$orphans: 1; // minimum number of lines that must be left at the bottom of the first page
-$widows: 2; // minimum number of lines that must be left at the top of the second page
-$hyphenation: auto; // Can be auto, none, or manual (i.e. only breaks on hyphens and soft hyphens)
-$hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Better to set in child CSS than parent.
-
-// ----------------------------------------------------
-// Import font files (@font-face) for fonts you specify
-// ----------------------------------------------------
-
-@import "font-linux-libertine";
-@import "font-source-sans-pro";
-@import "font-inconsolata";
-@import "font-crimson";
-
-// ----------------------------------------------------
-// Default page setup and control, avoid changing these
-// ----------------------------------------------------
-
-@import "print-default-pdf-view"; // Sets the default initial view on PDFs
-@import "print-default-page-setup"; // Sets up the page from your variables
-@import "print-default-page-break-tools"; // Provides classes for semantic page breaks
-@import "print-default-hide-non-printing"; // Hides anything .non-printing
-@import "print-default-hide-video"; // Hides video from print output
-@import "print-default-fitting"; // Classes for floating, tracking, shrinking, etc.
-@import "print-default-hyphenation"; // Sets hyphenation dictionary
+@import "print-classic-pdf-view"; // Sets the default initial view on PDFs
+@import "print-classic-page-setup"; // Sets up the page from your variables
+@import "print-classic-page-break-tools"; // Provides classes for semantic page breaks
+@import "print-classic-hide-non-printing"; // Hides anything .non-printing
+@import "print-classic-hide-video"; // Hides video from print output
+@import "print-classic-fitting"; // Classes for floating, tracking, shrinking, etc.
+@import "print-classic-hyphenation"; // Sets hyphenation dictionary
 
 // ---------------------
 // Classic-theme modules
 // ---------------------
 
-@import "print-start-on-recto"; // Starts chapters on a right-hand-page
+@import "print-classic-start-on-recto"; // Starts chapters on a right-hand-page
 @import "print-classic-runners"; // Running footers
 @import "print-classic-page-start-depth"; // Sets a top margin on opening pages
 @import "print-classic-base-typography"; // Default typography for HTML elements

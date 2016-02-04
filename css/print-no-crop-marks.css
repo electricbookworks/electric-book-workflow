@@ -2,5 +2,5 @@
 
 /* Remove crop marks */
 @page { 
-	marks: none;
+	marks: none !important;
 }

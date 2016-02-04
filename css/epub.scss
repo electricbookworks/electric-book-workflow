@@ -44,43 +44,14 @@ $line-height-default: 150%;
 // @import "font-inconsolata";
 // @import "font-crimson";
 
-// ---------------------
-// Classic-theme modules
-// ---------------------
+// ------------
+// Import theme
+// ------------
 
-// Structural HTML components
-@import "_epub-classic-wrappers.scss"; // 
+@import "epub-classic";
 
-// Default typography
-@import "_epub-classic-base-typography.scss"; // 
+// -------------
+// Custom styles
+// -------------
 
-// Book parts
-@import "epub-classic-cover"; // 
-@import "epub-classic-title-page"; // 
-@import "epub-classic-copyright-page"; // 
-@import "epub-classic-dedications"; // 
-@import "epub-classic-epigraphs"; // 
-@import "epub-classic-toc"; // 
-
-// Book-feature classes
-@import "epub-classic-bibliographies"; // 
-@import "epub-classic-boxes"; // 
-@import "epub-classic-buttons"; // 
-@import "epub-classic-figures"; // 
-@import "epub-classic-glossary"; //
-@import "epub-classic-index"; // 
-@import "epub-classic-maths"; // 
-@import "epub-classic-notes"; // 
-@import "epub-classic-openers"; // 
-@import "epub-classic-pullquotes"; // 
-@import "epub-classic-quotations"; // 
-@import "epub-classic-tables"; // 
-@import "epub-classic-valedictions"; // 
-@import "epub-classic-verse"; // 
-
-// Type-control classes
-@import "epub-classic-smallcaps"; // 
-@import "epub-default-fitting"; // 
-
-// Logic (if this then that)
-@import "_epub-classic-reset-sequences.scss"; // 
+// Add any custom style rules here.

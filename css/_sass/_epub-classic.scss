@@ -1,0 +1,40 @@
+// ---------------------
+// Classic-theme modules
+// ---------------------
+
+// Structural HTML components
+@import "epub-classic-wrappers.scss"; // 
+
+// Default typography
+@import "epub-classic-base-typography.scss"; // 
+
+// Book parts
+@import "epub-classic-cover"; // 
+@import "epub-classic-title-page"; // 
+@import "epub-classic-copyright-page"; // 
+@import "epub-classic-dedications"; // 
+@import "epub-classic-epigraphs"; // 
+@import "epub-classic-toc"; // 
+
+// Book-feature classes
+@import "epub-classic-bibliographies"; // 
+@import "epub-classic-boxes"; // 
+@import "epub-classic-buttons"; // 
+@import "epub-classic-figures"; // 
+@import "epub-classic-glossary"; //
+@import "epub-classic-index"; // 
+@import "epub-classic-maths"; // 
+@import "epub-classic-notes"; // 
+@import "epub-classic-openers"; // 
+@import "epub-classic-pullquotes"; // 
+@import "epub-classic-quotations"; // 
+@import "epub-classic-tables"; // 
+@import "epub-classic-valedictions"; // 
+@import "epub-classic-verse"; // 
+
+// Type-control classes
+@import "epub-classic-smallcaps"; // 
+@import "epub-classic-fitting"; // 
+
+// Logic (if this then that)
+@import "epub-classic-reset-sequences.scss"; // 

@@ -13,7 +13,7 @@ blockquote.figure {
 	font-weight: inherit;
 	color: inherit;
 	margin: $line-height-default 0 $line-height-default 0;
-	padding: 0.5em;
+	padding: $line-height-default / 2;
 	width: 100%;
 	box-sizing: border-box;
 }

@@ -15,6 +15,6 @@ With some technical expertise, you can use it, too. See [the template in action 
 > A little book in our Classic theme, including typography examples and a guide to markdown.
 {:.figure}
 
-All the books in a series can share the same parent design (created with CSS), but they can also have their own child styles in addition.
+All the books in a series can share the same parent design (created with CSS), but they can also have [their own styles in addition](book-two).
 
 If you're creating one or more books in a series, this index page is a good place to keep information about the books, like basic metadata and marketing copy. It won't be included in the output versions of your books (e.g. the print PDF or epub), but it can be a landing page for a series website.

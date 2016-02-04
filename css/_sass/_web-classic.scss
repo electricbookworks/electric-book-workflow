@@ -1,0 +1,46 @@
+// ---------------------
+// Classic-theme modules
+// ---------------------
+
+// Structural HTML components
+@import "web-classic-wrappers";
+
+// Default typography
+@import "web-classic-base-typography";
+
+// Navigation
+@import "web-classic-nav-bar";
+@import "web-classic-footer";
+
+// Book parts
+@import "web-classic-cover";
+@import "web-classic-title-page";
+@import "web-classic-copyright-page";
+@import "web-classic-dedications";
+@import "web-classic-epigraphs";
+@import "web-classic-toc";
+
+// Book-feature classes
+@import "web-classic-bibliographies";
+@import "web-classic-boxes";
+@import "web-classic-buttons";
+@import "web-classic-code";
+@import "web-classic-definition-lists";
+@import "web-classic-figures";
+@import "web-classic-index";
+@import "web-classic-maths";
+@import "web-classic-notes";
+@import "web-classic-openers";
+@import "web-classic-pullquotes";
+@import "web-classic-quotations";
+@import "web-classic-tables";
+@import "web-classic-valedictions";
+@import "web-classic-verse";
+@import "web-classic-video";
+
+// Type-control classes
+@import "web-classic-smallcaps";
+@import "web-classic-type-fitting";  // E.g. tracking and shrinking
+
+// Logic (if this then that)
+@import "web-classic-reset-sequences"; // This should stay last in the @import list

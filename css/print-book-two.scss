@@ -20,17 +20,17 @@ $bleed: 3mm;
 $trim: 3mm;
 $crop-marks: crop; // crop | none
 
-$font-text-main: "Linux Libertine", serif;
-$font-text-secondary: "Source Sans Pro", sans-serif;
+$font-text-main: "Source Sans Pro", serif;
+$font-text-secondary: "Crimson", sans-serif;
 $font-display-main: "Source Sans Pro", sans-serif;
-$font-display-secondary: "Linux Libertine", serif;
+$font-display-secondary: "Crimson", serif;
 $font-code: "Inconsolata", monospace;
 
 $font-size-default: 11pt;
 $line-height-default: 14pt; // Set this in points and make it the base of all other line heights and vertical margins to preserve a baseline grid
 $text-align: left;
 $orphans: 1; // minimum number of lines that must be left at the bottom of the first page
-$widows: 2; // minimum number of lines that must be left at the top of the second page
+$widows: 1; // minimum number of lines that must be left at the top of the second page
 $hyphenation: auto; // Can be auto, none, or manual (i.e. only breaks on hyphens and soft hyphens)
 $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Better to set in child CSS than parent.
 
@@ -38,10 +38,10 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Bet
 // Import font files (@font-face) for fonts you specify
 // ----------------------------------------------------
 
-@import "font-linux-libertine";
+//@import "font-linux-libertine";
 @import "font-source-sans-pro";
 @import "font-inconsolata";
-// @import "font-crimson";
+@import "font-crimson";
 
 // ------------------------
 // Import your master theme
