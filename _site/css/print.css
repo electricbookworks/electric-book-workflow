@@ -1,16 +1,4 @@
 @charset "UTF-8";
-/* 
- * Footer
- */
-#footer {
-  display: none; }
-
-/* 
- * Hide nav bar
- */
-#nav-bar {
-  display: none; }
-
 @font-face {
   font-family: "Linux Libertine";
   src: url(fonts/LinLibertine_R.otf); }
@@ -84,31 +72,18 @@
 @font-face {
   font-family: "Inconsolata", monospace;
   src: url(fonts/Inconsolata-Regular.ttf); }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-Roman.otf); }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-Italic.otf);
-  font-style: italic; }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-Bold.otf);
-  font-weight: bold; }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-BoldItalic.otf);
-  font-weight: bold;
-  font-style: italic; }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-Semibold.otf);
-  font-weight: 600; }
-@font-face {
-  font-family: "Crimson";
-  src: url(fonts/Crimson-SemiboldItalic.otf);
-  font-weight: 600;
-  font-style: italic; }
+/* 
+ * Footer
+ */
+#footer {
+  display: none; }
+
+/* 
+ * Hide nav bar
+ */
+#nav-bar {
+  display: none; }
+
 /* Set the initial default view when this PDF is opened. See http://www.princexml.com/forum/topic/2650/prince-pdf */
 @prince-pdf {
   prince-pdf-open-action: none;
@@ -281,7 +256,7 @@ p, ul, ol, dl {
   page-break-before: right; }
 
 /* 
- * Sets runners (footers, headers) for chapter pages
+ * Sets  page footers for chapter pages
  */
 h1 {
   string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
@@ -322,18 +297,6 @@ h6 {
     content: normal; }
   @bottom-left {
     content: normal; } }
-/*
-	@page chapter:left {
-	  @bottom-left {
-	    content: counter(page) "\2003" string(h1-title, last);
-	  }
-	}
-	@page chapter:right {
-	  @bottom-right {
-	    content: string(h2-title, last) "\2003" counter(page);
-	  }
-	}
-*/
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
   margin-top: 84pt; }
@@ -931,7 +894,7 @@ blockquote.figure {
   font-weight: inherit;
   color: inherit;
   margin: 14pt 0 14pt 0;
-  padding: 0.5em;
+  padding: 7pt;
   width: 100%;
   box-sizing: border-box; }
 
@@ -1025,7 +988,6 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Halftitle-page and title-page
  */
 .title-page, .halftitle-page {
-  max-width: 20em;
   margin-right: auto;
   margin-left: auto; }
 
@@ -1095,7 +1057,6 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
  */
 .contents-page {
-  max-width: 80%;
   margin-left: auto;
   margin-right: auto; }
   .contents-page a::after, .contents-page .page-ref-list a::after {

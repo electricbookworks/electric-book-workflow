@@ -1,0 +1,41 @@
+// Page footers and headers can appear in the following positions:
+// @top-left-corner
+// @top-left
+// @top or @top-center
+// @top-right
+// @top-right-corner
+// @bottom-left-corner
+// @bottom-left
+// @bottom or @bottom-center
+// @bottom-right
+// @bottom-right-corner
+
+// To get page numbers only in @bottom-center:
+// First, turn off bottom-left and bottom-right footers (from default classic theme)
+@page chapter:left {
+  @bottom-left {
+    content: normal;
+  }
+}
+@page chapter:right {
+  @bottom-right {
+    content: normal;
+  }
+}
+// Then, set page counters for bottom-center and style them
+@page chapter {
+  @bottom-center {
+    content: counter(page);
+    text-align: center;
+    font-family: $font-text-main;
+    font-size: $font-size-default / 100 * 80;
+    font-variant: prince-opentype(lnum);
+  }
+}
+
+// But remove footers from blank pages of a chapter (e.g. a blank verso opposite the opening recto).
+@page chapter:blank {
+  @bottom-center {
+    content: normal;
+  }
+}

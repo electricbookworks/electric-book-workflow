@@ -1,32 +1,4 @@
 @charset "UTF-8";
-/* 
- * Footer
- */
-#footer {
-  display: none; }
-
-/* 
- * Hide nav bar
- */
-#nav-bar {
-  display: none; }
-
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_R.otf); }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RI.otf);
-  font-style: italic; }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RB.otf);
-  font-weight: bold; }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RBI.otf);
-  font-style: italic;
-  font-weight: bold; }
 @font-face {
   font-family: "Source Sans Pro";
   src: url(fonts/SourceSansPro-Black.ttf);
@@ -109,6 +81,18 @@
   src: url(fonts/Crimson-SemiboldItalic.otf);
   font-weight: 600;
   font-style: italic; }
+/* 
+ * Footer
+ */
+#footer {
+  display: none; }
+
+/* 
+ * Hide nav bar
+ */
+#nav-bar {
+  display: none; }
+
 /* Set the initial default view when this PDF is opened. See http://www.princexml.com/forum/topic/2650/prince-pdf */
 @prince-pdf {
   prince-pdf-open-action: none;
@@ -281,7 +265,7 @@ p, ul, ol, dl {
   page-break-before: right; }
 
 /* 
- * Sets runners (footers, headers) for chapter pages
+ * Sets  page footers for chapter pages
  */
 h1 {
   string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
@@ -305,7 +289,7 @@ h6 {
   @bottom-left {
     content: counter(page) " " string(h1, last);
     text-align: left;
-    font-family: "Linux Libertine", serif;
+    font-family: "Source Sans Pro", serif;
     font-size: 8.8pt;
     letter-spacing: 0.025em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
@@ -313,7 +297,7 @@ h6 {
   @bottom-right {
     content: string(h2, last) " " counter(page);
     text-align: right;
-    font-family: "Linux Libertine", serif;
+    font-family: "Source Sans Pro", serif;
     font-size: 8.8pt;
     letter-spacing: 0.025em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
@@ -322,18 +306,6 @@ h6 {
     content: normal; }
   @bottom-left {
     content: normal; } }
-/*
-	@page chapter:left {
-	  @bottom-left {
-	    content: counter(page) "\2003" string(h1-title, last);
-	  }
-	}
-	@page chapter:right {
-	  @bottom-right {
-	    content: string(h2-title, last) "\2003" counter(page);
-	  }
-	}
-*/
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
   margin-top: 84pt; }
@@ -342,14 +314,14 @@ h6 {
  * Base typography 
  */
 body {
-  font-family: "Linux Libertine", serif;
+  font-family: "Source Sans Pro", serif;
   font-size: 11pt;
   line-height: 14pt;
   margin: 0;
   padding: 0;
   font-variant: prince-opentype(liga);
   orphans: 1;
-  widows: 2;
+  widows: 1;
   text-align: left; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -931,7 +903,7 @@ blockquote.figure {
   font-weight: inherit;
   color: inherit;
   margin: 14pt 0 14pt 0;
-  padding: 0.5em;
+  padding: 7pt;
   width: 100%;
   box-sizing: border-box; }
 
@@ -1003,7 +975,7 @@ ol li blockquote.figure, ul li blockquote.figure {
   display: none; }
 
 .sidenote {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Crimson", sans-serif;
   clear: both;
   float: right;
   max-width: 10em;
@@ -1025,7 +997,6 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Halftitle-page and title-page
  */
 .title-page, .halftitle-page {
-  max-width: 20em;
   margin-right: auto;
   margin-left: auto; }
 
@@ -1095,7 +1066,6 @@ ol li blockquote.figure, ul li blockquote.figure {
  * Table of Contents page. Also styles page-reference lists marked as .page-ref-list
  */
 .contents-page {
-  max-width: 80%;
   margin-left: auto;
   margin-right: auto; }
   .contents-page a::after, .contents-page .page-ref-list a::after {
@@ -1252,3 +1222,20 @@ table + p.sidenote + p,
 .pullquote + p {
   text-indent: 0;
   margin-top: 0; }
+
+@page chapter:left {
+  @bottom-left {
+    content: normal; } }
+@page chapter:right {
+  @bottom-right {
+    content: normal; } }
+@page chapter {
+  @bottom-center {
+    content: counter(page);
+    text-align: center;
+    font-family: "Source Sans Pro", serif;
+    font-size: 8.8pt;
+    font-variant: prince-opentype(lnum); } }
+@page chapter:blank {
+  @bottom-center {
+    content: normal; } }

@@ -1,5 +1,5 @@
 /* 
- * Sets runners (footers, headers) for chapter pages
+ * Sets  page footers for chapter pages
  */
 
 // First, let's set strings to use in our runners.
@@ -51,15 +51,13 @@ h6 { string-set: h6 content(); }
 // In kramdown, set an elements's title with an attribute tag, e.g. {: title="Dark and Stormy"}
 // Then uncomment the following lines to override the above string-setting.
 
-/*
-	@page chapter:left {
-	  @bottom-left {
-	    content: counter(page) "\2003" string(h1-title, last);
-	  }
-	}
-	@page chapter:right {
-	  @bottom-right {
-	    content: string(h2-title, last) "\2003" counter(page);
-	  }
-	}
-*/
+//	@page chapter:left {
+//	  @bottom-left {
+//	    content: counter(page) "\2003" string(h1-title, last);
+//	  }
+//	}
+//	@page chapter:right {
+//	  @bottom-right {
+//	    content: string(h2-title, last) "\2003" counter(page);
+//	  }
+//	}

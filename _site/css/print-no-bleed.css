@@ -2,6 +2,6 @@
 
 /* Remove bleed */
 @page { 
-	prince-bleed: 0;
-	prince-trim: 0;
+	prince-bleed: 0 !important;
+	prince-trim: 0 !important;
 }

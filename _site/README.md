@@ -86,7 +86,7 @@ These are the key components in our workflow:
 *	Markdown (specifically, kramdown) for storing content in plain-text
 *	GitHub for version control
 *	Jekyll for converting the markdown into HTML
-*	CSS stylesheets for each output format
+*	Sass stylesheets for each output format's CSS
 *	Sigil for assembling the HTML in epubs
 *   Prince for creating PDFs from HTML (the only proprietary part of this stack).
 
@@ -116,7 +116,7 @@ Finally, to turn our HTML into print PDFs, we use [PrinceXML](http://princexml.c
 
 ## The repo structure
 
-A repo contains a series of related books. A repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files. The HTML snippets in `_includes` and `_layouts` should be enough for most simple books. But every case will be different, and you may have to make additions to suit your project. This is especially the case for the CSS.
+A repo contains a series of related books. A repo's folders and files follow the [standard Jekyll structure](http://jekyllrb.com/docs/structure/): in the root are `_include`, `_layouts` and `css` folders, and `_config.yml` and `index` files.
 
 One repo can hold one or many books (for instance all the books in a series, which use the same CSS). Each book's content is usually in its own folder in the root.
 
@@ -182,7 +182,7 @@ Here are some guidelines we've created for our own use. They are probably applic
 Before you start:
 
 *	Read through all these notes, including the tips at the end. You may not understand it all at first, but you need to plant all these seeds in your brain for when you need them.
-*	Use a good text editor that colour-codes markdown as you work. We like [Sublime Text](http://www.sublimetext.com/) (with [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)) and [Notepad++](https://notepad-plus-plus.org/) (with [this markdown highlighter](https://github.com/Edditoria/markdown_npp_zenburn)).
+*	Use a good text editor that colour-codes markdown as you work. We like [Sublime Text](http://www.sublimetext.com/) (with [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing) installed and set to MultiMarkdown) and [Notepad++](https://notepad-plus-plus.org/) (with [this markdown highlighter](https://github.com/Edditoria/markdown_npp_zenburn)).
 *	If you're working on Windows, set your default character encoding for your documents to 'UTF-8 without BOM', aka UTF-8, and *not* a 'UTF-with-BOM' option. (Jekyll will break if you don't.)
 *	To check how your markdown converts to HTML while you work, you can use [this Online Kramdown Editor](http://kramdown.herokuapp.com/) by [Daniel Perez Alvarez](https://github.com/unindented/online-kramdown-sinatra).
 *	Keep the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html) handy.
@@ -577,25 +577,26 @@ The stylesheet will add the commas between entries (so you could globally replac
 
 ### Themes and stylesheets
 
-Our template includes one design, or theme. This theme is a set of stylesheets for the three main output formats: the web (`screen`), ebooks (`epub`) and print (`print`).
+Our template includes one default design, or theme, which we called 'classic'. This theme is a set of stylesheets for the three main output formats: the web (`web.css`), ebooks (`epub.css`) and print (`print.css`).
 
 A theme is made of component parts:
 
 * variables like default fonts and page size
 * book elements like running heads and boxes.
 
-You set your series variables and choose which components to include in the Sass files in `/css`: `screen.scss`, `print.scss` and `epub.scss`.
+You set your series variables and choose which components to include in the Sass files in `/css`: `web.scss`, `print.scss` and `epub.scss`.
 
 When Jekyll converts your markdown to HTML, it will read your Sass files and automatically assemble finished CSS.
 
-To change stying for a specific book in a series, create a child stylesheet containing only your new styling rules. 
+To change stying for a specific book in a series, amke a copy of the stylesheet(s) you need to change (`web.scss`, `print.scss` and/or `epub.scss`), and name it sensibly (e.g. `web-scifi.scss`).
 
-To create a child stylesheet (e.g. of `screen.scss`), copy the file and save it in the same `css` folder (e.g. `screen-child-mynovel.scss`), and make changes that override the parent styling.
+Then add the file name(s) to that book's details in `_config.yml`. For instance, if you created a style for `web-scifi.scss` but will use the default print and epub styles for the book, you'll this line to your configuration for that book:
 
-*   For `screen` child styles, also add the filename with a `.css` file extension (e.g. `screen-child-mynovel.css` to the book's path's values in `_config.yml`. (Our template includes an example to follow.)
-*   For `print` child styles, apply both `print.css` and your finished `.css` child stylesheet, in that order, in PrinceXML. (See [PDF output](#pdf-output-for-print) below.)
+~~~
+            stylesheet-web: "web-scifi.css"
+~~~
 
-To see what we've designed for, read [our template's web version](http://electricbookworks.github.io/electric-book-workflow/), especially [chapter 2](http://electricbookworks.github.io/electric-book-workflow/book-one/2.html#editing-for-this-workflow). (You can also glance through the stylesheet files in the template repo.) For instance, you can add `keep-together`, `keep-with-next` and `page-break-before` classes to elements like lists and paragraphs. And you'd put `{:.keep-together}` in the line immediately after a paragraph to stop it breaking over two pages or columns. Use the class `non-printing` for elements that should only appear on screen versions of your book, but not in the printed book (like buttons or video embeds). Our stylesheets will hide them from Prince output (with `display: none;`).
+To see what we've designed for, read [our template's web version](http://electricbookworks.github.io/electric-book-workflow/), especially [chapter 2](http://electricbookworks.github.io/electric-book-workflow/book-one/2.html#editing-for-this-workflow).
 
 ## Trial-and-error tips
 
@@ -628,14 +629,15 @@ If you still need to learn about using CSS to control print output using Prince,
 1.	Find your book's HTML files in your `_site` folder. (Remember to run Jekyll locally to generate the latest version; if you're getting your HTML from a GitHub repo's `_site` folder, trust that the last contributor synced up-to-date, reliable HTML generated by their local Jekyll instance.)
 2.	Drag the HTML files into Prince. Make sure they're in the right order. Only include the files you need in print. For instance, you'll usually leave out `index.html`. You'll usually only include `cover.html` when creating a PDF ebook.
 3.	Tick ‘Merge all…’ and **specify an output file** location and name. Do not let Prince output to your `_site` folder. (If you skip this, Prince will output to your `_site` folder, which will cause permissions issues when you want to modify or delete the file, because Jekyll owns the `_site` folder and can overwrite it, and because Git will try to commit and sync the output PDF, which you probably don't want.)
-4.	Drag the CSS file for your print output into Prince. (You'll find these in `_site/css`, where Jekyll assembles your finished CSS files.) By default in our workflow, this is `print.css`, which produces a standard paperback-size document with crop marks for and bleed for professional printing. Then add any of these CSS files, after `print.css`, for additional options:
-	*	`print-a4.css` overrides the page size and sets it to A4 (portrait);
-	*	`print-a5.css` overrides the page size and sets it to A5 (portrait);
-	*	`print-no-crop-marks.css` removes the crop marks, but leaves the bleed as is;
-	*	`print-no-bleed.css` removes the bleed, and any crop marks with it.
-5.	Click Convert.
+4.	Prince will find your book's print CSS, which you specified in `_config.yml`. If you want a PDF with a completely different CSS file, either:
+    * change it in `_config.yml` and restart Jekyll to update your files with the new config, or
+    * leave it blank (`stylesheet-print: ""`) and manually add the output CSS to Prince.
+5. To remove crop marks or to remove bleed entirely, add one of these CSS files to Prince (they're also in `_site/css`):
+	*	`print-no-crop-marks.css` (removes the crop marks, but leaves the bleed as is)
+	*	`print-no-bleed.css` (removes the bleed, and any crop marks with it).
+6.	Click Convert.
 
-Note: the links to CSS in our output HTML `<head>` *deliberately* break the link to `screen.css` when using Prince, so that you don't get screen styles in your print output. You can ignore error messages from Prince saying it can't find `screen.css`.
+> Tech detail: Our default HTML `head` includes links to both the screen stylesheet and the print stylesheet specified in `_config.yml`. Prince knows which one to use because they're specified with `media="screen"` and `media="print"`.
 
 ### Managing hyphenation in Prince
 
@@ -667,7 +669,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 1.	Replace any SVG images in the `Images` folder with JPG equivalents. And:
 1.	Search-and-replace any links to .svg in your HTML files with .jpg.
 1.	Replace the links to `screen.css` in your `<head>` elements with links to `epub.css`.
-1.	If your book has a child stylesheet, update that `<link>` path, too. Otherwise, remove the blank `<link>`: i.e. `<link href="/css/" rel="stylesheet" type="text/css"/>`.
+1.	Remove the link to the print CSS in your `<head>` elements.
 1.	Copy any fonts into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove any `@font-face` rules from your stylesheet to avoid file-not-found validation errors. We don't recommend embedding fonts unless they are required for meaning or unusual character sets.)
 1.	Search-and-replace to remove the `nav-bar` div (the link to `/` won't validate in an epub because it's not reachable). To find the nav-bar div in Sigil, use this DotAll Regex search:
 
@@ -705,7 +707,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 		```
 
 		This will replace the entire wrapper with a link to the same iframe URL it memorised (at `\2`). Replace `Watch` with whatever phrase you want to be the clickable text.
-
+1.  If your book includes endnotes (kramdown footnotes), replace `fnref:` with `fnref-` and `fn:` with `fn-`. ( Background: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly.)
 1.	Add basic metadata to your epub using Sigil's Metadata Editor. Include at least:
 	*	title: subtitle
 	*	author
@@ -723,23 +725,22 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	[epubcheck](https://github.com/IDPF/epubcheck/wiki/Running) installed locally, and run from the command line; or
 	*	[pagina EPUB-Checker](http://www.pagina-online.de/produkte/epub-checker/).
 
-Note: If you have a colon in any element ID – for instance if you've used [kramdown's footnote syntax](http://kramdown.gettalong.org/quickref.html#footnotes) – EpubCheck will return an 'invalid NCName' error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown's footnote references do), you can replace-all quickly. For instance, replace `fnref:` with `fnref-` and `fn:` with `fn-`.
-
-For general guidance on creating epubs with Sigil, check out [our training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
+For general guidance on creating epubs with Sigil, check out [EBW's training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
 
 ### Pro tip: quicker epub output
 
-Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`:
+Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`. We include both options, and comment one of them out. So just switch which one is commented out:
 
-```
+```yaml
 layout: "epub"
+#layout: "default"
 ```
 
-Remember to restart Jekyll after changing `_config.yml` for changes to take effect, and change it back to `default` afterwards to get your web-version's navigation back.
+Remember to restart Jekyll after changing `_config.yml` for changes to take effect, and change it back to `default` afterwards (`default` is necessary for print and web output).
 
 The `epub` layout lets you skip a few of the steps listed above, because it:
 
-* includes links to `epub.css` and your child css file (using Sigil's standard `../Styles/` path), rather than `screen.css`
+* links to the epub CSS you specify in `_config.yml` (using Sigil's standard `../Styles/` path)
 * omits the nav bar and footer (no need to search and replace these)
 * includes required epub metadata (if you've included it in your `_config.yml` file).
 

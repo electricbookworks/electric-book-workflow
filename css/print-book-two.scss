@@ -49,6 +49,13 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Bet
 
 @import "print-classic";
 
+// ------------------------------
+// Page footer and header options
+// ------------------------------
+
+// If you want only bottom-centered page numbers, uncomment the following line
+@import "_print-classic-page-footers-page-numbers-only";
+
 // -------------
 // Custom styles
 // -------------
