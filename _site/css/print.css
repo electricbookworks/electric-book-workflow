@@ -255,9 +255,7 @@ p, ul, ol, dl {
 .chapter {
   page-break-before: right; }
 
-/* 
- * Sets  page footers for chapter pages
- */
+/* Page footers for chapter pages */
 h1 {
   string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
 
@@ -312,7 +310,7 @@ body {
   padding: 0;
   font-variant: prince-opentype(liga);
   orphans: 1;
-  widows: 2;
+  widows: 1;
   text-align: left; }
 
 h1, h2, h3, h4, h5, h6 {

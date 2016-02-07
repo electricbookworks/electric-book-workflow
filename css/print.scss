@@ -11,6 +11,7 @@
 // Set variables
 // -------------
 
+// First, we set several variables related to overall page setup.
 $page-size: 129mm 198mm; // Width, then height. 129×198 is B-format (Lightning Source compatible)
 $margin-top: 15mm;
 $margin-bottom: 20mm;
@@ -20,19 +21,25 @@ $bleed: 3mm;
 $trim: 3mm;
 $crop-marks: crop; // crop | none
 
+// We name font variables for two categories:
+// - 'text' fonts are used for body text and some page features;
+// - 'display' fonts are used for headings and similar short-string features.
+// For each category, we set a main font and a secondary font, allowing up to four fonts.
+// Finally, we set a fifth, monospace font for elements like computer code.
 $font-text-main: "Linux Libertine", serif;
 $font-text-secondary: "Source Sans Pro", sans-serif;
 $font-display-main: "Source Sans Pro", sans-serif;
 $font-display-secondary: "Linux Libertine", serif;
 $font-code: "Inconsolata", monospace;
 
+// Finally, we set variables related to text flow.
 $font-size-default: 11pt;
-$line-height-default: 14pt; // Set this in points and make it the base of all other line heights and vertical margins to preserve a baseline grid
+$line-height-default: 14pt; // Set in points. For consistent baselines, all other line heights and vertical spaces are based on this.
 $text-align: left;
-$orphans: 1; // minimum number of lines that must be left at the bottom of the first page
-$widows: 2; // minimum number of lines that must be left at the top of the second page
-$hyphenation: auto; // Can be auto, none, or manual (i.e. only breaks on hyphens and soft hyphens)
-$hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Better to set in child CSS than parent.
+$orphans: 1; // Minimum number of lines that must be left at the bottom of the first page
+$widows: 1; // Minimum number of lines that must be left at the top of the second page
+$hyphenation: auto; // Can be auto, none, or manual (only breaks on hyphens and soft hyphens)
+$hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
 // ----------------------------------------------------
 // Import font files (@font-face) for fonts you specify
@@ -48,6 +55,26 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Bet
 // ------------------------
 
 @import "print-classic";
+
+// ----------------------
+// Start-on-right options
+// ----------------------
+
+// To start chapters on a left- or a right-hand page, uncommment the following line:
+//@import "print-classic-start-on-recto-or-verso";
+
+// ------------------------------
+// Page footer and header options
+// ------------------------------
+
+// If you want only bottom-centered page numbers, uncomment the following line
+//@import "print-classic-page-footers-page-numbers-only";
+
+// If you want page headers, uncomment the following line
+//@import "print-classic-page-headers";
+
+// Uncomment to turn off footers completely
+//@import 'print-classic-page-footers-none';
 
 // -------------
 // Custom styles

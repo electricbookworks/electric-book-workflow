@@ -1,0 +1,89 @@
+/* Running headers for chapter pages */
+
+// This file sets a page header with the page number top-outside and running head top-inside of each page.
+
+// First, let's set which strings to use in our headers.
+// We name each string after an h1-6 heading element.
+// This assumes you're happy to use the exact text of headings in your document as the content strings.
+// If not, see below for using manually defined `title` elements, named h1-title and h2-title.
+// Notice h1 sets the string for h2 as well, just as a fallback in case there isn't an h2 on the page yet.
+h1 { 
+  string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title);
+  prince-page-group: start; // Makes the :first selector work when omitting headers at chapter:first below.
+}
+h2 { 
+  string-set: h2 content(), h2-title attr(title); 
+}
+h3 { string-set: h3 content(); }
+h4 { string-set: h4 content(); }
+h5 { string-set: h5 content(); }
+h6 { string-set: h6 content(); }
+
+// This mixin defines the typography of the header
+@mixin header-style() {
+    font-family: $font-text-secondary;
+    font-size: $font-size-default * 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    margin: 10mm 0 6mm 0;
+}
+
+// Now we set the content and placement of each header element
+@page chapter:left {
+  @top-left {
+    content: counter(page);
+    text-align: left;
+    @include header-style();
+  }
+}
+@page chapter:left {
+  @top-right {
+    content: string(h1, last);
+    text-align: right;
+    @include header-style();
+  }
+}
+@page chapter:right {
+  @top-left {
+    content: string(h2, last);
+    text-align: left;
+    @include header-style();
+  }
+}
+@page chapter:right {
+  @top-right {
+    content: counter(page);
+    text-align: right;
+    @include header-style();
+  }
+}
+
+// ALTERNATIVE
+// If you don't want to use the exact heading text in runners, you can use an element's `title` attribute.
+// E.g. your `h1` reads '1 Dark and Stormy' but your `title` just 'Dark and Stormy'. You want the latter.
+// You must give titles to all h1's and h2's to ensure a runner on every page.
+// In kramdown, set an elements's title with an attribute tag, e.g. {: title="Dark and Stormy"}
+// Then uncomment the following lines to override the above string-setting.
+
+//  @page chapter:left {
+//    @top-right {
+//      content: counter(page) "\2003" string(h1-title, last);
+//    }
+//  }
+//  @page chapter:right {
+//    @top-left {
+//      content: string(h2-title, last) "\2003" counter(page);
+//    }
+//  }
+
+// No headers on first pages of chapters
+@page chapter:first {
+    @top-left { content: normal; }
+    @top-right { content: normal; }
+}
+
+// No header on blank pages of chapters (e.g. a blank verso opposite the opening recto).
+@page chapter:blank {
+  @top-left { content: normal; }
+  @top-right { content: normal; }
+}

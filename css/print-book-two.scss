@@ -26,8 +26,8 @@ $font-display-main: "Source Sans Pro", sans-serif;
 $font-display-secondary: "Crimson", serif;
 $font-code: "Inconsolata", monospace;
 
-$font-size-default: 11pt;
-$line-height-default: 14pt; // Set this in points and make it the base of all other line heights and vertical margins to preserve a baseline grid
+$font-size-default: 10pt;
+$line-height-default: 13pt; // Set this in points and make it the base of all other line heights and vertical margins to preserve a baseline grid
 $text-align: left;
 $orphans: 1; // minimum number of lines that must be left at the bottom of the first page
 $widows: 1; // minimum number of lines that must be left at the top of the second page
@@ -54,7 +54,13 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Bet
 // ------------------------------
 
 // If you want only bottom-centered page numbers, uncomment the following line
-@import "_print-classic-page-footers-page-numbers-only";
+//@import "print-classic-page-footers-page-numbers-only";
+
+// If you want page headers, uncomment the following line
+@import "print-classic-page-headers";
+
+// Uncomment to turn off footers completely
+@import 'print-classic-page-footers-none';
 
 // -------------
 // Custom styles

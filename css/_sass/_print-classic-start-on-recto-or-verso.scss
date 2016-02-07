@@ -1,0 +1,8 @@
+/* These layouts can start on a left or a right */
+.frontmatter, 
+.dedication-page, 
+.epigraph-page, 
+.chapter 
+{ 
+	page-break-before: auto;
+}

@@ -1,0 +1,9 @@
+// No page footers on chapter pages
+@page chapter:left {
+	@bottom { content: normal; }
+	@bottom-left { content: normal; }
+}
+@page chapter:right {
+	@bottom { content: normal; }
+	@bottom-right { content: normal; }
+}
