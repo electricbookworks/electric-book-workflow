@@ -11,7 +11,6 @@ body {
 	font-variant: prince-opentype(liga);
 	orphans: $orphans;
 	widows: $widows;
-	text-align: $text-align;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
@@ -59,6 +58,7 @@ h6 {
 }
 p, ul, ol, dl {
 	font-variant: prince-opentype(onum);
+	text-align: $text-align;
 }
 p {
 	margin: 0;
