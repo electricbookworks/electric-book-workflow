@@ -48,7 +48,7 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 @import "font-linux-libertine";
 @import "font-source-sans-pro";
 @import "font-inconsolata";
-// @import "font-crimson";
+//@import "font-crimson";
 
 // ------------------------
 // Import your master theme
@@ -72,6 +72,9 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
 // If you want page headers, uncomment the following line
 //@import "print-classic-page-headers";
+
+// If you want page headers with headings only and no page numbers, uncomment the following line
+//@import "print-classic-page-headers-headings-only";
 
 // Uncomment to turn off footers completely
 //@import 'print-classic-page-footers-none';
