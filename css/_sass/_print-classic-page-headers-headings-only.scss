@@ -68,6 +68,9 @@ h6 { string-set: h6 content(); }
 }
 
 // No headers on first pages of chapters
+.chapter {
+  prince-page-group: start;
+}
 @page chapter:first {
     @top { content: normal; }
 }
