@@ -59,6 +59,7 @@ h6 {
 p, ul, ol, dl {
 	font-variant: prince-opentype(onum);
 	text-align: $text-align;
+	letter-spacing: $letter-spacing-text;
 }
 p {
 	margin: 0;

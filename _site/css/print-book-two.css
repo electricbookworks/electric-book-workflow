@@ -203,32 +203,26 @@
 /* Use these classes to control tracking, usually to save widows and orphans. */
 .tight {
   letter-spacing: -0.0075em;
-  word-spacing: -0.0075em;
   font-style: inherit; }
 
 .x-tight {
   letter-spacing: -0.01em;
-  word-spacing: -0.01em;
   font-style: inherit; }
 
 .xx-tight {
-  letter-spacing: -0.05em;
-  word-spacing: -0.05em;
+  letter-spacing: -0.02em;
   font-style: inherit; }
 
 .xxx-tight {
-  letter-spacing: -0.1em;
-  word-spacing: -0.1em;
+  letter-spacing: -0.5em;
   font-style: inherit; }
 
 .loose {
   letter-spacing: 0.0075em;
-  word-spacing: 0.0075em;
   font-style: inherit; }
 
 .x-loose {
   letter-spacing: 0.01em;
-  word-spacing: 0.01em;
   font-style: inherit; }
 
 /* Shrink the font size */
@@ -333,7 +327,8 @@ h6 {
 
 p, ul, ol, dl {
   font-variant: prince-opentype(onum);
-  text-align: left; }
+  text-align: left;
+  letter-spacing: 0em; }
 
 p {
   margin: 0;

@@ -36,6 +36,7 @@ $line-height-default: 14pt; // Set in points. For consistent baselines, all othe
 $text-align: left;
 $orphans: 1; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1; // Minimum number of lines that must be left at the top of the second page
+$letter-spacing-text: 0em; // Default letter-spacing for p, ul, ol, dl. Set in ems, e.g. 0.01em for 10/1000s of an em.
 $hyphenation: auto; // Can be auto, none, or manual (only breaks on hyphens and soft hyphens)
 $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
