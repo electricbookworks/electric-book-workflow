@@ -47,16 +47,16 @@ $line-height-default: 150%;
 // Import font files (@font-face) for fonts you specify
 // ----------------------------------------------------
 
-@import "font-linux-libertine";
-@import "font-source-sans-pro";
-@import "font-inconsolata";
+@import "fonts/linux-libertine";
+@import "fonts/source-sans-pro";
+@import "fonts/inconsolata";
 // @import "font-crimson";
 
 // -------------------
 // Import master theme
 // -------------------
 
-@import "web-classic";
+@import "themes/classic/web";
 
 // -------------
 // Custom styles

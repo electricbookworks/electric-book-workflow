@@ -39,16 +39,16 @@ $line-height-default: 150%;
 // ----------------------------------------------------
 
 // We do not recommend importing and embedding fonts in epubs. However, if you must, uncomment and change here.
-// @import "font-linux-libertine";
-// @import "font-source-sans-pro";
-// @import "font-inconsolata";
-// @import "font-crimson";
+// @import "fonts/linux-libertine";
+// @import "fonts/source-sans-pro";
+// @import "fonts/inconsolata";
+// @import "fonts/crimson";
 
 // ------------
 // Import theme
 // ------------
 
-@import "epub-classic";
+@import "themes/classic/epub";
 
 // -------------
 // Custom styles

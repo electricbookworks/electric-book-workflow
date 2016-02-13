@@ -41,46 +41,39 @@ $widows: 1; // Minimum number of lines that must be left at the top of the secon
 $hyphenation: auto; // Can be auto, none, or manual (only breaks on hyphens and soft hyphens)
 $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
-// ----------------------------------------------------
+// --------------------------------------------------------
 // Import font files (@font-face) for fonts you specify
-// ----------------------------------------------------
+// You may need to add the actual font files to `css/fonts`
+// --------------------------------------------------------
 
-@import "font-linux-libertine";
-@import "font-source-sans-pro";
-@import "font-inconsolata";
-//@import "font-crimson";
-//@import "font-crimson-text";
-//@import "font-overpass";
-//@import "font-montserrat";
+//@import "fonts/crimson-text";
+//@import "fonts/crimson";
+@import "fonts/inconsolata";
+//@import "fonts/kalam";
+//@import "fonts/linux-biolinum";
+@import "fonts/linux-libertine";
+//@import "fonts/montserrat";
+//@import "fonts/overpass";
+@import "fonts/source-sans-pro";
+//@import "fonts/trajan-pro";
 
-// ------------------------
-// Import your master theme
-// ------------------------
+// --------------------------------------------
+// Import your master theme and set its options
+// --------------------------------------------
 
-@import "print-classic";
+@import "themes/classic/print";
 
-// ----------------------
-// Start-on-right options
-// ----------------------
+	// Running footers with page number outside, heading inside
+	@import "themes/classic/partials/print-page-footers";
 
-// To start chapters on a left- or a right-hand page, uncommment the following line:
-//@import "print-classic-start-on-recto-or-verso";
+	// If you want only bottom-centered page numbers, uncomment the following line
+	//@import "themes/classic/partials/print-page-footers-page-numbers-only";
 
-// ------------------------------
-// Page footer and header options
-// ------------------------------
+	// If you want page headers, uncomment the following line
+	//@import "themes/classic/partials/print-page-headers";
 
-// Running footers with page number outside, heading inside
-@import "print-classic-page-footers";
-
-// If you want only bottom-centered page numbers, uncomment the following line
-//@import "print-classic-page-footers-page-numbers-only";
-
-// If you want page headers, uncomment the following line
-//@import "print-classic-page-headers";
-
-// If you want page headers with headings only and no page numbers, uncomment the following line
-//@import "print-classic-page-headers-headings-only";
+	// If you want page headers with headings only and no page numbers, uncomment the following line
+	//@import "themes/classic/partials/print-page-headers-headings-only";
 
 // -------------
 // Custom styles

@@ -1,5 +1,8 @@
 @charset "UTF-8";
 @font-face {
+  font-family: "Inconsolata", monospace;
+  src: url(fonts/Inconsolata-Regular.ttf); }
+@font-face {
   font-family: "Linux Libertine";
   src: url(fonts/LinLibertine_R.otf); }
 @font-face {
@@ -69,9 +72,6 @@
   src: url(fonts/SourceSansPro-SemiboldItalic.ttf);
   font-weight: 600;
   font-style: italic; }
-@font-face {
-  font-family: "Inconsolata", monospace;
-  src: url(fonts/Inconsolata-Regular.ttf); }
 /* 
  * Footer
  */
