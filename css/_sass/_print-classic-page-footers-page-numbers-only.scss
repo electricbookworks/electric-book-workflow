@@ -1,5 +1,14 @@
 // This file sets a page footer containing only the page number, bottom centered.
 
+// Let's define typography as a mixin
+// Note we don't set margins here. The footer will center vertically in the margin box. 
+// Control position with `vertical-align: bottom` and then `margin-bottom`.
+@mixin footer-style() {
+    font-family: $font-text-main;
+    font-size: $font-size-default * 0.8;
+    font-variant: prince-opentype(lnum); // This page-numbers-only usage calls for lining figures
+}
+
 // To get page numbers only in @bottom-center:
 // First, turn off bottom-left and bottom-right footers (from default classic theme)
 @page chapter:left {
@@ -17,9 +26,7 @@
   @bottom-center {
     content: counter(page);
     text-align: center;
-    font-family: $font-text-main;
-    font-size: $font-size-default / 100 * 80;
-    font-variant: prince-opentype(lnum);
+    @include footer-style();
   }
 }
 

@@ -53,14 +53,17 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries. Bet
 // Page footer and header options
 // ------------------------------
 
+// Running footers with page number outside, heading inside
+//@import "print-classic-page-footers";
+
 // If you want only bottom-centered page numbers, uncomment the following line
-//@import "print-classic-page-footers-page-numbers-only";
+@import "print-classic-page-footers-page-numbers-only";
 
 // If you want page headers, uncomment the following line
-@import "print-classic-page-headers";
+//@import "print-classic-page-headers";
 
-// Uncomment to turn off footers completely
-@import 'print-classic-page-footers-none';
+// If you want page headers with headings only and no page numbers, uncomment the following line
+@import "print-classic-page-headers-headings-only";
 
 // -------------
 // Custom styles

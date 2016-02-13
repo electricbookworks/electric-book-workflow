@@ -4,7 +4,7 @@
 	<title>Book title: Typography examples</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/web.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
 	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
 </head>
 <body class="chapter">
@@ -12,7 +12,7 @@
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/" title="Home: Collection name" class="nav-series">Collection name</a>
+				<a href="/electric-book-workflow/" title="Home: Collection name" class="nav-series">Collection name</a>
 				<a href="0-3-contents.html" title="Contents: Book title" class="nav-book">Book title</a>
 				<a href="" title="Top: Typography examples"  class="nav-page">Typography examples</a>
 			</p>
@@ -55,7 +55,7 @@
 
 <p>This is a regular paragraph. If it follows a heading, list, definition list, blockquote or iframe, it’ll be flush left (not indented). If you’re looking at the HTML, ebook or print version, you should also check out the underlying markdown version, to see how to control styles with simple, plain-text formatting. There is more detail in the workflow’s <a href="https://github.com/electricbookworks/electric-book-workflow">README</a>.</p>
 
-<p>In the markdown source of this chapter, note the <code>chapter</code> style in the markdown version’s YAML header – at the top of the document. That’s important: it tells the stylesheet what part of the book this is.</p>
+<p>In the markdown source of this chapter, note the <code class="highlighter-rouge">chapter</code> style in the markdown version’s YAML header – at the top of the document. That’s important: it tells the stylesheet what part of the book this is.</p>
 
 <h2 id="better-than-lorem-ipsum">Better than lorem ipsum</h2>
 
@@ -63,12 +63,12 @@
 
 <h3 id="to-terentia-tulliola-and-young-cicero-at-rome">To Terentia, Tulliola, and Young Cicero (at Rome)</h3>
 
-<p class="sidenote">To get all small caps, wrap the text in asterisks, tagged <code>{:.allsmallcaps}</code></p>
+<p class="sidenote">To get all small caps, wrap the text in asterisks, tagged <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.allsmallcaps</span><span class="p">}</span></code></p>
 
 <p><em class="allsmallcaps">BRUNDISIUM, 29 APRIL</em>—Yes, I do write to you less often than I might, because, though I am always wretched, yet when I write to you or read a letter from you, I am in such floods of tears that I cannot endure it. Oh, that I had clung less to life!<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> I should at least never have known real sorrow, or not much of it, in my life. Yet if fortune has reserved for me any hope of recovering at any time any position again, I was not utterly wrong to do so: if these miseries are to be permanent, I only wish, my dear, to see you as soon as possible and to die in your arms, since neither gods, whom you have worshipped with such pure devotion, nor men, whom I have ever served, have made us any return.</p>
 
 <blockquote class="pullquote">
-  <p>This is a blockquote tagged as a <code>{:.pull-quote}</code> – that’s useful.</p>
+  <p>This is a blockquote tagged as a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.pull-quote</span><span class="p">}</span></code> – that’s useful.</p>
 </blockquote>
 
 <p>I only wish, my dear, to see you as soon as possible and to die in your arms.</p>
@@ -78,7 +78,7 @@
 <p>What a fall! What a disaster! What can I say? Should I ask you to come–a woman of weak health and broken spirit? Should I refrain from asking you? Am I to be without you, then?</p>
 
 <blockquote class="box float-bottom">
-  <p>This is a blockquote tagged as a <code>{:.box}</code> and placed at the bottom of the page (in print output) with <code>.float-bottom</code>.</p>
+  <p>This is a blockquote tagged as a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.box</span><span class="p">}</span></code> and placed at the bottom of the page (in print output) with <code class="highlighter-rouge">.float-bottom</code>.</p>
 
   <p>I think the best course is this: if there is any hope of my restoration, stay to promote it and push the thing on.</p>
 
@@ -104,7 +104,7 @@
 
 <p>For the rest, put as dignified a face on the matter as you can, my dear Terentia. Our life is over: we have had our day: it is not any fault of ours that has ruined us, but our virtue. I have made no false step, except in not losing my life when I lost my honours. But since our children preferred my living, let us bear everything else, however intolerable. And yet I, who encourage you, cannot encourage myself.</p>
 
-<p class="first">If you want to start a new section of paragraphs, with space above and no indent, tag the paragraph with <code>{:.first}</code> in the markdown, like this one. I have sent that faithful fellow Clodius Philhetaerus home, because he was hampered with weakness of the eyes. Sallustius seems likely to outdo everybody in his attentions. Pescennius is exceedingly kind to me; and I have hopes that he will always be attentive to you. Sicca had said that he would accompany me; but he has left Brundisium.</p>
+<p class="first">If you want to start a new section of paragraphs, with space above and no indent, tag the paragraph with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.first</span><span class="p">}</span></code> in the markdown, like this one. I have sent that faithful fellow Clodius Philhetaerus home, because he was hampered with weakness of the eyes. Sallustius seems likely to outdo everybody in his attentions. Pescennius is exceedingly kind to me; and I have hopes that he will always be attentive to you. Sicca had said that he would accompany me; but he has left Brundisium.</p>
 
 <p>Take the greatest care of your health, and believe me that I am more affected by your distress than my own. My dear Terentia, most faithful and best of wives, and my darling little daughter, and that last hope of my race, Cicero, good-bye!</p>
 
@@ -191,11 +191,11 @@ the younger men corrupt.</li>
 
 <p>So he is making his preparations and summoning men from the country.</p>
 
-<p>On his part, Clodius is rallying his gangs: a body of men is being got together for the Quirinalia. For that occasion we are considerably in a majority, owing to the forces brought up by Pompey himself: and a large contingent is expected from Picenum and Gallia, to enable us to throw out Cato’s bills also about Milo and Lentulus.<em class="sidenote bottom">This is a note that on screen will appear as a sidenote, and in print will appear at the bottom of the page. To do this, add <code>.bottom</code> to the <code>.sidenote</code> tag: <code>{:.sidenote .bottom}</code>.</em></p>
+<p>On his part, Clodius is rallying his gangs: a body of men is being got together for the Quirinalia. For that occasion we are considerably in a majority, owing to the forces brought up by Pompey himself: and a large contingent is expected from Picenum and Gallia, to enable us to throw out Cato’s bills also about Milo and Lentulus.<em class="sidenote bottom">This is a note that on screen will appear as a sidenote, and in print will appear at the bottom of the page. To do this, add <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge">.sidenote</code> tag: <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.sidenote</span><span class="w"> </span><span class="err">.bottom</span><span class="p">}</span></code>.</em></p>
 
 <p>On the 10th of February an indictment was lodged against Sestius for bribery by the informer Cn. Nerius, of the Pupinian tribe, arid on the same day by a certain M. Tullius for riot. He was ill. I went at once, as I was bound to do. to his house, and put myself wholly at his service: and that was more than people expected, who thought that I had good cause for being angry with him.</p>
 
-<p class="box">A paragraph tagged as a <code>{:.box}</code>. The result is that my extreme kindness and grateful disposition are made manifest both to Sestius himself and to all the world, and I shall be as good as my word. But this same informer Nerius also named Cn. Lentulus Vatia and C. Cornelius to the commissioners.</p>
+<p class="box">A paragraph tagged as a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.box</span><span class="p">}</span></code>. The result is that my extreme kindness and grateful disposition are made manifest both to Sestius himself and to all the world, and I shall be as good as my word. But this same informer Nerius also named Cn. Lentulus Vatia and C. Cornelius to the commissioners.</p>
 
 <p>On the same day a decree passed the senate “that political clubs and associations should be broken up, and that a law in regard to them should be brought in, enacting that those who did not break off from them should be liable to the same penalty as those convicted of riot.”</p>
 
@@ -212,7 +212,7 @@ the younger men corrupt.</li>
 
 <dl class="box">
   <dt>Note</dt>
-  <dd>You can tag almost any element with <code>{:.box}</code>, including definition lists like this.</dd>
+  <dd>You can tag almost any element with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.box</span><span class="p">}</span></code>, including definition lists like this.</dd>
 </dl>
 
 <p>Some excellent tenants, the Lamiae, have taken your house in Carinie. I have received no letter from you since the one dated Olbia. I am anxious to hear how you are and what you find to amuse you, but above all to see you yourself as soon as possible.</p>
@@ -224,14 +224,14 @@ the younger men corrupt.</li>
 <h2 id="poetry">Poetry</h2>
 
 <blockquote class="sidenote">
-  <p>Indents and word spacing in poems can be done with HTML space entities, like <code>&amp;emsp;</code> and <code>&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/electric-book-workflow">our README</a> for CSS-based indent control.</p>
+  <p>Indents and word spacing in poems can be done with HTML space entities, like <code class="highlighter-rouge">&amp;emsp;</code> and <code class="highlighter-rouge">&amp;nbsp;</code>. Or see <a href="http://github.com/electricbookworks/electric-book-workflow">our README</a> for CSS-based indent control.</p>
 </blockquote>
 
 <p>Have a look at the underlying markdown here, or read <a href="http://github.com/electricbookworks/electric-book-workflow#poetry">the workflow README</a> to see how to encode poetry. There are three options, each more powerful with slightly more markdown.</p>
 
 <h3 id="good">Good</h3>
 
-<p>In the markdown, create a line break by adding two backslashes at the end of a line. Then add <code>{:.verse}</code> after each stanza (including the title, if it’s not a markdown heading). This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
+<p>In the markdown, create a line break by adding two backslashes at the end of a line. Then add <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.verse</span><span class="p">}</span></code> after each stanza (including the title, if it’s not a markdown heading). This creates semantically correct poetry, with each stanza an HTML paragraph, and the lines separated by line-breaks. However, the ends of lines that run over (e.g. long lines or lines on small screens that wrap) will not be indented as poetry should be.</p>
 
 <h4 id="when-you-are-old">When You Are Old</h4>
 
@@ -252,7 +252,7 @@ And hid his face amid a crowd of stars.</p>
 
 <h3 id="better">Better</h3>
 
-<p>In the markdown, put <code>- </code> before each line, to make the poem a list, where each line (including each blank line, with a space or tab after the <code>-</code>) is a list item. Add <code>{:.verse}</code> at the end to tag the entire list as verse. (Technically, a poem should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines among other things.)</p>
+<p>In the markdown, put <code class="highlighter-rouge">- </code> before each line, to make the poem a list, where each line (including each blank line, with a space or tab after the <code class="highlighter-rouge">-</code>) is a list item. Add <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.verse</span><span class="p">}</span></code> at the end to tag the entire list as verse. (Technically, a poem should not be structured as a list – it’s semantically frowned upon – but it makes it possible to correctly indent runover lines among other things.)</p>
 
 <p>Note that if you tag the poem title as a heading, don’t put in a blank line after it: being a heading gives it its blank line already.</p>
 
@@ -277,7 +277,7 @@ And hid his face amid a crowd of stars.</p>
   <li>Life death does end and each day dies with sleep.</li>
 </ul>
 
-<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code>&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/eletric-book-workflow#poetry">workflow README</a>.</p>
+<p>Also, in verse as an HTML list, we can preserve white space. That is, if you type, say, three spaces you get three spaces. We’ve done this after sentences in the purposefully ridiculous excerpt below. (Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do.) However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code class="highlighter-rouge">&amp;emsp;</code>) or our indent tags explained the <a href="https://github.com/electricbookworks/eletric-book-workflow#poetry">workflow README</a>.</p>
 
 <ul class="verse">
   <li>
@@ -415,7 +415,7 @@ And hid his face amid a crowd of stars.</p>
   </ul>
 </blockquote>
 
-<p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code>.non-printing</code>. To create a button, just add <code>{:.button}</code> directly after a link, like this: <code>[Go to chapter 2](2.html){:.button}</code>.</p>
+<p>On screen, there’s a button here. This one won’t show in print output because it’s tagged <code class="highlighter-rouge">.non-printing</code>. To create a button, just add <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.button</span><span class="p">}</span></code> directly after a link, like this: <code class="highlighter-rouge">[Go to chapter 2](2.html){:.button}</code>.</p>
 
 <p class="first non-printing"><a href="2.html" class="button">Go to chapter 2</a></p>
 <div class="footnotes">
@@ -424,7 +424,7 @@ And hid his face amid a crowd of stars.</p>
       <p>This is an endnote. Notes created like this follow <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown’s footnote syntax</a> (kramdown uses the term footnote to refer to endnotes, unfortunately). <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>This is another endnote. Note how kramdown automatically numbers the these correctly, even when the markdown doesn’t. The reference is designed to appear superscript. We can also do subscript in markdown, like H<sub>2</sub>0, but we have to use HTML <code>&lt;sub&gt;</code> tags. Our workflow doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>This is another endnote. Note how kramdown automatically numbers the these correctly, even when the markdown doesn’t. The reference is designed to appear superscript. We can also do subscript in markdown, like H<sub>2</sub>0, but we have to use HTML <code class="highlighter-rouge">&lt;sub&gt;</code> tags. Our workflow doesn’t yet handle complex maths by default, but it may in future, using <a href="http://kramdown.gettalong.org/math_engine/mathjax.html">MathJax</a>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -437,7 +437,7 @@ And hid his face amid a crowd of stars.</p>
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Publisher name" class="footer-publisher">Publisher name</a>
-				<a href="/" title="Home: Collection name" class="footer-series">Collection name</a>
+				<a href="/electric-book-workflow/" title="Home: Collection name" class="footer-series">Collection name</a>
 				<a href="0-3-contents.html" title="Contents: Book title" class="footer-book"><em>Book title</em></a>
 				<a href="" title="Top: Typography examples" class="footer-page">Typography examples</a>
 			</p>

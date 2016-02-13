@@ -1,6 +1,15 @@
 /* Page footers for chapter pages */
 
-// First, let's set strings to use in our runners.
+// Let's define typography as a mixin
+// Note we don't set margins here. The footer will center vertically in the margin box. 
+// Control position with `vertical-align: bottom` and then `margin-bottom`.
+@mixin footer-style() {
+	font-family: $font-text-main;
+	font-size: $font-size-default * 0.8;
+	font-variant: prince-opentype(c2sc, smcp, onum);
+}
+
+// Let's set strings to use in our runners.
 // This assumes you're happy to use the exact text of headings in your document as the content strings.
 // Notice h1 sets the string for h2 as well, just as a fallback in case there isn't an h2 on the page yet.
 h1 { string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
@@ -11,24 +20,18 @@ h5 { string-set: h5 content(); }
 h6 { string-set: h6 content(); }
 
 @page chapter:left {
-  @bottom-left {
-    content: counter(page) "\2003" string(h1, last);
-    text-align: left;
-	font-family: $font-text-main;
-    font-size: $font-size-default / 100 * 80;
-	letter-spacing: 0.025em;
-	font-variant: prince-opentype(c2sc, smcp, onum);
-  }
+	@bottom-left {
+		content: counter(page) "\2003" string(h1, last);
+		text-align: left;
+		@include footer-style();
+	}
 }
 @page chapter:right {
-  @bottom-right {
-    content: string(h2, last) "\2003" counter(page);
-    text-align: right;
-	font-family: $font-text-main;
-    font-size: $font-size-default / 100 * 80;
-	letter-spacing: 0.025em;
-	font-variant: prince-opentype(c2sc, smcp, onum);
-  }
+	@bottom-right {
+		content: string(h2, last) "\2003" counter(page);
+		text-align: right;
+		@include footer-style();
+	}
 }
 
 // Don't put footers on blank pages of a chapter (e.g. a blank verso opposite the opening recto).

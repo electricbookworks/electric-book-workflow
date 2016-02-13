@@ -26,7 +26,7 @@ baseurl: /electric-book-workflow
 markdown: kramdown
 
 # Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder.
-# This is really useful for grabbing allyour HTML files at once for including in epubs or sending to PrinceXML.
+# This is really useful for grabbing all your HTML files at once for including in epubs or sending to PrinceXML.
 permalink: none
 
 # Leave this unchanged. It tells Jekyll where to find Sass partials. (See http://jekyllrb.com/docs/assets/#sassscss)

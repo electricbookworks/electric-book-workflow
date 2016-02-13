@@ -2,10 +2,22 @@
 
 // This file sets a page header with no page number, and a header centered on each page.
 
-// First, let's set which strings to use in our headers.
+// Let's define our heading typography as a mixin
+// Note we don't set margins here. The header will center vertically in the margin box. 
+// Control position with `vertical-align: top` and then `margin-top`.
+@mixin header-style() {
+    font-family: $font-text-main;
+    font-size: $font-size-default * 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-variant: prince-opentype(c2sc,smcp,onum); // If the font supports true small caps, this will look better
+}
+
+// Let's set which strings to use in our headers.
 // We name each string after an h1-6 heading element.
 // This assumes you're happy to use the exact text of headings in your document as the content strings.
-// If not, see below for using manually defined `title` elements, named h1-title and h2-title.
+// If not, see below for using manually defined `title` attributes, here named h1-title and h2-title.
 // Notice h1 sets the string for h2 as well, just as a fallback in case there isn't an h2 on the page yet.
 h1 { 
   string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title);
@@ -18,16 +30,6 @@ h3 { string-set: h3 content(); }
 h4 { string-set: h4 content(); }
 h5 { string-set: h5 content(); }
 h6 { string-set: h6 content(); }
-
-// This mixin defines the typography of the header
-@mixin header-style() {
-    font-family: $font-text-secondary;
-    font-size: $font-size-default * 0.8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 10mm 0 10mm 0;
-    text-align: center;
-}
 
 // Now we set the content and placement of each header element
 @page chapter:left {

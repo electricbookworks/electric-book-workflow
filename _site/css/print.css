@@ -255,46 +255,6 @@ p, ul, ol, dl {
 .chapter {
   page-break-before: right; }
 
-/* Page footers for chapter pages */
-h1 {
-  string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
-
-h2 {
-  string-set: h2 content(), h2-title attr(title); }
-
-h3 {
-  string-set: h3 content(); }
-
-h4 {
-  string-set: h4 content(); }
-
-h5 {
-  string-set: h5 content(); }
-
-h6 {
-  string-set: h6 content(); }
-
-@page chapter:left {
-  @bottom-left {
-    content: counter(page) " " string(h1, last);
-    text-align: left;
-    font-family: "Linux Libertine", serif;
-    font-size: 8.8pt;
-    letter-spacing: 0.025em;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
-@page chapter:right {
-  @bottom-right {
-    content: string(h2, last) " " counter(page);
-    text-align: right;
-    font-family: "Linux Libertine", serif;
-    font-size: 8.8pt;
-    letter-spacing: 0.025em;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
-@page chapter:blank {
-  @bottom-right {
-    content: normal; }
-  @bottom-left {
-    content: normal; } }
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
   margin-top: 84pt; }
@@ -310,8 +270,7 @@ body {
   padding: 0;
   font-variant: prince-opentype(liga);
   orphans: 1;
-  widows: 1;
-  text-align: left; }
+  widows: 1; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
@@ -359,7 +318,8 @@ h6 {
   font-style: italic; }
 
 p, ul, ol, dl {
-  font-variant: prince-opentype(onum); }
+  font-variant: prince-opentype(onum);
+  text-align: left; }
 
 p {
   margin: 0;
@@ -989,17 +949,10 @@ ol li blockquote.figure, ul li blockquote.figure {
   margin-right: auto;
   margin-left: auto; }
 
-.title-page {
-  counter-reset: page 1;
-  /* If you have a half-title page, this line will be overriden by the next */ }
-
-.halftitle-page {
-  counter-reset: page 1;
-  /* If the half-title page exists, this overrides the previous line */ }
-
 .title-page p {
   text-indent: 0;
-  hyphens: none; }
+  hyphens: none;
+  text-align: left; }
 
 .title-page-title {
   font-size: 33pt;
@@ -1211,3 +1164,42 @@ table + p.sidenote + p,
 .pullquote + p {
   text-indent: 0;
   margin-top: 0; }
+
+/* Page footers for chapter pages */
+h1 {
+  string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
+
+h2 {
+  string-set: h2 content(), h2-title attr(title); }
+
+h3 {
+  string-set: h3 content(); }
+
+h4 {
+  string-set: h4 content(); }
+
+h5 {
+  string-set: h5 content(); }
+
+h6 {
+  string-set: h6 content(); }
+
+@page chapter:left {
+  @bottom-left {
+    content: counter(page) " " string(h1, last);
+    text-align: left;
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page chapter:right {
+  @bottom-right {
+    content: string(h2, last) " " counter(page);
+    text-align: right;
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page chapter:blank {
+  @bottom-right {
+    content: normal; }
+  @bottom-left {
+    content: normal; } }

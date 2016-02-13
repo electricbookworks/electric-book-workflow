@@ -6,12 +6,6 @@
 	margin-right: auto;
 	margin-left: auto;
 }
-.title-page {
-	counter-reset: page 1; /* If you have a half-title page, this line will be overriden by the next */
-}
-.halftitle-page {
-	counter-reset: page 1; /* If the half-title page exists, this overrides the previous line */
-}
 .title-page p {
 	text-indent: 0;
 	hyphens: none;
