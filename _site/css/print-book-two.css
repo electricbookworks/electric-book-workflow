@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Crimson";
   src: url(fonts/Crimson-Roman.otf); }
@@ -197,7 +198,7 @@
   float: bottom; }
 
 .float-top + p, .float-bottom + p {
-  text-indent: 13pt; }
+  text-indent: 15pt; }
 
 /* Use these classes to control tracking, usually to save widows and orphans. */
 .tight {
@@ -253,7 +254,6 @@ p, ul, ol, dl {
   hyphenate-lines: 2;
   /* Maximum number of consecutive lines ending with hyphens */ }
 
-/* We want some layouts to start on right-hand pages only */
 .frontmatter,
 .halftitle-page,
 .title-page,
@@ -263,17 +263,23 @@ p, ul, ol, dl {
 .chapter {
   page-break-before: right; }
 
+.frontmatter,
+.dedication-page,
+.epigraph-page,
+.chapter {
+  page-break-before: auto; }
+
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
-  margin-top: 78pt; }
+  margin-top: 90pt; }
 
 /* 
  * Base typography 
  */
 body {
-  font-family: "Source Sans Pro", serif;
+  font-family: "Crimson", serif;
   font-size: 10pt;
-  line-height: 13pt;
+  line-height: 15pt;
   margin: 0;
   padding: 0;
   font-variant: prince-opentype(liga);
@@ -289,39 +295,39 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 30pt;
-  line-height: 39pt;
-  margin: 0 0 39pt 0; }
+  line-height: 45pt;
+  margin: 0 0 45pt 0; }
 
 h1 strong:first-of-type {
   /* Useful for chapter numbers: make the number first and bold in the h1 */
   display: block;
-  margin: 0 0 13pt 0; }
+  margin: 0 0 15pt 0; }
 
 h2 {
   font-size: 20pt;
-  line-height: 26pt;
-  margin: 52pt 0 13pt 0; }
+  line-height: 30pt;
+  margin: 60pt 0 15pt 0; }
 
 h3 {
-  font-size: 12pt;
-  line-height: 13pt;
-  margin: 26pt 0 13pt 0; }
+  font-size: 14pt;
+  line-height: 15pt;
+  margin: 30pt 0 15pt 0; }
 
 h4 {
   font-size: 10pt;
-  line-height: 13pt;
-  margin: 26pt 0 0 0;
+  line-height: 15pt;
+  margin: 30pt 0 0 0;
   font-style: italic; }
 
 h5 {
   font-size: 10pt;
-  line-height: 13pt;
-  margin: 13pt 0 0 0; }
+  line-height: 15pt;
+  margin: 15pt 0 0 0; }
 
 h6 {
   font-size: 10pt;
-  line-height: 13pt;
-  margin: 0 13pt 0 0;
+  line-height: 15pt;
+  margin: 0 15pt 0 0;
   display: inline;
   font-style: italic; }
 
@@ -331,7 +337,7 @@ p, ul, ol, dl {
 
 p {
   margin: 0;
-  text-indent: 13pt; }
+  text-indent: 15pt; }
 
 p:first-of-type {
   text-indent: 0; }
@@ -345,7 +351,7 @@ a {
 
 /* Lists */
 ul, ol {
-  margin: 0 0 13pt 0; }
+  margin: 0 0 15pt 0; }
 
 ol ol {
   list-style-type: lower-alpha; }
@@ -358,7 +364,7 @@ li > ul {
   /* manages line space after sublists in lists */ }
 
 li {
-  margin-left: 13pt; }
+  margin-left: 15pt; }
 
 li:first-of-type {
   page-break-after: avoid; }
@@ -371,8 +377,8 @@ li li:first-of-type {
 
 /* Blockquotes */
 blockquote {
-  margin: 13pt 0 0 0;
-  padding: 0 13pt; }
+  margin: 15pt 0 0 0;
+  padding: 0 15pt; }
 
 blockquote p {
   margin: 0;
@@ -382,19 +388,19 @@ blockquote p:first-of-type {
   text-indent: 0; }
 
 blockquote p:last-of-type, blockquote ol, blockquote ul {
-  margin: 0 0 13pt 0; }
+  margin: 0 0 15pt 0; }
 
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
  */
 dl {
-  margin: 26pt 0; }
+  margin: 30pt 0; }
 
 dt {
   page-break-after: avoid; }
 
 dd {
-  margin: 0 0 13pt 13pt; }
+  margin: 0 0 15pt 15pt; }
 
 sup, sub {
   line-height: 0; }
@@ -404,7 +410,7 @@ sup, sub {
  */
 .verse {
   text-indent: 0;
-  margin: 13pt 0;
+  margin: 15pt 0;
   hyphens: none; }
 
 .verse + p {
@@ -414,191 +420,191 @@ sup, sub {
 ul.verse {
   list-style-type: none;
   padding: 0;
-  margin: 13pt 0; }
+  margin: 15pt 0; }
 
 ul.verse li {
-  text-indent: -26pt;
-  margin-left: 26pt; }
+  text-indent: -30pt;
+  margin-left: 30pt; }
 
 ul.verse li.indent-1 {
-  margin-left: 39pt; }
+  margin-left: 45pt; }
 
 ul.verse li.indent-2 {
-  margin-left: 52pt; }
+  margin-left: 60pt; }
 
 ul.verse li.indent-3 {
-  margin-left: 65pt; }
+  margin-left: 75pt; }
 
 ul.verse li.indent-4 {
-  margin-left: 78pt; }
+  margin-left: 90pt; }
 
 ul.verse li.indent-5 {
-  margin-left: 91pt; }
+  margin-left: 105pt; }
 
 ul.verse li.indent-6 {
-  margin-left: 104pt; }
+  margin-left: 120pt; }
 
 ul.verse li.indent-7 {
-  margin-left: 117pt; }
+  margin-left: 135pt; }
 
 ul.verse li.indent-8 {
-  margin-left: 130pt; }
+  margin-left: 150pt; }
 
 ul.verse li.indent-9 {
-  margin-left: 143pt; }
+  margin-left: 165pt; }
 
 ul.verse li.indent-10 {
-  margin-left: 156pt; }
+  margin-left: 180pt; }
 
 ul.verse li.indent-11 {
-  margin-left: 169pt; }
-
-ul.verse li.indent-12 {
-  margin-left: 182pt; }
-
-ul.verse li.indent-13 {
   margin-left: 195pt; }
 
+ul.verse li.indent-12 {
+  margin-left: 210pt; }
+
+ul.verse li.indent-13 {
+  margin-left: 225pt; }
+
 ul.verse li.indent-14 {
-  margin-left: 208pt; }
+  margin-left: 240pt; }
 
 ul.verse li.indent-15 {
-  margin-left: 221pt; }
+  margin-left: 255pt; }
 
 ul.verse li.indent-16 {
-  margin-left: 234pt; }
+  margin-left: 270pt; }
 
 ul.verse li.indent-17 {
-  margin-left: 247pt; }
+  margin-left: 285pt; }
 
 ul.verse li.indent-18 {
-  margin-left: 260pt; }
+  margin-left: 300pt; }
 
 ul.verse li.indent-19 {
-  margin-left: 273pt; }
+  margin-left: 315pt; }
 
 ul.verse li.indent-20 {
-  margin-left: 286pt; }
+  margin-left: 330pt; }
 
 ul.verse li.indent-21 {
-  margin-left: 299pt; }
+  margin-left: 345pt; }
 
 ul.verse li.indent-22 {
-  margin-left: 312pt; }
+  margin-left: 360pt; }
 
 ul.verse li.indent-23 {
-  margin-left: 325pt; }
+  margin-left: 375pt; }
 
 ul.verse li.indent-24 {
-  margin-left: 338pt; }
-
-ul.verse li.indent-25 {
-  margin-left: 351pt; }
-
-ul.verse li.indent-26 {
-  margin-left: 364pt; }
-
-ul.verse li.indent-27 {
-  margin-left: 377pt; }
-
-ul.verse li.indent-28 {
   margin-left: 390pt; }
 
+ul.verse li.indent-25 {
+  margin-left: 405pt; }
+
+ul.verse li.indent-26 {
+  margin-left: 420pt; }
+
+ul.verse li.indent-27 {
+  margin-left: 435pt; }
+
+ul.verse li.indent-28 {
+  margin-left: 450pt; }
+
 ul.verse li.indent-29 {
-  margin-left: 403pt; }
+  margin-left: 465pt; }
 
 ul.verse li.indent-30 {
-  margin-left: 416pt; }
+  margin-left: 480pt; }
 
 ul.verse li.indent-31 {
-  margin-left: 429pt; }
+  margin-left: 495pt; }
 
 ul.verse li.indent-32 {
-  margin-left: 442pt; }
+  margin-left: 510pt; }
 
 ul.verse li.indent-33 {
-  margin-left: 455pt; }
+  margin-left: 525pt; }
 
 ul.verse li.indent-34 {
-  margin-left: 468pt; }
+  margin-left: 540pt; }
 
 ul.verse li.indent-35 {
-  margin-left: 481pt; }
+  margin-left: 555pt; }
 
 ul.verse li.indent-36 {
-  margin-left: 494pt; }
+  margin-left: 570pt; }
 
 ul.verse li.indent-37 {
-  margin-left: 507pt; }
-
-ul.verse li.indent-38 {
-  margin-left: 520pt; }
-
-ul.verse li.indent-39 {
-  margin-left: 533pt; }
-
-ul.verse li.indent-40 {
-  margin-left: 546pt; }
-
-ul.verse li.indent-41 {
-  margin-left: 559pt; }
-
-ul.verse li.indent-42 {
-  margin-left: 572pt; }
-
-ul.verse li.indent-43 {
   margin-left: 585pt; }
 
+ul.verse li.indent-38 {
+  margin-left: 600pt; }
+
+ul.verse li.indent-39 {
+  margin-left: 615pt; }
+
+ul.verse li.indent-40 {
+  margin-left: 630pt; }
+
+ul.verse li.indent-41 {
+  margin-left: 645pt; }
+
+ul.verse li.indent-42 {
+  margin-left: 660pt; }
+
+ul.verse li.indent-43 {
+  margin-left: 675pt; }
+
 ul.verse li.indent-44 {
-  margin-left: 598pt; }
+  margin-left: 690pt; }
 
 ul.verse li.indent-45 {
-  margin-left: 611pt; }
+  margin-left: 705pt; }
 
 ul.verse li.indent-46 {
-  margin-left: 624pt; }
+  margin-left: 720pt; }
 
 ul.verse li.indent-47 {
-  margin-left: 637pt; }
+  margin-left: 735pt; }
 
 ul.verse li.indent-48 {
-  margin-left: 650pt; }
+  margin-left: 750pt; }
 
 ul.verse li.indent-49 {
-  margin-left: 663pt; }
+  margin-left: 765pt; }
 
 ul.verse li.indent-50 {
-  margin-left: 676pt; }
-
-ul.verse li.indent-51 {
-  margin-left: 689pt; }
-
-ul.verse li.indent-52 {
-  margin-left: 702pt; }
-
-ul.verse li.indent-53 {
-  margin-left: 715pt; }
-
-ul.verse li.indent-54 {
-  margin-left: 728pt; }
-
-ul.verse li.indent-55 {
-  margin-left: 741pt; }
-
-ul.verse li.indent-56 {
-  margin-left: 754pt; }
-
-ul.verse li.indent-57 {
-  margin-left: 767pt; }
-
-ul.verse li.indent-58 {
   margin-left: 780pt; }
 
+ul.verse li.indent-51 {
+  margin-left: 795pt; }
+
+ul.verse li.indent-52 {
+  margin-left: 810pt; }
+
+ul.verse li.indent-53 {
+  margin-left: 825pt; }
+
+ul.verse li.indent-54 {
+  margin-left: 840pt; }
+
+ul.verse li.indent-55 {
+  margin-left: 855pt; }
+
+ul.verse li.indent-56 {
+  margin-left: 870pt; }
+
+ul.verse li.indent-57 {
+  margin-left: 885pt; }
+
+ul.verse li.indent-58 {
+  margin-left: 900pt; }
+
 ul.verse li.indent-59 {
-  margin-left: 793pt; }
+  margin-left: 915pt; }
 
 ul.verse li.indent-60 {
-  margin-left: 806pt; }
+  margin-left: 930pt; }
 
 blockquote.verse {
   color: inherit;
@@ -612,7 +618,7 @@ blockquote.verse h3,
 blockquote.verse h4,
 blockquote.verse h5,
 blockquote.verse h6 {
-  margin-bottom: 13pt; }
+  margin-bottom: 15pt; }
 
 blockquote.verse ul {
   margin-bottom: 0; }
@@ -668,7 +674,7 @@ blockquote.verse ul.verse {
  */
 .bibliography {
   text-indent: 0;
-  margin: 13pt 0; }
+  margin: 15pt 0; }
 
 .bibliography + p {
   text-indent: 0;
@@ -677,11 +683,11 @@ blockquote.verse ul.verse {
 ul.bibliography {
   list-style-type: none;
   padding: 0;
-  margin: 13pt 0; }
+  margin: 15pt 0; }
 
 ul.bibliography li {
-  text-indent: -26pt;
-  margin-left: 26pt; }
+  text-indent: -30pt;
+  margin-left: 30pt; }
 
 /* 
  * Epigraphs 
@@ -689,12 +695,12 @@ ul.bibliography li {
 p.epigraph {
   font-style: italic;
   text-indent: 0;
-  padding: 0 52pt;
+  padding: 0 60pt;
   max-width: 20em; }
 
 p.epigraph-source {
   text-indent: 0;
-  padding: 0 52pt;
+  padding: 0 60pt;
   max-width: 20em;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
@@ -707,7 +713,7 @@ p.epigraph-source:before {
 .epigraph-source + p, .dedication + p {
   /* Paragraphs after epigraphs and dedications should be flush left after space. */
   text-indent: 0;
-  margin-top: 13pt; }
+  margin-top: 15pt; }
 
 /* 
  * Dedications
@@ -735,8 +741,8 @@ p.dedication {
   font-size: 20pt;
   font-style: italic;
   text-align: center;
-  margin: 13pt 0;
-  line-height: 26pt; }
+  margin: 15pt 0;
+  line-height: 30pt; }
 
 .pullquote + p {
   text-indent: 0; }
@@ -752,11 +758,11 @@ p.dedication {
   font-weight: inherit;
   font-size: inherit;
   border: 0.5pt solid #ccc;
-  margin: 13pt 0;
-  padding: 13pt 13pt 0 13pt; }
+  margin: 15pt 0;
+  padding: 15pt 15pt 0 15pt; }
 
 p.box {
-  padding-bottom: 13pt;
+  padding-bottom: 15pt;
   text-indent: 0; }
 
 .box + p {
@@ -764,7 +770,7 @@ p.box {
 
 .box.float-top + p,
 .box.float-bottom + p {
-  text-indent: 13pt; }
+  text-indent: 15pt; }
 
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
   margin-top: 0; }
@@ -787,7 +793,7 @@ p.box {
 pre, code {
   font-family: "Inconsolata", monospace;
   font-size: 90%;
-  line-height: 13pt;
+  line-height: 15pt;
   white-space: pre-wrap;
   background-color: #f9f9f9;
   padding: 0.1em 0.3em;
@@ -804,7 +810,7 @@ pre + p {
  */
 table {
   border-collapse: collapse;
-  margin: 13pt 0;
+  margin: 15pt 0;
   font-size: 8pt;
   font-variant: prince-opentype(tnum); }
 
@@ -813,7 +819,7 @@ th, td {
   border-bottom: 0.5pt solid #ccc;
   border-left: 0.5pt dotted #f2f2f2;
   border-right: 0.5pt dotted #f2f2f2;
-  padding: 1.3pt 2.6pt; }
+  padding: 1.5pt 3pt; }
 
 thead, th {
   font-weight: bold; }
@@ -822,7 +828,7 @@ thead, th {
   page-break-after: avoid;
   font-style: italic;
   text-indent: 0;
-  margin: 26pt 0 13pt 0; }
+  margin: 30pt 0 15pt 0; }
 
 .table-caption em {
   font-style: normal; }
@@ -859,8 +865,8 @@ blockquote.figure {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  margin: 13pt 0 13pt 0;
-  padding: 6.5pt;
+  margin: 15pt 0 15pt 0;
+  padding: 7.5pt;
   width: 100%;
   box-sizing: border-box; }
 
@@ -883,11 +889,11 @@ ol li blockquote.figure, ul li blockquote.figure {
   width: auto;
   max-height: 150mm;
   max-width: 100%;
-  margin: 0 auto 6.5pt auto; }
+  margin: 0 auto 7.5pt auto; }
 
 .figure p:nth-child(2) {
   /* This is the caption */
-  padding: 6.5pt 0 0 0;
+  padding: 7.5pt 0 0 0;
   text-align: center;
   text-indent: 0;
   font-style: italic; }
@@ -921,9 +927,9 @@ ol li blockquote.figure, ul li blockquote.figure {
   line-height: inherit; }
 
 .footnotes {
-  margin: 26pt 0 0 0;
+  margin: 30pt 0 0 0;
   font-size: 9pt;
-  line-height: 11.7pt; }
+  line-height: 13.5pt; }
 
 .footnotes p {
   text-indent: 0; }
@@ -932,23 +938,23 @@ ol li blockquote.figure, ul li blockquote.figure {
   display: none; }
 
 .sidenote {
-  font-family: "Crimson", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   clear: both;
   float: right;
   max-width: 10em;
   min-width: 5em;
-  margin: 6.5pt 0 6.5pt 26pt;
-  padding: 6.5pt;
+  margin: 7.5pt 0 7.5pt 30pt;
+  padding: 7.5pt;
   border-top: 0.5pt solid #eeeeee;
   text-indent: 0;
   font-size: 8pt;
   font-style: inherit;
-  line-height: 10.4pt; }
+  line-height: 12pt; }
 
 .bottom {
   float: bottom;
   max-width: 100%;
-  margin: 13pt 0 0 0; }
+  margin: 15pt 0 0 0; }
 
 /*
  * Halftitle-page and title-page
@@ -964,23 +970,23 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 .title-page-title {
   font-size: 30pt;
-  line-height: 39pt;
+  line-height: 45pt;
   font-variant: prince-opentype(dlig);
-  margin: 78pt 0 13pt 0;
+  margin: 90pt 0 15pt 0;
   string-set: book-title content; }
 
 .title-page-subtitle {
   font-size: 20pt;
-  line-height: 26pt;
+  line-height: 30pt;
   font-style: italic;
-  margin: 13pt 0 13pt 0;
+  margin: 15pt 0 15pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-subtitle content; }
 
 .title-page-author {
   font-size: 20pt;
-  line-height: 26pt;
-  margin: 13pt 0;
+  line-height: 30pt;
+  margin: 15pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-author content; }
 
@@ -998,17 +1004,17 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 .copyright-page h1 {
   font-size: 8pt;
-  line-height: 10.4pt;
-  margin: 13pt 0;
+  line-height: 12pt;
+  margin: 15pt 0;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
   text-align: left; }
 
 .copyright-page p, .copyright-page li {
-  margin: 0 0 10.4pt 0;
+  margin: 0 0 12pt 0;
   text-indent: 0;
   font-size: 8pt;
-  line-height: 10.4pt;
+  line-height: 12pt;
   hyphens: none;
   /* Prince will not hyphenate here */ }
 
@@ -1024,20 +1030,20 @@ ol li blockquote.figure, ul li blockquote.figure {
   .contents-page ul, .contents-page ol {
     list-style-type: none; }
   .contents-page li {
-    margin: 0 0 6.5pt 0; }
+    margin: 0 0 7.5pt 0; }
   .contents-page li li {
     margin: 0; }
   .contents-page h2 {
     font-size: 12pt;
-    margin: 13pt 0 6.5pt 0; }
+    margin: 15pt 0 7.5pt 0; }
 
 /* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
 ul#markdown-toc, ol#markdown-toc {
   list-style-type: none;
   border-top: 0.5pt solid #f9f9f9;
   border-bottom: 0.5pt solid #f9f9f9;
-  padding: 13pt 0;
-  margin: 26pt 0; }
+  padding: 15pt 0;
+  margin: 30pt 0; }
 
 #markdown-toc ul, #markdown-toc ol {
   list-style-type: none;
@@ -1046,7 +1052,7 @@ ul#markdown-toc, ol#markdown-toc {
   font-variant: prince-opentype(lnum);
   margin: 0; }
 #markdown-toc li li {
-  margin-left: 13pt; }
+  margin-left: 15pt; }
 #markdown-toc a {
   text-decoration: none; }
 #markdown-toc a::after {
@@ -1091,7 +1097,7 @@ img.cover {
 
 p.valediction {
   text-indent: 0;
-  margin: 13pt 0;
+  margin: 15pt 0;
   font-style: italic;
   text-align: right;
   page-break-before: avoid; }
@@ -1112,14 +1118,14 @@ p.source {
 p.first {
   /* A paragraph that starts a new set of paragraphs, with a gap above it. */
   text-indent: 0;
-  margin-top: 13pt;
+  margin-top: 15pt;
   /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */ }
 
 p.chapter-number {
   font-weight: bold;
   font-size: 40pt;
-  line-height: 52pt;
-  margin: 0 0 13pt 0; }
+  line-height: 60pt;
+  margin: 0 0 15pt 0; }
 
 .reference-index {
   columns: 2;
@@ -1127,12 +1133,12 @@ p.chapter-number {
 
 .reference-index li {
   list-style-type: none;
-  margin: 0 0 0 26pt;
-  text-indent: -26pt;
+  margin: 0 0 0 30pt;
+  text-indent: -30pt;
   column-break-inside: avoid; }
 
 .reference-index li li {
-  margin: 0 0 0 13pt; }
+  margin: 0 0 0 15pt; }
 
 .reference-index a {
   content: target-counter(attr(href), page); }
@@ -1173,71 +1179,144 @@ table + p.sidenote + p,
   text-indent: 0;
   margin-top: 0; }
 
-@page chapter:left {
-  @bottom-left {
-    content: normal; } }
-@page chapter:right {
-  @bottom-right {
-    content: normal; } }
-@page chapter {
-  @bottom-center {
-    content: counter(page);
-    text-align: center;
-    font-family: "Source Sans Pro", serif;
-    font-size: 8pt;
-    font-variant: prince-opentype(lnum); } }
-@page chapter:blank {
-  @bottom-center {
-    content: normal; } }
-/* Running headers for chapter pages */
 h1 {
-  string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title);
-  prince-page-group: start; }
+  string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }
 
 h2 {
-  string-set: h2 content(), h2-title attr(title); }
+  string-set: h2-text content(), h2-title attr(title); }
 
 h3 {
-  string-set: h3 content(); }
+  string-set: h3-text content(), h3-title attr(title); }
 
 h4 {
-  string-set: h4 content(); }
+  string-set: h4-text content(), h4-title attr(title); }
 
 h5 {
-  string-set: h5 content(); }
+  string-set: h5-text content(), h5-title attr(title); }
 
 h6 {
-  string-set: h6 content(); }
+  string-set: h6-text content(), h6-title attr(title); }
 
 @page chapter:left {
   @top {
-    content: string(h1, last);
-    font-family: "Source Sans Pro", serif;
-    font-size: 8pt;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
-@page chapter:right {
-  @top {
-    content: string(h2, last);
-    font-family: "Source Sans Pro", serif;
-    font-size: 8pt;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
-@page chapter {
+    content: counter(page) " " string(h1-text, last); }
+  @top-right {
+    content: normal; }
   @top-left {
     content: normal; }
-  @top-right {
+  @bottom {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
     content: normal; } }
-.chapter {
+@page chapter:right {
+  @top {
+    content: string(h2-text, last) " " counter(page); }
+  @top-right {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @bottom {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; } }
+.chapter, h1 {
   prince-page-group: start; }
 
 @page chapter:first {
   @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
     content: normal; } }
 @page chapter:blank {
   @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @bottom {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
     content: normal; } }
+@page chapter:left {
+  @top {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page chapter:right {
+  @top {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }

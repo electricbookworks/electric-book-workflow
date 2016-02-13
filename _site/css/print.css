@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Inconsolata", monospace;
   src: url(fonts/Inconsolata-Regular.ttf); }
@@ -245,13 +244,18 @@ p, ul, ol, dl {
   hyphenate-lines: 2;
   /* Maximum number of consecutive lines ending with hyphens */ }
 
-/* We want some layouts to start on right-hand pages only */
 .frontmatter,
 .halftitle-page,
 .title-page,
 .dedication-page,
 .epigraph-page,
 .contents-page,
+.chapter {
+  page-break-before: right; }
+
+.frontmatter,
+.dedication-page,
+.epigraph-page,
 .chapter {
   page-break-before: right; }
 
@@ -1165,41 +1169,144 @@ table + p.sidenote + p,
   text-indent: 0;
   margin-top: 0; }
 
-/* Page footers for chapter pages */
 h1 {
-  string-set: h1 content(), h2 content(), h1-title attr(title), h2-title attr(title); }
+  string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }
 
 h2 {
-  string-set: h2 content(), h2-title attr(title); }
+  string-set: h2-text content(), h2-title attr(title); }
 
 h3 {
-  string-set: h3 content(); }
+  string-set: h3-text content(), h3-title attr(title); }
 
 h4 {
-  string-set: h4 content(); }
+  string-set: h4-text content(), h4-title attr(title); }
 
 h5 {
-  string-set: h5 content(); }
+  string-set: h5-text content(), h5-title attr(title); }
 
 h6 {
-  string-set: h6 content(); }
+  string-set: h6-text content(), h6-title attr(title); }
 
 @page chapter:left {
+  @top {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @bottom {
+    content: string(h1-text, last); }
   @bottom-left {
-    content: counter(page) " " string(h1, last);
-    text-align: left;
-    font-family: "Linux Libertine", serif;
-    font-size: 8.8pt;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
+    content: counter(page); }
+  @bottom-right {
+    content: normal; } }
 @page chapter:right {
+  @top {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @bottom {
+    content: string(h2-text, last); }
+  @bottom-left {
+    content: normal; }
   @bottom-right {
-    content: string(h2, last) " " counter(page);
-    text-align: right;
-    font-family: "Linux Libertine", serif;
-    font-size: 8.8pt;
-    font-variant: prince-opentype(c2sc, smcp, onum); } }
+    content: counter(page); } }
+.chapter, h1 {
+  prince-page-group: start; }
+
+@page chapter:first {
+  @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; } }
 @page chapter:blank {
-  @bottom-right {
+  @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @bottom {
     content: normal; }
   @bottom-left {
+    content: normal; }
+  @bottom-right {
     content: normal; } }
+@page chapter:left {
+  @top {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page chapter:right {
+  @top {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }

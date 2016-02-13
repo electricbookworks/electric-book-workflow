@@ -1,8 +1,6 @@
 ---
-# Print styles
+# Print styles: Electric Book Framework Classic Theme
 ---
-
-// WHAT IS THIS? TBS
 
 // First, let's set character encoding. Don't change this.
 @charset "utf-8";
@@ -41,6 +39,38 @@ $widows: 1; // Minimum number of lines that must be left at the top of the secon
 $hyphenation: auto; // Can be auto, none, or manual (only breaks on hyphens and soft hyphens)
 $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
+// Should chapters start on a right-hand page (recto) or on any page?
+// This setting applies to the frontmatter, dedication-page, epigraph-page and chapter page styles.
+// (The halftitle-page, title-page and contents-page page styles always start on a recto.)
+$start-on: right; // right or auto or left ()
+
+// Set the content of headers and footers.
+//
+// For no content: normal
+// For a page number: counter(page)
+// For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
+// For the title attribute of the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-title, last)
+// (Note: if you use title attributes, you must add them for every heading at the heading-level you choose.)
+// For a phrase: "Any phrase in quotes"
+// For an em space: "\2003"
+// For other special characters, see CSS (ISO) at https://brajeshwar.github.io/entities/
+
+// Verso (left-hand-page)
+$verso-top: normal;
+$verso-top-right: normal;
+$verso-top-left: normal;
+$verso-bottom: string(h1-text, last);
+$verso-bottom-left: counter(page);
+$verso-bottom-right: normal;
+
+// Recto (right-hand-page)
+$recto-top: normal;
+$recto-top-right: normal;
+$recto-top-left: normal;
+$recto-bottom:  string(h2-text, last);
+$recto-bottom-left: normal;
+$recto-bottom-right: counter(page);
+
 // --------------------------------------------------------
 // Import font files (@font-face) for fonts you specify
 // You may need to add the actual font files to `css/fonts`
@@ -58,27 +88,11 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 @import "fonts/source-sans-pro";
 //@import "fonts/trajan-pro";
 
-// --------------------------------------------
-// Import your master theme and set its options
-// --------------------------------------------
+// ---------------------
+// Import theme partials
+// ---------------------
 
-// Classic theme
 @import "themes/classic/print";
-
-	// Running footers with page number outside, heading inside
-	@import "themes/classic/partials/print-page-footers";
-
-	// If you want only bottom-centered page numbers, uncomment the following line
-	//@import "themes/classic/partials/print-page-footers-page-numbers-only";
-
-	// If you want page headers, uncomment the following line
-	//@import "themes/classic/partials/print-page-headers";
-
-	// If you want page headers with headings only and no page numbers, uncomment the following line
-	//@import "themes/classic/partials/print-page-headers-headings-only";
-
-	// To start chapters on a left- or a right-hand page, uncommment the following line:
-	//@import "themes/classic/print-start-on-recto-or-verso";
 
 // -------------
 // Custom styles
