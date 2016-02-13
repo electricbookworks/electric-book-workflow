@@ -46,6 +46,7 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 // You may need to add the actual font files to `css/fonts`
 // --------------------------------------------------------
 
+//@import "adobe-caslon-pro";
 //@import "fonts/crimson-text";
 //@import "fonts/crimson";
 @import "fonts/inconsolata";
@@ -61,6 +62,7 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 // Import your master theme and set its options
 // --------------------------------------------
 
+// Classic theme
 @import "themes/classic/print";
 
 	// Running footers with page number outside, heading inside
@@ -74,6 +76,9 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 
 	// If you want page headers with headings only and no page numbers, uncomment the following line
 	//@import "themes/classic/partials/print-page-headers-headings-only";
+
+	// To start chapters on a left- or a right-hand page, uncommment the following line:
+	//@import "themes/classic/print-start-on-recto-or-verso";
 
 // -------------
 // Custom styles
