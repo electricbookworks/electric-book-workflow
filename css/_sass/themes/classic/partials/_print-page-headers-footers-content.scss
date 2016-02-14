@@ -48,6 +48,12 @@ h6 {
   @top-left {
     content: $verso-top-left;
   }
+  @top-right-corner {
+    content: $verso-top-right-corner;
+  }
+  @top-left-corner {
+    content: $verso-top-left-corner;
+  }
   @bottom {
     content: $verso-bottom;
   }
@@ -56,6 +62,12 @@ h6 {
   }
   @bottom-right {
     content: $verso-bottom-right;
+  }
+  @bottom-left-corner {
+    content: $verso-bottom-left-corner;
+  }
+  @bottom-right-corner {
+    content: $verso-bottom-right-corner;
   }
 }
 
@@ -70,6 +82,12 @@ h6 {
   @top-left {
     content: $recto-top-left;
   }
+  @top-right-corner {
+    content: $recto-top-right-corner;
+  }
+  @top-left-corner {
+    content: $recto-top-left-corner;
+  }
   @bottom {
     content: $recto-bottom;
   }
@@ -78,6 +96,12 @@ h6 {
   }
   @bottom-right {
     content: $recto-bottom-right;
+  }
+  @bottom-left-corner {
+    content: $recto-bottom-left-corner;
+  }
+  @bottom-right-corner {
+    content: $recto-bottom-right-corner;
   }
 }
 
@@ -89,6 +113,8 @@ h6 {
   @top { content: normal; }
   @top-left { content: normal; }
   @top-right { content: normal; }
+  @top-left-corner { content: normal; }
+  @top-right-corner { content: normal; }
 }
 
 // No headers or footers on blank pages of chapters
@@ -96,7 +122,11 @@ h6 {
   @top { content: normal; }
   @top-left { content: normal; }
   @top-right { content: normal; }
+  @top-left-corner { content: normal; }
+  @top-right-corner { content: normal; }
   @bottom { content: normal; }
   @bottom-left { content: normal; }
   @bottom-right { content: normal; }
+  @bottom-left-corner { content: normal; }
+  @bottom-right-corner { content: normal; }
 }

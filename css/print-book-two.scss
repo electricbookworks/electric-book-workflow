@@ -60,17 +60,25 @@ $start-on: auto; // right or auto or left ()
 $verso-top: counter(page) "\2003" string(h1-text, last);
 $verso-top-right: normal;
 $verso-top-left: normal;
+$verso-top-left-corner: normal;
+$verso-top-right-corner: normal;
 $verso-bottom: normal;
 $verso-bottom-left: normal;
 $verso-bottom-right: normal;
+$verso-bottom-left-corner: normal;
+$verso-bottom-right-corner: normal;
 
 // Recto (right-hand-page)
 $recto-top: string(h2-text, last) "\2003" counter(page);
 $recto-top-right: normal;
 $recto-top-left: normal;
+$recto-top-left-corner: normal;
+$recto-top-right-corner: normal;
 $recto-bottom: normal;
 $recto-bottom-left: normal;
 $recto-bottom-right: normal;
+$recto-bottom-left-corner: normal;
+$recto-bottom-right-corner: normal;
 
 // --------------------------------------------------------
 // Import font files (@font-face) for fonts you specify

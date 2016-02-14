@@ -24,6 +24,12 @@
   @top-left {
     @include header-style();
   }
+  @top-right-corner {
+    @include header-style();
+  }
+  @top-left-corner {
+    @include header-style();
+  }
   @bottom {
     @include header-style();
   }
@@ -31,6 +37,12 @@
     @include header-style();
   }
   @bottom-right {
+    @include header-style();
+  }
+  @bottom-left-corner {
+    @include header-style();
+  }
+  @bottom-right-corner {
     @include header-style();
   }
 }
@@ -46,6 +58,12 @@
   @top-left {
     @include header-style();
   }
+  @top-right-corner {
+    @include header-style();
+  }
+  @top-left-corner {
+    @include header-style();
+  }
   @bottom {
     @include header-style();
   }
@@ -53,6 +71,12 @@
     @include header-style();
   }
   @bottom-right {
+    @include header-style();
+  }
+  @bottom-left-corner {
+    @include header-style();
+  }
+  @bottom-right-corner {
     @include header-style();
   }
 }
