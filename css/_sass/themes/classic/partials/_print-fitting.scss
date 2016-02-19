@@ -14,7 +14,11 @@
 	text-indent: $line-height-default; // If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back.
 }
  
-/* Use these classes to control tracking, usually to save widows and orphans. */
+// These classes control letter-spacing (tracking), usually to save widows and orphans.
+.tighten {
+	letter-spacing: $letter-spacing-text - 0.003em;
+	font-style: inherit;
+}
 .tight {
 	letter-spacing: $letter-spacing-text - 0.0075em;
 	font-style: inherit;
@@ -29,6 +33,10 @@
 }
 .xxx-tight {
 	letter-spacing: $letter-spacing-text - 0.5em;
+	font-style: inherit;
+}
+.loosen {
+	letter-spacing: $letter-spacing-text + 0.003em;
 	font-style: inherit;
 }
 .loose {

@@ -12,4 +12,5 @@ The subtitle
 A. N. Author
 {:.title-page-author}
 
-![Publisher logo](images/publisher-logo.svg){:.title-page-logo}
+![Publisher logo](images/publisher-logo.svg)
+{:.title-page-logo}

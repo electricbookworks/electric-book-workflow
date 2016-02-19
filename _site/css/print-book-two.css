@@ -1199,11 +1199,19 @@ h6 {
     content: normal; }
   @top-left {
     content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
   @bottom {
     content: normal; }
   @bottom-left {
     content: normal; }
   @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
     content: normal; } }
 @page chapter:right {
   @top {
@@ -1212,11 +1220,19 @@ h6 {
     content: normal; }
   @top-left {
     content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
   @bottom {
     content: normal; }
   @bottom-left {
     content: normal; }
   @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
     content: normal; } }
 .chapter, h1 {
   prince-page-group: start; }
@@ -1227,6 +1243,10 @@ h6 {
   @top-left {
     content: normal; }
   @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
     content: normal; } }
 @page chapter:blank {
   @top {
@@ -1235,11 +1255,19 @@ h6 {
     content: normal; }
   @top-right {
     content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
   @bottom {
     content: normal; }
   @bottom-left {
     content: normal; }
   @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
     content: normal; } }
 @page chapter:left {
   @top {
@@ -1260,6 +1288,18 @@ h6 {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
     font-family: "Crimson", serif;
     font-size: 8pt;
@@ -1273,6 +1313,18 @@ h6 {
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right-corner {
     font-family: "Crimson", serif;
     font-size: 8pt;
     text-transform: uppercase;
@@ -1297,6 +1349,18 @@ h6 {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
     font-family: "Crimson", serif;
     font-size: 8pt;
@@ -1310,6 +1374,18 @@ h6 {
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left-corner {
+    font-family: "Crimson", serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right-corner {
     font-family: "Crimson", serif;
     font-size: 8pt;
     text-transform: uppercase;

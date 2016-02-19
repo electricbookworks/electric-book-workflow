@@ -45,6 +45,10 @@ $hyphenation-dictionary: ""; // File name of dictionary in css/dictionaries.
 // (The halftitle-page, title-page and contents-page page styles always start on a recto.)
 $start-on: right; // right or auto or left ()
 
+// Style of page numbers on frontmatter pages
+// Remember to tag links to front matter pages in your TOC with {:.frontmatter-reference}
+$frontmatter-reference-style: lower-roman; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
+
 // Set the content of headers and footers.
 //
 // For no content: normal
@@ -52,6 +56,7 @@ $start-on: right; // right or auto or left ()
 // For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
 // For the title attribute of the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-title, last)
 // (Note: if you use title attributes, you must add them for every heading at the heading-level you choose.)
+// For the book title, subtitle or author set with .title-page-title, .title-page-subtitle and .title-page-author: book-title, book-subtitle, book-author
 // For a phrase: "Any phrase in quotes"
 // For an em space: "\2003"
 // For other special characters, see CSS (ISO) at https://brajeshwar.github.io/entities/
@@ -79,6 +84,30 @@ $recto-bottom-left: normal;
 $recto-bottom-right: counter(page);
 $recto-bottom-left-corner: normal;
 $recto-bottom-right-corner: normal;
+
+// Verso (left-hand-page) for .frontmatter pages (`style: frontmatter`)
+$verso-top-frontmatter: normal;
+$verso-top-left-frontmatter: normal;
+$verso-top-right-frontmatter: normal;
+$verso-top-left-corner-frontmatter: normal;
+$verso-top-right-corner-frontmatter: normal;
+$verso-bottom-frontmatter: counter(page, $frontmatter-reference-style);
+$verso-bottom-left-frontmatter: normal;
+$verso-bottom-right-frontmatter: normal;
+$verso-bottom-left-corner-frontmatter: normal;
+$verso-bottom-right-corner-frontmatter: normal;
+
+// Recto (right-hand-page) for .frontmatter pages (`style: frontmatter`)
+$recto-top-frontmatter: normal;
+$recto-top-left-frontmatter: normal;
+$recto-top-right-frontmatter: normal;
+$recto-top-left-corner-frontmatter: normal;
+$recto-top-right-corner-frontmatter: normal;
+$recto-bottom-frontmatter: counter(page, $frontmatter-reference-style);
+$recto-bottom-left-frontmatter: normal;
+$recto-bottom-right-frontmatter: normal;
+$recto-bottom-left-corner-frontmatter: normal;
+$recto-bottom-right-corner-frontmatter: normal;
 
 // --------------------------------------------------------
 // Import font files (@font-face) for fonts you specify

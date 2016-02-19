@@ -9,6 +9,9 @@
 		content: leader(" ") target-counter(attr(href), page);
 		font-variant: prince-opentype(lnum);
 	}
+	a.frontmatter-reference::after, .page-ref-list a.frontmatter-reference::after {
+		content: leader(" ") target-counter(attr(href), page, $frontmatter-reference-style);
+	}
 	ul, ol {
 		list-style-type: none;
 	}
