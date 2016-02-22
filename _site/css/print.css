@@ -190,7 +190,10 @@
 .float-top + p, .float-bottom + p {
   text-indent: 14pt; }
 
-/* Use these classes to control tracking, usually to save widows and orphans. */
+.tighten {
+  letter-spacing: -0.003em;
+  font-style: inherit; }
+
 .tight {
   letter-spacing: -0.0075em;
   font-style: inherit; }
@@ -205,6 +208,10 @@
 
 .xxx-tight {
   letter-spacing: -0.5em;
+  font-style: inherit; }
+
+.loosen {
+  letter-spacing: 0.003em;
   font-style: inherit; }
 
 .loose {
@@ -951,7 +958,7 @@ ol li blockquote.figure, ul li blockquote.figure {
 .title-page p {
   text-indent: 0;
   hyphens: none;
-  text-align: left; }
+  text-align: center; }
 
 .title-page-title {
   font-size: 33pt;
@@ -978,7 +985,13 @@ ol li blockquote.figure, ul li blockquote.figure {
 .title-page-logo {
   width: 3em;
   position: absolute;
-  bottom: 0; }
+  text-align: center;
+  bottom: 0;
+  transform: translateX(-50%);
+  margin-left: 50%; }
+
+.title-page-logo img {
+  width: 100%; }
 
 /*
  * Copyright page
@@ -1012,6 +1025,8 @@ ol li blockquote.figure, ul li blockquote.figure {
   .contents-page a::after, .contents-page .page-ref-list a::after {
     content: leader(" ") target-counter(attr(href), page);
     font-variant: prince-opentype(lnum); }
+  .contents-page a.frontmatter-reference::after, .contents-page .page-ref-list a.frontmatter-reference::after {
+    content: leader(" ") target-counter(attr(href), page, lower-roman); }
   .contents-page ul, .contents-page ol {
     list-style-type: none; }
   .contents-page li {
@@ -1259,6 +1274,86 @@ h6 {
     content: normal; }
   @bottom-right-corner {
     content: normal; } }
+@page frontmatter:left {
+  @top {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @bottom {
+    content: counter(page,lower-roman); }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+@page frontmatter:right {
+  @top {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @bottom {
+    content: counter(page,lower-roman); }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+.frontmatter {
+  prince-page-group: start; }
+
+@page frontmatter:first {
+  @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; } }
+@page frontmatter:blank {
+  @top {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+.page-1 {
+  counter-reset: page 1; }
+
 @page chapter:left {
   @top {
     font-family: "Linux Libertine", serif;
@@ -1321,6 +1416,128 @@ h6 {
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
 @page chapter:right {
+  @top {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page frontmatter:left {
+  @top {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-right-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @top-left-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-left-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); }
+  @bottom-right-corner {
+    font-family: "Linux Libertine", serif;
+    font-size: 8.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-variant: prince-opentype(c2sc, smcp, onum); } }
+@page frontmatter:right {
   @top {
     font-family: "Linux Libertine", serif;
     font-size: 8.8pt;

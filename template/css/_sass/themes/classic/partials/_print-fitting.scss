@@ -1,0 +1,54 @@
+/* 
+ * Extra typographic control for fitting text and elements
+ */
+
+/* Float an element, like a box, to the top of bottom of a page (print only) */
+ 
+.float-top {
+	float: top;
+}
+.float-bottom {
+	float: bottom;
+}
+.float-top + p, .float-bottom + p {
+	text-indent: $line-height-default; // If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back.
+}
+ 
+// These classes control letter-spacing (tracking), usually to save widows and orphans.
+.tighten {
+	letter-spacing: $letter-spacing-text - 0.003em;
+	font-style: inherit;
+}
+.tight {
+	letter-spacing: $letter-spacing-text - 0.0075em;
+	font-style: inherit;
+}
+.x-tight {
+	letter-spacing: $letter-spacing-text - 0.01em;
+	font-style: inherit;
+}
+.xx-tight {
+	letter-spacing: $letter-spacing-text - 0.02em;
+	font-style: inherit;
+}
+.xxx-tight {
+	letter-spacing: $letter-spacing-text - 0.5em;
+	font-style: inherit;
+}
+.loosen {
+	letter-spacing: $letter-spacing-text + 0.003em;
+	font-style: inherit;
+}
+.loose {
+	letter-spacing: $letter-spacing-text + 0.0075em;
+	font-style: inherit;
+}
+.x-loose {
+	letter-spacing: $letter-spacing-text + 0.01em;
+	font-style: inherit;
+}
+
+/* Shrink the font size */
+.shrink {
+	font-size: 0.7em; /* Useful for wide tables */
+}

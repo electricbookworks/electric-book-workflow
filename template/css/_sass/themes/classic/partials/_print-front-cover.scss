@@ -1,0 +1,25 @@
+/*
+ * Cover-page styling. Creates a single-page low-res cover for web PDFs.
+ */
+
+@page cover {
+	margin: 0;
+}
+
+@prince-pdf {
+    prince-pdf-page-layout: single-page;
+}
+
+body.cover, div.cover {
+	margin: 0;
+	padding: 0;
+}
+p.cover {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+img.cover {
+	height: 100%;
+	width: 100%;
+}

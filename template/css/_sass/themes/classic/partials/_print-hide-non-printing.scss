@@ -1,0 +1,7 @@
+/*
+ * Hide screen-only and non-printing elements. The framework by default adds the .non-printing class to screen-only elements like #nav-bar and #footer.
+ */
+
+.non-printing {
+	display: none;
+}

@@ -1,0 +1,45 @@
+/* 
+ * Nav bar
+ */
+ 
+#nav-bar {
+	position: fixed;
+	top: 0;
+	background-color: white;
+	padding: 0 0.5em;
+	width: 100%;
+	opacity: 0.9;
+	border-bottom: 1px solid #f2f2f2;
+	z-index: 1;
+}
+	@media only screen 
+	and (max-height: 320px) { // Let nav-bar scroll out of view on small screens
+		#nav-bar {
+			position: relative;
+		}
+	}
+#nav-bar p, #nav-bar ul, #nav-bar ol {
+    font-family: $font-text-secondary;
+    font-size: 0.8em;
+    font-weight: 300;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    float: right;
+    margin: 0.66em 1em 0.5em 0; // Top margin accounts for smaller font size
+}
+#nav-bar a {
+    text-decoration: none;
+    color: inherit;
+}
+#nav-bar a.nav-series:after,
+#nav-bar a.nav-book:after {
+	content: " \2022"
+}
+#nav-bar a:hover {
+	color: #666666;
+}
+.home #nav-bar,
+.cover #nav-bar {
+	display: none;
+}

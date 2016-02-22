@@ -1,14 +1,14 @@
 # Add your imprint or brand name here, it will appear in navigation.
-publisher: "Publisher name"
+publisher: "Electric Book Works"
 
 # Your publisher name will link to this URL in navigation.
 publisher-url: "http://electricbookworks.com"
 
 # The name of the series of books in this folder.
-name: "Collection name"
+name: "Electric Book Workflow"
 
 # A one-liner about this series. Useful for Open Graph metadata.
-description: "A description of this series"
+description: "A workflow for creating high-quality books and ebooks with open technologies."
 
 # The primary language used in this series. You can set the language for each book individually below at 'defaults'. 
 # To understand what language tags to use, read: http://www.w3.org/International/articles/language-tags/ 
@@ -36,26 +36,26 @@ sass:
 # Jekyll will ignore these files and folders. 
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
+template,
 #css,
-#book-one,
-#book-two
 ]
 
-# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
+# These are default YAML values that apply to multiple documents. 
+# (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
 defaults: 
     -
         scope: # First we set defaults for all files in this series folder (an empty string "" for path means all files).
             path: ""
         values:
-            author: "A. N. Author"
+            author: "Arthur Attwell"
             language: "en"
-            publication-date: "2015-12-01"
+            publication-date: "2015-12-31"
             layout: "default"
 #            layout: "epub"
             style: "chapter"
-            stylesheet-print: "print.css"
-            stylesheet-web: "web.css"
-            stylesheet-epub: "epub.css"
+            stylesheet-print: "print-guide.css"
+            stylesheet-web: "web-guide.css"
+            stylesheet-epub: "epub-guide.css"
             contents: "0-3-contents.html"
             language: "en"
             isbn-print: ""
@@ -63,21 +63,6 @@ defaults:
             uuid: ""
     -
         scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
-            path: "book-one"
+            path: "guide"
         values:
-            book-title: "Book title"
-            language: "en"
-            isbn-print: ""
-            isbn-epub: ""
-            uuid: ""
-    -
-        scope: # Repeat for each book.
-            path: "book-two"
-        values:
-            book-title: "Book two title"
-            language: "en"
-            stylesheet-print: "print-book-two.css"
-            stylesheet-web: "web-book-two.css"
-            isbn-print: ""
-            isbn-epub: ""
-            uuid: ""
+            book-title: "A guide to the Electric Book Workflow"

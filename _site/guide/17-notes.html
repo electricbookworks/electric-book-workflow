@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>A guide to the Electric Book Workflow: Footnotes, endnotes and sidenotes</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/web-guide.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+</head>
+<body class="chapter">
+
+
+		<div id="nav-bar" class="non-printing">
+			<p>
+				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="nav-book">A guide to the Electric Book Workflow</a>
+				<a href="" title="Top: Footnotes, endnotes and sidenotes"  class="nav-page">Footnotes, endnotes and sidenotes</a>
+			</p>
+		</div><!--#nav-bar-->
+
+	<div id="wrapper">
+
+
+<h1 id="footnotes-endnotes-and-sidenotes">Footnotes, endnotes and sidenotes</h1>
+
+<p>Our default theme provides three options for notes.</p>
+
+<p><strong>Footnotes</strong> appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that’s what kramdown calls them. To create them in markdown, follow the <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown syntax for footnotes</a>:</p>
+
+<ul>
+  <li>put a <code class="highlighter-rouge">[^1]</code> where the footnote reference should appear (the <code class="highlighter-rouge">1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
+  <li>anywhere in the document (we recommend after the paragraph containing the footnote reference), put <code class="highlighter-rouge">[^1]: Your footnote text here.</code>.</li>
+</ul>
+
+<p><strong>Sidenotes</strong> appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a <code class="highlighter-rouge">*</code> at the start of the sidenote text and <code class="highlighter-rouge">*{:.sidenote}</code> at the end (with no spaces). (Technically, you’re creating an <code class="highlighter-rouge">&lt;em&gt;</code> span with a kramdown IAL.)</p>
+
+<p>In print, you can put <strong>sidenotes at the bottom of the page</strong>. By adding <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.sidenote</span><span class="p">}</span></code> tag, your sidenote sits at the bottom of the page rather than on the right with text wrap, replicating a traditional footnote. So the markdown looks like this: <code class="highlighter-rouge">*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}</code>. On screen, these are just regular sidenotes.</p>
+
+
+	</div><!--#wrapper-->
+	
+
+	<div id="footer" class="non-printing">
+		<div class="footer-content">
+			<p>
+				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
+				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="footer-book"><em>A guide to the Electric Book Workflow</em></a>
+				<a href="" title="Top: Footnotes, endnotes and sidenotes" class="footer-page">Footnotes, endnotes and sidenotes</a>
+			</p>
+		</div><!--.footer-content-->
+	</div><!--#footer-->
+
+	
+</body>
+</html>
+

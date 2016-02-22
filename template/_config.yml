@@ -1,0 +1,72 @@
+# Add your imprint or brand name here, it will appear in navigation.
+publisher: "Publisher name"
+
+# Your publisher name will link to this URL in navigation.
+publisher-url: "http://example.com"
+
+# The name of the series of books in this folder.
+name: "Collection name"
+
+# A one-liner about this series. Useful for Open Graph metadata.
+description: "A description of this series"
+
+# The primary language used in this series. You can set the language for each book individually below at 'defaults'. 
+# To understand what language tags to use, read: http://www.w3.org/International/articles/language-tags/ 
+# For the registry of tags: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry 
+# Useful lookup tool: http://r12a.github.io/apps/subtags/
+language: en
+
+# Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
+url: http://localhost:4000
+
+# Change this to the name of your series folder, e.g. /my-cool-books
+baseurl: "" # If you're using GitHub Pages, make this the name of your repo, e.g. /electric-book-workflow
+
+# Leave this unchanged as kramdown unless you really know how and why to change your markdown processor
+markdown: kramdown
+
+# Leave this unchanged as none. This way, your book's chapters will all generate correctly named in one folder.
+# This is really useful for grabbing all your HTML files at once for including in epubs or sending to PrinceXML.
+permalink: none
+
+# Leave this unchanged. It tells Jekyll where to find Sass partials. (See http://jekyllrb.com/docs/assets/#sassscss)
+sass:
+    sass_dir: css/_sass
+
+# Jekyll will ignore these files and folders. 
+# Useful for temporarily speeding up processing for particular files.
+exclude: [
+#css,
+#book-one,
+#book-two
+]
+
+# These are default YAML values that apply to multiple documents. (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
+defaults: 
+    -
+        scope: # First we set defaults for all files in this series folder (an empty string "" for path means all files).
+            path: ""
+        values:
+            author: "Author name"
+            language: "en"
+            publication-date: "2015-12-01"
+            layout: "default"
+#            layout: "epub"
+            style: "chapter"
+            stylesheet-print: "print.css"
+            stylesheet-web: "web.css"
+            stylesheet-epub: "epub.css"
+            contents: "0-3-contents.html"
+            language: "en"
+            isbn-print: ""
+            isbn-epub: ""
+            uuid: ""
+    -
+        scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
+            path: "book"
+        values:
+            book-title: "Book title"
+            language: "en"
+            isbn-print: ""
+            isbn-epub: ""
+            uuid: ""

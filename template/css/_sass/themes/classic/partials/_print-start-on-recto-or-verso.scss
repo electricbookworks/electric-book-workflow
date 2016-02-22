@@ -1,0 +1,20 @@
+// By default, these page styles start on right-hand pages only
+.frontmatter, 
+.halftitle-page, 
+.title-page, 
+.dedication-page, 
+.epigraph-page, 
+.contents-page, 
+.chapter 
+{ 
+	page-break-before: right;
+}
+
+// But they can be overriden by the $start-on variable
+.frontmatter, 
+.dedication-page, 
+.epigraph-page, 
+.chapter 
+{ 
+	page-break-before: $start-on;
+}
