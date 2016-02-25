@@ -1,0 +1,403 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>A guide to the Electric Book Workflow: Supported classes</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/web-guide.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+</head>
+<body class="chapter">
+
+
+		<div id="nav-bar" class="non-printing">
+			<p>
+				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="nav-book">A guide to the Electric Book Workflow</a>
+				<a href="" title="Top: Supported classes"  class="nav-page">Supported classes</a>
+			</p>
+		</div><!--#nav-bar-->
+
+	<div id="wrapper">
+
+
+<h1 id="supported-classes">Supported classes</h1>
+
+<p>Our Classic theme includes styling for a range of classes. You can apply these to elements in markdown.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Workflow class</th>
+      <th>Block or inline</th>
+      <th>Explanation</th>
+      <th>Supports edition suffix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bibliography list</td>
+      <td><code class="highlighter-rouge">.bibliography</code></td>
+      <td>Block</td>
+      <td>Styles a list as a bibliography, for instance at the end of an academic book.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Box</td>
+      <td><code class="highlighter-rouge">.box</code></td>
+      <td>Block</td>
+      <td>Puts the element in a box, to set it off from the rest of the text.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Chapter number</td>
+      <td><code class="highlighter-rouge">.chapter-number</code></td>
+      <td>Block</td>
+      <td>Used for a chapter number before a chapter heading. (See the tip at <a href="#bold">Bold</a> above for another way to handle chapter numbers.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Dedication</td>
+      <td><code class="highlighter-rouge">.dedication</code></td>
+      <td>Block</td>
+      <td>A dedication, for instance at the start of a book or chapter</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Epigraph source</td>
+      <td><code class="highlighter-rouge">.epigraph-source</code></td>
+      <td>Block</td>
+      <td>The person to whom the epigraph is attributed.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Epigraph</td>
+      <td><code class="highlighter-rouge">.epigraph</code></td>
+      <td>Block</td>
+      <td>An epigraph at the start of a book or chapter.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure</td>
+      <td><code class="highlighter-rouge">.figure</code></td>
+      <td>Block</td>
+      <td>A figure is an image with a caption. Read about how to manage them properly <a href="https://github.com/electricbookworks/electric-book-workflow#adding-images-in-markdown">in our workflow guide</a>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure: extra small</td>
+      <td><code class="highlighter-rouge">.x-small</code></td>
+      <td>Block</td>
+      <td>Add to the <code class="highlighter-rouge">.figure</code> tag, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="w"> </span><span class="err">.x-small</span><span class="p">}</span></code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure: fixed position</td>
+      <td><code class="highlighter-rouge">.fixed</code></td>
+      <td>Block</td>
+      <td>Add to the <code class="highlighter-rouge">.figure</code> tag, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="w"> </span><span class="err">.fixed</span><span class="p">}</span></code>. For figures that must keep their position in the text flow, and must not float to the top of the page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure: large</td>
+      <td><code class="highlighter-rouge">.large</code></td>
+      <td>Block</td>
+      <td>Add to the <code class="highlighter-rouge">.figure</code> tag, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="w"> </span><span class="err">.large</span><span class="p">}</span></code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure: medium</td>
+      <td><code class="highlighter-rouge">.medium</code></td>
+      <td>Block</td>
+      <td>Add to the <code class="highlighter-rouge">.figure</code> tag, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="w"> </span><span class="err">.medium</span><span class="p">}</span></code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Figure: small</td>
+      <td><code class="highlighter-rouge">.small</code></td>
+      <td>Block</td>
+      <td>Add to the <code class="highlighter-rouge">.figure</code> tag, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="w"> </span><span class="err">.small</span><span class="p">}</span></code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>First paragraph</td>
+      <td><code class="highlighter-rouge">.first</code></td>
+      <td>Block</td>
+      <td>For any paragraph that starts a new set of paragraphs, flush left and with a gap above it.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Float to top</td>
+      <td><code class="highlighter-rouge">.float-top</code></td>
+      <td>Block</td>
+      <td>Floats the element to the top of its page. Useful for boxes. Applies to print output only.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Float to bottom</td>
+      <td><code class="highlighter-rouge">.float-bottom</code></td>
+      <td>Block</td>
+      <td>Floats the element to the bottom of its page. Useful for boxes. Applies to print output only.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Footnote</td>
+      <td><code class="highlighter-rouge">.sidenote .bottom</code></td>
+      <td>Block or inline</td>
+      <td>When you add <code class="highlighter-rouge">.bottom</code> to <code class="highlighter-rouge">.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see <a href="#endnotes">Endnotes</a> above.)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Fraction</td>
+      <td><code class="highlighter-rouge">.fractions</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports it, converts characters like <code class="highlighter-rouge">1/2</code> into fraction characters.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Glossary</td>
+      <td><code class="highlighter-rouge">.glossary</code></td>
+      <td>Block</td>
+      <td>Use this after the last entry in a series of definition lists to define the entire list of definitions as a glossary.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Hide from print</td>
+      <td><code class="highlighter-rouge">.non-printing</code></td>
+      <td>Block or inline</td>
+      <td>Hides the element from print output. Useful for things like clickable buttons, which are only intended for screens, not paper.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Keep together</td>
+      <td><code class="highlighter-rouge">.keep-together</code></td>
+      <td>Block</td>
+      <td>Prevents an element from breaking across pages. (E.g. you want to keep a short list on the same page.)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Keep with next</td>
+      <td><code class="highlighter-rouge">.keep-with-next</code></td>
+      <td>Block</td>
+      <td>Prevents a page break between this element and the next one.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Logo image</td>
+      <td><code class="highlighter-rouge">.logo</code></td>
+      <td>Block</td>
+      <td>Used for making images small, especially for small logos in text like on acknowledgements pages.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Page break after</td>
+      <td><code class="highlighter-rouge">.page-break-after</code></td>
+      <td>Block</td>
+      <td>Creates a page break after the element.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Page break before</td>
+      <td><code class="highlighter-rouge">.page-break-before</code></td>
+      <td>Block</td>
+      <td>Starts its element on a new page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Page break: allow</td>
+      <td><code class="highlighter-rouge">.allow-break</code></td>
+      <td>Block</td>
+      <td>Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Poetry</td>
+      <td><code class="highlighter-rouge">.verse</code></td>
+      <td>Block</td>
+      <td>Designing poetry is tricky and important. Read about how to manage this <a href="https://github.com/electricbookworks/electric-book-workflow#poetry">in our workflow guide</a>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Pull quote</td>
+      <td><code class="highlighter-rouge">.pullquote</code></td>
+      <td>Block</td>
+      <td>Displays a paragraph as a pull quote.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Shrink font</td>
+      <td><code class="highlighter-rouge">.shrink</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the font size to 70%. Can be useful for wide tables.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Sidenote</td>
+      <td><code class="highlighter-rouge">.sidenote</code></td>
+      <td>Block or inline</td>
+      <td>A sidenote appears in a sidebar to the right of the text.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Small caps (lowercase only)</td>
+      <td><code class="highlighter-rouge">.smallcaps</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports proper small-caps glyphs. Only affects the lowercase letters.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Small caps throughout</td>
+      <td><code class="highlighter-rouge">.allsmallcaps</code></td>
+      <td>Block or inline</td>
+      <td>If your font supports proper small-caps glyphs, all characters are small caps.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Source after a quotation</td>
+      <td><code class="highlighter-rouge">.source</code></td>
+      <td>Block</td>
+      <td>The name and/or title of the source for a preceding quotation.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Table caption</td>
+      <td><code class="highlighter-rouge">.table-caption</code></td>
+      <td>Block</td>
+      <td>Add <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.table-caption</span><span class="p">}</span></code> in the line immediately after a table caption. Table captions must always appear above tables, not after them.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Table caption</td>
+      <td><code class="highlighter-rouge">.table-caption</code></td>
+      <td>Block</td>
+      <td>Use for the caption above a table. (Table captions should not appear after tables, only before.)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Title page: author</td>
+      <td><code class="highlighter-rouge">.title-page-author</code></td>
+      <td>Block</td>
+      <td>The book’s author(s) on the title page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Title page: logo</td>
+      <td><code class="highlighter-rouge">.title-page-logo</code></td>
+      <td>Block</td>
+      <td>A logo, as an image, on the title page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Title page: subtitle</td>
+      <td><code class="highlighter-rouge">.title-page-subtitle</code></td>
+      <td>Block</td>
+      <td>The book’s subtitle on the title page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Title page: title</td>
+      <td><code class="highlighter-rouge">.title-page-title</code></td>
+      <td>Block</td>
+      <td>The book’s title on the title page.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Tracking: tighten</td>
+      <td><code class="highlighter-rouge">.tighten</code></td>
+      <td>Block or inline</td>
+      <td>Slightly tightens the space between letters. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: tight</td>
+      <td><code class="highlighter-rouge">.tight</code></td>
+      <td>Block or inline</td>
+      <td>Imperceptibly shrinks the gaps between letters. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: tighter</td>
+      <td><code class="highlighter-rouge">.x-tight</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the gaps between letters a tiny bit. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: very tight</td>
+      <td><code class="highlighter-rouge">.xx-tight</code></td>
+      <td>Block or inline</td>
+      <td>Shrinks the gaps between letters visibly. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: extremely tight</td>
+      <td><code class="highlighter-rouge">xxx-tight</code></td>
+      <td>Block or inline</td>
+      <td>Really tightens letters up close. Use as a last resort. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: loosen</td>
+      <td><code class="highlighter-rouge">.loosen</code></td>
+      <td>Block or inline</td>
+      <td>Slightly loosens the space between letters. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: loose</td>
+      <td><code class="highlighter-rouge">.loose</code></td>
+      <td>Block or inline</td>
+      <td>Imperceptibly widens the gaps between letters. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Tracking: looser</td>
+      <td><code class="highlighter-rouge">.x-loose</code></td>
+      <td>Block or inline</td>
+      <td>Widens the gaps between letters. <em>Affects print output only.</em></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Valediction</td>
+      <td><code class="highlighter-rouge">.valediction</code></td>
+      <td>Block</td>
+      <td>Used for the sign-off at the end of a letter, preface or foreword.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-edition-suffix">The edition suffix</h2>
+
+<p>If you want to produce more than one print edition of a book from the same source file, you can’t use the same classes that affect text-flow – like <code class="highlighter-rouge">.tighten</code>, for instance – in both editions, because the text will flow differently in each edition.</p>
+
+<p>Our workflow has a way to manage that. In the print CSS file, you can specify an edition suffix. For instance, if you’re producing a schools edition of a book, you might make your suffix <code class="highlighter-rouge">-schools-edn</code>. That suffix will be appended to the end of certain class names for that stylesheet. The default <code class="highlighter-rouge">.tighten</code> class will become <code class="highlighter-rouge">.tighten-schools-edn</code> in your final print CSS.</p>
+
+<p>(It’s a good idea to start a suffix with a hyphen, to keep your output CSS neat.)</p>
+
+<p>Only some classes are affected – see the table above for which ones. The most important are the classes used for tightening and loosening letter-spacing, which are mostly used to control widows and orphans in print layout.</p>
+
+<p>In your markdown, then, you’d use <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="p">}</span></code> instead of <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten</span><span class="p">}</span></code>, and that class will then only have an effect on your schools edition. If you had another edition, say a professional edition with a <code class="highlighter-rouge">-prof-edn</code> suffix, you’d use a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-prof-edn</span><span class="p">}</span></code> tag in the markdown. These would match the classes automatically generated in each edition’s CSS.</p>
+
+<p>Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="w"> </span><span class="err">.tighten-prof-edn</span><span class="p">}</span></code>. That paragraph would then be tightened in both print layouts.</p>
+
+
+	</div><!--#wrapper-->
+	
+
+	<div id="footer" class="non-printing">
+		<div class="footer-content">
+			<p>
+				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
+				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="footer-book"><em>A guide to the Electric Book Workflow</em></a>
+				<a href="" title="Top: Supported classes" class="footer-page">Supported classes</a>
+			</p>
+		</div><!--.footer-content-->
+	</div><!--#footer-->
+
+	
+</body>
+</html>
+

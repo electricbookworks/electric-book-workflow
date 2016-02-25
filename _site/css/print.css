@@ -180,7 +180,6 @@
 /* 
  * Extra typographic control for fitting text and elements
  */
-/* Float an element, like a box, to the top of bottom of a page (print only) */
 .float-top {
   float: top; }
 
@@ -192,37 +191,44 @@
 
 .tighten {
   letter-spacing: -0.003em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .tight {
   letter-spacing: -0.0075em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .x-tight {
   letter-spacing: -0.01em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .xx-tight {
   letter-spacing: -0.02em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .xxx-tight {
   letter-spacing: -0.5em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .loosen {
   letter-spacing: 0.003em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .loose {
   letter-spacing: 0.0075em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
 .x-loose {
   letter-spacing: 0.01em;
-  font-style: inherit; }
+  font-style: inherit;
+  background-color: inherit; }
 
-/* Shrink the font size */
 .shrink {
   font-size: 0.7em;
   /* Useful for wide tables */ }

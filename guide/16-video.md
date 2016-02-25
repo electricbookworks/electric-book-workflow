@@ -17,10 +17,10 @@ Here's a full example:
 
 
 ~~~
-	## A video
-	{:.non-printing}
+## A video
+{:.non-printing}
 
-	{% include youtube-start.html %}RRV-9Jf0eI0{% include youtube-end.html %}
+{% include youtube-start.html %}RRV-9Jf0eI0{% include youtube-end.html %}
 ~~~
 
 

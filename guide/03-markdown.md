@@ -262,57 +262,7 @@ In addition to boxes, our default stylesheets include lots of other classes for 
 > When you apply a tag to an inline element, mark off the text you're tagging with asterisks (`*`), as you would italics, and put your tag immediately after the closing `*`, on the same line. E.g. `*Make this small-caps.*{:.smallcaps}`.
 {:.box}
 
-### Supported classes
-
-| Feature | Workflow class | Block or inline |  Explanation
-| --- | --- | --- | ---
-| Bibliography list | `.bibliography` | Block | Styles a list as a bibliography, for instance at the end of an academic book.
-| Box | `.box` | Block | Puts the element in a box, to set it off from the rest of the text.
-| Chapter number | `.chapter-number` | Block | Used for a chapter number before a chapter heading. (See the tip at [Bold](#bold) above for another way to handle chapter numbers.
-| Dedication | `.dedication` | Block | A dedication, for instance at the start of a book or chapter
-| Epigraph source | `.epigraph-source` | Block | The person to whom the epigraph is attributed.
-| Epigraph | `.epigraph` | Block | An epigraph at the start of a book or chapter.
-| Figure | `.figure` | Block | A figure is an image with a caption. Read about how to manage them properly [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#adding-images-in-markdown).
-| Figure: extra small | `.x-small` | Block | Add to the `.figure` tag, e.g. `{:.figure .x-small}`. 
-| Figure: fixed position | `.fixed` | Block | Add to the `.figure` tag, e.g. `{:.figure .fixed}`. For figures that must keep their position in the text flow, and must not float to the top of the page.
-| Figure: large | `.large` | Block | Add to the `.figure` tag, e.g. `{:.figure .large}`. 
-| Figure: medium | `.medium` | Block | Add to the `.figure` tag, e.g. `{:.figure .medium}`. 
-| Figure: small | `.small` | Block | Add to the `.figure` tag, e.g. `{:.figure .small}`. 
-| First paragraph | `.first`| Block | For any paragraph that starts a new set of paragraphs, flush left and with a gap above it.
-| Float to top | `.float-top` | Block | Floats the element to the top of its page. Useful for boxes. Applies to print output only.
-| Float to bottom | `.float-bottom` | Block | Floats the element to the bottom of its page. Useful for boxes. Applies to print output only.
-| Footnote | `.sidenote .bottom` | Block or inline | When you add `.bottom` to `.sidenote`, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see [Endnotes](#endnotes) above.)
-| Fraction | `.fractions` | Block or inline | If your font supports it, converts characters like `1/2` into fraction characters.
-| Glossary | `.glossary` | Block | Use this after the last entry in a series of definition lists to define the entire list of definitions as a glossary.
-| Hide from print | `.non-printing` | Block or inline | Hides the element from print output. Useful for things like clickable buttons, which are only intended for screens, not paper.
-| Keep together | `.keep-together` | Block | Prevents an element from breaking across pages. (E.g. you want to keep a short list on the same page.)
-| Keep with next | `.keep-with-next` | Block | Prevents a page break between this element and the next one.
-| Logo image | `.logo` | Block | Used for making images small, especially for small logos in text like on acknowledgements pages.
-| Page break after | `.page-break-after` | Block | Creates a page break after the element.
-| Page break before | `.page-break-before` | Block | Starts its element on a new page.
-| Page break: allow | `.allow-break` | Block | Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element.
-| Poetry | `.verse` | Block | Designing poetry is tricky and important. Read about how to manage this [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#poetry).
-| Pull quote | `.pullquote` | Block | Displays a paragraph as a pull quote.
-| Shrink font | `.shrink` | Block or inline | Shrinks the font size to 70%. Can be useful for wide tables.
-| Sidenote | `.sidenote` | Block or inline | A sidenote appears in a sidebar to the right of the text.
-| Small caps (lowercase only) | `.smallcaps` | Block or inline | If your font supports proper small-caps glyphs. Only affects the lowercase letters.
-| Small caps throughout | `.allsmallcaps` | Block or inline | If your font supports proper small-caps glyphs, all characters are small caps.
-| Source after a quotation | `.source` | Block | The name and/or title of the source for a preceding quotation.
-| Table caption | `.table-caption` | Block | Add `{:.table-caption}` in the line immediately after a table caption. Table captions must always appear above tables, not after them.
-| Table caption | `.table-caption` | Block | Use for the caption above a table. (Table captions should not appear after tables, only before.)
-| Title page: author | `.title-page-author` | Block | The book's author(s) on the title page.
-| Title page: logo | `.title-page-logo` | Block | A logo, as an image, on the title page.
-| Title page: subtitle | `.title-page-subtitle` | Block | The book's subtitle on the title page.
-| Title page: title | `.title-page-title` | Block | The book's title on the title page.
-| Tracking: tighten | `.tighten` | Block or inline | Slightly tightens the space between letters. *Affects print output only.*
-| Tracking: tight | `.tight` | Block or inline | Imperceptibly shrinks the gaps between letters. *Affects print output only.*
-| Tracking: tighter | `.x-tight` | Block or inline | Shrinks the gaps between letters a tiny bit. *Affects print output only.*
-| Tracking: very tight | `.xx-tight` | Block or inline | Shrinks the gaps between letters visibly. *Affects print output only.*
-| Tracking: extremely tight | `xxx-tight` | Block or inline | Really tightens letters up close. Use as a last resort. *Affects print output only.*
-| Tracking: loosen | `.loosen` | Block or inline | Slightly loosens the space between letters. *Affects print output only.*
-| Tracking: loose | `.loose` | Block or inline | Imperceptibly widens the gaps between letters. *Affects print output only.*
-| Tracking: looser | `.x-loose` | Block or inline | Widens the gaps between letters. *Affects print output only.*
-| Valediction | `.valediction` | Block | Used for the sign-off at the end of a letter, preface or foreword.
+To see all the classes that our Classic theme supports, see the [Supported classes](05-classes.html#supported-classes) section.
 
 ## Editing reflowable text
 

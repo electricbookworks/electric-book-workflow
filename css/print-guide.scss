@@ -16,11 +16,11 @@
 $edition-suffix: null;
 
 // First, we set several variables related to overall page setup.
-$page-size: 129mm 198mm; // Width, then height. 129×198 is B-format (Lightning Source compatible)
-$margin-top: 15mm;
+$page-size: A5; // Width, then height. 129×198 is B-format (Lightning Source compatible)
+$margin-top: 20mm;
 $margin-bottom: 20mm;
-$margin-outside: 13mm;
-$margin-inside: 19mm;
+$margin-outside: 20mm;
+$margin-inside: 20mm;
 $bleed: 3mm;
 $trim: 3mm;
 $crop-marks: crop; // crop | none

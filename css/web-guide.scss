@@ -74,7 +74,30 @@ p {
     margin-bottom: 1em;
     text-indent: 0;
 }
+
+// Switch out default book-title text for 'Contents'
+// Thanks http://stackoverflow.com/a/22054588/1781075
+#nav-bar a.nav-book {
+	display: inline-block;
+	text-indent: -999em;
+	line-height: 0; // Collapse the original line
+}
 #nav-bar a.nav-book:after {
-    content: " (Contents) •";
-    display: inline;
+    content: " Contents •";
+    text-indent: 0;
+    display: block;
+	line-height: initial; // New content takes up original line height
+}
+
+// Except on the contents page
+.contents-page #nav-bar a.nav-book {
+	display: inline;
+	text-indent: 0;
+	line-height: inherit;
+}
+.contents-page #nav-bar a.nav-book:after {
+    content: "";
+    text-indent: 0;
+    display: inherit;
+	line-height: inherit;
 }

@@ -1054,6 +1054,24 @@ p {
   margin-bottom: 1em;
   text-indent: 0; }
 
+#nav-bar a.nav-book {
+  display: inline-block;
+  text-indent: -999em;
+  line-height: 0; }
+
 #nav-bar a.nav-book:after {
-  content: " (Contents) •";
-  display: inline; }
+  content: " Contents •";
+  text-indent: 0;
+  display: block;
+  line-height: initial; }
+
+.contents-page #nav-bar a.nav-book {
+  display: inline;
+  text-indent: 0;
+  line-height: inherit; }
+
+.contents-page #nav-bar a.nav-book:after {
+  content: "";
+  text-indent: 0;
+  display: inherit;
+  line-height: inherit; }
