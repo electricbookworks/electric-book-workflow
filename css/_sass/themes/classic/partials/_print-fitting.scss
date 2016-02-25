@@ -2,53 +2,60 @@
  * Extra typographic control for fitting text and elements
  */
 
-/* Float an element, like a box, to the top of bottom of a page (print only) */
- 
-.float-top {
+// Float an element, like a box, to the top of bottom of a page (print only)
+.float-top#{$edition-suffix} {
 	float: top;
 }
-.float-bottom {
+.float-bottom#{$edition-suffix} {
 	float: bottom;
 }
-.float-top + p, .float-bottom + p {
+.float-top#{$edition-suffix} + p, .float-bottom#{$edition-suffix} + p {
 	text-indent: $line-height-default; // If a paragraph would normally be flush left after an element, but that element is floated away, it should get its indent back.
 }
  
 // These classes control letter-spacing (tracking), usually to save widows and orphans.
-.tighten {
+.tighten#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text - 0.003em;
 	font-style: inherit;
+	background-color: $highlight-tightened;
 }
-.tight {
+.tight#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text - 0.0075em;
 	font-style: inherit;
+	background-color: $highlight-tightened;
 }
-.x-tight {
+.x-tight#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text - 0.01em;
 	font-style: inherit;
+	background-color: $highlight-tightened;
 }
-.xx-tight {
+.xx-tight#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text - 0.02em;
 	font-style: inherit;
+	background-color: $highlight-tightened;
 }
-.xxx-tight {
+.xxx-tight#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text - 0.5em;
 	font-style: inherit;
+	background-color: $highlight-tightened;
 }
-.loosen {
+.loosen#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text + 0.003em;
 	font-style: inherit;
+	background-color: $highlight-loosened;
 }
-.loose {
+.loose#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text + 0.0075em;
 	font-style: inherit;
+	background-color: $highlight-loosened;
 }
-.x-loose {
+.x-loose#{$edition-suffix} {
 	letter-spacing: $letter-spacing-text + 0.01em;
 	font-style: inherit;
+	background-color: $highlight-loosened;
 }
 
-/* Shrink the font size */
-.shrink {
+// Shrink the font size
+.shrink#{$edition-suffix} {
 	font-size: 0.7em; /* Useful for wide tables */
 }

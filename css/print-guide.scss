@@ -9,6 +9,12 @@
 // Set variables
 // -------------
 
+// Edition suffix: identifies this edition in page-fitting classes (in _print-fitting.scss).
+// For instance, a .tighten class in HTML might apply to your bookshop edition, but not the schools edition.
+// A suffix '-schools-edn' would mean only tags with that suffix would apply to that edition, e.g. {:.tighten-schools-edn}
+// If you're only planning one edition and use default tags ({:.tighten} not {:.tighten-schools-edn}), leave as null.
+$edition-suffix: null;
+
 // First, we set several variables related to overall page setup.
 $page-size: 129mm 198mm; // Width, then height. 129×198 is B-format (Lightning Source compatible)
 $margin-top: 15mm;
@@ -108,6 +114,10 @@ $recto-bottom-left-frontmatter: normal;
 $recto-bottom-right-frontmatter: counter(page, $frontmatter-reference-style);
 $recto-bottom-left-corner-frontmatter: normal;
 $recto-bottom-right-corner-frontmatter: normal;
+
+// Special highlights for temporary debugging/viewing. Specify a colour for highlighting. 'inherit' for none.
+$highlight-tightened: inherit;
+$highlight-loosened: inherit;
 
 // --------------------------------------------------------
 // Import font files (@font-face) for fonts you specify
