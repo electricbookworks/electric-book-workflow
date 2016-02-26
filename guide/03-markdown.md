@@ -8,9 +8,11 @@ title: Markdown
 * toc
 {:toc}
 
-For many books, we use a super-efficient workflow for editing and laying out books. It's called the Electric Book Workflow. This guide explains how to edit a manuscript for the workflow. If you get it right, we can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting! 
+This guide explains how to edit text for the workflow. On its own, it's also a handy guide to markdown in general.
 
-To edit for the workflow, you need to have a rough idea how HTML works, and you need to learn markdown. This is much, much easier than you think.
+If you get your markdown right, the workflow can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting! 
+
+To edit for the workflow, you need to have a rough idea how HTML works, and you need to learn markdown. If you're new to HTML and markdown, don't worry: it's much easier than you think.
 
 ## How HTML works
 
