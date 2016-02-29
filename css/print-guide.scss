@@ -60,6 +60,7 @@ $frontmatter-reference-style: lower-roman; // lower-roman, decimal, see http://w
 // For no content: normal
 // For a page number: counter(page)
 // For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
+// Instead of last (last on page) you can also use first (first on page) or start (string set on previous page).
 // For the title attribute of the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-title, last)
 // (Note: if you use title attributes, you must add them for every heading at the heading-level you choose.)
 // For the book title, subtitle or author set with .title-page-title, .title-page-subtitle and .title-page-author: book-title, book-subtitle, book-author
