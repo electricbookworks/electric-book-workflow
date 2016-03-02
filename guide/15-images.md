@@ -75,6 +75,8 @@ and so on. You can combine size and placement classes like this, too:
 
 `{:.figure .fixed .small}`
 
+> CSS tip: [If you're having trouble with SVGs having space around them](http://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element), in your CSS make sure you set the height of the `img` element. SVGs are inline elements by default, and will add white space around them.
+
 ## Preparing images
 
 *   Wherever possible, convert images to SVG so that they scale beautifully but also remain small in file-size for web use.

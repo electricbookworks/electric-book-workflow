@@ -1,16 +1,9 @@
-/*
- * Set hyphenation dictionary
- * By default this is off
- * Avoid specifying here unless every book in this collection uses the same, unchanging dictionary
- * Otherwise, specify a dictionary for each book in its child stylesheet.
- */
+/* Hyphenation */
 
-body {
-	prince-hyphenate-patterns: url("dictionaries/#{$hyphenation-dictionary}");
-}
 p, ul, ol, dl {
+	prince-hyphenate-patterns: url("dictionaries/#{$hyphenation-dictionary}");
 	hyphens: $hyphenation;
-	hyphenate-after: 3; /* Minimum letters on new line after hyphen */
-	hyphenate-before: 3; /* Minimum letters at end of line before hyphen */
-	hyphenate-lines: 2; /* Maximum number of consecutive lines ending with hyphens */
+	hyphenate-after: $hyphenate-after; // Minimum letters on new line after hyphen
+	hyphenate-before: $hyphenate-before; // Minimum letters at end of line before hyphen
+	hyphenate-lines: $hyphenate-lines; // Maximum number of consecutive lines ending with hyphens
 }
