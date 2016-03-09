@@ -95,6 +95,27 @@ The `epub` layout lets you skip a few of the steps listed above, because it:
 
 To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 
+### Splitting large files
+
+If you have very large text files that, in the epub output, you'd like to split up into separate HTML files, Sigil can help. Using this tag in HTML, you can mark where Sigil must split your HTML file(s):
+
+~~~
+<hr class="sigil_split_marker" />
+~~~
+
+To create that in kramdown:
+
+~~~
+***
+{:.sigil_split_marker}
+~~~
+
+Then, when you're assembling the epub in Sigil, just run Edit > Split at markers.
+
+A common use case for this is books with end-of-book endnotes. To create end-of-book endnotes using kramdown footnotes you must put all content with endnotes in one markdown (and therefore HTML) file. This file is too large for sensible epub use, so splitting is important. Sigil is smart enough to update your internal links when you run 'Split at markers'.
+
+Note, however, internal links in some files (e.g. your contents page) may not update in Sigil. (This may be a bug.) To update internal links, before running 'Split at markers', temporarily paste your contents-page list of links into your text file to be split. If the list is part of the same file, the links will update. You can then cut-and-paste the list back into your contents page.
+
 ## Mobi conversion
 
 If you need a MOBI file for Kindle, we recommend putting your EPUB into [Kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211). If you don't want to use the command-line, just open the EPUB with the [Kindle Previewer](http://www.amazon.com/gp/feature.html?docId=1000765261), which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.

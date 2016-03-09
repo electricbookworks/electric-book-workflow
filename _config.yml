@@ -37,6 +37,7 @@ sass:
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
 template,
+_source,
 #css,
 ]
 
