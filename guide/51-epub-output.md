@@ -110,11 +110,13 @@ To create that in kramdown:
 {:.sigil_split_marker}
 ~~~
 
-Then, when you're assembling the epub in Sigil, just run Edit > Split at markers.
+Then, when you're assembling the epub in Sigil, just run Edit > Split At Markers.
 
-A common use case for this is books with end-of-book endnotes. To create end-of-book endnotes using kramdown footnotes you must put all content with endnotes in one markdown (and therefore HTML) file. This file is too large for sensible epub use, so splitting is important. Sigil is smart enough to update your internal links when you run 'Split at markers'.
+Sigil will then split the HTML file into separate HTML files at the markers, and remove the `<hr>` element.
 
-Note, however, internal links in some files (e.g. your contents page) may not update in Sigil. (This may be a bug.) To update internal links, before running 'Split at markers', temporarily paste your contents-page list of links into your text file to be split. If the list is part of the same file, the links will update. You can then cut-and-paste the list back into your contents page.
+A common use case for this is books with end-of-book endnotes. To create end-of-book endnotes using kramdown footnotes you must put all content with endnotes in one markdown (and therefore HTML) file. This file is too large for sensible epub use, so splitting is important. Sigil is smart enough to update your internal links when you run 'Split At Markers'.
+
+> **NB: Before running Split At Markers: save, close, and reopen your epub.** At least till Sigil 0.9.3, there is [an issue with updating internal links when using Split At Markers](http://www.mobileread.com/forums/showthread.php?p=3277498#post3277498). In order for internal links to update correctly, Sigil must *first* have rewritten all link paths to HTML files according to its `../Text/` folder structure (e.g. the links to chapters in a Table of Contents file). Sigil only rewrites all these paths when an epub file is opened. So to make sure links are udpated when running Split At Markers, you need to save, close, and reopen the epub first. This [may be fixed from Sigil 0.9.5](http://www.mobileread.com/forums/showpost.php?p=3277552&postcount=11).
 
 ## Mobi conversion
 
