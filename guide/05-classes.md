@@ -31,6 +31,7 @@ Our Classic theme includes styling for a range of classes. You can apply these t
 | Keep with next | `.keep-with-next` | Block | Prevents a page break between this element and the next one. | No
 | Logo image | `.logo` | Block | Used for making images small, especially for small logos in text like on acknowledgements pages. | No
 | Page break after | `.page-break-after` | Block | Creates a page break after the element. | No
+| Page break after, end of book | `.page-break-after-right` | Block | When applied to the very last element in the book, ensures a blank verso for an even-numbered page extent. | No
 | Page break before | `.page-break-before` | Block | Starts its element on a new page. | No
 | Page break: allow | `.allow-break` | Block | Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element. | No
 | Poetry | `.verse` | Block | Designing poetry is tricky and important. Read about how to manage this [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#poetry). | No
