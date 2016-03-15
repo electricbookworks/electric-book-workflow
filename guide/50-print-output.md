@@ -27,6 +27,27 @@ If you want to learn about using CSS to control print output using Prince, [this
 
 > Tech detail: Our default HTML `head` includes links to both the screen stylesheet and the print stylesheet specified in `_config.yml`. Prince knows which one to use because they're specified with `media="screen"` and `media="print"`.
 
+## Creating PDFs with Prince from the command line
+
+For general instructions, see [the official PrinceXML user guide](http://www.princexml.com/doc/command-line/). We like to use this workflow:
+
+1.  In each book's folder (alongside the markdown) we keep a file called `print-list`. The `print-list` file is just a list of the HTML files that must be included in the print PDF. E.g.:
+
+    ~~~
+    0-1-titlepage.html
+    0-2-copyright.html
+    0-3-contents.html
+    1.html
+    2.html
+    3.html
+    ~~~
+
+2.  At your command prompt, navigate to the book's folder in `_site`. (With the right settings, you can launch your command line app in the right folder from a file explorer in [Windows](http://lifehacker.com/5989434/quickly-open-a-command-prompt-from-the-windows-explorer-address-bar), [Mac](http://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514) and [Linux](http://www.howtogeek.com/192865/how-to-open-terminal-to-a-specific-folder-in-ubuntus-file-browser/).)
+3.  At the prompt, type `prince -l print-list -o /temp/filename.pdf`.
+
+> In that last step, `/temp` is an existing folder at the root of your drive (e.g. `C:/temp` if you're working on your C drive in Windows) and `filename` is a sensible file name. If you just used `filename.pdf` without the folder path, the PDF would be saved to the same folder as the HTML in `_site`. We don't recommend this because Jekyll will overwrite that whole folder if you build new HTML, and you'll lose your PDF.
+{:.box}
+
 ## Refining print layout
 
 You will doubtless want to refine your print layout by editing your markdown and adding custom CSS to your print `.scss` file.
@@ -52,8 +73,7 @@ There are two delays in this process:
 
 To speed this up:
 
-1. Temporarily stop Jekyll generating any files you aren't working on:
-    *   In `_config.yml`, add a line that excludes those files. In this example, I've listed the CSS folder and all my book's chapters, and them commented out with `#` the one I'm working on, so that Jekyll does regenerate that:
+1.  Temporarily stop Jekyll generating any files you aren't working on. In `_config.yml`, add a line that excludes those files. In this example, I've listed the CSS folder and all my book's chapters, and them commented out with `#` the one I'm working on, so that Jekyll does regenerate that:
 
     ~~~
     # Jekyll will ignore these files and folders. 
@@ -71,7 +91,7 @@ To speed this up:
     ]
     ~~~
 
-2.  Using the Prince GUI there isn't a universal way to speed up conversion. Depending on your setup, you might look into using the command line instead, or making sure you've disabled any unnecessary Javascript.
+2.  Using Prince there isn't a universal way to speed up conversion, except to only convert the files you really need to be working on. (If you've used Javascript in your HTML, that can slow Prince down. [We wrap scripts, like Google Analytics tags, in a test that checks for Prince](https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html).)
 3.  Use a PDF Viewer that [doesn't lock the file](http://superuser.com/questions/599442/pdf-viewer-that-handles-live-updating-of-pdf-doesnt-lock-the-file). On Windows, [Sumatra](http://www.sumatrapdfreader.org/free-pdf-reader.html) is perfect for this, unlike Acrobat and Windows Preview, which locks the file. If you edit/regenerate a PDF it has open, Sumatra will allow that to happen and will automatically reload the new file, at the same page you had open. We believe Mac Preview does the same, though we haven't tested it.
 
 ## Managing hyphenation in Prince

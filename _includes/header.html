@@ -6,5 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/css/{{ page.stylesheet-web }}" />
 	<link rel="stylesheet" type="text/css" media="print" href="../css/{{ page.stylesheet-print }}" />
+
+	<!-- Google Analytics, runs unless this is running through PrinceXML -->
+	<script>
+		if (typeof Prince  === "undefined") {
+			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
+		}
+	</script>
+
 </head>
 <body class="{{ page.style }}">
