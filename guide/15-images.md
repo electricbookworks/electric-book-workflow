@@ -55,6 +55,39 @@ If it's important to you that the image isn't in a blockquote, and there is no c
 
 Always check print output (putting the HTML Jekyll creates through Prince with `print.css`) to be sure you're getting what you intend.
 
+## Alternative image sets
+
+There are often good reasons for producing books with different sets of images. For instance, one edition may have colour images and another black-and-white. Or your print edition might call for high-res images, but you want low-res ones for the ebook.
+
+By default, your markdown looks for images in the book's `images` folder. You can set your config file to switch to an alternative set of images (in a subfolder of `images`) when needed.
+
+{% raw %}
+
+In your markdown, instead of using the `images` path (e.g. `images/filename.jpg`), use this tag: `{{page.image-folder}}`. For example:
+
+~~~
+![]({{page.image-folder}}/filename.jpg)
+~~~
+
+Your default `image-folder` is set to `images` in `_config.yml`. You can change that for each book as needed. For instance, you might create a subfolder for high-res images in `images` called `hi-res`. In `_config.yml` you can then add a line to set that subfolder as the default images folder. 
+
+~~~
+image-folder: images/hi-res	
+~~~
+
+Whenever you build your HTML, you then switch which set of images to use by commenting out the image-folder setting(s) you don't want. For example, when creating the high-res edition, in `_config.yml` you might comment out the default image path so that the HTML uses the high-res images:
+
+~~~
+#image-folder: images
+image-folder: images/hi-res	
+~~~
+
+Remember that your images in your alternative images folder must have exactly the same file names as your default image set. The HTML will be looking for the same file names in a different folder.
+
+To always use a specific image file for any given image, irrespective of the `images-folder` config, simply hard-code your image path in markdown – that is, without using the `{{page.image-folder}}` tag. For example, for a given image you might specify the default images folder `![](images/filename.jpg)` or a specific subfolder `![](images/nb/filename.jpg)`.
+
+{% endraw %}
+
 ## Image placement
 
 You may need to control how an image is sized and placed on the page – especially in print – depending on its detail or aspect ratio and nearby images or other elements. You do this by adding the class tag to the line after the `>` lines. (This applies a class to the blockquote in HTML.) You have these options:
