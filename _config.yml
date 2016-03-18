@@ -63,6 +63,7 @@ defaults:
             isbn-epub: ""
             uuid: ""
             images-folder: images
+            description: "The Electric Book Workflow is a set of tools and processes for creating high-quality books with (mostly) free, open technologies. We developed it at Electric Book Works for our own publishing. It allows you to store books in plain text with great version control, and to output website versions, ebooks and print editions easily from a single source. With some technical expertise, you can implement it, too. This guide is created with the workflow."
     -
         scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
             path: "guide"

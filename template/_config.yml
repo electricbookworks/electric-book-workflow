@@ -62,6 +62,7 @@ defaults:
             isbn-epub: ""
             uuid: ""
             images-folder: images
+            description: ""
     -
         scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
             path: "book"
