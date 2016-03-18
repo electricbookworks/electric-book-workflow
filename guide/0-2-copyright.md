@@ -3,7 +3,10 @@ title: Copyright
 style: copyright-page
 ---
 
-# The Electric Book Workflow
+# Copyright
+{:.non-printing}
+
+*The Electric Book Workflow*
 
 Text © Arthur Attwell
 

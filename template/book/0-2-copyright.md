@@ -3,7 +3,8 @@ title: Copyright
 style: copyright-page
 ---
 
-# Title: Subtitle
+# Copyright
+{:.non-printing}
 
 Text © A. N. Author
 
