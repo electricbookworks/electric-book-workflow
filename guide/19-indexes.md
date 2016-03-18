@@ -76,3 +76,7 @@ In this example, we've used numbers as the link text. On screen, these will stay
 Alice 1, 2
 
 The stylesheet will add the commas between entries (so you could globally replace with semicolons or otherwise). In print output (using PrinceXML), the stylesheet will replace those numbers with page references.
+
+## Future development
+
+We hope to find more concise ways to create indexes from tags in running text in future. We'd also like to align this work the [IDPF's recommendations on indexes in ebooks](http://www.idpf.org/epub/idx/#s1).
