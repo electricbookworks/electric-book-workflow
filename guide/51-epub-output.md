@@ -125,3 +125,24 @@ If you need a MOBI file for Kindle, we recommend putting your EPUB into [Kindleg
 If Kindlegen cannot convert the EPUB, we've found that adding it to [Calibre](http://calibre-ebook.com/) first, then (without converting) give Calibre's version to Kindlegen.
 
 Calibre gives you greater control over specific ebook conversions, but we've found Kindlegen converts some CSS better (e.g. floats and borders).
+
+## Adding iBooks display-options file
+
+If you need to add the `com.apple.ibooks.display-options.xml` file to your epub for iBooks display options, you can use the [AddiBooksXML](http://www.mobileread.com/forums/showpost.php?p=3283774&postcount=3) plugin in Sigil.
+
+A very basic display-options file contains this XML:
+
+~~~
+<?xml version="1.0" encoding="UTF-8"?>
+<display_options>
+    <platform name="*">
+        <option name="specified-fonts">true</option>
+        <option name="interactive">false</option>
+        <option name="fixed-layout">false</option>
+        <option name="open-to-spread">false</option>
+        <option name="orientation-lock">none</option>
+    </platform>
+</display_options>
+~~~
+
+The file should be in the epub's META-INF folder, which Sigil does not let you edit by default, hence the need for the plugin.
