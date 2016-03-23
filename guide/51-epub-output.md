@@ -68,6 +68,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	key HTML files
 	*	the cover JPG.
 1.	Generate the epub's table of contents (Tools > Table Of Contents…).
+1.	If fonts are important (you've either embedded fonts or the difference between serif and sans-serif is semantically significant), add iBooks XML. ([See below for detail](#adding-ibooks-display-options-file).)
 1.	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
 1.	Validate the epub in Sigil and fix any validation errors. Sigil let's some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
 	*	the [IDPF's online version of EpubCheck](http://validator.idpf.org/)
@@ -128,7 +129,7 @@ Calibre gives you greater control over specific ebook conversions, but we've fou
 
 ## Adding iBooks display-options file
 
-If you need to add the `com.apple.ibooks.display-options.xml` file to your epub for iBooks display options, you can use the [AddiBooksXML](http://www.mobileread.com/forums/showpost.php?p=3283774&postcount=3) plugin in Sigil.
+If you need to add the `com.apple.ibooks.display-options.xml` file to your epub for iBooks display options, you can use the [AddiBooksXML](http://www.mobileread.com/forums/showthread.php?t=272241) plugin in Sigil.
 
 A very basic display-options file contains this XML:
 
@@ -146,3 +147,14 @@ A very basic display-options file contains this XML:
 ~~~
 
 The file should be in the epub's META-INF folder, which Sigil does not let you edit by default, hence the need for the plugin.
+
+To install the plugin:
+
+*	[Download the zip file](http://www.mobileread.com/forums/showthread.php?t=272241).
+*	In Sigil, go to Plugins > Manage Plugins.
+*	Click Add Plugin and locate and select the zip file you downloaded.
+
+To use the plugin:
+
+*	First, in a plain-text/code editor create an `com.apple.ibooks.display-options.xml` file containing only the XML shown above. If necessary, change the five options settings in it. Save the XML file with your source material for the book for future use/reference.
+*	In Sigil, with the epub open, go to Plugins > Edit > AddiBooksXML and find and select the `com.apple.ibooks.display-options.xml` file you just created.
