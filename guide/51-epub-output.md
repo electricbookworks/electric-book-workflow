@@ -127,6 +127,9 @@ If Kindlegen cannot convert the EPUB, we've found that adding it to [Calibre](ht
 
 Calibre gives you greater control over specific ebook conversions, but we've found Kindlegen converts some CSS better (e.g. floats and borders).
 
+> If you need to dig into a mobi file's code to troubleshoot, try the [KindleUnpack plugin for Calibre](http://www.mobileread.com/forums/showthread.php?t=171529).
+{:.box}
+
 ## Adding iBooks display-options file
 
 If you need to add the `com.apple.ibooks.display-options.xml` file to your epub for iBooks display options, you can use the [AddiBooksXML](http://www.mobileread.com/forums/showthread.php?t=272241) plugin in Sigil.
