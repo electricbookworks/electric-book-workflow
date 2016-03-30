@@ -4,15 +4,23 @@
 	<title>A guide to the Electric Book Workflow: Setting up</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/web-guide.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web-guide.css" />
 	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+
+	<!-- Google Analytics, runs unless this is running through PrinceXML -->
+	<script>
+		if (typeof Prince  === "undefined") {
+			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
+		}
+	</script>
+
 </head>
 <body class="chapter">
 
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="nav-book">A guide to the Electric Book Workflow</a>
 				<a href="" title="Top: Setting up"  class="nav-page">Setting up</a>
 			</p>
@@ -81,7 +89,7 @@
 <p>A workflow folder (often tracked in Git as a repo) usually contains a series of related books. Its folders and files follow the <a href="http://jekyllrb.com/docs/structure/">standard Jekyll structure</a>: in the root are <code class="highlighter-rouge">_include</code>, <code class="highlighter-rouge">_layouts</code> and <code class="highlighter-rouge">css</code> folders, and <code class="highlighter-rouge">_config.yml</code> and <code class="highlighter-rouge">index</code> files. We then put each book’s content in its own folder.</p>
 
 <blockquote class="box">
-  <p>Pro tip: You could also store several series in one repo, each series with its own set of Jekyll files, and a single <code class="highlighter-rouge">_prose.yml</code> configuration in the root folder for all series subfolders. This is only useful if you don’t need a live staging site or previews with GitHub Pages, since each Jekyll setup must be in its own repo for GitHub Pages to work out of the box.)</p>
+  <p>Pro tip: You could also store several series in one repo, each series with its own set of Jekyll files, and a single <code class="highlighter-rouge">_prose.yml</code> configuration in the root folder for all series subfolders. This is only useful if you don’t need a live staging site or previews with GitHub Pages, since each Jekyll setup must be in its own repo for GitHub Pages to work out of the box.</p>
 </blockquote>
 
 <h2 id="using-the-template">Using the template</h2>
@@ -210,7 +218,11 @@
 
 <h3 id="file-naming">File naming</h3>
 
-<p>Name each book’s markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. <code class="highlighter-rouge">0-1-titlepage.md</code>, <code class="highlighter-rouge">0-2-copyright.md</code>, and chapter files are numbered for their chapter number, e.g. <code class="highlighter-rouge">1.md</code>, <code class="highlighter-rouge">2.md</code>, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into Prince for PDF output.</p>
+<p>Name each book’s markdown files in perfectly alphabetical order. We recommend using a numbering system, where prelims (frontmatter) files start with a 0, e.g. <code class="highlighter-rouge">0-1-titlepage.md</code>, <code class="highlighter-rouge">0-2-copyright.md</code>, and chapter files are numbered for their chapter number, e.g. <code class="highlighter-rouge">01.md</code>, <code class="highlighter-rouge">02.md</code>, and so on. The alphabetical order makes it easy to see the documents in the right order at all times, and it makes ordering outputted HTML files easy when dropping them into Prince for PDF output.</p>
+
+<blockquote class="box">
+  <p>Note: We recommend using leading zeros in file-name numbers – that is, <code class="highlighter-rouge">02.md</code> rather than <code class="highlighter-rouge">2.md</code> – because that sorts correctly in most file browsers. Otherwise, some file browsers will sort <code class="highlighter-rouge">10.md</code> before <code class="highlighter-rouge">2.md</code>. In the rare event that you have over 99 chapters, use two leading zeros: <code class="highlighter-rouge">001.md</code>.</p>
+</blockquote>
 
 <h2 id="the-images-folder">The <code class="highlighter-rouge">images</code> folder</h2>
 
@@ -226,7 +238,7 @@
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
-				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="footer-book"><em>A guide to the Electric Book Workflow</em></a>
 				<a href="" title="Top: Setting up" class="footer-page">Setting up</a>
 			</p>

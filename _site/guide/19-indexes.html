@@ -4,15 +4,23 @@
 	<title>A guide to the Electric Book Workflow: Indexes</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/web-guide.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web-guide.css" />
 	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+
+	<!-- Google Analytics, runs unless this is running through PrinceXML -->
+	<script>
+		if (typeof Prince  === "undefined") {
+			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
+		}
+	</script>
+
 </head>
 <body class="chapter">
 
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="nav-book">A guide to the Electric Book Workflow</a>
 				<a href="" title="Top: Indexes"  class="nav-page">Indexes</a>
 			</p>
@@ -27,6 +35,7 @@
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#how-to-tag-indexed-words" id="markdown-toc-how-to-tag-indexed-words">How to tag indexed words</a></li>
   <li><a href="#how-to-create-the-index-list" id="markdown-toc-how-to-create-the-index-list">How to create the index list</a></li>
+  <li><a href="#future-development" id="markdown-toc-future-development">Future development</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -106,6 +115,10 @@
 
 <p>The stylesheet will add the commas between entries (so you could globally replace with semicolons or otherwise). In print output (using PrinceXML), the stylesheet will replace those numbers with page references.</p>
 
+<h2 id="future-development">Future development</h2>
+
+<p>We hope to find more concise ways to create indexes from tags in running text in future. We’d also like to align this work the <a href="http://www.idpf.org/epub/idx/#s1">IDPF’s recommendations on indexes in ebooks</a>.</p>
+
 
 	</div><!--#wrapper-->
 	
@@ -114,7 +127,7 @@
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
-				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="footer-book"><em>A guide to the Electric Book Workflow</em></a>
 				<a href="" title="Top: Indexes" class="footer-page">Indexes</a>
 			</p>

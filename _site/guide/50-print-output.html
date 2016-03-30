@@ -4,15 +4,23 @@
 	<title>A guide to the Electric Book Workflow: Print output</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/web-guide.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web-guide.css" />
 	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+
+	<!-- Google Analytics, runs unless this is running through PrinceXML -->
+	<script>
+		if (typeof Prince  === "undefined") {
+			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
+		}
+	</script>
+
 </head>
 <body class="chapter">
 
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="nav-book">A guide to the Electric Book Workflow</a>
 				<a href="" title="Top: Print output"  class="nav-page">Print output</a>
 			</p>
@@ -25,6 +33,7 @@
 
 <ul id="markdown-toc">
   <li><a href="#creating-pdf-files-with-the-prince-gui" id="markdown-toc-creating-pdf-files-with-the-prince-gui">Creating PDF files with the Prince GUI</a></li>
+  <li><a href="#creating-pdfs-with-prince-from-the-command-line" id="markdown-toc-creating-pdfs-with-prince-from-the-command-line">Creating PDFs with Prince from the command line</a></li>
   <li><a href="#refining-print-layout" id="markdown-toc-refining-print-layout">Refining print layout</a>    <ul>
       <li><a href="#faster-print-refinement" id="markdown-toc-faster-print-refinement">Faster print refinement</a></li>
     </ul>
@@ -61,6 +70,31 @@
   <p>Tech detail: Our default HTML <code class="highlighter-rouge">head</code> includes links to both the screen stylesheet and the print stylesheet specified in <code class="highlighter-rouge">_config.yml</code>. Prince knows which one to use because they’re specified with <code class="highlighter-rouge">media="screen"</code> and <code class="highlighter-rouge">media="print"</code>.</p>
 </blockquote>
 
+<h2 id="creating-pdfs-with-prince-from-the-command-line">Creating PDFs with Prince from the command line</h2>
+
+<p>For general instructions, see <a href="http://www.princexml.com/doc/command-line/">the official PrinceXML user guide</a>. We like to use this workflow:</p>
+
+<ol>
+  <li>
+    <p>In each book’s folder (alongside the markdown) we keep a file called <code class="highlighter-rouge">print-list</code>. The <code class="highlighter-rouge">print-list</code> file is just a list of the HTML files that must be included in the print PDF. E.g.:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>0-1-titlepage.html
+0-2-copyright.html
+0-3-contents.html
+1.html
+2.html
+3.html
+</code></pre>
+    </div>
+  </li>
+  <li>At your command prompt, navigate to the book’s folder in <code class="highlighter-rouge">_site</code>. (With the right settings, you can launch your command line app in the right folder from a file explorer in <a href="http://lifehacker.com/5989434/quickly-open-a-command-prompt-from-the-windows-explorer-address-bar">Windows</a>, <a href="http://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514">Mac</a> and <a href="http://www.howtogeek.com/192865/how-to-open-terminal-to-a-specific-folder-in-ubuntus-file-browser/">Linux</a>.)</li>
+  <li>At the prompt, type <code class="highlighter-rouge">prince -l print-list -o /temp/filename.pdf</code>.</li>
+</ol>
+
+<blockquote class="box">
+  <p>In that last step, <code class="highlighter-rouge">/temp</code> is an existing folder at the root of your drive (e.g. <code class="highlighter-rouge">C:/temp</code> if you’re working on your C drive in Windows) and <code class="highlighter-rouge">filename</code> is a sensible file name. If you just used <code class="highlighter-rouge">filename.pdf</code> without the folder path, the PDF would be saved to the same folder as the HTML in <code class="highlighter-rouge">_site</code>. We don’t recommend this because Jekyll will overwrite that whole folder if you build new HTML, and you’ll lose your PDF.</p>
+</blockquote>
+
 <h2 id="refining-print-layout">Refining print layout</h2>
 
 <p>You will doubtless want to refine your print layout by editing your markdown and adding custom CSS to your print <code class="highlighter-rouge">.scss</code> file.</p>
@@ -91,29 +125,32 @@
 <p>To speed this up:</p>
 
 <ol>
-  <li>Temporarily stop Jekyll generating any files you aren’t working on:
-    <ul>
-      <li>In <code class="highlighter-rouge">_config.yml</code>, add a line that excludes those files. In this example, I’ve listed the CSS folder and all my book’s chapters, and them commented out with <code class="highlighter-rouge">#</code> the one I’m working on, so that Jekyll does regenerate that:</li>
-    </ul>
+  <li>
+    <p>Temporarily stop Jekyll generating any files you aren’t working on. In <code class="highlighter-rouge">_config.yml</code>, add a line that excludes those files. In this example, I’ve listed the CSS folder and all my book’s chapters, and them commented out with <code class="highlighter-rouge">#</code> the one I’m working on, so that Jekyll does regenerate that:</p>
 
-    <p>~~~
- # Jekyll will ignore these files and folders. 
- # Useful for temporarily speeding up processing for particular files.
- exclude: [
- css,
- book-one/0-0-cover.md, 
- book-one/0-1-half-title.md, 
- book-one/0-2-titlepage.md, 
- book-one/0-3-copyright.md,
- book-one/0-4-contents.md,
- #book-one/1.md,
- book-one/2.md,
- book-one/3.md,
- ]
- ~~~</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code># Jekyll will ignore these files and folders. 
+# Useful for temporarily speeding up processing for particular files.
+exclude: [
+css,
+book-one/0-0-cover.md, 
+book-one/0-1-half-title.md, 
+book-one/0-2-titlepage.md, 
+book-one/0-3-copyright.md,
+book-one/0-4-contents.md,
+#book-one/1.md,
+book-one/2.md,
+book-one/3.md,
+]
+</code></pre>
+    </div>
   </li>
-  <li>Using the Prince GUI there isn’t a universal way to speed up conversion. Depending on your setup, you might look into using the command line instead, or making sure you’ve disabled any unnecessary Javascript.</li>
-  <li>Use a PDF Viewer that <a href="http://superuser.com/questions/599442/pdf-viewer-that-handles-live-updating-of-pdf-doesnt-lock-the-file">doesn’t lock the file</a>. On Windows, <a href="http://www.sumatrapdfreader.org/free-pdf-reader.html">Sumatra</a> is perfect for this, unlike Acrobat and Windows Preview, which locks the file. If you edit/regenerate a PDF it has open, Sumatra will allow that to happen and will automatically reload the new file, at the same page you had open. We believe Mac Preview does the same, though we haven’t tested it.</li>
+  <li>Using Prince there isn’t a universal way to speed up conversion, except to only convert the files you really need to be working on. (If you’ve used Javascript in your HTML, that can slow Prince down. <a href="https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html">We wrap scripts, like Google Analytics tags, in a test that checks for Prince</a>.)</li>
+  <li>Use a PDF Viewer that <a href="http://superuser.com/questions/599442/pdf-viewer-that-handles-live-updating-of-pdf-doesnt-lock-the-file">doesn’t lock the file</a>.
+    <ul>
+      <li>On Windows, <a href="http://www.sumatrapdfreader.org/free-pdf-reader.html">Sumatra</a> is perfect for this, unlike Acrobat and Windows Preview, which locks the file. If you edit/regenerate a PDF it has open, Sumatra will allow that to happen and will automatically reload the new file, at the same page you had open.</li>
+      <li>On Mac OSX, Preview does the same, though we’ve found it doesn’t open the regenerated file to the page you were on, sending you back to the start of the book, which is a pain. A much better alternative on OSX is <a href="http://skim-app.sourceforge.net/">Skim</a>, an open-source PDF reader. In its Preferences &gt; Sync, set Skim to watch for file changes and update automatically. You may also want to set PDFs to open to the last viewed page in Preferences &gt; General.</li>
+    </ul>
+  </li>
 </ol>
 
 <h2 id="managing-hyphenation-in-prince">Managing hyphenation in Prince</h2>
@@ -148,7 +185,7 @@
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
-				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: A guide to the Electric Book Workflow" class="footer-book"><em>A guide to the Electric Book Workflow</em></a>
 				<a href="" title="Top: Print output" class="footer-page">Print output</a>
 			</p>

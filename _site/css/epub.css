@@ -2,12 +2,6 @@ body {
   margin: 0;
   padding: 0; }
 
-#wrapper {
-  clear: both;
-  max-width: 960px;
-  margin: auto;
-  padding: 0 0.3em 0 0.3em; }
-
 /* 
  * General typography 
  */
@@ -114,9 +108,6 @@ a {
   text-decoration: none;
   color: #5f738c; }
 
-/*
- * Cover image. This is useful for landing pages for individual books.
- */
 body.cover {
   margin: 0;
   padding: 0;
@@ -797,16 +788,6 @@ ul.verse li:empty:after {
   font-feature-settings: "c2sc", "smcp", "onum";
   font-style: inherit; }
 
-/* Tighten tracking */
-.xx-tight {
-  letter-spacing: -0.05em;
-  font-style: inherit; }
-
-.xxx-tight {
-  letter-spacing: -0.1em;
-  font-style: inherit; }
-
-/* Shrink the font size */
 .shrink {
   font-size: 0.7em;
   /* Useful for wide tables */ }

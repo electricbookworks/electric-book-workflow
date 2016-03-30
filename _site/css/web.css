@@ -256,10 +256,6 @@ dd {
 .home #footer a.footer-book {
   display: none; }
 
-/*
- * Cover image. This is useful for landing pages for individual books.
- */
-/* No nav bar obscuring cover image */
 .cover #nav-bar {
   display: none; }
 
@@ -267,6 +263,10 @@ body.cover {
   margin: 0;
   padding: 0;
   text-align: center; }
+
+.cover h1 {
+  line-height: 0;
+  font-size: 0; }
 
 p.cover {
   margin: 0 auto;
