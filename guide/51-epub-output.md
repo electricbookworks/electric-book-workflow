@@ -67,10 +67,17 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 1.	Add semantics (right click the file name in Sigil for the semantics context menu) to:
 	*	key HTML files
 	*	the cover JPG.
-1.	Generate the epub's table of contents (Tools > Table Of Contents…).
+1.	{:#adding-the-epub-toc}Generate the epub's table of contents (Tools > Table Of Contents…). This TOC is generated only from the headings (`h1` to `h6`) in the text. So it does not include the cover, which has no heading, or any other files without a heading (e.g. sometimes the copyright page). If you need to add a cover to the TOC:
+	1. Go to Tools > Table Of Contents > Edit Table Of Contents… 
+	2. Click on the first entry in the TOC list.
+	3. Click 'Add Above'.
+	4. Click 'Select Target' and select the cover HTML file (usually `0-0-cover.html`).
+	5. In the blank space under 'TOC Entry', double-click and type 'Cover'.
+	6. Click Okay.
+	7. Use the same process for adding any other files you need to add to the TOC.
 1.	If fonts are important (you've either embedded fonts or the difference between serif and sans-serif is semantically significant), add iBooks XML. ([See below for detail](#adding-ibooks-display-options-file).)
 1.	Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the `cover.xhtml` and cover CSS snippets [on our Knowledge Base](http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/). (We've already added the relevant cover CSS snippets to `epub.css`.)
-1.	Validate the epub in Sigil and fix any validation errors. Sigil let's some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
+1.	{:#validate-the-epub}Validate the epub in Sigil and fix any validation errors. Sigil let's some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
 	*	the [IDPF's online version of EpubCheck](http://validator.idpf.org/)
 	*	[epubcheck](https://github.com/IDPF/epubcheck/wiki/Running) installed locally, and run from the command line; or
 	*	[pagina EPUB-Checker](http://www.pagina-online.de/produkte/epub-checker/).
@@ -95,6 +102,25 @@ The `epub` layout lets you skip a few of the steps listed above, because it:
 * includes required epub metadata (if you've included it in your `_config.yml` file).
 
 To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
+
+#### Quick-epub process checklist
+
+If you've generated HTML using the `layout: epub` setting in `_config.yml`, your basic process in Sigil is as follows. 
+
+1.	File > Open… and select the first HTML file in `_site/yourbook`.
+2.	Right-click the Text folder > Add Existing Files… and select the remaining HTML files for the epub.
+3.	Right-click the Text or Styles folder > Add Existing Files… and select the epub's CSS file in `_site/css`.
+4.	Tools > Table Of Contents > Generate Table Of Contents
+5.	Add file semantics (right-click HTML files > Add Semantics… and right-click the cover jpg > Cover Image).
+6.	Save, and [validate](#validate-the-epub) with the Flightcrew plugin and separately with EPUBCheck.
+
+Depending on your needs, you may also need to:
+
+*	search-and-replace ([as described above](#assembling-the-epub)) for SVG images, footnotes, or video;
+*	add the cover (or other files) to your table of contents ([as described above](#adding-the-epub-toc))
+*	add font files if you're embedding fonts;
+*	split large files ([as described below](#splitting large-files))
+*	add the iBooks display-options XML ([as described below](#adding-ibooks-display-options-file)).
 
 ### Splitting large files
 
