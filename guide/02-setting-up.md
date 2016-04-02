@@ -115,15 +115,51 @@ Page layouts we've designed for in the Classic theme include:
 *	`contents-page` for the book's table of contents
 *	`dedication-page` for a dedication page
 *	`epigraph-page` for an epigraph page
-*	`frontmatter` for other prelim pages not accounted for otherwise\*
+*	`frontispiece-page` for a frontispiece page
+*	`frontmatter` for other prelim pages not accounted for otherwise
 *	`chapter` for a book's default chapter page (and the global default)
-
-\* In print output, if you use `frontmatter` on a book-part, by default (in the Classic theme) it will have roman-numeral page numbers. When the first `chapter` starts, it will have decimal page numbers. However, the page numbering will be consecutive from roman to decimal. That is, 'ix, x, 11, 12'. To reset the numbering to 1 at the start of the first `chapter`, add the page class `.page-1` to the first element (e.g. the first heading) of the first chapter. In markdown, you do that with the tag `{:.page-1}` in the line immediately after the heading.
 
 You can also invent your own page styles, and use them in your custom CSS instead of these, though you may get unexpected results if you've been relying on CSS for existing styles like `chapter`.
 
 > Tip: If, in your web output, you don't want the navigation (nav bar and footer) on a page, such as the collection's index page, add `layout: min` to the document's YAML header. The `min` layout does not include a nav-bar and footer.
 {:.box}
+
+### Set first pages
+
+Many books have two 'page ones': 
+
+1.	the half-title or title page and, 
+2.	if the prelims have roman-numeral page numbers, the first chapter.
+
+You should specify those pages so that Prince knows where to start numbering.
+
+Why? Well, for example, in print output if you use `frontmatter` on a book-part, by default it will have roman-numeral page numbers. When the first `chapter` starts, it will have decimal page numbers. However, the page numbering will be consecutive from roman through decimal. That is, it will run 'ix, x, 11, 12'. You reset the numbering to 1 at the start of the first `chapter` to avoid this.
+
+You reset page numbering by adding the class `page-1` to the first block-level element on the relevant page.
+
+You can do this in two ways:
+
+1.	If a markdown document starts at 'page one', add the class to the `style` YAML header. E.g.
+
+	~~~
+	---
+	title: Half-title page
+	style: halftitle-page page-1
+	---
+	~~~
+
+	And at the first chapter:
+
+	~~~
+	---
+	title: Chapter One
+	style: chapter page-1
+	---
+	~~~
+
+	Remember that `chapter` is the default, so you normally don't have to specify it. *But* if you want to *add* a class in addition to `chapter`, you must specify both classes. This is because, if you were to use `style: page-1` in a YAML header, the class `page-1` would override the default `style: chapter`, not add to it.
+
+2.	Add the `page-1` class to the first block-level element in the chapter by adding the tag `{:.page-1}` in the line immediately after it. (Note: for this to work, the element must *not* have a CSS float applied to it.)
 
 ### File naming
 

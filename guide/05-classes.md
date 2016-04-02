@@ -6,11 +6,15 @@ title: Supported classes
 
 Our Classic theme includes styling for a range of classes. You can apply these to elements in markdown.
 
+## Formatting
+
+Use these classes in your markdown to create specific formatting effects.
+
 | Feature | Workflow class | Block or inline |  Explanation | Supports edition suffix
 | --- | --- | --- | --- | ---
 | Bibliography list | `.bibliography` | Block | Styles a list as a bibliography, for instance at the end of an academic book. | No
 | Box | `.box` | Block | Puts the element in a box, to set it off from the rest of the text. | No
-| Chapter number | `.chapter-number` | Block | Used for a chapter number before a chapter heading. (See the tip at [Bold](#bold) above for another way to handle chapter numbers. | No
+| Chapter number | `.chapter-number` | Block | Used for a chapter number before a chapter heading. (See the tip at [Bold in the chapter on Markdown](03-markdown.html#bold) for another way to handle chapter numbers. | No
 | Dedication | `.dedication` | Block | A dedication, for instance at the start of a book or chapter | No
 | Epigraph source | `.epigraph-source` | Block | The person to whom the epigraph is attributed. | No
 | Epigraph | `.epigraph` | Block | An epigraph at the start of a book or chapter. | No
@@ -23,7 +27,7 @@ Our Classic theme includes styling for a range of classes. You can apply these t
 | First paragraph | `.first`| Block | For any paragraph that starts a new set of paragraphs, flush left and with a gap above it. | No
 | Float to top | `.float-top` | Block | Floats the element to the top of its page. Useful for boxes. Applies to print output only. | Yes
 | Float to bottom | `.float-bottom` | Block | Floats the element to the bottom of its page. Useful for boxes. Applies to print output only. | Yes
-| Footnote | `.sidenote .bottom` | Block or inline | When you add `.bottom` to `.sidenote`, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see [Endnotes](#endnotes) above.) | No
+| Footnote | `.sidenote .bottom` | Block or inline | When you add `.bottom` to `.sidenote`, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see the chapter ['Footnotes, endnotes and sidenotes'](17-notes.html#footnotes-endnotes-and-sidenotes).) | No
 | Fraction | `.fractions` | Block or inline | If your font supports it, converts characters like `1/2` into fraction characters. | No
 | Glossary | `.glossary` | Block | Use this after the last entry in a series of definition lists to define the entire list of definitions as a glossary. | No
 | Hide from print | `.non-printing` | Block or inline | Hides the element from print output. Useful for things like clickable buttons, which are only intended for screens, not paper. | No
@@ -34,6 +38,7 @@ Our Classic theme includes styling for a range of classes. You can apply these t
 | Page break after, end of book | `.page-break-after-right` | Block | When applied to the very last element in the book, ensures a blank verso for an even-numbered page extent. | No
 | Page break before | `.page-break-before` | Block | Starts its element on a new page. | No
 | Page break: allow | `.allow-break` | Block | Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element. | No
+| Page numbering restart | `.page-1` | Block | Restarts page numbering from 1. Can be added to the first block element on a page, or to the YAML header, in addition to the main style, e.g. `style: halftitle-page page-1` or `style: chapter page-1`. Recommended for any document that starts a book interior (e.g. title page), to retain correct pagination when creating a PDF ebook with a front cover | No
 | Poetry | `.verse` | Block | Designing poetry is tricky and important. Read about how to manage this [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#poetry). | No
 | Pull quote | `.pullquote` | Block | Displays a paragraph as a pull quote. | No
 | Shrink font | `.shrink` | Block or inline | Shrinks the font size to 70%. Can be useful for wide tables. | Yes
@@ -56,6 +61,25 @@ Our Classic theme includes styling for a range of classes. You can apply these t
 | Tracking: loose | `.loose` | Block or inline | Imperceptibly widens the gaps between letters. *Affects print output only.* | Yes
 | Tracking: looser | `.x-loose` | Block or inline | Widens the gaps between letters. *Affects print output only.* | Yes
 | Valediction | `.valediction` | Block | Used for the sign-off at the end of a letter, preface or foreword. | No
+
+## Reserved classes
+
+You may also need to create your own classes for other uses. If you do, avoid using the same already-supported class names above. You should also avoid using the following ones, which are reserved for specific structural elements.
+
+| Class name | Reserved for
+|---|---
+| `index` | The home page of a collection, used for the `style` value in file YAML headers
+| `cover` | A front cover, which will appear in ebook editions, used for the `style` value in file YAML headers
+| `halftitle-page` | A book's halftitle page, used for the `style` value in file YAML headers
+| `previous-publications-page` | A book's list of the author's previous publications, used for the `style` value in file YAML headers
+| `title-page` | A book's title page, used for the `style` value in file YAML headers
+| `copyright-page` | copyright or imprint page, used for the `style` value in file YAML headers
+| `contents-page`  | A book's table of contents, used for the `style` value in file YAML headers
+| `dedication-page` | A dedication page, used for the `style` value in file YAML headers
+| `epigraph-page` | An epigraph page, used for the `style` value in file YAML headers
+| `frontispiece-page` | A frontispiece page, used for the `style` value in file YAML headers
+| `frontmatter` | For other prelim pages not accounted for otherwise, used for the `style` value in file YAML headers
+| `chapter`  | A book's default chapter page (and the global default), used for the `style` value in file YAML headers
 
 ## The edition suffix
 

@@ -119,7 +119,7 @@ Depending on your needs, you may also need to:
 *	search-and-replace ([as described above](#assembling-the-epub)) for SVG images, footnotes, or video;
 *	add the cover (or other files) to your table of contents ([as described above](#adding-the-epub-toc))
 *	add font files if you're embedding fonts;
-*	split large files ([as described below](#splitting large-files))
+*	split large files ([as described below](#splitting-large-files))
 *	add the iBooks display-options XML ([as described below](#adding-ibooks-display-options-file)).
 
 ### Splitting large files
