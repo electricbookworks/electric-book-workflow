@@ -33,7 +33,10 @@
 
 <ul id="markdown-toc">
   <li><a href="#assembling-the-epub" id="markdown-toc-assembling-the-epub">Assembling the epub</a>    <ul>
-      <li><a href="#quicker-epub-output" id="markdown-toc-quicker-epub-output">Quicker epub output</a></li>
+      <li><a href="#quicker-epub-output" id="markdown-toc-quicker-epub-output">Quicker epub output</a>        <ul>
+          <li><a href="#quick-epub-process-checklist" id="markdown-toc-quick-epub-process-checklist">Quick-epub process checklist</a></li>
+        </ul>
+      </li>
       <li><a href="#splitting-large-files" id="markdown-toc-splitting-large-files">Splitting large files</a></li>
     </ul>
   </li>
@@ -116,10 +119,20 @@
       <li>the cover JPG.</li>
     </ul>
   </li>
-  <li>Generate the epub’s table of contents (Tools &gt; Table Of Contents…).</li>
+  <li id="adding-the-epub-toc">Generate the epub’s table of contents (Tools &gt; Table Of Contents…). This TOC is generated only from the headings (<code class="highlighter-rouge">h1</code> to <code class="highlighter-rouge">h6</code>) in the text. So it does not include the cover, which has no heading, or any other files without a heading (e.g. sometimes the copyright page). If you need to add a cover to the TOC:
+    <ol>
+      <li>Go to Tools &gt; Table Of Contents &gt; Edit Table Of Contents…</li>
+      <li>Click on the first entry in the TOC list.</li>
+      <li>Click ‘Add Above’.</li>
+      <li>Click ‘Select Target’ and select the cover HTML file (usually <code class="highlighter-rouge">0-0-cover.html</code>).</li>
+      <li>In the blank space under ‘TOC Entry’, double-click and type ‘Cover’.</li>
+      <li>Click Okay.</li>
+      <li>Use the same process for adding any other files you need to add to the TOC.</li>
+    </ol>
+  </li>
   <li>If fonts are important (you’ve either embedded fonts or the difference between serif and sans-serif is semantically significant), add iBooks XML. (<a href="#adding-ibooks-display-options-file">See below for detail</a>.)</li>
   <li>Check that the cover works, using your own cover-image jpg. For info on improving your epub cover layout, see the <code class="highlighter-rouge">cover.xhtml</code> and cover CSS snippets <a href="http://electricbookworks.com/kb/creating-epub-from-indesign/after-indesign-export-to-epub/add-a-cover/">on our Knowledge Base</a>. (We’ve already added the relevant cover CSS snippets to <code class="highlighter-rouge">epub.css</code>.)</li>
-  <li>Validate the epub in Sigil and fix any validation errors. Sigil let’s some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
+  <li id="validate-the-epub">Validate the epub in Sigil and fix any validation errors. Sigil let’s some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
     <ul>
       <li>the <a href="http://validator.idpf.org/">IDPF’s online version of EpubCheck</a></li>
       <li><a href="https://github.com/IDPF/epubcheck/wiki/Running">epubcheck</a> installed locally, and run from the command line; or</li>
@@ -150,6 +163,29 @@
 </ul>
 
 <p>To get the metadata to import to Sigil, you must <em>open</em> one of your book’s HTML files in Sigil (the cover is best, since it’s the first file). That is, don’t ‘Add Existing Files…’ to a new, blank epub. Only by opening a single HTML file (as in ‘File &gt; Open…’, then select the HTML file) will Sigil read and import the file’s Dublin Core metadata. After that, you can add the remaining files in Sigil using ‘Add Existing Files…’.</p>
+
+<h4 id="quick-epub-process-checklist">Quick-epub process checklist</h4>
+
+<p>If you’ve generated HTML using the <code class="highlighter-rouge">layout: epub</code> setting in <code class="highlighter-rouge">_config.yml</code>, your basic process in Sigil is as follows.</p>
+
+<ol>
+  <li>File &gt; Open… and select the first HTML file in <code class="highlighter-rouge">_site/yourbook</code>.</li>
+  <li>Right-click the Text folder &gt; Add Existing Files… and select the remaining HTML files for the epub.</li>
+  <li>Right-click the Text or Styles folder &gt; Add Existing Files… and select the epub’s CSS file in <code class="highlighter-rouge">_site/css</code>.</li>
+  <li>Tools &gt; Table Of Contents &gt; Generate Table Of Contents</li>
+  <li>Add file semantics (right-click HTML files &gt; Add Semantics… and right-click the cover jpg &gt; Cover Image).</li>
+  <li>Save, and <a href="#validate-the-epub">validate</a> with the Flightcrew plugin and separately with EPUBCheck.</li>
+</ol>
+
+<p>Depending on your needs, you may also need to:</p>
+
+<ul>
+  <li>search-and-replace (<a href="#assembling-the-epub">as described above</a>) for SVG images, footnotes, or video;</li>
+  <li>add the cover (or other files) to your table of contents (<a href="#adding-the-epub-toc">as described above</a>)</li>
+  <li>add font files if you’re embedding fonts;</li>
+  <li>split large files (<a href="#splitting-large-files">as described below</a>)</li>
+  <li>add the iBooks display-options XML (<a href="#adding-ibooks-display-options-file">as described below</a>).</li>
+</ul>
 
 <h3 id="splitting-large-files">Splitting large files</h3>
 

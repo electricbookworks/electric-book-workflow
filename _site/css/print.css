@@ -2,24 +2,33 @@
 /* Minimum letters at end of line before hyphen */
 /* Maximum number of consecutive lines ending with hyphens */
 @font-face {
-  font-family: "Inconsolata", monospace;
-  src: url(fonts/Inconsolata-Regular.ttf); }
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Roman.otf); }
 @font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_R.otf); }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RI.otf);
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Italic.otf);
   font-style: italic; }
 @font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RB.otf);
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Bold.otf);
   font-weight: bold; }
 @font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RBI.otf);
-  font-style: italic;
-  font-weight: bold; }
+  font-family: "Crimson";
+  src: url(fonts/Crimson-BoldItalic.otf);
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-Semibold.otf);
+  font-weight: 600; }
+@font-face {
+  font-family: "Crimson";
+  src: url(fonts/Crimson-SemiboldItalic.otf);
+  font-weight: 600;
+  font-style: italic; }
+@font-face {
+  font-family: "Inconsolata", monospace;
+  src: url(fonts/Inconsolata-Regular.ttf); }
 @font-face {
   font-family: "Source Sans Pro";
   src: url(fonts/SourceSansPro-Black.ttf);
@@ -86,19 +95,33 @@
 #nav-bar {
   display: none; }
 
-/* Set the initial default view when this PDF is opened. See http://www.princexml.com/forum/topic/2650/prince-pdf */
 @prince-pdf {
-  prince-pdf-open-action: none;
-  /* none | print | command(ident) */
-  prince-pdf-page-layout: two-column-right;
-  /* single-page | one-column | two-column | two-column-left | two-column-right */
+  prince-pdf-open-action: command(FitPage);
+  prince-pdf-page-layout: two-page-right;
   prince-pdf-page-mode: show-bookmarks;
-  /* auto | show-attachments | show-bookmarks | fullscreen */
   prince-pdf-paper-tray: auto;
-  /* auto | pick-tray-by-pdf-size */
   prince-pdf-print-scaling: auto;
-  /* auto | none */
   prince-pdf-script: ""; }
+@page cover {
+  prince-pdf-page-label: counter(page,lower-alpha); }
+@page halftitle-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page title-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page previous-publications-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page copyright-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page frontispiece-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page dedication-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page contents-page {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page frontmatter {
+  prince-pdf-page-label: counter(page,lower-roman); }
+@page chapter {
+  prince-pdf-page-label: counter(page); }
 /* Set up our basic page margins */
 @page {
   size: 129mm 198mm;
@@ -126,6 +149,9 @@
 .dedication-page {
   page: dedication-page; }
 
+.frontispiece-page {
+  page: frontispiece-page; }
+
 .chapter {
   page: chapter; }
 
@@ -145,9 +171,6 @@
 .page-break-after {
   page-break-after: always; }
 
-.page-break-after-right {
-  page-break-after: right; }
-
 .keep-with-next {
   page-break-after: avoid; }
 
@@ -163,6 +186,12 @@
   page-break-before: inherit !important;
   page-break-after: inherit !important;
   page-break-inside: inherit !important; }
+
+.end-on-left {
+  page-break-after: left !important; }
+
+.end-on-right {
+  page-break-after: right !important; }
 
 /*
  * Hide screen-only and non-printing elements. The framework by default adds the .non-printing class to screen-only elements like #nav-bar and #footer.
@@ -186,7 +215,7 @@
   float: bottom; }
 
 .float-top + p, .float-bottom + p {
-  text-indent: 14pt; }
+  text-indent: 15pt; }
 
 .tighten {
   letter-spacing: -0.003em;
@@ -240,9 +269,11 @@ p, ul, ol, dl {
   hyphenate-before: 3;
   hyphenate-lines: 1; }
 
-.frontmatter,
 .halftitle-page,
-.title-page,
+.title-page {
+  page-break-before: right; }
+
+.frontmatter,
 .dedication-page,
 .epigraph-page,
 .contents-page,
@@ -252,20 +283,21 @@ p, ul, ol, dl {
 .frontmatter,
 .dedication-page,
 .epigraph-page,
+.contents-page,
 .chapter {
   page-break-before: right; }
 
 /* Start these layouts with a big top margin */
 .halftitle-page, .title-page, .dedication-page, .epigraph-page, .contents-page, .chapter {
-  margin-top: 84pt; }
+  margin-top: 90pt; }
 
 /* 
  * Base typography 
  */
 body {
-  font-family: "Linux Libertine", serif;
+  font-family: "Crimson", serif;
   font-size: 11pt;
-  line-height: 14pt;
+  line-height: 15pt;
   margin: 0;
   padding: 0;
   font-variant: prince-opentype(liga);
@@ -281,39 +313,39 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 33pt;
-  line-height: 42pt;
-  margin: 0 0 42pt 0; }
+  line-height: 45pt;
+  margin: 0 0 45pt 0; }
 
 h1 strong:first-of-type {
   /* Useful for chapter numbers: make the number first and bold in the h1 */
   display: block;
-  margin: 0 0 14pt 0; }
+  margin: 0 0 15pt 0; }
 
 h2 {
   font-size: 22pt;
-  line-height: 28pt;
-  margin: 56pt 0 14pt 0; }
+  line-height: 30pt;
+  margin: 60pt 0 15pt 0; }
 
 h3 {
-  font-size: 13pt;
-  line-height: 14pt;
-  margin: 28pt 0 14pt 0; }
+  font-size: 14pt;
+  line-height: 15pt;
+  margin: 30pt 0 15pt 0; }
 
 h4 {
   font-size: 11pt;
-  line-height: 14pt;
-  margin: 28pt 0 0 0;
+  line-height: 15pt;
+  margin: 30pt 0 0 0;
   font-style: italic; }
 
 h5 {
   font-size: 11pt;
-  line-height: 14pt;
-  margin: 14pt 0 0 0; }
+  line-height: 15pt;
+  margin: 15pt 0 0 0; }
 
 h6 {
   font-size: 11pt;
-  line-height: 14pt;
-  margin: 0 14pt 0 0;
+  line-height: 15pt;
+  margin: 0 15pt 0 0;
   display: inline;
   font-style: italic; }
 
@@ -324,7 +356,7 @@ p, ul, ol, dl {
 
 p {
   margin: 0;
-  text-indent: 14pt; }
+  text-indent: 15pt; }
 
 p:first-of-type {
   text-indent: 0; }
@@ -338,7 +370,7 @@ a {
 
 /* Lists */
 ul, ol {
-  margin: 0 0 14pt 0; }
+  margin: 0 0 15pt 0; }
 
 ol ol {
   list-style-type: lower-alpha; }
@@ -351,7 +383,7 @@ li > ul {
   /* manages line space after sublists in lists */ }
 
 li {
-  margin-left: 14pt; }
+  margin-left: 15pt; }
 
 li:first-of-type {
   page-break-after: avoid; }
@@ -364,8 +396,8 @@ li li:first-of-type {
 
 /* Blockquotes */
 blockquote {
-  margin: 14pt 0 0 0;
-  padding: 0 14pt; }
+  margin: 15pt 0 0 0;
+  padding: 0 15pt; }
 
 blockquote p {
   margin: 0;
@@ -375,19 +407,19 @@ blockquote p:first-of-type {
   text-indent: 0; }
 
 blockquote p:last-of-type, blockquote ol, blockquote ul {
-  margin: 0 0 14pt 0; }
+  margin: 0 0 15pt 0; }
 
 /* 
  * Definition lists. Useful for sidebar-like notes, too. 
  */
 dl {
-  margin: 28pt 0; }
+  margin: 30pt 0; }
 
 dt {
   page-break-after: avoid; }
 
 dd {
-  margin: 0 0 14pt 14pt; }
+  margin: 0 0 15pt 15pt; }
 
 sup, sub {
   line-height: 0; }
@@ -397,7 +429,7 @@ sup, sub {
  */
 .verse {
   text-indent: 0;
-  margin: 14pt 0;
+  margin: 15pt 0;
   hyphens: none; }
 
 .verse + p {
@@ -407,191 +439,191 @@ sup, sub {
 ul.verse {
   list-style-type: none;
   padding: 0;
-  margin: 14pt 0; }
+  margin: 15pt 0; }
 
 ul.verse li {
-  text-indent: -28pt;
-  margin-left: 28pt; }
+  text-indent: -30pt;
+  margin-left: 30pt; }
 
 ul.verse li.indent-1 {
-  margin-left: 42pt; }
+  margin-left: 45pt; }
 
 ul.verse li.indent-2 {
-  margin-left: 56pt; }
+  margin-left: 60pt; }
 
 ul.verse li.indent-3 {
-  margin-left: 70pt; }
+  margin-left: 75pt; }
 
 ul.verse li.indent-4 {
-  margin-left: 84pt; }
+  margin-left: 90pt; }
 
 ul.verse li.indent-5 {
-  margin-left: 98pt; }
+  margin-left: 105pt; }
 
 ul.verse li.indent-6 {
-  margin-left: 112pt; }
+  margin-left: 120pt; }
 
 ul.verse li.indent-7 {
-  margin-left: 126pt; }
+  margin-left: 135pt; }
 
 ul.verse li.indent-8 {
-  margin-left: 140pt; }
+  margin-left: 150pt; }
 
 ul.verse li.indent-9 {
-  margin-left: 154pt; }
+  margin-left: 165pt; }
 
 ul.verse li.indent-10 {
-  margin-left: 168pt; }
+  margin-left: 180pt; }
 
 ul.verse li.indent-11 {
-  margin-left: 182pt; }
+  margin-left: 195pt; }
 
 ul.verse li.indent-12 {
-  margin-left: 196pt; }
-
-ul.verse li.indent-13 {
   margin-left: 210pt; }
 
+ul.verse li.indent-13 {
+  margin-left: 225pt; }
+
 ul.verse li.indent-14 {
-  margin-left: 224pt; }
+  margin-left: 240pt; }
 
 ul.verse li.indent-15 {
-  margin-left: 238pt; }
+  margin-left: 255pt; }
 
 ul.verse li.indent-16 {
-  margin-left: 252pt; }
+  margin-left: 270pt; }
 
 ul.verse li.indent-17 {
-  margin-left: 266pt; }
+  margin-left: 285pt; }
 
 ul.verse li.indent-18 {
-  margin-left: 280pt; }
+  margin-left: 300pt; }
 
 ul.verse li.indent-19 {
-  margin-left: 294pt; }
+  margin-left: 315pt; }
 
 ul.verse li.indent-20 {
-  margin-left: 308pt; }
+  margin-left: 330pt; }
 
 ul.verse li.indent-21 {
-  margin-left: 322pt; }
+  margin-left: 345pt; }
 
 ul.verse li.indent-22 {
-  margin-left: 336pt; }
+  margin-left: 360pt; }
 
 ul.verse li.indent-23 {
-  margin-left: 350pt; }
+  margin-left: 375pt; }
 
 ul.verse li.indent-24 {
-  margin-left: 364pt; }
+  margin-left: 390pt; }
 
 ul.verse li.indent-25 {
-  margin-left: 378pt; }
+  margin-left: 405pt; }
 
 ul.verse li.indent-26 {
-  margin-left: 392pt; }
-
-ul.verse li.indent-27 {
-  margin-left: 406pt; }
-
-ul.verse li.indent-28 {
   margin-left: 420pt; }
 
+ul.verse li.indent-27 {
+  margin-left: 435pt; }
+
+ul.verse li.indent-28 {
+  margin-left: 450pt; }
+
 ul.verse li.indent-29 {
-  margin-left: 434pt; }
+  margin-left: 465pt; }
 
 ul.verse li.indent-30 {
-  margin-left: 448pt; }
+  margin-left: 480pt; }
 
 ul.verse li.indent-31 {
-  margin-left: 462pt; }
+  margin-left: 495pt; }
 
 ul.verse li.indent-32 {
-  margin-left: 476pt; }
+  margin-left: 510pt; }
 
 ul.verse li.indent-33 {
-  margin-left: 490pt; }
+  margin-left: 525pt; }
 
 ul.verse li.indent-34 {
-  margin-left: 504pt; }
+  margin-left: 540pt; }
 
 ul.verse li.indent-35 {
-  margin-left: 518pt; }
+  margin-left: 555pt; }
 
 ul.verse li.indent-36 {
-  margin-left: 532pt; }
+  margin-left: 570pt; }
 
 ul.verse li.indent-37 {
-  margin-left: 546pt; }
+  margin-left: 585pt; }
 
 ul.verse li.indent-38 {
-  margin-left: 560pt; }
+  margin-left: 600pt; }
 
 ul.verse li.indent-39 {
-  margin-left: 574pt; }
+  margin-left: 615pt; }
 
 ul.verse li.indent-40 {
-  margin-left: 588pt; }
-
-ul.verse li.indent-41 {
-  margin-left: 602pt; }
-
-ul.verse li.indent-42 {
-  margin-left: 616pt; }
-
-ul.verse li.indent-43 {
   margin-left: 630pt; }
 
+ul.verse li.indent-41 {
+  margin-left: 645pt; }
+
+ul.verse li.indent-42 {
+  margin-left: 660pt; }
+
+ul.verse li.indent-43 {
+  margin-left: 675pt; }
+
 ul.verse li.indent-44 {
-  margin-left: 644pt; }
+  margin-left: 690pt; }
 
 ul.verse li.indent-45 {
-  margin-left: 658pt; }
+  margin-left: 705pt; }
 
 ul.verse li.indent-46 {
-  margin-left: 672pt; }
+  margin-left: 720pt; }
 
 ul.verse li.indent-47 {
-  margin-left: 686pt; }
+  margin-left: 735pt; }
 
 ul.verse li.indent-48 {
-  margin-left: 700pt; }
+  margin-left: 750pt; }
 
 ul.verse li.indent-49 {
-  margin-left: 714pt; }
+  margin-left: 765pt; }
 
 ul.verse li.indent-50 {
-  margin-left: 728pt; }
+  margin-left: 780pt; }
 
 ul.verse li.indent-51 {
-  margin-left: 742pt; }
+  margin-left: 795pt; }
 
 ul.verse li.indent-52 {
-  margin-left: 756pt; }
+  margin-left: 810pt; }
 
 ul.verse li.indent-53 {
-  margin-left: 770pt; }
+  margin-left: 825pt; }
 
 ul.verse li.indent-54 {
-  margin-left: 784pt; }
-
-ul.verse li.indent-55 {
-  margin-left: 798pt; }
-
-ul.verse li.indent-56 {
-  margin-left: 812pt; }
-
-ul.verse li.indent-57 {
-  margin-left: 826pt; }
-
-ul.verse li.indent-58 {
   margin-left: 840pt; }
 
+ul.verse li.indent-55 {
+  margin-left: 855pt; }
+
+ul.verse li.indent-56 {
+  margin-left: 870pt; }
+
+ul.verse li.indent-57 {
+  margin-left: 885pt; }
+
+ul.verse li.indent-58 {
+  margin-left: 900pt; }
+
 ul.verse li.indent-59 {
-  margin-left: 854pt; }
+  margin-left: 915pt; }
 
 ul.verse li.indent-60 {
-  margin-left: 868pt; }
+  margin-left: 930pt; }
 
 blockquote.verse {
   color: inherit;
@@ -605,7 +637,7 @@ blockquote.verse h3,
 blockquote.verse h4,
 blockquote.verse h5,
 blockquote.verse h6 {
-  margin-bottom: 14pt; }
+  margin-bottom: 15pt; }
 
 blockquote.verse ul {
   margin-bottom: 0; }
@@ -661,7 +693,7 @@ blockquote.verse ul.verse {
  */
 .bibliography {
   text-indent: 0;
-  margin: 14pt 0; }
+  margin: 15pt 0; }
 
 .bibliography + p {
   text-indent: 0;
@@ -670,11 +702,11 @@ blockquote.verse ul.verse {
 ul.bibliography {
   list-style-type: none;
   padding: 0;
-  margin: 14pt 0; }
+  margin: 15pt 0; }
 
 ul.bibliography li {
-  text-indent: -28pt;
-  margin-left: 28pt; }
+  text-indent: -30pt;
+  margin-left: 30pt; }
 
 /* 
  * Epigraphs 
@@ -682,12 +714,12 @@ ul.bibliography li {
 p.epigraph {
   font-style: italic;
   text-indent: 0;
-  padding: 0 56pt;
+  padding: 0 60pt;
   max-width: 20em; }
 
 p.epigraph-source {
   text-indent: 0;
-  padding: 0 56pt;
+  padding: 0 60pt;
   max-width: 20em;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
@@ -700,7 +732,7 @@ p.epigraph-source:before {
 .epigraph-source + p, .dedication + p {
   /* Paragraphs after epigraphs and dedications should be flush left after space. */
   text-indent: 0;
-  margin-top: 14pt; }
+  margin-top: 15pt; }
 
 /* 
  * Dedications
@@ -728,8 +760,8 @@ p.dedication {
   font-size: 22pt;
   font-style: italic;
   text-align: center;
-  margin: 14pt 0;
-  line-height: 28pt; }
+  margin: 15pt 0;
+  line-height: 30pt; }
 
 .pullquote + p {
   text-indent: 0; }
@@ -745,11 +777,11 @@ p.dedication {
   font-weight: inherit;
   font-size: inherit;
   border: 0.5pt solid #ccc;
-  margin: 14pt 0;
-  padding: 14pt 14pt 0 14pt; }
+  margin: 15pt 0;
+  padding: 15pt 15pt 0 15pt; }
 
 p.box {
-  padding-bottom: 14pt;
+  padding-bottom: 15pt;
   text-indent: 0; }
 
 .box + p {
@@ -757,7 +789,7 @@ p.box {
 
 .box.float-top + p,
 .box.float-bottom + p {
-  text-indent: 14pt; }
+  text-indent: 15pt; }
 
 .box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
   margin-top: 0; }
@@ -780,7 +812,7 @@ p.box {
 pre, code {
   font-family: "Inconsolata", monospace;
   font-size: 90%;
-  line-height: 14pt;
+  line-height: 15pt;
   white-space: pre-wrap;
   background-color: #f9f9f9;
   padding: 0.1em 0.3em;
@@ -797,7 +829,7 @@ pre + p {
  */
 table {
   border-collapse: collapse;
-  margin: 14pt 0;
+  margin: 15pt 0;
   font-size: 8.8pt;
   font-variant: prince-opentype(tnum); }
 
@@ -806,7 +838,7 @@ th, td {
   border-bottom: 0.5pt solid #ccc;
   border-left: 0.5pt dotted #f2f2f2;
   border-right: 0.5pt dotted #f2f2f2;
-  padding: 1.4pt 2.8pt; }
+  padding: 1.5pt 3pt; }
 
 thead, th {
   font-weight: bold; }
@@ -815,7 +847,7 @@ thead, th {
   page-break-after: avoid;
   font-style: italic;
   text-indent: 0;
-  margin: 28pt 0 14pt 0; }
+  margin: 30pt 0 15pt 0; }
 
 .table-caption em {
   font-style: normal; }
@@ -852,8 +884,8 @@ blockquote.figure {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  margin: 14pt 0 14pt 0;
-  padding: 7pt;
+  margin: 15pt 0 15pt 0;
+  padding: 7.5pt;
   width: 100%;
   box-sizing: border-box; }
 
@@ -876,11 +908,11 @@ ol li blockquote.figure, ul li blockquote.figure {
   width: auto;
   max-height: 150mm;
   max-width: 100%;
-  margin: 0 auto 7pt auto; }
+  margin: 0 auto 7.5pt auto; }
 
 .figure p:nth-child(2) {
   /* This is the caption */
-  padding: 7pt 0 0 0;
+  padding: 7.5pt 0 0 0;
   text-align: center;
   text-indent: 0;
   font-style: italic; }
@@ -914,9 +946,9 @@ ol li blockquote.figure, ul li blockquote.figure {
   line-height: inherit; }
 
 .footnotes {
-  margin: 28pt 0 0 0;
+  margin: 30pt 0 0 0;
   font-size: 9.9pt;
-  line-height: 12.6pt; }
+  line-height: 13.5pt; }
 
 .footnotes p {
   text-indent: 0; }
@@ -930,18 +962,18 @@ ol li blockquote.figure, ul li blockquote.figure {
   float: right;
   max-width: 10em;
   min-width: 5em;
-  margin: 7pt 0 7pt 28pt;
-  padding: 7pt;
+  margin: 7.5pt 0 7.5pt 30pt;
+  padding: 7.5pt;
   border-top: 0.5pt solid #eeeeee;
   text-indent: 0;
   font-size: 8.8pt;
   font-style: inherit;
-  line-height: 11.2pt; }
+  line-height: 12pt; }
 
 .bottom {
   float: bottom;
   max-width: 100%;
-  margin: 14pt 0 0 0; }
+  margin: 15pt 0 0 0; }
 
 /*
  * Halftitle-page and title-page
@@ -957,23 +989,23 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 .title-page-title {
   font-size: 33pt;
-  line-height: 42pt;
+  line-height: 45pt;
   font-variant: prince-opentype(dlig);
-  margin: 84pt 0 14pt 0;
+  margin: 90pt 0 15pt 0;
   string-set: book-title content; }
 
 .title-page-subtitle {
   font-size: 22pt;
-  line-height: 28pt;
+  line-height: 30pt;
   font-style: italic;
-  margin: 14pt 0 14pt 0;
+  margin: 15pt 0 15pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-subtitle content; }
 
 .title-page-author {
   font-size: 22pt;
-  line-height: 28pt;
-  margin: 14pt 0;
+  line-height: 30pt;
+  margin: 15pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-author content; }
 
@@ -997,17 +1029,17 @@ ol li blockquote.figure, ul li blockquote.figure {
 
 .copyright-page h1 {
   font-size: 8.8pt;
-  line-height: 11.2pt;
-  margin: 14pt 0;
+  line-height: 12pt;
+  margin: 15pt 0;
   letter-spacing: 0.025em;
   font-variant: prince-opentype(c2sc, smcp, onum);
   text-align: left; }
 
 .copyright-page p, .copyright-page li {
-  margin: 0 0 11.2pt 0;
+  margin: 0 0 12pt 0;
   text-indent: 0;
   font-size: 8.8pt;
-  line-height: 11.2pt;
+  line-height: 12pt;
   hyphens: none;
   /* Prince will not hyphenate here */ }
 
@@ -1025,20 +1057,20 @@ ol li blockquote.figure, ul li blockquote.figure {
   .contents-page ul, .contents-page ol {
     list-style-type: none; }
   .contents-page li {
-    margin: 0 0 7pt 0; }
+    margin: 0 0 7.5pt 0; }
   .contents-page li li {
     margin: 0; }
   .contents-page h2 {
     font-size: 13.2pt;
-    margin: 14pt 0 7pt 0; }
+    margin: 15pt 0 7.5pt 0; }
 
 /* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
 ul#markdown-toc, ol#markdown-toc {
   list-style-type: none;
   border-top: 0.5pt solid #f9f9f9;
   border-bottom: 0.5pt solid #f9f9f9;
-  padding: 14pt 0;
-  margin: 28pt 0; }
+  padding: 15pt 0;
+  margin: 30pt 0; }
 
 #markdown-toc ul, #markdown-toc ol {
   list-style-type: none;
@@ -1047,19 +1079,14 @@ ul#markdown-toc, ol#markdown-toc {
   font-variant: prince-opentype(lnum);
   margin: 0; }
 #markdown-toc li li {
-  margin-left: 14pt; }
+  margin-left: 15pt; }
 #markdown-toc a {
   text-decoration: none; }
 #markdown-toc a::after {
   content: leader(" ") target-counter(attr(href), page); }
 
-/*
- * Cover-page styling. Creates a single-page low-res cover for web PDFs.
- */
 @page cover {
   margin: 0; }
-@prince-pdf {
-  prince-pdf-page-layout: single-page; }
 body.cover, div.cover {
   margin: 0;
   padding: 0; }
@@ -1072,6 +1099,9 @@ p.cover {
 img.cover {
   height: 100%;
   width: 100%; }
+
+body.cover {
+  page-break-after: left; }
 
 /* Use small-cap alternate glyphs */
 .smallcaps {
@@ -1092,7 +1122,7 @@ img.cover {
 
 p.valediction {
   text-indent: 0;
-  margin: 14pt 0;
+  margin: 15pt 0;
   font-style: italic;
   text-align: right;
   page-break-before: avoid; }
@@ -1113,14 +1143,14 @@ p.source {
 p.first {
   /* A paragraph that starts a new set of paragraphs, with a gap above it. */
   text-indent: 0;
-  margin-top: 14pt;
+  margin-top: 15pt;
   /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */ }
 
 p.chapter-number {
   font-weight: bold;
   font-size: 44pt;
-  line-height: 56pt;
-  margin: 0 0 14pt 0; }
+  line-height: 60pt;
+  margin: 0 0 15pt 0; }
 
 .reference-index {
   columns: 2;
@@ -1128,12 +1158,12 @@ p.chapter-number {
 
 .reference-index li {
   list-style-type: none;
-  margin: 0 0 0 28pt;
-  text-indent: -28pt;
+  margin: 0 0 0 30pt;
+  text-indent: -30pt;
   column-break-inside: avoid; }
 
 .reference-index li li {
-  margin: 0 0 0 14pt; }
+  margin: 0 0 0 15pt; }
 
 .reference-index a {
   content: target-counter(attr(href), page); }
@@ -1351,244 +1381,244 @@ h6 {
 
 @page chapter:left {
   @top {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
 @page chapter:right {
   @top {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
 @page frontmatter:left {
   @top {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); } }
 @page frontmatter:right {
   @top {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @top-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-left-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-variant: prince-opentype(c2sc, smcp, onum); }
   @bottom-right-corner {
-    font-family: "Linux Libertine", serif;
+    font-family: "Crimson", serif;
     font-size: 8.8pt;
     text-transform: uppercase;
     letter-spacing: 0.05em;

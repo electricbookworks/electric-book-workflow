@@ -38,6 +38,7 @@
   <li><a href="#using-the-template" id="markdown-toc-using-the-template">Using the template</a></li>
   <li><a href="#creating-a-new-book" id="markdown-toc-creating-a-new-book">Creating a new book</a></li>
   <li><a href="#creating-book-content" id="markdown-toc-creating-book-content">Creating book content</a>    <ul>
+      <li><a href="#set-first-pages" id="markdown-toc-set-first-pages">Set first pages</a></li>
       <li><a href="#file-naming" id="markdown-toc-file-naming">File naming</a></li>
     </ul>
   </li>
@@ -204,17 +205,60 @@
   <li><code class="highlighter-rouge">contents-page</code> for the book’s table of contents</li>
   <li><code class="highlighter-rouge">dedication-page</code> for a dedication page</li>
   <li><code class="highlighter-rouge">epigraph-page</code> for an epigraph page</li>
-  <li><code class="highlighter-rouge">frontmatter</code> for other prelim pages not accounted for otherwise*</li>
+  <li><code class="highlighter-rouge">frontispiece-page</code> for a frontispiece page</li>
+  <li><code class="highlighter-rouge">frontmatter</code> for other prelim pages not accounted for otherwise</li>
   <li><code class="highlighter-rouge">chapter</code> for a book’s default chapter page (and the global default)</li>
 </ul>
-
-<p>* In print output, if you use <code class="highlighter-rouge">frontmatter</code> on a book-part, by default (in the Classic theme) it will have roman-numeral page numbers. When the first <code class="highlighter-rouge">chapter</code> starts, it will have decimal page numbers. However, the page numbering will be consecutive from roman to decimal. That is, ‘ix, x, 11, 12’. To reset the numbering to 1 at the start of the first <code class="highlighter-rouge">chapter</code>, add the page class <code class="highlighter-rouge">.page-1</code> to the first element (e.g. the first heading) of the first chapter. In markdown, you do that with the tag <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.page-1</span><span class="p">}</span></code> in the line immediately after the heading.</p>
 
 <p>You can also invent your own page styles, and use them in your custom CSS instead of these, though you may get unexpected results if you’ve been relying on CSS for existing styles like <code class="highlighter-rouge">chapter</code>.</p>
 
 <blockquote class="box">
   <p>Tip: If, in your web output, you don’t want the navigation (nav bar and footer) on a page, such as the collection’s index page, add <code class="highlighter-rouge">layout: min</code> to the document’s YAML header. The <code class="highlighter-rouge">min</code> layout does not include a nav-bar and footer.</p>
 </blockquote>
+
+<h3 id="set-first-pages">Set first pages</h3>
+
+<p>Many books have two ‘page ones’:</p>
+
+<ol>
+  <li>the half-title or title page and,</li>
+  <li>if the prelims have roman-numeral page numbers, the first chapter.</li>
+</ol>
+
+<p>You should specify those pages so that Prince knows where to start numbering.</p>
+
+<p>Why? Well, for example, in print output if you use <code class="highlighter-rouge">frontmatter</code> on a book-part, by default it will have roman-numeral page numbers. When the first <code class="highlighter-rouge">chapter</code> starts, it will have decimal page numbers. However, the page numbering will be consecutive from roman through decimal. That is, it will run ‘ix, x, 11, 12’. You reset the numbering to 1 at the start of the first <code class="highlighter-rouge">chapter</code> to avoid this.</p>
+
+<p>You reset page numbering by adding the class <code class="highlighter-rouge">page-1</code> to the first block-level element on the relevant page.</p>
+
+<p>You can do this in two ways:</p>
+
+<ol>
+  <li>
+    <p>If a markdown document starts at ‘page one’, add the class to the <code class="highlighter-rouge">style</code> YAML header. E.g.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>---
+title: Half-title page
+style: halftitle-page page-1
+---
+</code></pre>
+    </div>
+
+    <p>And at the first chapter:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>---
+title: Chapter One
+style: chapter page-1
+---
+</code></pre>
+    </div>
+
+    <p>Remember that <code class="highlighter-rouge">chapter</code> is the default, so you normally don’t have to specify it. <em>But</em> if you want to <em>add</em> a class in addition to <code class="highlighter-rouge">chapter</code>, you must specify both classes. This is because, if you were to use <code class="highlighter-rouge">style: page-1</code> in a YAML header, the class <code class="highlighter-rouge">page-1</code> would override the default <code class="highlighter-rouge">style: chapter</code>, not add to it.</p>
+  </li>
+  <li>
+    <p>Add the <code class="highlighter-rouge">page-1</code> class to the first block-level element in the chapter by adding the tag <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.page-1</span><span class="p">}</span></code> in the line immediately after it. (Note: for this to work, the element must <em>not</em> have a CSS float applied to it.)</p>
+  </li>
+</ol>
 
 <h3 id="file-naming">File naming</h3>
 

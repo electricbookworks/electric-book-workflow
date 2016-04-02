@@ -33,6 +33,10 @@
 
 <p>Our Classic theme includes styling for a range of classes. You can apply these to elements in markdown.</p>
 
+<h2 id="formatting">Formatting</h2>
+
+<p>Use these classes in your markdown to create specific formatting effects.</p>
+
 <table>
   <thead>
     <tr>
@@ -62,7 +66,7 @@
       <td>Chapter number</td>
       <td><code class="highlighter-rouge">.chapter-number</code></td>
       <td>Block</td>
-      <td>Used for a chapter number before a chapter heading. (See the tip at <a href="#bold">Bold</a> above for another way to handle chapter numbers.</td>
+      <td>Used for a chapter number before a chapter heading. (See the tip at <a href="03-markdown.html#bold">Bold in the chapter on Markdown</a> for another way to handle chapter numbers.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -153,7 +157,7 @@
       <td>Footnote</td>
       <td><code class="highlighter-rouge">.sidenote .bottom</code></td>
       <td>Block or inline</td>
-      <td>When you add <code class="highlighter-rouge">.bottom</code> to <code class="highlighter-rouge">.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see <a href="#endnotes">Endnotes</a> above.)</td>
+      <td>When you add <code class="highlighter-rouge">.bottom</code> to <code class="highlighter-rouge">.sidenote</code>, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see the chapter <a href="17-notes.html#footnotes-endnotes-and-sidenotes">‘Footnotes, endnotes and sidenotes’</a>.)</td>
       <td>No</td>
     </tr>
     <tr>
@@ -224,6 +228,13 @@
       <td><code class="highlighter-rouge">.allow-break</code></td>
       <td>Block</td>
       <td>Allows an element to break over a page where the default styles would normally prevent that. Apply the class to the parent element.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Page numbering restart</td>
+      <td><code class="highlighter-rouge">.page-1</code></td>
+      <td>Block</td>
+      <td>Restarts page numbering from 1. Can be added to the first block element on a page, or to the YAML header, in addition to the main style, e.g. <code class="highlighter-rouge">style: halftitle-page page-1</code> or <code class="highlighter-rouge">style: chapter page-1</code>. Recommended for any document that starts a book interior (e.g. title page), to retain correct pagination when creating a PDF ebook with a front cover</td>
       <td>No</td>
     </tr>
     <tr>
@@ -379,6 +390,69 @@
       <td>Block</td>
       <td>Used for the sign-off at the end of a letter, preface or foreword.</td>
       <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="reserved-classes">Reserved classes</h2>
+
+<p>You may also need to create your own classes for other uses. If you do, avoid using the same already-supported class names above. You should also avoid using the following ones, which are reserved for specific structural elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class name</th>
+      <th>Reserved for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">index</code></td>
+      <td>The home page of a collection, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cover</code></td>
+      <td>A front cover, which will appear in ebook editions, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">halftitle-page</code></td>
+      <td>A book’s halftitle page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">previous-publications-page</code></td>
+      <td>A book’s list of the author’s previous publications, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title-page</code></td>
+      <td>A book’s title page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">copyright-page</code></td>
+      <td>copyright or imprint page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">contents-page</code></td>
+      <td>A book’s table of contents, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">dedication-page</code></td>
+      <td>A dedication page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">epigraph-page</code></td>
+      <td>An epigraph page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">frontispiece-page</code></td>
+      <td>A frontispiece page, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">frontmatter</code></td>
+      <td>For other prelim pages not accounted for otherwise, used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">chapter</code></td>
+      <td>A book’s default chapter page (and the global default), used for the <code class="highlighter-rouge">style</code> value in file YAML headers</td>
     </tr>
   </tbody>
 </table>

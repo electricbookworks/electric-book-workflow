@@ -1,77 +1,5 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_R.otf); }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RI.otf);
-  font-style: italic; }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RB.otf);
-  font-weight: bold; }
-@font-face {
-  font-family: "Linux Libertine";
-  src: url(fonts/LinLibertine_RBI.otf);
-  font-style: italic;
-  font-weight: bold; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Black.ttf);
-  font-weight: 900; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-BlackItalic.ttf);
-  font-weight: 900;
-  font-style: italic; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Bold.ttf);
-  font-weight: 700; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-BoldItalic.ttf);
-  font-weight: 700;
-  font-style: italic; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-ExtraLight.ttf);
-  font-weight: 200; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-ExtraLightItalic.ttf);
-  font-weight: 200;
-  font-style: italic; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Italic.ttf);
-  font-weight: 400;
-  font-style: italic; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Light.ttf);
-  font-weight: 300; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-LightItalic.ttf);
-  font-weight: 300;
-  font-style: italic; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Regular.ttf);
-  font-weight: 400; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Semibold.ttf);
-  font-weight: 600; }
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-SemiboldItalic.ttf);
-  font-weight: 600;
-  font-style: italic; }
-@font-face {
-  font-family: "Inconsolata", monospace;
-  src: url(fonts/Inconsolata-Regular.ttf); }
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
 /* 
  * Structure 
  */
@@ -89,7 +17,7 @@ body {
  * General typography 
  */
 body {
-  font-family: "Linux Libertine", serif;
+  font-family: "Crimson Text", serif;
   font-size: 1.2em;
   line-height: 150%;
   -moz-font-feature-settings: "liga", "kern";
