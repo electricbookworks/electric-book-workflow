@@ -53,6 +53,7 @@ defaults:
             publication-date: "2015-12-31"
             layout: "default"
 #            layout: "epub"
+#            layout: "pdf-ebook"
             stylesheet-print: "print-guide.css"
             stylesheet-web: "web-guide.css"
             stylesheet-epub: "epub-guide.css"

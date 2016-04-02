@@ -34,10 +34,10 @@
 // Set variables
 // -------------
 
-$font-text-main: "Linux Libertine", serif;
+$font-text-main: "Crimson Text", serif;
 $font-text-secondary: "Source Sans Pro", sans-serif;
 $font-display-main: "Source Sans Pro", sans-serif;
-$font-display-secondary: "Linux Libertine", serif;
+$font-display-secondary: "Crimson Text", serif;
 $font-code: "Inconsolata", monospace;
 
 $font-size-default: 1.2em;
@@ -47,10 +47,11 @@ $line-height-default: 150%;
 // Import font files (@font-face) for fonts you specify
 // ----------------------------------------------------
 
-@import "fonts/linux-libertine";
-@import "fonts/source-sans-pro";
-@import "fonts/inconsolata";
-// @import "font-crimson";
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+//@import "fonts/linux-libertine";
+//@import "fonts/source-sans-pro";
+//@import "fonts/inconsolata";
+//@import "fonts/crimson";
 
 // -------------------
 // Import master theme
