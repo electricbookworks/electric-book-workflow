@@ -34,15 +34,15 @@ $crop-marks: crop; // crop | none
 // - 'display' fonts are used for headings and similar short-string features.
 // For each category, we set a main font and a secondary font, allowing up to four fonts.
 // Finally, we set a fifth, monospace font for elements like computer code.
-$font-text-main: "Linux Libertine", serif;
+$font-text-main: "Crimson", serif;
 $font-text-secondary: "Source Sans Pro", sans-serif;
 $font-display-main: "Source Sans Pro", sans-serif;
-$font-display-secondary: "Linux Libertine", serif;
+$font-display-secondary: "Crimson", serif;
 $font-code: "Inconsolata", monospace;
 
 // Finally, we set variables related to text flow.
 $font-size-default: 11pt;
-$line-height-default: 14pt; // Set in points. For consistent baselines, all other line heights and vertical spaces are based on this.
+$line-height-default: 15pt; // Set in points. For consistent baselines, all other line heights and vertical spaces are based on this.
 $text-align: left;
 $orphans: 1; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1; // Minimum number of lines that must be left at the top of the second page
@@ -137,11 +137,11 @@ $highlight-loosened: inherit;
 
 //@import "adobe-caslon-pro";
 //@import "fonts/crimson-text";
-//@import "fonts/crimson";
+@import "fonts/crimson";
 @import "fonts/inconsolata";
 //@import "fonts/kalam";
 //@import "fonts/linux-biolinum";
-@import "fonts/linux-libertine";
+//@import "fonts/linux-libertine";
 //@import "fonts/montserrat";
 //@import "fonts/overpass";
 @import "fonts/source-sans-pro";
