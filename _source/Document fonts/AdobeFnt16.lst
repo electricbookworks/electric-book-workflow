@@ -1,0 +1,116 @@
+%!Adobe-FontList 1.16
+%Locale:0x1c09
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SourceSansPro-Black
+FamilyName:Source Sans Pro
+StyleName:Black
+FullName:Source Sans Pro Black
+MenuName:Source Sans Pro Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\dev\electric-book-workflow\_source\Document fonts\SourceSansPro-Black.ttf
+DataFormat:sfntData
+FileLength:148368
+FileModTime:1440163375
+WeightClass:900
+WidthClass:5
+AngleClass:0
+DesignSize:100
+NameArray:0,Mac,4,Source Sans Pro Black
+NameArray:0,Win,1,Source Sans Pro Black
+NameArray:0,Win,16,Source Sans Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SourceSansPro-Bold
+FamilyName:Source Sans Pro
+StyleName:Bold
+FullName:Source Sans Pro Bold
+MenuName:Source Sans Pro
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\dev\electric-book-workflow\_source\Document fonts\SourceSansPro-Bold.ttf
+DataFormat:sfntData
+FileLength:118604
+FileModTime:1440163375
+WeightClass:700
+WidthClass:5
+AngleClass:0
+DesignSize:100
+NameArray:0,Mac,4,Source Sans Pro Bold
+NameArray:0,Win,1,Source Sans Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SourceSansPro-ExtraLight
+FamilyName:Source Sans Pro
+StyleName:ExtraLight
+FullName:Source Sans Pro ExtraLight
+MenuName:Source Sans Pro ExtraLight
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\dev\electric-book-workflow\_source\Document fonts\SourceSansPro-ExtraLight.ttf
+DataFormat:sfntData
+FileLength:150528
+FileModTime:1440163375
+WeightClass:200
+WidthClass:5
+AngleClass:0
+DesignSize:100
+NameArray:0,Mac,4,Source Sans Pro ExtraLight
+NameArray:0,Win,1,Source Sans Pro ExtraLight
+NameArray:0,Win,16,Source Sans Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SourceSansPro-It
+FamilyName:Source Sans Pro
+StyleName:Italic
+FullName:Source Sans Pro Italic
+MenuName:Source Sans Pro
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\dev\electric-book-workflow\_source\Document fonts\SourceSansPro-Italic.ttf
+DataFormat:sfntData
+FileLength:119264
+FileModTime:1440163375
+WeightClass:400
+WidthClass:5
+AngleClass:1
+DesignSize:100
+NameArray:0,Mac,4,Source Sans Pro Italic
+NameArray:0,Win,1,Source Sans Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SourceSansPro-Light
+FamilyName:Source Sans Pro
+StyleName:Light
+FullName:Source Sans Pro Light
+MenuName:Source Sans Pro Light
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\dev\electric-book-workflow\_source\Document fonts\SourceSansPro-Light.ttf
+DataFormat:sfntData
+FileLength:150244
+FileModTime:1440163375
+WeightClass:300
+WidthClass:5
+AngleClass:0
+DesignSize:100
+NameArray:0,Mac,4,Source Sans Pro Light
+NameArray:0,Win,1,Source Sans Pro Light
+NameArray:0,Win,16,Source Sans Pro
+%EndFont
+
