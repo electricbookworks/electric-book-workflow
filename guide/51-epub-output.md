@@ -137,6 +137,14 @@ To create that in kramdown:
 {:.sigil_split_marker}
 ~~~
 
+Also, remember to hide those markers in print output (and web and elsewhere as needed) with this in your CSS:
+
+~~~
+.sigil_split_marker {
+	display: none;
+}
+~~~
+
 Then, when you're assembling the epub in Sigil, just run Edit > Split At Markers.
 
 Sigil will then split the HTML file into separate HTML files at the markers, and remove the `<hr>` element.
