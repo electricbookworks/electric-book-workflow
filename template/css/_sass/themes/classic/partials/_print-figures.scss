@@ -1,8 +1,6 @@
-/* 
- * Figures. Note: we use the blockquote element to wrap figures and their captions in valid XHTML. 
- * Use the .figure class for the blockquote wrapping an image and a caption. 
- * Add .fixed, .small and/or .large for layout and size options. 
- */
+// Figures. Note: we use the blockquote element to wrap figures and their captions in valid XHTML. 
+// Use the .figure class for the blockquote wrapping an image and a caption. 
+// Add .fixed, .small and/or .large for layout and size options. 
 
 blockquote.figure {
 	clear: both;
@@ -17,13 +15,21 @@ blockquote.figure {
 	width: 100%;
 	box-sizing: border-box;
 }
+
+// Experimental. Effectively overrides 'unless-fit' to reduce ugly instances
+// of indented images in lists beside floated, non-indented images.
 ol li blockquote.figure, ul li blockquote.figure {
-	display: inline-block; /* Experimental. Effectively overrides 'unless-fit' to reduce ugly instances of indented images in lists beside floated, non-indented images. */
+	display: inline-block;
 }
+
+// Fix figures in place, for when they  must keep their position in the text flow,
+// and not float to the top of the page.
 .fixed, .figure.fixed {
 	clear: both;
-	float: none; /* For figures that must keep their position in the text flow, not float to the top of the page. */
+	float: none;
 }
+
+// The p and img elements inside the figure
 .figure p {
 	clear: both;
 	page-break-inside: avoid;
@@ -36,15 +42,21 @@ ol li blockquote.figure, ul li blockquote.figure {
 	max-width: 100%;
 	margin: 0 auto ($line-height-default / 2) auto;
 }
-.figure p:nth-child(2) { /* This is the caption */
+
+// The caption (could usually also be targeted with `.figure p:last-of-type`)
+.figure p:nth-child(2) {
 	padding: ($line-height-default / 2) 0 0 0;
 	text-align: center;
 	text-indent: 0;
 	font-style: italic;
 }
-.figure p:nth-child(2) em { /* This is emphasis inside the caption */
+
+// Emphasis inside the caption
+.figure p:nth-child(2) em {
 	font-style: initial;
 }
+
+// Image size options
 .figure.x-small p img {
 	width: auto;
 	max-height: 30mm;
