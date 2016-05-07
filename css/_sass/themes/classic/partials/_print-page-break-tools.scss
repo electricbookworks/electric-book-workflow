@@ -31,11 +31,14 @@
 }
 
 // To end a section on a left or a right page, apply one of these classes to a block element
+// Specifying left or right might not seem intuitive. 
+// You don't tell the element what side page is supposed to be last.
+// Rather, you're adding an extra page if your last side is specified.
 .end-on-left {
-	page-break-after: left !important;
+	page-break-after: right !important;
 }
 .end-on-right {
-	page-break-after: right !important;
+	page-break-after: left !important;
 }
 
 // Also see:

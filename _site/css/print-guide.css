@@ -188,10 +188,10 @@
   page-break-inside: inherit !important; }
 
 .end-on-left {
-  page-break-after: left !important; }
+  page-break-after: right !important; }
 
 .end-on-right {
-  page-break-after: right !important; }
+  page-break-after: left !important; }
 
 /*
  * Hide screen-only and non-printing elements. The framework by default adds the .non-printing class to screen-only elements like #nav-bar and #footer.
@@ -740,7 +740,6 @@ p.epigraph-source:before {
 p.dedication {
   text-indent: 0;
   text-align: center;
-  max-width: 20em;
   font-variant: prince-opentype(c2sc, smcp, onum);
   font-style: inherit;
   letter-spacing: 0.025em; }
@@ -871,11 +870,6 @@ td p {
   margin: 0;
   padding: 0; }
 
-/* 
- * Figures. Note: we use the blockquote element to wrap figures and their captions in valid XHTML. 
- * Use the .figure class for the blockquote wrapping an image and a caption. 
- * Add .fixed, .small and/or .large for layout and size options. 
- */
 blockquote.figure {
   clear: both;
   float: top unless-fit;
@@ -890,13 +884,11 @@ blockquote.figure {
   box-sizing: border-box; }
 
 ol li blockquote.figure, ul li blockquote.figure {
-  display: inline-block;
-  /* Experimental. Effectively overrides 'unless-fit' to reduce ugly instances of indented images in lists beside floated, non-indented images. */ }
+  display: inline-block; }
 
 .fixed, .figure.fixed {
   clear: both;
-  float: none;
-  /* For figures that must keep their position in the text flow, not float to the top of the page. */ }
+  float: none; }
 
 .figure p {
   clear: both;
@@ -911,14 +903,12 @@ ol li blockquote.figure, ul li blockquote.figure {
   margin: 0 auto 7.5pt auto; }
 
 .figure p:nth-child(2) {
-  /* This is the caption */
   padding: 7.5pt 0 0 0;
   text-align: center;
   text-indent: 0;
   font-style: italic; }
 
 .figure p:nth-child(2) em {
-  /* This is emphasis inside the caption */
   font-style: initial; }
 
 .figure.x-small p img {
@@ -1124,7 +1114,6 @@ p.valediction {
   text-indent: 0;
   margin: 15pt 0;
   font-style: italic;
-  text-align: right;
   page-break-before: avoid; }
 
 .valediction + p {

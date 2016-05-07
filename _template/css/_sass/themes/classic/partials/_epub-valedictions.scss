@@ -1,9 +1,7 @@
-p.valediction {
+.valediction {
 	text-indent: 0;
-	margin: $line-height-default 0;
+	margin: 1em 0;
 	font-style: italic;
-	text-align: right;
-	page-break-before: avoid;
 }
 .valediction + p {
 	text-indent: 0; /* Paragraphs after a valediction should be flush left */

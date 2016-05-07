@@ -265,7 +265,6 @@ img.thumbnail {
 p.dedication {
   text-indent: 0;
   text-align: center;
-  max-width: 20em;
   -moz-font-feature-settings: "c2sc", "smcp", "onum";
   -ms-font-feature-settings: "c2sc", "smcp", "onum";
   -o-font-feature-settings: "c2sc", "smcp", "onum";
@@ -625,8 +624,7 @@ td ul, td ol {
 .valediction {
   text-indent: 0;
   margin: 1em 0;
-  font-style: italic;
-  text-align: right; }
+  font-style: italic; }
 
 .valediction + p {
   text-indent: 0; }
