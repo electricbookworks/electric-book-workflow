@@ -46,6 +46,13 @@ keep_files: [
 #css,
 ]
 
+# Output different HTML structures based on intent.
+# You can change these here, or rather override by loading two config files at the command line, e.g.:
+# jekyll build -c _config.yml,_config.epub.yml
+output: "default"
+#output: "epub"
+#output: "pdf-ebook"
+
 # Set default values here for all documents/pages in this publication. 
 # (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
 # Store only site configurations here, e.g. stylesheets, page styles, layouts, image folder, start page
@@ -63,10 +70,11 @@ defaults:
       stylesheet-print: "print.css"
       stylesheet-web: "web.css"
       stylesheet-epub: "epub.css"
+      start-page: "0-3-contents.html"
+      images-folder: "images"
   -
-    scope: # Now enter details for your first book. The `path` is the book's folder. The `values` are specific to the book in that folder. Add values to override the defaults above per book. Remember to indent with spaces, not tabs, for valid YAML.
+    scope: # Settings per book, defined by its folder name (path)
       path: "book"
     values:
       # Site configs
       slug: "book" # an identifier that matches the book content folder name
-      start-page: "0-3-contents.html"

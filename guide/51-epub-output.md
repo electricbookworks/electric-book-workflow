@@ -86,16 +86,16 @@ For general guidance on creating epubs with Sigil, check out [EBW's training mat
 
 ### Quicker epub output
 
-Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default `layout` in `_config.yml` (globally or for a given book's folder path) to `epub`. We include both options, and comment one of them out. So just switch which one is commented out:
+Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default `output` in `_config.yml` (globally or for a given book's folder path) to `epub`. We include both options, and comment one of them out. So just switch which one is commented out:
 
 ~~~
-layout: "epub"
-#layout: "default"
+output: "epub"
+#output: "default"
 ~~~
 
 Remember to restart Jekyll after changing `_config.yml` for changes to take effect, and change it back to `default` afterwards (`default` is necessary for print and web output).
 
-The `epub` layout lets you skip a few of the steps listed above, because it:
+The `epub` output lets you skip a few of the steps listed above, because it:
 
 * links to the epub CSS you specify in `_config.yml` (using Sigil's standard `../Styles/` path)
 * omits the nav bar and footer (no need to search and replace these)
@@ -103,9 +103,17 @@ The `epub` layout lets you skip a few of the steps listed above, because it:
 
 To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 
+> Pro tip: you can avoid having to change your config file to `output: "epub"` by loading a second config file when you build or serve Jekyll at the command line. The second config file sets the `output`, overriding the default config. To do this, use:
+> 
+> `jekyll build --config _config.yml,_config.epub.yml`
+> 
+> We also provide a second config file for PDF ebook output:
+> 
+> `jekyll build --config _config.yml,_config.pdf-ebook.yml`
+
 #### Quick-epub process checklist
 
-If you've generated HTML using the `layout: epub` setting in `_config.yml`, your basic process in Sigil is as follows. 
+If you've generated HTML using the `output: epub` setting in `_config.yml`, your basic process in Sigil is as follows. 
 
 1.	File > Open… and select the first HTML file in `_site/yourbook`.
 2.	Right-click the Text folder > Add Existing Files… and select the remaining HTML files for the epub.
@@ -155,11 +163,9 @@ A common use case for this is books with end-of-book endnotes. To create end-of-
 
 ## Mobi conversion
 
-If you need a MOBI file for Kindle, we recommend putting your EPUB into [Kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211). If you don't want to use the command-line, just open the EPUB with the [Kindle Previewer](http://www.amazon.com/gp/feature.html?docId=1000765261), which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.
+If you need a MOBI file for Kindle, we recommend putting your EPUB into the [Kindle Previewer](http://www.amazon.com/gp/feature.html?docId=1000765261), which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.
 
-If Kindlegen cannot convert the EPUB, we've found that adding it to [Calibre](http://calibre-ebook.com/) first, then (without converting) give Calibre's version to Kindlegen.
-
-Calibre gives you greater control over specific ebook conversions, but we've found Kindlegen converts some CSS better (e.g. floats and borders).
+If Previewer cannot convert the EPUB, we've found that adding it to [Calibre](http://calibre-ebook.com/) first, then (without converting) give Calibre's version to Kindle Previewer. Calibre gives you greater control over specific ebook conversions, but we've found Kindle Previewer converts some CSS better (e.g. floats and borders).
 
 > If you need to dig into a mobi file's code to troubleshoot, try the [KindleUnpack plugin for Calibre](http://www.mobileread.com/forums/showthread.php?t=171529).
 {:.box}

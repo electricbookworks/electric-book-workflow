@@ -1,11 +1,14 @@
+
+
+
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<title>A Guide to the Electric Book Workflow: Supported classes</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web-guide.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
 
 	<!-- Google Analytics, runs unless this is running through PrinceXML -->
 	<script>
@@ -16,6 +19,8 @@
 
 </head>
 <body class="chapter">
+
+
 
 
 		<div id="nav-bar" class="non-printing">
@@ -410,17 +415,17 @@
 
 <h2 id="the-edition-suffix">The edition suffix</h2>
 
-<p>If you want to produce more than one print edition of a book from the same source file, you can’t use the same classes that affect text-flow – like <code class="highlighter-rouge">.tighten</code>, for instance – in both editions, because the text will flow differently in each edition.</p>
+<p>If you want to produce more than one print edition of a book from the same source file, you can’t use the same classes that affect text-flow – like <code class="highlighter-rouge">.tighten-1</code>, for instance – in both editions, because the text will flow differently in each edition.</p>
 
-<p>Our workflow has a way to manage that. In the print CSS file, you can specify an edition suffix. For instance, if you’re producing a schools edition of a book, you might make your suffix <code class="highlighter-rouge">-schools-edn</code>. That suffix will be appended to the end of certain class names for that stylesheet. The default <code class="highlighter-rouge">.tighten</code> class will become <code class="highlighter-rouge">.tighten-schools-edn</code> in your final print CSS.</p>
+<p>Our workflow has a way to manage that. In the print CSS file, you can specify an edition suffix. For instance, if you’re producing a schools edition of a book, you might make your suffix <code class="highlighter-rouge">-schools-edn</code>. That suffix will be appended to the end of certain class names for that stylesheet. The default <code class="highlighter-rouge">.tighten-1</code> class will become <code class="highlighter-rouge">.tighten-1-schools-edn</code> in your final print CSS.</p>
 
-<p>(It’s a good idea to start a suffix with a hyphen, to keep your output CSS neat.)</p>
+<p>(It’s a good idea to start a suffix with a hyphen and use all lowercase letters, to keep your output CSS neat. Never use spaces.)</p>
 
 <p>Only some classes are affected – see the table above for which ones. The most important are the classes used for tightening and loosening letter-spacing, which are mostly used to control widows and orphans in print layout.</p>
 
-<p>In your markdown, then, you’d use <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="p">}</span></code> instead of <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten</span><span class="p">}</span></code>, and that class will then only have an effect on your schools edition. If you had another edition, say a professional edition with a <code class="highlighter-rouge">-prof-edn</code> suffix, you’d use a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-prof-edn</span><span class="p">}</span></code> tag in the markdown. These would match the classes automatically generated in each edition’s CSS.</p>
+<p>In your markdown, then, you’d use <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-1-schools-edn</span><span class="p">}</span></code> instead of <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-1</span><span class="p">}</span></code>, and that class will then only have an effect on your schools edition. If you had another edition, say a large-print edition with a <code class="highlighter-rouge">-large-print</code> suffix, you’d use a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-1-large-print</span><span class="p">}</span></code> tag in the markdown. These would match the classes automatically generated in each edition’s CSS.</p>
 
-<p>Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="w"> </span><span class="err">.tighten-prof-edn</span><span class="p">}</span></code>. That paragraph would then be tightened in both print layouts.</p>
+<p>Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-1-schools-edn</span><span class="w"> </span><span class="err">.tighten-1-large-print</span><span class="p">}</span></code>. That paragraph would then be tightened in both print layouts.</p>
 
 <h2 id="deprecated-classes">Deprecated classes</h2>
 
@@ -450,4 +455,5 @@
 	
 </body>
 </html>
+
 

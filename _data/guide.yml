@@ -28,7 +28,11 @@ print:
   date: "2016-05-07" # YYYY-MM-DD e.g. publication or creation date
   format: "Print" # e.g. Paperback, Digital download, Digital online
   identifier: "978-1-928313-13-7" # e.g. ISBN or UUID
-digital:
+web:
   date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
-  format: "Digital" # e.g. Paperback, Digital download, Digital online
+  format: "Digital online" # e.g. Paperback, Digital download, Digital online
+  identifier: "978-1-928313-14-4" # e.g. ISBN or UUID
+epub:
+  date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
+  format: "Digital download" # e.g. Paperback, Digital download, Digital online
   identifier: "978-1-928313-14-4" # e.g. ISBN or UUID

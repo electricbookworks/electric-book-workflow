@@ -1,11 +1,14 @@
+
+
+
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<title>A Guide to the Electric Book Workflow: Epub output</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web-guide.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print-guide.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
 
 	<!-- Google Analytics, runs unless this is running through PrinceXML -->
 	<script>
@@ -16,6 +19,8 @@
 
 </head>
 <body class="chapter">
+
+
 
 
 		<div id="nav-bar" class="non-printing">
@@ -145,16 +150,16 @@
 
 <h3 id="quicker-epub-output">Quicker epub output</h3>
 
-<p>Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default <code class="highlighter-rouge">layout</code> in <code class="highlighter-rouge">_config.yml</code> (globally or for a given book’s folder path) to <code class="highlighter-rouge">epub</code>. We include both options, and comment one of them out. So just switch which one is commented out:</p>
+<p>Our template includes a Jekyll layout specifically for creating epubs. To use it, change the default <code class="highlighter-rouge">output</code> in <code class="highlighter-rouge">_config.yml</code> (globally or for a given book’s folder path) to <code class="highlighter-rouge">epub</code>. We include both options, and comment one of them out. So just switch which one is commented out:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>layout: "epub"
-#layout: "default"
+<div class="highlighter-rouge"><pre class="highlight"><code>output: "epub"
+#output: "default"
 </code></pre>
 </div>
 
 <p>Remember to restart Jekyll after changing <code class="highlighter-rouge">_config.yml</code> for changes to take effect, and change it back to <code class="highlighter-rouge">default</code> afterwards (<code class="highlighter-rouge">default</code> is necessary for print and web output).</p>
 
-<p>The <code class="highlighter-rouge">epub</code> layout lets you skip a few of the steps listed above, because it:</p>
+<p>The <code class="highlighter-rouge">epub</code> output lets you skip a few of the steps listed above, because it:</p>
 
 <ul>
   <li>links to the epub CSS you specify in <code class="highlighter-rouge">_config.yml</code> (using Sigil’s standard <code class="highlighter-rouge">../Styles/</code> path)</li>
@@ -164,9 +169,19 @@
 
 <p>To get the metadata to import to Sigil, you must <em>open</em> one of your book’s HTML files in Sigil (the cover is best, since it’s the first file). That is, don’t ‘Add Existing Files…’ to a new, blank epub. Only by opening a single HTML file (as in ‘File &gt; Open…’, then select the HTML file) will Sigil read and import the file’s Dublin Core metadata. After that, you can add the remaining files in Sigil using ‘Add Existing Files…’.</p>
 
+<blockquote>
+  <p>Pro tip: you can avoid having to change your config file to <code class="highlighter-rouge">output: "epub"</code> by loading a second config file when you build or serve Jekyll at the command line. The second config file sets the <code class="highlighter-rouge">output</code>, overriding the default config. To do this, use:</p>
+
+  <p><code class="highlighter-rouge">jekyll build --config _config.yml,_config.epub.yml</code></p>
+
+  <p>We also provide a second config file for PDF ebook output:</p>
+
+  <p><code class="highlighter-rouge">jekyll build --config _config.yml,_config.pdf-ebook.yml</code></p>
+</blockquote>
+
 <h4 id="quick-epub-process-checklist">Quick-epub process checklist</h4>
 
-<p>If you’ve generated HTML using the <code class="highlighter-rouge">layout: epub</code> setting in <code class="highlighter-rouge">_config.yml</code>, your basic process in Sigil is as follows.</p>
+<p>If you’ve generated HTML using the <code class="highlighter-rouge">output: epub</code> setting in <code class="highlighter-rouge">_config.yml</code>, your basic process in Sigil is as follows.</p>
 
 <ol>
   <li>File &gt; Open… and select the first HTML file in <code class="highlighter-rouge">_site/yourbook</code>.</li>
@@ -222,11 +237,9 @@
 
 <h2 id="mobi-conversion">Mobi conversion</h2>
 
-<p>If you need a MOBI file for Kindle, we recommend putting your EPUB into <a href="http://www.amazon.com/gp/feature.html?docId=1000765211">Kindlegen</a>. If you don’t want to use the command-line, just open the EPUB with the <a href="http://www.amazon.com/gp/feature.html?docId=1000765261">Kindle Previewer</a>, which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.</p>
+<p>If you need a MOBI file for Kindle, we recommend putting your EPUB into the <a href="http://www.amazon.com/gp/feature.html?docId=1000765261">Kindle Previewer</a>, which automatically converts to MOBI using Kindlegen and saves the MOBI file to a folder beside your EPUB.</p>
 
-<p>If Kindlegen cannot convert the EPUB, we’ve found that adding it to <a href="http://calibre-ebook.com/">Calibre</a> first, then (without converting) give Calibre’s version to Kindlegen.</p>
-
-<p>Calibre gives you greater control over specific ebook conversions, but we’ve found Kindlegen converts some CSS better (e.g. floats and borders).</p>
+<p>If Previewer cannot convert the EPUB, we’ve found that adding it to <a href="http://calibre-ebook.com/">Calibre</a> first, then (without converting) give Calibre’s version to Kindle Previewer. Calibre gives you greater control over specific ebook conversions, but we’ve found Kindle Previewer converts some CSS better (e.g. floats and borders).</p>
 
 <blockquote class="box">
   <p>If you need to dig into a mobi file’s code to troubleshoot, try the <a href="http://www.mobileread.com/forums/showthread.php?t=171529">KindleUnpack plugin for Calibre</a>.</p>
@@ -286,4 +299,5 @@
 	
 </body>
 </html>
+
 
