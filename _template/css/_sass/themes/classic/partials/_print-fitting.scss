@@ -1,6 +1,4 @@
-/* 
- * Extra typographic control for fitting text and elements
- */
+/* Typographic control for fitting text and elements */
 
 // Float an element, like a box, to the top of bottom of a page (print only)
 .float-top#{$edition-suffix} {
@@ -14,48 +12,16 @@
 }
  
 // These classes control letter-spacing (tracking), usually to save widows and orphans.
-.tighten#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text - 0.003em;
-	font-style: inherit;
-	background-color: $highlight-tightened;
-}
-.tight#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text - 0.0075em;
-	font-style: inherit;
-	background-color: $highlight-tightened;
-}
-.x-tight#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text - 0.01em;
-	font-style: inherit;
-	background-color: $highlight-tightened;
-}
-.xx-tight#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text - 0.02em;
-	font-style: inherit;
-	background-color: $highlight-tightened;
-}
-.xxx-tight#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text - 0.5em;
-	font-style: inherit;
-	background-color: $highlight-tightened;
-}
-.loosen#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text + 0.003em;
-	font-style: inherit;
-	background-color: $highlight-loosened;
-}
-.loose#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text + 0.0075em;
-	font-style: inherit;
-	background-color: $highlight-loosened;
-}
-.x-loose#{$edition-suffix} {
-	letter-spacing: $letter-spacing-text + 0.01em;
-	font-style: inherit;
-	background-color: $highlight-loosened;
-}
-
-// Shrink the font size
-.shrink#{$edition-suffix} {
-	font-size: 0.7em; /* Useful for wide tables */
+@for $i from 1 through 50 {
+  $add-space: $i * 0.001em;
+  .tighten-#{$i}#{$edition-suffix} {
+    letter-spacing: $letter-spacing-text - $add-space;
+    font-style: inherit;
+    background-color: $highlight-tightened;
+  }
+  .loosen-#{$i}#{$edition-suffix} {
+    letter-spacing: $letter-spacing-text + $add-space;
+    font-style: inherit;
+    background-color: $highlight-loosened;
+  }
 }
