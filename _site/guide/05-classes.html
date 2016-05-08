@@ -252,13 +252,6 @@
       <td>No</td>
     </tr>
     <tr>
-      <td>Shrink font</td>
-      <td><code class="highlighter-rouge">.shrink</code></td>
-      <td>Block or inline</td>
-      <td>Shrinks the font size to 70%. Can be useful for wide tables.</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
       <td>Sidenote</td>
       <td><code class="highlighter-rouge">.sidenote</code></td>
       <td>Block or inline</td>
@@ -330,58 +323,16 @@
     </tr>
     <tr>
       <td>Tracking: tighten</td>
-      <td><code class="highlighter-rouge">.tighten</code></td>
+      <td><code class="highlighter-rouge">.tighten-1</code> to <code class="highlighter-rouge">.tighten-50</code></td>
       <td>Block or inline</td>
-      <td>Slightly tightens the space between letters. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: tight</td>
-      <td><code class="highlighter-rouge">.tight</code></td>
-      <td>Block or inline</td>
-      <td>Imperceptibly shrinks the gaps between letters. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: tighter</td>
-      <td><code class="highlighter-rouge">.x-tight</code></td>
-      <td>Block or inline</td>
-      <td>Shrinks the gaps between letters a tiny bit. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: very tight</td>
-      <td><code class="highlighter-rouge">.xx-tight</code></td>
-      <td>Block or inline</td>
-      <td>Shrinks the gaps between letters visibly. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: extremely tight</td>
-      <td><code class="highlighter-rouge">xxx-tight</code></td>
-      <td>Block or inline</td>
-      <td>Really tightens letters up close. Use as a last resort. <em>Affects print output only.</em></td>
+      <td>Each increment tightens the space between letters by 0.001em (1/1000 of a em). <em>Affects print output only.</em></td>
       <td>Yes</td>
     </tr>
     <tr>
       <td>Tracking: loosen</td>
-      <td><code class="highlighter-rouge">.loosen</code></td>
+      <td><code class="highlighter-rouge">.loosen-1</code> to <code class="highlighter-rouge">.loosen-50</code></td>
       <td>Block or inline</td>
-      <td>Slightly loosens the space between letters. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: loose</td>
-      <td><code class="highlighter-rouge">.loose</code></td>
-      <td>Block or inline</td>
-      <td>Imperceptibly widens the gaps between letters. <em>Affects print output only.</em></td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Tracking: looser</td>
-      <td><code class="highlighter-rouge">.x-loose</code></td>
-      <td>Block or inline</td>
-      <td>Widens the gaps between letters. <em>Affects print output only.</em></td>
+      <td>Each increment loosens the space between letters by 0.001em (1/1000 of a em). <em>Affects print output only.</em></td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -470,6 +421,16 @@
 <p>In your markdown, then, you’d use <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="p">}</span></code> instead of <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten</span><span class="p">}</span></code>, and that class will then only have an effect on your schools edition. If you had another edition, say a professional edition with a <code class="highlighter-rouge">-prof-edn</code> suffix, you’d use a <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-prof-edn</span><span class="p">}</span></code> tag in the markdown. These would match the classes automatically generated in each edition’s CSS.</p>
 
 <p>Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.tighten-schools-edn</span><span class="w"> </span><span class="err">.tighten-prof-edn</span><span class="p">}</span></code>. That paragraph would then be tightened in both print layouts.</p>
+
+<h2 id="deprecated-classes">Deprecated classes</h2>
+
+<p>Early versions of the EBW used the following classes, which are no longer supported:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">shrink</code></li>
+  <li><code class="highlighter-rouge">tighten</code>, <code class="highlighter-rouge">tight</code>, <code class="highlighter-rouge">x-tight</code>, <code class="highlighter-rouge">xx-tight</code>, <code class="highlighter-rouge">xxx-tight</code></li>
+  <li><code class="highlighter-rouge">loosen</code>, <code class="highlighter-rouge">loose</code>, <code class="highlighter-rouge">x-loose</code></li>
+</ul>
 
 
 	</div><!--#wrapper-->

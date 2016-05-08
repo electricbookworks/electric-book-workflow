@@ -32,7 +32,7 @@
 <h1 class="no_toc" id="setting-up">Setting up</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#technical-overview" id="markdown-toc-technical-overview">Technical overview</a></li>
   <li><a href="#example-bettercare" id="markdown-toc-example-bettercare">Example: Bettercare</a></li>
   <li><a href="#folder-repo-structure" id="markdown-toc-folder-repo-structure">Folder (repo) structure</a></li>
   <li><a href="#using-the-template" id="markdown-toc-using-the-template">Using the template</a></li>
@@ -45,11 +45,11 @@
   <li><a href="#the-images-folder" id="markdown-toc-the-images-folder">The <code class="highlighter-rouge">images</code> folder</a></li>
 </ul>
 
-<h2 id="overview">Overview</h2>
+<h2 id="technical-overview">Technical overview</h2>
 
-<p>To set up the workflow, you have to have some technical expertise. Once it’s set up, non-technical editorial team members with a couple of hours training (taught or self-taught) can add and edit books in it.</p>
+<p>To set up the workflow, you still have to have some technical expertise. Once it’s set up, non-technical editorial team members with a couple of hours training (taught or self-taught) can add and edit books in it.</p>
 
-<p>Both the technical and editorial team members need to be roughly familiar with a few concepts and tools:</p>
+<p>The technical team members who run the workflow need to be familiar with a few concepts and tools:</p>
 
 <ul>
   <li><strong>HTML and CSS</strong>: the fundamental building blocks of almost all digital content.</li>
@@ -102,6 +102,7 @@
   <li><code class="highlighter-rouge">css</code>: book design files</li>
   <li><code class="highlighter-rouge">_includes</code>: snippets of HTML for Jekyll (you won’t have to open this folder)</li>
   <li><code class="highlighter-rouge">_layouts</code>: instructions to Jekyll on how to assemble those snippets (no need to open this either)</li>
+  <li><code class="highlighter-rouge">_data</code>: files containing book metadata</li>
   <li><code class="highlighter-rouge">_config.yml</code>: a file for setting configuration options for your collection of books</li>
   <li><code class="highlighter-rouge">_prose.yml</code>: configuration settings for using <a href="http://prose.io">prose.io</a> for online book editing (generally, you won’t have to edit this)</li>
   <li><code class="highlighter-rouge">index.md</code>: content for the home page of your collection when served as a website.</li>
@@ -121,22 +122,23 @@
 
 <ol>
   <li>The <code class="highlighter-rouge">template</code> folder can hold one book or many, like a collection of books that share similar metadata or features (e.g. they’re all by the same publisher). Make a copy of <code class="highlighter-rouge">template</code> and rename it for your collection. E.g. <code class="highlighter-rouge">my-sci-fi</code>.</li>
-  <li>Rename the <code class="highlighter-rouge">book</code> folder with a short folder-name version of your book’s title. Use only lowercase letters and no spaces. If you’re creating more than one book, make a copy of this folder for each one. Each book gets its own folder.</li>
+  <li>Rename the <code class="highlighter-rouge">book</code> folder with a short folder-name version of your book’s title. Use only lowercase letters and no spaces. If you’re creating more than one book, make a copy of this folder for each one. Each book gets its own folder. The name of the folder is important: you will use this folder name as the book’s ‘slug’, a sort of human-readable identifier within a series folder.</li>
   <li>Inside a book’s folder, add a markdown file for each piece of your book, e.g. one file per chapter. Our template contains files we consider minimum requirements for most books: a cover, a title page, a copyright page, a contents page, and a text file.</li>
-  <li>Inside each book’s folder, store images in the <code class="highlighter-rouge">images</code> folder. Add a <code class="highlighter-rouge">cover.jpg</code> image of your book’s front cover there.</li>
+  <li>Inside each book’s folder, store images in the <code class="highlighter-rouge">images</code> folder. Add a <code class="highlighter-rouge">cover.jpg</code> image of your book’s front cover there, too.</li>
   <li>In the <code class="highlighter-rouge">css</code> folder, make copies of <code class="highlighter-rouge">print.scss</code>, <code class="highlighter-rouge">web.scss</code> and <code class="highlighter-rouge">epub.scss</code> and rename them for each book (e.g. <code class="highlighter-rouge">print-space-potatoes.scss</code>).</li>
   <li>Inside <code class="highlighter-rouge">my-sci-fi</code>, open and edit these three files:
     <ul>
-      <li><code class="highlighter-rouge">_config.yml</code>: Edit the values there for your series and your first book(s). The comments will guide you.</li>
+      <li><code class="highlighter-rouge">_config.yml</code>: Edit the values there for your series. The comments will guide you.</li>
       <li><code class="highlighter-rouge">index.md</code>: Replace our template text with your own. Usually, at least a link to each book is useful, e.g. <code class="highlighter-rouge">[Space Potatoes](space-potatoes)</code>.</li>
       <li><code class="highlighter-rouge">README.md</code>: Replace our template text with any notes your collaborators might need to know about your series. (The README file is usually only read in the context of editing the files in your folder/repo.)</li>
     </ul>
   </li>
+  <li>In <code class="highlighter-rouge">_data</code>, make a copy of the <code class="highlighter-rouge">book.yml</code> file to edit. Give the file the same name as your book’s slug. In this example, that would be <code class="highlighter-rouge">my-sci-fi.yml</code>. In that file, fill in as much metadata as you can. (Your markdown files and HTML snippets will draw on that metadata, using Liquid tags, when constructing your book.)</li>
 </ol>
 
 <h2 id="creating-book-content">Creating book content</h2>
 
-<p>Each markdown file in <code class="highlighter-rouge">book</code> is a part of a book, such as a table of contents or a chapter. In each file’s YAML header (the info between <code class="highlighter-rouge">---</code>s at the top) we specify the book-art’s <code class="highlighter-rouge">title</code> and the book-part <code class="highlighter-rouge">style</code> to use for that part – that is, what kind of book-part is this?</p>
+<p>Each markdown file in <code class="highlighter-rouge">my-sci-fi</code> is a part of a book, such as a table of contents or a chapter. In each file’s YAML header (the info between <code class="highlighter-rouge">---</code>s at the top) we specify the book-part’s <code class="highlighter-rouge">title</code> and the book-part’s <code class="highlighter-rouge">style</code> to use for that part. The <code class="highlighter-rouge">style</code> specifies what kind of book-part it is, such as a <code class="highlighter-rouge">title-page</code> or <code class="highlighter-rouge">chapter</code>.</p>
 
 <blockquote class="box">
   <p>Technical note: the <code class="highlighter-rouge">style</code> YAML sets the class attribute of the output HTML’s <code class="highlighter-rouge">&lt;body&gt;</code> element. We use that class to control CSS and page structure.</p>

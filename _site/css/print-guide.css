@@ -205,9 +205,7 @@
 .videowrapper {
   display: none; }
 
-/* 
- * Extra typographic control for fitting text and elements
- */
+/* Typographic control for fitting text and elements */
 .float-top {
   float: top; }
 
@@ -217,49 +215,505 @@
 .float-top + p, .float-bottom + p {
   text-indent: 15pt; }
 
-.tighten {
+.tighten-1 {
+  letter-spacing: -0.001em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-1 {
+  letter-spacing: 0.001em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-2 {
+  letter-spacing: -0.002em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-2 {
+  letter-spacing: 0.002em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-3 {
   letter-spacing: -0.003em;
   font-style: inherit;
   background-color: inherit; }
 
-.tight {
-  letter-spacing: -0.0075em;
-  font-style: inherit;
-  background-color: inherit; }
-
-.x-tight {
-  letter-spacing: -0.01em;
-  font-style: inherit;
-  background-color: inherit; }
-
-.xx-tight {
-  letter-spacing: -0.02em;
-  font-style: inherit;
-  background-color: inherit; }
-
-.xxx-tight {
-  letter-spacing: -0.5em;
-  font-style: inherit;
-  background-color: inherit; }
-
-.loosen {
+.loosen-3 {
   letter-spacing: 0.003em;
   font-style: inherit;
   background-color: inherit; }
 
-.loose {
-  letter-spacing: 0.0075em;
+.tighten-4 {
+  letter-spacing: -0.004em;
   font-style: inherit;
   background-color: inherit; }
 
-.x-loose {
+.loosen-4 {
+  letter-spacing: 0.004em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-5 {
+  letter-spacing: -0.005em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-5 {
+  letter-spacing: 0.005em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-6 {
+  letter-spacing: -0.006em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-6 {
+  letter-spacing: 0.006em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-7 {
+  letter-spacing: -0.007em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-7 {
+  letter-spacing: 0.007em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-8 {
+  letter-spacing: -0.008em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-8 {
+  letter-spacing: 0.008em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-9 {
+  letter-spacing: -0.009em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-9 {
+  letter-spacing: 0.009em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-10 {
+  letter-spacing: -0.01em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-10 {
   letter-spacing: 0.01em;
   font-style: inherit;
   background-color: inherit; }
 
-.shrink {
-  font-size: 0.7em;
-  /* Useful for wide tables */ }
+.tighten-11 {
+  letter-spacing: -0.011em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-11 {
+  letter-spacing: 0.011em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-12 {
+  letter-spacing: -0.012em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-12 {
+  letter-spacing: 0.012em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-13 {
+  letter-spacing: -0.013em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-13 {
+  letter-spacing: 0.013em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-14 {
+  letter-spacing: -0.014em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-14 {
+  letter-spacing: 0.014em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-15 {
+  letter-spacing: -0.015em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-15 {
+  letter-spacing: 0.015em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-16 {
+  letter-spacing: -0.016em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-16 {
+  letter-spacing: 0.016em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-17 {
+  letter-spacing: -0.017em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-17 {
+  letter-spacing: 0.017em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-18 {
+  letter-spacing: -0.018em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-18 {
+  letter-spacing: 0.018em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-19 {
+  letter-spacing: -0.019em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-19 {
+  letter-spacing: 0.019em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-20 {
+  letter-spacing: -0.02em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-20 {
+  letter-spacing: 0.02em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-21 {
+  letter-spacing: -0.021em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-21 {
+  letter-spacing: 0.021em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-22 {
+  letter-spacing: -0.022em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-22 {
+  letter-spacing: 0.022em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-23 {
+  letter-spacing: -0.023em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-23 {
+  letter-spacing: 0.023em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-24 {
+  letter-spacing: -0.024em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-24 {
+  letter-spacing: 0.024em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-25 {
+  letter-spacing: -0.025em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-25 {
+  letter-spacing: 0.025em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-26 {
+  letter-spacing: -0.026em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-26 {
+  letter-spacing: 0.026em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-27 {
+  letter-spacing: -0.027em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-27 {
+  letter-spacing: 0.027em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-28 {
+  letter-spacing: -0.028em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-28 {
+  letter-spacing: 0.028em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-29 {
+  letter-spacing: -0.029em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-29 {
+  letter-spacing: 0.029em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-30 {
+  letter-spacing: -0.03em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-30 {
+  letter-spacing: 0.03em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-31 {
+  letter-spacing: -0.031em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-31 {
+  letter-spacing: 0.031em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-32 {
+  letter-spacing: -0.032em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-32 {
+  letter-spacing: 0.032em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-33 {
+  letter-spacing: -0.033em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-33 {
+  letter-spacing: 0.033em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-34 {
+  letter-spacing: -0.034em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-34 {
+  letter-spacing: 0.034em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-35 {
+  letter-spacing: -0.035em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-35 {
+  letter-spacing: 0.035em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-36 {
+  letter-spacing: -0.036em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-36 {
+  letter-spacing: 0.036em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-37 {
+  letter-spacing: -0.037em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-37 {
+  letter-spacing: 0.037em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-38 {
+  letter-spacing: -0.038em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-38 {
+  letter-spacing: 0.038em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-39 {
+  letter-spacing: -0.039em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-39 {
+  letter-spacing: 0.039em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-40 {
+  letter-spacing: -0.04em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-40 {
+  letter-spacing: 0.04em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-41 {
+  letter-spacing: -0.041em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-41 {
+  letter-spacing: 0.041em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-42 {
+  letter-spacing: -0.042em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-42 {
+  letter-spacing: 0.042em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-43 {
+  letter-spacing: -0.043em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-43 {
+  letter-spacing: 0.043em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-44 {
+  letter-spacing: -0.044em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-44 {
+  letter-spacing: 0.044em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-45 {
+  letter-spacing: -0.045em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-45 {
+  letter-spacing: 0.045em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-46 {
+  letter-spacing: -0.046em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-46 {
+  letter-spacing: 0.046em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-47 {
+  letter-spacing: -0.047em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-47 {
+  letter-spacing: 0.047em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-48 {
+  letter-spacing: -0.048em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-48 {
+  letter-spacing: 0.048em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-49 {
+  letter-spacing: -0.049em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-49 {
+  letter-spacing: 0.049em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.tighten-50 {
+  letter-spacing: -0.05em;
+  font-style: inherit;
+  background-color: inherit; }
+
+.loosen-50 {
+  letter-spacing: 0.05em;
+  font-style: inherit;
+  background-color: inherit; }
 
 /* Hyphenation */
 p, ul, ol, dl {
