@@ -38,13 +38,13 @@ sass:
 exclude: [
 _template,
 _source,
-css,
+#css,
 ]
 
 # Can be useful to stop Jekyll overwriting files in _site.
 # E.g. generate CSS once, then exclude above but keep here to make content regeneration faster.
 keep_files: [
-css,
+#css,
 ]
 
 # Set default values here for all documents/pages in this publication. 

@@ -41,7 +41,6 @@ Use these classes in your markdown to create specific formatting effects.
 | Page numbering restart | `.page-1` | Block | Restarts page numbering from 1. Can be added to the first block element on a page, or to the YAML header, in addition to the main style, e.g. `style: halftitle-page page-1` or `style: chapter page-1`. Recommended for any document that starts a book interior (e.g. title page), to retain correct pagination when creating a PDF ebook with a front cover | No
 | Poetry | `.verse` | Block | Designing poetry is tricky and important. Read about how to manage this [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#poetry). | No
 | Pull quote | `.pullquote` | Block | Displays a paragraph as a pull quote. | No
-| Shrink font | `.shrink` | Block or inline | Shrinks the font size to 70%. Can be useful for wide tables. | Yes
 | Sidenote | `.sidenote` | Block or inline | A sidenote appears in a sidebar to the right of the text. | No
 | Small caps (lowercase only) | `.smallcaps` | Block or inline | If your font supports proper small-caps glyphs. Only affects the lowercase letters. | No
 | Small caps throughout | `.allsmallcaps` | Block or inline | If your font supports proper small-caps glyphs, all characters are small caps. | No
@@ -52,14 +51,8 @@ Use these classes in your markdown to create specific formatting effects.
 | Title page: logo | `.title-page-logo` | Block | A logo, as an image, on the title page. | No
 | Title page: subtitle | `.title-page-subtitle` | Block | The book's subtitle on the title page. | No
 | Title page: title | `.title-page-title` | Block | The book's title on the title page. | No
-| Tracking: tighten | `.tighten` | Block or inline | Slightly tightens the space between letters. *Affects print output only.* | Yes
-| Tracking: tight | `.tight` | Block or inline | Imperceptibly shrinks the gaps between letters. *Affects print output only.* | Yes
-| Tracking: tighter | `.x-tight` | Block or inline | Shrinks the gaps between letters a tiny bit. *Affects print output only.* | Yes
-| Tracking: very tight | `.xx-tight` | Block or inline | Shrinks the gaps between letters visibly. *Affects print output only.* | Yes
-| Tracking: extremely tight | `xxx-tight` | Block or inline | Really tightens letters up close. Use as a last resort. *Affects print output only.* | Yes
-| Tracking: loosen | `.loosen` | Block or inline | Slightly loosens the space between letters. *Affects print output only.* | Yes
-| Tracking: loose | `.loose` | Block or inline | Imperceptibly widens the gaps between letters. *Affects print output only.* | Yes
-| Tracking: looser | `.x-loose` | Block or inline | Widens the gaps between letters. *Affects print output only.* | Yes
+| Tracking: tighten | `.tighten-1` to `.tighten-50` | Block or inline | Each increment tightens the space between letters by 0.001em (1/1000 of a em). *Affects print output only.* | Yes
+| Tracking: loosen | `.loosen-1` to `.loosen-50` | Block or inline | Each increment loosens the space between letters by 0.001em (1/1000 of a em). *Affects print output only.* | Yes
 | Valediction | `.valediction` | Block | Used for the sign-off at the end of a letter, preface or foreword. | No
 
 ## Reserved classes
@@ -83,14 +76,22 @@ You may also need to create your own classes for other uses. If you do, avoid us
 
 ## The edition suffix
 
-If you want to produce more than one print edition of a book from the same source file, you can't use the same classes that affect text-flow – like `.tighten`, for instance – in both editions, because the text will flow differently in each edition.
+If you want to produce more than one print edition of a book from the same source file, you can't use the same classes that affect text-flow – like `.tighten-1`, for instance – in both editions, because the text will flow differently in each edition.
 
-Our workflow has a way to manage that. In the print CSS file, you can specify an edition suffix. For instance, if you're producing a schools edition of a book, you might make your suffix `-schools-edn`. That suffix will be appended to the end of certain class names for that stylesheet. The default `.tighten` class will become `.tighten-schools-edn` in your final print CSS.
+Our workflow has a way to manage that. In the print CSS file, you can specify an edition suffix. For instance, if you're producing a schools edition of a book, you might make your suffix `-schools-edn`. That suffix will be appended to the end of certain class names for that stylesheet. The default `.tighten-1` class will become `.tighten-1-schools-edn` in your final print CSS.
 
-(It's a good idea to start a suffix with a hyphen, to keep your output CSS neat.)
+(It's a good idea to start a suffix with a hyphen and use all lowercase letters, to keep your output CSS neat. Never use spaces.)
 
 Only some classes are affected – see the table above for which ones. The most important are the classes used for tightening and loosening letter-spacing, which are mostly used to control widows and orphans in print layout.
 
-In your markdown, then, you'd use `{:.tighten-schools-edn}` instead of `{:.tighten}`, and that class will then only have an effect on your schools edition. If you had another edition, say a professional edition with a `-prof-edn` suffix, you'd use a `{:.tighten-prof-edn}` tag in the markdown. These would match the classes automatically generated in each edition's CSS.
+In your markdown, then, you'd use `{:.tighten-1-schools-edn}` instead of `{:.tighten-1}`, and that class will then only have an effect on your schools edition. If you had another edition, say a large-print edition with a `-large-print` suffix, you'd use a `{:.tighten-1-large-print}` tag in the markdown. These would match the classes automatically generated in each edition's CSS.
 
-Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with `{:.tighten-schools-edn .tighten-prof-edn}`. That paragraph would then be tightened in both print layouts.
+Of course, one element can carry both classes. For instance, you might end up with a paragraph tagged with `{:.tighten-1-schools-edn .tighten-1-large-print}`. That paragraph would then be tightened in both print layouts.
+
+## Deprecated classes
+
+Early versions of the EBW used the following classes, which are no longer supported:
+
+* `shrink`
+* `tighten`, `tight`, `x-tight`, `xx-tight`, `xxx-tight`
+* `loosen`, `loose`, `x-loose`

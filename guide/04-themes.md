@@ -16,7 +16,7 @@ You set your series variables and choose which components to include in the Sass
 
 When Jekyll converts your markdown to HTML, it will read your Sass files and automatically assemble finished CSS.
 
-To change stying for a specific book in a series, amke a copy of the stylesheet(s) you need to change (`web.scss`, `print.scss` and/or `epub.scss`), and name it sensibly (e.g. `web-scifi.scss`).
+To change stying for a specific book in a series, make a copy of the stylesheet(s) you need to change (`web.scss`, `print.scss` and/or `epub.scss`), and name it sensibly (e.g. `web-scifi.scss`).
 
 Then add the file name(s) to that book's details in `_config.yml`. For instance, if you created a style for `web-scifi.scss` but will use the default print and epub styles for the book, you'll this line to your configuration for that book:
 

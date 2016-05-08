@@ -8,11 +8,11 @@ title: Setting up
 * toc
 {:toc}
 
-## Overview
+## Technical overview
 
-To set up the workflow, you have to have some technical expertise. Once it's set up, non-technical editorial team members with a couple of hours training (taught or self-taught) can add and edit books in it.
+To set up the workflow, you still have to have some technical expertise. Once it's set up, non-technical editorial team members with a couple of hours training (taught or self-taught) can add and edit books in it.
 
-Both the technical and editorial team members need to be roughly familiar with a few concepts and tools:
+The technical team members who run the workflow need to be familiar with a few concepts and tools:
 
 *	**HTML and CSS**: the fundamental building blocks of almost all digital content.
 *	**Markdown**: a simple, plain-text shortcut for creating HTML. (The original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) is the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), because it's GitHub's default and it supports attributes like classes.)
@@ -58,6 +58,7 @@ The `template` folder is a ready-to-use workflow folder for making books. In the
 *   `css`: book design files
 *   `_includes`: snippets of HTML for Jekyll (you won't have to open this folder)
 *   `_layouts`: instructions to Jekyll on how to assemble those snippets (no need to open this either)
+*   `_data`: files containing book metadata
 *   `_config.yml`: a file for setting configuration options for your collection of books
 *   `_prose.yml`: configuration settings for using [prose.io](http://prose.io) for online book editing (generally, you won't have to edit this)
 *   `index.md`: content for the home page of your collection when served as a website.
@@ -74,18 +75,19 @@ The files in the `css` folder handle the design of your books. It contains a the
 To create a new book in a new series:
 
 1. The `template` folder can hold one book or many, like a collection of books that share similar metadata or features (e.g. they're all by the same publisher). Make a copy of `template` and rename it for your collection. E.g. `my-sci-fi`.
-1.  Rename the `book` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder for each one. Each book gets its own folder.
+1.  Rename the `book` folder with a short folder-name version of your book's title. Use only lowercase letters and no spaces. If you're creating more than one book, make a copy of this folder for each one. Each book gets its own folder. The name of the folder is important: you will use this folder name as the book's 'slug', a sort of human-readable identifier within a series folder.
 1.  Inside a book's folder, add a markdown file for each piece of your book, e.g. one file per chapter. Our template contains files we consider minimum requirements for most books: a cover, a title page, a copyright page, a contents page, and a text file.
-1.  Inside each book's folder, store images in the `images` folder. Add a `cover.jpg` image of your book's front cover there.
+1.  Inside each book's folder, store images in the `images` folder. Add a `cover.jpg` image of your book's front cover there, too.
 1. In the `css` folder, make copies of `print.scss`, `web.scss` and `epub.scss` and rename them for each book (e.g. `print-space-potatoes.scss`).
 1. Inside `my-sci-fi`, open and edit these three files:
-    *   `_config.yml`: Edit the values there for your series and your first book(s). The comments will guide you.
+    *   `_config.yml`: Edit the values there for your series. The comments will guide you.
     *   `index.md`: Replace our template text with your own. Usually, at least a link to each book is useful, e.g. `[Space Potatoes](space-potatoes)`.
     *   `README.md`: Replace our template text with any notes your collaborators might need to know about your series. (The README file is usually only read in the context of editing the files in your folder/repo.)
+1.	In `_data`, make a copy of the `book.yml` file to edit. Give the file the same name as your book's slug. In this example, that would be `my-sci-fi.yml`. In that file, fill in as much metadata as you can. (Your markdown files and HTML snippets will draw on that metadata, using Liquid tags, when constructing your book.)
 
 ## Creating book content
 
-Each markdown file in `book` is a part of a book, such as a table of contents or a chapter. In each file's YAML header (the info between `---`s at the top) we specify the book-art's `title` and the book-part `style` to use for that part – that is, what kind of book-part is this? 
+Each markdown file in `my-sci-fi` is a part of a book, such as a table of contents or a chapter. In each file's YAML header (the info between `---`s at the top) we specify the book-part's `title` and the book-part's `style` to use for that part. The `style` specifies what kind of book-part it is, such as a `title-page` or `chapter`.
 
 > Technical note: the `style` YAML sets the class attribute of the output HTML's `<body>` element. We use that class to control CSS and page structure.
 {:.box}

@@ -12,6 +12,7 @@ So we put this workflow together:
 1.	We store a book's master files in plain text (formatted as [markdown](http://daringfireball.net/projects/markdown/syntax#philosophy)).
 2.	We turn that plain text into clean HTML instantly (using [Jekyll](http://jekyllrb.com/)).
 3.	We apply different stylesheets to that HTML to get beautiful web versions, ebooks and print PDFs in minutes (using [Sigil](http://sigil-ebook.com/) and [PrinceXML](http://www.princexml.com/)).
+4.	Everything is stored securely with state-of-the-art version-control (using [GitHub](https://github.com) or [BitBucket](http://bitbucket.org)).
 
 Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. (They can even work directly on the master files online using [Prose](http://prose.io/).)
 
