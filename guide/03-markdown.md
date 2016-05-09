@@ -52,9 +52,9 @@ To quickly test any basic markdown yourself, go to [http://kramdown.herokuapp.co
 
 ### Paragraphs
 
-This is easy: a paragraph is lines of text separated from any other text by an empty line. Markdown:
+This is easy: a paragraph is a line of text separated from any other text by empty lines.
 
-You can even have line breaks in a paragraph, and markdown will just ignore them (or, rather, replace them with spaces). Markdown's looking for an empty line before it ends a paragraph.
+You can even have line breaks in a paragraph, and markdown will just ignore them (or, rather, replace them with spaces). That is, markdown is looking for an empty line before it ends a paragraph.
 
 ~~~
 This is a paragraph.
