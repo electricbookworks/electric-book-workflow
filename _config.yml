@@ -53,6 +53,7 @@ keep_files: [
 output: "default"
 #output: "epub"
 #output: "pdf-ebook"
+#output: "lightning-source-colour"
 
 # Set default values here for all documents/pages in this publication. 
 # (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).

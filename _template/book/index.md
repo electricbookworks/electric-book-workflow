@@ -4,5 +4,5 @@ style: cover
 layout: min
 ---
 
-[![Cover](images/cover.jpg){:.cover}]({{ page.contents }})
+[![Cover](images/cover.jpg){:.cover}]({{ page.start-page }})
 {:.cover}
