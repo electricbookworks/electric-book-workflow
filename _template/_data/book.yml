@@ -26,9 +26,13 @@ rights: "" # e.g. a copyright statement
 ### Metadata for each product (only use values that override parent metadata)
 print: 
   date: "2016-05-07" # YYYY-MM-DD e.g. publication or creation date
-  format: "Print" # e.g. Paperback, Digital download, Digital online
+  format: "Paperback" # e.g. Paperback, Digital download, Digital online
   identifier: "" # e.g. ISBN or UUID
-digital:
+web:
   date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
-  format: "Digital" # e.g. Paperback, Digital download, Digital online
+  format: "Digital online" # e.g. Paperback, Digital download, Digital online
+  identifier: "" # e.g. ISBN or UUID
+epub:
+  date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
+  format: "Digital download" # e.g. Paperback, Digital download, Digital online
   identifier: "" # e.g. ISBN or UUID
