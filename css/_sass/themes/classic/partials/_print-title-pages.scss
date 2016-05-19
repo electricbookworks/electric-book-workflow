@@ -33,6 +33,13 @@
 	font-variant: prince-opentype(dlig);
 	string-set: book-author content ();
 }
+.title-page-publisher {
+	position: absolute;
+	text-align: center;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	margin: $line-height-default 0;
+}
 .title-page-logo {
 	width: 3em;
 	position: absolute;

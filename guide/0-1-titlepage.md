@@ -3,14 +3,14 @@ title: Title page
 style: title-page
 ---
 
-The Electric Book Workflow
+{{ site.data.[page.slug].title }}
 {:.title-page-title}
 
-A template for creating high-quality books and ebooks with&nbsp;open-source tools
+{{ site.data.[page.slug].subtitle }}
 {:.title-page-subtitle}
 
-Arthur Attwell
+{{ site.data.[page.slug].creator }}
 {:.title-page-author}
 
-![Publisher logo](images/publisher-logo.jpg)
-{:.title-page-logo}
+{{ site.data.[page.slug].publisher }}
+{:.title-page-publisher}

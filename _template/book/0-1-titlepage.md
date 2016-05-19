@@ -3,14 +3,14 @@ title: Title page
 style: title-page
 ---
 
-The title
+{{ site.data.[page.slug].title }}
 {:.title-page-title}
 
-The subtitle
+{{ site.data.[page.slug].subtitle }}
 {:.title-page-subtitle}
 
-A. N. Author
+{{ site.data.[page.slug].creator }}
 {:.title-page-author}
 
-![Publisher logo](images/publisher-logo.jpg)
-{:.title-page-logo}
+{{ site.data.[page.slug].publisher }}
+{:.title-page-publisher}
