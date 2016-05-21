@@ -57,6 +57,12 @@ output: "default"
 #output: "pdf-ebook"
 #output: "lightning-source-colour"
 
+# Which edition are we creating?
+# This can be used to create different editions of a book using Liquid control-flow tags, 
+# e.g. in includes, layouts and print-list
+edition: "default"
+#edition: ""
+
 # Set default values here for all documents/pages in this publication. 
 # (For technical details, see http://jekyllrb.com/docs/configuration/#front-matter-defaults).
 # Store only site configurations here, e.g. stylesheets, page styles, layouts, image folder, start page
