@@ -1,23 +1,26 @@
-{% if site.output == 'epub' %}
-
-{% include header.html %}
-{% include start-wrapper.html %}
+{% if page.type == 'print-list' %}
 
 {{ content }}
 
+
+{% elsif site.output == 'epub' %}
+
+{% include header.html %}
+{% include start-wrapper.html %}
+{{ content }}
 {% include close-wrapper.html %}
 {% include close-body.html %}
+
 
 {% else %}
 
 {% include header.html %}
 {% include nav-bar.html %}
 {% include start-wrapper.html %}
-
 {{ content }}
-
 {% include close-wrapper.html %}
 {% include footer.html %}
 {% include close-body.html %}
+
 
 {% endif %}
