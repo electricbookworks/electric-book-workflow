@@ -35,10 +35,15 @@
 }
 .title-page-publisher {
 	position: absolute;
+	bottom: 0;
 	text-align: center;
+	text-indent: 0;
 	font-size: $font-size-default;
 	line-height: $line-height-default;
 	margin: $line-height-default 0;
+//	Now we'll center the block on the page
+	transform: translateX(-50%);
+    margin-left: 50%;
 }
 .title-page-logo {
 	width: 3em;

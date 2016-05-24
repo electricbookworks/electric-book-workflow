@@ -4,21 +4,15 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>A Guide to the Electric Book Workflow: Troubleshooting and tips</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
-
-	<!-- Google Analytics, runs unless this is running through PrinceXML -->
-	<script>
-		if (typeof Prince  === "undefined") {
-			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
-		}
-	</script>
-
+    <title>: Troubleshooting and tips</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
 <body class="chapter">
+
 
 
 
@@ -32,7 +26,6 @@
 		</div><!--#nav-bar-->
 
 	<div id="wrapper">
-
 
 <h1 class="no_toc" id="troubleshooting-and-tips">Troubleshooting and tips</h1>
 
@@ -62,7 +55,6 @@
   <li>We recommend setting <code class="highlighter-rouge">.gitignore</code> to ignore the <code class="highlighter-rouge">_site</code> folder, where Jekyll will store HTML output locally. If you choose <em>not</em> to <code class="highlighter-rouge">.gitignore</code> your <code class="highlighter-rouge">_site</code> folder, it’ll contain (and sync to GitHub) your local machine’s most recent Jekyll HTML output. (The <code class="highlighter-rouge">_site</code> folder has nothing to do with what GitHub Pages publishes.) In theory, committing the <code class="highlighter-rouge">_site</code> folder makes it easy for collaborators without Jekyll to grab a book’s output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their <code class="highlighter-rouge">_site</code> output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you’ll get lots of merge conflicts in the <code class="highlighter-rouge">_site</code> folder, and this will make your head hurt. (We let <code class="highlighter-rouge">_site</code> sync to GitHub for this guide so that it includes our example output for reference.)</li>
 </ul>
 
-
 	</div><!--#wrapper-->
 	
 
@@ -80,5 +72,6 @@
 	
 </body>
 </html>
+
 
 

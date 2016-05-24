@@ -193,10 +193,8 @@
 .end-on-right {
   page-break-after: left !important; }
 
-/*
- * Hide screen-only and non-printing elements. The framework by default adds the .non-printing class to screen-only elements like #nav-bar and #footer.
- */
-.non-printing {
+.non-printing,
+.sigil_split_marker {
   display: none; }
 
 /*
@@ -715,9 +713,158 @@
   font-style: inherit;
   background-color: inherit; }
 
+.height-1 {
+  height: 15pt; }
+
+.height-2 {
+  height: 30pt; }
+
+.height-3 {
+  height: 45pt; }
+
+.height-4 {
+  height: 60pt; }
+
+.height-5 {
+  height: 75pt; }
+
+.height-6 {
+  height: 90pt; }
+
+.height-7 {
+  height: 105pt; }
+
+.height-8 {
+  height: 120pt; }
+
+.height-9 {
+  height: 135pt; }
+
+.height-10 {
+  height: 150pt; }
+
+.height-11 {
+  height: 165pt; }
+
+.height-12 {
+  height: 180pt; }
+
+.height-13 {
+  height: 195pt; }
+
+.height-14 {
+  height: 210pt; }
+
+.height-15 {
+  height: 225pt; }
+
+.height-16 {
+  height: 240pt; }
+
+.height-17 {
+  height: 255pt; }
+
+.height-18 {
+  height: 270pt; }
+
+.height-19 {
+  height: 285pt; }
+
+.height-20 {
+  height: 300pt; }
+
+.height-21 {
+  height: 315pt; }
+
+.height-22 {
+  height: 330pt; }
+
+.height-23 {
+  height: 345pt; }
+
+.height-24 {
+  height: 360pt; }
+
+.height-25 {
+  height: 375pt; }
+
+.height-26 {
+  height: 390pt; }
+
+.height-27 {
+  height: 405pt; }
+
+.height-28 {
+  height: 420pt; }
+
+.height-29 {
+  height: 435pt; }
+
+.height-30 {
+  height: 450pt; }
+
+.height-31 {
+  height: 465pt; }
+
+.height-32 {
+  height: 480pt; }
+
+.height-33 {
+  height: 495pt; }
+
+.height-34 {
+  height: 510pt; }
+
+.height-35 {
+  height: 525pt; }
+
+.height-36 {
+  height: 540pt; }
+
+.height-37 {
+  height: 555pt; }
+
+.height-38 {
+  height: 570pt; }
+
+.height-39 {
+  height: 585pt; }
+
+.height-40 {
+  height: 600pt; }
+
+.height-41 {
+  height: 615pt; }
+
+.height-42 {
+  height: 630pt; }
+
+.height-43 {
+  height: 645pt; }
+
+.height-44 {
+  height: 660pt; }
+
+.height-45 {
+  height: 675pt; }
+
+.height-46 {
+  height: 690pt; }
+
+.height-47 {
+  height: 705pt; }
+
+.height-48 {
+  height: 720pt; }
+
+.height-49 {
+  height: 735pt; }
+
+.height-50 {
+  height: 750pt; }
+
 /* Hyphenation */
 p, ul, ol, dl {
-  prince-hyphenate-patterns: url("dictionaries/");
   hyphens: auto;
   hyphenate-after: 3;
   hyphenate-before: 3;
@@ -1326,43 +1473,46 @@ td p {
 
 blockquote.figure {
   clear: both;
-  float: top unless-fit;
+  float: top;
   page-break-inside: avoid;
   background-color: inherit;
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  margin: 15pt 0 15pt 0;
-  padding: 7.5pt;
+  margin: 0 0 15pt 0;
+  padding: 0;
   width: 100%;
   box-sizing: border-box; }
 
 ol li blockquote.figure, ul li blockquote.figure {
   display: inline-block; }
 
-.fixed, .figure.fixed {
+.figure.fixed {
   clear: both;
-  float: none; }
+  float: none;
+  margin-top: 15pt; }
 
 .figure p {
   clear: both;
   page-break-inside: avoid;
   page-break-before: avoid;
-  text-align: center; }
+  text-align: center;
+  text-indent: 0; }
 
 .figure p img {
   width: auto;
-  max-height: 150mm;
   max-width: 100%;
-  margin: 0 auto 7.5pt auto; }
+  max-height: 100%;
+  margin: 0 auto 0 auto; }
 
-.figure p:nth-child(2) {
-  padding: 7.5pt 0 0 0;
+.figure p:last-of-type {
+  padding: 7.5pt 0 7.5pt 0;
+  margin: 0;
   text-align: center;
   text-indent: 0;
   font-style: italic; }
 
-.figure p:nth-child(2) em {
+.figure p:last-of-type em {
   font-style: initial; }
 
 .figure.x-small p img {
@@ -1385,6 +1535,12 @@ ol li blockquote.figure, ul li blockquote.figure {
   max-height: 150mm;
   max-width: 100%;
   width: auto; }
+
+blockquote.figure + p {
+  text-indent: 15pt; }
+
+blockquote.figure.fixed + p {
+  text-indent: 0; }
 
 .footnote {
   line-height: inherit; }
@@ -1452,6 +1608,17 @@ ol li blockquote.figure, ul li blockquote.figure {
   margin: 15pt 0;
   font-variant: prince-opentype(dlig);
   string-set: book-author content; }
+
+.title-page-publisher {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-indent: 0;
+  font-size: 11pt;
+  line-height: 15pt;
+  margin: 15pt 0;
+  transform: translateX(-50%);
+  margin-left: 50%; }
 
 .title-page-logo {
   width: 3em;

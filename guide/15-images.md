@@ -63,28 +63,28 @@ By default, your markdown looks for images in the book's `images` folder. You ca
 
 {% raw %}
 
-In your markdown, instead of using the `images` path (e.g. `images/filename.jpg`), use this tag: `{{page.image-folder}}`. For example:
+In your markdown, instead of using the `images` path (e.g. `images/filename.jpg`), use this tag: `{{ site.image-set }}`. For example:
 
 ~~~
-![]({{page.image-folder}}/filename.jpg)
+![]({{ site.image-set }}/filename.jpg)
 ~~~
 
-Your default `image-folder` is set to `images` in `_config.yml`. You can change that for each book as needed. For instance, you might create a subfolder for high-res images in `images` called `hi-res`. In `_config.yml` you can then add a line to set that subfolder as the default images folder. 
+The default `image-set` is `images`. You can change that for each output as needed. For instance, you might create a subfolder for high-res images in `images` called `print`. In `_config.yml` you can set that subfolder as the default images folder. 
 
 ~~~
-image-folder: images/hi-res	
+image-set: "images/hi-res"
 ~~~
 
-Whenever you build your HTML, you then switch which set of images to use by commenting out the image-folder setting(s) you don't want. For example, when creating the high-res edition, in `_config.yml` you might comment out the default image path so that the HTML uses the high-res images:
+Whenever you build your HTML, you then switch which set of images to use by commenting out the `image-set` setting(s) you don't want. For example, when creating the high-res edition, in `_config.yml` you might comment out the default image path so that the HTML uses the high-res images:
 
 ~~~
-#image-folder: images
-image-folder: images/hi-res	
+#image-set: "images"
+image-set: "images/print"
 ~~~
 
 Remember that your images in your alternative images folder must have exactly the same file names as your default image set. The HTML will be looking for the same file names in a different folder.
 
-To always use a specific image file for any given image, irrespective of the `images-folder` config, simply hard-code your image path in markdown – that is, without using the `{{page.image-folder}}` tag. For example, for a given image you might specify the default images folder `![](images/filename.jpg)` or a specific subfolder `![](images/nb/filename.jpg)`.
+To always use a specific image file for any given image, irrespective of the `images-set` config, simply hard-code your image path in markdown – that is, without using the `{{ site.image-set }}` tag. For example, for a given image you might specify the default images folder `![](images/filename.jpg)` or a specific subfolder `![](images/nb/filename.jpg)`.
 
 {% endraw %}
 

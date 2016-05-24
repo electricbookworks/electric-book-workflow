@@ -4,21 +4,15 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>A Guide to the Electric Book Workflow: Images</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
-
-	<!-- Google Analytics, runs unless this is running through PrinceXML -->
-	<script>
-		if (typeof Prince  === "undefined") {
-			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
-		}
-	</script>
-
+    <title>: Images</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
 <body class="chapter">
+
 
 
 
@@ -32,7 +26,6 @@
 		</div><!--#nav-bar-->
 
 	<div id="wrapper">
-
 
 <h1 class="no_toc" id="images">Images</h1>
 
@@ -105,28 +98,28 @@
 
 <p>By default, your markdown looks for images in the book’s <code class="highlighter-rouge">images</code> folder. You can set your config file to switch to an alternative set of images (in a subfolder of <code class="highlighter-rouge">images</code>) when needed.</p>
 
-<p>In your markdown, instead of using the <code class="highlighter-rouge">images</code> path (e.g. <code class="highlighter-rouge">images/filename.jpg</code>), use this tag: <code class="highlighter-rouge"><span class="p">{</span><span class="err">{page.image-folder</span><span class="p">}</span><span class="err">}</span></code>. For example:</p>
+<p>In your markdown, instead of using the <code class="highlighter-rouge">images</code> path (e.g. <code class="highlighter-rouge">images/filename.jpg</code>), use this tag: <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.image-set</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code>. For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>![]({{page.image-folder}}/filename.jpg)
+<div class="highlighter-rouge"><pre class="highlight"><code>![]({{ site.image-set }}/filename.jpg)
 </code></pre>
 </div>
 
-<p>Your default <code class="highlighter-rouge">image-folder</code> is set to <code class="highlighter-rouge">images</code> in <code class="highlighter-rouge">_config.yml</code>. You can change that for each book as needed. For instance, you might create a subfolder for high-res images in <code class="highlighter-rouge">images</code> called <code class="highlighter-rouge">hi-res</code>. In <code class="highlighter-rouge">_config.yml</code> you can then add a line to set that subfolder as the default images folder.</p>
+<p>The default <code class="highlighter-rouge">image-set</code> is <code class="highlighter-rouge">images</code>. You can change that for each output as needed. For instance, you might create a subfolder for high-res images in <code class="highlighter-rouge">images</code> called <code class="highlighter-rouge">print</code>. In <code class="highlighter-rouge">_config.yml</code> you can set that subfolder as the default images folder.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>image-folder: images/hi-res	
+<div class="highlighter-rouge"><pre class="highlight"><code>image-set: "images/hi-res"
 </code></pre>
 </div>
 
-<p>Whenever you build your HTML, you then switch which set of images to use by commenting out the image-folder setting(s) you don’t want. For example, when creating the high-res edition, in <code class="highlighter-rouge">_config.yml</code> you might comment out the default image path so that the HTML uses the high-res images:</p>
+<p>Whenever you build your HTML, you then switch which set of images to use by commenting out the <code class="highlighter-rouge">image-set</code> setting(s) you don’t want. For example, when creating the high-res edition, in <code class="highlighter-rouge">_config.yml</code> you might comment out the default image path so that the HTML uses the high-res images:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#image-folder: images
-image-folder: images/hi-res	
+<div class="highlighter-rouge"><pre class="highlight"><code>#image-set: "images"
+image-set: "images/print"
 </code></pre>
 </div>
 
 <p>Remember that your images in your alternative images folder must have exactly the same file names as your default image set. The HTML will be looking for the same file names in a different folder.</p>
 
-<p>To always use a specific image file for any given image, irrespective of the <code class="highlighter-rouge">images-folder</code> config, simply hard-code your image path in markdown – that is, without using the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{page.image-folder</span><span class="p">}</span><span class="err">}</span></code> tag. For example, for a given image you might specify the default images folder <code class="highlighter-rouge">![](images/filename.jpg)</code> or a specific subfolder <code class="highlighter-rouge">![](images/nb/filename.jpg)</code>.</p>
+<p>To always use a specific image file for any given image, irrespective of the <code class="highlighter-rouge">images-set</code> config, simply hard-code your image path in markdown – that is, without using the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.image-set</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> tag. For example, for a given image you might specify the default images folder <code class="highlighter-rouge">![](images/filename.jpg)</code> or a specific subfolder <code class="highlighter-rouge">![](images/nb/filename.jpg)</code>.</p>
 
 <h2 id="image-placement">Image placement</h2>
 
@@ -252,7 +245,6 @@ image-folder: images/hi-res
 
 <p>The first is mandatory. The thumbnail and large images are for your convenience. For instance, when uploading a book to Amazon Kindle, you must provide a cover image this large.</p>
 
-
 	</div><!--#wrapper-->
 	
 
@@ -270,5 +262,6 @@ image-folder: images/hi-res
 	
 </body>
 </html>
+
 
 

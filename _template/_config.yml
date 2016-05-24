@@ -1,5 +1,5 @@
 # Version of this EBW template
-version: "0.1.1"
+version: "0.1.2"
 
 # Add your imprint or brand name here, it will appear in navigation.
 publisher: "Publisher name"
@@ -39,6 +39,7 @@ sass:
 # Jekyll will ignore these files and folders. 
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
+win-pdf.bat,
 #css,
 #book,
 ]
@@ -56,6 +57,13 @@ output: "default"
 #output: "epub"
 #output: "pdf-ebook"
 #output: "lightning-source-colour"
+
+# Which image set shall we use?
+# This should be the path to the relevant set, relative to the markdown files.
+image-set: "images"
+#image-set: "images/epub"
+#image-set: "images/web"
+#image-set: "images/print"
 
 # Which edition are we creating?
 # This can be used to create different editions of a book using Liquid control-flow tags, 
@@ -81,7 +89,6 @@ defaults:
       stylesheet-web: "web.css"
       stylesheet-epub: "epub.css"
       start-page: "0-3-contents.html"
-      images-folder: "images"
   -
     scope: # Settings per book, defined by its folder name (path)
       path: "book"

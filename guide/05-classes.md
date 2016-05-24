@@ -24,6 +24,7 @@ Use these classes in your markdown to create specific formatting effects.
 | Figure: large | `.large` | Block | Add to the `.figure` tag, e.g. `{:.figure .large}`.  | No
 | Figure: medium | `.medium` | Block | Add to the `.figure` tag, e.g. `{:.figure .medium}`.  | No
 | Figure: small | `.small` | Block | Add to the `.figure` tag, e.g. `{:.figure .small}`.  | No
+| Figure height | `.height-1` to `.height-50` | Block | Sets the height of an element to a multiple of the default line height. Use in figures, on line after image (the `<p>` containing the `<img>`), to maintain baseline grid. | Yes
 | First paragraph | `.first`| Block | For any paragraph that starts a new set of paragraphs, flush left and with a gap above it. | No
 | Float to top | `.float-top` | Block | Floats the element to the top of its page. Useful for boxes. Applies to print output only. | Yes
 | Float to bottom | `.float-bottom` | Block | Floats the element to the bottom of its page. Useful for boxes. Applies to print output only. | Yes

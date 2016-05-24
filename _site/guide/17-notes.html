@@ -4,21 +4,15 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>A Guide to the Electric Book Workflow: Footnotes, endnotes and sidenotes</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
-
-	<!-- Google Analytics, runs unless this is running through PrinceXML -->
-	<script>
-		if (typeof Prince  === "undefined") {
-			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
-		}
-	</script>
-
+    <title>: Footnotes, endnotes and sidenotes</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
 <body class="chapter">
+
 
 
 
@@ -32,7 +26,6 @@
 		</div><!--#nav-bar-->
 
 	<div id="wrapper">
-
 
 <h1 id="footnotes-endnotes-and-sidenotes">Footnotes, endnotes and sidenotes</h1>
 
@@ -48,7 +41,6 @@
 <p><strong>Sidenotes</strong> appear in a box to the right of the text. On wide screens, they float far right of the text. On narrower screens, the text wraps around them. In print, the text wraps around them, too. To create a sidenote, put a <code class="highlighter-rouge">*</code> at the start of the sidenote text and <code class="highlighter-rouge">*{:.sidenote}</code> at the end (with no spaces). (Technically, you’re creating an <code class="highlighter-rouge">&lt;em&gt;</code> span with a kramdown IAL.)</p>
 
 <p>In print, you can put <strong>sidenotes at the bottom of the page</strong>. By adding <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.sidenote</span><span class="p">}</span></code> tag, your sidenote sits at the bottom of the page rather than on the right with text wrap, replicating a traditional footnote. So the markdown looks like this: <code class="highlighter-rouge">*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}</code>. On screen, these are just regular sidenotes.</p>
-
 
 	</div><!--#wrapper-->
 	
@@ -67,5 +59,6 @@
 	
 </body>
 </html>
+
 
 

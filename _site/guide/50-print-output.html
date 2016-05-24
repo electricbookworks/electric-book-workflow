@@ -4,21 +4,15 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<title>A Guide to the Electric Book Workflow: Print output</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
-
-	<!-- Google Analytics, runs unless this is running through PrinceXML -->
-	<script>
-		if (typeof Prince  === "undefined") {
-			<!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
-		}
-	</script>
-
+    <title>: Print output</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
 <body class="chapter">
+
 
 
 
@@ -33,10 +27,10 @@
 
 	<div id="wrapper">
 
-
 <h1 class="no_toc" id="print-output">Print output</h1>
 
 <ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#creating-pdf-files-with-the-prince-gui" id="markdown-toc-creating-pdf-files-with-the-prince-gui">Creating PDF files with the Prince GUI</a></li>
   <li><a href="#creating-pdfs-with-prince-from-the-command-line" id="markdown-toc-creating-pdfs-with-prince-from-the-command-line">Creating PDFs with Prince from the command line</a></li>
   <li><a href="#refining-print-layout" id="markdown-toc-refining-print-layout">Refining print layout</a>    <ul>
@@ -45,6 +39,12 @@
   </li>
   <li><a href="#managing-hyphenation-in-prince" id="markdown-toc-managing-hyphenation-in-prince">Managing hyphenation in Prince</a></li>
 </ul>
+
+<blockquote class="box">
+  <p>Experimental short-cut: If you’re using Windows, you can generate a new PDF instantly by running <code class="highlighter-rouge">win-pdf.bat</code>, which you’ll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll and Prince installed and working, and your <code class="highlighter-rouge">print-list</code> file in the book’s folder.</p>
+</blockquote>
+
+<h2 id="introduction">Introduction</h2>
 
 <p>We use <a href="http://princexml.com/">PrinceXML</a> to turn Jekyll’s HTML into beautiful, print-ready book files. We haven’t found anything as good as Prince, so we reckon it’s worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our CSS files for print are designed specifically for Prince.</p>
 
@@ -149,7 +149,7 @@ book-one/3.md,
 </code></pre>
     </div>
   </li>
-  <li>Using Prince there isn’t a universal way to speed up conversion, except to only convert the files you really need to be working on. (If you’ve used Javascript in your HTML, that can slow Prince down. <a href="https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html">We wrap scripts, like Google Analytics tags, in a test that checks for Prince</a>.)</li>
+  <li>Using Prince there isn’t a universal way to speed up conversion, except to only convert the files you really need to be working on. For instance, in your <code class="highlighter-rouge">print-list</code>, comment out files you’re not working on. (Also, if you’ve used Javascript in your HTML, that can slow Prince down. <a href="https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html">We wrap scripts, like Google Analytics tags, in a test that checks for Prince</a>.)</li>
   <li>Use a PDF Viewer that <a href="http://superuser.com/questions/599442/pdf-viewer-that-handles-live-updating-of-pdf-doesnt-lock-the-file">doesn’t lock the file</a>.
     <ul>
       <li>On Windows, <a href="http://www.sumatrapdfreader.org/free-pdf-reader.html">Sumatra</a> is perfect for this, unlike Acrobat and Windows Preview, which locks the file. If you edit/regenerate a PDF it has open, Sumatra will allow that to happen and will automatically reload the new file, at the same page you had open.</li>
@@ -182,7 +182,6 @@ book-one/3.md,
 
 <p>For user discussion, see <a href="http://www.princexml.com/forum/topic/542/prince-hyphenate-patterns-none-url-patterns-url">the Prince forums here</a>: If you need to hack Prince’s built-in hyphenation dictionaries more deeply, see <a href="http://www.princexml.com/forum/topic/1474/prince-and-hyphenation">this forum post</a>.</p>
 
-
 	</div><!--#wrapper-->
 	
 
@@ -200,5 +199,6 @@ book-one/3.md,
 	
 </body>
 </html>
+
 
 

@@ -8,6 +8,11 @@ title: Print output
 * toc
 {:toc}
 
+> Experimental short-cut: If you're using Windows, you can generate a new PDF instantly by running `win-pdf.bat`, which you'll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll and Prince installed and working, and your `print-list` file in the book's folder.
+{:.box}
+
+## Introduction
+
 We use [PrinceXML](http://princexml.com/) to turn Jekyll's HTML into beautiful, print-ready book files. We haven't found anything as good as Prince, so we reckon it's worth its price tag. And you can use the trial version to get your print output perfect before committing to the price. So our CSS files for print are designed specifically for Prince.
 
 If you want to learn about using CSS to control print output using Prince, [this is a great tutorial](http://www.smashingmagazine.com/2015/01/designing-for-print-with-css/).
@@ -91,7 +96,7 @@ To speed this up:
     ]
     ~~~
 
-2.  Using Prince there isn't a universal way to speed up conversion, except to only convert the files you really need to be working on. (If you've used Javascript in your HTML, that can slow Prince down. [We wrap scripts, like Google Analytics tags, in a test that checks for Prince](https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html).)
+2.  Using Prince there isn't a universal way to speed up conversion, except to only convert the files you really need to be working on. For instance, in your `print-list`, comment out files you're not working on. (Also, if you've used Javascript in your HTML, that can slow Prince down. [We wrap scripts, like Google Analytics tags, in a test that checks for Prince](https://github.com/electricbookworks/electric-book-workflow/blob/gh-pages/template/_includes/header.html).)
 3.  Use a PDF Viewer that [doesn't lock the file](http://superuser.com/questions/599442/pdf-viewer-that-handles-live-updating-of-pdf-doesnt-lock-the-file). 
 	*	On Windows, [Sumatra](http://www.sumatrapdfreader.org/free-pdf-reader.html) is perfect for this, unlike Acrobat and Windows Preview, which locks the file. If you edit/regenerate a PDF it has open, Sumatra will allow that to happen and will automatically reload the new file, at the same page you had open.
 	*	On Mac OSX, Preview does the same, though we've found it doesn't open the regenerated file to the page you were on, sending you back to the start of the book, which is a pain. A much better alternative on OSX is [Skim](http://skim-app.sourceforge.net/), an open-source PDF reader. In its Preferences > Sync, set Skim to watch for file changes and update automatically. You may also want to set PDFs to open to the last viewed page in Preferences > General.

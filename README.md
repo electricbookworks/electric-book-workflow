@@ -8,6 +8,17 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.1.2
+
+* Experimental Windows batch file for PDF output
+* Better image-set system using site variable
+* Improved figure styling
+* New control over image heights in figures to retain baseline grid
+* Print-hiding for Sigil split markers
+* Allow Prince hyphenation when no special dictionary is defined
+* Fixed styling of .title-page-publisher
+* Related documentation in Guide
+
 ### 0.1.1
 
 * Add .title-page-publisher
