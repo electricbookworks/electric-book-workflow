@@ -29,6 +29,7 @@ Some are also based on markdown, like ours. For example:
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
 *   [LeanPub](https://leanpub.com/) (which uses [Markua](http://markua.com/))
+*   [MagicBook](https://github.com/magicbookproject/magicbook)
 *	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader).
 
 [PressBooks](http://pressbooks.com/), which is built on Wordpress, is a superb, affordable service.
