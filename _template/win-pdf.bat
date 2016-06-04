@@ -1,5 +1,5 @@
-:: 
-ECHO off
+:: Don't show these commands to the user
+@ECHO off
 :: Set the title of the window
 TITLE Making new PDF...
 :: Ask user which folder to process
@@ -23,11 +23,12 @@ CALL prince -v -l print-list -o ..\..\_output\%book%.pdf
 :: Navigate back to where we began.
 CD ..\..
 :: Tell the user we're done
-ECHO Done!
+ECHO Done! Opening PDF...
 :: Navigate to the _output folder...
 CD _output
-:: and open the PDF we just created
-%book%.pdf
+:: and open the PDF we just created 
+:: (`start` so the PDF app opens as a separate process, doesn't hold up this script)
+start %book%.pdf
 :: Navigate back to where we began.
 CD ..\
 :: Let the user easily refresh the PDF by running jekyll b and prince again

@@ -7,7 +7,7 @@
     <title>: Troubleshooting and tips</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/web.css" />
     <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
     <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
@@ -19,7 +19,7 @@
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="A Guide to the Electric Book Workflow" class="nav-book">A Guide to the Electric Book Workflow</a>
 				<a href="" title="Top: Troubleshooting and tips"  class="nav-page">Troubleshooting and tips</a>
 			</p>
@@ -52,7 +52,7 @@
   <li>When running Jekyll locally, and <em>if</em> your repo is a project using GitHub Pages (not an organisation or user site), you’ll need to add <code class="highlighter-rouge">--baseurl ''</code> when running Jekyll at the command line. <a href="http://jekyllrb.com/docs/github-pages/#project-page-url-structure">Here’s how and why</a>.</li>
   <li>You may get different results between a local Jekyll install and GitHub Pages, even if both are using kramdown. Always check (at least spot check) both places.</li>
   <li>Do not use a colon <code class="highlighter-rouge">:</code> in the title you include in your YAML header (inside the <code class="highlighter-rouge">---</code>s at the tops of files). For instance, you can’t have <code class="highlighter-rouge">title: Beans: The musical fruit</code>. Jekyll will break, unsure if you’re trying to map a second value to the YAML key. You can either use another character (e.g. <code class="highlighter-rouge">title: Beans—The musical fruit</code>) or use the entity <code class="highlighter-rouge">&amp;#58;</code> for the colon (<code class="highlighter-rouge">title: Beans&amp;#58; The musical fruit</code>).</li>
-  <li>We recommend setting <code class="highlighter-rouge">.gitignore</code> to ignore the <code class="highlighter-rouge">_site</code> folder, where Jekyll will store HTML output locally. If you choose <em>not</em> to <code class="highlighter-rouge">.gitignore</code> your <code class="highlighter-rouge">_site</code> folder, it’ll contain (and sync to GitHub) your local machine’s most recent Jekyll HTML output. (The <code class="highlighter-rouge">_site</code> folder has nothing to do with what GitHub Pages publishes.) In theory, committing the <code class="highlighter-rouge">_site</code> folder makes it easy for collaborators without Jekyll to grab a book’s output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their <code class="highlighter-rouge">_site</code> output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you’ll get lots of merge conflicts in the <code class="highlighter-rouge">_site</code> folder, and this will make your head hurt. (We let <code class="highlighter-rouge">_site</code> sync to GitHub for this guide so that it includes our example output for reference.)</li>
+  <li>We recommend setting <code class="highlighter-rouge">.gitignore</code> to ignore the <code class="highlighter-rouge">_site</code> folder, where Jekyll will store HTML output locally. If you choose <em>not</em> to <code class="highlighter-rouge">.gitignore</code> your <code class="highlighter-rouge">_site</code> folder, it’ll contain (and sync to GitHub) your local machine’s most recent Jekyll HTML output. (The <code class="highlighter-rouge">_site</code> folder has nothing to do with what GitHub Pages publishes.) In theory, committing the <code class="highlighter-rouge">_site</code> folder makes it easy for collaborators without Jekyll to grab a book’s output HTML from the repo. But it comes with problems: committers have a responsibility to make sure their Jekyll instance does a good job, and that their <code class="highlighter-rouge">_site</code> output is up-to-date with the latest changes to the underlying markdown. Importantly, if you have more than one committer on a book, you’ll get lots of merge conflicts in the <code class="highlighter-rouge">_site</code> folder, and this will make your head hurt.</li>
 </ul>
 
 	</div><!--#wrapper-->
@@ -62,7 +62,7 @@
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
-				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: " class="footer-book"><em>A Guide to the Electric Book Workflow</em></a>
 				<a href="" title="Top: Troubleshooting and tips" class="footer-page">Troubleshooting and tips</a>
 			</p>

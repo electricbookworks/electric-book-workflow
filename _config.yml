@@ -40,6 +40,8 @@ sass:
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
 win-pdf.bat,
+linux-pdf.bat,
+mac-pdf.bat,
 _template,
 _source,
 #css,

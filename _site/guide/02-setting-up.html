@@ -7,7 +7,7 @@
     <title>: Setting up</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/electric-book-workflow/css/web.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/web.css" />
     <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
     <link rel="stylesheet" type="text/css" media="print" href="../css/mods/print-no-bleed.css" />
 </head>
@@ -19,7 +19,7 @@
 
 		<div id="nav-bar" class="non-printing">
 			<p>
-				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
+				<a href="/" title="Home: Electric Book Workflow" class="nav-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="A Guide to the Electric Book Workflow" class="nav-book">A Guide to the Electric Book Workflow</a>
 				<a href="" title="Top: Setting up"  class="nav-page">Setting up</a>
 			</p>
@@ -31,7 +31,6 @@
 
 <ul id="markdown-toc">
   <li><a href="#technical-overview" id="markdown-toc-technical-overview">Technical overview</a></li>
-  <li><a href="#example-bettercare" id="markdown-toc-example-bettercare">Example: Bettercare</a></li>
   <li><a href="#folder-repo-structure" id="markdown-toc-folder-repo-structure">Folder (repo) structure</a></li>
   <li><a href="#using-the-template" id="markdown-toc-using-the-template">Using the template</a></li>
   <li><a href="#creating-a-new-book" id="markdown-toc-creating-a-new-book">Creating a new book</a></li>
@@ -56,32 +55,28 @@
   <li><strong>Jekyll</strong>: software that turns markdown and Sass into HTML and CSS. (To learn about Jekyll, <a href="http://jekyllrb.com/">start here</a>. If you’re installing it on Windows, <a href="http://jekyll-windows.juthilo.com/">you’ll also need this guide</a>.)</li>
   <li><strong>Git</strong>: software for tracking a team’s changes and syncing them with a remote server. We like to use <a href="http://github.com">GitHub</a> and <a href="http://bitbucket.org">Bitbucket</a> as our remotes.</li>
   <li><strong>Sigil</strong>: an open-source epub editor, where we quickly assemble ebooks.</li>
-  <li><strong>PrinceXML</strong>: an app for creating PDFs from HTML and CSS (Prince is the only proprietary part of this stack).</li>
+  <li><strong>PrinceXML</strong>: an app for creating PDFs from HTML and CSS (Prince is the only proprietary part of this stack).
+&gt; ## Example: Bettercare
+&gt; 
+&gt; Bettercare publishes nursing textbooks. The team uses the workflow to keep a book’s master content in markdown files, structured for Jekyll, on GitHub. For instance, Bettercare’s books are stored here: <a href="https://github.com/bettercarehealth/bettercare">https://github.com/bettercarehealth/bettercare</a>
+&gt; 
+&gt; &gt; Note: Bettercare is a great example of a big publishing project using the workflow. However, since it was our first full implementation, it uses an early, outdated version of the workflow.
+&gt; {:.box}
+&gt; 
+&gt; The workflow uses the <a href="http://kramdown.gettalong.org/">kramdown syntax</a> for markdown, in part because that’s what GitHub uses and largely because it has specific features we need, such as classes (with ‘inline attribute lists’ or IALs).
+&gt; 
+&gt; For Bettercare’s open-source books, we let GitHub Pages publish the static HTML output, which it does automatically, also with Jekyll. For instance, our staging site for Bettercare content is here: <a href="http://bettercarehealth.github.io/bettercare/">http://bettercarehealth.github.io/bettercare/</a>
+&gt; 
+&gt; Bettercare then copies the output HTML to a <a href="http://ls.bettercare.co.za">separate, production site</a>.
+&gt; 
+&gt; When we use this workflow for closed content, we don’t use GitHub Pages, and store the content in private GitHub or Bitbucket repos instead.
+&gt; 
+&gt; If you click through to a book chapter available on the web, you’ll see the HTML we get from kramdown is very neat. For example, view source here: <a href="http://bettercarehealth.github.io/bettercare/nc/nc-1.html">http://bettercarehealth.github.io/bettercare/nc/nc-1.html</a>
+&gt; 
+&gt; The key to simple HTML is in carefully <a href="http://electricbookworks.com/kb/creating-epub-from-indesign/mapping-book-features-to-html-elements-and-classes/">mapping a book’s features</a> to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. 
+&gt; 
+&gt; Finally, to turn our HTML into print PDFs, we use <a href="http://princexml.com">PrinceXML</a>. And we use Sigil to put our HTML into EPUB2-valid epubs. This way, we can create print PDFs or epubs in a  matter of minutes.</li>
 </ul>
-
-<blockquote>
-  <h2 id="example-bettercare">Example: Bettercare</h2>
-
-  <p>Bettercare publishes nursing textbooks. The team uses the workflow to keep a book’s master content in markdown files, structured for Jekyll, on GitHub. For instance, Bettercare’s books are stored here: <a href="https://github.com/bettercarehealth/bettercare">https://github.com/bettercarehealth/bettercare</a></p>
-
-  <blockquote class="box">
-    <p>Note: Bettercare is a great example of a big publishing project using the workflow. However, since it was our first full implementation, it uses an early, outdated version of the workflow.</p>
-  </blockquote>
-
-  <p>The workflow uses the <a href="http://kramdown.gettalong.org/">kramdown syntax</a> for markdown, in part because that’s what GitHub uses and largely because it has specific features we need, such as classes (with ‘inline attribute lists’ or IALs).</p>
-
-  <p>For Bettercare’s open-source books, we let GitHub Pages publish the static HTML output, which it does automatically, also with Jekyll. For instance, our staging site for Bettercare content is here: <a href="http://bettercarehealth.github.io/bettercare/">http://bettercarehealth.github.io/bettercare/</a></p>
-
-  <p>Bettercare then copies the output HTML to a <a href="http://ls.bettercare.co.za">separate, production site</a>.</p>
-
-  <p>When we use this workflow for closed content, we don’t use GitHub Pages, and store the content in private GitHub or Bitbucket repos instead.</p>
-
-  <p>If you click through to a book chapter available on the web, you’ll see the HTML we get from kramdown is very neat. For example, view source here: <a href="http://bettercarehealth.github.io/bettercare/nc/nc-1.html">http://bettercarehealth.github.io/bettercare/nc/nc-1.html</a></p>
-
-  <p>The key to simple HTML is in carefully <a href="http://electricbookworks.com/kb/creating-epub-from-indesign/mapping-book-features-to-html-elements-and-classes/">mapping a book’s features</a> to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support.</p>
-
-  <p>Finally, to turn our HTML into print PDFs, we use <a href="http://princexml.com">PrinceXML</a>. And we use Sigil to put our HTML into EPUB2-valid epubs. This way, we can create print PDFs or epubs in a  matter of minutes.</p>
-</blockquote>
 
 <h2 id="folder-repo-structure">Folder (repo) structure</h2>
 
@@ -274,6 +269,7 @@ style: chapter page-1
 
 <p>A book’s folder should only ever need to contain markdown files and images. If you’re embedding other kinds of media you could add folders for that alongside <code class="highlighter-rouge">images</code>. We don’t recommend sharing images or media between books, in case you want to move a book from one repo to another later. (So, for example, copy the publisher logo into each book’s <code class="highlighter-rouge">images</code> folder separately.)</p>
 
+
 	</div><!--#wrapper-->
 	
 
@@ -281,7 +277,7 @@ style: chapter page-1
 		<div class="footer-content">
 			<p>
 				<a href="http://electricbookworks.com" title="Electric Book Works" class="footer-publisher">Electric Book Works</a>
-				<a href="/electric-book-workflow/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
+				<a href="/" title="Home: Electric Book Workflow" class="footer-series">Electric Book Workflow</a>
 				<a href="0-3-contents.html" title="Contents: " class="footer-book"><em>A Guide to the Electric Book Workflow</em></a>
 				<a href="" title="Top: Setting up" class="footer-page">Setting up</a>
 			</p>

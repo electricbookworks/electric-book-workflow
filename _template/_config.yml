@@ -1,5 +1,5 @@
 # Version of this EBW template
-version: "0.1.2"
+version: "0.1.3"
 
 # Add your imprint or brand name here, it will appear in navigation.
 publisher: "Publisher name"
@@ -40,6 +40,8 @@ sass:
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
 win-pdf.bat,
+linux-pdf.bat,
+mac-pdf.bat,
 #css,
 #book,
 ]

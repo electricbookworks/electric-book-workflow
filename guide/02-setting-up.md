@@ -21,7 +21,6 @@ The technical team members who run the workflow need to be familiar with a few c
 *	**Git**: software for tracking a team's changes and syncing them with a remote server. We like to use [GitHub](http://github.com) and [Bitbucket](http://bitbucket.org) as our remotes.
 *	**Sigil**: an open-source epub editor, where we quickly assemble ebooks.
 *   **PrinceXML**: an app for creating PDFs from HTML and CSS (Prince is the only proprietary part of this stack).
-
 > ## Example: Bettercare
 > 
 > Bettercare publishes nursing textbooks. The team uses the workflow to keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, Bettercare's books are stored here: [https://github.com/bettercarehealth/bettercare](https://github.com/bettercarehealth/bettercare)
@@ -175,3 +174,4 @@ Name each book's markdown files in perfectly alphabetical order. We recommend us
 Alongside the content files in a book's folder is an `images` folder, for images that belong to that book only.
 
 A book's folder should only ever need to contain markdown files and images. If you're embedding other kinds of media you could add folders for that alongside `images`. We don't recommend sharing images or media between books, in case you want to move a book from one repo to another later. (So, for example, copy the publisher logo into each book's `images` folder separately.)
+

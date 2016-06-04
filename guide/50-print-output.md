@@ -8,7 +8,11 @@ title: Print output
 * toc
 {:toc}
 
-> Experimental short-cut: If you're using Windows, you can generate a new PDF instantly by running `win-pdf.bat`, which you'll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll and Prince installed and working, and your `print-list` file in the book's folder.
+> Experimental short-cut:
+> 
+> * If you're using Windows, you can generate a new PDF instantly by running `win-pdf.bat`, which you'll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll and Prince installed and working, and your `print-list` file in the book's folder.
+> * On Linux, run `linux-pdf.sh`. You may have to run it from a terminal, and first enter `chmod +x linux-pdf.sh` to give it permissions, then run with `bash linuxpdf.sh`.
+> * On Mac, we're still testing `mac-pdf.sh`. YMMV.
 {:.box}
 
 ## Introduction

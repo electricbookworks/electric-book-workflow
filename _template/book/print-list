@@ -6,6 +6,8 @@ type: print-list
 # E.g. here we only include the cover when output in _config is `pdf-ebook`.
 # Then use this list with the PrinceXML command line, e.g. from the book's folder in _site:
 # prince -l print-list -o book.pdf
+# You can exclude files from your print-list temporarily by surrounding them with
+# Liquid comment tags: {% comment %}{% endcomment %}
 ---
 
 {% if site.output == 'pdf-ebook' %}
