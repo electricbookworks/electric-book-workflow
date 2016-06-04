@@ -8,6 +8,12 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.1.3
+
+* Improve Windows batch script for PDF
+* Add a Linux shell script for PDF
+* Add Windows web batch script
+
 ### 0.1.2
 
 * Experimental Windows batch file for PDF output
