@@ -21,7 +21,7 @@ source: "" # e.g. parent ISBN or ISTC
 language: "en" # use ISO 639-1, 639-2, or 639-3 codes (in that order of preference)
 relation: "" # e.g. other edition ISBN
 coverage: "" # e.g. geographic place or chronological time span
-rights: "" # e.g. a copyright statement
+rights: "All rights reserved.<br />No part of this book may be reproduced or transmitted in any form or by any electronic or mechanical means, including photocopying and recording, or any other information storage or retrieval system, without written permission from the publisher." # e.g. a copyright statement
 
 ### Metadata for each product (only use values that override parent metadata)
 print: 

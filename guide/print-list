@@ -8,6 +8,9 @@ type: print-list
 # prince -l print-list -o book.pdf
 ---
 
+{% comment %} Excluding files from here ----------------
+------------------------------- to here {% endcomment %}
+
 {% if site.output == 'pdf-ebook' %}
 0-0-cover.html
 {% endif %}

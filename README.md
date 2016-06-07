@@ -8,6 +8,11 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.1.4
+
+* Support `<hr>` as text divider (\*\*\* in markdown)
+* Minor improvements to code comments
+
 ### 0.1.3
 
 * Improve Windows batch script for PDF
