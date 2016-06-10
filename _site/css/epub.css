@@ -2,9 +2,7 @@ body {
   margin: 0;
   padding: 0; }
 
-/* 
- * General typography 
- */
+/* General typography */
 body {
   font-family: "Linux Libertine", serif;
   font-size: 1.2em;
@@ -75,9 +73,7 @@ blockquote p:first-of-type {
 blockquote p:last-of-type, blockquote ol, blockquote ul {
   margin: 0 0 1em 0; }
 
-/* 
- * Definition lists. Useful for sidebar-like notes, too. 
- */
+/* Definition lists */
 dl {
   color: #666; }
 
@@ -88,9 +84,7 @@ dt {
 dd {
   margin: 0 0 1em 1em; }
 
-/*
- * Code
- */
+/* Code */
 pre, code {
   font-family: "Inconsolata", monospace;
   white-space: pre-wrap;
@@ -107,6 +101,14 @@ pre code {
 a {
   text-decoration: none;
   color: #5f738c; }
+
+/* Horizontal rules */
+hr {
+  content: "***";
+  border: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  margin: 1em 0; }
 
 body.cover {
   margin: 0;

@@ -9,10 +9,17 @@ style: copyright-page
 # Copyright
 {:.non-printing}
 
-*{{ site.data.[page.slug].title }}*\\
-Text © {{ site.data.[page.slug].creator }}
+{% include get-slug.html %}
 
-{% for id in site.data.[page.slug].print.identifier %}ISBN ({{ site.data.[page.slug].print.format }}): {{ id }}{% endfor %}\\
-{% for id in site.data.[page.slug].epub.identifier %}ISBN ({{ site.data.[page.slug].epub.format }}): {{ id }}{% endfor %}
+*{{ site.data.[slug].title }}*\\
+Text © {{ site.data.[slug].creator }}
 
-{{ site.data.[page.slug].rights }}
+{% for id in site.data.[slug].print.identifier %}
+ISBN ({{ site.data.[slug].print.format }}): {{ id }}
+{% endfor %}
+
+{% for id in site.data.[slug].epub.identifier %}
+ISBN ({{ site.data.[slug].epub.format }}): {{ id }}
+{% endfor %}
+
+{{ site.data.[slug].rights }}

@@ -1,17 +1,8 @@
+# This is the configuration of your book-making machine.
+# To store metadata for use in it, use the _data folder.
+
 # Version of this EBW template
 version: "0.1.4"
-
-# Add your imprint or brand name here, it will appear in navigation.
-publisher: "Electric Book Works"
-
-# Your publisher name will link to this URL in navigation.
-publisher-url: "http://electricbookworks.com"
-
-# The name of the series of books in this folder.
-name: "Electric Book Workflow"
-
-# A one-liner about this series. Useful for Open Graph metadata.
-description: "A workflow for creating high-quality books and ebooks with open technologies."
 
 # The primary language used in this series. You can set the language for each book individually below at 'defaults'. 
 # To understand what language tags to use, read: http://www.w3.org/International/articles/language-tags/ 
@@ -23,7 +14,8 @@ language: en
 url: http://localhost:4000
 
 # Change this to the name of your series folder, e.g. /my-cool-books
-baseurl: /electric-book-workflow # If you're using GitHub Pages, make this the name of your repo, e.g. /electric-book-workflow
+# If you're using GitHub Pages, make this the name of your repo, e.g. /electric-book-workflow
+baseurl: /electric-book-workflow 
 
 # Leave this unchanged as kramdown unless you really know how and why to change your markdown processor
 markdown: kramdown
@@ -44,13 +36,13 @@ linux-pdf.bat,
 mac-pdf.bat,
 _template,
 _source,
-#css,
+css,
 ]
 
 # Can be useful to stop Jekyll overwriting files in _site.
 # E.g. generate CSS once, then exclude above but keep here to make content regeneration faster.
 keep_files: [
-#css,
+css,
 ]
 
 # Output different HTML structures based on intent.
@@ -86,9 +78,3 @@ defaults:
       stylesheet-web: "web.css"
       stylesheet-epub: "epub.css"
       start-page: "0-3-contents.html"
-  -
-    scope: # Settings per book, defined by its folder name (path)
-      path: "guide"
-    values:
-      # Site configs
-      slug: "guide" # an identifier that matches the book content folder name

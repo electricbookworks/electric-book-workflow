@@ -2,7 +2,7 @@
 # The name of this file must match the book's slug in _config.yml
 
 ## Metadata follows [Dublin Core](https://en.wikipedia.org/wiki/Dublin_Core#DCMI_Metadata_Terms)
-## Custom fields added: subtitle
+## Custom fields added: subtitle, publisher-url
 
 ### Metadata for all products
 title: "The Title"
@@ -12,6 +12,7 @@ contributor: "" # E.g. other contributors
 subject: "" # E.g. BISAC terms (https://www.bisg.org/bisac/bisac-subject-codes) or BIC (http://editeur.dyndns.org/bic_categories)
 description: "" # E.g. the blurb
 publisher: "My Brand" # E.g. the publisher, imprint or brand name
+publisher-url: ""
 date: "2015-12-31" # YYYY-MM-DD e.g. publication date
 modified: "2016-05-07" # YYYY-MM-DD e.g. date of last revision
 type: "Memoir" # e.g. Novel, Poetry, Memoir

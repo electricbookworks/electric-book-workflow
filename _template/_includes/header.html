@@ -1,8 +1,15 @@
+{% include get-slug.html %}
 {% if site.output == 'epub' %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ site.data.[page.slug].language }}">
 <head>
-	<title>{{ site.data.[page.slug].title }}: {{ page.title }}</title>
+	<title>
+	{% if site.data.[slug].title %}
+    {{ site.data.[slug].title }}: {{ page.title }}
+	{% else %}
+    {{ site.data.series.name }}: {{ page.title }}
+	{% endif %}
+	</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="../Styles/{{ page.stylesheet-epub }}" />
 	
@@ -19,12 +26,17 @@
 </head>
 <body class="{{ page.style }}">
 
-
 {% elsif site.output == 'pdf-ebook' %}
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ site.data.[page.slug].language }}" xml:lang="{{ site.data.[page.slug].language }}">
 <head>
-    <title>{{ page.book-title}}: {{ page.title }}</title>
+    <title>
+    {% if site.data.[slug].title %}
+    {{ site.data.[slug].title }}: {{ page.title }}
+    {% else %}
+    {{ site.data.series.name }}: {{ page.title }}
+    {% endif %}
+    </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/css/{{ page.stylesheet-web }}" />
@@ -33,12 +45,18 @@
 </head>
 <body class="{{ page.style }}">
 
-
 {% else %}
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ site.data.[page.slug].language }}" xml:lang="{{ site.data.[page.slug].language }}">
 <head>
-	<title>{{ site.data.[page.slug].title }}: {{ page.title }}</title>
+    <title>
+    {% if site.data.[slug].title %}
+    {{ site.data.[slug].title }}: {{ page.title }}
+    {% else %}
+    {{ site.data.series.name }}: {{ page.title }}
+    {% endif %}
+    </title>
+<!--	<title>{{ site.data.[page.slug].title }}: {{ page.title }}</title>-->
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ site.baseurl }}/css/{{ page.stylesheet-web }}" />

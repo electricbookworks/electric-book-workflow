@@ -14,7 +14,7 @@ prose:
     - /css
     - /*/.gitattributes
     - /*/.gitignore
-    - /*/_config.yml
+    - /*/_config*
     - /*/_prose.yml
     - /*/_layouts
     - /*/_includes
@@ -22,6 +22,11 @@ prose:
     - /*/css
     - /*/*/0-0-cover.md
     - /*/*/index.md
+    - /*/linux-pdf.sh
+    - /*/mac-pdf.sh
+    - /*/win-pdf.bat
+    - /*/win-web.bat
+    - /*/*/print-list
   media: "media"
   metadata:
     "":

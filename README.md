@@ -10,8 +10,10 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ### 0.1.4
 
+* Move all metadata out of `_config.yml`, into `_data` (no more setting up the slug)
 * Support `<hr>` as text divider (\*\*\* in markdown)
 * Minor improvements to code comments
+* Minor improvement to layout of reference indexes
 
 ### 0.1.3
 
