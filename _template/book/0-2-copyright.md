@@ -11,15 +11,15 @@ style: copyright-page
 
 {% include get-slug.html %}
 
-*{{ site.data.[slug].title }}*\\
-Text © {{ site.data.[slug].creator }}
+*{{ site.data.meta.[slug].title }}*\\
+Text © {{ site.data.meta.[slug].creator }}
 
-{% for id in site.data.[slug].print.identifier %}
-ISBN ({{ site.data.[slug].print.format }}): {{ id }}
+{% for id in site.data.meta.[slug].products.print.identifier %}
+ISBN ({{ site.data.meta.[slug].products.print.format }}): {{ id }}
 {% endfor %}
 
-{% for id in site.data.[slug].epub.identifier %}
-ISBN ({{ site.data.[slug].epub.format }}): {{ id }}
+{% for id in site.data.meta.[slug].products.epub.identifier %}
+ISBN ({{ site.data.meta.[slug].products.epub.format }}): {{ id }}
 {% endfor %}
 
-{{ site.data.[slug].rights }}
+{{ site.data.meta.[slug].rights }}

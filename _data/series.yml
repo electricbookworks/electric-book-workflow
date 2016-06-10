@@ -1,8 +1,0 @@
-# The name of the organisation or entity that owns this series
-organisation: "Electric Book Works"
-# A live web address for the organisation
-url: "https://electricbookworks.com/"
-# The name of the series of books in this folder.
-name: "Electric Book Workflow"
-# A one-liner about this series. Useful for Open Graph metadata.
-description: "A workflow for creating high-quality books and ebooks with open technologies."
