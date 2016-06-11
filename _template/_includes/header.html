@@ -5,9 +5,9 @@
 <head>
     <title>
     {% if site.data.meta.titles.[slug].title %}
-    {{ site.data.meta.titles.[slug].title }}: {{ page.title }}
+    {{ site.data.meta.titles.[slug].title }}{% if page.title %}: {{ page.title }}{% endif %}
     {% else %}
-    {{ site.data.meta.series.name }}: {{ page.title }}
+    {{ site.data.meta.series.name }}{% if page.title %}: {{ page.title }}{% endif %}
     {% endif %}
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -32,9 +32,9 @@
 <head>
     <title>
     {% if site.data.meta.titles.[slug].title %}
-    {{ site.data.meta.titles.[slug].title }}: {{ page.title }}
+    {{ site.data.meta.titles.[slug].title }}{% if page.title %}: {{ page.title }}{% endif %}
     {% else %}
-    {{ site.data.meta.series.name }}: {{ page.title }}
+    {{ site.data.meta.series.name }}{% if page.title %}: {{ page.title }}{% endif %}
     {% endif %}
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -51,9 +51,9 @@
 <head>
     <title>
     {% if site.data.meta.titles.[slug].title %}
-    {{ site.data.meta.titles.[slug].title }}: {{ page.title }}
+    {{ site.data.meta.titles.[slug].title }}{% if page.title %}: {{ page.title }}{% endif %}
     {% else %}
-    {{ site.data.meta.series.name }}: {{ page.title }}
+    {{ site.data.meta.series.name }}{% if page.title %}: {{ page.title }}{% endif %}
     {% endif %}
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
