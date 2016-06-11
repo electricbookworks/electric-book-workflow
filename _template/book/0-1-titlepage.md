@@ -5,14 +5,14 @@ style: title-page
 
 {% include get-slug.html %}
 
-{{ site.data.meta.[slug].title }}
+{{ site.data.meta.titles.[slug].title }}
 {:.title-page-title}
 
-{{ site.data.meta.[slug].subtitle }}
+{{ site.data.meta.titles.[slug].subtitle }}
 {:.title-page-subtitle}
 
-{{ site.data.meta.[slug].creator }}
+{{ site.data.meta.titles.[slug].creator }}
 {:.title-page-author}
 
-{{ site.data.meta.[slug].publisher }}
+{{ site.data.meta.titles.[slug].publisher }}
 {:.title-page-publisher}
