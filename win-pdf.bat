@@ -3,7 +3,9 @@
 :: Set the title of the window
 TITLE Making new PDF...
 :: Ask user which folder to process
+:choosefolder
 SET /p book=Which book folder are we processing? 
+IF "%book%"=="" GOTO choosefolder
 :: Ask the user to add any extra Jekyll config files, e.g. _config.pdf-ebook.yml
 SET /p config=Any extra config files? (full filename, comma-separated, no spaces) 
 :: Loop back to this point to refresh the build and PDF
