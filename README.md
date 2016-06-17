@@ -14,6 +14,7 @@ It's a work in progress with a learning curve, but we've already used it to crea
 * Support `<hr>` as text divider (\*\*\* in markdown)
 * Minor improvements to code comments
 * Minor improvement to layout of reference indexes
+* Fix for blank baseurl in `win-web.bat` launcher
 
 ### 0.1.3
 
