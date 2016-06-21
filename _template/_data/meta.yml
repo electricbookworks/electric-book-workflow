@@ -20,7 +20,7 @@ series:
 ## Custom fields added to standard DC terms: subtitle, publisher URL
 
 titles:
-  guide: # This entry must match the book's folder exactly
+  book-template: # change `book-template` to match your book's folder name exactly
     title: "The Title"
     subtitle: ""
     creator: "A. N. Author" # E.g. the author

@@ -35,7 +35,7 @@ win-pdf.bat,
 linux-pdf.bat,
 mac-pdf.bat,
 #css,
-#book,
+#book-template,
 ]
 
 # Can be useful to stop Jekyll overwriting files in _site.

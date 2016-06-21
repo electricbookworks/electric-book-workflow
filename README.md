@@ -15,6 +15,7 @@ It's a work in progress with a learning curve, but we've already used it to crea
 * Minor improvements to code comments
 * Minor improvement to layout of reference indexes
 * Fix for blank baseurl in `win-web.bat` launcher
+* Minor text edits
 
 ### 0.1.3
 
