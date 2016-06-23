@@ -30,6 +30,7 @@ Use these classes in your markdown to create specific formatting effects.
 | Float to bottom | `.float-bottom` | Block | Floats the element to the bottom of its page. Useful for boxes. Applies to print output only. | Yes
 | Footnote | `.sidenote .bottom` | Block or inline | When you add `.bottom` to `.sidenote`, the note appears at the foot of the page in print output. It remains on the side on screens. (Also see the chapter ['Footnotes, endnotes and sidenotes'](17-notes.html#footnotes-endnotes-and-sidenotes).) | No
 | Fraction | `.fractions` | Block or inline | If your font supports it, converts characters like `1/2` into fraction characters. | No
+| Frontmatter references | `.frontmatter-reference` | Inline | Tag links in the Table of Contents whose page numbers must match yout frontmatter reference style set in CSS. | No
 | Glossary | `.glossary` | Block | Use this after the last entry in a series of definition lists to define the entire list of definitions as a glossary. | No
 | Hide from print | `.non-printing` | Block or inline | Hides the element from print output. Useful for things like clickable buttons, which are only intended for screens, not paper. | No
 | Keep together | `.keep-together` | Block | Prevents an element from breaking across pages. (E.g. you want to keep a short list on the same page.) | No

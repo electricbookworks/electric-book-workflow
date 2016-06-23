@@ -8,6 +8,15 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.1.4
+
+* Move all metadata out of `_config.yml`, into `_data` (no more setting up the slug)
+* Support `<hr>` as text divider (\*\*\* in markdown)
+* Minor improvements to code comments
+* Minor improvement to layout of reference indexes
+* Fix for blank baseurl in `win-web.bat` launcher
+* Minor text edits
+
 ### 0.1.3
 
 * Improve Windows batch script for PDF

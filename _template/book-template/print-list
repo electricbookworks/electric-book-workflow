@@ -10,6 +10,9 @@ type: print-list
 # Liquid comment tags: {% comment %}{% endcomment %}
 ---
 
+{% comment %} Excluding files from here ----------------
+------------------------------- to here {% endcomment %}
+
 {% if site.output == 'pdf-ebook' %}
 0-0-cover.html
 {% endif %}

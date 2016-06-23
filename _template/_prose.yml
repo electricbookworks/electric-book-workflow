@@ -2,7 +2,6 @@
 # Users with GitHub contributor access can edit your book with http://prose.io. 
 # These settings control what they see. See https://github.com/prose/prose/wiki/Prose-Configuration for more info.
 # (We don't use prose.io live previews with siteurl. they are slower than the default preview and unreliable in multi-site repos.)
-# If you have multiple workflow instances (e.g. different series) in one repo, keep this file in the root; it will apply to all instances.
 prose:
   ignore:
     - .gitattributes
@@ -15,7 +14,7 @@ prose:
     - /css
     - /*/.gitattributes
     - /*/.gitignore
-    - /*/_config.yml
+    - /*/_config*
     - /*/_prose.yml
     - /*/_layouts
     - /*/_includes
@@ -23,6 +22,11 @@ prose:
     - /*/css
     - /*/*/0-0-cover.md
     - /*/*/index.md
+    - /*/linux-pdf.sh
+    - /*/mac-pdf.sh
+    - /*/win-pdf.bat
+    - /*/win-web.bat
+    - /*/*/print-list
   media: "media"
   metadata:
     "":

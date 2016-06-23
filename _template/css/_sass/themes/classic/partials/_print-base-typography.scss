@@ -1,6 +1,4 @@
-/* 
- * Base typography 
- */
+/* Base typography */
 
 body {
 	font-family: $font-text-main;
@@ -120,9 +118,7 @@ blockquote p:last-of-type, blockquote ol, blockquote ul {
 	margin: 0 0 $line-height-default 0;
 }
 
-/* 
- * Definition lists. Useful for sidebar-like notes, too. 
- */
+/* Definition lists */
 
 dl {
 	margin: ($line-height-default * 2) 0;
@@ -134,9 +130,20 @@ dd {
 	margin: 0 0 $line-height-default $line-height-default;
 }
 
-// Super and subscripts
-// This is mainly to prevent them from increasing line height in print output
+/* Super and subscripts */
 
+// This is mainly to prevent them from increasing line height in print output
 sup, sub {
 	line-height: 0;
+}
+
+/* Horizontal rules */
+
+// Using <hr> as a divider (in markdown created with ***)
+hr {
+    content: "***";
+    border: 0;
+    font-family: $font-display-main;
+    text-align: center;
+    margin: $line-height-default 0;
 }
