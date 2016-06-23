@@ -36,13 +36,13 @@ linux-pdf.bat,
 mac-pdf.bat,
 _template,
 _source,
-css,
+#css,
 ]
 
 # Can be useful to stop Jekyll overwriting files in _site.
 # E.g. generate CSS once, then exclude above but keep here to make content regeneration faster.
 keep_files: [
-css,
+#css,
 ]
 
 # Output different HTML structures based on intent.
