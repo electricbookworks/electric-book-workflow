@@ -6,6 +6,7 @@ style: contents-page
 # Contents
 
 1.  [Preface](0-4-preface.html#preface){:.frontmatter-reference}
+1.  [*Quick start*](0-9-quick-start.html)
 1.  [Introduction](01-intro.html#introduction)
 1.  [Setting up](02-setting-up.html#setting-up)
 1.  [Markdown](03-markdown.html#markdown)
