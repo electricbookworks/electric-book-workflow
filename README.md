@@ -8,6 +8,10 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.1.5
+
+* Create `win-epub.bat` to speed up EPUB creation
+
 ### 0.1.4
 
 * Move all metadata out of `_config.yml`, into `_data` (no more setting up the slug)
