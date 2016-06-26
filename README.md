@@ -11,6 +11,7 @@ It's a work in progress with a learning curve, but we've already used it to crea
 ### 0.1.5
 
 * Create `win-epub.bat` to speed up EPUB creation
+* Add CSS option for pure black in addition to rich black
 
 ### 0.1.4
 
