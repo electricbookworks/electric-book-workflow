@@ -31,9 +31,11 @@ sass:
 # Jekyll will ignore these files and folders. 
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
-win-pdf.bat,
 linux-pdf.bat,
 mac-pdf.bat,
+win-pdf.bat,
+win-web.bat,
+win-epub.bat,
 #css,
 #book-template,
 ]
