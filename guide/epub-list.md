@@ -1,12 +1,9 @@
 ---
-title: Contents
-style: contents-page
+# A list of files to include in an epub edition
+# You can just copy your TOC
 ---
 
-# Contents
-
 1.  [Preface](0-4-preface.html#preface){:.frontmatter-reference}
-1.  [*Quick start*](0-9-quick-start.html)
 1.  [Introduction](01-intro.html#introduction)
 1.  [Setting up](02-setting-up.html#setting-up)
 1.  [Markdown](03-markdown.html#markdown)
@@ -26,4 +23,3 @@ style: contents-page
 1.  [Epub output](51-epub-output.html#epub-output)
 1.  [Troubleshooting and tips](60-troubleshooting.html#troubleshooting-and-tips)
 1.  [Typography examples](70-examples.html#typography-examples)
-1.	[Development roadmap](90-roadmap.html#our-roadmap)

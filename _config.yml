@@ -13,7 +13,6 @@ language: en
 # Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
 url: http://localhost:4000
 
-# Change this to the name of your series folder, e.g. /my-cool-books
 # If you're using GitHub Pages, make this the name of your repo, e.g. /electric-book-workflow
 baseurl: /electric-book-workflow 
 
@@ -31,12 +30,16 @@ sass:
 # Jekyll will ignore these files and folders. 
 # Useful for temporarily speeding up processing for particular files.
 exclude: [
-win-pdf.bat,
 linux-pdf.bat,
 mac-pdf.bat,
+win-pdf.bat,
+win-web.bat,
+win-epub.bat,
+win-pdf-ebook.bat,
 _template,
 _source,
 #css,
+js/node_modules,
 ]
 
 # Can be useful to stop Jekyll overwriting files in _site.
@@ -48,9 +51,9 @@ keep_files: [
 # Output different HTML structures based on intent.
 # You can change these here, or rather override by loading two config files at the command line, e.g.:
 # jekyll build -c _config.yml,_config.epub.yml
-#output: "default"
+output: "default"
 #output: "epub"
-output: "pdf-ebook"
+#output: "pdf-ebook"
 #output: "lightning-source-colour"
 
 # Which image set shall we use?

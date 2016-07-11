@@ -22,10 +22,10 @@ do
 	cd _site/$book
 	# Let the user know we're now going to make the PDF
 	echo Creating PDF...
-	# Run prince, showing progress (-v), printing the docs in print-list
+	# Run prince, showing progress (-v), printing the docs in file-list
 	# and saving the resulting PDF to the _output folder
 	# (For some reason this has to be run with CALL)
-	prince -v -l print-list -o ../../_output/$book.pdf
+	prince -v -l file-list -o ../../_output/$book.pdf
 	# Navigate back to where we began.
 	cd ../..
 	# Tell the user we're done

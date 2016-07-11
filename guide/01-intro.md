@@ -36,6 +36,8 @@ Some are also based on markdown, like ours. For example:
 
 And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https://atlas.oreilly.com/).
 
+[Editoria](https://editoria.pub/) takes another promising approach, building an open-source publishing system on the [PubSweet](http://coko.foundation/resources.html) framework. It uses HTML5-based editors rather than markdown, but has similar aims to our workflow.
+
 [OERPub Editor](http://oerpub.org/tools/) is a web-based editor for non-technical people to create EPUB3 HTML that includes maths. As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
 
 For converting HTML/CSS to print PDF, we use PrinceXML, which is proprietary. Other alternatives, which we haven't tested or don't yet support all the page-layout features we need, include:

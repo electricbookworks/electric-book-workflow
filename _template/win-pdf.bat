@@ -5,21 +5,21 @@ TITLE Making new PDF...
 :: Ask user which folder to process
 SET /p book=Which book folder are we processing? 
 :: Ask the user to add any extra Jekyll config files, e.g. _config.pdf-ebook.yml
-SET /p config=Any extra config files? (full filename, comma-separated, no spaces) 
+SET /p config=Any extra config files? (in addition to _config.print.yml; full filename, comma-separated, no spaces) 
 :: Loop back to this point to refresh the build and PDF
 :refresh
 :: let the user know we're on it!
 ECHO Generating HTML...
 :: ...and run Jekyll to build new HTML
-CALL jekyll build --config="_config.yml,%config%"
+CALL jekyll build --config="_config.yml,_config.print.yml,%config%"
 :: Navigate into the book's folder in _site output
 CD _site\%book%
 :: Let the user know we're now going to make the PDF
 ECHO Creating PDF...
-:: Run prince, showing progress (-v), printing the docs in print-list
+:: Run prince, showing progress (-v), printing the docs in file-list
 :: and saving the resulting PDF to the _output folder
 :: (For some reason this has to be run with CALL)
-CALL prince -v -l print-list -o ..\..\_output\%book%.pdf
+CALL prince -v -l file-list -o ..\..\_output\%book%.pdf
 :: Navigate back to where we began.
 CD ..\..
 :: Tell the user we're done

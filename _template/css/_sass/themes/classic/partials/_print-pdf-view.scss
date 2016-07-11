@@ -5,7 +5,8 @@
 	prince-pdf-page-mode: show-bookmarks; // auto | show-attachments | show-bookmarks | fullscreen
 	prince-pdf-paper-tray: auto; // auto | pick-tray-by-pdf-size
 	prince-pdf-print-scaling: auto; // auto | none
-	prince-pdf-script: "" // Insert Javascript between the quotes if needed: http://www.princexml.com/doc/properties/prince-pdf-script/
+	prince-pdf-script: ""; // Insert Javascript between the quotes if needed: http://www.princexml.com/doc/properties/prince-pdf-script/
+    prince-pdf-color-options: use-#{$black-ink}-black; //  takes two values, use-true-black (/DeviceGray black in the PDF) and use-rich-black (/DeviceRGB black in PDF)
 }
 
 // Make the PDF page labels (numbers in PDF navigation) match the numbers of the book pages

@@ -18,6 +18,7 @@ series:
 
 ## Metadata follows [Dublin Core](https://en.wikipedia.org/wiki/Dublin_Core#DCMI_Metadata_Terms)
 ## Custom fields added to standard DC terms: subtitle, publisher URL
+## When listing files, exlude file extensions, and surround them in quotes especially if they contain only numbers.
 
 titles:
   book-template: # change `book-template` to match your book's folder name exactly
@@ -44,11 +45,41 @@ titles:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication or creation date
         format: "Print" # e.g. Paperback, Digital download, Digital online
         identifier: "" # e.g. ISBN or UUID
+        files:
+          - "0-1-titlepage"
+          - "0-2-copyright"
+          - "0-3-contents"
+          - "01"
+          - "02"
       web:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
         identifier: "" # e.g. ISBN or UUID
+        files:
+          - "0-1-titlepage"
+          - "0-2-copyright"
+          - "0-3-contents"
+          - "01"
+          - "02"
       epub:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online
         identifier: "" # e.g. ISBN or UUID
+        files:
+          - "0-0-cover"
+          - "0-1-titlepage"
+          - "0-2-copyright"
+          - "0-3-contents"
+          - "01"
+          - "02"
+      pdf-ebook:
+        date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
+        format: "Digital download" # e.g. Paperback, Digital download, Digital online
+        identifier: "" # e.g. ISBN or UUID
+        files:
+          - "0-0-cover"
+          - "0-1-titlepage"
+          - "0-2-copyright"
+          - "0-3-contents"
+          - "01"
+          - "02"

@@ -29,6 +29,9 @@ $bleed: 3mm;
 $trim: 3mm;
 $crop-marks: crop; // crop | none
 
+// PDF file setup options
+$black-ink: true; // true or rich (true for pure black or rich for rich black)
+
 // We name font variables for two categories:
 // - 'text' fonts are used for body text and some page features;
 // - 'display' fonts are used for headings and similar short-string features.
@@ -148,6 +151,7 @@ $highlight-loosened: inherit;
 //@import "fonts/overpass";
 @import "fonts/source-sans-pro";
 //@import "fonts/trajan-pro";
+//@import "fonts/cormorant-garamond";
 
 // ---------------------
 // Import theme partials
