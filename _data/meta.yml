@@ -62,6 +62,7 @@ titles:
           - 19-indexes
           - 20-poetry
           - 25-page-numbers
+          - 30-javascript
           - 40-indd-to-md
           - 50-print-output
           - 51-epub-output
@@ -94,6 +95,7 @@ titles:
           - 19-indexes
           - 20-poetry
           - 25-page-numbers
+          - 30-javascript
           - 40-indd-to-md
           - 50-print-output
           - 51-epub-output
@@ -122,6 +124,7 @@ titles:
           - 19-indexes
           - 20-poetry
           - 25-page-numbers
+          - 30-javascript
           - 40-indd-to-md
           - 50-print-output
           - 51-epub-output
