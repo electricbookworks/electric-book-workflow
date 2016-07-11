@@ -44,6 +44,29 @@ titles:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication or creation date
         format: "Print" # e.g. Paperback, Digital download, Digital online
         identifier: "978-1-928313-13-7" # e.g. ISBN or UUID
+        files:
+          - 0-1-titlepage
+          - 0-2-copyright
+          - 0-3-contents
+          - 0-4-preface
+          - 01-intro
+          - 02-setting-up
+          - 03-markdown
+          - 04-themes
+          - 05-classes
+          - 10-tocs
+          - 15-images
+          - 16-video
+          - 17-notes
+          - 18-tables
+          - 19-indexes
+          - 20-poetry
+          - 25-page-numbers
+          - 40-indd-to-md
+          - 50-print-output
+          - 51-epub-output
+          - 60-troubleshooting
+          - 70-examples
       web:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
@@ -52,3 +75,55 @@ titles:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online
         identifier: "978-1-928313-14-4" # e.g. ISBN or UUID
+        files:
+          - 0-0-cover
+          - 0-1-titlepage
+          - 0-2-copyright
+          - 0-3-contents
+          - 0-4-preface
+          - 01-intro
+          - 02-setting-up
+          - 03-markdown
+          - 04-themes
+          - 05-classes
+          - 10-tocs
+          - 15-images
+          - 16-video
+          - 17-notes
+          - 18-tables
+          - 19-indexes
+          - 20-poetry
+          - 25-page-numbers
+          - 40-indd-to-md
+          - 50-print-output
+          - 51-epub-output
+          - 60-troubleshooting
+          - 70-examples
+      pdf-ebook:
+        date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
+        format: "Digital download" # e.g. Paperback, Digital download, Digital online
+        identifier: "978-1-928313-14-4" # e.g. ISBN or UUID
+        files:
+          - 0-0-cover
+          - 0-1-titlepage
+          - 0-2-copyright
+          - 0-3-contents
+          - 0-4-preface
+          - 01-intro
+          - 02-setting-up
+          - 03-markdown
+          - 04-themes
+          - 05-classes
+          - 10-tocs
+          - 15-images
+          - 16-video
+          - 17-notes
+          - 18-tables
+          - 19-indexes
+          - 20-poetry
+          - 25-page-numbers
+          - 40-indd-to-md
+          - 50-print-output
+          - 51-epub-output
+          - 60-troubleshooting
+          - 70-examples

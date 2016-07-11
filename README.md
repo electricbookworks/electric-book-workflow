@@ -10,8 +10,12 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ### 0.1.5
 
+* Change `print-list` to `file-list` and auto-generate from file lists per product in `meta.yml`
 * Create `win-epub.bat` to speed up EPUB creation
+* Improve Windows batch files for output to print PDF and PDF ebook
 * Add CSS option for pure black in addition to rich black
+* Add template folders and minimal guidance for using Javascript
+* Various minor improvements
 
 ### 0.1.4
 

@@ -1,9 +1,7 @@
 ---
-title: Contents
-style: contents-page
+# A list of files to include in an epub edition
+# You can just copy your TOC
 ---
-
-# Contents
 
 1.  [Preface](0-4-preface.html#preface){:.frontmatter-reference}
 1.  [Introduction](01-intro.html#introduction)
