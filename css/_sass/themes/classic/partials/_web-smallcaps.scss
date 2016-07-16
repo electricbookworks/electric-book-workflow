@@ -6,6 +6,7 @@
 	-webkit-font-feature-settings: "smcp", "onum";
 	font-feature-settings: "smcp", "onum";
 	font-style: inherit;
+	font-weight: inherit;
 }
 
 /* Convert both upper and lowercase to small caps (affects punctuation also) */
@@ -16,4 +17,5 @@
 	-webkit-font-feature-settings: "c2sc", "smcp", "onum";
 	font-feature-settings: "c2sc", "smcp", "onum";
 	font-style: inherit;
+	font-weight: inherit;
 }

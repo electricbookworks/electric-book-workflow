@@ -20,7 +20,8 @@ h5 + p.sidenote + p,
 h6 + p.sidenote + p,
 .box + p.sidenote + p, // Paragraphs after boxes with a sidenote in between
 table + p.sidenote + p, // Paragraphs after tables with a sidenote in between
-.pullquote + p // Paragraphs after pullquotes
+.pullquote + p, // Paragraphs after pullquotes
+hr + p // Paragraphs after hr 
 {
 	text-indent: 0;
 	margin-top: 0; 
