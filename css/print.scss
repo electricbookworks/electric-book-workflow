@@ -1,5 +1,5 @@
 ---
-Description: Print-output settings for the Electric Book Workflow
+Description: Print-output settings for the Electric Book Workflow Classic theme
 Author: Electric Book Works
 URL: http://github.com/electricbookworks/electric-book-workflow
 Version: 1.0.0
@@ -63,6 +63,11 @@ $hyphenate-lines: 1; /* Maximum number of consecutive lines ending with hyphens 
 // This setting applies to the frontmatter, dedication-page, epigraph-page and chapter page styles.
 // (The halftitle-page, title-page and contents-page page styles always start on a recto.)
 $start-on: right; // right or auto or left ()
+
+// Set the default start-depth of pages.
+// This is the distance from the top of the page to the first element on the first page.
+// Set it in multiples of $line-height-default to preserve your baseline grid.
+$start-depth: $line-height-default * 6;
 
 // Style of page numbers on frontmatter pages
 // Remember to tag links to front matter pages in your TOC with {:.frontmatter-reference}

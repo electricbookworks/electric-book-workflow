@@ -64,6 +64,11 @@ $hyphenate-lines: 1; /* Maximum number of consecutive lines ending with hyphens 
 // (The halftitle-page, title-page and contents-page page styles always start on a recto.)
 $start-on: right; // right or auto or left ()
 
+// Set the default start-depth of pages.
+// This is the distance from the top of the page to the first element on the first page.
+// Set it in multiples of $line-height-default to preserve your baseline grid.
+$start-depth: $line-height-default * 6;
+
 // Style of page numbers on frontmatter pages
 // Remember to tag links to front matter pages in your TOC with {:.frontmatter-reference}
 $frontmatter-reference-style: lower-roman; // lower-roman, decimal, see http://www.princexml.com/doc/gen-content/#idp54010640
@@ -134,24 +139,26 @@ $recto-bottom-right-corner-frontmatter: normal;
 $highlight-tightened: inherit;
 $highlight-loosened: inherit;
 
-// --------------------------------------------------------
+// -------------------------------------------------------------
 // Import font files (@font-face) for fonts you specify
 // You may need to add the actual font files to `css/fonts`
-// --------------------------------------------------------
+// Download locations for each noted in the end-of-line comments
+// -------------------------------------------------------------
 
-//@import "adobe-caslon-pro";
-//@import "fonts/crimson-text";
-@import "fonts/crimson";
-@import "fonts/inconsolata";
-//@import "fonts/kalam";
-//@import "fonts/linux-biolinum";
-//@import "fonts/linux-libertine";
-//@import "fonts/montserrat";
-//@import "fonts/overpass";
-@import "fonts/source-sans-pro";
-//@import "fonts/trajan-pro";
-//@import "fonts/cormorant-garamond";
-//@import "fonts/libre-baskerville";
+//@import "adobe-caslon-pro"; // Proprietary: https://typekit.com/fonts/adobe-caslon-pro
+//@import "fonts/crimson-text"; // Open: https://www.google.com/fonts/specimen/Crimson+Text
+@import "fonts/crimson"; // Open: https://github.com/skosch/Crimson
+@import "fonts/inconsolata"; // Open: https://www.google.com/fonts/specimen/Inconsolata
+//@import "fonts/kalam"; // Open: https://www.google.com/fonts/specimen/Kalam
+//@import "fonts/linux-biolinum"; // Open: http://www.linuxlibertine.org/
+//@import "fonts/linux-libertine"; // Open: http://www.linuxlibertine.org/
+//@import "fonts/montserrat"; // Open: https://www.google.com/fonts/specimen/Montserrat
+//@import "fonts/overpass"; // Open: https://github.com/RedHatBrand/overpass
+@import "fonts/source-sans-pro"; // Open: https://www.google.com/fonts/specimen/Source+Sans+Pro
+//@import "fonts/trajan-pro"; // Proprietary: https://typekit.com/fonts/trajan-pro-3
+//@import "fonts/cormorant-garamond"; // Open: https://www.google.com/fonts/specimen/Cormorant+Garamond
+//@import "fonts/libre-baskerville"; // Open: https://fonts.google.com/specimen/Libre+Baskerville
+//@import "fonts/roboto"; // Open: https://fonts.google.com/specimen/Roboto
 
 // ---------------------
 // Import theme partials

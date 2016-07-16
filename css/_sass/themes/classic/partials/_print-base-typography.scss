@@ -73,6 +73,9 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+em, strong {
+	line-height: 100%; // Prevents some fonts from expanding/contracting a line's line height when em, strong present
+}
 
 /* Lists */
 
