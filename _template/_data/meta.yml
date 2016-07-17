@@ -55,12 +55,13 @@ titles:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
         identifier: "" # e.g. ISBN or UUID
-        files:
+        files: # To add a file to web navigation, give a file a value, e.g. 0-4-preface: "Preface"
           - "0-1-titlepage"
           - "0-2-copyright"
           - "0-3-contents"
-          - "01"
-          - "02"
+          - "01": "Chapter One"
+          - "02": "Chapter Two"
+        footer: "" # Text that appears in the footer of the website. You can include HTML.
       epub:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online

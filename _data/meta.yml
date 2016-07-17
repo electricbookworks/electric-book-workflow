@@ -49,6 +49,7 @@ titles:
           - 0-2-copyright
           - 0-3-contents
           - 0-4-preface
+          - 0-9-quick-start
           - 01-intro
           - 02-setting-up
           - 03-markdown
@@ -72,6 +73,33 @@ titles:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
         identifier: "978-1-928313-14-4" # e.g. ISBN or UUID
+        files: # To add a file to web navigation, give a file a value, e.g. 0-4-preface: "Preface"
+          - 0-1-titlepage
+          - 0-2-copyright
+          - 0-3-contents
+          - 0-4-preface
+          - 0-9-quick-start: "Quick start"
+          - 01-intro: "Introduction"
+          - 02-setting-up: "Setting up"
+          - 03-markdown: "Markdown"
+          - 04-themes: "Themes"
+          - 05-classes: "Classes"
+          - 10-tocs: "Tables of contents"
+          - 15-images: "Images"
+          - 16-video: "Video"
+          - 17-notes: "Notes"
+          - 18-tables: "Tables"
+          - 19-indexes: "Indexes"
+          - 20-poetry: "Poetry"
+          - 25-page-numbers: "Page numbers"
+          - 30-javascript: "Javascript"
+          - 40-indd-to-md: "InDesign conversion"
+          - 50-print-output: "Print output"
+          - 51-epub-output: "Epub output"
+          - 60-troubleshooting: "Troubleshooting"
+          - 70-examples: "Examples"
+        footer: |
+          <a href="http://electricbookworks.com">Electric Book Works</a> • <a href="https://github.com/electricbookworks/electric-book-workflow">Source</a>
       epub:
         date: "2016-05-07" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online
@@ -82,6 +110,7 @@ titles:
           - 0-2-copyright
           - 0-3-contents
           - 0-4-preface
+          - 0-9-quick-start
           - 01-intro
           - 02-setting-up
           - 03-markdown

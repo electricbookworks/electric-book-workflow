@@ -145,24 +145,31 @@ $highlight-loosened: inherit;
 // You may need to add the actual font files to `css/fonts`
 // --------------------------------------------------------
 
-//@import "adobe-caslon-pro";
-//@import "fonts/crimson-text";
-@import "fonts/crimson";
-@import "fonts/inconsolata";
-//@import "fonts/kalam";
-//@import "fonts/linux-biolinum";
-//@import "fonts/linux-libertine";
-//@import "fonts/montserrat";
-//@import "fonts/overpass";
-@import "fonts/source-sans-pro";
-//@import "fonts/trajan-pro";
-//@import "fonts/cormorant-garamond";
+//@import "classic/css/_sass/partials/fonts/adobe-caslon-pro";
+//@import "classic/css/_sass/partials/fonts/crimson-text";
+@import "classic/css/_sass/partials/fonts/crimson";
+@import "classic/css/_sass/partials/fonts/inconsolata";
+//@import "classic/css/_sass/partials/fonts/kalam";
+//@import "classic/css/_sass/partials/fonts/linux-biolinum";
+//@import "classic/css/_sass/partials/fonts/linux-libertine";
+//@import "classic/css/_sass/partials/fonts/montserrat";
+//@import "classic/css/_sass/partials/fonts/overpass";
+@import "classic/css/_sass/partials/fonts/source-sans-pro";
+//@import "classic/css/_sass/partials/fonts/trajan-pro";
+//@import "classic/css/_sass/partials/fonts/cormorant-garamond";
 
 // ---------------------
 // Import theme partials
 // ---------------------
 
-@import "themes/classic/print";
+@import "classic/css/_sass/print";
+
+// ---------------
+// Debugging tools
+// ---------------
+
+// Uncomment this lines to show all the hyphenation points Prince is using
+//body { hyphens: prince-expand-all!important; }
 
 // -------------
 // Custom styles

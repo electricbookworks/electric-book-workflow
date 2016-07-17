@@ -145,26 +145,33 @@ $highlight-loosened: inherit;
 // Download locations for each noted in the end-of-line comments
 // -------------------------------------------------------------
 
-//@import "adobe-caslon-pro"; // Proprietary: https://typekit.com/fonts/adobe-caslon-pro
-//@import "fonts/crimson-text"; // Open: https://www.google.com/fonts/specimen/Crimson+Text
-@import "fonts/crimson"; // Open: https://github.com/skosch/Crimson
-@import "fonts/inconsolata"; // Open: https://www.google.com/fonts/specimen/Inconsolata
-//@import "fonts/kalam"; // Open: https://www.google.com/fonts/specimen/Kalam
-//@import "fonts/linux-biolinum"; // Open: http://www.linuxlibertine.org/
-//@import "fonts/linux-libertine"; // Open: http://www.linuxlibertine.org/
-//@import "fonts/montserrat"; // Open: https://www.google.com/fonts/specimen/Montserrat
-//@import "fonts/overpass"; // Open: https://github.com/RedHatBrand/overpass
-@import "fonts/source-sans-pro"; // Open: https://www.google.com/fonts/specimen/Source+Sans+Pro
-//@import "fonts/trajan-pro"; // Proprietary: https://typekit.com/fonts/trajan-pro-3
-//@import "fonts/cormorant-garamond"; // Open: https://www.google.com/fonts/specimen/Cormorant+Garamond
-//@import "fonts/libre-baskerville"; // Open: https://fonts.google.com/specimen/Libre+Baskerville
-//@import "fonts/roboto"; // Open: https://fonts.google.com/specimen/Roboto
+//@import "classic/css/_sass/partials/fonts/adobe-caslon-pro"; // Proprietary: https://typekit.com/fonts/adobe-caslon-pro
+//@import "classic/css/_sass/partials/fonts/crimson-text"; // Open: https://www.google.com/fonts/specimen/Crimson+Text
+@import "classic/css/_sass/partials/fonts/crimson"; // Open: https://github.com/skosch/Crimson
+@import "classic/css/_sass/partials/fonts/inconsolata"; // Open: https://www.google.com/fonts/specimen/Inconsolata
+//@import "classic/css/_sass/partials/fonts/kalam"; // Open: https://www.google.com/fonts/specimen/Kalam
+//@import "classic/css/_sass/partials/fonts/linux-biolinum"; // Open: http://www.linuxlibertine.org/
+//@import "classic/css/_sass/partials/fonts/linux-libertine"; // Open: http://www.linuxlibertine.org/
+//@import "classic/css/_sass/partials/fonts/montserrat"; // Open: https://www.google.com/fonts/specimen/Montserrat
+//@import "classic/css/_sass/partials/fonts/overpass"; // Open: https://github.com/RedHatBrand/overpass
+@import "classic/css/_sass/partials/fonts/source-sans-pro"; // Open: https://www.google.com/fonts/specimen/Source+Sans+Pro
+//@import "classic/css/_sass/partials/fonts/trajan-pro"; // Proprietary: https://typekit.com/fonts/trajan-pro-3
+//@import "classic/css/_sass/partials/fonts/cormorant-garamond"; // Open: https://www.google.com/fonts/specimen/Cormorant+Garamond
+//@import "classic/css/_sass/partials/fonts/libre-baskerville"; // Open: https://fonts.google.com/specimen/Libre+Baskerville
+//@import "classic/css/_sass/partials/fonts/roboto"; // Open: https://fonts.google.com/specimen/Roboto
 
 // ---------------------
 // Import theme partials
 // ---------------------
 
-@import "themes/classic/print";
+@import "classic/css/_sass/print";
+
+// ---------------
+// Debugging tools
+// ---------------
+
+// Uncomment this lines to show all the hyphenation points Prince is using
+//body { hyphens: prince-expand-all!important; }
 
 // -------------
 // Custom styles

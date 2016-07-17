@@ -10,6 +10,6 @@ style: home
 
 This guide is created with the workflow. Read it here, or download [the PDF](download/ebw-electric-book-workflow-guide.pdf) or [EPUB](download/ebw-electric-book-workflow-guide.epub) versions. 
 
-[Read the guide](guide/{{ page.start-page }}){:.button}&ensp;
+[Read the guide](guide/{{ site.contents-page }}){:.button}&ensp;
 [Quick start](guide/0-9-quick-start.html){:.button}
 {:.first}

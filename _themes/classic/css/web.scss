@@ -34,10 +34,10 @@
 // Set variables
 // -------------
 
-$font-text-main: "Crimson", serif;
+$font-text-main: "Crimson Text", serif;
 $font-text-secondary: "Source Sans Pro", sans-serif;
 $font-display-main: "Source Sans Pro", sans-serif;
-$font-display-secondary: "Crimson", serif;
+$font-display-secondary: "Crimson Text", serif;
 $font-code: "Inconsolata", monospace;
 
 $font-size-default: 1.2em;
@@ -47,17 +47,18 @@ $line-height-default: 150%;
 // Import font files (@font-face) for fonts you specify
 // ----------------------------------------------------
 
-//@import "fonts/linux-libertine";
-@import "fonts/source-sans-pro";
-@import "fonts/inconsolata";
-@import "fonts/crimson";
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+//@import "classic/css/_sass/partials/fonts/linux-libertine";
+//@import "classic/css/_sass/partials/fonts/source-sans-pro";
+//@import "classic/css/_sass/partials/fonts/inconsolata";
+//@import "classic/css/_sass/partials/fonts/crimson";
 
 // -------------------
 // Import master theme
 // -------------------
 
 // Classic theme
-@import "themes/classic/web";
+@import "classic/css/_sass/web";
 
 // -------------
 // Custom styles
@@ -65,45 +66,13 @@ $line-height-default: 150%;
 
 // Add any custom style rules here.
 
-// E.g. uncomment the following lines to use space between paragraphs rather than text indents.
-//p {
-//    margin-bottom: 1em;
-//    text-indent: 0;
-//}
-
-// Half-title page
-
-.halftitle-page {}
-
-// Title page
-
-.title-page {}
-
-// Previous publications page ('Also by the author')
-
-.previous-publications-page {}
-
-// Copyright page
-
-.copyright-page {}
-
-// Table of contents
-
-.contents-page {}
-
-// Dedication page
-
-.dedication-page {}
-
-// Epigraph page
-
-.epigraph-page {}
-
-// Frontispiece
-
-.frontispiece-page {}
-
-// Other frontmatter
-
-.frontmatter {}
+.home p img {
+	float: right;
+	max-width: 8em;
+	padding: 0 0 0.5em 1em;
+}
+p {
+    margin-bottom: 1em;
+    text-indent: 0;
+}
 
