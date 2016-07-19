@@ -1,4 +1,0 @@
-# Addon config that sets site.output to web
-# To run from command line:
-# jekyll build -c _config.yml,config.web.yml
-output: "web"
