@@ -21,26 +21,6 @@ The technical team members who run the workflow need to be familiar with a few c
 *	**Git**: software for tracking a team's changes and syncing them with a remote server. We like to use [GitHub](http://github.com) and [Bitbucket](http://bitbucket.org) as our remotes.
 *	**Sigil**: an open-source epub editor, where we quickly assemble ebooks.
 *   **PrinceXML**: an app for creating PDFs from HTML and CSS (Prince is the only proprietary part of this stack).
-> ## Example: Bettercare
-> 
-> Bettercare publishes nursing textbooks. The team uses the workflow to keep a book's master content in markdown files, structured for Jekyll, on GitHub. For instance, Bettercare's books are stored here: [https://github.com/bettercarehealth/bettercare](https://github.com/bettercarehealth/bettercare)
-> 
-> > Note: Bettercare is a great example of a big publishing project using the workflow. However, since it was our first full implementation, it uses an early, outdated version of the workflow.
-> {:.box}
-> 
-> The workflow uses the [kramdown syntax](http://kramdown.gettalong.org/) for markdown, in part because that's what GitHub uses and largely because it has specific features we need, such as classes (with 'inline attribute lists' or IALs).
-> 
-> For Bettercare's open-source books, we let GitHub Pages publish the static HTML output, which it does automatically, also with Jekyll. For instance, our staging site for Bettercare content is here: [http://bettercarehealth.github.io/bettercare/](http://bettercarehealth.github.io/bettercare/)
-> 
-> Bettercare then copies the output HTML to a [separate, production site](http://ls.bettercare.co.za).
-> 
-> When we use this workflow for closed content, we don't use GitHub Pages, and store the content in private GitHub or Bitbucket repos instead.
-> 
-> If you click through to a book chapter available on the web, you'll see the HTML we get from kramdown is very neat. For example, view source here: [http://bettercarehealth.github.io/bettercare/nc/nc-1.html](http://bettercarehealth.github.io/bettercare/nc/nc-1.html)
-> 
-> The key to simple HTML is in carefully [mapping a book's features](http://electricbookworks.com/kb/creating-epub-from-indesign/mapping-book-features-to-html-elements-and-classes/) to ordinary HTML elements. That way, we need only a few classes, and can easily use the same HTML with simple stylesheets for the web, apps, epub, and print output. And our HTML content remains readable in readers and low-bandwidth browsers with low CSS support. 
-> 
-> Finally, to turn our HTML into print PDFs, we use [PrinceXML](http://princexml.com). And we use Sigil to put our HTML into EPUB2-valid epubs. This way, we can create print PDFs or epubs in a  matter of minutes.
 
 ## Folder (repo) structure
 

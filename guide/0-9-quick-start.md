@@ -41,6 +41,6 @@ Follow the [instructions in our guide](http://electricbookworks.github.io/electr
 
 The workflow includes the default Classic theme.
 
-1. In the `css` folder, open the `print.scss`, `web.scss` and/or `epub.scss` files.
+1. In the `_themes/classic/css` folder, open the `print.scss`, `web.scss` and/or `epub.scss` files.
 2. Follow the instructions in the comments to edit the variable values (e.g. change `$margin-top: 15mm;` to `$margin-top: 20mm;`) and enable the fonts you want. If you're not sure about something, don't change it: the defaults work pretty well.
 3. Add any custom CSS at the bottom.

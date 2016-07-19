@@ -5,26 +5,28 @@ title: Introduction
 # Introduction
 {:.no_toc title="Introduction" .page-1}
 
-At [Electric Book Works](http://electricbookworks.com), we needed a system that is easy for non-technical people to edit books in, includes great version control, produces books fast (no InDesign layout except for cover design), and instantly produces HTML we can use for the web, ebooks, apps, and print. By print, we mean high-end books you buy in a store, not just 'save as PDF'. We didn't want to be locked into any proprietary tools, either: we needed to use open technologies to ensure our content was future-proof.
+At [Electric Book Works](http://electricbookworks.com), we'd been producing books with InDesign for years. InDesign is awesome, but it makes publishing simultaneously to print and digital formats a real pain. No matter how we set things up, we always ended up with separate master files: one for print, one for the ebook, and one for the website. And keeping those in sync over time was almost impossible.
 
-So we put this workflow together:
+We needed a way to instantly create PDF (for high-end, professional book publishing), epub and website editions of a book from a single master source. We needed great version control and cloud backup. We wanted to be able to edit from anywhere, in a way that is easy for non-technical people to learn. 
 
-1.	We store a book's master files in plain text (formatted as [markdown](http://daringfireball.net/projects/markdown/syntax#philosophy)).
+And we didn't want to be locked into any proprietary tools, whose price or availability could change at any time. We needed to use entirely open technologies to ensure our content was future-proof. And we didn't want to develop any code that others had already developed.
+
+We spent several years piecing together a solution, bit by bit. Eventually, we settled on a workflow that is (relatively) simple and powerful:
+
+1.	We store a book's master files in plain text, formatted as [markdown](http://daringfireball.net/projects/markdown/syntax#philosophy).
 2.	We turn that plain text into clean HTML instantly (using [Jekyll](http://jekyllrb.com/)).
 3.	We apply different stylesheets to that HTML to get beautiful web versions, ebooks and print PDFs in minutes (using [Sigil](http://sigil-ebook.com/) and [PrinceXML](http://www.princexml.com/)).
-4.	Everything is stored securely with state-of-the-art version-control (using [GitHub](https://github.com) or [BitBucket](http://bitbucket.org)).
+4.	Everything is stored securely with state-of-the-art version-control (using [GitHub](https://github.com) and similar services).
 
-Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. (They can even work directly on the master files online using [Prose](http://prose.io/).)
+Markdown is so simple that non-technical people can learn how to create and edit it in under an hour. They can even work directly on the master files online using [Prose](http://prose.io/).
 
 Jekyll is great at generating clean HTML in flexible ways, and has a big, active development community and committed project owners. Is also includes kramdown and Sass, which are critical to creating new book designs quickly.
 
-While PrinceXML is proprietary software, it's our favourite implementation of the open standards for CSS Paged Media. You might also try [Antenna House](https://www.antennahouse.com/). And as more open-source tools (e.g. [WeasyPrint](http://weasyprint.org/)) support CSS Paged Media more fully, we'll have more options here.
+While PrinceXML is proprietary software, it's our favourite implementation of the open standards for CSS Paged Media.
 
-## Alternatives
+## Alternative tools
 
-There are several digital-first book-publishing systems around.
-
-Some are also based on markdown, like ours. For example:
+There are several digital-first book-publishing systems around. Some are also based on markdown, like ours. For example:
 
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
@@ -36,14 +38,12 @@ Some are also based on markdown, like ours. For example:
 
 And if you're a serious publishing outfit, have a look at [O'Reilly Atlas](https://atlas.oreilly.com/).
 
-[Editoria](https://editoria.pub/) takes another promising approach, building an open-source publishing system on the [PubSweet](http://coko.foundation/resources.html) framework. It uses HTML5-based editors rather than markdown, but has similar aims to our workflow.
-
-[OERPub Editor](http://oerpub.org/tools/) is a web-based editor for non-technical people to create EPUB3 HTML that includes maths. As a Javascript editor it runs in the browser and saves content in EPUB3 structure to a GitHub repo. Neat.
+The Coko Foundation is building [Editoria](https://editoria.pub/) with their new [PubSweet](http://coko.foundation/resources.html) framework. 
 
 For converting HTML/CSS to print PDF, we use PrinceXML, which is proprietary. Other alternatives, which we haven't tested or don't yet support all the page-layout features we need, include:
 
-*	[Antenna House](https://www.antennahouse.com/) (proprietary, mature)
-*	[WeasyPrint](http://weasyprint.org/) (open-source, in active development)
-*	[Vivliostyle](https://github.com/vivliostyle/vivliostyle) (young, apparently open-source, but [also commercial](http://vivliostyle.com/en/))
-*	[PDFReactor](http://www.pdfreactor.com/) (proprietary)
-*	[DocRaptor](http://docraptor.com/) (a cloud-service implementation of PrinceXML)
+*	[Antenna House](https://www.antennahouse.com/), a proprietary, mature system
+*	[WeasyPrint](http://weasyprint.org/), an open-source PDF engine in active development
+*	[Vivliostyle](http://vivliostyle.com/en/), which is [partly open-source](https://github.com/vivliostyle/vivliostyle)
+*	[PDFReactor](http://www.pdfreactor.com/), a proprietary PDF engine
+*	[DocRaptor](http://docraptor.com/), a cloud-service implementation of PrinceXML.

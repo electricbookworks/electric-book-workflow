@@ -21,8 +21,8 @@ series:
 
 titles:
   guide: # This entry must match the book's folder exactly
-    title: "A Guide to the Electric Book Workflow"
-    subtitle: ""
+    title: "The Electric Book Workflow"
+    subtitle: "A Guide"
     creator: "Arthur Attwell" # E.g. the author
     contributor: "" # E.g. other contributors
     subject: "Publishing" # E.g. BISAC terms (https://www.bisg.org/bisac/bisac-subject-codes) or BIC (http://editeur.dyndns.org/bic_categories)
