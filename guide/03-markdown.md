@@ -88,7 +88,7 @@ Just put `*` before and after the italicised words: `is it really *this* easy?`.
 
 Just put two `*`s before and after the bold text: `good for **shouting**`. **Shouting.**
 
-Tip: If you use bold in a first-level heading (e.g. `# **Chapter 1** Lost at Sea`), our default typography will put that bold text onto its own line, set off from the heading. This is useful for chapter numbers that should look separate from the chapter title, but in the underlying HTML need to be part of the heading, for instance when software generates tables of contents.
+Tip: If you use bold in a first-level heading (e.g. `# **Chapter 1** Lost at Sea`), our Classic theme's typography will put that bold text onto its own line, set off from the heading. This is useful for chapter numbers that should look separate from the chapter title, but in the underlying HTML need to be part of the heading, for instance when software generates tables of contents.
 {:.sidenote}
 
 ### Lists
@@ -204,7 +204,7 @@ Endnotes in our workflow appear at the end of a document (that is, a web page or
 
 We'll explain how to create notes on the side or bottom of a page (footnotes) later when we talk about classes.
 
-(By the way, endnote references are `<sup>` in kramdown's HTML, not unicode numbers like ². We style for these and for `<sub>`, as in H<sub>2</sub>O.)
+(By the way, endnote references are `<sup>` in kramdown's HTML, not unicode numbers like ². The Classic theme includes styling for these and for `<sub>`, as in H<sub>2</sub>O.)
 
 [^1]: In kramdown syntax, unfortunately, endnotes are called footnotes; so it's easy to confuse them. In book parlance, there is a big difference between footnotes and endnotes.
 
@@ -244,7 +244,7 @@ This paragraph should be in a box.
 
 For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we'll have to combine it with a CSS stylesheet that includes formatting instructions for the `box` class. If you're just editing in markdown, you don't have to think about the stylesheets. Our default stylesheets include designs for `box` as well as several other classes. (Which we'll list in a moment.)
 
-But if your book needs classes that aren't already in our workflow's default stylesheets, you'll need to ask a CSS-savvy designer to write you some CSS rules for your new class, and to [put these in a child stylesheet](https://github.com/electricbookworks/electric-book-workflow#stylesheets).
+But if your book needs classes that aren't already supported in the Classic theme, you'll need to ask a CSS-savvy designer to write you some CSS rules for your new class, to add to the bottom of your theme's master `.scss` files as custom CSS.
 
 > ### Inventing classes
 >
@@ -255,13 +255,15 @@ In addition to boxes, our default stylesheets include lots of other classes for 
 
 > ### Block and inline elements
 > 
-> Classes can be applied to two kinds of element: *block* elements and *inline* elements.
+> Attribute tags like classes can be applied to two kinds of element: *block* elements and *inline* elements.
 > 
-> A block element is anything that should (in print or on screen) start and end with a line break, like a paragraph or a list. An inline element is anything that appears inside a line of running text, like bold and italic. Most of our pre-designed classes are for either block or inline elements, and sometimes both.
+> A block element is anything that should (in print or on screen) start and end with a line break, like a paragraph or a list. An inline element is anything that appears inside a line of running text, like bold and italic.
+> 
+> Most of the Classic theme's pre-designed classes are for either block or inline elements, and sometimes both.
 >
-> When you apply a tag to a block-level element in kramdown, you put the tag on the line immediately following the element.
+> When you apply an attribute tag to a block-level element in kramdown, you put the tag on the line immediately following the element.
 >
-> When you apply a tag to an inline element, mark off the text you're tagging with asterisks (`*`), as you would italics, and put your tag immediately after the closing `*`, on the same line. E.g. `*Make this small-caps.*{:.smallcaps}`.
+> When you apply an attribute tag to an inline element, it appears immediately at the end of a span (a span is any contiguous series of inline characters inside a block element). Spans in kramdown can be marked off with asterisks as if they are italics: mark off the text you're tagging with asterisks (`*`), as you would italics, and put your tag immediately after the closing `*`, on the same line. E.g. `*Make this small-caps.*{:.smallcaps}`. The Classic theme will then apply the correct styling to the span, instead of the default italic. 
 {:.box}
 
 To see all the classes that our Classic theme supports, see the [Supported classes](05-classes.html#supported-classes) section.
