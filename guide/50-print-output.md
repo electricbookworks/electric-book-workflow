@@ -61,9 +61,9 @@ For general instructions, see [the official PrinceXML user guide](http://www.pri
 
 ## Refining print layout
 
-You will doubtless want to refine your print layout by editing your markdown and adding custom CSS to your print `.scss` file.
+You will doubtless want to refine your print layout by editing your markdown and adding custom CSS to the `print.scss` file in your theme.
 
-For instance, to save widows and orphans, when using the Classic theme, you can tighten letter-spacing by adding `{:.tighten}` and `{:.loosen}` tags to the lines after paragraphs.
+For instance, to save widows and orphans, when using the Classic theme, you can tighten letter-spacing by adding `{:.tighten-5}` and `{:.loosen-5}` tags to the lines after paragraphs. The number in the tag refers to how many thousands of an em you're affecting letter-spacing by. For instance, `{:.tighten-10}` will tighten letter-spacing by 10/1000 em. In good typography, you should avoid tightening or loosening by more than 10/1000 wherever possible.
 
 And to add manual hyphens to improve spacing, use discretionary hyphens (aka soft hyphens) by adding the HTML entity `&shy;` where you want the soft hyphen.
 

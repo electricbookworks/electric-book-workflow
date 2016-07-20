@@ -8,6 +8,12 @@ title: Epub output
 * toc
 {:toc}
 
+> Experimental short-cut:
+> 
+> * If you're using Windows, you can generate HTML for epub use instantly by running `win-epub.bat`, which you'll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll installed and working. The script tells Jekyll to compile epub-ready HTML, opens Sigil, and opens `0-0-cover.html` there, which automatically imports your book's metadata into the epub. It also opens a file browser to the epub-ready HTML files.
+> * In Sigil, then, fix the link to your cover image (it should be `../Images/0-0-cover.html` for Sigil), add the remaining content files and `epub.css`, define file semantics, and generate a TOC.
+{:.box}
+
 ## Assembling the epub
 
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)

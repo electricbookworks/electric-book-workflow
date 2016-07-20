@@ -4,7 +4,7 @@ title: Quick start
 
 # Quick new-book setup
 
-This quick setup assumes you already have Jekyll and Prince installed and working on your computer. There is more detail, and lots of more advanced guidance, in [our online guide](http://electricbookworks.github.io/electric-book-workflow/).
+This quick setup assumes you already have Jekyll and Prince installed and working on your computer. There is more detail, and lots of more advanced guidance, in [this guide](http://electricbookworks.github.io/electric-book-workflow/).
 
 ## Create a basic book
 
@@ -16,8 +16,7 @@ This quick setup assumes you already have Jekyll and Prince installed and workin
 
 ## Output to print PDF
 
-1. In your book folder, open `print-list` and add the filenames, in order, of all the parts of your book. Make sure each filename has an `.html` extension, not `.md`. 
-2. In the series folder, run the `-pdf` script for your operating system. For Windows, it's called `win-pdf.bat`; for Linux, `linux-pdf.sh`.
+In the series folder, run the `-pdf` script for your operating system. For Windows, it's called `win-pdf.bat`; for Linux, `linux-pdf.sh`.
 
 > Note the Mac scripts are not working or available yet. We're still getting those right.
 {:.box}
@@ -40,6 +39,8 @@ Follow the [instructions in our guide](http://electricbookworks.github.io/electr
 
 ## Modify the design
 
-1. In the `css` folder, open the `print.scss`, `web.scss` and/or `epub.scss` files.
+The workflow includes the default Classic theme.
+
+1. In the `_themes/classic/css` folder, open the `print.scss`, `web.scss` and/or `epub.scss` files.
 2. Follow the instructions in the comments to edit the variable values (e.g. change `$margin-top: 15mm;` to `$margin-top: 20mm;`) and enable the fonts you want. If you're not sure about something, don't change it: the defaults work pretty well.
 3. Add any custom CSS at the bottom.

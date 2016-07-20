@@ -1,0 +1,72 @@
+---
+# Screen styles
+---
+
+// WHAT IS THIS?
+// This is typography for the Electric Book Classic theme (http://electricbook.io).
+// It is built with Sass. (See http://sass-lang.com, and http://jekyllrb.com/docs/assets for how Jekyll implements Sass.)
+// Jekyll will compile the finished CSS for your books in _site/_themes/classic/css.
+// 
+// HOW TO USE IT
+//
+// Edit the default variables below.
+// Comment/uncomment or add font imports below.
+// Add your own custom CSS at the bottom.
+
+// First, let's set character encoding. Don't change this.
+@charset "utf-8";
+
+// ----------------------
+// Hide unwanted elements
+// ----------------------
+
+// Uncomment these @imports to hide elements completely (also comment out @imports for these elements):
+// @import "hide-footer";
+// @import "hide-nav-bar";
+
+// -------------
+// Set variables
+// -------------
+
+$font-text-main: "Crimson Text", serif;
+$font-text-secondary: "Source Sans Pro", sans-serif;
+$font-display-main: "Source Sans Pro", sans-serif;
+$font-display-secondary: "Crimson Text", serif;
+$font-code: "Inconsolata", monospace;
+
+$font-size-default: 1.2em;
+$line-height-default: 150%;
+
+// ----------------------------------------------------
+// Import font files (@font-face) for fonts you specify
+// ----------------------------------------------------
+
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+//@import "classic/css/_sass/partials/fonts/linux-libertine";
+//@import "classic/css/_sass/partials/fonts/source-sans-pro";
+//@import "classic/css/_sass/partials/fonts/inconsolata";
+//@import "classic/css/_sass/partials/fonts/crimson";
+
+// -------------------
+// Import master theme
+// -------------------
+
+// Classic theme
+@import "classic/css/_sass/web";
+
+// -------------
+// Custom styles
+// -------------
+
+// Add any custom style rules here.
+
+.home p img {
+	float: right;
+	max-width: 8em;
+	padding: 0 0 0.5em 1em;
+}
+p {
+    margin-bottom: 1em;
+    text-indent: 0;
+}
+

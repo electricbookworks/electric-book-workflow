@@ -90,7 +90,11 @@ To always use a specific image file for any given image, irrespective of the `im
 
 ## Image placement
 
-You may need to control how an image is sized and placed on the page – especially in print – depending on its detail or aspect ratio and nearby images or other elements. You do this by adding the class tag to the line after the `>` lines. (This applies a class to the blockquote in HTML.) You have these options:
+You may need to control how an image is sized and placed on the page – especially in print – depending on its detail or aspect ratio and nearby images or other elements. You do this by adding a class tag to the line following the image or figure created with a `>` blockquote. (This applies a class to the blockquote in HTML.) 
+
+In the Classic theme, you have two broad options:
+
+The lazy way: use these class attributes:
 
 * `.x-small` limits the image height. In print, to 30mm.
 * `.small` limits the image height. In print, to 45mm.
@@ -107,6 +111,16 @@ You add these classes to the `{:.figure} tag like this:
 and so on. You can combine size and placement classes like this, too:
 
 `{:.figure .fixed .small}`
+
+The more accurate way: use a class tag to specify the exact height of the image in lines. This is important if you're maintaining a baseline grid on your pages. For instance, `{:.height-5}` will limit the image to a height of five lines. Unlike the lazy way above, this tag should be applied to the image, not the figure. So a complete figure element might look like this in markdown:
+
+~~~
+> ![Potatoes on the moon]({{ site.image-set }}/1-moon-potatoes.jpg)
+> {:.height-12}
+>
+> Potatoes grow well on the moon if well watered.
+{:.figure}
+~~~
 
 > CSS tip: [If you're having trouble with SVGs having space around them](http://stackoverflow.com/questions/24626908/how-to-get-rid-of-extra-space-below-svg-in-div-element), in your CSS make sure you set the height of the `img` element. SVGs are inline elements by default, and will add white space around them.
 
