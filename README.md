@@ -8,14 +8,18 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
-### 0.1.5
+### 0.2.0
 
-* Change `print-list` to `file-list` and auto-generate from file lists per product in `meta.yml`
-* Create `win-epub.bat` to speed up EPUB creation
+* Move series template out into its own repo for easier forking/copying.
+* Move themes into `_themes` folder (better theme management, and in line with likely forthcoming Jekyll theme structure).
+* Improve `nav` and `footer` elements to give themes more to work with, and allow for fuller web output chapter menus.
+* Change `print-list` to `file-list` and auto-generate from file lists per product in `meta.yml`.
+* Create `win-epub.bat` to speed up EPUB creation.
 * Improve Windows batch files for output to print PDF and PDF ebook
-* Add CSS option for pure black in addition to rich black
-* Add template folders and minimal guidance for using Javascript
-* Various minor improvements
+* Add CSS options for pure black in addition to rich black, and a $start-depth variable to keep chapter openers consistent more easily.
+* Add template folders and minimal guidance for using Javascript.
+* Update and improve Guide text in many places, mainly where it was out of date.
+* Various minor improvements.
 
 ### 0.1.4
 
