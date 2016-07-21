@@ -8,9 +8,9 @@ This quick setup assumes you already have Jekyll and Prince installed and workin
 
 ## Create a basic book
 
-1. Download the latest ebw-series-template_vX.X.X.zip from [Releases](https://github.com/electricbookworks/electric-book-workflow/releases).
-2. Extract it, naming the folder after your series. (Many series are 'one book' series. For instance, a self-standing novel by a new author. In this case, we usually give the series folder the same name as the book itself. Use lower-case letters and no spaces in your folder names. Try to keep it short, e.g. `big-day` not `a-big-day-at-the-races`.)
-3. Rename the `book-template` folder after your book. (E.g. `big-day`, too.)
+1. Download the latest [series template folder](https://github.com/electricbookworks/electric-book).
+2. Name the folder after your series. (Many series are 'one book' series. For instance, a self-standing novel by a new author. In this case, we usually give the series folder the same name as the book itself.
+3. Rename the `book-template` folder after your book, using lowercase letters and no spaces. (E.g. `big-day`) This folder name is the book title's 'slug'.
 4. Open `_data/meta.yml` and replace the sample book information there with your series and book information.
 5. In your book folder (formerly `book-template`), edit or remove the sample files, and add your book's content in markdown files.
 
