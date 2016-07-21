@@ -8,6 +8,10 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.2.2
+
+* Simplify tag for embedding YouTube video.
+
 ### 0.2.1
 
 * Bug-fix broken links in new nav include.
