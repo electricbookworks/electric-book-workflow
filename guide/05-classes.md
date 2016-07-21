@@ -44,8 +44,8 @@ Use these classes in your markdown to create specific formatting effects.
 | Poetry | `.verse` | Block | Designing poetry is tricky and important. Read about how to manage this [in our workflow guide](https://github.com/electricbookworks/electric-book-workflow#poetry). | No
 | Pull quote | `.pullquote` | Block | Displays a paragraph as a pull quote. | No
 | Sidenote | `.sidenote` | Block or inline | A sidenote appears in a sidebar to the right of the text. | No
-| Small caps (lowercase only) | `.smallcaps` | Block or inline | If your font supports proper small-caps glyphs. Only affects the lowercase letters. | No
-| Small caps throughout | `.allsmallcaps` | Block or inline | If your font supports proper small-caps glyphs, all characters are small caps. | No
+| Small caps (lowercase only) | `.smallcaps` | Block or inline | If your font supports proper small-caps glyphs. Only affects the lowercase letters. Add `.italics` or `.bold` if needed to italicise or bold. | No
+| Small caps throughout | `.allsmallcaps` | Block or inline | If your font supports proper small-caps glyphs, all characters are small caps.  Add `.italics` or `.bold` if needed to italicise or bold. | No
 | Source after a quotation | `.source` | Block | The name and/or title of the source for a preceding quotation. | No
 | Table caption | `.table-caption` | Block | Add `{:.table-caption}` in the line immediately after a table caption. Table captions must always appear above tables, not after them. | No
 | Table caption | `.table-caption` | Block | Use for the caption above a table. (Table captions should not appear after tables, only before.) | No

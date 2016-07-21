@@ -11,6 +11,7 @@ It's a work in progress with a learning curve, but we've already used it to crea
 ### 0.2.2
 
 * Simplify tag for embedding YouTube video.
+* Classic theme: add ability to combine `.smallcaps`/`.allsmallcaps` with `.bold` and `.italic` for italic/bold small caps.
 
 ### 0.2.1
 
