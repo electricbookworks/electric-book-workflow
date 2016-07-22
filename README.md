@@ -8,6 +8,11 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.2.3
+
+* Fix broken pink to print stylesheets.
+* Add font includes: Oswald.
+
 ### 0.2.2
 
 * Improve navigation layout.
