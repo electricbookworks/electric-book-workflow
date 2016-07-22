@@ -54,7 +54,7 @@ As to the manumission of the slaves you need not be uneasy. To begin with, the p
 See the workflow [README](https://github.com/electricbookworks/electric-book-workflow#the-ebw-book-workflow) on how to embed video like this. This paragraph and the video won't appear in the print edition.
 {:.non-printing}
 
-{% include youtube-start.html %}KuuLhizAqo8{% include youtube-end.html %}
+{% include youtube id="KuuLhizAqo8" %}
 
 To return to your advice, that I should keep up my courage and not give up hope of recovering my position, I only wish that there were any good grounds for entertaining such a hope. As it is, when, alas! shall I get a letter from you? Who will bring it me? I would have waited for it at Brundisium, but the sailors would not allow it, being unwilling to lose a favourable wind. 
 

@@ -1,14 +1,14 @@
 // Navigation
  
 #nav {
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 0;
     right: 0;
-	background-color: white;
-	width: 100%;
-	opacity: 0.9;
-	border-bottom: 1px solid #f2f2f2;
-	z-index: 1;
+    background-color: white;
+    width: 100%;
+    opacity: 0.9;
+    border-bottom: 1px solid #f2f2f2;
+    z-index: 1;
     font-size: 0.8em;
     font-family: $font-text-secondary;
     font-weight: 300;
@@ -17,8 +17,9 @@
     letter-spacing: 0.025em;
     ul { // Top level list
         list-style-type: none;
-        float: right;
-        margin: 0;
+        float: left;
+        margin: 0 1em;
+        padding: 0; // Important to avoid being overridden by page styles, e.g. `.contents-page ol`
         li {
             float: left;
             margin: 0.5em 2em 0.5em 0;
@@ -35,9 +36,8 @@
             display: none; // this gets overridden on hover/active/focus
             clear: both; // so that this falls beneath the parent list
             //position: absolute;
-            text-align: right;
             li {
-                float: none;
+                //float: none;
                 position: relative;
             }
         }
@@ -63,8 +63,8 @@
 
 // Narrow screens
 @media only screen 
-and (max-height: 320px) { // Let nav-bar scroll out of view on small screens
-	#nav {
-		position: relative;
-	}
+and (max-height: $break-point-height) { // Let nav-bar scroll out of view on small screens
+    #nav {
+        position: absolute;
+    }
 }

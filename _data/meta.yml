@@ -8,7 +8,7 @@ series:
   # A live web address for the organisation
   url: "https://electricbookworks.com/"
   # The name of the series of books in this folder.
-  name: "Electric Book Workflow"
+  name: "The Electric Book Workflow"
   # A one-liner about this series. Useful for Open Graph metadata.
   description: "A workflow for creating high-quality books and ebooks with open technologies."
 
@@ -21,8 +21,8 @@ series:
 
 titles:
   guide: # This entry must match the book's folder exactly
-    title: "The Electric Book Workflow"
-    subtitle: "A Guide"
+    title: "A Guide to the Electric Book Workflow"
+    subtitle: "How to create high-quality books with open tools"
     creator: "Arthur Attwell" # E.g. the author
     contributor: "" # E.g. other contributors
     subject: "Publishing" # E.g. BISAC terms (https://www.bisg.org/bisac/bisac-subject-codes) or BIC (http://editeur.dyndns.org/bic_categories)
