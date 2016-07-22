@@ -10,8 +10,11 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ### 0.2.2
 
+* Improve navigation layout.
 * Simplify tag for embedding YouTube video.
-* Classic theme: add ability to combine `.smallcaps`/`.allsmallcaps` with `.bold` and `.italic` for italic/bold small caps.
+* Add ability to combine `.smallcaps`/`.allsmallcaps` with `.bold` and `.italic` for italic/bold small caps.
+* Add `web.scss` variables for media-query break points.
+* Fix bug causing horizontal overflow.
 
 ### 0.2.1
 
