@@ -11,7 +11,8 @@ It's a work in progress with a learning curve, but we've already used it to crea
 ### 0.2.3
 
 * Fix broken pink to print stylesheets.
-* Add font includes: Oswald.
+* Fix broken links in @font-face partials.
+* Add more font includes.
 
 ### 0.2.2
 
