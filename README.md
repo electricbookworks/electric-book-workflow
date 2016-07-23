@@ -13,6 +13,8 @@ It's a work in progress with a learning curve, but we've already used it to crea
 * Fix broken pink to print stylesheets.
 * Fix broken links in @font-face partials.
 * Add more font includes.
+* Turn on kramdown auto_id_stripping to keep IDs neat and persistent, and ahead of 2.0 where this will be default.
+* Fix line-height on chapter-numbers to retain baseline grid.
 
 ### 0.2.2
 
