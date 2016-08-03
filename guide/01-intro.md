@@ -31,6 +31,7 @@ There are several digital-first book-publishing systems around. Some are also ba
 *	[Gitbook IO](http://www.gitbook.io/)
 *	[Penflip](http://www.penflip.com/)
 *   [LeanPub](https://leanpub.com/) (which uses [Markua](http://markua.com/))
+*   [PubPub](https://www.pubpub.org/)
 *   [MagicBook](https://github.com/magicbookproject/magicbook)
 *	[Phil Schatz's viewer](http://philschatz.com/2014/07/07/tiny-book-reader).
 
