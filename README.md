@@ -8,6 +8,10 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.2.4
+
+* Fix `-fitting` classes style inheritance in web and epub CSS
+
 ### 0.2.3
 
 * Fix broken pink to print stylesheets.
