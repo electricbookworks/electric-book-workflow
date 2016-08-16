@@ -18,9 +18,19 @@ The technical team members who run the workflow need to be familiar with a few c
 *	**Markdown**: a simple, plain-text shortcut for creating HTML. (The original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) is the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), mainly because it lets us use attributes like classes.)
 *   **Sass**: a way to create complex CSS from simple rules.
 *	**Jekyll**: software that turns markdown and Sass into HTML and CSS. (To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).)
+*	**Bundler**: software that manages which version of Jekyll (and other Ruby gems) to apply to a project.
 *	**Git**: software for tracking a team's changes and syncing them with a remote server. We like to use [GitHub](http://github.com) and [Bitbucket](http://bitbucket.org) as our remotes.
 *	**Sigil**: an open-source epub editor, where we quickly assemble ebooks.
 *   **PrinceXML**: an app for creating PDFs from HTML and CSS (Prince is the only proprietary part of this stack).
+
+To use the workflow on your own machine, you must have the following software installed:
+
+* Ruby (ideally, via a Ruby version manager like RVM or Homebrew)
+* Bundler (manages your Ruby gem versions)
+* Jekyll (generates your source HTML)
+* PrinceXML (for generating PDFs from source HTML)
+* Sigil (for finishing epubs)
+* Git (or similar, if you want good version control).
 
 ## Folder (repo) structure
 
