@@ -20,4 +20,4 @@ Sometimes we use [Senseful's online tool](http://www.sensefulsolutions.com/2010/
 * Paste into the online Format Text as Table Input field.
 * Click 'Create Table'. (The default settings are usually fine. Play with them only if you need to.)
 * Copy the Output and paste it into your markdown file.
-* The Senseful tool starts some table borders with + where kramdown needs a |. Manually change the starting + in any row with a |.
+* The Senseful tool starts some table borders with + where kramdown needs a \|. Manually change the starting + in any row with a \|.
