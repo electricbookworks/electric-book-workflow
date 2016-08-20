@@ -1,7 +1,9 @@
-{% if page.type== 'file-list' %}
+{% if page.type == 'file-list' %}
+
 {{ content }}
 
-{% elsif site.output == 'epub' %}
+
+{% elsif site.output == 'epub' or site.output == 'print' or site.output == 'pdf-ebook' %}
 
 {% include header.html %}
 {% include start-wrapper.html %}

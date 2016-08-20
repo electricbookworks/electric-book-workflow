@@ -8,6 +8,10 @@ It's a work in progress with a learning curve, but we've already used it to crea
 
 ## Changelog
 
+### 0.2.5
+
+* Fixes to mac-pdf.command script
+
 ### 0.2.4
 
 * Add Gemfile and require bundler for scripts to work (NB since Jekyll 3.2.1)
