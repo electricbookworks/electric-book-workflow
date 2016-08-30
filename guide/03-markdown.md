@@ -272,11 +272,14 @@ To see all the classes that our Classic theme supports, see the [Supported class
 
 When you're working in markdown, you're creating text that might reflow in an infinite number of ways on screens and onto page layouts. This changes the way you edit, because nothing is static.
 
-For instance, deliberate use of non-breaking spaces is very useful:
+For instance, you can use special HTML codes to insert non-breaking spaces, discretionary ('soft') hyphens and non-breaking hyphens.
 
-*	To prevent ellipses falling after a line break, add a non-breaking space (`&nbsp;`) before ellipses.
-*	To prevent dashes falling after a line break, add a non-breaking space (`&nbsp;`) before the dash: `the en-dash&nbsp;– as I've explained&nbsp;– is tricky.`
-*	To prevent line breaks inside big numbers (e.g. at the space in 40&nbsp;000), between numbers and units (e.g. in 3&nbsp;pm, 24&nbsp;May), or between adjectives and their units (e.g. in Grade&nbsp;2), use a non-breaking space (`&nbsp;`) in the space:
-	*	`40&nbsp;000`
-	*	`3&nbsp;pm`
-	*	`Grade&nbsp;2`
+| I need to                                   | Use this | 
+|---
+| Prevent ellipses falling after a line break | Add a non-breaking space (`&nbsp;`) before ellipses.
+| Prevent dashes falling after a line break   | Add a non-breaking space (`&nbsp;`) before the dash: `the en-dash&nbsp;– as I've explained&nbsp;– is tricky.`
+| Prevent line breaks between numbers and units | Use a non-breaking space: e.g. for '3&nbsp;pm, 24&nbsp;May' type `3&nbsp;pm, 24&nbsp;May`
+| Prevent line breaks between adjectives and their units | Use a non-breaking space: e.g. for 'Grade&nbsp;2' type `Grade&nbsp;2`
+| Prevent line breaks inside big numbers| Use a non-breaking space: e.g. for '40&nbsp;000' type `40&nbsp;000`
+| Prevent a line break at a hyphen | Use `&#x2011;` for a non-breaking hyphen, e.g. `D&#x2011;Space` for 'D&#x2011;Space'
+| Allow a word to hyphenate at the end of a line | Insert a discretionary ('soft') hyphen code: `&shy;`. E.g. `mark&shy;down`
