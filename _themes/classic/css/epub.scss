@@ -54,3 +54,55 @@ $line-height-default: 1.5em;
 // -------------
 
 // Add any custom style rules here.
+
+// E.g. uncomment the following lines to use space between paragraphs rather than text indents.
+//p {
+//    margin-bottom: 1em;
+//    text-indent: 0;
+//}
+
+// Half-title page
+
+.halftitle-page {}
+
+// Title page
+
+.title-page {}
+
+// Previous publications page ('Also by the author')
+
+.previous-publications-page {}
+
+// Copyright page
+
+.copyright-page {}
+
+// Table of contents
+
+.contents-page {}
+
+// Dedication page
+
+.dedication-page {}
+
+// Epigraph page
+
+.epigraph-page {}
+
+// Frontispiece
+
+.frontispiece-page {}
+
+// Other frontmatter
+
+.frontmatter {}
+
+// Headings
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+

@@ -3,16 +3,16 @@ title: Title page
 style: title-page
 ---
 
-{% include get-slug.html %}
+{% include get-metadata %}
 
-{{ site.data.meta.titles.[slug].title }}
+{{ title }}
 {:.title-page-title}
 
-{{ site.data.meta.titles.[slug].subtitle }}
+{{ subtitle }}
 {:.title-page-subtitle}
 
-{{ site.data.meta.titles.[slug].creator }}
+{{ creator }}
 {:.title-page-author}
 
-{{ site.data.meta.titles.[slug].publisher }}
+{{ publisher }}
 {:.title-page-publisher}

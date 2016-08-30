@@ -47,13 +47,13 @@ The Electric Book repo (folder) is ready to use for a series of one or more book
 2. Edit `_config.yml` for your Jekyll setup.
 3. Edit `data/meta.yml` with information about your book(s).
 4. Edit the `.scss` files in `_themes/classic` to customise your book design.
-5. Rename the `book-template` folder for your first book, editing and create markdown files for each book part.
+5. Optionally, rename the `book` folder for your first book, editing and create markdown files for each book part.
 
 Now, let's get into some more detail about how it all works. There are several folders and files in the series template repo:
 
 *   `_config.yml`: a file for setting configuration options for Jekyll, which will compile your book for output. There are several other smaller config files you can ignore. They are for changing specific config settings on output.
 *   `_prose.yml`: configuration settings for using [prose.io](http://prose.io) for online book editing (generally, you won't have to edit this file).
-*   `book-template`: a folder for a book's content, stored here in a series of markdown files
+*   `book`: a folder for a book's content, stored here in a series of markdown files
 *   `_data`: a folder for information about your books (aka metadata).
 *   `_themes`: a collection of stylesheets that contorl design. Our template includes our Classic theme.
 *   `_includes`: snippets of HTML for Jekyll (you won't have to open this folder).
@@ -64,7 +64,7 @@ Now, let's get into some more detail about how it all works. There are several f
 
 Let's explain some of these in more detail.
 
-The `book-template` folder is a short, sample book. 
+The `book` folder is a short, sample book. 
 
 The files in the `_themes` folder handle the design of your books. It includes a theme that we call 'Classic'. A theme is a collection of files (Sass, CSS, fonts, Javascript and hyphenation dictionaries) that define a book's design. We hope that in future we and others might design other themes. Classic is extremely versatile and powerful already. For most book design, you'll only have to edit the variables in your own copies of `print.scss`, `web.scss` and `epub.scss`, and add a little custom CSS if you want to.
 
@@ -82,8 +82,8 @@ To create a new book in a new series:
     *   `_config.yml`: Edit the values there for your Jekyll setup. The comments will guide you.
     *   `index.md`: Replace our template text with your own. Usually, a link to each book is useful, e.g. `[Space Potatoes](space-potatoes)`.
     *   `README.md`: Replace our template text with any notes your collaborators might need to know about your series. (The README file is usually only read in the context of editing the files in your folder/repo.)
-1.	In `_data`, edit the `meta.yml` file, filling in your series info and info about at least your first book. The most important thing is to change the key 'book-template' to the folder name (or slug) you use for the book files. E.g. `space-potatoes` for your book *Space Potatoes*. (Jekyll will use that metadata, using Liquid tags, when constructing your book.)
-1.  Rename the `book-template` folder with the slug of your book's title (e.g. `space-potatoes`). Use only lowercase letters and no spaces. If you're creating more than one book, make a folder for each book.
+1.  Optionally, rename the `book` folder with a one-word, lowercase version of your book's title (e.g. `space-potatoes`). Use only lowercase letters and no spaces. If you're creating more than one book, make a folder for each book.
+1.	In `_data`, edit the `meta.yml` file, filling in your series info and info about at least your first book.
 1.  Inside a book's folder, add a markdown file for each piece of your book, e.g. one file per chapter. Our template contains files we consider minimum requirements for most books: a cover, a title page, a copyright page, a contents page, and a chapter.
 1.  Inside each book's folder, store images in the `images` folder. Add a `cover.jpg` image of your book's front cover there, too.
 1. In the `_themes/classic/css` folder, edit the values in `print.scss`, `web.scss` and `epub.scss`.

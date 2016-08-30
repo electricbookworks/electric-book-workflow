@@ -6,20 +6,15 @@ style: copyright-page
 # from this book's YML file in _data
 ---
 
+{% include get-metadata %}
+
 # Copyright
 {:.non-printing}
 
-{% include get-slug.html %}
+*{{ title }}*\\
+Text © {{ creator }}
 
-*{{ site.data.meta.titles.[slug].title }}*\\
-Text © {{ site.data.meta.titles.[slug].creator }}
+{% unless print-pdf-identifier == "" %}ISBN ({{ print-pdf-format }}): {{ print-pdf-identifier }}{% endunless %}<br />
+{% unless epub-identifier == "" %}ISBN ({{ epub-format }}): {{ epub-identifier }}{% endunless %}
 
-{% for id in site.data.meta.titles.[slug].products.print.identifier %}
-ISBN ({{ site.data.meta.titles.[slug].products.print.format }}): {{ id }}
-{% endfor %}
-
-{% for id in site.data.meta.titles.[slug].products.epub.identifier %}
-ISBN ({{ site.data.meta.titles.[slug].products.epub.format }}): {{ id }}
-{% endfor %}
-
-{{ site.data.meta.titles.[slug].rights }}
+{{ rights }}

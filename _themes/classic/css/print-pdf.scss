@@ -30,8 +30,8 @@ $edition-suffix: null;
 $page-size: 129mm 198mm; // Width, then height. 129×198 is B-format (Lightning Source compatible)
 $margin-top: 15mm;
 $margin-bottom: 20mm;
-$margin-outside: 15mm;
-$margin-inside: 15mm;
+$margin-outside: 13mm;
+$margin-inside: 19mm;
 $bleed: 3mm;
 $trim: 3mm;
 $crop-marks: crop; // crop | none
@@ -94,26 +94,26 @@ $frontmatter-reference-style: lower-roman; // lower-roman, decimal, see http://w
 // For other special characters, see CSS (ISO) at https://brajeshwar.github.io/entities/
 
 // Verso (left-hand-page)
-$verso-top: normal;
+$verso-top: string(h1-text, last);
 $verso-top-left: normal;
 $verso-top-right: normal;
 $verso-top-left-corner: normal;
 $verso-top-right-corner: normal;
-$verso-bottom: string(h1-text, last);
-$verso-bottom-left: counter(page);
+$verso-bottom: counter(page);
+$verso-bottom-left: normal;
 $verso-bottom-right: normal;
 $verso-bottom-left-corner: normal;
 $verso-bottom-right-corner: normal;
 
 // Recto (right-hand-page)
-$recto-top: normal;
+$recto-top: string(h2-text, last);
 $recto-top-left: normal;
 $recto-top-right: normal;
 $recto-top-left-corner: normal;
 $recto-top-right-corner: normal;
-$recto-bottom: string(h2-text, last);
+$recto-bottom: counter(page);
 $recto-bottom-left: normal;
-$recto-bottom-right: counter(page);
+$recto-bottom-right: normal;
 $recto-bottom-left-corner: normal;
 $recto-bottom-right-corner: normal;
 
@@ -123,8 +123,8 @@ $verso-top-left-frontmatter: normal;
 $verso-top-right-frontmatter: normal;
 $verso-top-left-corner-frontmatter: normal;
 $verso-top-right-corner-frontmatter: normal;
-$verso-bottom-frontmatter: string(h1-text, last);
-$verso-bottom-left-frontmatter: counter(page, $frontmatter-reference-style);
+$verso-bottom-frontmatter: counter(page, $frontmatter-reference-style);
+$verso-bottom-left-frontmatter: normal;
 $verso-bottom-right-frontmatter: normal;
 $verso-bottom-left-corner-frontmatter: normal;
 $verso-bottom-right-corner-frontmatter: normal;
@@ -135,35 +135,38 @@ $recto-top-left-frontmatter: normal;
 $recto-top-right-frontmatter: normal;
 $recto-top-left-corner-frontmatter: normal;
 $recto-top-right-corner-frontmatter: normal;
-$recto-bottom-frontmatter: string(h2-text, last);
+$recto-bottom-frontmatter: counter(page, $frontmatter-reference-style);
 $recto-bottom-left-frontmatter: normal;
-$recto-bottom-right-frontmatter: counter(page, $frontmatter-reference-style);
+$recto-bottom-right-frontmatter: normal;
 $recto-bottom-left-corner-frontmatter: normal;
 $recto-bottom-right-corner-frontmatter: normal;
 
-// Special highlights for temporary debugging/viewing. 
-
+// Special highlights for temporary debugging/viewing:
 // Specify a colour for highlighting; use 'inherit' for none.
 $highlight-tightened: inherit;
 $highlight-loosened: inherit;
 
-// --------------------------------------------------------
+// -------------------------------------------------------------
 // Import font files (@font-face) for fonts you specify
 // You may need to add the actual font files to `css/fonts`
-// --------------------------------------------------------
+// Download locations for each noted in the end-of-line comments
+// -------------------------------------------------------------
 
-//@import "classic/css/_sass/partials/fonts/adobe-caslon-pro";
-//@import "classic/css/_sass/partials/fonts/crimson-text";
-@import "classic/css/_sass/partials/fonts/crimson";
-@import "classic/css/_sass/partials/fonts/inconsolata";
-//@import "classic/css/_sass/partials/fonts/kalam";
-//@import "classic/css/_sass/partials/fonts/linux-biolinum";
-//@import "classic/css/_sass/partials/fonts/linux-libertine";
-//@import "classic/css/_sass/partials/fonts/montserrat";
-//@import "classic/css/_sass/partials/fonts/overpass";
-@import "classic/css/_sass/partials/fonts/source-sans-pro";
-//@import "classic/css/_sass/partials/fonts/trajan-pro";
-//@import "classic/css/_sass/partials/fonts/cormorant-garamond";
+//@import "classic/css/_sass/partials/fonts/adobe-caslon-pro"; // Proprietary: https://typekit.com/fonts/adobe-caslon-pro
+//@import "classic/css/_sass/partials/fonts/crimson-text"; // Open: https://www.google.com/fonts/specimen/Crimson+Text
+@import "classic/css/_sass/partials/fonts/crimson"; // Open: https://github.com/skosch/Crimson
+@import "classic/css/_sass/partials/fonts/inconsolata"; // Open: https://www.google.com/fonts/specimen/Inconsolata
+//@import "classic/css/_sass/partials/fonts/kalam"; // Open: https://www.google.com/fonts/specimen/Kalam
+//@import "classic/css/_sass/partials/fonts/linux-biolinum"; // Open: http://www.linuxlibertine.org/
+//@import "classic/css/_sass/partials/fonts/linux-libertine"; // Open: http://www.linuxlibertine.org/
+//@import "classic/css/_sass/partials/fonts/montserrat"; // Open: https://www.google.com/fonts/specimen/Montserrat
+//@import "classic/css/_sass/partials/fonts/overpass"; // Open: https://github.com/RedHatBrand/overpass
+@import "classic/css/_sass/partials/fonts/source-sans-pro"; // Open: https://www.google.com/fonts/specimen/Source+Sans+Pro
+//@import "classic/css/_sass/partials/fonts/trajan-pro"; // Proprietary: https://typekit.com/fonts/trajan-pro-3
+//@import "classic/css/_sass/partials/fonts/cormorant-garamond"; // Open: https://www.google.com/fonts/specimen/Cormorant+Garamond
+//@import "classic/css/_sass/partials/fonts/libre-baskerville"; // Open: https://fonts.google.com/specimen/Libre+Baskerville
+//@import "classic/css/_sass/partials/fonts/roboto"; // Open: https://fonts.google.com/specimen/Roboto
+//@import "classic/css/_sass/partials/fonts/oswald"; // Open: https://fonts.google.com/specimen/Oswald
 
 // ---------------------
 // Import theme partials
@@ -183,3 +186,49 @@ $highlight-loosened: inherit;
 // -------------
 
 // Add any custom style rules here.
+
+// Half-title page
+
+.halftitle-page {}
+
+// Title page
+
+.title-page {}
+
+// Previous publications page ('Also by the author')
+
+.previous-publications-page {}
+
+// Copyright page
+
+.copyright-page {}
+
+// Table of contents
+
+.contents-page {}
+
+// Dedication page
+
+.dedication-page {}
+
+// Epigraph page
+
+.epigraph-page {}
+
+// Frontispiece
+
+.frontispiece-page {}
+
+// Other frontmatter
+
+.frontmatter {}
+
+// Headings
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
