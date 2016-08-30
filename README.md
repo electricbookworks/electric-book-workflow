@@ -4,13 +4,16 @@ This workflow creates digital-first books in print, as ebooks, and for the web. 
 
 It's a work in progress with a learning curve, but we've already used it to create high-quality books for very discerning publishers. Used well, it can completely replace InDesign for the production of book interiors.
 
-[Read the guide](http://electricbookworks.github.io/electric-book-workflow/). As a little book, the guide is also an example of the workflow in action.
+[Read the guide](http://electricbookworks.github.io/electric-book-workflow/). As a little book, the guide is also an example of the workflow (version {{ site.version }}) in action.
 
 ## Changelog
 
-### 0.2.5
+### 0.3.0
 
+* Major change (and improvement) to metadata structures
+* Output formats now consistently named print-pdf, screen-pdf, epub and web
 * Fixes to mac-pdf.command script
+* Minor edits
 
 ### 0.2.4
 
