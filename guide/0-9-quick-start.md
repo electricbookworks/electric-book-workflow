@@ -10,9 +10,8 @@ This quick setup assumes you already have Jekyll and Prince installed and workin
 
 1. Download the latest [series template folder](https://github.com/electricbookworks/electric-book).
 2. Name the folder after your series. (Many series are 'one book' series. For instance, a self-standing novel by a new author. In this case, we usually give the series folder the same name as the book itself.
-3. Rename the `book-template` folder after your book, using lowercase letters and no spaces. (E.g. `big-day`) This folder name is the book title's 'slug'.
-4. Open `_data/meta.yml` and replace the sample book information there with your series and book information.
-5. In your book folder (formerly `book-template`), edit or remove the sample files, and add your book's content in markdown files.
+3. Open `_data/meta.yml` and replace the sample book information there with your series and book information.
+4. In your book folder (`book` in the template), edit or remove the sample files, and add your book's content in markdown files.
 
 ## Output to print PDF
 
