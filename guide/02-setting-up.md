@@ -73,7 +73,7 @@ The files in the `_themes` folder handle the design of your books. It includes a
 
 ## Creating a new book
 
-The process of setting up a new book is covered briefly in our [quick-start section](0-9-quick-start#quick-start). Here is more detail.
+The process of setting up a new book is covered briefly in our [quick-start section](0-9-quick-start.html#quick-new-book-setup). Here is more detail.
 
 To create a new book in a new series:
 
