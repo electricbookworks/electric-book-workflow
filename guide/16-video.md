@@ -13,7 +13,7 @@ You can include any iframe in markdown to embed a video. We've created a simple 
 
 {% endraw %}
 
-This will embed the video in an iframe like this:
+This will embed the video in an iframe. (In epub output, you can replace it with a link to watch the video online.)
 
 {% include youtube id="MqlyxZiDoOA" %}
 
