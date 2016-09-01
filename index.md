@@ -1,15 +1,16 @@
 ---
-book-title: The Electric Book Workflow
-title: About
+title: Home
 style: home
 ---
 
-# The Electric Book Workflow
+{% include get-metadata %}
 
-[![The Electric Book Workflow guide](guide/images/cover-thumb.jpg)](guide) The [Electric Book Workflow](https://github.com/electricbookworks/electric-book-workflow) is a set of tools and processes for creating high-quality books with (mostly) free, open technologies. We developed it at [Electric Book Works](http://electricbookworks.com) for our own publishing. It allows you to store books in plain text with great version control, and to output website versions, ebooks and print editions easily from a single source. With some technical expertise, you can implement it, too. 
+# {{ series-name }}
 
-This guide is created with the workflow. Read it here, or download [the PDF](download/electric-book-guide.pdf) or [EPUB](download/electric-book-guide.epub) versions. 
+{{ series-description }}
 
-[Read the guide](guide/{{ site.contents-page }}){:.button}&ensp;
-[Quick start](guide/0-9-quick-start.html){:.button}
+This guide is [created with the workflow](https://github.com/electricbookworks/electric-book-workflow). Read it here, or download [the PDF](download/electric-book-guide.pdf) or [EPUB](download/electric-book-guide.epub) versions. 
+
+[Read the guide](guide/text/0-3-contents.html){:.button}&ensp;
+[Quick start](guide/text/0-9-quick-start.html){:.button}
 {:.first}
