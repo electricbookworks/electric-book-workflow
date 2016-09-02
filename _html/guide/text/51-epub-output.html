@@ -1,0 +1,508 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>
+    
+    A guide to the Electric Book workflow: Epub output
+    
+    </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../styles/screen-pdf.css" />
+    
+
+    <!-- Google Analytics, runs unless this is running through PrinceXML -->
+    <script>
+        if (typeof Prince  === "undefined") {
+            <!--Paste any Google Analytics code here. The surrounding if statement stops the script slowing down PrinceXML-->
+        }
+    </script>
+
+</head>
+<!--ontouchstart="" onmouseover="" required for iOS devices-->
+<body class="guide chapter" ontouchstart="" onmouseover="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="nav" class="non-printing">
+        <ul>
+        <li class="nav-series-home"><a href="/electric-book-workflow/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></li>
+        <li class="nav-book"><a href="0-3-contents" title="Contents: A guide to the Electric Book workflow" class="nav-book-link">A guide to the Electric Book workflow</a></li>
+            <ul>
+                
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/0-9-quick-start.html" title="Quick start" class="nav-page-link">Quick start</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/01-intro.html" title="Introduction" class="nav-page-link">Introduction</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/02-setting-up.html" title="Setting up" class="nav-page-link">Setting up</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/03-markdown.html" title="Markdown" class="nav-page-link">Markdown</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/04-themes.html" title="Themes" class="nav-page-link">Themes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/05-classes.html" title="Classes" class="nav-page-link">Classes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/10-tocs.html" title="Tables of contents" class="nav-page-link">Tables of contents</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/15-images.html" title="Images" class="nav-page-link">Images</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/16-video.html" title="Video" class="nav-page-link">Video</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/17-notes.html" title="Notes" class="nav-page-link">Notes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/18-tables.html" title="Tables" class="nav-page-link">Tables</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/19-indexes.html" title="Indexes" class="nav-page-link">Indexes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/20-poetry.html" title="Poetry" class="nav-page-link">Poetry</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/25-page-numbers.html" title="Page numbers" class="nav-page-link">Page numbers</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/30-javascript.html" title="Javascript" class="nav-page-link">Javascript</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/40-indd-to-md.html" title="InDesign conversion" class="nav-page-link">InDesign conversion</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/50-print-output.html" title="Print output" class="nav-page-link">Print output</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page nav-page-active">
+                                <a href="/electric-book-workflow/guide/text/51-epub-output.html" title="Epub output" class="nav-page-link">Epub output</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/60-troubleshooting.html" title="Troubleshooting" class="nav-page-link">Troubleshooting</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/70-examples.html" title="Examples" class="nav-page-link">Examples</a>
+                            </li>
+                        
+                    
+                
+            </ul>
+        </ul>
+        </div><!--#nav-->
+
+	<div id="wrapper">
+
+<h1 class="no_toc" id="epub-output">Epub output</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#quick-output" id="markdown-toc-quick-output">Quick output</a></li>
+  <li><a href="#assembling-the-epub" id="markdown-toc-assembling-the-epub">Assembling the epub</a>    <ul>
+      <li><a href="#quick-epub-process-checklist" id="markdown-toc-quick-epub-process-checklist">Quick-epub process checklist</a></li>
+      <li><a href="#splitting-large-files" id="markdown-toc-splitting-large-files">Splitting large files</a></li>
+    </ul>
+  </li>
+  <li><a href="#mobi-conversion" id="markdown-toc-mobi-conversion">Mobi conversion</a></li>
+  <li><a href="#adding-ibooks-display-options-file" id="markdown-toc-adding-ibooks-display-options-file">Adding iBooks display-options file</a></li>
+</ul>
+
+<h2 id="quick-output">Quick output</h2>
+
+<p>On <strong>Windows</strong>, generate HTML for epub by running <code class="highlighter-rouge">win-epub.bat</code>, which you’ll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll installed and working.</p>
+
+<p>The script tells Jekyll to compile epub-ready HTML, opens Sigil, and opens <code class="highlighter-rouge">0-0-cover.html</code> there, which automatically imports your book’s metadata into the epub. It also opens a file browser to the epub-ready HTML files.</p>
+
+<p>In Sigil, then, add the remaining content files, define file semantics, and generate a TOC.</p>
+
+<p>For <strong>OSX and Linux</strong> (until we create similar scripts): in a terminal in the same folder as the scripts, run <code class="highlighter-rouge">bundle exec jekyll b --config="_config.yml,_config.epub.yml"</code>. Then from Sigil, open the <code class="highlighter-rouge">0-0-cover.html</code> file in <code class="highlighter-rouge">_html/book/text</code>. That will import book metadata, and you can then assemble the epub in Sigil.</p>
+
+<blockquote class="box">
+  <p>Technical background: To get the metadata to import to Sigil, you must <em>open</em> one of your book’s HTML files in Sigil (the cover is best, since it’s the first file). That is, don’t ‘Add Existing Files…’ to a new, blank epub. Only by opening a single HTML file (as in ‘File &gt; Open…’, then select the HTML file) will Sigil read and import the file’s Dublin Core metadata. After that, you can add the remaining files in Sigil using ‘Add Existing Files…’.</p>
+</blockquote>
+
+<h2 id="assembling-the-epub">Assembling the epub</h2>
+
+<p>We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in <a href="https://github.com/user-none/Sigil/">Sigil</a>. If we’re not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)</p>
+
+<ol>
+  <li>Put the HTML files from <code class="highlighter-rouge">_html</code> into your <code class="highlighter-rouge">Text</code> folder.</li>
+  <li>If it’s not automatically imported, put the finished <code class="highlighter-rouge">epub.css</code> (from your book’s <code class="highlighter-rouge">styles</code> folder in <code class="highlighter-rouge">_html</code>) into your Sigil <code class="highlighter-rouge">Styles</code> folder. (Our <code class="highlighter-rouge">epub.css</code> file is not the same as <code class="highlighter-rouge">web.css</code>. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)</li>
+  <li><strong>Replace any SVG images</strong> in the <code class="highlighter-rouge">Images</code> folder with JPG equivalents. And:</li>
+  <li>Search-and-replace any links to .svg in your HTML files with .jpg.</li>
+  <li><strong>Copy any fonts</strong> into the <code class="highlighter-rouge">Fonts</code> folder, if you want them embedded. (If you don’t want to embed fonts, remove any <code class="highlighter-rouge">@font-face</code> rules from your stylesheet to avoid file-not-found validation errors. We don’t recommend embedding fonts unless they are required for meaning or unusual character sets.)</li>
+  <li>
+    <p><strong>Remove videos</strong> in iframes (iframes are invalid in EPUB2 XHTML 1.1). We recommend replacing videos with a link to an online version, e.g. to a YouTube page. This is best done manually. Search for <code class="highlighter-rouge">videowrapper</code> to find instances of embedded videos. To <strong>replace</strong> the standard video wrapper with a link to the video:</p>
+
+    <ul>
+      <li>
+        <p>Search (with DotAll regex) for:</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>(?s).&lt;div class="videowrapper non-printing"&gt;(.*)src="(.*?)"(.*)&lt;/div&gt;(.*?)&lt;!--.videowrapper--&gt;
+</code></pre>
+        </div>
+
+        <p>This will find the videowrapper and store the URL of the embedded video in memory.</p>
+      </li>
+      <li>
+        <p>Replace with</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>&lt;a href="\2" class="button"&gt;Watch&lt;/a&gt;
+</code></pre>
+        </div>
+
+        <p>This will replace the entire wrapper with a link to the same iframe URL it memorised (at <code class="highlighter-rouge">\2</code>). Replace <code class="highlighter-rouge">Watch</code> with whatever phrase you want to be the clickable text.</p>
+      </li>
+    </ul>
+  </li>
+  <li>If your book includes endnotes (kramdown footnotes), replace <code class="highlighter-rouge">fnref:</code> with <code class="highlighter-rouge">fnref-</code> and <code class="highlighter-rouge">fn:</code> with <code class="highlighter-rouge">fn-</code>. ( Background: If you have a colon in any element ID – for instance if you’ve used <a href="http://kramdown.gettalong.org/quickref.html#footnotes">kramdown’s footnote syntax</a> – EpubCheck will return an ‘invalid NCName’ error. You need to replace those colons with another character. If your invalid IDs follow a set pattern (as kramdown’s footnote references do), you can replace-all quickly.)</li>
+  <li><strong>Check your epub’s metadata</strong> using Sigil’s Metadata Editor, and edit if necessary. Include at least:
+    <ul>
+      <li>title: subtitle</li>
+      <li>author</li>
+      <li>date of creation</li>
+      <li>publisher</li>
+      <li>ISBN (or other identifier like a <a href="https://www.uuidgenerator.net/">UUID</a>)</li>
+      <li>Relation ISBN (if any; we use the print ISBN as a parent ISBN)</li>
+    </ul>
+  </li>
+  <li><strong>Add file semantics</strong> (right click the file name in Sigil for the semantics context menu) to:
+    <ul>
+      <li>key HTML files</li>
+      <li>the cover JPG.</li>
+    </ul>
+  </li>
+  <li id="adding-the-epub-toc"><strong>Generate the epub’s table of contents</strong> (Tools &gt; Table Of Contents…). This TOC is generated only from the headings (<code class="highlighter-rouge">h1</code> to <code class="highlighter-rouge">h6</code>) in the text. So it does not include the cover, which has no heading, or any other files without a heading (e.g. sometimes the copyright page). If you need to add a cover to the TOC:
+    <ol>
+      <li>Go to Tools &gt; Table Of Contents &gt; Edit Table Of Contents…</li>
+      <li>Click on the first entry in the TOC list.</li>
+      <li>Click ‘Add Above’.</li>
+      <li>Click ‘Select Target’ and select the cover HTML file (usually <code class="highlighter-rouge">0-0-cover.html</code>).</li>
+      <li>In the blank space under ‘TOC Entry’, double-click and type ‘Cover’.</li>
+      <li>Click Okay.</li>
+      <li>Use the same process for adding any other files you need to add to the TOC.</li>
+    </ol>
+  </li>
+  <li>If fonts are important (you’ve either embedded fonts or the difference between serif and sans-serif is semantically significant), add iBooks XML. (<a href="#adding-ibooks-display-options-file">See below for detail</a>.)</li>
+  <li id="validate-the-epub">Validate the epub in Sigil and fix any validation errors. Sigil let’s some things past that EpubCheck flags, so also validate with EpubCheck directly. You can use:
+    <ul>
+      <li>the <a href="http://validator.idpf.org/">IDPF’s online version of EpubCheck</a></li>
+      <li><a href="https://github.com/IDPF/epubcheck/wiki/Running">epubcheck</a> installed locally, and run from the command line; or</li>
+      <li><a href="http://www.pagina-online.de/produkte/epub-checker/">pagina EPUB-Checker</a>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>For general guidance on creating epubs with Sigil, check out <a href="http://electricbookworks.github.io/ebw-training/">EBW’s training material</a> and the <a href="https://github.com/Sigil-Ebook/Sigil/tree/master/docs">Sigil user guide</a>.</p>
+
+<h4 id="quick-epub-process-checklist">Quick-epub process checklist</h4>
+
+<p>Here’s a handy checklist for assembling an epub in Sigil:</p>
+
+<ol>
+  <li>File &gt; Open… and select the first HTML file in <code class="highlighter-rouge">_html/book/text</code>. (Our <code class="highlighter-rouge">-epub</code> script does this itself).</li>
+  <li>Right-click the Text folder &gt; Add Existing Files… and select the remaining HTML files for the epub.</li>
+  <li>Right-click the Text or Styles folder &gt; Add Existing Files… and select the epub’s CSS file from <code class="highlighter-rouge">_html/book/styles</code>.</li>
+  <li>Tools &gt; Table Of Contents &gt; Generate Table Of Contents</li>
+  <li>Add file semantics (right-click HTML files &gt; Add Semantics… and right-click the cover jpg &gt; Cover Image).</li>
+  <li>Save, and <a href="#validate-the-epub">validate</a> with the Flightcrew plugin and separately with EPUBCheck.</li>
+</ol>
+
+<p>Depending on your needs, you may also need to:</p>
+
+<ul>
+  <li>search-and-replace (<a href="#assembling-the-epub">as described above</a>) for SVG images, footnotes, or video;</li>
+  <li>add the cover (or other files) to your table of contents (<a href="#adding-the-epub-toc">as described above</a>)</li>
+  <li>add font files if you’re embedding fonts;</li>
+  <li>split large files (<a href="#splitting-large-files">as described below</a>)</li>
+  <li>add the iBooks display-options XML (<a href="#adding-ibooks-display-options-file">as described below</a>).</li>
+</ul>
+
+<h3 id="splitting-large-files">Splitting large files</h3>
+
+<p>If you have very large text files that, in the epub output, you’d like to split up into separate HTML files, Sigil can help. Using this tag in HTML, you can mark where Sigil must split your HTML file(s):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;hr class="sigil_split_marker" /&gt;
+</code></pre>
+</div>
+
+<p>To create that in markdown, use a three-asterisk divider with a <code class="highlighter-rouge">sigil_split_marker</code> class, like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>***
+{:.sigil_split_marker}
+</code></pre>
+</div>
+
+<p>Also, remember to hide those markers in print output (and web and elsewhere as needed) with this in your CSS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.sigil_split_marker {
+	display: none;
+}
+</code></pre>
+</div>
+
+<p>Then, when you’re assembling the epub in Sigil, just run Edit &gt; Split At Markers.</p>
+
+<p>Sigil will then split the HTML file into separate HTML files at the markers, and remove the <code class="highlighter-rouge">&lt;hr&gt;</code> element.</p>
+
+<p>A common use case for this is books with end-of-book endnotes. To create end-of-book endnotes using kramdown footnotes you must put all content with endnotes in one markdown (and therefore HTML) file. This file is too large for sensible epub use, so splitting is important. Sigil is smart enough to update your internal links when you run ‘Split At Markers’.</p>
+
+<blockquote>
+  <p><strong>NB: Before running Split At Markers: save, close, and reopen your epub.</strong> At least till Sigil 0.9.3, there is <a href="http://www.mobileread.com/forums/showthread.php?p=3277498#post3277498">an issue with updating internal links when using Split At Markers</a>. In order for internal links to update correctly, Sigil must <em>first</em> have rewritten all link paths to HTML files according to its <code class="highlighter-rouge">../Text/</code> folder structure (e.g. the links to chapters in a Table of Contents file). Sigil only rewrites all these paths when an epub file is opened. So to make sure links are udpated when running Split At Markers, you need to save, close, and reopen the epub first. This <a href="http://www.mobileread.com/forums/showpost.php?p=3277552&amp;postcount=11">may be fixed from Sigil 0.9.5</a>.</p>
+</blockquote>
+
+<h2 id="mobi-conversion">Mobi conversion</h2>
+
+<p>These days, you should not need to create a mobi file for Amazon. It’s better to upload an epub and let Amazon convert it.</p>
+
+<p>If you really do need a mobi file, we recommend putting your EPUB into the <a href="http://www.amazon.com/gp/feature.html?docId=1000765261">Kindle Previewer</a>, which automatically converts to mobi using Kindlegen and saves the mobi file to a folder beside your epub.</p>
+
+<p>If Previewer cannot convert the epub, we’ve found that adding it to <a href="http://calibre-ebook.com/">Calibre</a> first, then (without converting) give Calibre’s version to Kindle Previewer. Calibre gives you greater control over specific ebook conversions, but we’ve found Kindle Previewer converts some CSS better (e.g. floats and borders).</p>
+
+<blockquote class="box">
+  <p>If you need to dig into a mobi file’s code to troubleshoot, try the <a href="http://www.mobileread.com/forums/showthread.php?t=171529">KindleUnpack plugin for Calibre</a>.</p>
+</blockquote>
+
+<h2 id="adding-ibooks-display-options-file">Adding iBooks display-options file</h2>
+
+<p>If you need to add the <code class="highlighter-rouge">com.apple.ibooks.display-options.xml</code> file to your epub for iBooks display options, you can use the <a href="http://www.mobileread.com/forums/showthread.php?t=272241">AddiBooksXML</a> plugin in Sigil.</p>
+
+<p>A very basic display-options file contains this XML:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;display_options&gt;</span>
+    <span class="nt">&lt;platform</span> <span class="na">name=</span><span class="s">"*"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"specified-fonts"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"interactive"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"fixed-layout"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"open-to-spread"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"orientation-lock"</span><span class="nt">&gt;</span>none<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/platform&gt;</span>
+<span class="nt">&lt;/display_options&gt;</span>
+</code></pre>
+</div>
+
+<p>The file should be in the epub’s META-INF folder, which Sigil does not let you edit by default, hence the need for the plugin.</p>
+
+<p>To install the plugin:</p>
+
+<ul>
+  <li><a href="http://www.mobileread.com/forums/showthread.php?t=272241">Download the zip file</a>.</li>
+  <li>In Sigil, go to Plugins &gt; Manage Plugins.</li>
+  <li>Click Add Plugin and locate and select the zip file you downloaded.</li>
+</ul>
+
+<p>To use the plugin:</p>
+
+<ul>
+  <li>First, in a plain-text/code editor create an <code class="highlighter-rouge">com.apple.ibooks.display-options.xml</code> file containing only the XML shown above. If necessary, change the five options settings in it. Save the XML file with your source material for the book for future use/reference.</li>
+  <li>In Sigil, with the epub open, go to Plugins &gt; Edit &gt; AddiBooksXML and find and select the <code class="highlighter-rouge">com.apple.ibooks.display-options.xml</code> file you just created.</li>
+</ul>
+
+	</div><!--#wrapper-->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer" class="non-printing">
+        <div class="footer-content">
+            <p>
+                Built with an <a href='http://electricbook.io'>Electric Book</a>
+            </p>
+        </div><!--.footer-content-->
+    </div><!--#footer-->
+
+	
+</body>
+</html>
+
+
+
