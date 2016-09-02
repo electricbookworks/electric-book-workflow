@@ -2,7 +2,7 @@
 title: Typography examples
 ---
 
-{% include get-metadata %}
+{% include metadata %}
 
 # Typography examples
 {:.no_toc title="Typography examples"}

@@ -3,7 +3,7 @@ title: Home
 style: home
 ---
 
-{% include get-metadata %}
+{% include metadata %}
 
 # {{ series-name }}
 
