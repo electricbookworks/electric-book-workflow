@@ -16,13 +16,13 @@ If you want to learn about using CSS to control print output using Prince, [this
 
 ## Quick output
 
-Run the template's `-pdf` script for your operating system:
+Run the template's `-pdf` script for your operating system. For these to work, you must already have Jekyll and Prince installed and working.
 
-* On Windows, run `win-print-pdf.bat` by double-clicking it from your file explorer. For it to work, you must already have Jekyll and Prince installed and working.
+* On Windows, run `win-print-pdf.bat` by double-clicking it from your file explorer.
 * On Linux, run `linux-print-pdf.sh`. You may have to run it from a terminal, and first enter `chmod +x linux-print-pdf.sh` to give it permissions, then `bash linux-print pdf.sh`.
-* On Mac, we're still testing `mac-print-pdf.command`. YMMV.
+* On Mac OSX, double-click `mac-print-pdf.command` in Finder. You may need to give the file permission to run first. To do this, in a Terminal in the same folder as the script, type `chmod +x mac-print-pdf.command`.
 
-The same applies to `-screen-pdf` scripts.
+The same applies to the other scripts (e.g. `-screen-pdf`).
 
 ## Detail
 
