@@ -1,0 +1,684 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>
+    
+    A guide to the Electric Book workflow: Markdown
+    
+    </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/web.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="../styles/screen-pdf.css" />
+    
+
+    
+
+
+
+</head>
+<!--ontouchstart="" onmouseover="" required for iOS devices-->
+<body class="guide chapter" ontouchstart="" onmouseover="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="nav" class="non-printing">
+        <ul>
+        <li class="nav-series-home"><a href="/electric-book-workflow/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></li>
+        <li class="nav-book"><a href="0-3-contents" title="Contents: A guide to the Electric Book workflow" class="nav-book-link">A guide to the Electric Book workflow</a></li>
+            <ul>
+                
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/0-9-quick-start.html" title="Quick start" class="nav-page-link">Quick start</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/01-intro.html" title="Introduction" class="nav-page-link">Introduction</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/02-setting-up.html" title="Setting up" class="nav-page-link">Setting up</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page nav-page-active">
+                                <a href="/electric-book-workflow/guide/text/03-markdown.html" title="Markdown" class="nav-page-link">Markdown</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/04-themes.html" title="Themes" class="nav-page-link">Themes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/05-classes.html" title="Classes" class="nav-page-link">Classes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/10-tocs.html" title="Tables of contents" class="nav-page-link">Tables of contents</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/15-images.html" title="Images" class="nav-page-link">Images</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/16-video.html" title="Video" class="nav-page-link">Video</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/17-notes.html" title="Notes" class="nav-page-link">Notes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/18-tables.html" title="Tables" class="nav-page-link">Tables</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/19-indexes.html" title="Indexes" class="nav-page-link">Indexes</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/20-poetry.html" title="Poetry" class="nav-page-link">Poetry</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/25-page-numbers.html" title="Page numbers" class="nav-page-link">Page numbers</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/30-javascript.html" title="Javascript" class="nav-page-link">Javascript</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/40-indd-to-md.html" title="InDesign conversion" class="nav-page-link">InDesign conversion</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/50-print-output.html" title="Print output" class="nav-page-link">Print output</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/51-epub-output.html" title="Epub output" class="nav-page-link">Epub output</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/60-troubleshooting.html" title="Troubleshooting" class="nav-page-link">Troubleshooting</a>
+                            </li>
+                        
+                    
+                
+                    
+                        
+                            <li class="nav-page">
+                                <a href="/electric-book-workflow/guide/text/70-examples.html" title="Examples" class="nav-page-link">Examples</a>
+                            </li>
+                        
+                    
+                
+            </ul>
+        </ul>
+        </div><!--#nav-->
+
+
+	<div id="wrapper">
+
+<h1 class="no_toc" title="Markdown" id="markdown">Markdown</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#how-html-works" id="markdown-toc-how-html-works">How HTML works</a></li>
+  <li><a href="#how-markdown-works" id="markdown-toc-how-markdown-works">How markdown works</a>    <ul>
+      <li><a href="#paragraphs" id="markdown-toc-paragraphs">Paragraphs</a></li>
+      <li><a href="#headings" id="markdown-toc-headings">Headings</a></li>
+      <li><a href="#italics" id="markdown-toc-italics">Italics</a></li>
+      <li><a href="#bold" id="markdown-toc-bold">Bold</a></li>
+      <li><a href="#lists" id="markdown-toc-lists">Lists</a></li>
+      <li><a href="#simple-tables" id="markdown-toc-simple-tables">Simple tables</a></li>
+      <li><a href="#blockquotes" id="markdown-toc-blockquotes">Blockquotes</a></li>
+      <li><a href="#hyperlinks" id="markdown-toc-hyperlinks">Hyperlinks</a></li>
+      <li><a href="#images" id="markdown-toc-images">Images</a></li>
+      <li><a href="#endnotes" id="markdown-toc-endnotes">Endnotes</a></li>
+      <li><a href="#definition-lists" id="markdown-toc-definition-lists">Definition lists</a></li>
+    </ul>
+  </li>
+  <li><a href="#using-class-tags" id="markdown-toc-using-class-tags">Using class tags</a>    <ul>
+      <li><a href="#inventing-classes" id="markdown-toc-inventing-classes">Inventing classes</a></li>
+      <li><a href="#block-and-inline-elements" id="markdown-toc-block-and-inline-elements">Block and inline elements</a></li>
+    </ul>
+  </li>
+  <li><a href="#editing-reflowable-text" id="markdown-toc-editing-reflowable-text">Editing reflowable text</a></li>
+</ul>
+
+<p>This guide explains how to edit text for the workflow. On its own, it’s also a handy guide to markdown in general.</p>
+
+<p>If you get your markdown right, the workflow can zap out an almost-print-ready PDF, website or ebook from your files in a matter of minutes. That is, we go straight from edited manuscript to page proofs – no typesetting!</p>
+
+<p>To edit for the workflow, you need to have a rough idea how HTML works, and you need to learn markdown. If you’re new to HTML and markdown, don’t worry: it’s much easier than you think.</p>
+
+<h2 id="how-html-works">How HTML works</h2>
+
+<p>HTML is a computer language. It’s a way for us to mark up or tag text, so that a computer knows how to display it beautifully to humans. That is, software (most commonly a web browser) reads the HTML code and <em>renders</em> it as nice-looking, readable text and images.</p>
+
+<p>In HTML, each piece of content (e.g. a paragraph) starts and ends with a tag that a computer can recognise. Tags are always in elbow brackets, like this paragraph tag: <code class="highlighter-rouge">&lt;p&gt;</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;p&gt;
+This text is tagged in HTML as a paragraph.
+&lt;/p&gt;
+</code></pre>
+</div>
+
+<p>The slash ‘closes’ the tag.</p>
+
+<p>The <code class="highlighter-rouge">&lt;p&gt;</code> tag is one of about a hundred possible tags, maybe ten of which you’ll see in a book, such as tags for headings (e.g. <code class="highlighter-rouge">&lt;h1&gt;</code>, <code class="highlighter-rouge">&lt;h2&gt;</code>), bold and italic, lists, images, tables, and blockquotes.</p>
+
+<p>But not all paragraphs are the same: there are opening paragraphs, pull-quote paragraphs, blurb paragraphs and more. If I want to tell the computer what <em>kind</em> of paragraph it is, I can put it in a special class. Say, the ‘blurb’ class of paragraph. To write this in HTML, I would make the tag <code class="highlighter-rouge">&lt;p class="blurb"&gt;</code>. Unlike its limited set of specific tags, HTML classes are infinite, because we can make up class names as we need them.</p>
+
+<p>HTML is very simple and very powerful (which is why it’s the language behind almost every web page). We can mark up everything in a book using HTML tags and classes. In our workflow, we store books in HTML, with each book part (title page, contents page, chapter, etc.) in its own HTML file.</p>
+
+<p>Then, to create print-ready PDFs, websites and ebooks from that HTML, we combine the files with CSS stylesheets. CSS is another computer language that defines design: font sizes, indentation, colour, etc. A CSS file will say ‘make all headings bold’, for instance, or ‘indent blockquotes by 1em’.</p>
+
+<p>If we combine a book’s HTML with a stylesheet designed for print, we can get a print-ready PDF. If we combine the same HTML with a stylesheet for the web, we get the book as a website. This way, we only ever store the book’s content once, and use different stylesheets to generate alternative editions from that single source.</p>
+
+<p>Unfortunately HTML tags are very, very time consuming to type by hand. But we have a shortcut! It’s called markdown, and it’s amazing.</p>
+
+<h2 id="how-markdown-works">How markdown works</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is just plain text, neatly structured. Plain text as in <code class="highlighter-rouge">.txt</code> files. It’s so neatly structured that software can work out, just from the structure of your text, what HTML you intended, and convert it instantly to finished HTML, tags and all. No way! Yes way.</p>
+
+<p>Markdown was invented by two very smart people in 2004: <a href="http://daringfireball.net/projects/markdown/">John Gruber</a> and Aaron Swartz. Since their work, others have added new features to markdown. So today there are many variations of markdown. We use a variation called kramdown.</p>
+
+<p>As you work with markdown, you’ll get to know it really well. That can take as little as a few hours. And hopefully you’ll come to love it as much as we do. To do that, you’ll need to keep the <a href="http://kramdown.gettalong.org/syntax.html">kramdown syntax reference</a> handy. For now, though, we’ll explain the most common, important things you’ll need to edit simple books.</p>
+
+<p>To quickly test any basic markdown yourself, go to <a href="http://kramdown.herokuapp.com/">http://kramdown.herokuapp.com</a>. Type markdown in the left, and see the rendered HTML on the right.</p>
+
+<h3 id="paragraphs">Paragraphs</h3>
+
+<p>This is easy: a paragraph is a line of text separated from any other text by empty lines.</p>
+
+<p>You can even have line breaks in a paragraph, and markdown will just ignore them (or, rather, replace them with spaces). That is, markdown is looking for an empty line before it ends a paragraph.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>This is a paragraph.
+
+This is another
+paragraph.
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<p>This is a paragraph.</p>
+
+<p>This is another
+paragraph.</p>
+
+<h3 id="headings">Headings</h3>
+
+<p>You can use up to six levels of heading, from level one to level six. To make a heading, just put one or more hash signs, <code class="highlighter-rouge">#</code>, and a space, before the heading. For a first-level heading, use one hash sign; for a second-level heading, use two; and so on. Like with paragraphs, separate the heading from everything else with an empty line space.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>## This is a second-level heading
+
+This is a paragraph.
+</code></pre>
+</div>
+
+<h3 id="italics">Italics</h3>
+
+<p>Just put <code class="highlighter-rouge">*</code> before and after the italicised words: <code class="highlighter-rouge">is it really *this* easy?</code>. It’s really <em>this</em> easy.</p>
+
+<h3 id="bold">Bold</h3>
+
+<p>Just put two <code class="highlighter-rouge">*</code>s before and after the bold text: <code class="highlighter-rouge">good for **shouting**</code>. <strong>Shouting.</strong></p>
+
+<p class="sidenote">Tip: If you use bold in a first-level heading (e.g. <code class="highlighter-rouge"># **Chapter 1** Lost at Sea</code>), our Classic theme’s typography will put that bold text onto its own line, set off from the heading. This is useful for chapter numbers that should look separate from the chapter title, but in the underlying HTML need to be part of the heading, for instance when software generates tables of contents.</p>
+
+<h3 id="lists">Lists</h3>
+
+<p>There are two kinds of lists: bulleted and numbered. For a bulleted list, start each line with a <code class="highlighter-rouge">*</code> and a tab. For a numbered list, start each line with a number, a full stop and a tab (you can use any number, because the software will always create an HTML list that starts with 1; but it’s best to use 1 or the actual numbers you intend, just to make things neat). Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1.	Apples
+2.	Oranges
+3.	Pears
+
+*	Apples
+*	Oranges
+*	Pears
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<ol>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+</ol>
+
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+  <li>Pears</li>
+</ul>
+
+<h3 id="simple-tables">Simple tables</h3>
+
+<p>You can create simple tables in markdown. You can make them really neat, or you can make them really efficient. Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>| Fruit   | Quantity |
+|---------|----------|
+| Apples  | 2        |
+| Oranges | 5        |
+| Pears   | 0        |
+
+| Fruit | Quantity
+|---|---
+| Apples | 2
+| Oranges | 5
+| Pears | 0
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fruit</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Pears</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fruit</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Pears</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="sidenote">Note the minimum three hyphens in the lines that creates the border between the table head and table body. (Kramdown doesn’t require three, but GitHub previews do, so it’s best practice.)</p>
+
+<p>To make more complex tables with merged or individually styled cells, you have to use actual HTML table markup. See the <a href="18-tables.html#tables">Tables</a> chapter for more detail.</p>
+
+<h3 id="blockquotes">Blockquotes</h3>
+
+<p>Remember how old email programs put a <code class="highlighter-rouge">&gt;</code> at the start of each line when you hit ‘Reply’? Ah, <code class="highlighter-rouge">&gt;</code> means blockquote. Start each line with <code class="highlighter-rouge">&gt;</code> and a space to make text a blockquote. Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; This is text in a blockquote.
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<blockquote>
+  <p>This is text in a blockquote.</p>
+</blockquote>
+
+<p>In our workflow we use blockquote HTML for more than just quotations, though. We also use it for figures and poetry. We’ll come back to this later.</p>
+
+<h3 id="hyperlinks">Hyperlinks</h3>
+
+<p>If you want your final HTML to include a clickable link:</p>
+
+<ul>
+  <li>surround the text you want clickable with <code class="highlighter-rouge">[</code> and <code class="highlighter-rouge">]</code></li>
+  <li>put the URL it should point to between <code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">)</code> immediately afterwards.</li>
+</ul>
+
+<p>Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>To learn more, [click here](http://google.com).
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<p>To learn more, <a href="http://google.com">click here</a>.</p>
+
+<h3 id="images">Images</h3>
+
+<p>To place an image, you include a line telling the computer where to find the image file. This looks like a hyperlink, but with a <code class="highlighter-rouge">!</code> at the start of the line. Inside the square brackets, you include a brief description of the image (this is useful to screen readers for the visually impaired).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>![A dog chasing a bus.](images/dogbus.jpg)
+</code></pre>
+</div>
+
+<p>In the parentheses above, the <code class="highlighter-rouge">images/</code> part says that the <code class="highlighter-rouge">dogbus.jpg</code> image is in the <code class="highlighter-rouge">images</code> folder, which is alongside the markdown file. In our workflow, we always put images in the <code class="highlighter-rouge">images</code> folder like this.</p>
+
+<p>See the <a href="15-images.html#images">Images</a> chapter for more detail.</p>
+
+<h3 id="endnotes">Endnotes</h3>
+
+<p>Endnotes in our workflow appear at the end of a document (that is, a web page or a book chapter).<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<ul>
+  <li>put a <code class="highlighter-rouge">[^1]</code> where the footnote reference should appear (the <code class="highlighter-rouge">1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
+  <li>anywhere in the document (we recommend after the paragraph containing the footnote reference), put <code class="highlighter-rouge">[^1]: Your footnote text here.</code>.</li>
+</ul>
+
+<p>We’ll explain how to create notes on the side or bottom of a page (footnotes) later when we talk about classes.</p>
+
+<p>(By the way, endnote references are <code class="highlighter-rouge">&lt;sup&gt;</code> in kramdown’s HTML, not unicode numbers like ². The Classic theme includes styling for these and for <code class="highlighter-rouge">&lt;sub&gt;</code>, as in H<sub>2</sub>O.)</p>
+
+<p>See the <a href="17-notes.html#footnotes-endnotes-and-sidenotes">Notes</a> chapter for more detail.</p>
+
+<h3 id="definition-lists">Definition lists</h3>
+
+<p>A definition list is a list of definitions, not surprisingly. Think of a dictionary. A definition list comprises one or more entries, and each entry has a headword and a definition. Even if you’re not editing a dictionary, you might need to create a short glossary or define a word or two at some point. To create a definition entry in markdown, put the headword on its own line, and the definition on the next, after a colon and a tab. Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Editor
+:	Someone who spends more time learning new tricks than making money.
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<dl>
+  <dt>Editor</dt>
+  <dd>Someone who spends more time learning new tricks than making money.</dd>
+</dl>
+
+<p>To create a whole list of definition entries, just put one of these after the other, with a line space between them.</p>
+
+<h2 id="using-class-tags">Using class tags</h2>
+
+<p>We’re going to get a bit more advanced now. Get some tea.</p>
+
+<p>As we mentioned earlier, sometimes we have to tell our software what <em>kind</em> of paragraph or list or blockquote we want. These <em>kinds</em> of text are called <em>classes</em>. To give something a class, we add a kramdown tag in curly braces, with a colon, and a dot before the class name. Markdown:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>This paragraph should be in a box.
+{:.box}
+</code></pre>
+</div>
+
+<p>Result:</p>
+
+<p class="box">This paragraph should be in a box.</p>
+
+<p>For the resulting HTML to actually appear in a box, when we turn your markdown into a finished book, we’ll have to combine it with a CSS stylesheet that includes formatting instructions for the <code class="highlighter-rouge">box</code> class. If you’re just editing in markdown, you don’t have to think about the stylesheets. Our default stylesheets include designs for <code class="highlighter-rouge">box</code> as well as several other classes. (Which we’ll list in a moment.)</p>
+
+<p>But if your book needs classes that aren’t already supported in the Classic theme, you’ll need to ask a CSS-savvy designer to write you some CSS rules for your new class, to add to the bottom of your theme’s master <code class="highlighter-rouge">.scss</code> files as custom CSS.</p>
+
+<blockquote class="box">
+  <h3 id="inventing-classes">Inventing classes</h3>
+
+  <p>If you invent new classes, make sure you name them for their semantic <em>purpose</em>, not their appearance. For instance, <code class="highlighter-rouge">important-tip</code> is a better class name than <code class="highlighter-rouge">shaded-bold</code>. Also, class names should always be lowercase and have no spaces.</p>
+</blockquote>
+
+<p>In addition to boxes, our default stylesheets include lots of other classes for common book features.</p>
+
+<blockquote class="box">
+  <h3 id="block-and-inline-elements">Block and inline elements</h3>
+
+  <p>Attribute tags like classes can be applied to two kinds of element: <em>block</em> elements and <em>inline</em> elements.</p>
+
+  <p>A block element is anything that should (in print or on screen) start and end with a line break, like a paragraph or a list. An inline element is anything that appears inside a line of running text, like bold and italic.</p>
+
+  <p>Most of the Classic theme’s pre-designed classes are for either block or inline elements, and sometimes both.</p>
+
+  <p>When you apply an attribute tag to a block-level element in kramdown, you put the tag on the line immediately following the element.</p>
+
+  <p>When you apply an attribute tag to an inline element, it appears immediately at the end of a span (a span is any contiguous series of inline characters inside a block element). Spans in kramdown can be marked off with asterisks as if they are italics: mark off the text you’re tagging with asterisks (<code class="highlighter-rouge">*</code>), as you would italics, and put your tag immediately after the closing <code class="highlighter-rouge">*</code>, on the same line. E.g. <code class="highlighter-rouge">*Make this small-caps.*{:.smallcaps}</code>. The Classic theme will then apply the correct styling to the span, instead of the default italic.</p>
+</blockquote>
+
+<p>To see all the classes that our Classic theme supports, see the <a href="05-classes.html#supported-classes">Supported classes</a> section.</p>
+
+<h2 id="editing-reflowable-text">Editing reflowable text</h2>
+
+<p>When you’re working in markdown, you’re creating text that might reflow in an infinite number of ways on screens and onto page layouts. This changes the way you edit, because nothing is static.</p>
+
+<p>For instance, you can use special HTML codes to insert non-breaking spaces, discretionary (‘soft’) hyphens and non-breaking hyphens.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>I need to</th>
+      <th>Use this</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prevent ellipses falling after a line break</td>
+      <td>Add a non-breaking space (<code class="highlighter-rouge">&amp;nbsp;</code>) before ellipses.</td>
+    </tr>
+    <tr>
+      <td>Prevent dashes falling after a line break</td>
+      <td>Add a non-breaking space (<code class="highlighter-rouge">&amp;nbsp;</code>) before the dash: <code class="highlighter-rouge">the en-dash&amp;nbsp;– as I've explained&amp;nbsp;– is tricky.</code></td>
+    </tr>
+    <tr>
+      <td>Prevent line breaks between numbers and units</td>
+      <td>Use a non-breaking space: e.g. for ‘3 pm, 24 May’ type <code class="highlighter-rouge">3&amp;nbsp;pm, 24&amp;nbsp;May</code></td>
+    </tr>
+    <tr>
+      <td>Prevent line breaks between adjectives and their units</td>
+      <td>Use a non-breaking space: e.g. for ‘Grade 2’ type <code class="highlighter-rouge">Grade&amp;nbsp;2</code></td>
+    </tr>
+    <tr>
+      <td>Prevent line breaks inside big numbers</td>
+      <td>Use a non-breaking space: e.g. for ‘40 000’ type <code class="highlighter-rouge">40&amp;nbsp;000</code></td>
+    </tr>
+    <tr>
+      <td>Prevent a line break at a hyphen</td>
+      <td>Use <code class="highlighter-rouge">&amp;#x2011;</code> for a non-breaking hyphen, e.g. <code class="highlighter-rouge">D&amp;#x2011;Space</code> for ‘D‑Space’</td>
+    </tr>
+    <tr>
+      <td>Allow a word to hyphenate at the end of a line</td>
+      <td>Insert a discretionary (‘soft’) hyphen code: <code class="highlighter-rouge">&amp;shy;</code>. E.g. <code class="highlighter-rouge">mark&amp;shy;down</code></td>
+    </tr>
+  </tbody>
+</table>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>In kramdown syntax, unfortunately, endnotes are called footnotes; so it’s easy to confuse them. In book parlance, there is a big difference between footnotes and endnotes. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+	</div><!--#wrapper-->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer" class="non-printing">
+        <div class="footer-content">
+            <p>
+                Built with an <a href='http://electricbook.io'>Electric Book</a>
+            </p>
+        </div><!--.footer-content-->
+    </div><!--#footer-->
+
+	
+</body>
+</html>
+
+
+
