@@ -21,9 +21,6 @@ For **OSX and Linux** (until we create similar scripts): in a terminal in the sa
 > Technical background: To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 {:.box}
 
-Tip: to convert an EPUB2 to EPUB3 in Sigil, use [Kevin Hendricks' EPUB-itizer plugin](https://github.com/kevinhendricks/ePub3-itizer).
-{:.box}
-
 ## Assembling the epub
 
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
@@ -77,7 +74,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 
 For general guidance on creating epubs with Sigil, check out [EBW's training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
 
-#### Quick-epub process checklist
+### Quick-epub process checklist
 
 Here's a handy checklist for assembling an epub in Sigil: 
 
@@ -137,6 +134,17 @@ If Previewer cannot convert the epub, we've found that adding it to [Calibre](ht
 
 > If you need to dig into a mobi file's code to troubleshoot, try the [KindleUnpack plugin for Calibre](http://www.mobileread.com/forums/showthread.php?t=171529).
 {:.box}
+
+## EPUB3 conversion
+
+To convert an EPUB2 to EPUB3 in Sigil, use [Kevin Hendricks' EPUB-itizer plugin](https://github.com/kevinhendricks/ePub3-itizer).
+
+Note that EPUB3 prefers all files to have `.xhtml` filename extensions, while Jekyll uses `.html`. So, before you run the EPUB3-itizer:
+
+1. Make sure your EPUB2 validates under FlightCrew and EpubCheck
+2. In Sigil's BookBrowser window select all `.html` files
+3. Right click on your selection and select Rename
+4. In the "Rename Files Starting At" dialog, remove everything and replace it with `.xhtml` and click "OK".
 
 ## Adding iBooks display-options file
 
