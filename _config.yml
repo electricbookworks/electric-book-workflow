@@ -25,7 +25,7 @@ edition: "default"
 # If you're using GitHub Pages, make this the name of your repo, e.g. /electric-book-workflow
 # See http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/
 # Otherwise you can leave it blank.
-baseurl: ""
+baseurl: "/electric-book-workflow"
 
 # If you're publishing a website on GitHub Pages:
 # add username/repository here and
