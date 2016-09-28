@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'electric-book-classic-theme', '0.1.1'
+gem 'electric-book-classic-theme', '0.1.2'
 gem 'jekyll', '~> 3.2'
 
 # Uncomment the following line to test whether your site will build on GitHub Pages
-gem 'github-pages', group: :jekyll_plugins
+# gem 'github-pages', group: :jekyll_plugins
