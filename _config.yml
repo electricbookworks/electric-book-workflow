@@ -32,6 +32,11 @@ baseurl: ""
 # uncomment `gem 'github-pages', group: :jekyll_plugins` in this project's Gemfile.
 repository: electricbookworks/electric-book-workflow
 
+# Web navigation source: select either files or nav
+# files: navigation will be taken from the web files list in `meta.yml` (this is default)
+# nav: navigation will be taken from the web nav tree in `meta.yml` (allows submenu nesting)
+nav-source: files
+
 # --------------------------------------------
 # CHANGE THESE SETTINGS ONLY IF/WHEN NECESSARY
 # --------------------------------------------
