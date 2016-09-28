@@ -21,6 +21,9 @@ For **OSX and Linux** (until we create similar scripts): in a terminal in the sa
 > Technical background: To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 {:.box}
 
+Tip: to convert an EPUB2 to EPUB3 in Sigil, use [Kevin Hendricks' EPUB-itizer plugin](https://github.com/kevinhendricks/ePub3-itizer).
+{:.box}
+
 ## Assembling the epub
 
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
