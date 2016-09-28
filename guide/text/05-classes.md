@@ -48,7 +48,6 @@ Use these classes in your markdown to create specific formatting effects.
 | Small caps throughout | `.allsmallcaps` | Block or inline | If your font supports proper small-caps glyphs, all characters are small caps.  Add `.italics` or `.bold` if needed to italicise or bold. | No
 | Source after a quotation | `.source` | Block | The name and/or title of the source for a preceding quotation. | No
 | Table caption | `.table-caption` | Block | Add `{:.table-caption}` in the line immediately after a table caption. Table captions must always appear above tables, not after them. | No
-| Table caption | `.table-caption` | Block | Use for the caption above a table. (Table captions should not appear after tables, only before.) | No
 | Title page: author | `.title-page-author` | Block | The book's author(s) on the title page. | No
 | Title page: logo | `.title-page-logo` | Block | A logo, as an image, on the title page. | No
 | Title page: subtitle | `.title-page-subtitle` | Block | The book's subtitle on the title page. | No
