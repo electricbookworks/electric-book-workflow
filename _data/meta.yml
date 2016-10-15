@@ -225,7 +225,7 @@ works:
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
         identifier: "" # e.g. ISBN or UUID
         files: # To add a file to web navigation, give a file a value, e.g. 0-4-preface: "Preface"
-          - "00-00-cover": "Cover"
+          - "index": "Cover"
           - "00-01-halftitle-page": "Half-title page"
           - "00-02-previous-publications-page": "Also by the author"
           - "00-03-title-page": "Title page"

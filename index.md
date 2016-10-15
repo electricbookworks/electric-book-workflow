@@ -14,3 +14,6 @@ This guide is [created with the workflow](https://github.com/electricbookworks/e
 [Read the guide](guide/text/0-3-contents.html){:.button}&ensp;
 [Quick start](guide/text/0-9-quick-start.html){:.button}
 {:.first}
+
+Or [browse sample book typography](typography/text/00-05-contents-page.html).
+{:.first}
