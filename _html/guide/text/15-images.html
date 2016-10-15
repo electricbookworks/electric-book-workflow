@@ -247,14 +247,6 @@
                         
                     
                 
-                    
-                        
-                            <li class="nav-page">
-                                <a href="/electric-book-workflow/guide/text/70-examples.html" title="Examples" class="nav-page-link">Examples</a>
-                            </li>
-                        
-                    
-                
             </ul>
         </ul>
         </div><!--#nav-->
@@ -301,9 +293,9 @@
 
 <p>Here’s an example of markdown for a figure:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt; ![Figure 2-A: The Ballard scoring method](../{{ site.image-set }}/fig-2-A.svg)
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; ![Line drawing of a book](../{{ site.image-set }}/book.jpg)
 &gt;
-&gt; Figure 2-A: The Ballard scoring method
+&gt; This is not a book.
 {:.figure}
 </code></pre>
 </div>
@@ -319,6 +311,14 @@
 </ul>
 
 <p>The third line is the figure caption, followed by the kramdown tag <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.figure</span><span class="p">}</span></code>, which lets our stylesheets format the <code class="highlighter-rouge">blockquote</code> as a figure. (For instance, preventing a page break between the image and the caption in print.)</p>
+
+<p>This will display like this.</p>
+
+<blockquote class="figure">
+  <p><img src="../images/book.jpg" alt="Line drawing of a book" /></p>
+
+  <p>This is not a book.</p>
+</blockquote>
 
 <p>If your image has no caption, just skip the empty line and caption line:</p>
 

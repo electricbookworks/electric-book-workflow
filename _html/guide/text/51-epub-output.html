@@ -247,14 +247,6 @@
                         
                     
                 
-                    
-                        
-                            <li class="nav-page">
-                                <a href="/electric-book-workflow/guide/text/70-examples.html" title="Examples" class="nav-page-link">Examples</a>
-                            </li>
-                        
-                    
-                
             </ul>
         </ul>
         </div><!--#nav-->
@@ -272,6 +264,7 @@
     </ul>
   </li>
   <li><a href="#mobi-conversion" id="markdown-toc-mobi-conversion">Mobi conversion</a></li>
+  <li><a href="#epub3-conversion" id="markdown-toc-epub3-conversion">EPUB3 conversion</a></li>
   <li><a href="#adding-ibooks-display-options-file" id="markdown-toc-adding-ibooks-display-options-file">Adding iBooks display-options file</a></li>
 </ul>
 
@@ -288,8 +281,6 @@
 <blockquote class="box">
   <p>Technical background: To get the metadata to import to Sigil, you must <em>open</em> one of your book’s HTML files in Sigil (the cover is best, since it’s the first file). That is, don’t ‘Add Existing Files…’ to a new, blank epub. Only by opening a single HTML file (as in ‘File &gt; Open…’, then select the HTML file) will Sigil read and import the file’s Dublin Core metadata. After that, you can add the remaining files in Sigil using ‘Add Existing Files…’.</p>
 </blockquote>
-
-<p class="box">Tip: to convert an EPUB2 to EPUB3 in Sigil, use <a href="https://github.com/kevinhendricks/ePub3-itizer">Kevin Hendricks’ EPUB-itizer plugin</a>.</p>
 
 <h2 id="assembling-the-epub">Assembling the epub</h2>
 
@@ -363,9 +354,13 @@
   </li>
 </ol>
 
+<blockquote class="box">
+  <p>Tip: If you get validation errors about images, check that your paths to images are correct and case-sensitive. For instance, Sigil needs images to be in <code class="highlighter-rouge">Images</code> not <code class="highlighter-rouge">images</code>.</p>
+</blockquote>
+
 <p>For general guidance on creating epubs with Sigil, check out <a href="http://electricbookworks.github.io/ebw-training/">EBW’s training material</a> and the <a href="https://github.com/Sigil-Ebook/Sigil/tree/master/docs">Sigil user guide</a>.</p>
 
-<h4 id="quick-epub-process-checklist">Quick-epub process checklist</h4>
+<h3 id="quick-epub-process-checklist">Quick-epub process checklist</h3>
 
 <p>Here’s a handy checklist for assembling an epub in Sigil:</p>
 
@@ -432,6 +427,19 @@
 <blockquote class="box">
   <p>If you need to dig into a mobi file’s code to troubleshoot, try the <a href="http://www.mobileread.com/forums/showthread.php?t=171529">KindleUnpack plugin for Calibre</a>.</p>
 </blockquote>
+
+<h2 id="epub3-conversion">EPUB3 conversion</h2>
+
+<p>To convert an EPUB2 to EPUB3 in Sigil, use <a href="https://github.com/kevinhendricks/ePub3-itizer">Kevin Hendricks’ EPUB-itizer plugin</a>.</p>
+
+<p>Note that EPUB3 prefers all files to have <code class="highlighter-rouge">.xhtml</code> filename extensions, while Jekyll uses <code class="highlighter-rouge">.html</code>. So, before you run the EPUB3-itizer:</p>
+
+<ol>
+  <li>Make sure your EPUB2 validates under FlightCrew and EpubCheck</li>
+  <li>In Sigil’s BookBrowser window select all <code class="highlighter-rouge">.html</code> files</li>
+  <li>Right click on your selection and select Rename</li>
+  <li>In the “Rename Files Starting At” dialog, remove everything and replace it with <code class="highlighter-rouge">.xhtml</code> and click “OK”.</li>
+</ol>
 
 <h2 id="adding-ibooks-display-options-file">Adding iBooks display-options file</h2>
 
