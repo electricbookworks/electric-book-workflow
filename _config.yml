@@ -12,8 +12,8 @@
 language: en
 
 # What theme are you using?
-# Using GitHub Pages? As of 1 Sep 2016, GitHub Pages does not yet support themes,
-# so you must build locally and place generated HTML in gh-pages.
+# If you are not using a theme (i.e. your have local _sass, _includes and _layouts)
+# then comment out this value to prevent Jekyll searching in vain for your theme.
 theme: electric-book-classic-theme
 
 # Which edition are we creating? You can leave this as `default`.
@@ -30,7 +30,7 @@ baseurl: "/electric-book-workflow"
 # If you're publishing a website on GitHub Pages:
 # add username/repository here and
 # uncomment `gem 'github-pages', group: :jekyll_plugins` in this project's Gemfile.
-repository: electricbookworks/electric-book-workflow
+repository: "electricbookworks/electric-book-workflow"
 
 # Web navigation source: select either files or nav
 # files: navigation will be taken from the web files list in `meta.yml` (this is default)
@@ -71,13 +71,9 @@ image-set: "images"
 exclude:
 # - css
 # - book
-- linux-print-pdf.sh
-- mac-print-pdf.command
-- win-print-pdf.bat
-- win-web.bat
-- win-epub.bat
-- win-screen-pdf.bat
-- win-install.bat
+- run-linux.sh
+- run-mac.command
+- run-windows.bat
 - Gemfile
 - Gemfile.lock
 
@@ -91,7 +87,7 @@ keep_files:
 # ----------------------------
 
 # Version of this Electric Book template
-version: "0.4.2"
+version: "0.4.4"
 
 # Leave this unchanged as http://localhost:4000 unless you really know what you're doing here. This is the URL that Jekyll will run at by default locally.
 url: http://localhost:4000
