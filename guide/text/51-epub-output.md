@@ -72,6 +72,9 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 	*	[epubcheck](https://github.com/IDPF/epubcheck/wiki/Running) installed locally, and run from the command line; or
 	*	[pagina EPUB-Checker](http://www.pagina-online.de/produkte/epub-checker/).
 
+> Tip: If you get validation errors about images, check that your paths to images are correct and case-sensitive. For instance, Sigil needs images to be in `Images` not `images`.
+{:.box}
+
 For general guidance on creating epubs with Sigil, check out [EBW's training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
 
 ### Quick-epub process checklist

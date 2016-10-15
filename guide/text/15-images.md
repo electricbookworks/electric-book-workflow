@@ -32,9 +32,9 @@ The reason we use a blockquote is that it lets us keep images and their captions
 Here's an example of markdown for a figure:
 
 ~~~
-> ![Figure 2-A: The Ballard scoring method](../{{ site.image-set }}/fig-2-A.svg)
+> ![Line drawing of a book](../{{ site.image-set }}/book.jpg)
 >
-> Figure 2-A: The Ballard scoring method
+> This is not a book.
 {:.figure}
 ~~~
 
@@ -47,6 +47,17 @@ The first line is the image reference. As noted above, it consists of:
 *	the path to the image file.
 
 The third line is the figure caption, followed by the kramdown tag `{:.figure}`, which lets our stylesheets format the `blockquote` as a figure. (For instance, preventing a page break between the image and the caption in print.)
+
+This will display like this.
+
+{% endraw %}
+
+> ![Line drawing of a book](../{{ site.image-set }}/book.jpg)
+>
+> This is not a book.
+{:.figure}
+
+{% raw %}
 
 If your image has no caption, just skip the empty line and caption line:
 
