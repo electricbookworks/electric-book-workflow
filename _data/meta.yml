@@ -69,7 +69,6 @@ works:
           - 50-print-output
           - 51-epub-output
           - 60-troubleshooting
-          - 70-examples
       web:
         date: "2016-08-30" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital online" # e.g. Paperback, Digital download, Digital online
@@ -98,7 +97,6 @@ works:
           - 50-print-output: "Print output"
           - 51-epub-output: "Epub output"
           - 60-troubleshooting: "Troubleshooting"
-          - 70-examples: "Examples"
         start-page: "0-3-contents" # At which file should users start reading?
         contents-page: "0-3-contents" # Your contents-page file, if you have one.
         footer: "Built with an <a href='http://electricbook.io'>Electric Book</a>" # Text that appears in the footer of the website. You can include HTML.
@@ -131,7 +129,6 @@ works:
           - 50-print-output
           - 51-epub-output
           - 60-troubleshooting
-          - 70-examples
       screen-pdf:
         date: "2016-08-30" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online
@@ -161,7 +158,6 @@ works:
           - 50-print-output
           - 51-epub-output
           - 60-troubleshooting
-          - 70-examples
   - directory: "typography"
     title: "Electric Book theme typography"
     subtitle: "Sample typography for testing Electric Book themes"
