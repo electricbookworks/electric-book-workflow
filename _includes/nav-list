@@ -1,0 +1,38 @@
+{% comment %}
+How this works:
+1. First we store the current file name as "current-file", so we can work out when
+   it's the active nav item.
+2. The "nav-tree" variable has been defined in the include tag that included this file,
+   usually starting with the nav list in meta.yml stored by metadata as "web-nav-tree".
+3. To include children items in that tree, this file includes itself recursively, 
+   redefining "nav-tree" each time as the children of the nav-tree it received originally.
+4. Turtles all the way down, as deep as the nav tree in meta.yml goes.
+Credit to Christian Specht for the inspiration:
+https://christianspecht.de/2014/06/18/building-a-pseudo-dynamic-tree-menu-with-jekyll/
+{% endcomment %}
+
+
+{% capture current-file %}{{ page.url | remove_first: ".html" | replace: "/", " " | split, " " | last }}{% endcapture %}
+{% capture nav-branch %}{{ include.nav-tree }}{% endcapture %}
+
+{% comment %}
+<div class="debug" style="background: pink;">
+nav-tree: {{ include.nav-tree[0] }}<br />
+nav-branch: {{ nav-branch }}<br />
+current-file: {{ current-file }}
+</div>
+{% endcomment %}
+
+<ol class="{% if nav-branch contains current-file %}active{% endif %}">
+{% for item in include.nav-tree | sort: "order" %}
+    <li class="{% if page.url contains item.file %}active{% endif %}">
+        <a href="{{ base.url}}{{ item.file }}.html{% if item.id != nil %}#{{ item.id }}{% endif %}"
+           class="{% if page.url contains item.file %}active{% endif %}">
+            {{ item.label }}
+        </a>
+    </li>
+    {% if item.children != nil %}
+            {% include nav-list nav-tree=item.children %}
+    {% endif %}
+{% endfor %}
+</ol>

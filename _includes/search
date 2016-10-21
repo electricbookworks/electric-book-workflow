@@ -1,0 +1,9 @@
+{% comment %}
+After this comment block, include the HTML for your search form.
+Include this file in HTML with {% include search %}
+{% endcomment %}
+
+<form action="/search.html" method="get">
+  <label for="search-box"></label>
+  <input type="text" id="search-box" name="query" placeholder="Search">
+</form>
