@@ -1,0 +1,25 @@
+// Also see .search in web-nav-bar
+
+$search-enabled: true !default;
+@if $search-enabled {
+
+    .search {
+        input {
+            width: 90%; // Keeps input within nav-bar bounds
+            padding: 0.75em 0.75em;
+            border: 0;
+            font-family: $font-text-secondary;
+            font-size: inherit;
+            overflow-x: hidden; // Prevents scroll bar popping up when very long searches are entered
+            background-color: $nav-bar-search-background-color;
+            color: $color-mid;
+        }
+    }
+    mark {
+        background-color: $color-highlight;
+        color: inherit;
+        padding: 0 0.2em;
+        border-radius: $button-border-radius;
+    }
+
+}

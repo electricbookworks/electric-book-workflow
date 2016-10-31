@@ -14,19 +14,14 @@ https://christianspecht.de/2014/06/18/building-a-pseudo-dynamic-tree-menu-with-j
 
 {% capture current-file %}{{ page.url | remove_first: ".html" | replace: "/", " " | split, " " | last }}{% endcapture %}
 {% capture nav-branch %}{{ include.nav-tree }}{% endcapture %}
-
-{% comment %}
-<div class="debug" style="background: pink;">
-nav-tree: {{ include.nav-tree[0] }}<br />
-nav-branch: {{ nav-branch }}<br />
-current-file: {{ current-file }}
-</div>
-{% endcomment %}
+{% capture page-list %}{{ site.pages | remove: ".html" }}{% endcapture %}
 
 <ol class="{% if nav-branch contains current-file %}active{% endif %}">
 {% for item in include.nav-tree | sort: "order" %}
-    <li class="{% if page.url contains item.file %}active{% endif %}">
-        <a href="{{ base.url}}{{ item.file }}.html{% if item.id != nil %}#{{ item.id }}{% endif %}"
+    <li class="{% if page.url contains item.file %}active{% endif %}
+    {% unless page-list contains item.file %}no-file{% endunless %}
+    {% if item.children == nil %}no-children{% endif %}">
+        <a {% if item.file != nil %}href="{{ base.url}}{{ item.file }}.html{% if item.id != nil %}#{{ item.id }}{% endif %}"{% endif %}
            class="{% if page.url contains item.file %}active{% endif %}">
             {{ item.label }}
         </a>

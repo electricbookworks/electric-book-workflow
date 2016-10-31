@@ -1,0 +1,22 @@
+$web-code: true !default;
+@if $web-code {
+
+    // Code
+
+    pre, code {
+    	font-family: $font-code;
+    	white-space: pre-wrap;
+    	background-color: $color-light;
+    	padding: 0.1em 0.3em;
+    	border-radius: 0.2em;
+    	font-weight: 200;
+    	font-size: 0.9em;
+    }
+    pre code {
+    	padding: 0;
+    }
+    pre + p {
+    	text-indent: 0;
+    }
+
+}

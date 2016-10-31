@@ -1,0 +1,11 @@
+$web-wrappers: true !default;
+@if $web-wrappers {
+
+    #wrapper {
+        clear: none;
+        margin-left: $nav-bar-width;
+        padding: 0 2em;
+        max-width: $max-width-default;
+    }
+
+}

@@ -1,0 +1,18 @@
+$epub-code: true !default;
+@if $epub-code {
+
+    // Code
+
+    pre, code {
+        font-family: $font-code;
+        white-space: pre-wrap;
+        background-color: $color-light;
+        padding: 0.1em 0.3em;
+        border-radius: 0.2em;
+        font-size: 0.9em;
+    }
+    pre code {
+        padding: 0;
+    }
+
+}

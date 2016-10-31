@@ -1,0 +1,43 @@
+$web-title-pages: true !default;
+@if $web-title-pages {
+
+	// Halftitle-page and title-page
+
+	.title-page, .halftitle-page {
+		margin: $start-depth auto 0 auto;
+		p {
+			text-indent: 0;
+			hyphens: none;
+		}
+		.title-page-title,
+		.title-page-subtitle {
+			font-size: $font-size-default * $font-size-bigger;
+			font-family: $font-display-main;
+			font-weight: bold;
+			margin: 0 0 $line-height-default 0;
+			line-height: 1;
+		}
+		.title-page-subtitle {
+			font-weight: normal;
+			line-height: 1;
+		}
+		.title-page-author {
+			font-size: $font-size-default * $font-size-bigger;
+			margin: 0 0 $line-height-default 0;
+			line-height: 1;
+		}
+		.title-page-publisher {
+			text-indent: 0;
+			margin: 0 0 $line-height-default 0;
+			line-height: 1;
+		}
+		.title-page-logo {
+			display: block; // In case the class is applied to the image, not the paragraph
+			max-width: 30%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+}

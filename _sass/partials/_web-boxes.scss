@@ -1,0 +1,32 @@
+$web-boxes: true !default;
+@if $web-boxes {
+
+	// Boxes
+
+	.box {
+		background-color: $color-light;
+		color: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+		border: 1px solid $color-light;
+		margin: $line-height-default 0;
+		padding: ($line-height-default / 2);
+	}
+	p.box {
+		padding-bottom: $line-height-default;
+		text-indent: 0;
+	}
+	.box + p {
+		text-indent: 0;
+	}
+	.box h1, .box h2, .box h3, .box h4, .box h5, .box h6 {
+		margin-top: 0;
+	}
+	.box li p:last-of-type { // Paragraphs within list items in a box
+		margin-bottom: 0;
+	}
+	.box dl:first-of-type { // Definition lists inside a box
+		margin-top: 0;
+	}
+
+}

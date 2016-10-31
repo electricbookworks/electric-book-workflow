@@ -1,0 +1,26 @@
+{% if page.type == 'file-list' or page.type == 'redirect' %}
+
+{{ content }}
+
+
+{% elsif site.output == 'epub' or site.output == 'print-pdf' or site.output == 'screen-pdf' %}
+
+{% include head.html %}
+{% include start-wrapper.html %}
+{{ content }}
+{% include close-wrapper.html %}
+{% include close-body.html %}
+
+
+{% else %}
+
+{% include head.html %}
+{% include nav.html %}
+{% include start-wrapper.html %}
+{{ content }}
+{% include close-wrapper.html %}
+{% include footer.html %}
+{% include close-body.html %}
+
+
+{% endif %}

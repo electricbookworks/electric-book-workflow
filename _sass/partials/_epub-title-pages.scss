@@ -1,0 +1,45 @@
+$epub-title-pages: true !default;
+@if $epub-title-pages {
+
+	// Halftitle-page and title-page
+
+	.title-page, .halftitle-page {
+		margin: $start-depth auto 0 auto;
+		p {
+			text-indent: 0;
+			hyphens: none;
+		}
+		.title-page-title {
+			font-size: $font-size-default * $font-size-bigger;
+			font-family: $font-display-main;
+			margin: 0 0 $line-height-default 0;
+			string-set: book-title content();
+		}
+		.title-page-subtitle {
+			margin: $line-height-default 0 $line-height-default 0;
+			string-set: book-subtitle content();
+		}
+		.title-page-author {
+			font-size: $font-size-default * $font-size-bigger;
+			margin: ($line-height-default * 2) 0;
+			string-set: book-author content();
+		}
+		.title-page-publisher {
+			text-indent: 0;
+		//	Now we'll center the block on the page
+			transform: translateX(-50%);
+		    margin-left: 50%;
+		}
+		.title-page-logo {
+			display: block; // In case the class is applied to the image, not the paragraph
+			max-width: 30%;
+		//	Now we'll center the block on the page
+			transform: translateX(-50%);
+		    margin-left: 50%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+}

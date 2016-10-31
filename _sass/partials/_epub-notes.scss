@@ -1,0 +1,35 @@
+$epub-notes: true !default;
+@if $epub-notes {
+
+	// Footnotes, endnotes and sidenotes
+	// Note: Conventionally, HTML .footnotes are in a book context endnotes.
+
+	.footnotes {
+	  margin: ($line-height-default * 2) 0 0 0;
+	  border-top: 1px solid $color-light;
+	}
+	.footnotes p {
+		text-indent: 0;
+	}
+	.sidenote {
+		font-family: $font-text-secondary;
+		clear: both;
+		float: right;
+		min-width: 5em;
+		padding: $line-height-default / 2;
+		border-top: 1px solid $color-light;
+		text-indent: 0;
+		font-size: $font-size-default * $font-size-smaller;
+		line-height: $line-height-default * $font-size-smaller;
+		font-style: inherit;
+		position: relative;
+		max-width: 40%;
+		margin: 0 0 ($line-height-default / 2) ($line-height-default / 2);
+		background-color: white;
+	}
+
+	// No media queries for epub, since they're not widely supported.
+
+	// .bottom {} // Only used for print output, ignored for screen.
+
+}

@@ -1,0 +1,45 @@
+$print-toc: true !default;
+@if $print-toc {
+
+	// Table of Contents pages
+	// Also adds page numbers to any block of links classed as .page-ref-list
+
+	.contents-page {
+		a::after,
+		.page-ref-list a::after { 
+			content: leader(" ") target-counter(attr(href), page);
+		}
+		a.frontmatter-reference::after,
+		.page-ref-list a.frontmatter-reference::after {
+			content: leader(" ") target-counter(attr(href), page, $frontmatter-reference-style);
+		}
+		ul, ol {
+			list-style-type: none;
+		}
+		li {
+			margin: 0;
+		}
+		li li {
+			margin-left: $line-height-default;
+		}
+	}
+
+	// TOCs in individual pages
+	// As created in kramdown with a placeholder ol/ul followed by {:toc}
+
+	#markdown-toc {
+		font-family: $font-text-secondary;
+		list-style-type: none;
+		margin: $line-height-default 0;
+		li {
+			margin: 0;
+		}
+		li li {
+			margin-left: $line-height-default;
+		}
+		a::after {
+			content: leader(" ") target-counter(attr(href), page);
+		}
+	}
+
+}

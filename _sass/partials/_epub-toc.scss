@@ -1,0 +1,34 @@
+$epub-toc: true !default;
+@if $epub-toc {
+
+	// Tables of contents
+
+	.contents-page {
+		ol, ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			margin: 0 0 ($line-height-default / 2) 0;
+		}
+		li li {
+			margin-left: $line-height-default;
+		}
+	}
+
+	/* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
+
+	#markdown-toc {
+		font-family: $font-text-secondary;
+		list-style-type: none;
+		margin: $line-height-default 0;
+		li {
+			margin: 0;
+		}
+		li li {
+			margin-left: $line-height-default;
+		}
+	}
+
+}

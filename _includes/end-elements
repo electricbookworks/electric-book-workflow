@@ -1,0 +1,11 @@
+{% comment %}
+After this comment block, include any links and scripts
+that you want just before the </body> tag in your HTML.
+Use Liquid logic tags to include only in certain outputs, e.g.
+`if site.output == "web"` for scripts like search.js.
+{% endcomment %}
+
+<script src="{{ baseurl }}/assets/js/elasticlunr.min.js"></script>
+<script src="{{ baseurl }}/assets/js/mark.min.js"></script>
+<script src="{{ baseurl }}/assets/js/search.js"></script>
+<script src="{{ baseurl }}/assets/js/mark-search-terms.js"></script>

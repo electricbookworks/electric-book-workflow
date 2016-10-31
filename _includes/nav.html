@@ -2,6 +2,7 @@
 
 {% if site.nav-source == "nav" %}
 
+    <div class="nav-wrapper">
         <div id="nav" class="non-printing">
         
             <div class="branding">
@@ -23,9 +24,11 @@
             </div><!--.widgets-->
 
         </div><!--#nav-->
+    </div><!--.nav-wrapper-->
 
 {% else %}
 
+    <div class="nav-wrapper">
         <div id="nav" class="non-printing">
             <h1 class="nav-series-home"><a href="{{ site.baseurl }}/" title="Home: {{ series-name }}" class="nav-series-home-link">{{ series-name }}</a></h1>
             <h2 class="nav-book"><a href="{{ web-contents-page }}" title="Contents: {{ title }}" class="nav-book-link">{{ title }}</a></h2>
@@ -51,5 +54,6 @@
                 </ul>
             </div><!--.nav-list-->
         </div><!--#nav-->
+    </div><!--.nav-wrapper-->
 
 {% endif %}

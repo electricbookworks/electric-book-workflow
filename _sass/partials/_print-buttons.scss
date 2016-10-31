@@ -1,0 +1,18 @@
+$print-buttons: true !default;
+@if $print-buttons {
+
+    // Buttons
+
+    a.button {
+        display: inline-block;
+        background-color: $color-links;
+        color: white;
+        font-family: $font-text-secondary;
+        padding: $line-height-default / 2;
+        margin: 0;
+        border-radius: $button-border-radius;
+        text-decoration: none;
+        content: attr(href);
+    }
+
+}
