@@ -15,23 +15,14 @@ $web-base-typography: true !default;
     h1, h2, h3, h4, h5, h6 {
         font-family: $font-display-secondary;
         font-size: $font-size-default;
-    	font-weight: inherit;
+    	font-weight: bold;
     	line-height: $line-height-default;
     	page-break-after: avoid;
     	margin: $line-height-default 0 0 0;
     }
-    h1:target,
-    h2:target,
-    h3:target,
-    h4:target,
-    h5:target,
-    h6:target {
-    	padding-top: 3.5em; // Prevents #-linked headings from disappearing below the fixed nav bar.
-    }
     h1 {
         font-family: $font-display-main;
         font-size: $font-size-default * $font-size-bigger;
-        font-weight: bold;
         margin: ($line-height-default) 0 ($line-height-default * 0.5) 0;
     }
     h2 {
@@ -39,9 +30,18 @@ $web-base-typography: true !default;
         margin: ($line-height-default) 0 ($line-height-default * 0.5) 0;
     }
     h3 {}
-    h4, h5, h6 {
+    h4 {
         font-style: italic;
-        font-weight: normal;
+        font-weight: inherit;
+    }
+    h5 {
+        font-family: $font-text-main;
+        font-style: italic;
+        font-weight: inherit;
+    }
+    h6 {
+        font-family: $font-text-main;
+        font-weight: inherit;
     }
     p {
         margin: 0;
@@ -50,23 +50,18 @@ $web-base-typography: true !default;
     p:first-of-type {
         text-indent: 0;
     }
-    sup, sub {
-        line-height: 100%;
-        font-size: 1em * $font-size-smaller;
-    }
-    sup {
-        vertical-align: super;
-    }
-    sub {
-        vertical-align: sub;
-    }
+
+    // Lists
+
     ol {
         list-style: decimal;
-        list-style-position: inside;
+        list-style-position: outside;
+        margin: 0 0 $line-height-default $line-height-default;
     }
     ul {
-        list-style-position: inside;
         list-style-type: disc;
+        list-style-position: outside;
+        margin: 0 0 $line-height-default $line-height-default;
     }
     ul ul, ol ol, blockquote ul ul, blockquote ol ol {
     	margin-bottom: 0;
@@ -74,6 +69,10 @@ $web-base-typography: true !default;
     ol ol {
     	list-style-type: lower-alpha;
     }
+
+
+    // Blockquotes
+
     blockquote {
     	margin: $line-height-default 0 $line-height-default 0;
     	padding: 0 $line-height-default;
@@ -89,7 +88,7 @@ $web-base-typography: true !default;
     	margin: 0 0 $line-height-default 0;
     }
 
-    /* Definition lists. Useful for sidebar-like notes, too. */
+    // Definition lists
 
     dl {
         margin: $line-height-default 0;
@@ -99,22 +98,43 @@ $web-base-typography: true !default;
     	margin: 0 0 $line-height-default 0;
     }
 
-    /* Links */
+    // Horizontal rules
+
+    // Used in text as dividers (*** in markdown)
+    hr {
+        content: "\2016";
+        border: 0;
+        font-family: $font-display-main;
+        text-align: center;
+        margin: $line-height-default 0;
+    }
+
+    // Superscripts and subscripts
+
+    sup, sub {
+        line-height: 100%;
+        font-size: 1em * $font-size-smaller;
+    }
+    sup {
+        vertical-align: super;
+    }
+    sub {
+        vertical-align: sub;
+    }
+
+    // Links
 
     a {
         text-decoration: none;
         color: $color-links;
     }
 
-    /* Horizontal rules */
-
-    // Used in text as dividers (*** in markdown)
-    hr {
-        content: "***";
-        border: 0;
-        font-family: $font-display-main;
-        text-align: center;
-        margin: $line-height-default 0;
+    // Bold and italic
+    em {
+        font-style: italic;
+    }
+    strong {
+        font-weight: bold;
     }
 
 }

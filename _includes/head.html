@@ -26,7 +26,7 @@
     {% include head-elements %}
 
 </head>
-<body class="{{ directory }} {{ page.style }}">
+<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
 
 {% elsif site.output == 'screen-pdf' %}
 <!doctype html>
@@ -46,7 +46,7 @@
     {% include head-elements %}
 
 </head>
-<body class="{{ directory }} {{ page.style }}">
+<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
 
 {% elsif site.output == 'print-pdf' %}
 <!doctype html>
@@ -67,7 +67,7 @@
 
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="{{ directory }} {{ page.style }}" ontouchstart="" onmouseover="">
+<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
 
 
 {% else %}
@@ -111,6 +111,6 @@
 
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="{{ directory }} {{ page.style }}" ontouchstart="" onmouseover="">
+<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
 
 {% endif %}

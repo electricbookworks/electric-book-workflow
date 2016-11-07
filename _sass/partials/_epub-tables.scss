@@ -7,6 +7,7 @@ $epub-tables: true !default;
 		border-collapse: collapse;
 		margin: $line-height-default 0;
 		font-size: $font-size-default * $font-size-smaller;
+		width: 100%;
 	}
 	thead, th, .table-subhead {
 		page-break-after: avoid;
@@ -27,7 +28,7 @@ $epub-tables: true !default;
 	}
 	.table-caption {
 		page-break-after:avoid;
-		font-family: $font-text-secondary;
+		font-style: italic;
 		text-indent: 0;
 		margin: $line-height-default 0 0 0;
 		& em {

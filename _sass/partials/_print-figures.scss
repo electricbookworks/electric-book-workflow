@@ -5,12 +5,14 @@ $print-figures: true !default;
 	// Use the .figure class for the blockquote wrapping an image and a caption. 
 	// Add .fixed, .small and/or .large for layout and size options. 
 
+	// To do:
+	// * Add styling for <figure> element as created with figure include
+
 	.figure {
 		clear: both;
 		float: top; // By default all figures float to the tops of their pages
 		page-break-inside: avoid;
 		background-color: inherit;
-		font-family: $font-text-secondary;
 		font-size: inherit;
 		font-weight: inherit;
 		color: inherit;
@@ -41,6 +43,11 @@ $print-figures: true !default;
 		page-break-before: avoid;
 		text-align: center;
 		text-indent: 0;
+		hyphens: none;
+		font-style: italic;
+		em {
+			font-style: normal;
+		}
 	}
 
 	// The image(s) in the figure

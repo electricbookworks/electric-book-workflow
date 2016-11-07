@@ -1,0 +1,11 @@
+$web-highlighter: true !default;
+@if $web-highlighter {
+
+    // Highlighter
+
+    .highlighter,
+    a[href="highlighter"] {
+        background-color: yellow;
+    }
+
+}

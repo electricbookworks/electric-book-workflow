@@ -4,7 +4,10 @@ $epub-figures: true !default;
 	// Figures. Note: we use the blockquote element to wrap figures and their captions in valid XHTML. 
 	// This keeps them EPUB2 compatible (unlike the <figure> element, which is not.)
 	// Use the .figure class for the blockquote wrapping an image and a caption. 
-	// Add .fixed, .small and/or .large for layout and size options. */
+	// Add .fixed, .small and/or .large for layout and size options.
+
+	// To do:
+	// * Add styling for <figure> element as created with figure include
 
 	.figure {
 		clear: both;
@@ -12,7 +15,6 @@ $epub-figures: true !default;
 		background-color: inherit;
 		font-size: inherit;
 		font-weight: inherit;
-		font-family: $font-text-secondary;
 		margin: $line-height-default 0;
 		padding: $line-height-default / 2;
 	}
@@ -21,6 +23,11 @@ $epub-figures: true !default;
 		text-align: center;
 		page-break-inside: avoid;
 		page-break-before: avoid;
+		hyphens: none;
+		font-style: italic;
+		em {
+			font-style: normal;
+		}
 	}
 	.figure p img {
 		padding: ($line-height-default / 2) 0 ($line-height-default) 0;

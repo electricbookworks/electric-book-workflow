@@ -1,3 +1,16 @@
-<div class="videowrapper non-printing">
-<iframe width="853" height="480" max-width="100%" src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
+{% if site.output == "web" or site.output == "epub3" %}
+
+<div class="videowrapper youtube" id="{{ include.id }}">
+    <iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
 </div><!--.videowrapper-->
+
+{% else %}
+
+<div class="video youtube" id="{{ include.id }}">
+    <a href="{{ include.link }}"><img src="../{{ site.image-set }}/{{ include.image }}"></a>
+    <p class="video-description">
+        <a href="{{ include.link }}">{{ include.description }}</a>
+    </p>
+</div>
+
+{% endif %}

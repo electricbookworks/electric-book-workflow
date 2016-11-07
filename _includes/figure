@@ -1,0 +1,16 @@
+{% comment %}
+To do: create HTML5 <figure> option here based on site.output
+when theme stylesheet has definitions.
+{% endcomment %}
+
+<blockquote class="figure" id="{{ include.reference | slugify }}">
+    <p>
+        <img src="../{{ site.image-set }}/{{ include.image }}" alt="{{ include.description | strip_html }}" />
+    </p>
+    <p class="caption">
+        {{ include.reference }} {{ include.caption | markdownify }}
+    </p>
+    <p class="source">
+        {{ include.source | markdownify }}
+    </p>
+</blockquote>

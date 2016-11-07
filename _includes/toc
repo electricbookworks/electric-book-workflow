@@ -21,6 +21,10 @@ Fall back to print-pdf toc, then web nav list, then print file list.
 {% if site.output == "print-pdf" %}
     {% if work.products.print-pdf.toc != nil %}
         {% assign toc = work.products.print-pdf.toc %}
+    {% elsif work.products.web.nav != nil %}
+        {% assign toc = work.products.web.nav %}
+    {% else %}
+        Please define a TOC or web nav in meta.yml.
     {% endif %}
 
 {% elsif site.output == "screen-pdf" %}
@@ -41,6 +45,8 @@ Fall back to print-pdf toc, then web nav list, then print file list.
     {% if work.products.web.toc != nil %}
         {% assign toc = work.products.web.toc %}
     {% else %}
+        {% assign toc = work.products.web.nav %}
+    {% else %}
         {% assign toc = work.products.print-pdf.toc %}
     {% endif %}
 
@@ -48,7 +54,7 @@ Fall back to print-pdf toc, then web nav list, then print file list.
     {% if work.products.web.nav != nil %}
         {% assign toc = work.products.web.nav %}
     {% else %}
-        {% assign toc = work.products.print-pdf.files %}
+        Please define a TOC or web nav in meta.yml.
     {% endif %}
 
 {% endif %}
@@ -81,7 +87,7 @@ Now we'll use all that to output the toc list.
 
 <ol class="toc-list {% if toc-branch contains current-file %}active{% endif %}">
 {% for item in toc-branch | sort: "order" %}
-    <li class="toc-chapter-title{% if page.url contains item.file %} active{% endif %}">
+    <li class="toc-entry-title{% if page.url contains item.file %} active{% endif %}{% if item.class != nil %} {{ item.class }}{% endif %}">
         <a href="{{ base.url}}{{ item.file }}.html{% if item.id != nil %}#{{ item.id }}{% endif %}"
            class="{% if page.url contains item.file %}active{% endif %}">
             {{ item.label }}

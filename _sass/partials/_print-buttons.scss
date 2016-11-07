@@ -2,17 +2,50 @@ $print-buttons: true !default;
 @if $print-buttons {
 
     // Buttons
-
-    a.button {
-        display: inline-block;
-        background-color: $color-links;
-        color: white;
-        font-family: $font-text-secondary;
-        padding: $line-height-default / 2;
-        margin: 0;
-        border-radius: $button-border-radius;
+        
+    // Applied to inline elements
+    a.button,
+    em.button,
+    strong.button,
+    span.button, {
         text-decoration: none;
-        content: attr(href);
+        &:after {
+            content: " (" attr(href) ")";
+        }
+    }
+
+    // Applied to block-level elements
+    p.button,
+    ol.button,
+    ul.button,
+    li.button,
+    blockquote.button,
+    table.button,
+    div.button,
+    h1.button,
+    h2.button,
+    h3.button,
+    h4.button,
+    h5.button,
+    h6.button, {
+        text-indent: 0;
+        text-align: center;
+        a {
+            font-family: $font-text-secondary;
+            display: inline-block;
+            background-color: $color-light;
+            color: inherit;
+            padding: $line-height-default / 2;
+            margin: $line-height-default 0;
+            border-radius: $button-border-radius;
+            text-decoration: none;
+            &:after {
+                content: " (" attr(href) ")";
+            }
+        }
+        & + p {
+            text-indent: 0;
+        }
     }
 
 }

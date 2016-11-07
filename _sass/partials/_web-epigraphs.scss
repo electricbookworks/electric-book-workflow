@@ -13,6 +13,11 @@ $web-epigraphs: true !default;
     p.epigraph-source {
     	text-indent: 0;
     	padding: 0 ($line-height-default * 2);
+        text-align: right;
+        font-style: italic;
+        em {
+            font-style: normal;
+        }
     }
     // Paragraphs after epigraph sources
     .epigraph-source + p {

@@ -44,9 +44,12 @@ $font-size-bigger: 2 !default; // How many times bigger than font-size-default f
 $button-border-radius: 0.1em !default; // Roundness of button corners.
 
 // Colours
-$color-light: #cccccc !default;
+$color-background: white !default;
+$color-light: #e0e0e0 !default;
+$color-mid: #9c9c9c !default;
 $color-accent: #000000 !default;
 $color-links: #5f738c !default;
+$color-highlight: #ffd54d !default;
 
 // Set the default start-depth of pages.
 // This is the distance from the top of the page to the first element on the first page.
@@ -60,6 +63,53 @@ $hyphenation-dictionary: "" !default; // Path to dictionary file, relative to `/
 $hyphenate-after: 3 !default; // Minimum letters on new line after hyphen
 $hyphenate-before: 3 !default; // Minimum letters at end of line before hyphen
 $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with hyphens
+
+// ---------------------------------
+// Set to false to turn partials off
+// ---------------------------------
+
+// Reset ereader CSS as best we can
+$epub-css-reset: true !default;
+
+// Structural HTML components
+$epub-wrappers: true !default; // 
+
+// Default typography
+$epub-base-typography: true !default; // 
+
+// Book parts
+$epub-cover: true !default; // 
+$epub-previous-publications-page: true !default; //
+$epub-title-pages: true !default; // 
+$epub-copyright-page: true !default; // 
+$epub-dedications: true !default; // 
+$epub-epigraphs: true !default; // 
+$epub-toc: true !default; // 
+
+// Book-feature classes
+$epub-bibliographies: true !default; // 
+$epub-boxes: true !default; // 
+$epub-buttons: true !default; // 
+$epub-code: true !default; // 
+$epub-figures: true !default; // 
+$epub-glossaries: true !default; //
+$epub-highlighter: true !default; //
+$epub-index: true !default; // 
+$epub-maths: true !default; // 
+$epub-notes: true !default; // 
+$epub-openers: true !default; // 
+$epub-pullquotes: true !default; // 
+$epub-sources: true !default; // 
+$epub-tables: true !default; // 
+$epub-letters: true !default; // 
+$epub-verse: true !default; // 
+
+// Type-control classes
+$epub-smallcaps: true !default; // 
+$epub-fitting: true !default; // 
+
+// Logic (if this then that)
+$epub-reset-sequences: true !default; // 
 
 // ----------------------------------------------------
 // Import font files (@font-face) for fonts you specify
@@ -82,6 +132,7 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 
 // Book parts
 @import "partials/epub-cover"; // 
+@import "partials/epub-previous-publications-page"; // 
 @import "partials/epub-title-pages"; // 
 @import "partials/epub-copyright-page"; // 
 @import "partials/epub-dedications"; // 
@@ -95,6 +146,7 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 @import "partials/epub-code"; // 
 @import "partials/epub-figures"; // 
 @import "partials/epub-glossaries"; //
+@import "partials/epub-highlighter"; //
 @import "partials/epub-index"; // 
 @import "partials/epub-maths"; // 
 @import "partials/epub-notes"; // 
@@ -102,7 +154,7 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 @import "partials/epub-pullquotes"; // 
 @import "partials/epub-sources"; // 
 @import "partials/epub-tables"; // 
-@import "partials/epub-valedictions"; // 
+@import "partials/epub-letters"; // 
 @import "partials/epub-verse"; // 
 
 // Type-control classes
@@ -111,48 +163,3 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 
 // Logic (if this then that)
 @import "partials/epub-reset-sequences"; // 
-
-// ---------------------------------
-// Set to false to turn partials off
-// ---------------------------------
-
-// Reset ereader CSS as best we can
-$epub-css-reset: true !default;
-
-// Structural HTML components
-$epub-wrappers: true !default; // 
-
-// Default typography
-$epub-base-typography: true !default; // 
-
-// Book parts
-$epub-cover: true !default; // 
-$epub-title-pages: true !default; // 
-$epub-copyright-page: true !default; // 
-$epub-dedications: true !default; // 
-$epub-epigraphs: true !default; // 
-$epub-toc: true !default; // 
-
-// Book-feature classes
-$epub-bibliographies: true !default; // 
-$epub-boxes: true !default; // 
-$epub-buttons: true !default; // 
-$epub-code: true !default; // 
-$epub-figures: true !default; // 
-$epub-glossaries: true !default; //
-$epub-index: true !default; // 
-$epub-maths: true !default; // 
-$epub-notes: true !default; // 
-$epub-openers: true !default; // 
-$epub-pullquotes: true !default; // 
-$epub-sources: true !default; // 
-$epub-tables: true !default; // 
-$epub-valedictions: true !default; // 
-$epub-verse: true !default; // 
-
-// Type-control classes
-$epub-smallcaps: true !default; // 
-$epub-fitting: true !default; // 
-
-// Logic (if this then that)
-$epub-reset-sequences: true !default; // 

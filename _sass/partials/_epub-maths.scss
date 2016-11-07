@@ -1,7 +1,14 @@
 $epub-maths: true !default;
 @if $epub-maths {
 
+    // Math
+
+    math {
+        margin: $line-height-default auto;
+    }
+
     // Automatic fractions
+
     .fractions { 
     	-moz-font-feature-settings: "frac"; 
     	-ms-font-feature-settings: "frac"; 

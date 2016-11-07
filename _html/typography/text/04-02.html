@@ -28,7 +28,7 @@
 <head>
     <title>
     
-    Electric Book theme typography: Video
+    Electric Book samples: Video
     
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -50,9 +50,10 @@
 
 
 
+
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="typography chapter" ontouchstart="" onmouseover="">
+<body class="typography chapter" title="Video" ontouchstart="" onmouseover="">
 
 
 
@@ -86,7 +87,7 @@
         
             <div class="branding">
                 <h1 class="nav-series-home"><a href="/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></h1>
-                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book theme typography" class="nav-book-link">Electric Book theme typography</a></h2>
+                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book samples" class="nav-book-link">Electric Book samples</a></h2>
             </div><!--.branding-->
 
             <div class="search">
@@ -634,16 +635,16 @@
 
 <h2 id="video">Video</h2>
 
-<p>The Electric Book template includes an include tag for easily inserting YouTube videos. (Other services may be supported in future.) The Electric Book guide provides more detail on how that’s done. Here’s a video.</p>
+<p>The Electric Book template includes an include tag for easily inserting YouTube videos. (Other services may be supported in future.) The Electric Book guide provides more detail on how that’s done.</p>
 
-<div class="videowrapper non-printing">
-<iframe width="853" height="480" max-width="100%" src="https://www.youtube.com/embed/MqlyxZiDoOA" frameborder="0" allowfullscreen=""></iframe>
+<p>Here’s a video that only appears in the web version.</p>
+
+<div class="videowrapper youtube" id="MqlyxZiDoOA">
+    <iframe src="https://www.youtube.com/embed/MqlyxZiDoOA" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <!--.videowrapper-->
 
-<p>In epub output, authors may choose to replace it with a link to watch the video online. Video iframes won’t validate in EPUB2.</p>
-
-<p>Our default iframe code gives the iframe a <code class="highlighter-rouge">.non-printing</code> class, so that themes can hide videos from the PDF editions. We may change this in future.</p>
+<p>In epub output, authors may choose to replace video with a link to watch the video online. Video iframes won’t validate in EPUB2.</p>
 
 	</div><!--#wrapper-->
 	
@@ -681,10 +682,17 @@
 
 
 
+
+
 <script src="/assets/js/elasticlunr.min.js"></script>
 <script src="/assets/js/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 <script src="/assets/js/mark-search-terms.js"></script>
+
+
+
+
+
 
 </body>
 </html>

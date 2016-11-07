@@ -3,6 +3,9 @@ $epub-verse: true !default;
 
 	// Verse, poetry, lyrics
 
+	// To do:
+	// * convert indents to a more efficient Sass loop
+
 	.verse {
 		text-indent: 0;
 		margin: $line-height-default 0;

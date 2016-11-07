@@ -3,6 +3,11 @@ $print-verse: true !default;
 
 	// Verse, poetry, lyrics
 
+	// To do:
+	// * convert indents to a more efficient Sass loop
+	// * for width classes, use a Sass loop to create fine-grained
+	//   width control for every percentage.
+
 	.verse {
 		text-indent: 0;
 		margin: $line-height-default 0;

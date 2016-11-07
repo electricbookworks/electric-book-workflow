@@ -8,19 +8,26 @@ $epub-title-pages: true !default;
 		p {
 			text-indent: 0;
 			hyphens: none;
+			text-align: center;
 		}
 		.title-page-title {
-			font-size: $font-size-default * $font-size-bigger;
+			font-weight: bold;
 			font-family: $font-display-main;
-			margin: 0 0 $line-height-default 0;
+			font-size: $font-size-default * $font-size-bigger;
+			line-height: 1;
+			margin: 0;
 			string-set: book-title content();
 		}
 		.title-page-subtitle {
+			font-family: $font-display-main;
+			font-size: $font-size-default * $font-size-bigger;
+			line-height: 1;
 			margin: $line-height-default 0 $line-height-default 0;
 			string-set: book-subtitle content();
 		}
 		.title-page-author {
 			font-size: $font-size-default * $font-size-bigger;
+			line-height: 1;
 			margin: ($line-height-default * 2) 0;
 			string-set: book-author content();
 		}

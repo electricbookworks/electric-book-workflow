@@ -1,7 +1,14 @@
 $web-maths: true !default;
 @if $web-maths {
 
+    // Math
+
+    math {
+        margin: $line-height-default auto;
+    }
+
     // Automatic fractions
+    
     .fractions { 
     	-moz-font-feature-settings: "frac"; 
     	-ms-font-feature-settings: "frac"; 

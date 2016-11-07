@@ -58,7 +58,7 @@ works:
           - 01-intro
           - 02-setting-up
           - 03-markdown
-          - 04-themes
+          # - 04-themes
           - 05-classes
           - 10-tocs
           - 15-images
@@ -87,7 +87,7 @@ works:
           - 01-intro: "Introduction"
           - 02-setting-up: "Setting up"
           - 03-markdown: "Markdown"
-          - 04-themes: "Themes"
+          # - 04-themes: "Themes"
           - 05-classes: "Classes"
           - 10-tocs: "Tables of contents"
           - 15-images: "Images"
@@ -119,9 +119,9 @@ works:
               - 
                 file: "03-markdown"
                 label: "Markdown"
-              - 
-                file: "04-themes"
-                label: "Themes"
+              # - 
+              #   file: "04-themes"
+              #   label: "Themes"
               - 
                 file: "05-classes"
                 label: "Classes"
@@ -185,7 +185,7 @@ works:
           - 01-intro
           - 02-setting-up
           - 03-markdown
-          - 04-themes
+          # - 04-themes
           - 05-classes
           - 10-tocs
           - 15-images
@@ -214,7 +214,7 @@ works:
           - 01-intro
           - 02-setting-up
           - 03-markdown
-          - 04-themes
+          # - 04-themes
           - 05-classes
           - 10-tocs
           - 15-images
@@ -230,13 +230,13 @@ works:
           - 51-epub-output
           - 60-troubleshooting
   - directory: "typography"
-    title: "Electric Book theme typography"
-    subtitle: "Sample typography for testing Electric Book themes"
+    title: "Electric Book samples"
+    subtitle: "Sample content for Electric Book print, epub and web output"
     creator: "Arthur Attwell" # E.g. the author
     contributor: "" # E.g. other contributors
     subject: "Publishing" # E.g. BISAC terms (https://www.bisg.org/bisac/bisac-subject-codes) or BIC (http://editeur.dyndns.org/bic_categories)
     description: >
-      This sample typography tests Electric Book theme support for a wide range of book features.
+      This sample content demos Electric Book support for a wide range of book features.
     publisher: "Electric Book Works" # E.g. the publisher, imprint or brand name
     publisher-url: ""
     date: "2016-09-01" # YYYY-MM-DD e.g. publication date
@@ -329,25 +329,35 @@ works:
         nav:
           - label: "Cover"
             file: "index"
+            class: "cover-entry"
             children:
               - label: "Half title page"
                 file: "00-01-halftitle-page"
+                class: "frontmatter-entry"
               - label: "Previous publications"
                 file: "00-02-previous-publications-page"
+                class: "frontmatter-entry"
               - label: "Title page"
                 file: "00-03-title-page"
+                class: "frontmatter-entry"
               - label: "Copyright"
                 file: "00-04-copyright-page"
+                class: "frontmatter-entry"
               - label: "Contents"
                 file: "00-05-contents-page"
+                class: "frontmatter-entry"
               - label: "Dedication"
                 file: "00-06-dedication-page"
+                class: "frontmatter-entry"
               - label: "Epigraph"
                 file: "00-07-epigraph-page"
+                class: "frontmatter-entry"
               - label: "Frontispiece"
                 file: "00-08-frontispiece-page"
+                class: "frontmatter-entry"
               - label: "Other frontmatter"
                 file: "00-09-frontmatter"
+                class: "frontmatter-entry"
           - label: "Text"
             children: 
               - label: "Plain text"

@@ -42,6 +42,12 @@ repository: "electricbookworks/electric-book-workflow"
 # nav: navigation will be taken from the web nav tree in `meta.yml` (allows submenu nesting)
 nav-source: nav
 
+# Enable MathJax to render mathematics. MathJax adds a large script to your pages,
+# so this is off (false) by default. Change to true to load MathJax.
+# See http://docs.mathjax.org/en/latest/configuration.html for details.
+# MathJax scripts are linked from the head-elements include.
+enable-mathjax: false;
+
 # --------------------------------------------
 # CHANGE THESE SETTINGS ONLY IF/WHEN NECESSARY
 # --------------------------------------------

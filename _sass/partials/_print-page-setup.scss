@@ -14,11 +14,14 @@ $print-page-setup: true !default;
 		prince-trim: $trim;
 	}
 	/* Name our book-part styles as divs. PrinceXML needs the pages named for @page rules. */
-	.title-page {
-		page: title-page;
+	.cover {
+		page: cover;
 	}
 	.halftitle-page {
 		page: halftitle-page;
+	}
+	.title-page {
+		page: title-page;
 	}
 	.previous-publications-page {
 		page: previous-publications-page;
@@ -32,17 +35,17 @@ $print-page-setup: true !default;
 	.frontispiece-page {
 		page: frontispiece-page;
 	}
-	.chapter {
-		page: chapter;
-	}
 	.contents-page {
 		page: contents-page;
 	}
-	.cover {
-		page: cover;
-	}
 	.frontmatter {
 		page: frontmatter; /* Use for any other frontmatter */
+	}
+	.part-page {
+		page: part-page;
+	}
+	.chapter {
+		page: chapter;
 	}
 
 }

@@ -28,7 +28,7 @@
 <head>
     <title>
     
-    Electric Book theme typography: Notes
+    Electric Book samples: Notes
     
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -50,9 +50,10 @@
 
 
 
+
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="typography chapter" ontouchstart="" onmouseover="">
+<body class="typography chapter" title="Notes" ontouchstart="" onmouseover="">
 
 
 
@@ -86,7 +87,7 @@
         
             <div class="branding">
                 <h1 class="nav-series-home"><a href="/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></h1>
-                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book theme typography" class="nav-book-link">Electric Book theme typography</a></h2>
+                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book samples" class="nav-book-link">Electric Book samples</a></h2>
             </div><!--.branding-->
 
             <div class="search">
@@ -644,12 +645,20 @@
     </ul>
   </li>
   <li><strong>Sidenotes</strong> appear in a box to the right of the text. On wide screens, they might float far right of the text. On narrower screens, the text might wrap around them. In print, the text might wrap around them, too, or they might appear in an otherwise empty sidebar space. To create a sidenote, put a <code class="highlighter-rouge">*</code> at the start of the sidenote text and <code class="highlighter-rouge">*{:.sidenote}</code> at the end (with no spaces). (Technically, you’re creating an <code class="highlighter-rouge">&lt;em&gt;</code> span with a kramdown IAL.)</li>
-  <li><strong>Footer notes</strong>, which in print are sidenotes at the bottom of the page. By adding <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.sidenote</span><span class="p">}</span></code> tag, your sidenote should sit at the bottom of the page rather than on the right with text wrap, replicating a traditional footnote. So the markdown looks like this: <code class="highlighter-rouge">*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}</code>. On screen, these might just be regular sidenotes.</li>
+  <li>
+    <p><strong>Footer notes</strong>, which in print are sidenotes at the bottom of the page. By adding <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge"><span class="p">{</span><span class="err">:.sidenote</span><span class="p">}</span></code> tag, your sidenote should sit at the bottom of the page rather than on the right with text wrap, replicating a traditional footnote. So the markdown looks like this:</p>
+
+    <blockquote>
+      <p><code class="highlighter-rouge">*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}</code>.</p>
+    </blockquote>
+
+    <p>On screen, these might just be regular sidenotes.</p>
+  </li>
 </ul>
 
 <p>To show notes in action, we need a lot of text with a bunch of notes. For that, we’ll use ‘Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains’ by Barbara L. Finlay, which is <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002556">on PLOS</a>, licenced CC BY.</p>
 
-<h2 id="principles-of-network-architecture-emerging-from-comparisons-of-the-cerebral-cortex-in-large-and-small-brains">Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains</h2>
+<h2 title="Principles of Network Architecture" id="principles-of-network-architecture-emerging-from-comparisons-of-the-cerebral-cortex-in-large-and-small-brains">Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains</h2>
 
 <p class="sidenote">Citation: Finlay BL (2016) Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains. PLoS Biol 14(9): e1002556. doi:10.1371/journal.pbio.1002556</p>
 
@@ -685,6 +694,8 @@ Top left: Lateral view of mouse (top) versus macaque monkey brain (bottom), draw
 <p>The authors point out that the low probability of long-distance connections may make those connections particularly vulnerable in large brains, citing evidence of this kind in both autism and Alzheimer’s disease. This example, while well taken, brings up the caution that not every problem caused by connectivity (or any particular process) should be expected to be solved by connectivity, as multiple alterations in axon caliber and myelination varying with brain size have been described as partial solutions to this problem.<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> <sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup></p>
 
 <p>Finally, how a computational device scales may take advantage of how it is made (or, be constrained by how it is made). The exponential distance rule points to a potential simple source of developmental scaffolding for cortical connections in the initial outgrowth of intracortical axons. Initial axon outgrowth, moreover, has some distinct features within and between species that should be investigated for their role in later network architecture. The frontal cortex is the first to send out axons as the cortex develops:<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup> does this cause its position in “cliques” of cortical connectivity and its core status? Is the duration of development, though much longer in monkeys than mice, the effective limiting factor that determines how far intracortical axons have time to extend?<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup> Evolution has likely filtered from the original range of developmental rules organizing the cortex those rules generating computational architectures robust to common challenges. Variation in the sizes of animals and all their parts is certainly one of those repeated challenges.</p>
+
+<h3 id="endnotes">Endnotes</h3>
 
 <div class="footnotes">
   <ol>
@@ -778,10 +789,17 @@ Top left: Lateral view of mouse (top) versus macaque monkey brain (bottom), draw
 
 
 
+
+
 <script src="/assets/js/elasticlunr.min.js"></script>
 <script src="/assets/js/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 <script src="/assets/js/mark-search-terms.js"></script>
+
+
+
+
+
 
 </body>
 </html>

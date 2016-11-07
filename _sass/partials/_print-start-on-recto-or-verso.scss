@@ -12,6 +12,7 @@ $print-start-on-recto-or-verso: true !default;
     .dedication-page, 
     .epigraph-page, 
     .contents-page, 
+    .part-page,
     .chapter { 
     	page-break-before: right;
     }
@@ -21,6 +22,7 @@ $print-start-on-recto-or-verso: true !default;
     .dedication-page, 
     .epigraph-page, 
     .contents-page, 
+    .part-page,
     .chapter 
     { 
     	page-break-before: $start-on;

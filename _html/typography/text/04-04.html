@@ -28,7 +28,7 @@
 <head>
     <title>
     
-    Electric Book theme typography: Quizzes
+    Electric Book samples: Quizzes
     
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -50,9 +50,10 @@
 
 
 
+
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="typography chapter" ontouchstart="" onmouseover="">
+<body class="typography chapter" title="Quizzes" ontouchstart="" onmouseover="">
 
 
 
@@ -86,7 +87,7 @@
         
             <div class="branding">
                 <h1 class="nav-series-home"><a href="/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></h1>
-                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book theme typography" class="nav-book-link">Electric Book theme typography</a></h2>
+                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book samples" class="nav-book-link">Electric Book samples</a></h2>
             </div><!--.branding-->
 
             <div class="search">
@@ -634,11 +635,14 @@
 
 <h2 id="quizzes">Quizzes</h2>
 
-<p>You can embed any online quiz in a book. We like to use our own quiz engine, <a href="https://github.com/electricbookworks/betterquiz">Betterquiz</a>. Here’s a quiz from a nursing textbook. How well do you know your Ebola prevention?</p>
+<p>You can embed an online quiz in a book, for instance using an embeddable quiz engine like <a href="https://github.com/electricbookworks/betterquiz">Betterquiz</a>.</p>
+
+<p>At this stage, it’s best to use Liquid control flow tags to show text-only quizzes in PDF and epub, and embedded, interactive quizzes only in web output.</p>
+
+<p>Here’s a quiz from a nursing textbook. How well do you know your Ebola prevention?</p>
 
 <iframe width="100%" height="400px" src="http://quiz.bettercare.co.za/?qz=63&amp;r=http://quiz.bettercare.co.za/login_form.php?qz=63"></iframe>
 
-<p>In print, you may want to use a Liquid logic tag to display a fallback link to the online quiz.</p>
 
 	</div><!--#wrapper-->
 	
@@ -676,10 +680,17 @@
 
 
 
+
+
 <script src="/assets/js/elasticlunr.min.js"></script>
 <script src="/assets/js/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 <script src="/assets/js/mark-search-terms.js"></script>
+
+
+
+
+
 
 </body>
 </html>

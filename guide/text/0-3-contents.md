@@ -10,7 +10,7 @@ style: contents-page
 1.  [Introduction](01-intro.html#introduction)
 1.  [Setting up](02-setting-up.html#setting-up)
 1.  [Markdown](03-markdown.html#markdown)
-1.  [Themes](04-themes.html#themes)
+<!-- 1.  [Themes](04-themes.html#themes) -->
 1.  [Supported classes](05-classes.html#supported-classes)
 1.  [Tables of contents](10-tocs.html#tables-of-contents)
 1.  [Images](15-images.html#images)

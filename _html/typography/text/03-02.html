@@ -28,7 +28,7 @@
 <head>
     <title>
     
-    Electric Book theme typography: Mathematics
+    Electric Book samples: Mathematics
     
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -50,9 +50,10 @@
 
 
 
+
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="typography chapter" ontouchstart="" onmouseover="">
+<body class="typography chapter" title="Mathematics" ontouchstart="" onmouseover="">
 
 
 
@@ -86,7 +87,7 @@
         
             <div class="branding">
                 <h1 class="nav-series-home"><a href="/" title="Home: The Electric Book workflow" class="nav-series-home-link">The Electric Book workflow</a></h1>
-                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book theme typography" class="nav-book-link">Electric Book theme typography</a></h2>
+                <h2 class="nav-book"><a href="00-05-contents-page" title="Contents: Electric Book samples" class="nav-book-link">Electric Book samples</a></h2>
             </div><!--.branding-->
 
             <div class="search">
@@ -634,20 +635,42 @@
 
 <h2 id="mathematics">Mathematics</h2>
 
-<p>Jekyll uses MathJax, which displays MathML. The Electric Book workflow does not yet support MathJax output in print output, but you can find out more at <a href="https://github.com/electricbookworks/electric-book-workflow/issues/26">github.com/electricbookworks/electric-book-workflow/issues/26</a> if you want to implement it in the meantime.</p>
+<p>Jekyll uses <a href="http://docs.mathjax.org/en/latest/">MathJax</a>, which displays MathML. The Electric Book workflow does not yet support MathJax output in print output, but you can find out more at <a href="https://github.com/electricbookworks/electric-book/issues/14">github.com/electricbookworks/electric-book/issues/14</a> if you want to implement it in the meantime.</p>
 
-<p>First, LaTeX-style maths:</p>
+<p>LaTeX-style maths via MathJax:</p>
 
 <script type="math/tex; mode=display">E = mc^2</script>
 
-<p>And then MathML:</p>
+<p>Pure MathML works in most environments:</p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-	<mi>a</mi>
-	<mo>+</mo>
-	<mi>b</mi>
-	</mrow>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mo>&#x2212;</mo>
+        <mi>b</mi>
+        <mo>&#xB1;</mo>
+        <msqrt>
+          <mrow>
+            <msup>
+              <mi>b</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>&#x2212;</mo>
+            <mn>4</mn>
+            <mi>a</mi>
+            <mi>c</mi>
+          </mrow>
+        </msqrt>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
 </math>
 
 	</div><!--#wrapper-->
@@ -686,10 +709,17 @@
 
 
 
+
+
 <script src="/assets/js/elasticlunr.min.js"></script>
 <script src="/assets/js/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 <script src="/assets/js/mark-search-terms.js"></script>
+
+
+
+
+
 
 </body>
 </html>

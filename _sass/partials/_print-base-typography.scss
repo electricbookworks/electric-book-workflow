@@ -3,6 +3,10 @@ $print-base-typography: true !default;
 
 	// Base typography
 
+	@page {
+		background-color: $color-background;
+	}
+
 	body {
 		margin: 0;
 		padding: 0;
@@ -16,7 +20,7 @@ $print-base-typography: true !default;
 		font-family: $font-text-secondary;
 		font-size: $font-size-default;
 		line-height: $line-height-default;
-		font-weight: inherit;
+		font-weight: bold;
 		margin: $line-height-default 0 0 0;
 		page-break-after: avoid;
 		page-break-inside: avoid;
@@ -25,17 +29,26 @@ $print-base-typography: true !default;
 		font-family: $font-display-main;
 		font-size: $font-size-default * $font-size-bigger;
 		line-height: $line-height-default * $font-size-bigger;
-		margin: ($line-height-default * 2) 0 $line-height-default 0;
+		margin: ($line-height-default * 2) 0 ($line-height-default * 10) 0;
 	    text-align: center;
 	}
 	h2 {
 		font-size: $font-size-default * ($font-size-bigger * 0.75);
+		margin: ($line-height-default * 2) 0 $line-height-default 0;
 	}
-	h3 {
-		font-weight: bold;
-	}
-	h4, h5, h6 {
+	h3 {}
+	h4 {
 		font-style: italic;
+		font-weight: inherit;
+	}
+	h5 {
+		font-family: $font-text-main;
+		font-style: italic;
+		font-weight: inherit;
+	}
+	h6 {
+		font-family: $font-text-main;
+		font-weight: inherit;
 	}
 	p, ul, ol, dl {
 		text-align: $text-align;
@@ -61,20 +74,23 @@ $print-base-typography: true !default;
 		line-height: 100%; // Prevents some fonts from expanding/contracting a line's line height when em, strong present
 	}
 
-	/* Lists */
+	// Lists
+	// For detail on styling lists, see https://www.princexml.com/doc/lists/
 
 	ul, ol {
 		margin: 0 0 $line-height-default 0;
-    	list-style-position: inside;
 	}
 	ol {
 		list-style: decimal;
+		ol {
+			list-style-type: lower-alpha;
+			ol {
+				list-style-type: lower-roman;
+			}
+		}
 	}
 	ul {
         list-style-type: disc;
-	}
-	ol ol {
-		list-style-type: lower-alpha;
 	}
 	ul ul, ol ol, blockquote ul ul, blockquote ol ol {
 		margin-bottom: 0;
@@ -83,7 +99,12 @@ $print-base-typography: true !default;
 		margin-bottom: 0; // manages line space after sublists in lists
 	}
 	li {
+    	list-style-position: outside;
 		margin-left: $line-height-default;
+		&::marker {
+			width: $line-height-default;
+			text-align: left;
+		}
 	}
 	li:first-of-type {
 		page-break-after: avoid;
@@ -95,7 +116,7 @@ $print-base-typography: true !default;
 		page-break-before:avoid;
 	}
 
-	/* Blockquotes */
+	// Blockquotes
 
 	blockquote {
 		margin: $line-height-default 0 0 0;
@@ -124,7 +145,7 @@ $print-base-typography: true !default;
 		margin: 0 0 $line-height-default $line-height-default;
 	}
 
-	/* Super and subscripts */
+	// Super and subscripts
 
 	// Prevent them from increasing line height in print output
     sup, sub {
@@ -138,15 +159,25 @@ $print-base-typography: true !default;
         vertical-align: sub;
     }
 
-	/* Horizontal rules */
+	// Horizontal rules
 
 	// Using <hr> as a divider (in markdown created with ***)
 	hr {
-	    content: "***";
+	    content: "\2014"; // \2014 is an em dash, for others see https://css-tricks.com/snippets/html/glyphs/
 	    border: 0;
 	    font-family: $font-display-main;
 	    text-align: center;
 	    margin: $line-height-default 0;
+	    & + p {
+	    	text-indent: 0;
+	    }
+	}
+
+	// Images
+	// Also see figures partial
+
+	img {
+		max-width: 100%;
 	}
 
 }

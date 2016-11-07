@@ -1,7 +1,9 @@
-// Mixins, which cannot be inside Sass control directives.
+// Mixins, which cannot be inside Sass control directives (the @if section below).
 @mixin header-style() {
-    font-family: $font-text-main;
+    font-family: $font-text-secondary;
     font-size: $font-size-default * $font-size-smaller;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 $print-page-headers-footers-style: true !default;

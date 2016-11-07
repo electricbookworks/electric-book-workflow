@@ -45,6 +45,7 @@ $color-light: #e0e0e0;
 $color-mid: #9c9c9c;
 $color-accent: #000000;
 $color-links: #5f738c;
+$color-highlight: #ffd54d;
 
 // Some features rearrange at certain screen sizes.
 // What are your break points for rearrangement?
@@ -118,7 +119,7 @@ $web-openers: true;
 $web-pullquotes: true;
 $web-sources: true;
 $web-tables: true;
-$web-valedictions: true;
+$web-letters: true;
 $web-verse: true;
 $web-video: true;
 
@@ -151,7 +152,7 @@ $web-reset-sequences: true; // This should stay last in the @import list
 // Base typogrpahy
 
 // Comment out the following line to use first-line-indent paragraphs, rather than space between.
-p { margin-bottom: 1em; text-indent: 0; }
+// p { margin-bottom: 1em; text-indent: 0; }
 
 // Headings
 

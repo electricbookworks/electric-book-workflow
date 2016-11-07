@@ -106,6 +106,7 @@ $web-footer: true !default;
 
 // Book parts
 $web-cover: true !default;
+$web-previous-publications-page: true !default;
 $web-title-pages: true !default;
 $web-copyright-page: true !default;
 $web-dedications: true !default;
@@ -117,8 +118,9 @@ $web-bibliographies: true !default;
 $web-boxes: true !default;
 $web-buttons: true !default;
 $web-code: true !default;
-$web-glossaries: true !default;
 $web-figures: true !default;
+$web-highlighter: true !default;
+$web-glossaries: true !default;
 $web-index: true !default;
 $web-maths: true !default;
 $web-notes: true !default;
@@ -126,7 +128,7 @@ $web-openers: true !default;
 $web-pullquotes: true !default;
 $web-sources: true !default;
 $web-tables: true !default;
-$web-valedictions: true !default;
+$web-letters: true !default;
 $web-verse: true !default;
 $web-video: true !default;
 
@@ -163,6 +165,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 
 // Book parts
 @import "partials/web-cover";
+@import "partials/web-previous-publications-page";
 @import "partials/web-title-pages";
 @import "partials/web-copyright-page";
 @import "partials/web-dedications";
@@ -174,8 +177,9 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import "partials/web-boxes";
 @import "partials/web-buttons";
 @import "partials/web-code";
-@import "partials/web-glossaries";
 @import "partials/web-figures";
+@import "partials/web-glossaries";
+@import "partials/web-highlighter";
 @import "partials/web-index";
 @import "partials/web-maths";
 @import "partials/web-notes";
@@ -183,7 +187,7 @@ $web-reset-sequences: true !default; // This should stay last in the @import lis
 @import "partials/web-pullquotes";
 @import "partials/web-sources";
 @import "partials/web-tables";
-@import "partials/web-valedictions";
+@import "partials/web-letters";
 @import "partials/web-verse";
 @import "partials/web-video";
 
