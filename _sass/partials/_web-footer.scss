@@ -5,13 +5,13 @@ $web-footer: true !default;
 
 	#footer {
 		// position: fixed; // Make this fixed to make footer always visible
+		clear: both;
 		bottom: 0;
 		background-color: $color-background;
 		font-family: $font-text-secondary;
-		border-top: 1px solid $color-light;
-		box-shadow: 0 1px 5px 3px $color-background;
+		border-top: 1px solid $nav-bar-border-color;
 		margin: ($line-height-default * 2) 0 0 0;
-		padding: ($line-height-default / 2) 0 0 ($nav-bar-width + 2em);
+		padding: $line-height-default / 2;
 		width: 100%; // Prevents floating when preceding elements float or flex
 	}
 	.footer-content {
@@ -23,7 +23,7 @@ $web-footer: true !default;
 	#footer ul {
 		font-size: $font-size-default * $font-size-smaller;
 		text-indent: 0;
-		margin: 0 0 ($line-height-default / 2) 0;
+		margin: 0;
 	}
 
 }

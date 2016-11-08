@@ -11,7 +11,7 @@ $epub-base-typography: true !default;
 		line-height: $line-height-default;
 	} 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: $font-display-secondary;
+		font-family: $font-text-secondary;
 		font-size: $font-size-default;
 		font-weight: bold;
 		line-height: $line-height-default;

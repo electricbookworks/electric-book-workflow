@@ -1,17 +1,19 @@
 $web-nav-bar: true !default;
-$nav-scrollbar: false !default;
 @if $web-nav-bar {
 
     // Navigation
      
     .nav-wrapper {
-        overflow: hidden;
-        @if $nav-scrollbar {
+        @if $nav-scrollbar == true {
             overflow: visible;
         }
-        position: fixed;
-        top: 0;
-        bottom: 0;
+        @else {
+            overflow: hidden;
+        }
+        // position: fixed;
+        // top: 0;
+        // bottom: 0;
+        float: left;
         width: $nav-bar-width;
     }
     // For Webkit, this is the easy way to remove the scrollbar
@@ -26,6 +28,7 @@ $nav-scrollbar: false !default;
         overflow-x: hidden; // Hides horizontal scrollbar
         overflow-y: auto; // Must let this div scroll; we'll hide the scrollbar elsewhere
         background-color: $nav-bar-background-color;
+        border-right: 1px solid $nav-bar-border-color;
         padding-right: 17px; // Hides scroll bar
         // Branding at the top of the nav bar
         .branding {
@@ -101,7 +104,11 @@ $nav-scrollbar: false !default;
                 } // li
                 // Child navifation, after the parent, the rest of the nav-list
                 ol, ul {
-                    max-height: 0; // Instead of display: none, because it works with transitions
+                    @if $nav-collapse == true {
+                        max-height: 0; // Instead of display: none, because it works with transitions
+                    } @else {
+                        max-height: none;
+                    }
                     transition: max-height 0.5s ease-out; // See http://stackoverflow.com/a/8331169/1781075
                     background-color: $nav-bar-child-background-color;
                     width: 100%;
@@ -155,5 +162,59 @@ $nav-scrollbar: false !default;
             min-height: 10em;
             } // .widgets
     } // #nav
+
+    // Optionally, hide sidebar behind menu icon
+    // till menu is hovered or tapped
+    $nav-bar-hide: true !default;
+    @if $nav-bar-hide {
+        .nav-wrapper {
+            #nav {
+                max-width: 0;
+                max-height: 0;
+                transition: max-width 0.5s;
+                padding-right: 0;
+            }
+            &:before {
+                content: $nav-bar-prompt;
+                font-family: $font-text-secondary;
+                color: $color-mid;
+                display: block;
+                position: fixed;
+                left: 0;
+                top: 0;
+                padding: 0.5em 1em;
+            }
+            &:hover, &:active, &.focus {
+                #nav {
+                    max-width: $nav-bar-width;
+                    max-height: none;
+                    transition: max-width 0.5s;
+                    position: fixed;
+                    top: 0;
+                }
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // On small screens, hide sidebar behind menu icon
+    // till menu is hovered or tapped
+    @media only screen 
+    and (max-width: $max-width-default) {
+        .nav-wrapper {
+            &:before {
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: $nav-bar-background-color;
+                padding: 0.5em;
+                border-top: 1px solid $nav-bar-border-color;
+                border-right: 1px solid $nav-bar-border-color;
+                border-bottom: 1px solid $nav-bar-border-color;
+            }
+        }
+    }
 
 }

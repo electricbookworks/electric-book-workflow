@@ -450,7 +450,7 @@ works:
                 id: "dynamic-index"
         start-page: "00-05-contents-page" # At which file should users start reading?
         contents-page: "00-05-contents-page" # Your contents-page file, if you have one.
-        footer: "Typography for <a href='http://electricbook.works'>Electric Book</a> themes" # Text that appears in the footer of the website. You can include HTML.
+        footer: "Powered by the <a href='http://electricbook.works'>Electric Book</a>" # Text that appears in the footer of the website. You can include HTML.
       epub:
         date: "2016-09-01" # YYYY-MM-DD e.g. publication date or last revision
         format: "Digital download" # e.g. Paperback, Digital download, Digital online

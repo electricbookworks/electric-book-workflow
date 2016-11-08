@@ -4,7 +4,9 @@ $web-title-pages: true !default;
 	// Halftitle-page and title-page
 
 	.title-page, .halftitle-page {
-		margin: $start-depth auto 0 auto;
+		#wrapper {
+			margin: $start-depth auto 0 auto;
+		}
 		p {
 			text-indent: 0;
 			hyphens: none;

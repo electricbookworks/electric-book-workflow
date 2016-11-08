@@ -1,0 +1,33 @@
+$web-masthead: true !default;
+@if $web-masthead {
+
+    // Masthead
+
+    .masthead {
+        font-family: $font-text-secondary;
+        background-color: $masthead-background-color;
+        border-bottom: 1px solid $masthead-border-color;
+        width: 100%;
+        text-align: center;
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a {
+            color: $masthead-text-color;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0 0 0 1em;
+            li {
+                display: inline-block;
+                margin: 0 1em 0 0;
+                padding: 0.5em 0;
+            }
+        }
+        .nav-series {}
+        .nav-book {}
+    } // .masthead
+
+}

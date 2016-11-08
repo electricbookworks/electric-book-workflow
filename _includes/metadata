@@ -14,6 +14,12 @@ Assign series information to variables. This is the same for all books in the se
 {% capture series-image %}{{ site.data.meta.series.image }}{% endcapture %}
 
 {% comment %}
+It's useful to know how many books are in this series
+{% endcomment %}
+
+{% assign number-of-works = site.data.meta.works | size %}
+
+{% comment %}
 Get the current directory for this book only
 {% endcomment %}
 

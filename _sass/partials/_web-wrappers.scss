@@ -3,8 +3,8 @@ $web-wrappers: true !default;
 
     #wrapper {
         clear: none;
-        margin-left: $nav-bar-width;
         padding: 0 2em;
+        margin: 0 auto ($line-height-default) auto;
         max-width: $max-width-default;
     }
 

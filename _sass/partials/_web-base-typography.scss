@@ -13,7 +13,7 @@ $web-base-typography: true !default;
         overflow-x: hidden;
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: $font-display-secondary;
+        font-family: $font-text-secondary;
         font-size: $font-size-default;
     	font-weight: bold;
     	line-height: $line-height-default;
@@ -135,6 +135,16 @@ $web-base-typography: true !default;
     }
     strong {
         font-weight: bold;
+    }
+
+    // Forms
+
+    input {
+        padding: 0.75em 0.75em;
+        font-family: $font-text-secondary;
+        font-size: inherit;
+        color: inherit;
+        border: 1px solid $color-light;
     }
 
 }

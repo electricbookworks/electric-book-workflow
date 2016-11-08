@@ -4,8 +4,11 @@ $web-epigraphs: true !default;
     // Epigraphs
 
     .epigraph-page {
-    	margin-top: $start-depth;
+        #wrapper {
+    	   margin-top: $start-depth;
+        }
     }
+    
     p.epigraph {
     	text-indent: 0;
     	padding: 0 ($line-height-default * 2);

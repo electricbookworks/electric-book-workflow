@@ -1,0 +1,8 @@
+<div class="masthead">
+    <ul>
+        {%if number-of-works > 1 %}
+        <li class="nav-series"><a href="{{ site.baseurl }}/" title="Home: {{ series-name }}">{{ series-name }}</a></li>
+        {% endif %}
+        <li class="nav-book"><a href="{{ web-contents-page }}" title="Contents: {{ title }}">{{ title }}</a></li>
+    </ul>
+</div><!--.masthead-->
