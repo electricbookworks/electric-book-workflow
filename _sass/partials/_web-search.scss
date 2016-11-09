@@ -49,4 +49,12 @@ $web-search: true !default;
         border-radius: $button-border-radius;
     }
 
+} // @if $web-search
+
+@else {
+    #nav {
+        .search {
+            display: none;
+        }
+    }
 }
