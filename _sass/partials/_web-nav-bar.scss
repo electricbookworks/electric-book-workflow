@@ -4,7 +4,7 @@ $web-nav-bar: true !default;
     // Navigation
      
     .nav-wrapper {
-        @if $nav-scrollbar == true {
+        @if $nav-bar-scrollbar == true {
             overflow: visible;
         }
         @else {
@@ -22,7 +22,7 @@ $web-nav-bar: true !default;
     // }
     #nav {
         font-family: $font-text-secondary;
-        font-size: $font-size-default * $font-size-smaller;
+        font-size: $nav-bar-text-size;
         width: 100%;
         height: 100%;
         overflow-x: hidden; // Hides horizontal scrollbar
@@ -30,21 +30,7 @@ $web-nav-bar: true !default;
         background-color: $nav-bar-background-color;
         border-right: 1px solid $nav-bar-border-color;
         padding-right: 17px; // Hides scroll bar
-        // Branding at the top of the nav bar
-        .branding {
-            margin: 1em 0 0 0;
-            overflow-x: hidden;
-            width: 100%;
-            h1, h2 {
-                font-size: inherit;
-                padding: 0.25em 0.75em;
-                margin: 0 0 1em 0;
-                line-height: 1em;
-            }
-            h2 {
-                font-size: $font-size-default * $font-size-bigger;
-            }
-        } // .branding
+
         // Search
         $search-enabled: true !default;
         @if $search-enabled {
@@ -104,7 +90,7 @@ $web-nav-bar: true !default;
                 } // li
                 // Child navifation, after the parent, the rest of the nav-list
                 ol, ul {
-                    @if $nav-collapse == true {
+                    @if $nav-bar-item-collapse == true {
                         max-height: 0; // Instead of display: none, because it works with transitions
                     } @else {
                         max-height: none;

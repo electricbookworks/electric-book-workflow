@@ -77,12 +77,14 @@ $masthead-text-color: $color-light !default;
 $masthead-background-color: $color-accent !default;
 $masthead-border-color: $color-light !default;
 
+
+
 // Website sidebar/navigation
+$nav-bar-text-size: 0.8em !default;
 $nav-bar-hide: true !default;
 $nav-bar-prompt: "Contents" !default;
-$search-enabled: true !default;
-$nav-collapse: false !default; // Does the nav list fully expand, or collapse until mouseover?
-$nav-scrollbar: true !default;
+$nav-bar-item-collapse: false !default; // Does the nav list fully expand, or collapse until mouseover?
+$nav-bar-scrollbar: true !default;
 $nav-bar-width: 15em !default;
 $nav-bar-border-color: $color-light !default;
 $nav-bar-background-color: white !default;
@@ -111,6 +113,7 @@ $web-base-typography: true !default;
 
 // Navigation
 $web-masthead: true !default;
+$web-search: true !default;
 $web-nav-bar: true !default;
 $web-footer: true !default;
 

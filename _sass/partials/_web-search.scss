@@ -1,7 +1,7 @@
 // Also see .search in web-nav-bar
 
-$search-enabled: true !default;
-@if $search-enabled {
+$web-search: true !default;
+@if $web-search {
 
     // Search in nav bar
 
