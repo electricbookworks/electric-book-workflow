@@ -1,6 +1,5 @@
 ---
 title: Home
-style: home
 ---
 
 {% include metadata %}

@@ -24,10 +24,41 @@ $web-masthead: true !default;
                 display: inline-block;
                 margin: 0 1em 0 0;
                 padding: 0.5em 0;
+                // The divider between series and book title
+                // Should not show if there is only one work,
+                // and therefore no series title in masthead.
+                &:nth-of-type(2):before {
+                    content: "\2022";
+                    color: $masthead-text-color;
+                    margin-right: 1em;
+                }
+                // On small screens, only show the book title.
+                // But see below...
+                @media only screen
+                and (max-width: $max-width-default) {
+                    &:nth-of-type(2):before {
+                        content: normal;
+                    }
+                    &.masthead-series-name {
+                        display: none;
+                    }
+                }
             }
         }
-        .nav-series {}
-        .nav-book {}
+
+        // Possible future styles for these classes.
+        .masthead-series-name {}
+        .masthead-book-title {}
+
     } // .masthead
+
+    // ...unless it's the home page, and we're on a small screen,
+    // in which case do show the series name.
+    @media only screen
+    and (max-width: $max-width-default) {
+        body.home .masthead li.masthead-series-name {
+            display: inline-block !important;
+        }
+    }
 
 }

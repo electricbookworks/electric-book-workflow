@@ -6,6 +6,8 @@ $web-highlighter: true !default;
     .highlighter,
     a[href="highlighter"] {
         background-color: yellow;
+        color: inherit;
+        border-radius: $button-border-radius;
     }
 
 }

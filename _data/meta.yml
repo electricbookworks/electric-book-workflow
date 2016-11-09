@@ -14,6 +14,9 @@ series:
     <a href="guide"><img src="guide/images/cover-thumb.jpg" alt="A guide to the Electric Book workflow guide"></a> The Electric Book workflow is a set of tools and processes for creating high-quality books. We developed it at <a href="http://electricbookworks.com">Electric Book Works</a> for our own publishing. It lets you store books in plain text with great version control, and output website versions, ebooks and print editions easily from a single source. At the heart of the workflow is the <a href="https://github.com/electricbookworks/electric-book">Electric Book Jekyll template</a>. With some technical expertise, you can use it, too.
   # An image in /assets that stands for the series
   image: "cover.jpg"
+  # For web navigation, the label for links to  the series homepage
+  # For English sites, you can leave this as "Home".
+  home-label: "Home"
 
 ########
 # TITLES
@@ -25,7 +28,7 @@ series:
 
 works:
   - directory: "guide"
-    title: "A guide to the Electric Book workflow"
+    title: "The Electric Book guide"
     subtitle: "How to create high-quality books with open tools"
     creator: "Arthur Attwell" # E.g. the author
     contributor: "" # E.g. other contributors

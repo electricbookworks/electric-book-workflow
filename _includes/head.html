@@ -26,7 +26,7 @@
     {% include head-elements %}
 
 </head>
-<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
+<body class="{{ directory }} {{ page.style }}{% if is-homepage == true %} home{% endif %}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
 
 {% elsif site.output == 'screen-pdf' %}
 <!doctype html>
@@ -46,7 +46,7 @@
     {% include head-elements %}
 
 </head>
-<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
+<body class="{{ directory }} {{ page.style }}{% if is-homepage == true %} home{% endif %}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %}>
 
 {% elsif site.output == 'print-pdf' %}
 <!doctype html>
@@ -67,7 +67,7 @@
 
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
+<body class="{{ directory }} {{ page.style }}{% if is-homepage == true %} home{% endif %}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
 
 
 {% else %}
@@ -97,7 +97,7 @@
     <meta property="og:image" content="{{ site.canonical-url }}/assets/{{ series-image }}" />
     {% endif %}
 
-    {% if page.style == 'home' or page.style == 'search' %}
+    {% if is-homepage == true or is-series-search == true %}
     {% for book in site.data.meta.works %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ book.directory }}/styles/{{ page.stylesheet-web }}" />
     <link rel="stylesheet" type="text/css" media="print" href="{{ book.directory }}/styles/{{ page.stylesheet-screen-pdf }}" />
@@ -111,6 +111,6 @@
 
 </head>
 <!--ontouchstart="" onmouseover="" required for iOS devices-->
-<body class="{{ directory }} {{ page.style }}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
+<body class="{{ directory }} {{ page.style }}{% if is-homepage == true %} home{% endif %}{% if is-search == true %} search-page{% endif %}{% if is-series-search == true %} series-search-page{% endif %}{% if is-book-search == true %} book-search-page{% endif %}" {% if page.header != nil %}title="{{ page.header }}"{% else %}title="{{ page.title }}"{% endif %} ontouchstart="" onmouseover="">
 
 {% endif %}

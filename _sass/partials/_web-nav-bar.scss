@@ -171,7 +171,7 @@ $web-nav-bar: true !default;
             #nav {
                 max-width: 0;
                 max-height: 0;
-                transition: max-width 0.5s;
+                // transition: max-width 0.5s; // Disabled because of flickering problem
                 padding-right: 0;
             }
             &:before {
@@ -183,12 +183,13 @@ $web-nav-bar: true !default;
                 left: 0;
                 top: 0;
                 padding: 0.5em 1em;
+                cursor: pointer;
             }
             &:hover, &:active, &.focus {
                 #nav {
                     max-width: $nav-bar-width;
                     max-height: none;
-                    transition: max-width 0.5s;
+                    // transition: max-width 0.5s; // Disabled because of flickering problem
                     position: fixed;
                     top: 0;
                 }

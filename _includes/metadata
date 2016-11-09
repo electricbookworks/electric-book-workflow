@@ -12,6 +12,7 @@ Assign series information to variables. This is the same for all books in the se
 {% capture series-name %}{{ site.data.meta.series.name }}{% endcapture %}
 {% capture series-description %}{{ site.data.meta.series.description }}{% endcapture %}
 {% capture series-image %}{{ site.data.meta.series.image }}{% endcapture %}
+{% capture series-home-label %}{{ site.data.meta.series.home-label }}{% endcapture %}
 
 {% comment %}
 It's useful to know how many books are in this series
@@ -86,3 +87,32 @@ Now capture each metadata value as a Liquid tag, to be used in HTML and book con
 {% assign screen-pdf-file-list = work.products.screen-pdf.files %}
 
 {% endfor %}
+
+{% comment %}
+Check if we're on the series homepage:
+* Get a slugified version of the page URL to compare to a slugified
+  version of the baseurl. We slugify to remove slashes, which 
+  may differ between the two.
+* Then we can compare them to test if we're on the series home page. 
+* If we are, they will match. Hopefully.
+{% endcomment %}
+{% capture pageurl-slug %}{{ page.url | slugify }}{% endcapture %}
+{% capture baseurl-slug %}{{ site.baseurl | slugify }}{% endcapture %}
+{% if pageurl-slug == baseurl-slug %}
+{% assign is-homepage = true %}
+{% endif %}
+
+{% comment %}
+Check if we're on the search pages.
+{% endcomment %}
+{% capture series-search-url %}{{ baseurl }}/search.html{% endcapture %}
+{% capture book-search-url %}{{ baseurl }}/{{ directory }}/text/search.html{% endcapture %}
+{% if page.url contains "/search.html" %}
+    {% assign is-search = true %}
+{% endif %}
+{% if page.url == series-search-url %}
+    {% assign is-series-search = true %}
+{% endif %}
+{% if page.url == book-search-url %}
+    {% assign is-book-search = true %}
+{% endif %}
