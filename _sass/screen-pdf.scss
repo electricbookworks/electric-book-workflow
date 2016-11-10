@@ -35,6 +35,8 @@ $trim: 0 !default;
 $crop-marks: none !default; // crop | none
 
 // Colours
+$color-text-main: cmyk(0,0,0,1) !default;
+$color-text-secondary: cmyk(0,0,0,0.8) !default;
 $color-background: white !default;
 $color-light: cmyk(0,0,0,0.2) !default;
 $color-mid: cmyk(0,0,0,0.4) !default;
@@ -65,6 +67,9 @@ $text-align: justify !default; // left or right or inside or outside or justify 
 $orphans: 1 !default; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1 !default; // Minimum number of lines that must be left at the top of the second page
 $letter-spacing-text: 0em !default; // Default letter-spacing for p, ul, ol, dl. Set in ems, e.g. 0.01em for 10/1000s of an em.
+
+// Do you want space between paragraphs, rather than a text-indent?
+$spaced-paras: false !default;
 
 // Buttons
 $button-border-radius: 0.1em !default; // Roundness of button corners.

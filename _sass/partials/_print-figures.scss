@@ -51,15 +51,16 @@ $print-figures: true !default;
 	}
 
 	// The image(s) in the figure
-	.figure p img {
+	.figure p img, .figure img {
 		width: auto;
 		max-width: 100%;
 		max-height: 100%; // Prevents image from expanding below a parent p set to a specific height
 		margin: 0 auto 0 auto;
 	}
 
-	// The caption (always the last paragraph in the figure)
+	// The caption (.caption, or assumed to be the last paragraph in the figure)
 	// Note doesn't allow for multi-para captions – have to use line breaks :(
+	.figure .caption,
 	.figure p:last-of-type {
 		padding: ($line-height-default / 2) 0 ($line-height-default / 2) 0;
 		margin: 0;
@@ -101,6 +102,17 @@ $print-figures: true !default;
 	}
 	blockquote.figure.fixed + p {
 		text-indent: 0;
+	}
+
+	// Thumbnail figures
+	.figure.thumbnail {
+		max-width: 25%;
+		float: right;
+		margin: 0 0 0 ($line-height-default / 2);
+    	padding: 0;
+		img {
+			padding: 0;
+		}
 	}
 
 }

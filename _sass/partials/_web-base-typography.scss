@@ -6,7 +6,8 @@ $web-base-typography: true !default;
     body {
         margin: 0;
         padding: 0;
-        background-color: $color-background;
+        color: $color-text-main;
+        background-color: $color-footer; // See -wrappers for content background-color
         font-family: $font-text-main;
         font-size: $font-size-default;
         line-height: $line-height-default;
@@ -58,12 +59,12 @@ $web-base-typography: true !default;
     ol {
         list-style: decimal;
         list-style-position: outside;
-        margin: 0 0 $line-height-default $line-height-default;
+        margin: 0 0 $line-height-default 1em;
     }
     ul {
         list-style-type: disc;
         list-style-position: outside;
-        margin: 0 0 $line-height-default $line-height-default;
+        margin: 0 0 $line-height-default 1em;
     }
     ul ul, ol ol, blockquote ul ul, blockquote ol ol {
     	margin-bottom: 0;
@@ -104,11 +105,16 @@ $web-base-typography: true !default;
 
     // Used in text as dividers (*** in markdown)
     hr {
-        content: "\2016";
         border: 0;
         font-family: $font-display-main;
         text-align: center;
         margin: $line-height-default 0;
+        &:after {
+            content: "\2014";
+        }
+        & + p {
+            text-indent: 0;
+        }
     }
 
     // Superscripts and subscripts
@@ -147,6 +153,26 @@ $web-base-typography: true !default;
         font-size: inherit;
         color: inherit;
         border: 1px solid $color-light;
+    }
+
+    // Images
+    // Also see -figures partial
+
+    // Standalone images
+    // (Markdown default puts images on their own line 
+    // into paragraphs like this.)
+    p img:only-child {
+        margin: $line-height-default auto;
+        display: block;
+    }
+
+    // An option to change the default text-indented paragraphs
+    // and close-up lists etc. to have space-between instead.
+    @if $spaced-paras {
+        p {
+            margin-bottom: $line-height-default;
+            text-indent: 0;
+        }
     }
 
 }

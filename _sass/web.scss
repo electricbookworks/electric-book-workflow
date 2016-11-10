@@ -43,15 +43,23 @@ $line-height-default: 1.5em !default;
 $font-size-smaller: 0.7 !default; // How much smaller than font-size-default for features like sidenotes and footers?
 $font-size-bigger: 2 !default; // How many times bigger than font-size-default for features like headings and pullquotes?
 
+// Do you want space between paragraphs, rather than a text-indent?
+$spaced-paras: true !default;
+
 // Buttons
 $button-border-radius: 0.1em !default; // Roundness of button corners.
 
 // Colours
+$color-text-main: #222222 !default;
+$color-text-secondary: #222222 !default;
+$color-footer-text: #222222 !default;
 $color-background: white !default;
+$color-footer: #e0e0e0 !default;
 $color-light: #e0e0e0 !default;
 $color-mid: #9c9c9c !default;
 $color-accent: #000000 !default;
 $color-links: #5f738c !default;
+$color-buttons: #5f738c !default;
 $color-highlight: #ffd54d !default;
 
 // Some features rearrange at certain screen sizes.

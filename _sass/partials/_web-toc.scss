@@ -4,7 +4,7 @@ $web-toc: true !default;
 	// Tables of contents
 
 	.contents-page {
-		#wrapper { // Only applies to #wrapper in contents-page, i.e. not to the nav or footer
+		#content { // Only applies to #content in contents-page, i.e. not to the nav or footer
 			ol, ul {
 				list-style-type: none;
 				margin: 0;
@@ -13,12 +13,12 @@ $web-toc: true !default;
 					margin-left: $line-height-default;
 				}
 			}
-		} // #wrapper
+		} // #content
 	} // .contents-page
 
 		/* TOCs in individual pages, created in kramdown with a placeholder ol/ul followed by {:toc} */
 
-	#wrapper {
+	#content {
 		#markdown-toc {
 			font-family: $font-text-secondary;
 			list-style-type: none;
@@ -30,6 +30,6 @@ $web-toc: true !default;
 				margin-left: $line-height-default;
 			}
 		} // #markdown-toc
-	} // #wrapper
+	} // #content
 
 }

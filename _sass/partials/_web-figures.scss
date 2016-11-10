@@ -29,11 +29,12 @@ $web-figures: true !default;
 			font-style: normal;
 		}
 	}
-	.figure p img {
+	.figure p img, .figure img {
 		padding: ($line-height-default / 2) 0 ($line-height-default) 0;
 		margin: 0 auto;
 		max-width: 100%; 
 		object-fit: scale-down;
+		display: block;
 	}
 		@media screen and (max-height: $break-point-height) {
 			blockquote.figure p img {
@@ -47,6 +48,7 @@ $web-figures: true !default;
 		}
 	// Captions added as a paragraph following the image inside the blockquote
 	// Up to five paragraphs of captions
+	.figure .caption,
 	.figure p:nth-child(2),
 	.figure p:nth-child(2) + p,
 	.figure p:nth-child(2) + p + p,
@@ -66,5 +68,16 @@ $web-figures: true !default;
 				max-height: $break-point-width;
 			}
 		}
+
+	// Thumbnail figures
+	.figure.thumbnail {
+		max-width: 25%;
+		float: right;
+		margin: 0 0 0 ($line-height-default / 2);
+    	padding: 0;
+		img {
+			padding: 0;
+		}
+	}
 
 }

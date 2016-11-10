@@ -225,8 +225,10 @@ SET /p process=Enter a number and hit return.
     ECHO.
     ECHO What is the first file in your book? Usually the cover.
     ECHO (Don't include the .html file extension.)
+    ECHO Just hit return for the default "0-0-cover"
     ECHO.
     SET /p firstfile=
+    IF "%firstfile%"=="" SET firstfile=0-0-cover
     IF "%bookfolder%"=="" GOTO choosefolder
     :: Ask the user to add any extra Jekyll config files, e.g. _config.images.print-pdf.yml
     ECHO.

@@ -4,7 +4,7 @@ $web-title-pages: true !default;
 	// Halftitle-page and title-page
 
 	.title-page, .halftitle-page {
-		#wrapper {
+		#content {
 			margin: $start-depth auto 0 auto;
 			text-align: center;
 		}

@@ -12,6 +12,7 @@ $print-base-typography: true !default;
 		padding: 0;
 		font-family: $font-text-main;
 		font-size: $font-size-default;
+		color: $color-text-main;
 		line-height: $line-height-default;
 		orphans: $orphans;
 		widows: $widows;
@@ -179,5 +180,14 @@ $print-base-typography: true !default;
 	img {
 		max-width: 100%;
 	}
+
+    // An option to change the default text-indented paragraphs
+    // and close-up lists etc. to have space-between instead.
+    @if $spaced-paras {
+        p {
+            margin-bottom: $line-height-default;
+            text-indent: 0;
+        }
+    }
 
 }

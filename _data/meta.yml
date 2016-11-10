@@ -11,7 +11,7 @@ series:
   name: "The Electric Book workflow"
   # A one-liner about this series. Useful for Open Graph metadata.
   description: |
-    <a href="guide"><img src="guide/images/cover-thumb.jpg" alt="A guide to the Electric Book workflow guide"></a> The Electric Book workflow is a set of tools and processes for creating high-quality books. We developed it at <a href="http://electricbookworks.com">Electric Book Works</a> for our own publishing. It lets you store books in plain text with great version control, and output website versions, ebooks and print editions easily from a single source. At the heart of the workflow is the <a href="https://github.com/electricbookworks/electric-book">Electric Book Jekyll template</a>. With some technical expertise, you can use it, too.
+    The Electric Book workflow is a set of tools and processes for creating high-quality books. We developed it at <a href="http://electricbookworks.com">Electric Book Works</a> for our own publishing. It lets you store books in plain text with great version control, and output website versions, ebooks and print editions easily from a single source. At the heart of the workflow is the <a href="https://github.com/electricbookworks/electric-book">Electric Book Jekyll template</a>. With some technical expertise, you can use it, too.
   # An image in /assets that stands for the series
   image: "cover.jpg"
   # For web navigation, the label for links to  the series homepage
@@ -449,7 +449,7 @@ works:
                 file: "10-01"
                 id: "traditional-index"
               - label: "Dynamic index"
-                file: "10-01"
+                file: "10-02"
                 id: "dynamic-index"
         start-page: "00-05-contents-page" # At which file should users start reading?
         contents-page: "00-05-contents-page" # Your contents-page file, if you have one.

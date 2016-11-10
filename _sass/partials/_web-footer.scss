@@ -7,7 +7,7 @@ $web-footer: true !default;
 		// position: fixed; // Make this fixed to make footer always visible
 		clear: both;
 		bottom: 0;
-		background-color: $color-background;
+		background-color: $color-footer;
 		font-family: $font-text-secondary;
 		border-top: 1px solid $nav-bar-border-color;
 		margin: ($line-height-default * 2) 0 0 0;
@@ -22,8 +22,13 @@ $web-footer: true !default;
 	#footer ol,
 	#footer ul {
 		font-size: $font-size-default * $font-size-smaller;
+		color: $color-footer-text;
 		text-indent: 0;
 		margin: 0;
+		a {
+			color: $color-footer-text;
+			text-decoration: underline;
+		}
 	}
 
 }

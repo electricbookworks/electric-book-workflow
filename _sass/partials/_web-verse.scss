@@ -131,12 +131,15 @@ $web-verse: true !default;
 		display: inline; // To avoid pre-wrap line breaks inside the li
 	}
 	// Override indents applied to .verse li
-	ul.verse li h1 { margin-left: -1.75em; }
-	ul.verse li h2 { margin-left: -2.25em; }
-	ul.verse li h3 { margin-left: -3em; }
-	ul.verse li h4 { margin-left: -3.5em; }
-	ul.verse li h5 { margin-left: -4.25em; }
-	ul.verse li h6 { margin-left: -5em; }
+	// These magic numbers work with default heading sizes only. 
+	// They will differ if you change the heading font size.
+	// To do: calculate these based on heading sizes with variables.
+	ul.verse li h1 { margin-left: -1.4em; }
+	ul.verse li h2 { margin-left: -1.85em; }
+	ul.verse li h3 { margin-left: -2.75em; }
+	ul.verse li h4 { margin-left: -2.75em; }
+	ul.verse li h5 { margin-left: -2.75em; }
+	ul.verse li h6 { margin-left: -2.75em; }
 
 	// If a line is blank it's an empty list item. That will collapse away by default, so we add a blank line back in.
 	ul.verse li:empty {
