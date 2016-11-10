@@ -14,13 +14,17 @@ language: en
 # What theme are you using?
 # If you are not using a theme (i.e. your have local _sass, _includes and _layouts)
 # then comment out this value to prevent Jekyll searching in vain for your theme.
-theme: electric-book-classic-theme
+# theme: electric-book-classic-theme
 
 # Which edition are we creating? You can leave this as `default`.
 # This can be used to create different editions of a book using Liquid control-flow tags, 
 # e.g. in includes, layouts and file-list
 edition: "default"
 #edition: ""
+
+# To make absolute links work, e.g. in canonical links in <head>,
+# include the url where this site will live when it's live (production).
+canonical-url: "http://electricbook.works"
 
 # If you're using GitHub Pages without a custom domain, make this
 # the name of your repo, e.g. /electric-book-workflow
@@ -36,7 +40,13 @@ repository: "electricbookworks/electric-book-workflow"
 # Web navigation source: select either files or nav
 # files: navigation will be taken from the web files list in `meta.yml` (this is default)
 # nav: navigation will be taken from the web nav tree in `meta.yml` (allows submenu nesting)
-nav-source: files
+nav-source: nav
+
+# Enable MathJax to render mathematics. MathJax adds a large script to your pages,
+# so this is off (false) by default. Change to true to load MathJax.
+# See http://docs.mathjax.org/en/latest/configuration.html for details.
+# MathJax scripts are linked from the head-elements include.
+mathjax-enabled: true
 
 # --------------------------------------------
 # CHANGE THESE SETTINGS ONLY IF/WHEN NECESSARY

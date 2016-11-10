@@ -35,19 +35,38 @@
 
 
 
-.html
 
 
 
-.html
 
 
 
-.html
 
 
 
-.html
+
+
+
+
+
+
+0-0-cover.html
+
+
+
+0-1-titlepage.html
+
+
+
+0-2-copyright.html
+
+
+
+0-3-contents.html
+
+
+
+0-4-preface.html
 
 
 
@@ -64,10 +83,6 @@
 
 
 03-markdown.html
-
-
-
-04-themes.html
 
 
 
@@ -124,6 +139,9 @@
 
 
 60-troubleshooting.html
+
+
+
 
 
 
