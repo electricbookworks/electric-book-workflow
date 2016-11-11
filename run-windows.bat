@@ -75,7 +75,7 @@ SET /p process=Enter a number and hit return.
     :: Run prince, showing progress (-v), printing the docs in file-list
     :: and saving the resulting PDF to the _output folder
     :: (For some reason this has to be run with CALL)
-    CALL prince -v -l file-list -o ..\..\..\_output\%bookfolder%.pdf --javascript
+    CALL prince -v -l file-list -o ..\..\..\_output\%bookfolder%.pdf
     :: Navigate back to where we began.
     CD ..\..\..
     :: Tell the user we're done
@@ -90,7 +90,6 @@ SET /p process=Enter a number and hit return.
     :: Let the user easily refresh the PDF by running jekyll b and prince again
     SET repeat=
     SET /p repeat=Enter to run again, or any other key and enter to stop. 
-    ECHO.
     IF "%repeat%"=="" GOTO printpdfrefresh
     ECHO.
     GOTO begin
@@ -145,7 +144,6 @@ SET /p process=Enter a number and hit return.
     :: Let the user easily refresh the PDF by running jekyll b and prince again
     SET repeat=
     SET /p repeat=Enter to run again, or any other key and enter to stop. 
-    ECHO.
     IF "%repeat%"=="" GOTO screenpdfrefresh
     ECHO.
     GOTO begin
@@ -202,7 +200,6 @@ SET /p process=Enter a number and hit return.
     :websiterepeat
     SET repeat=
     SET /p repeat=Enter to restart the website process, or any other key and enter to stop. 
-    ECHO.
     IF "%repeat%"=="" GOTO website
     ECHO.
     GOTO begin
@@ -221,15 +218,14 @@ SET /p process=Enter a number and hit return.
     SET location=%~dp0
     :: Ask user which folder to process
     :choosefolder
-    SET /p bookfolder=Which book folder are we processing? 
+    SET /p bookfolder=Which book folder are we processing? (Hit enter for default 'book' folder.) 
+    IF "%bookfolder%"=="" SET bookfolder=book
     ECHO.
     ECHO What is the first file in your book? Usually the cover.
-    ECHO (Don't include the .html file extension.)
     ECHO Just hit return for the default "0-0-cover"
     ECHO.
     SET /p firstfile=
     IF "%firstfile%"=="" SET firstfile=0-0-cover
-    IF "%bookfolder%"=="" GOTO choosefolder
     :: Ask the user to add any extra Jekyll config files, e.g. _config.images.print-pdf.yml
     ECHO.
     ECHO Any extra config files?
@@ -262,7 +258,6 @@ SET /p process=Enter a number and hit return.
     :: Let the user easily run that again by running jekyll b and prince again
     SET repeat=
     SET /p repeat=Enter to run again, or any other key and enter to stop. 
-    ECHO.
     IF "%repeat%"=="" GOTO epubrefresh
     ECHO.
     GOTO begin
@@ -341,7 +336,6 @@ SET /p process=Enter a number and hit return.
     :: Let the user easily run that again
     SET repeat=
     SET /p repeat=Enter to try again, or any other key and enter to stop. 
-    ECHO.
     IF "%repeat%"=="" GOTO word
     ECHO.
     GOTO begin
