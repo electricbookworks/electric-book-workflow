@@ -15,7 +15,7 @@ To set up the workflow, you still have to have some technical expertise. Once it
 The technical team members who run the workflow need to be familiar with a few concepts and tools:
 
 *	**HTML and CSS**: the fundamental building blocks of almost all digital content.
-*	**Markdown**: a simple, plain-text shortcut for creating HTML. (The original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) is the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org), mainly because it lets us use attributes like classes.)
+*	**Markdown**: a simple, plain-text shortcut for creating HTML. (The original [Markdown syntax reference](http://daringfireball.net/projects/markdown/syntax) is the easiest intro to basic markdown. We use a markdown variant called [kramdown](http://kramdown.gettalong.org). It lets us use attributes like classes, has a stricter syntax, and allows adding of IDs to elements.
 *   **Sass**: a way to create complex CSS from simple rules.
 *	**Jekyll**: software that turns markdown and Sass into HTML and CSS. (To learn about Jekyll, [start here](http://jekyllrb.com/). If you're installing it on Windows, [you'll also need this guide](http://jekyll-windows.juthilo.com/).) From version 0.4.0, our template requires at least Jekyll 3.2.
 *	**Bundler**: software that manages which version of Jekyll (and other Ruby gems) to apply to a project.
