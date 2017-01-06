@@ -7,6 +7,8 @@ series:
   organisation: "Electric Book Works"
   # A live web address for the organisation
   url: "https://electricbookworks.com/"
+  # The default contact email address
+  email: "info@electricbookworks.com"
   # The name of the series of books in this folder.
   name: "The Electric Book workflow"
   # A one-liner about this series. Useful for Open Graph metadata.
@@ -17,6 +19,8 @@ series:
   # For web navigation, the label for links to  the series homepage
   # For English sites, you can leave this as "Home".
   home-label: "Home"
+  # For web navigation, the label for the navigation menu
+  nav-label: "Contents"
 
 ########
 # TITLES

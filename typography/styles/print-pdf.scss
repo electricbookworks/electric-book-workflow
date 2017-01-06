@@ -2,6 +2,21 @@
 # Print styles
 ---
 
+// What is this?
+// -------------
+// This is typography for the Electric Book Elements theme (see http://electricbook.works).
+// It is built with Sass. (See http://sass-lang.com, and http://jekyllrb.com/docs/assets for how Jekyll implements Sass.)
+// It sets defaults that can be overridden in each book's own stylesheets, where the variables here are duplicated.
+// 
+// How to use it
+// -------------
+// Edit the default variables below.
+// Comment/uncomment or add font imports below.
+// Add your own custom CSS at the bottom.
+
+// First, let's set character encoding. Don't change this.
+@charset "utf-8";
+
 // -------------
 // Set variables
 // -------------
@@ -24,6 +39,8 @@ $trim: 3mm;
 $crop-marks: crop; // crop | none
 
 // Colours
+$color-text-main: cmyk(0,0,0,1);
+$color-text-secondary: cmyk(0,0,0,0.8);
 $color-background: white;
 $color-light: cmyk(0,0,0,0.2);
 $color-mid: cmyk(0,0,0,0.4);
@@ -54,6 +71,9 @@ $text-align: justify; // left or right or inside or outside or justify or center
 $orphans: 1; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1; // Minimum number of lines that must be left at the top of the second page
 $letter-spacing-text: 0em; // Default letter-spacing for p, ul, ol, dl. Set in ems, e.g. 0.01em for 10/1000s of an em.
+
+// Do you want space between paragraphs, rather than a text-indent?
+$spaced-paras: false;
 
 // Buttons
 $button-border-radius: 0.1em; // Roundness of button corners.
@@ -88,7 +108,7 @@ $frontmatter-reference-style: lower-roman; // lower-roman, decimal, see http://w
 //   Set this body title attribute with `header: Your Title` in a file's YAML frontmatter.
 //   If you don't set a page header in YAML, string(page-header) will fallback to the page title.
 // * For the title attribute of the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-title, last)
-//   By default, this uses the teading text, unless you manually set a title attribute for a given heading.
+//   By default, this uses the heading text, unless you manually set a title attribute for a given heading.
 //   In kramdown, use {: title="Your Title Here" } after the heading to set the title manually.
 // * For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
 //   Instead of last (last on page) you can also use first (first on page) or start (string set on previous page).
@@ -109,7 +129,7 @@ $verso-bottom-left-corner: normal;
 $verso-bottom-right-corner: normal;
 
 // Recto (right-hand-page)
-$recto-top: string(h2-title, last);
+$recto-top: string(h2-text, last);
 $recto-top-left: normal;
 $recto-top-right: normal;
 $recto-top-left-corner: normal;
@@ -121,7 +141,7 @@ $recto-bottom-left-corner: normal;
 $recto-bottom-right-corner: normal;
 
 // Verso (left-hand-page) for .frontmatter pages (`style: frontmatter`)
-$verso-top-frontmatter: string(h1-text, last);
+$verso-top-frontmatter: string(page-header);
 $verso-top-left-frontmatter: normal;
 $verso-top-right-frontmatter: normal;
 $verso-top-left-corner-frontmatter: normal;
@@ -133,7 +153,7 @@ $verso-bottom-left-corner-frontmatter: normal;
 $verso-bottom-right-corner-frontmatter: normal;
 
 // Recto (right-hand-page) for .frontmatter pages (`style: frontmatter`)
-$recto-top-frontmatter: string(h2-title, last);
+$recto-top-frontmatter: string(h2-text, last);
 $recto-top-left-frontmatter: normal;
 $recto-top-right-frontmatter: normal;
 $recto-top-left-corner-frontmatter: normal;
@@ -199,71 +219,24 @@ $print-reset-sequences: true; // Resets p indents, margins after other elements.
 $print-page-headers-footers-content: true; // Sets content for headers and footers
 $print-page-headers-footers-style: true; // Sets styling for headers and footers
 
-// -------------------------------------------------------------
-// Add @font-face rules for fonts you specify
+// ------------
+// Import fonts
+// ------------
+
+// Add @font-face rules for fonts you specify here.
 // Add the actual font files to `../fonts`
 // For snippets, try https://github.com/arthurattwell/font-faces
-// -------------------------------------------------------------
-
-
 
 // -------------
 // Master theme
 // -------------
 
-// Import the default theme styles
+// Import master styles
 @import 'print-pdf';
-
 
 // -------------
 // Custom styles
 // -------------
 
-// Add any custom style rules here.
+// Add any custom Sass or CSS here.
 
-// Base typography
-
-// Headings
-
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
-
-// Half-title page
-
-.halftitle-page {}
-
-// Title page
-
-.title-page {}
-
-// Previous publications page ('Also by the author')
-
-.previous-publications-page {}
-
-// Copyright page
-
-.copyright-page {}
-
-// Table of contents
-
-.contents-page {}
-
-// Dedication page
-
-.dedication-page {}
-
-// Epigraph page
-
-.epigraph-page {}
-
-// Frontispiece
-
-.frontispiece-page {}
-
-// Other frontmatter
-
-.frontmatter {}
