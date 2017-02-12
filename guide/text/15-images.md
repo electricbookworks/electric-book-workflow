@@ -33,7 +33,7 @@ Let's break that down:
 
 If you are creating a [translation](70-translations.html#translations) in a subdirectory of `text`, and your images are in the parent book folder, you need to change the path to the images slightly. You have two options:
 
-1. Add another `../` for directory each level. So if your translation is in `book/text/fr/text`, you need to come up three levels before going into `book/images`. So your path is `../../../{{ site.image-set }}/filename.jpg`.
+1. Add another `../` for directory each level. So if your translation text is in `book/text/fr`, you need to come up three levels before going into `book/images`. So your path is `../../{{ site.image-set }}/filename.jpg`.
 2. Use the `{{ path-to-book-directory }}` metadata tag. At the top of your markdown file, add `{% include metadata %}`, so that you can use metadata variables in that file. Then instead of any `../`s, you use the tag: `{{ path-to-book-directory }}{{ site.image-set }}/filename.jpg`.
 
 Even if you're not in a translation folder, it's good practice to always use the `{{ path-to-book-directory }}` tag for maximum portability, if you don't mind having the `{% include metadata %}` tag at the top of your files.
