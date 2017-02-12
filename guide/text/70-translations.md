@@ -6,14 +6,22 @@ title: Translations
 
 The Electric Book workflow allows for two different approaches to managing translations. A translation can be either
 
-1. a subfolder of the main project, which mirrors in structure and filenames of the chapters of the parent edition, or 
+1. a subfolder of the main project's `text` folder, named for the language code, or 
 2. a completely separate repository, which starts out as copy of the parent book (or series, for multi-work repos), but from that point on is treated as a new book, overwriting the original files in the repository with the new language. This is technically the same as an adaptation of the book (e.g. a separate edition of a textbook where content is changed for local needs).
 
 Option 1 is best if the translation is managed by the central team that also manages the parent edition. It assumes that the translation and its parent will be kept in sync for the most part, the translation always being a faithful reproduction of the parent. 
 
 Option 2 is best for when the translating team works independently, and especially if they want to make content changes that diverge from the parent. For instance, adding a new image or page-design feature, or changing design elements like fonts and colours.
 
-## Setting up
+## The files
+
+All translations live inside the `book` folder (remember sometimes `book` is renamed for each book in a series).
+
+The text files of each translation are saved in a subdirectory of `text` named for the language code. So all text files of a French translation live in `book/text/fr`, and all text files of a Xhosa translation in `book/text/xh`.
+
+All translations share the `fonts`, `images` and `styles` folders. So all images from all translations live in `book/images` – images that are themselves translated (e.g. text in the image has been translated) are given different file names to be used in image references in the translated text files. For instance, `figure-1-2.jpg` when translated might be `figure-1-2-fr.jpg` for a French translation.
+
+## Metadata
 
 Each translation must be added to the `meta.yml` file. All `translations` are a subset of `works`, alongside work-level metadata like `title`. Within `translations`, you list each language. Each language inherits the parent language's metadata unless overridden with its own metadata.
 
