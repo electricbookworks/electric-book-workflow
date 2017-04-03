@@ -144,10 +144,11 @@ To convert an EPUB2 to EPUB3 in Sigil, use [Kevin Hendricks' EPUB-itizer plugin]
 
 Note that EPUB3 prefers all files to have `.xhtml` filename extensions, while Jekyll uses `.html`. So, before you run the EPUB3-itizer:
 
-1. Make sure your EPUB2 validates under FlightCrew and EpubCheck
-2. In Sigil's BookBrowser window select all `.html` files
-3. Right click on your selection and select Rename
-4. In the "Rename Files Starting At" dialog, remove everything and replace it with `.xhtml` and click "OK".
+1. In Sigil's BookBrowser window select all `.html` files
+2. Right click on your selection and select Rename
+3. In the "Rename Files Starting At" dialog, remove everything and replace it with `.xhtml` and click "OK".
+
+When adding file semantics, we have found that setting `cover.jpg` to 'Cover image' (i.e. adding `<meta content="cover.jpg" name="cover" />` to `content.opf`) causes KindleGen to crash when converting to Amazon formats. So you may want to avoid this setting for the cover image file.
 
 ## Adding iBooks display-options file
 
