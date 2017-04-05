@@ -12,7 +12,7 @@ title: Images
 
 ## Adding image files
 
-Our template comes with four folders for images, which correspond to output formats: `print-pdf`, `screen-pdf`, `web` and `epub`. Save your images files there. Each folder should contain the same set of images, but formatted for each format. For instance, while their file names must be identical, `web` images might be full-colour, 96dpi, and up to 800 pixels wide; while `print-pdf` images might be in greyscale, 300dpi and 2400 pixels wide.
+Our template comes with four folders for images, which correspond to output formats: `print-pdf`, `screen-pdf`, `web` and `epub`. Save your images files there. Each folder should contain the same set of images, saved appropriately for each format. For instance, while their file names must be identical, `web` images might be full-colour, 96dpi, and up to 800 pixels wide; while `print-pdf` images might be in greyscale, 300dpi and 2400 pixels wide.
 
 ## Adding images in markdown
 
@@ -33,10 +33,12 @@ Let's break that down:
 
 If you are creating a [translation](70-translations.html#translations) in a subdirectory of `text`, and your images are in the parent book folder, you need to change the path to the images slightly. You have two options:
 
-1. Add another `../` for directory each level. So if your translation text is in `book/text/fr`, you need to come up three levels before going into `book/images`. So your path is `../../{{ site.image-set }}/filename.jpg`.
-2. Use the `{{ path-to-book-directory }}` metadata tag. At the top of your markdown file, add `{% include metadata %}`, so that you can use metadata variables in that file. Then instead of any `../`s, you use the tag: `{{ path-to-book-directory }}{{ site.image-set }}/filename.jpg`.
+1. Use the `{{ path-to-book-directory }}` metadata tag. At the top of your markdown file, add `{% include metadata %}`, so that you can use metadata variables in that file. Then instead of any `../`s, you use the tag: `{{ path-to-book-directory }}{{ site.image-set }}/filename.jpg`.
 
-Even if you're not in a translation folder, it's good practice to always use the `{{ path-to-book-directory }}` tag for maximum portability, if you don't mind having the `{% include metadata %}` tag at the top of your files.
+   Even if you're not in a translation folder, it's good practice to always use the `{{ path-to-book-directory }}` tag for maximum portability, if you don't mind having the `{% include metadata %}` tag at the top of your files.
+
+1. Add another `../` for each directory level. So if your translation text is in `book/text/fr`, you need to come up three levels before going into `book/images`. So your path is `../../{{ site.image-set }}/filename.jpg`.
+
 
 ## Figures
 
@@ -233,12 +235,12 @@ Using Illustrator? Different SVG editors treat image size differently. For insta
 
 Check out [Adobe's guidance on saving SVGs](https://helpx.adobe.com/illustrator/using/saving-artwork.html#save_in_svg_format).
 
-If you SVG files seem big, [read up on optimising SVGs](http://stackoverflow.com/a/7068651/1781075), and/or (if you're comfortable using Python scripts) run your SVGs through [Scour](http://codedread.com/scour/).
+If your SVG files seem big, [read up on optimising SVGs](http://stackoverflow.com/a/7068651/1781075), and/or (if you're comfortable using Python scripts) run your SVGs through [Scour](http://codedread.com/scour/).
 
 ### Resolution
 
 *	For SVG images, the editor you use will determine underlying resolution. Illustrator uses 72dpi, and Inkscape 90dpi. We favour and assume 90dpi, but can rescale SVG images with  our stylesheets just in case.
-*	For JPGs, we often use 200dpi and image quality of 80 ('very high' in Adobe presets). This allows for reasonable print quality while keeping file sizes sensible for web delivery. The higher resolution also allows ebook users to zoom in for more detail. This saves having to create different images for eahc image set. However, it is best practice to create separate image sets, with higher quality for `print-pdf`.
+*	For JPGs, we often use 200dpi and image quality of 80 ('very high' in Adobe presets). This allows for reasonable print quality while keeping file sizes sensible for web delivery. The higher resolution also allows ebook users to zoom in for more detail. This saves having to create different images for each image set. However, it is best practice to create separate image sets, with higher quality for `print-pdf`.
 *	To get a 200dpi JPG that is 115 mm wide, the image must be 906 pixels wide. (115mm is 4.53 inches, which contains 906 pixels at 200 pixels per inch, aka 200 dpi.)
 *	Try to keep non-`print-pdf` JPG file sizes below 127KB: [Amazon Kindle may automatically downsample images above that](http://authoradventures.blogspot.com/2014/02/image-size-limit-increased-in-kindle.html), and it's better if you control the downsampling for quality than let their servers do it. However, for raster-only images (e.g. x-rays or photos) if a larger size is required for acceptable print quality then larger is fine.
 
