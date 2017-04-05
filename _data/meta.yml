@@ -74,6 +74,7 @@ works:
           - 18-tables
           - 19-indexes
           - 20-poetry
+          - 21-maths
           - 25-page-numbers
           - 30-javascript
           - 40-indd-to-md
@@ -104,6 +105,7 @@ works:
           - 18-tables: "Tables"
           - 19-indexes: "Indexes"
           - 20-poetry: "Poetry"
+          - 21-maths: "Maths"
           - 25-page-numbers: "Page numbers"
           - 30-javascript: "Javascript"
           - 40-indd-to-md: "InDesign conversion"
@@ -156,6 +158,9 @@ works:
                 file: "20-poetry"
                 label: "Poetry"
               - 
+                file: "21-maths"
+                label: "Maths"
+              - 
                 file: "25-page-numbers"
                 label: "Page numbers"
               - 
@@ -205,6 +210,7 @@ works:
           - 18-tables
           - 19-indexes
           - 20-poetry
+          - 21-maths
           - 25-page-numbers
           - 30-javascript
           - 40-indd-to-md
@@ -235,6 +241,7 @@ works:
           - 18-tables
           - 19-indexes
           - 20-poetry
+          - 21-maths
           - 25-page-numbers
           - 30-javascript
           - 40-indd-to-md

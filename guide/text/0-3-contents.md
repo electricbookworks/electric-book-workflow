@@ -19,6 +19,7 @@ style: contents-page
 1.  [Tables](18-tables.html#tables)
 1.  [Indexes](19-indexes.html#indexes)
 1.  [Poetry](20-poetry.html#poetry)
+1.  [Maths](21-maths.html#maths)
 1.  [Page numbers](25-page-numbers.html#page-numbers)
 1.  [Using Javascript](30-javascript.html#using-javascript)
 1.  [Converting from InDesign](40-indd-to-md.html#converting-from-indesign)
