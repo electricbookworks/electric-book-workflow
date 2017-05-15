@@ -13,7 +13,7 @@ series:
   name: "The Electric Book workflow"
   # A one-liner about this series. Useful for Open Graph metadata.
   description: |
-    The Electric Book workflow is a set of tools and processes for creating high-quality books. We developed it at <a href="http://electricbookworks.com">Electric Book Works</a> for our own publishing. It lets you store books in plain text with great version control, and output website versions, ebooks and print editions easily from a single source. At the heart of the workflow is the <a href="https://github.com/electricbookworks/electric-book">Electric Book Jekyll template</a>. With some technical expertise, you can use it, too.
+    The Electric Book workflow is a set of tools and processes for creating high-quality books. We use it every day at <a href="http://fireandlion.com">Fire and Lion</a>. It lets you store books in plain text with great version control, and output website versions, ebooks and print editions easily from a single source. At the heart of the workflow is the <a href="https://github.com/electricbookworks/electric-book">Electric Book Jekyll template</a>. With some technical expertise, you can use it, too.
   # An image in /assets that stands for the series
   image: "cover.jpg"
   # For web navigation, the label for links to  the series homepage
