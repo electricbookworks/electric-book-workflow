@@ -17,7 +17,7 @@ In addition to [Sigil](https://github.com/Sigil-Ebook/Sigil/releases), we recomm
 3. The [EPUB3-itizer Sigil plugin](https://github.com/kevinhendricks/ePub3-itizer/tree/master/plugin) for converting from EPUB2 to EPUB3.
 4. The [Pagina EPUB-Checker](https://www.pagina.gmbh/produkte/epub-checker/).
 
-### Quick-epub process checklist
+## Quick-epub process checklist
 
 Here's a handy checklist for assembling an epub in Sigil: 
 
@@ -121,7 +121,7 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 
 For general guidance on creating epubs with Sigil, check out [EBW's training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
 
-### Splitting large files
+## Splitting large files
 
 If you have very large text files that, in the epub output, you'd like to split up into separate HTML files, Sigil can help. Using this tag in HTML, you can mark where Sigil must split your HTML file(s):
 
