@@ -21,6 +21,49 @@ For **OSX and Linux** (until we create similar scripts): in a terminal in the sa
 > Technical background: To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
 {:.box}
 
+## Recommended tools
+
+In addition to [Sigil](https://github.com/Sigil-Ebook/Sigil/releases), we recommend installing the following tools:
+
+1. The [FlightCrew Sigil plugin](https://github.com/Sigil-Ebook/flightcrew/releases) for checking for epub errors.
+2. The [AddiBooksXML Sigil plugin](https://www.mobileread.com/forums/showthread.php?t=272241) for defining iBooks font options.
+3. The [EPUB3-itizer Sigil plugin](https://github.com/kevinhendricks/ePub3-itizer/tree/master/plugin) for converting from EPUB2 to EPUB3.
+4. The [Pagina EPUB-Checker](https://www.pagina.gmbh/produkte/epub-checker/).
+
+### Quick-epub process checklist
+
+Here's a handy checklist for assembling an epub in Sigil: 
+
+1.	**Open first file.** File > Open… and select the first HTML file in `_site/book/text`. (Our `-epub` script does this itself).
+2.	**Fix image path.** Fix the path to cover image file in cover HTML.
+2.	**Add book files.** Right-click the Text folder > Add Existing Files… and select the remaining HTML files for the epub.
+	1.	If this doesn't automatically add the `epub.css` file, right-click the Text or Styles folder > Add Existing Files… and select the epub's CSS file from `_site/book/styles`.
+4.	**Generate TOC.** Tools > Table Of Contents > Generate Table Of Contents
+5.	**Add cover to TOC.** Optionally, add the cover HTML to generated TOC with the TOC editor.
+6.	If outputting EPUB3:
+	1. **Change `.html` to `.xhtml`.**Rename all files `.html` to `.xhtml` (select files > Rename > enter only `.xhtml` in replace box).
+	1. **Convert to EPUB3** using the [EPUB3-itizer](https://github.com/kevinhendricks/ePub3-itizer/tree/master/plugin) plugin.
+	1. **Close** current EPUB2. **Open** newly saved EPUB3.
+	1. **Add [iBooks XML](https://gist.github.com/arthurattwell/4932d28d874d9b268c6d186ee38d6aa1)** with [AddiBooksXML plugin](https://github.com/dougmassay/addibooksxml-sigil-plugin). Optional.
+	1. **Hide generated in-book TOC** by adding a `hidden=""` attribute to the `nav` element in `nav.xhtml`: `<nav epub:type="toc" id="toc" hidden="">`. Optional.
+5.	**Add file metadata semantics** (right-click HTML files > Add Semantics…)
+6.	**Define cover image.** Right-click the cover JPG and select Cover Image.
+6.	Save, and [validate](#validate-the-epub) with the Flightcrew plugin and separately with EPUBCheck.
+
+Depending on your needs, you may also need to:
+
+*	search-and-replace for SVG images, footnotes, or video, if you need EPUB2;
+*	add font files if you're embedding fonts;
+*	split large files ([as described below](#splitting-large-files)).
+
+Then test:
+
+1. Validate with [epubcheck](https://www.pagina.gmbh/produkte/epub-checker/).
+2. Open in Adobe Digital Editions and do a visual check.
+3. Open in Kindle Previewer (and/or run the epub through KindleGen).
+
+The following sections go into more detail.
+
 ## Assembling the epub
 
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
@@ -76,25 +119,6 @@ We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) i
 {:.box}
 
 For general guidance on creating epubs with Sigil, check out [EBW's training material](http://electricbookworks.github.io/ebw-training/) and the [Sigil user guide](https://github.com/Sigil-Ebook/Sigil/tree/master/docs).
-
-### Quick-epub process checklist
-
-Here's a handy checklist for assembling an epub in Sigil: 
-
-1.	File > Open… and select the first HTML file in `_html/book/text`. (Our `-epub` script does this itself).
-2.	Right-click the Text folder > Add Existing Files… and select the remaining HTML files for the epub.
-3.	Right-click the Text or Styles folder > Add Existing Files… and select the epub's CSS file from `_html/book/styles`.
-4.	Tools > Table Of Contents > Generate Table Of Contents
-5.	Add file semantics (right-click HTML files > Add Semantics… and right-click the cover jpg > Cover Image).
-6.	Save, and [validate](#validate-the-epub) with the Flightcrew plugin and separately with EPUBCheck.
-
-Depending on your needs, you may also need to:
-
-*	search-and-replace ([as described above](#assembling-the-epub)) for SVG images, footnotes, or video;
-*	add the cover (or other files) to your table of contents ([as described above](#adding-the-epub-toc))
-*	add font files if you're embedding fonts;
-*	split large files ([as described below](#splitting-large-files))
-*	add the iBooks display-options XML ([as described below](#adding-ibooks-display-options-file)).
 
 ### Splitting large files
 
