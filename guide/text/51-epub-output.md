@@ -8,19 +8,6 @@ title: Epub output
 * toc
 {:toc}
 
-## Quick output
-
-On **Windows**, generate HTML for epub by running `win-epub.bat`, which you'll find in the series root folder. Just double-click it from your file explorer. For it to work, you must already have Jekyll installed and working.
-
-The script tells Jekyll to compile epub-ready HTML, opens Sigil, and opens `0-0-cover.html` there, which automatically imports your book's metadata into the epub. It also opens a file browser to the epub-ready HTML files.
-
-In Sigil, then, add the remaining content files, define file semantics, and generate a TOC.
-
-For **OSX and Linux** (until we create similar scripts): in a terminal in the same folder as the scripts, run `bundle exec jekyll b --config="_config.yml,_config.epub.yml"`. Then from Sigil, open the `0-0-cover.html` file in `_html/book/text`. That will import book metadata, and you can then assemble the epub in Sigil.
-
-> Technical background: To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
-{:.box}
-
 ## Recommended tools
 
 In addition to [Sigil](https://github.com/Sigil-Ebook/Sigil/releases), we recommend installing the following tools:
@@ -34,7 +21,8 @@ In addition to [Sigil](https://github.com/Sigil-Ebook/Sigil/releases), we recomm
 
 Here's a handy checklist for assembling an epub in Sigil: 
 
-1.	**Open first file.** File > Open… and select the first HTML file in `_site/book/text`. (Our `-epub` script does this itself).
+1. **Run the output script** for our OS (e.g. `run-windows.bat` or `run-mac.command`) and choose the epub option.
+1.	**Open first file.** File > Open… and select the first HTML file in `_site/book/text`. (The output script tries to do this for you.)
 2.	**Fix image path.** Fix the path to cover image file in cover HTML.
 2.	**Add book files.** Right-click the Text folder > Add Existing Files… and select the remaining HTML files for the epub.
 	1.	If this doesn't automatically add the `epub.css` file, right-click the Text or Styles folder > Add Existing Files… and select the epub's CSS file from `_site/book/styles`.
@@ -64,12 +52,25 @@ Then test:
 
 The following sections go into more detail.
 
+## Run the script
+
+Run the output script for our OS (e.g. `run-windows.bat` or `run-mac.command`) and choose the epub option.
+
+The script tells Jekyll to compile epub-ready HTML, opens Sigil, and opens `0-0-cover.html` there, which automatically imports your book's metadata into the epub. It also opens a file browser to the epub-ready HTML files.
+
+In Sigil, then, add the remaining content files, define file semantics, and generate a TOC.
+
+If you're not using the script, at a command prompt in the same folder as the scripts, run `bundle exec jekyll b --config="_config.yml,_config.epub.yml"`. Then from Sigil, open the `0-0-cover.html` file in `_site/book/text`. That will import book metadata, and you can then assemble the epub in Sigil.
+
+> Technical background: To get the metadata to import to Sigil, you must *open* one of your book's HTML files in Sigil (the cover is best, since it's the first file). That is, don't 'Add Existing Files…' to a new, blank epub. Only by opening a single HTML file (as in 'File > Open…', then select the HTML file) will Sigil read and import the file's Dublin Core metadata. After that, you can add the remaining files in Sigil using 'Add Existing Files…'.
+{:.box}
+
 ## Assembling the epub
 
 We like to assemble our epubs (as EPUB2 for compatibility with older ereaders) in [Sigil](https://github.com/user-none/Sigil/). If we're not changing something major, it takes five minutes. (See the pro tip below for an even quicker way.)
 
-1.	Put the HTML files from `_html` into your `Text` folder.
-1.	If it's not automatically imported, put the finished `epub.css` (from your book's `styles` folder in `_html`) into your Sigil `Styles` folder. (Our `epub.css` file is not the same as `web.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
+1.	Put the HTML files from `_site` into your `Text` folder.
+1.	If it's not automatically imported, put the finished `epub.css` (from your book's `styles` folder in `_site`) into your Sigil `Styles` folder. (Our `epub.css` file is not the same as `web.css`. It does not link to font files and avoids CSS3 features, like @fontface, some pseudo classes and media queries, to work better with popular readers with poor or buggy CSS support, such as Adobe Digital Editions.)
 1.	**Replace any SVG images** in the `Images` folder with JPG equivalents. And:
 1.	Search-and-replace any links to .svg in your HTML files with .jpg.
 1.	**Copy any fonts** into the `Fonts` folder, if you want them embedded. (If you don't want to embed fonts, remove any `@font-face` rules from your stylesheet to avoid file-not-found validation errors. We don't recommend embedding fonts unless they are required for meaning or unusual character sets.)
