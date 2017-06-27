@@ -50,7 +50,7 @@ Now, let's get into some more detail about how it all works. There are several f
 *   `book`: a folder for a book's content, stored here in a series of markdown files
 *   `_data`: a folder for information about your books (aka metadata).
 *   `_includes`: snippets of HTML for Jekyll (you won't have to open this folder).
-*   `_html`: where Jekyll will generate the HTML versions of your books.
+*   `_site`: where Jekyll will generate the HTML versions of your books.
 *   `_output`: the folder where our output scripts will save your PDFs.
 *   `index.md`: the home page of your series when served as a website.
 *   various `.bat`, `.command` and `.sh` scripts for quickly generating books in different formats on various operating systems.
